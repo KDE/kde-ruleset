@@ -69,6 +69,12 @@ match /branches/marble/marble-gsoc-2009/
 end match
 
 # marble-geodata-nt branch
+match /branches/work/marble-geodata-nt$
+  action recurse
+end match
+match /branches/work/marble-geodata-nt/$
+  action recurse
+end match
 match /branches/work/marble-geodata-nt/marble/
   repository marble
   branch geodata-nt
