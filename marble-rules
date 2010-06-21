@@ -1,0 +1,100 @@
+# svn2git rules for Marble
+# Created by Jens-Michael Hoffmann <jensmh@gmx.de>
+
+create repository marble
+end repository
+
+# trunk
+
+# Marble entered playground in revision 590324
+match /trunk/playground/base/marble/
+  repository marble
+  branch master
+end match
+
+# Marble was moved from playground to kdereview in revision 662511
+match /trunk/kdereview/marble/
+  repository marble
+  branch master
+end match
+
+# Marble was moved from kdereview to kdeedu in revision 669496
+match /trunk/KDE/kdeedu/marble/
+  repository marble
+  branch master
+end match
+
+
+match /(branches|tags)/KDE/([^/]+)/$
+  action recurse
+end match
+match /(branches|tags)/KDE/([^/]+)/kdeedu/$
+  action recurse
+end match
+
+# regular KDE branches
+match /branches/KDE/([^/]+)/kdeedu/marble/
+  repository marble
+  branch kde-\1
+end match
+
+# regular KDE tags
+match /tags/KDE/([^/]+)/kdeedu/marble/
+  repository marble
+  branch refs/tags/kde-v\1
+  annotated true
+end match
+
+
+# other branches
+
+match /branches/marble/0.4$
+  action recurse
+end match
+match /branches/marble/0.4/marble$
+  action recurse
+end match
+match /branches/marble/0.4/marble/
+  repository marble
+  branch marble-0.4
+end match
+
+# marble-gsoc-2009 branch
+match /branches/marble/marble-gsoc-2009$
+  action recurse
+end match
+match /branches/marble/marble-gsoc-2009/
+  repository marble
+  branch gsoc-2009
+end match
+
+# marble-geodata-nt branch
+match /branches/work/marble-geodata-nt/marble/
+  repository marble
+  branch geodata-nt
+end match
+
+
+# other tags
+
+match /tags/marble/0.4.0/marble/
+  repository marble
+  branch refs/tags/marble-0.4.0
+  annotated true
+end match
+
+match /tags/marble/0.6.0/
+  repository marble
+  branch refs/tags/marble-0.6.0
+  annotated true
+end match
+
+match /tags/marble/0.8.0/
+  repository marble
+  branch refs/tags/marble-0.8.0
+  annotated true
+end match
+
+# Ignore everything else
+match /
+end match
