@@ -174,6 +174,16 @@ create repository KDE/kdegraphics/kdvi
 end repository
 create repository KDE/kdegraphics/kiconedit
 end repository
+create repository KDE/kdegraphics/katalog
+end repository
+create repository KDE/kdegraphics/kpixmap2bitmap
+end repository
+create repository KDE/kdegraphics/libminimagick
+end repository
+create repository KDE/kdegraphics/pixie
+end repository
+create repository KDE/kdegraphics/kviewshell
+end repository
 
 create repository KDE/kdemultimedia/cmake
 end repository
@@ -206,6 +216,18 @@ end repository
 create repository KDE/kdemultimedia/kmid
 end repository
 create repository KDE/kdemultimedia/kmidi
+end repository
+create repository KDE/kdemultimedia/arts
+end repository
+create repository KDE/kdemultimedia/kautorun
+end repository
+create repository KDE/kdemultimedia/kaiman
+end repository
+create repository KDE/kdemultimedia/aktion
+end repository
+create repository KDE/kdemultimedia/kmix2
+end repository
+create repository KDE/kdemultimedia/noatun
 end repository
 
 create repository KDE/kdenetwork/cmake
@@ -247,6 +269,14 @@ end repository
 create repository KDE/kdenetwork/kfinger
 end repository
 create repository KDE/kdenetwork/karchie
+end repository
+create repository KDE/kdenetwork/caitoo
+end repository
+create repository KDE/kdenetwork/columbo
+end repository
+create repository KDE/kdenetwork/libsearch
+end repository
+create repository KDE/kdenetwork/kxmlrpc
 end repository
 
 create repository KDE/kdepim
@@ -390,6 +420,22 @@ end repository
 create repository KDE/kdeutils/klpq
 end repository
 create repository KDE/kdeutils/klipper
+end repository
+create repository KDE/kdeutils/ktimemon
+end repository
+create repository KDE/kdeutils/ktreebrowser
+end repository
+create repository KDE/kdeutils/iconpackager
+end repository
+create repository KDE/kdeutils/klaptopdaemon
+end repository
+create repository KDE/kdeutils/kdepasswd
+end repository
+create repository KDE/kdeutils/kdessh
+end repository
+create repository KDE/kdeutils/kfind
+end repository
+create repository KDE/kdeutils/kfontmanager
 end repository
 
 create repository KDE/kdevelop
