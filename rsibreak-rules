@@ -7,12 +7,14 @@ end repository
 match /trunk/playground/utils/rsibreak/
   repository rsibreak
   branch kde3
+  max revision 553032
 end match
 
 # move to kdereview in r553033
 match /trunk/kdereview/rsibreak/
   repository rsibreak
   branch kde3
+  max revision 554825
 end match
 
 # move to keg in r554826
