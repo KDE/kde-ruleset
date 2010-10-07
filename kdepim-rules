@@ -9,7 +9,7 @@ end repository
 ##############
 include kdepim-common-ignore-rules
 # -runtime is in a separate repository
-match /trunk/KDE/${MODULE}/runtime/
+match /.*/${MODULE}/runtime/
 end match
 
 ##############
@@ -125,7 +125,12 @@ match /trunk/${REPO}libs/kpgp(/|$)
     max revision 684901
     min revision 681873
 end match
-
+match /trunk/kdenetwork/(libkdenetwork)/(kpgp.*)
+    repository ${REPO}
+    branch master
+    prefix \1/\2
+    max revision 200753
+end match
 match /trunk/playground/pim/akonadi/akonadi_next/
     repository ${REPO}
     prefix akonadi/akonadi_next/
@@ -181,11 +186,17 @@ match /trunk/playground/pim/doc/blogilo/
     branch playground
 end match
 
+match /trunk/KDE/kdeutils/kjots/
+    repository ${REPO}
+    prefix kjots/
+    branch master
+    max revision 808845
+end match
 match /trunk/KDE/kdeutils/doc/kjots/
     repository ${REPO}
     prefix doc/kjots/
     branch master
-    max revision 808838
+    max revision 808845
 end match
 
 match /trunk/playground/pim/microblog/demoapp/

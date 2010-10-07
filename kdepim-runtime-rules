@@ -21,27 +21,34 @@ match /trunk/KDE/kdepim/akonadi/
     repository ${REPO}
     branch master
     prefix akonadi/
-    max revision 1061321
+#    max revision 1061321
+end match
+match /trunk/KDE/kdepim/akonadiserver/
+    repository ${REPO}
+    branch master
+    prefix akonadiserver/
+#    max revision 1061321
 end match
 
-match /branches/work/(toma-akonadi-account-wizard-ghns-integration)/accountwizard/
+
+match /branches/work/(toma-akonadi-account-wizard-ghns-integration)/(accountwizard)/
     repository ${REPO}
     branch work/\1
-    prefix accountwizard/
+    prefix \2/
 end match
-match /branches/work/akonadi-ports/kdepim/akonadi/accountwizard/
-    repository ${REPO}
-    branch work/akonadi-ports
-    prefix akonadi/accountwizard/
-#    max revision 1061290
-end match
+#match /branches/work/akonadi-ports/kdepim/akonadi/accountwizard/
+#    repository ${REPO}
+#    branch work/akonadi-ports
+#    prefix akonadi/accountwizard/
+##    max revision 1061290
+#end match
 
 match /trunk/KDE/kdepim/kresources/akonadi/
     repository ${REPO}
     branch master
     prefix kresources/akonadi/
-    max revision 982988
-    min revision 772772
+#    max revision 982988
+#    min revision 772772
 end match
 match /trunk/playground/pim/akonadi-kres/
     repository ${REPO}
@@ -52,36 +59,37 @@ end match
 
 match /trunk/KDE/kdepim/libkdepim/
     repository ${REPO}
-    branch master
+    branch refs/history/kdepim
     prefix libkdepim/
     max revision 982582
-    min revision 455550
+#    min revision 455550
 end match
-match /branches/KDE/3.5/kdepim/libkdepim/
-    repository ${REPO}
-    branch master
-    prefix libkdepim/
-    max revision 455550
-    min revision 438981
-end match
-match /trunk/KDE/kdepim/libkdepim/
-    repository ${REPO}
-    branch master
-    prefix libkdepim/
-    max revision 438981
-    min revision 409202
-end match
+#match /branches/KDE/3.5/kdepim/libkdepim/
+#    repository ${REPO}
+#    branch master
+#    prefix libkdepim/
+#    max revision 455550
+#    min revision 438981
+#end match
+#match /trunk/KDE/kdepim/libkdepim/
+#    repository ${REPO}
+#    branch master
+#    prefix libkdepim/
+#   max revision 438981
+#    min revision 409204
+#end match
+# r409203 kdepim -> KDE/kdepim
 match /trunk/kdepim/libkdepim/
     repository ${REPO}
-    branch master
+    branch refs/history/kdepim
     prefix libkdepim/
     max revision 409202
 end match
 
-match /trunk/playground/pim/akonadi/kde-qml/
+match /trunk/playground/pim/akonadi/
     repository ${REPO}
     branch playground
-    prefix akonadi/kde-qml/
+    prefix akonadi/
 #    max revision 1101913
 end match
 
@@ -89,7 +97,7 @@ match /trunk/KDE/kdepim/akonadiresources/
     repository ${REPO}
     branch master
     prefix resources/
-    max revision 559016
+    max revision 559038
 end match
 
 match /trunk/kdereview/dav/
@@ -106,10 +114,9 @@ match /trunk/playground/pim/dav/
 #    max revision 1106037
 end match
 
-match /branches/work/~ervin/(imap-resource-refactor)/tests/
+match /branches/work/~ervin/(imap-resource-refactor)/
     repository ${REPO}
     branch work/personal/ervin/\1
-    prefix tests/
 #    max revision 1139084
 end match
 
@@ -121,46 +128,92 @@ match /trunk/KDE/kdepimlibs/libmbox/
 #    min revision 1117588
 end match
 
-match /trunk/playground/pim/openxchange/icons/
+match /trunk/playground/pim/openxchange/
     repository ${REPO}
     branch playground
-    prefix openxchange/icons/
+    prefix openxchange/
 #    max revision 1079549
 end match
 
-match /trunk/playground/pim/openxchange/oxa/
-    repository ${REPO}
-    branch playground
-    prefix openxchange/oxa/
-#    max revision 1079549
-end match
-
-match /trunk/playground/pim/akonadi/xml/
-    repository ${REPO}
-    branch playground
-    prefix akonadi/xml/
-end match
+#match /trunk/playground/pim/akonadi/xml/
+#    repository ${REPO}
+#    branch playground
+#    prefix akonadi/xml/
+#end match
 match /trunk/playground/pim/libakonadi-xml/
     repository ${REPO}
     branch playground
     prefix libakonadi-xml/
 end match
-
+match /trunk/KDE/kdepim/maildir/
+    repository ${REPO}
+    branch master
+    prefix maildir/
+end match
 ##############
 # Branches...
 ##############
 # Non merged branches
-match /branches/work/(akonadi-ports)/(kdepim/(?:runtime|akonadi))/
+match /branches/work/(akonadi-ports)/kdepim/(akonadi)/
+    repository ${REPO}
+    branch \1
+    prefix \2
+end match
+#match /branches/work/(akonadi-ports)/kdepim/runtime/$
+#    action recurse
+#end match
+match /branches/work/(akonadi-ports)/kdepim/runtime/
     repository ${REPO}
     branch \1
 end match
 
+#match /branches/(work)/(arzie_akonadi)/$
+#    action recurse
+#end match
 match /branches/(work)/(arzie_akonadi)/
     repository ${REPO}
     branch \1/\2
 end match
 
+match /branches/kdepim/(soc)/kdepim/akonadi/
+    repository ${REPO}
+    branch \1
+    prefix akonadi/
+end match
+match /trunk/playground/pim/mailody/akonadi_resource/
+    repository ${REPO}
+    branch playground
+    prefix mailody/akonadi_resource/
+end match
+match /trunk/playground/pim/akonaditest/
+    repository ${REPO}
+    branch playground
+    prefix akonaditest/
+end match
+match /trunk/playground/pim/akonadi-kres/
+    repository ${REPO}
+    branch playground
+    prefix akonadi-kres/
+end match
+
 include kdepim-branches-rules
+
+match /branches/(work)/(akonadi-ports|komo)/(kdepim)/(korganizer|libkdepim)/
+    repository ${REPO}
+    branch /refs/history/\1/\2/\3
+    prefix \4
+end match
+match /branches/(kdepim)/(enterprise4|proko2)/(kdepim)/(libkdepim)/
+    repository ${REPO}
+    branch /refs/history/\1/\2/\3
+    prefix \4
+end match
+match /branches/(work)/(soc-gtd)/(libkdepim)/
+    repository ${REPO}
+    branch /refs/history/\1/\2
+    prefix \3
+end match
+
 ##############
 # Tags
 ##############
@@ -168,10 +221,39 @@ include kdepim-tags-rules
 ##############
 # Recurse
 ##############
-match /branches/(work)/(arzie_akonadi)/$
+match /branches/work/(toma-akonadi-account-wizard-ghns-integration)/$
     action recurse
 end match
-
+match /trunk/playground/pim/libakonadi-xml/$
+    action recurse
+end match
+match /trunk/playground/pim/akonadi/$
+    action recurse
+end match
+match /trunk/playground/pim/akonadi/xml/$
+    action recurse
+end match
+match /trunk/playground/pim/openxchange/oxa/$
+    action recurse
+end match
+match /trunk/playground/pim/openxchange/icons/$
+    action recurse
+end match
+match /trunk/kdereview/dav/$
+    action recurse
+end match
+match /trunk/playground/pim/akonadi/kde-qml/$
+    action recurse
+end match
+match /trunk/playground/pim/akonadi-kres/$
+    action recurse
+end match
+match /branches/kdepim/(soc)/kdepim/$
+    action recurse
+end match
+match /branches/work/akonadi-ports/kdepim/$
+    action recurse
+end match
 include kdepim-recurse-rules
 ##############
 # Ignore everything else
