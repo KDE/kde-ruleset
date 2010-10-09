@@ -32,6 +32,9 @@ sub listSubDirs
         chomp;
         if( /(\S+)\/$/ ) {
             print( "listSubDirs:\tFound subdir: '$_'\n" );
+            if( length( $path ) > 0 && substr( $path, -1 ) ne "/" ) {
+                $path = "$path/";
+            }
             print( "listSubDirs:\tAdding: '$path$_'\n" );
             push( @dirs, "$path$1" );
             push( @dirs, listSubDirs($repository, $revision, $root, "$path$1", $recurse) ) if( $recurse )
