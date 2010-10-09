@@ -220,31 +220,33 @@ sub getCopyFromRecursive
     }
 
     for my $historyPart (@history) {
-        print(FILE "#\t[ @$historyPart ]\n");
+        if( @$historyPart[1] ne "HEAD" || @$historyPart[2] ne "0" ) {
+           print(FILE "#\t[ @$historyPart ]\n");
 
-        if( @$historyPart[0] eq "" ) {
-            print( FILE "match /$root/\n");
-        } elsif( @$historyPart[0] eq "$path" ) {
-            print( FILE "match /$root/$path/\n" );
-        } else {
-            print(FILE  "match /@$historyPart[0]/\n");
+            if( @$historyPart[0] eq "" ) {
+                print( FILE "match /$root/\n");
+            } elsif( @$historyPart[0] eq "$path" ) {
+                print( FILE "match /$root/$path/\n" );
+            } else {
+                print(FILE  "match /@$historyPart[0]/\n");
+            }
+            print(FILE  "    repository KDE/$module\n");
+            if( $root ne @$historyPart[0] ) {
+                my $prefix = "$path";
+                #if( @$historyPart[0] =~ /(^trunk\/$module\/)/ ||
+                #    @$historyPart[0] =~ /(^trunk\/KDE\/$module\/)/ ||
+                #    @$historyPart[0] =~ /(^branches.*\/$module\/)/ ||
+                #    @$historyPart[0] =~ /(^tags.*\/$module\/)/ ) {
+                #    $prefix = substr( @$historyPart[0], length( $1 ) );
+                #    print(FILE "#\tprefix: $prefix, \$1: $1\n");
+                #}
+                print(FILE  "    prefix $prefix/\n" ) if( $prefix ne "" );
+            }
+            print(FILE  "    branch master\n");
+            print(FILE  "    max revision @$historyPart[1]\n") if( @$historyPart[1] ne "HEAD" );
+            print(FILE  "    min revision @$historyPart[2]\n" ) if( @$historyPart[2] != 0 );
+            print(FILE  "end match\n\n");
         }
-        print(FILE  "    repository KDE/$module\n");
-        if( $root ne @$historyPart[0] ) {
-            my $prefix = "$path";
-            #if( @$historyPart[0] =~ /(^trunk\/$module\/)/ ||
-            #    @$historyPart[0] =~ /(^trunk\/KDE\/$module\/)/ ||
-            #    @$historyPart[0] =~ /(^branches.*\/$module\/)/ ||
-            #    @$historyPart[0] =~ /(^tags.*\/$module\/)/ ) {
-            #    $prefix = substr( @$historyPart[0], length( $1 ) );
-            #    print(FILE "#\tprefix: $prefix, \$1: $1\n");
-            #}
-            print(FILE  "    prefix $prefix/\n" ) if( $prefix ne "" );
-        }
-        print(FILE  "    branch master\n");
-        print(FILE  "    max revision @$historyPart[1]\n") if( @$historyPart[1] ne "HEAD" );
-        print(FILE  "    min revision @$historyPart[2]\n" ) if( @$historyPart[2] != 0 );
-        print(FILE  "end match\n\n");
     }
     close(FILE);
     print("\n------------------------------\n");
