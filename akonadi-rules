@@ -1,0 +1,179 @@
+# Rules for kdesupport/akonadi
+# Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
+
+##### Create the repository #####
+#declare REPO=kdesupport/akonadi
+declare REPO=akonadi
+create repository ${REPO}
+end repository
+
+
+##### Ignore/Delete rules #####
+### "Welcome libakonadi-kde to kdepimlibs!"
+match /
+    min revision 788342
+    max revision 788342
+end match
+
+### "Remove the unfinished AgentServer code from trunk. To be replaced with the code from the work branch soon."
+match /
+    min revision 1183764
+    max revision 1183764
+end match
+
+### FIXME? "Rename akonadiserver to akonadiserver."
+match /
+    max revision 558903
+    min revision 558903
+end match
+
+### Some of the directories originally in kdepim(libs) do not belong to kdesupport/akonadi
+match /trunk/KDE/kdepim/akonadi/(agents|clients|kabc|kcal|kcm|kioslave|kmime|plugins|resources|tray)/
+end match
+
+### These files belong to the kdepimlibs module (where the imapparser/imapset files also lived)
+match /trunk/KDE/kdepim(libs)?/((lib)?akonadi/)*(((agent|akonadi_export|akonadiprivate_export|akonadiprotocol_export|attribute|cache|changerecorder|CMakeLists|collection|control|datarequest|entity|expungejob|flatcollectionproxymodel|item|job|kcfg2dbus|kcrash|libakonadi_export|libakonadi.xmi|Mainpage|[mM]essage|monitor|pastehelper|pluginloader|protocolhelper|query|resource|searchcreatejob|session|standardactionmanager|subscription|transaction|README)+)|jobs/|kmime/|tests/)
+    max revision 800213
+end match
+######################
+
+##### Main rules #####
+
+### server/shared was moved to the root dir
+match /trunk/kdesupport/akonadi/server/shared/
+    repository ${REPO}
+    branch master
+    max revision 1163625
+    prefix shared/
+end match
+
+### kdesupport/akonadi
+match /trunk/kdesupport/akonadi/
+    repository ${REPO}
+    branch master
+    min revision 800213
+end match
+
+### kdepimlibs/akonadi/interfaces/
+match /trunk/KDE/kdepimlibs/akonadi/interfaces/
+    repository ${REPO}
+    branch master
+    max revision 800213
+    min revision 788342
+    prefix interfaces/
+end match
+
+# match /trunk/KDE/kdepim(?:libs)?/akonadi(?:server)?/((?:server/)?(?:control/)?(?:akonadi|config)-(?:config|prefix).h.cmake)
+# --> prefix \1 = 'control'   \2 = 'server/control' !FAIL!
+match /trunk/KDE/kdepim/akonadi/(config-akonadi.h.cmake)
+    repository ${REPO}
+    branch master
+    prefix \1
+end match
+
+### Merge history for config-prefix.h.cmake and akonadi-prefix.h.cmake
+match /trunk/KDE/kdepim(libs)?/akonadi([/]?server)?(/control)?/(config|akonadi)-prefix.h.cmake
+    repository ${REPO}
+    branch master
+    prefix akonadi-prefix.h.cmake
+end match
+
+### This file is in the root dir
+match /trunk/KDE/kdepim/akonadi/(akonadi-mime.xml)
+    repository ${REPO}
+    branch master
+    max revision 800212
+    min revision 789140
+    prefix \1
+end match
+
+### Merge the remaining files from kdepimlibs/akonadi/ in kdesupport/libs/
+match /trunk/KDE/kdepimlibs/akonadi/
+    repository ${REPO}
+    branch master
+    prefix libs/
+    max revision 800213
+end match
+
+### kdepim/akonadiserver/test (Renamed to 'tests' after r558992)
+match /trunk/KDE/kdepim/akonadiserver/test/
+    repository ${REPO}
+    branch master
+    prefix server/tests/
+    max revision 558992
+end match
+
+### Doesn't exist after r559055
+match /trunk/KDE/kdepim/akonadiserver/interfaces/
+    repository ${REPO}
+    branch master
+    max revision 559056
+    min revision 508468
+    prefix interfaces/
+end match
+
+### Renamed 'kdepim/akonadi/server' after r559056
+match /trunk/KDE/kdepim/akonadiserver/
+    repository ${REPO}
+    branch master
+    max revision 559056
+    min revision 508468
+    prefix server/
+end match
+
+### kdepim/akonadi/server
+match /trunk/KDE/kdepim/akonadi/server/
+    repository ${REPO}
+    branch master
+    max revision 800390
+    min revision 559056
+    prefix server/
+end match
+
+### some of these files were moved in kdesupport/akonadi/libs/
+match /trunk/KDE/kdepim/(akonadi/)?libakonadi/
+    repository ${REPO}
+    max revision 788342
+    branch master
+    prefix libs/
+end match
+####################
+
+##### Branches #####
+### sqlite backend work branch (merged)
+match /branches/work/akonadi-sqlite/server/shared/
+    repository ${REPO}
+    branch master
+    max revision 1106631
+    prefix shared/
+end match
+
+match /branches/work/akonadi-sqlite/
+    repository ${REPO}
+    branch master
+    max revision 1106631
+end match
+
+### agent server work branch (merged)
+match /branches/work/akonadi-agentserver/
+    repository ${REPO}
+    branch master
+    max revision 1183868
+end match
+
+### Release branches
+match /branches/akonadi/([^/]+)/
+    repository ${REPO}
+    branch \1
+end match
+################
+
+##### Tags #####
+match /tags/akonadi/([^/]+)/
+    repository ${REPO}
+    branch refs/tags/v\1
+end match
+
+##### ignore everything else #####
+match /
+end match
