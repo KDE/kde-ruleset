@@ -47,6 +47,13 @@ match /trunk/kdesupport/akonadi/server/shared/
     prefix shared/
 end match
 
+### server/interfaces was moved to the root dir
+match /trunk/kdesupport/akonadi/server/interfaces/
+    repository ${REPO}
+    branch master
+    prefix interfaces/
+end match
+
 ### kdesupport/akonadi
 match /trunk/kdesupport/akonadi/
     repository ${REPO}
