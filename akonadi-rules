@@ -173,7 +173,7 @@ end match
 match /branches/work/akonadi-agentserver/
     repository ${REPO}
     branch master
-    max revision 1183868
+    max revision 1183867
 end match
 
 ### Release branches
