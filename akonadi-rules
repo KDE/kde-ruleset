@@ -9,6 +9,12 @@ end repository
 
 
 ##### Ignore/Delete rules #####
+### "Move libakonadi to akonadi"
+match /
+    min revision 559105
+    max revision 559105
+end match
+
 ### "Welcome libakonadi-kde to kdepimlibs!"
 match /
     min revision 788342
