@@ -111,12 +111,12 @@ match /trunk/KDE/kdepim/akonadiserver/interfaces/org.kde.Akonadi.Tracer.xml
     prefix interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 end match
 
-### Doesn't exist after r559055
-match /trunk/KDE/kdepim/akonadiserver/interfaces/
+### kdepim/akonadiserver/interfaces/ doesn't exist after r559055.
+### Recover the interfaces history when the files were in akonadiserver/control
+match /trunk/KDE/kdepim/akonadi(/)?server/(interfaces/|control/(org)+)
     repository ${REPO}
     branch master
-    max revision 559056
-    min revision 508468
+    max revision 800212
     prefix interfaces/
 end match
 
