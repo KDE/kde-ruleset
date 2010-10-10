@@ -124,6 +124,14 @@ match /trunk/KDE/kdepim/akonadiserver/interfaces/org.kde.Akonadi.Tracer.xml
     prefix interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 end match
 
+### Don't lose r804301,788790, 788342, 695223, 288224, 684220
+match /trunk/(KDE/kdepim(libs)?|kdesupport)/akonadi/(server/)?interfaces/org.kde.Akonadi.NotificationManager.xml
+    repository ${REPO}
+    branch master
+    max revision 804302
+    prefix interfaces/org.freedesktop.Akonadi.NotificationSource.xml
+end match
+
 ### kdepim/akonadiserver/interfaces/ doesn't exist after r559055.
 ### Recover the interfaces history when the files were in akonadiserver/control
 match /trunk/KDE/kdepim/akonadi(/)?server/(interfaces/|control/(org)+)
