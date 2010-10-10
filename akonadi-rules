@@ -103,6 +103,14 @@ match /trunk/KDE/kdepim/akonadiserver/test/
     max revision 558992
 end match
 
+### Don't lose r558953
+match /trunk/KDE/kdepim/akonadiserver/interfaces/org.kde.Akonadi.Tracer.xml
+    repository ${REPO}
+    branch master
+    max revision 558954
+    prefix interfaces/org.freedesktop.Akonadi.TracerNotification.xml
+end match
+
 ### Doesn't exist after r559055
 match /trunk/KDE/kdepim/akonadiserver/interfaces/
     repository ${REPO}
