@@ -52,6 +52,7 @@ sub getCopyFrom
     print( "getCopyFrom: Getting origin of '$repository / $path \@ $revision...\n" );
     #print( "getCopyFrom: > $cmd\n" );
     push( @commands, $cmd );
+    $path = "/$path";
     my $fromRevision = 0;
     my $fromPath = "";
 
@@ -90,13 +91,12 @@ sub getCopyFrom
             #print("> ------\n");
             #print("> \$_: $_\n");
             #print("> \$path:         $path\n");
-            #print("> \$root:         $root\n");
             #print("> \$newPath:      $newPath\n");
             #print("> \$origPath:     $origPath\n");
             #print("> \$fromRevision: $fromRevision\n");
             #print("> \$subdir:       $subdir\n");
             #print("> \$components:   @components\n");
-            #print("> \$shortPath:     $shortPath\n");
+            #print("> \$shortPath:    $shortPath\n");
 
             # case 1: the dir is moved/replaced
             if( $newPath =~ /$path$/ ) {
@@ -109,17 +109,19 @@ sub getCopyFrom
             }
 
             # case 2: A parent is moved/replaced
-            if( $shortPath eq $newPath ) {
+            #if( $shortPath eq $newPath ) {
+            if( $shortPath =~ /$newPath(\/.*)/ ) {
                 print( "getCopyFrom:\t\@r$currentRev: Found parent move '$shortPath' from '$origPath' at rev $fromRev\n" );
-                $fromPath = "$origPath/$subdir";
+                #print "> \$1:   $1\n";
+                $fromPath = "$origPath$1/$subdir";
                 open(FILE, ">>$module-rules-auto");
                 print( FILE "# $newPath @ $currentRev -> $origPath @ $fromRev\n" );
                 close( FILE );
                 last;
             }
 
-            #print("> $newPath !=~ /$path\$/\n");
-            #print("> $shortPath !eq /$newPath\$/\n");
+            #print("> $newPath !=~ $path\$\n");
+            #print("> $shortPath !eq $newPath\$\n");
         }
 
         # case 3: A cvs2svn server side move
@@ -209,6 +211,7 @@ sub getCopyFromRecursive
         }
 
     } while( $fromRev > 0 );
+
     open(FILE, ">>$module-rules-auto");
     #print(FILE "#===================================\n");
     #print(FILE "# Directory rules (skeleton)...\n\n");
@@ -230,7 +233,7 @@ sub getCopyFromRecursive
             } else {
                 print(FILE  "match /@$historyPart[0]/\n");
             }
-            print(FILE  "    repository KDE/$module\n");
+            print(FILE  "    repository $module\n");
             if( $root ne @$historyPart[0] ) {
                 my $prefix = "$path";
                 #if( @$historyPart[0] =~ /(^trunk\/$module\/)/ ||
@@ -246,6 +249,8 @@ sub getCopyFromRecursive
             print(FILE  "    max revision @$historyPart[1]\n") if( @$historyPart[1] ne "HEAD" );
             print(FILE  "    min revision @$historyPart[2]\n" ) if( @$historyPart[2] != 0 );
             print(FILE  "end match\n\n");
+        } else {
+            print( FILE "#\t[ @$historyPart ]\n" );
         }
     }
     close(FILE);
