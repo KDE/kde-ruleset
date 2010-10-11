@@ -15,11 +15,11 @@ sub listSubDirs
 {
     print("Getting a list of subdirs...\n");
     my ($repository, $revision, $root, $path, $recurse) = @_;
-    print "\$repository: $repository\n";
-    print "\$revision:   $revision\n";
-    print "\$root:       $root\n";
-    print "\$path:       $path\n";
-    print "\$recurse:    $recurse\n";
+    #print "\$repository: $repository\n";
+    #print "\$revision:   $revision\n";
+    #print "\$root:       $root\n";
+    #print "\$path:       $path\n";
+    #print "\$recurse:    $recurse\n";
     my $cmd = "svn ls $repository/$root/$path\@$revision";
     push( @commands, $cmd );
 
@@ -31,7 +31,7 @@ sub listSubDirs
     while( <$CMD> ) {
         chomp;
         if( /(\S+)\/$/ ) {
-            print( "listSubDirs:\tFound subdir: '$_'\n" );
+            #print( "listSubDirs:\tFound subdir: '$_'\n" );
             if( length( $path ) > 0 && substr( $path, -1 ) ne "/" ) {
                 $path = "$path/";
             }
