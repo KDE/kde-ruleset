@@ -15,12 +15,6 @@ sub listSubDirs
 {
     print("Getting a list of subdirs...\n");
     my ($repository, $revision, $root, $path, $recurse, $ignore) = @_;
-    #print "\$repository: $repository\n";
-    #print "\$revision:   $revision\n";
-    #print "\$root:       $root\n";
-    #print "\$path:       $path\n";
-    #print "\$recurse:    $recurse\n";
-    #print "\$ignore:     $ignore\n";
     my $cmd = "svn ls $repository/$root/$path\@$revision";
     push( @commands, $cmd );
 
@@ -28,14 +22,12 @@ sub listSubDirs
     open( my $CMD, "$cmd |" ) || die "listSubDirs: Failed to run \"$cmd\": $!\n";
 
     print( "listSubDirs: Getting subdirs of '$repository / $root / $path \@ $revision'\n" );
-    #print( "> $cmd\n" );
     while( <$CMD> ) {
         chomp;
         if( /(\S+)\/$/ ) {
             if( $ignore ne "" && /$ignore/ ) {
                 next;
             }
-            #print( "listSubDirs:\tFound subdir: '$_'\n" );
             if( length( $path ) > 0 && substr( $path, -1 ) ne "/" ) {
                 $path = "$path/";
             }
@@ -45,7 +37,6 @@ sub listSubDirs
         }
     }
     close( $CMD );
-    print(" done\n");
     return @dirs;
 }
 
@@ -54,7 +45,6 @@ sub getCopyFrom
     my ($repository, $revision, $path ) = @_;
     my $cmd = "svn log -v --stop-on-copy $repository/$path\@$revision";
     print( "getCopyFrom: Getting origin of '$repository / $path \@ $revision...\n" );
-    #print( "getCopyFrom: > $cmd\n" );
     push( @commands, $cmd );
     $path = "/$path";
     my $fromRevision = 0;
@@ -70,8 +60,6 @@ sub getCopyFrom
         }
         push( @log, $_ );
     }
-
-    #print( "getCopyFrom: - done\n" );
 
     my $cvs2svnUsed = 0;
     my $cvs2svnCandidate = 0;
@@ -107,9 +95,7 @@ sub getCopyFrom
             # case 1: the dir is moved/replaced
             if( $newPath =~ /$path$/ ) {
                 print( "getCopyFrom:\t\@r$currentRev: Found '$newPath' from '$origPath' at rev $fromRev\n" );
-                #open(FILE, ">>$module-rules-auto");
-                print( FILE "# $newPath @ $currentRev -> $origPath @ $fromRev\n" );
-                #close( FILE );
+                print( FILE "#\t[ Move/Replace: $newPath @ $currentRev -> $origPath @ $fromRev ]\n" );
                 $fromPath = $origPath;
                 last;
             }
@@ -118,21 +104,14 @@ sub getCopyFrom
             #if( $shortPath eq $newPath ) {
             if( $shortPath =~ /$newPath(\/.*)?/ ) {
                 print( "getCopyFrom:\t\@r$currentRev: Found parent move '$shortPath' from '$origPath' at rev $fromRev\n" );
-                #print "> \$1:   $1\n";
                 my $tmp = "";
                 if( defined $1 ) {
                     $tmp = $1;
                 }
                 $fromPath = "$origPath$tmp/$subdir";
-                #open(FILE, ">>$module-rules-auto");
-                print( FILE "#\t[Parent: $newPath @ $currentRev -> $origPath @ $fromRev ]\n" );
-                #close( FILE );
+                print( FILE "#\t[ Parent: $newPath @ $currentRev -> $origPath @ $fromRev ]\n" );
                 last;
             }
-
-            #print("> $newPath !=~ $path\$\n");
-            #print("> $shortPath !eq $newPath\$\n");
-            #print("> $shortPath !=~ /$newPath(\/.*)?/\n" );
         }
 
         # case 3: A cvs2svn server side move
@@ -183,9 +162,7 @@ sub getCopyFrom
                 }
 
                 print( "getCopyFrom:\t\@r$currentRev: Found cvs2svn move '$path' from '$origPath' at rev $fromRev\n" );
-                #open(FILE, ">>$module-rules-auto");
-                print( FILE "# $path @ $currentRev -> $origPath @ $fromRev\n" );
-                #close( FILE );
+                print( FILE "#\t[ cvs2svn: $path @ $currentRev -> $origPath @ $fromRev ]\n" );
                 $fromPath = $origPath;
                 $fromRevision = $fromRev;
                 last;
@@ -200,7 +177,6 @@ sub getCopyFrom
         $fromPath = substr($fromPath, 1);
     }
     my @returnVale = ( $fromRevision, $fromPath );
-    #print "getCopyFrom: returning: $fromRevision, $fromPath\n";
     return @returnVale;
 }
 
@@ -215,27 +191,17 @@ sub getCopyFromRecursive
     $fromPath = "$root/$path" if( $path ne "" );
 
     push( @history, [$path, $revision] );
-    #if( $revision ne "HEAD" ) {
-    #    $revision -= 1;
-    #}
     do {
         ($fromRev, $fromPath) = getCopyFrom( $repository, $fromRev, $fromPath );
-        #if( $revision ne "HEAD" ) {
-        #    $revision -= 1;
-        #}
         if( $fromRev > 1) {
             push( @history, [$fromPath, $fromRev] );
-            #print( "getCopyFromRecursive: $fromPath @ $fromRev\n" );
         }
 
     } while( $fromRev > 0 );
 
     open(FILE, ">>$module-rules-auto");
-    #print(FILE "#===================================\n");
-    #print(FILE "# Directory rules (skeleton)...\n\n");
     my $minRevision = 0;
     for my $historyPart ( reverse( @history ) ) {
-        #print( "\t[ @$historyPart ]\n");
         push( @$historyPart, $minRevision );
         $minRevision = @$historyPart[1];
     }
@@ -254,13 +220,6 @@ sub getCopyFromRecursive
             print(FILE  "    repository $module\n");
             if( $root ne @$historyPart[0] ) {
                 my $prefix = "$path";
-                #if( @$historyPart[0] =~ /(^trunk\/$module\/)/ ||
-                #    @$historyPart[0] =~ /(^trunk\/KDE\/$module\/)/ ||
-                #    @$historyPart[0] =~ /(^branches.*\/$module\/)/ ||
-                #    @$historyPart[0] =~ /(^tags.*\/$module\/)/ ) {
-                #    $prefix = substr( @$historyPart[0], length( $1 ) );
-                #    print(FILE "#\tprefix: $prefix, \$1: $1\n");
-                #}
                 print(FILE  "    prefix $prefix/\n" ) if( $prefix ne "" );
             }
             print(FILE  "    branch master\n");
@@ -278,7 +237,6 @@ sub getCopyFromRecursive
 my $repository;
 my $path;
 my $revision = "HEAD";
-#my $module;
 my $argnum;
 my $subdirs = 0;
 my $showcommands = 0;
