@@ -14,12 +14,13 @@ my $module = "";
 sub listSubDirs
 {
     print("Getting a list of subdirs...\n");
-    my ($repository, $revision, $root, $path, $recurse) = @_;
+    my ($repository, $revision, $root, $path, $recurse, $ignore) = @_;
     #print "\$repository: $repository\n";
     #print "\$revision:   $revision\n";
     #print "\$root:       $root\n";
     #print "\$path:       $path\n";
     #print "\$recurse:    $recurse\n";
+    #print "\$ignore:     $ignore\n";
     my $cmd = "svn ls $repository/$root/$path\@$revision";
     push( @commands, $cmd );
 
@@ -31,6 +32,9 @@ sub listSubDirs
     while( <$CMD> ) {
         chomp;
         if( /(\S+)\/$/ ) {
+            if( $ignore ne "" && /$ignore/ ) {
+                next;
+            }
             #print( "listSubDirs:\tFound subdir: '$_'\n" );
             if( length( $path ) > 0 && substr( $path, -1 ) ne "/" ) {
                 $path = "$path/";
@@ -279,6 +283,7 @@ my $argnum;
 my $subdirs = 0;
 my $showcommands = 0;
 my $recurse = 0;
+my $ignore = "";
 
 for($argnum = 0; $argnum <= $#ARGV; $argnum++ ) {
     print "Argument #$argnum: $ARGV[$argnum]\n";
@@ -290,11 +295,12 @@ for($argnum = 0; $argnum <= $#ARGV; $argnum++ ) {
         case "--subdirs"{ $subdirs = 1; }
         case "--showcommands" { $showcommands = 1; }
         case "--recurse" { $recurse = 1; }
+        case "--ignore" { $ignore = $ARGV[++$argnum]; }
         else            { print "Unknown option: $ARGV[$argnum]\n"; exit; }
     }
 }
-if( $#ARGV < 5 || $#ARGV > 10 ) {
-    print( "Usage: trackModule.pl --repo repository --path path --module module [--rev revision] [--subdirs] [--showcommands] [--recurse]\n");
+if( $#ARGV < 5 || $#ARGV > 11 ) {
+    print( "Usage: trackModule.pl --repo repository --path path --module module [--rev revision] [--subdirs] [--showcommands] [--recurse] [--ignore path]\n");
     exit;
 }
 print <<EOF;
@@ -305,11 +311,12 @@ Got:
   \$revision:   $revision
   \$subdirs:    $subdirs
   \$recurse:    $recurse
+  \$ignore:     $ignore
 EOF
 
 my @dirs = ("");
 if( $subdirs ) {
-    my @subdirs = listSubDirs( $repository, $revision, $path, "", $recurse );
+    my @subdirs = listSubDirs( $repository, $revision, $path, "", $recurse, $ignore );
     push( @dirs, @subdirs );
 }
 
