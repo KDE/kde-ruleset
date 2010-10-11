@@ -184,6 +184,24 @@ create repository KDE/kdegraphics/pixie
 end repository
 create repository KDE/kdegraphics/kviewshell
 end repository
+create repository KDE/kdegraphics/kfaxview
+end repository
+create repository KDE/kdegraphics/kcoloredit
+end repository
+create repository KDE/kdegraphics/libkscan
+end repository
+create repository KDE/kdegraphics/kooka
+end repository
+create repository KDE/kdegraphics/kpovmodeler
+end repository
+create repository KDE/kdegraphics/ksvg
+end repository
+create repository KDE/kdegraphics/kuickshow
+end repository
+create repository KDE/kdegraphics/kmrml
+end repository
+create repository KDE/kdegraphics/kpdf
+end repository
 
 create repository KDE/kdemultimedia/cmake
 end repository
@@ -207,6 +225,8 @@ create repository KDE/kdemultimedia/mplayerthumbs
 end repository
 create repository KDE/kdemultimedia/strigi-analyzer
 end repository
+create repository KDE/kdemultimedia/krec
+end repository
 
 #abandoned stuff
 create repository KDE/kdemultimedia/kscd
@@ -228,6 +248,34 @@ end repository
 create repository KDE/kdemultimedia/kmix2
 end repository
 create repository KDE/kdemultimedia/noatun
+end repository
+create repository KDE/kdemultimedia/mpeglib
+end repository
+create repository KDE/kdemultimedia/mpeglib_artsplug
+end repository
+create repository KDE/kdemultimedia/kaboodle
+end repository
+create repository KDE/kdemultimedia/k3b
+end repository
+create repository KDE/kdemultimedia/mpg123_artsplugin
+end repository
+create repository KDE/kdemultimedia/oggvorbis_artsplugin
+end repository
+create repository KDE/kdemultimedia/koncd
+end repository
+create repository KDE/kdemultimedia/kaudiocreator
+end repository
+create repository KDE/kdemultimedia/noatun-plugins
+end repository
+create repository KDE/kdemultimedia/juk
+end repository
+create repository KDE/kdemultimedia/audiofile_artsplugin
+end repository
+create repository KDE/kdemultimedia/kreatecd
+end repository
+create repository KDE/kdemultimedia/xine_artsplugin
+end repository
+create repository KDE/kdemultimedia/kappfinder-data
 end repository
 
 create repository KDE/kdenetwork/cmake
@@ -278,6 +326,45 @@ create repository KDE/kdenetwork/libsearch
 end repository
 create repository KDE/kdenetwork/kxmlrpc
 end repository
+create repository KDE/kdenetwork/keystone
+end repository
+create repository KDE/kdenetwork/knode
+end repository
+create repository KDE/kdenetwork/kit
+end repository
+create repository KDE/kdenetwork/knewsticker
+end repository
+create repository KDE/kdenetwork/kmailcvt
+end repository
+create repository KDE/kdenetwork/csmb
+end repository
+create repository KDE/kdenetwork/lanbrowsing
+end repository
+create repository KDE/kdenetwork/kdict
+end repository
+create repository KDE/kdenetwork/libkdenetwork
+end repository
+create repository KDE/kdenetwork/mimelib
+end repository
+create repository KDE/kdenetwork/kpf
+end repository
+create repository KDE/kdenetwork/kchat
+end repository
+create repository KDE/kdenetwork/librss
+end repository
+create repository KDE/kdenetwork/certmanager
+end repository
+create repository KDE/kdenetwork/kioslaves
+end repository
+create repository KDE/kdenetwork/ktnef
+end repository
+create repository KDE/kdenetwork/strigi-analyzer
+end repository
+create repository KDE/kdenetwork/wifi
+end repository
+create repository KDE/kdenetwork/dcoprss
+end repository
+
 
 create repository KDE/kdepim
 end repository
@@ -437,6 +524,27 @@ create repository KDE/kdeutils/kfind
 end repository
 create repository KDE/kdeutils/kfontmanager
 end repository
+create repository KDE/kdeutils/charselectapplet
+end repository
+create repository KDE/kdeutils/klprfax
+end repository
+create repository KDE/kdeutils/ksim
+end repository
+create repository KDE/kdeutils/kregexpeditor
+end repository
+create repository KDE/kdeutils/regexptest
+end repository
+create repository KDE/kdeutils/kcardtools
+end repository
+create repository KDE/kdeutils/keurocalc
+end repository
+create repository KDE/kdeutils/cdbakeoven
+end repository
+create repository KDE/kdeutils/kmilo
+end repository
+create repository KDE/kdeutils/kdelirc
+end repository
+
 
 create repository KDE/kdevelop
 end repository
@@ -1264,9 +1372,6 @@ end repository
 create repository extragear/kpovmodeler
 end repository
 
-create repository extragear/kuickshow
-end repository
-
 create repository extragear/ligature
 end repository
 
@@ -1330,9 +1435,6 @@ end repository
 create repository extragear/kfax
 end repository
 
-create repository extragear/kaudiocreator
-end repository
-
 create repository extragear/charm
 end repository
 
@@ -1373,9 +1475,6 @@ create repository extragear/pixieplus
 end repository
 
 create repository extragear/noatun-plugins
-end repository
-
-create repository extragear/strigi-analyzer
 end repository
 
 create repository extragear/konq-plugins
@@ -1480,9 +1579,6 @@ end repository
 create repository extragear/createtarball
 end repository
 
-create repository extragear/kregexpeditor
-end repository
-
 create repository extragear/ktankeditor
 end repository
 
@@ -1505,9 +1601,6 @@ create repository extragear/httpform
 end repository
 
 create repository extragear/kommander-plugins
-end repository
-
-create repository extragear/kooka
 end repository
 
 create repository extragear/fuzzy-clock
@@ -3107,31 +3200,48 @@ end match
 match /(branches|tags)/KDE/([^/]+)/kdenetwork/kfile-plugins/
 end match
 
-match /trunk/(KDE/)?(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+match /trunk/(KDE/)?(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
   repository KDE/\2/strigi-analyzer
   branch master
 end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
   repository KDE/\3/strigi-analyzer
   branch KDE/\1.\2
   max revision 409202
 end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
   repository KDE/\4/strigi-analyzer
   branch KDE/\1.\2.\3
   max revision 409202
 end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
   repository KDE/\5/strigi-analyzer
   branch KDE/\1.\2.\3-beta\4
   min revision 376088
   max revision 409202
 end match
-match /(branches|tags)/KDE/([^/]+)/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+match /(branches|tags)/KDE/([^/]+)/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
   repository KDE/\3/strigi-analyzer
   branch KDE/\2
   min revision 409209
 end match
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+  repository KDE/\3/strigi-analyzer
+  branch KDE/\1.\2.0
+  max revision 409202
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+  repository KDE/\3/strigi-analyzer
+  branch KDE/\1.\2
+  max revision 409202
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+  repository KDE/\4/strigi-analyzer
+  branch KDE/\1.\2.\3a
+  min revision 192719
+  max revision 409202
+end match
+
 
 
 match /trunk/KDE/kdesdk/dolphin/
@@ -3300,6 +3410,10 @@ match /(trunk|branches/work/kde4)/playground/graphics/(gwenview|okular|svgpart)/
   repository KDE/kdegraphics/\1
   branch master
 end match
+match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(gwenview)/
+  repository KDE/kdegraphics/\2
+  branch master
+end match
 match /trunk/playground/graphics/(ksaneservice|ksaneplugin)/
   repository KDE/kdegraphics/ksaneplugin
   branch master
@@ -3321,6 +3435,10 @@ match /branches/work/kde4/playground/graphics/okular/kpdf/
   branch master
   min revision 520782
   max revision 551163
+end match
+match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(libkipi)/
+  repository KDE/kdegraphics/libs/\2
+  branch master
 end match
 
 
