@@ -71,8 +71,10 @@ sub getCopyFrom
 
     my $cvs2svnUsed = 0;
     my $cvs2svnCandidate = 0;
+    my $missedCopy = 0;
     my $currentRev = 0;
 
+    open( FILE, ">>$module-rules-auto" );
     foreach( @log ) {
         if( /^r(\d+) \| / ) {
             $currentRev = $1;
@@ -101,27 +103,32 @@ sub getCopyFrom
             # case 1: the dir is moved/replaced
             if( $newPath =~ /$path$/ ) {
                 print( "getCopyFrom:\t\@r$currentRev: Found '$newPath' from '$origPath' at rev $fromRev\n" );
-                open(FILE, ">>$module-rules-auto");
+                #open(FILE, ">>$module-rules-auto");
                 print( FILE "# $newPath @ $currentRev -> $origPath @ $fromRev\n" );
-                close( FILE );
+                #close( FILE );
                 $fromPath = $origPath;
                 last;
             }
 
             # case 2: A parent is moved/replaced
             #if( $shortPath eq $newPath ) {
-            if( $shortPath =~ /$newPath(\/.*)/ ) {
+            if( $shortPath =~ /$newPath(\/.*)?/ ) {
                 print( "getCopyFrom:\t\@r$currentRev: Found parent move '$shortPath' from '$origPath' at rev $fromRev\n" );
                 #print "> \$1:   $1\n";
-                $fromPath = "$origPath$1/$subdir";
-                open(FILE, ">>$module-rules-auto");
-                print( FILE "# $newPath @ $currentRev -> $origPath @ $fromRev\n" );
-                close( FILE );
+                my $tmp = "";
+                if( defined $1 ) {
+                    $tmp = $1;
+                }
+                $fromPath = "$origPath$tmp/$subdir";
+                #open(FILE, ">>$module-rules-auto");
+                print( FILE "#\t[Parent: $newPath @ $currentRev -> $origPath @ $fromRev ]\n" );
+                #close( FILE );
                 last;
             }
 
             #print("> $newPath !=~ $path\$\n");
             #print("> $shortPath !eq $newPath\$\n");
+            #print("> $shortPath !=~ /$newPath(\/.*)?/\n" );
         }
 
         # case 3: A cvs2svn server side move
@@ -132,9 +139,16 @@ sub getCopyFrom
         if( $cvs2svnCandidate && /cvs2svn/ ) {
             $cvs2svnUsed = 1;
             last;
+        } elsif( /\s+A (\S*$path\S+) \(from (\/\S+):(\d+)\)/ ) {
+            $missedCopy = 1;
         }
     }
 
+    if( $missedCopy ) {
+        my $msg = "WARNING: $path was added in r$currentRev and files/dirs was copied into it but no 'from' path was detected, history loss possible.\n";
+        print( FILE "# $msg" );
+        print( $msg );
+    }
     if( $cvs2svnUsed ) {
         foreach( @log ) {
             if( /^r(\d+) \| / ) {
@@ -165,16 +179,16 @@ sub getCopyFrom
                 }
 
                 print( "getCopyFrom:\t\@r$currentRev: Found cvs2svn move '$path' from '$origPath' at rev $fromRev\n" );
-                open(FILE, ">>$module-rules-auto");
+                #open(FILE, ">>$module-rules-auto");
                 print( FILE "# $path @ $currentRev -> $origPath @ $fromRev\n" );
-                close( FILE );
+                #close( FILE );
                 $fromPath = $origPath;
                 $fromRevision = $fromRev;
                 last;
             }
         }
     }
-
+    close( FILE );
     close( CMD );
     if( $fromPath eq "" ) {
         $fromRevision = 0;
