@@ -37,6 +37,13 @@ end match
 match /trunk/KDE/kdepim/akonadi/(agents|clients|kabc|kcal|kcm|kioslave|kmime|plugins|resources|tray)/
 end match
 
+### notificationmessagetest is an akonadiserver test.
+match /trunk/KDE/kdepim(?:libs)?/akonadi/(?:libakonadi/)?tests/(notificationmessagetest).(cpp|h)
+    repository ${REPO}
+    branch master
+    prefix libs/tests/\1.\2
+end match
+
 ### These files belong to the kdepimlibs module (where the imapparser/imapset files also lived)
 match /trunk/KDE/kdepim(libs)?/((lib)?akonadi/)*(((agent|akonadi_export|akonadiprivate_export|akonadiprotocol_export|attribute|cache|changerecorder|CMakeLists|collection|control|datarequest|entity|expungejob|flatcollectionproxymodel|item|job|kcfg2dbus|kcrash|libakonadi_export|libakonadi.xmi|Mainpage|[mM]essage|monitor|pastehelper|pluginloader|protocolhelper|query|resource|searchcreatejob|session|standardactionmanager|subscription|transaction|README)+)|jobs/|kmime/|tests/)
     max revision 800213
@@ -53,7 +60,7 @@ match /trunk/kdesupport/akonadi/server/shared/
     prefix shared/
 end match
 
-### Don't lose r804301,788790, 788342, 695223, 288224, 684220
+### Don't lose r804301,788790, 788342, 695223, 688224, 684220
 match /trunk/(KDE/kdepim(libs)?|kdesupport)/akonadi/(server/)?interfaces/org.kde.Akonadi.NotificationManager.xml
     repository ${REPO}
     branch master
@@ -67,6 +74,19 @@ match /trunk/kdesupport/akonadi/server/interfaces/
     branch master
     prefix interfaces/
 end match
+
+### aklist.cpp|h were renamed list.cpp|h in 1007124.
+### files with the same names already exist. Ignore their history
+match /trunk/(KDE/kdepim|kdesupport)/akonadi/server/src/handler/list.(cpp|h)
+    max revision 1107123
+end match
+match /trunk/(KDE/kdepim|kdesupport)/akonadi/server/src/handler/ak(list).(cpp|h)
+    repository ${REPO}
+    branch master
+    max revision 1107124
+    prefix akonadi/server/src/handler/\1.\2
+end match
+
 
 ### kdesupport/akonadi
 match /trunk/kdesupport/akonadi/
@@ -176,7 +196,12 @@ match /branches/work/akonadi-sqlite/server/shared/
     max revision 1106631
     prefix shared/
 end match
-
+match /branches/work/akonadi-sqlite/server/interfaces/
+    repository ${REPO}
+    branch master
+    max revision 1106631
+    prefix interfaces/
+end match
 match /branches/work/akonadi-sqlite/
     repository ${REPO}
     branch master
