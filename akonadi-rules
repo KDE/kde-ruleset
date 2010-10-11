@@ -80,7 +80,7 @@ end match
 match /trunk/(KDE/kdepim|kdesupport)/akonadi/server/src/handler/list.(cpp|h)
     max revision 1107123
 end match
-match /trunk/(KDE/kdepim|kdesupport)/akonadi/server/src/handler/ak(list).(cpp|h)
+match /trunk/(?:KDE/kdepim|kdesupport)/akonadi/server/src/handler/ak(list).(cpp|h)
     repository ${REPO}
     branch master
     max revision 1107124
