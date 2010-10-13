@@ -2,11 +2,9 @@
 # Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
 
 ##### Create the repository #####
-#declare REPO=kdesupport/akonadi
 declare REPO=akonadi
 create repository ${REPO}
 end repository
-
 
 ##### Ignore/Delete rules #####
 ### "Move libakonadi to akonadi"
@@ -27,7 +25,7 @@ match /
     max revision 1183764
 end match
 
-### FIXME? "Rename akonadiserver to akonadiserver."
+### "Rename akonadiserver to akonadiserver."
 match /
     max revision 558903
     min revision 558903
@@ -75,18 +73,10 @@ match /trunk/kdesupport/akonadi/server/interfaces/
     prefix interfaces/
 end match
 
-### aklist.cpp|h were renamed list.cpp|h in 1007124.
-### files with the same names already exist. Ignore their history
-match /trunk/(KDE/kdepim|kdesupport)/akonadi/server/src/handler/list.(cpp|h)
-    max revision 1107123
+### Ignore list.cpp|h history until r1007124
+match /trunk/(KDE/kdepim|kdesupport)/akonadi[/]?server/src/handler/list.(cpp|h)
+    max revision 1007123
 end match
-match /trunk/(?:KDE/kdepim|kdesupport)/akonadi/server/src/handler/ak(list).(cpp|h)
-    repository ${REPO}
-    branch master
-    max revision 1107124
-    prefix akonadi/server/src/handler/\1.\2
-end match
-
 
 ### kdesupport/akonadi
 match /trunk/kdesupport/akonadi/
@@ -104,8 +94,7 @@ match /trunk/KDE/kdepimlibs/akonadi/interfaces/
     prefix interfaces/
 end match
 
-# match /trunk/KDE/kdepim(?:libs)?/akonadi(?:server)?/((?:server/)?(?:control/)?(?:akonadi|config)-(?:config|prefix).h.cmake)
-# --> prefix \1 = 'control'   \2 = 'server/control' !FAIL!
+### config-akonadi.h.cmake is an akonadiserver file
 match /trunk/KDE/kdepim/akonadi/(config-akonadi.h.cmake)
     repository ${REPO}
     branch master
@@ -189,7 +178,12 @@ end match
 ####################
 
 ##### Branches #####
-### sqlite backend work branch (merged)
+#### sqlite backend work branch (merged)
+### Ignore list.cpp|h history until r1007124
+match /branches/work/akonadi-sqlite/server/src/handler/list.(cpp|h)
+    max revision 1007123
+end match
+### aklist.cpp|h were renamed list.cpp|h in 1007124. append the history to list.cpp|h
 match /branches/work/akonadi-sqlite/server/shared/
     repository ${REPO}
     branch master
@@ -208,7 +202,7 @@ match /branches/work/akonadi-sqlite/
     max revision 1106631
 end match
 
-### agent server work branch (merged)
+#### agent server work branch (merged)
 match /branches/work/akonadi-agentserver/
     repository ${REPO}
     branch master
