@@ -1,0 +1,31 @@
+#
+# Created by Frederik Schwarzer <schwarzerf@gmail.com>
+#
+
+# Knights was imported to the KDE SVN with r1123248
+# so svn2git can be run with --resume-from option
+
+# Knights was only developed in playground/games and recently
+# moved to kdereview, so this is rather straight-forward.
+
+# Create the knights repository
+create repository knights
+end repository
+
+# Knights from playground
+match /trunk/playground/games/knights/
+  repository knights
+  branch master
+  max revision 1177715 #without this, svn2git creates two separate histories :/
+end match
+
+# Knights from kdereview
+match /trunk/kdereview/knights/
+  repository knights
+  branch master
+end match
+
+# Ignore the rest
+match /
+end match
+
