@@ -8,6 +8,14 @@ end repository
 
 ##### Main rules #####
 
+# xmls.cpp|h was renamed xsd.cpp|h in r746844
+match /(branches/work/soprano2|trunk/kdesupport/soprano)/soprano/vocabulary/xmls.(cpp|h)
+    repository ${REPO}
+    branch master
+    max revision 746845
+    prefix soprano/vocabulary/xsd.\2
+end match
+
 # kdesupport/soprano
 match /trunk/kdesupport/soprano/
     repository ${REPO}
