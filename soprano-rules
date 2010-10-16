@@ -39,12 +39,20 @@ match /trunk/kdereview/qrdf/
     min revision 644905
 end match
 
-# trunk/playground/base/qrdf
-match /trunk/playground/base/qrdf/
+# Curious things happened in r598572
+match /trunk/playground/base/qrdf/src/[Nn]ode.cpp
     repository ${REPO}
     branch master
-    max revision 644904
-    min revision 599401
+    max revision 633566
+    min revision 598572
+    prefix soprano/node.cpp
+end match
+match /trunk/playground/base/qrdf/src/[Ss]tatement.(cpp|h)
+    repository ${REPO}
+    branch master
+    max revision 633566
+    min revision 598572
+    prefix soprano/statement.\1
 end match
 
 match /trunk/playground/base/qrdf/
