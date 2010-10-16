@@ -1,0 +1,72 @@
+# Rules for kdesupport/soprano
+# Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
+
+##### Create the repository #####
+declare REPO=soprano
+create repository ${REPO}
+end repository
+
+##### Main rules #####
+
+# kdesupport/soprano
+match /trunk/kdesupport/soprano/
+    repository ${REPO}
+    branch master
+    min revision 716281
+end match
+
+# branches/work/soprano2
+match /branches/work/soprano2/
+    repository ${REPO}
+    branch master
+    max revision 716280
+    min revision 695078
+end match
+
+# soprano 1
+match /trunk/kdesupport/soprano/
+    repository ${REPO}
+    branch master
+    max revision 693559
+    min revision 659730
+end match
+
+# trunk/kdereview/qrdf
+match /trunk/kdereview/qrdf/
+    repository ${REPO}
+    branch master
+    max revision 659730
+    min revision 644905
+end match
+
+# trunk/playground/base/qrdf
+match /trunk/playground/base/qrdf/
+    repository ${REPO}
+    branch master
+    max revision 644904
+    min revision 599401
+end match
+
+match /trunk/playground/base/qrdf/
+    repository ${REPO}
+    branch master
+    max revision 644903
+    min revision 555010
+end match
+
+
+##### Branches #####
+match /branches/soprano/([^/]+)/
+    repository ${REPO}
+    branch \1
+end match
+
+##### Tags #####
+match /tags/soprano/([^/]+)/
+    repository ${REPO}
+    branch refs/tags/v\1
+end match
+
+##### Ignore everything else #####
+match /
+end match
