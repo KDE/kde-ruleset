@@ -44,7 +44,7 @@ sub listSubDirs
             }
             print( "listSubDirs:\tAdding: $path$_\n" );
             push( @dirs, "$path$1" );
-            push( @dirs, listSubDirs($repository, $revision, $root, "$path$1", ++$recurse, $ignore) ) if( $recurse < $gargs{'recurseDepth'})
+            push( @dirs, listSubDirs($repository, $revision, $root, "$path$1", $recurse + 1, $ignore) ) if( $recurse < $gargs{'recurseDepth'})
         }
     }
     close( $CMD );
