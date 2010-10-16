@@ -321,6 +321,12 @@ if( $gargs{'subdirs'} != 0 ) {
 my %foundDirRevisions;
 
 open(my $FILE, ">", "$gargs{'module'}-rules-auto") || die "!$!\n";
+
+while(@ARGV) {
+    print( $FILE "# $ARGV[0]" );
+    shift @ARGV;
+}
+print( $FILE "\n" );
 print( $FILE "create repository $gargs{'module'}\n");
 print( $FILE "end repository\n\n");
 close( $FILE);
