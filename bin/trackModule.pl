@@ -44,7 +44,7 @@ sub listSubDirs
             }
             print( "listSubDirs:\tAdding: $path$_\n" );
             push( @dirs, "$path$1" );
-            push( @dirs, listSubDirs($repository, $revision, $root, "$path$1", ++$recurse, $ignore) ) if( $recurse < $gargs{'recurseDepth'})
+            push( @dirs, listSubDirs($repository, $revision, $root, "$path$1", $recurse + 1, $ignore) ) if( $recurse < $gargs{'recurseDepth'})
         }
     }
     close( $CMD );
@@ -321,6 +321,12 @@ if( $gargs{'subdirs'} != 0 ) {
 my %foundDirRevisions;
 
 open(my $FILE, ">", "$gargs{'module'}-rules-auto") || die "!$!\n";
+
+while(@ARGV) {
+    print( $FILE "# $ARGV[0]" );
+    shift @ARGV;
+}
+print( $FILE "\n" );
 print( $FILE "create repository $gargs{'module'}\n");
 print( $FILE "end repository\n\n");
 close( $FILE);
