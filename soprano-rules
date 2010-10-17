@@ -7,13 +7,46 @@ create repository ${REPO}
 end repository
 
 ##### Main rules #####
+match /branches/work/soprano2/includes/SimpleStatementIterator
+    repository ${REPO}
+    branch master
+    prefix includes/Util/SimpleStatementIterator
+end match
+
+# synchonoussparqlprotocol was renamed sparqlprotocol
+match /trunk/kdesupport/soprano/server/sparql/synchonoussparqlprotocol.(cpp|h)
+    repository ${REPO}
+    branch master
+    prefix server/sparql/sparqlprotocol.\1
+end match
+
+# wstring was renamed tstring
+match /(?:branches/work/soprano2|trunk/kdesupport/soprano)/soprano/index/wstring.(cpp|h)
+    repository ${REPO}
+    branch master
+    prefix soprano/index/tstring.\1
+end match
+
+# simplestatementiterator and dummymodel were moved from soprano/soprano to soprano/utils
+match /(?:branches/work/soprano2|trunk/kdesupport/soprano)/soprano/(dummymodel|simplestatementiterator).(cpp|h)
+    repository ${REPO}
+    branch master
+    prefix soprano/util/\1.\2
+end match
 
 # xmls.cpp|h was renamed xsd.cpp|h in r746844
-match /(branches/work/soprano2|trunk/kdesupport/soprano)/soprano/vocabulary/xmls.(cpp|h)
+match /(?:branches/work/soprano2|trunk/kdesupport/soprano)/soprano/vocabulary/xmls.(cpp|h)
     repository ${REPO}
     branch master
     max revision 746845
-    prefix soprano/vocabulary/xsd.\2
+    prefix soprano/vocabulary/xsd.\1
+end match
+
+# rdfschemawrapper was renamed rdfschemamodel
+match /(?:branches/work/soprano2|trunk/kdesupport/soprano)/soprano/rdfschemawrapper.(cpp|h)
+    repository ${REPO}
+    branch master
+    prefix soprano/rdfschemamodel.\1
 end match
 
 # kdesupport/soprano
@@ -52,14 +85,12 @@ match /trunk/playground/base/qrdf/src/[Nn]ode.cpp
     repository ${REPO}
     branch master
     max revision 633566
-    min revision 598572
     prefix soprano/node.cpp
 end match
 match /trunk/playground/base/qrdf/src/[Ss]tatement.(cpp|h)
     repository ${REPO}
     branch master
     max revision 633566
-    min revision 598572
     prefix soprano/statement.\1
 end match
 
