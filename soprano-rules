@@ -6,6 +6,13 @@ declare REPO=soprano
 create repository ${REPO}
 end repository
 
+##### Ignore rules #####
+# "Moving Soprano2 into trunk."
+match /
+    min revision 716281
+    max revision 716281
+end match
+
 ##### Main rules #####
 match /branches/work/soprano2/includes/SimpleStatementIterator
     repository ${REPO}
@@ -21,7 +28,7 @@ match /trunk/kdesupport/soprano/server/sparql/synchonoussparqlprotocol.(cpp|h)
 end match
 
 # wstring was renamed tstring
-match /(?:branches/work/soprano2|trunk/kdesupport/soprano)/soprano/index/wstring.(cpp|h)
+match /(?:branches/work/soprano2|trunk/kdesupport/soprano)(?:/soprano)?/index/wstring.(cpp|h)
     repository ${REPO}
     branch master
     prefix soprano/index/tstring.\1
@@ -47,6 +54,20 @@ match /(?:branches/work/soprano2|trunk/kdesupport/soprano)/soprano/rdfschemawrap
     repository ${REPO}
     branch master
     prefix soprano/rdfschemamodel.\1
+end match
+
+# Curious things happened in r598572
+match /trunk/playground/base/qrdf/src/[Nn]ode.cpp
+    repository ${REPO}
+    branch master
+    max revision 633566
+    prefix soprano/node.cpp
+end match
+match /trunk/playground/base/qrdf/src/[Ss]tatement.(cpp|h)
+    repository ${REPO}
+    branch master
+    max revision 633566
+    prefix soprano/statement.\1
 end match
 
 # kdesupport/soprano
@@ -80,19 +101,6 @@ match /trunk/kdereview/qrdf/
     min revision 644905
 end match
 
-# Curious things happened in r598572
-match /trunk/playground/base/qrdf/src/[Nn]ode.cpp
-    repository ${REPO}
-    branch master
-    max revision 633566
-    prefix soprano/node.cpp
-end match
-match /trunk/playground/base/qrdf/src/[Ss]tatement.(cpp|h)
-    repository ${REPO}
-    branch master
-    max revision 633566
-    prefix soprano/statement.\1
-end match
 
 match /trunk/playground/base/qrdf/
     repository ${REPO}
@@ -101,6 +109,11 @@ match /trunk/playground/base/qrdf/
     min revision 555010
 end match
 
+match /trunk/playground/base/nepomuk-kde/nepomukshell/asyncquery.(cpp|h)
+    repository ${REPO}
+    branch master
+    prefix soprano/util/asyncquery.\1
+end match
 
 ##### Branches #####
 match /branches/soprano/([^/]+)/
