@@ -1,0 +1,20 @@
+#
+# Created by Andrius Štikonas <stikonas@gmail.com>
+#
+
+#
+# Create the kplayer repository
+#
+create repository kplayer
+end repository
+
+# Import master
+match /trunk/extragear/multimedia/kplayer/
+  repository kplayer
+  branch master
+end match
+
+# Ignore everything else
+match /
+end match
+
