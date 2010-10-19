@@ -1,0 +1,37 @@
+# Rules for extragear/multimedia/kmplayer
+# Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
+
+##### Create the repository #####
+declare REPO=kmplayer
+create repository ${REPO}
+end repository
+
+##### Main rules #####
+# extragear/multimedia/kmplayer
+match /trunk/extragear/multimedia/kmplayer/
+    repository ${REPO}
+    branch master
+end match
+
+# branches/work/kde4/extragear/multimedia/kmplayer
+match /branches/work/kde4/extragear/multimedia/kmplayer/
+    repository ${REPO}
+    branch master
+    max revision 756623
+end match
+
+# trunk/kdeextragear-2/kmplayer (deleted in r409209)
+match /trunk/kdeextragear-2/kmplayer/
+    repository ${REPO}
+    branch master
+    max revision 409208
+    min revision 211623
+end match
+
+##### Branches #####
+
+##### Tags #####
+
+##### ignore everything else #####
+match /
+end match
