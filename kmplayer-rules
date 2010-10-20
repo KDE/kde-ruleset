@@ -7,30 +7,48 @@ create repository ${REPO}
 end repository
 
 ##### Main rules #####
-# extragear/multimedia/kmplayer
+# kmplayer moved back in trunk in r753851
 match /trunk/extragear/multimedia/kmplayer/
     repository ${REPO}
     branch master
+    min revision 753851
 end match
 
-# branches/work/kde4/extragear/multimedia/kmplayer
+# before that, it was in branches/work/kde4
 match /branches/work/kde4/extragear/multimedia/kmplayer/
     repository ${REPO}
     branch master
-    max revision 756623
+    max revision 753850
+    min revision 593058
+end match
+
+##### Branches #####
+# kmplayer for KDE3
+# branches/extragear/kde3/multimedia/kmplayer
+match /branches/extragear/kde3/multimedia/kmplayer/
+    repository ${REPO}
+    branch kmplayer-kde3
+    max revision 820691
+    min revision 670814
+end match
+
+match /trunk/extragear/multimedia/kmplayer/
+    repository ${REPO}
+    branch kmplayer-kde3
+    max revision 670813
+    min revision 409209
 end match
 
 # trunk/kdeextragear-2/kmplayer (deleted in r409209)
 match /trunk/kdeextragear-2/kmplayer/
     repository ${REPO}
-    branch master
+    branch kmplayer-kde3
     max revision 409208
     min revision 211623
 end match
 
-##### Branches #####
-
 ##### Tags #####
+
 
 ##### ignore everything else #####
 match /
