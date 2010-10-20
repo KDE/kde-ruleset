@@ -1,0 +1,93 @@
+# Rules for kdesupport/attica
+# Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
+
+##### Create the repository #####
+declare REPO=attica
+create repository ${REPO}
+end repository
+
+##### Ignore rules #####
+# ignore the kdeplugin subdir
+match /trunk/kdereview/attica/kdeplugin/
+end match
+
+##### Main rules #####
+# ocsapi.h was renamed provider.h
+match /trunk/(playground/base/attica(/plasma/(ocs|engine))?|(kdereview/plasma|KDE/kdeplasma-addons)/dataengines/ocs)/lib/ocsapi.h
+    repository ${REPO}
+    branch master
+    prefix lib/provider.h
+end match
+
+match /trunk/kdesupport/attica/
+    repository ${REPO}
+    branch master
+    min revision 1050597
+end match
+
+match /trunk/kdereview/attica/
+    repository ${REPO}
+    branch master
+    max revision 1050596
+end match
+
+match /branches/work/attica/ocs/lib/
+    repository ${REPO}
+    branch master
+    prefix lib/
+    max revision 1044368
+end match
+
+match /trunk/KDE/kdeplasma-addons/dataengines/ocs/lib/
+    repository ${REPO}
+    branch master
+    prefix lib/
+    max revision 1036923
+end match
+
+match /trunk/kdereview/plasma/dataengines/ocs/lib/
+    repository ${REPO}
+    branch master
+    prefix lib/
+    max revision 963560
+end match
+
+match /trunk/playground/base/attica/plasma/ocs/lib/
+    repository ${REPO}
+    branch master
+    prefix lib/
+    max revision 958812
+end match
+
+match /trunk/playground/base/attica/plasma/engine/lib/
+    repository ${REPO}
+    branch master
+    prefix lib/
+    min revision 958810
+end match
+
+match /trunk/playground/base/attica/lib/
+    repository ${REPO}
+    branch master
+    prefix lib/
+    max revision 958804
+    min revision 854040
+end match
+
+match /trunk/playground/base/attica/src/
+    repository ${REPO}
+    branch master
+    prefix lib/
+    max revision 853961
+    min revision 853536
+end match
+
+##### Tags #####
+match /tags/attica/([^/]+)/
+    repository ${REPO}
+    branch refs/tags/v\1
+end match
+
+##### ignore everything else #####
+match /
+end match
