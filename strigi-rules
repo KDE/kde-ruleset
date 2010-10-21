@@ -2,7 +2,7 @@
 # Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
 
 ##### Create the repository #####
-#declare REPO=strigi
+declare REPO=strigi
 create repository ${REPO}
 end repository
 
