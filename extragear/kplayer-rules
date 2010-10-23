@@ -8,13 +8,39 @@
 create repository kplayer
 end repository
 
-# Import master
+# Import KDE3 codebase
+match /trunk/kdeextragear-3/kplayer/
+  repository kplayer
+  branch master
+end match
+
 match /trunk/extragear/multimedia/kplayer/
   repository kplayer
   branch master
+  min revision 409209
+  max revision 664319
+end match
+
+match /branches/extragear/kde3/multimedia/extragear/
+  repository kplayer
+  branch master
+  min revision 670815
+  max revision 710647
+end match
+
+match /branches/extragear/kde3/multimedia/extragear/
+  repository kplayer
+  branch kde3
+  min revision 710648
+end match
+
+# Import KDE4 codebase
+match /trunk/extragear/multimedia/kplayer/
+  repository kplayer
+  branch master
+  min revision 710647
 end match
 
 # Ignore everything else
 match /
 end match
-
