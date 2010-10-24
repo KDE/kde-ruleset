@@ -21,14 +21,14 @@ match /trunk/extragear/multimedia/kplayer/
   max revision 664319
 end match
 
-match /branches/extragear/kde3/multimedia/extragear/
+match /branches/extragear/kde3/multimedia/kplayer/
   repository kplayer
   branch master
   min revision 670815
   max revision 710647
 end match
 
-match /branches/extragear/kde3/multimedia/extragear/
+match /branches/extragear/kde3/multimedia/kplayer/
   repository kplayer
   branch kde3
   min revision 710648
