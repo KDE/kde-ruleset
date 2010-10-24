@@ -1,3 +1,4 @@
+# vim: set filetype=conf
 declare MODULE=kdepimlibs
 declare REPO=KDE/kdepimlibs
 

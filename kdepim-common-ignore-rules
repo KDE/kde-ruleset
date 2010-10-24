@@ -1,3 +1,4 @@
+# vim: set filetype=conf
 # Empty directories added using "svn mv" from another
 # path -> Error (Git cannot handle dirs only files)
 # Branch will be created when files are added.
