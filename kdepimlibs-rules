@@ -1,5 +1,7 @@
 # vim: set filetype=conf
 # --repo# file:///mnt/backup/kdesvnrepo/svn# --path# trunk/KDE/kdepimlibs# --module# kdepimlibs# --subdirs# --recurse# 99999# --showcommands
+declare MODULE=kdepimlibs
+declare REPO=kdepimlibs
 
 create repository kdepimlibs
 end repository
@@ -595,7 +597,7 @@ end match
 #	[ Parent: /branches/KDE/3.5/kdepim @ 438982 <- /trunk/KDE/kdepim @ 438981 ]
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add gpgme++/interfaces HEAD 691386 ]
-match /trunk/KDE/kdepimlibs/gpgme++/interfaces/
+match /trunk/KDE/kdepimlibs/gpgme\+\+/interfaces/
     repository kdepimlibs
     prefix gpgme++/interfaces/
     branch master
