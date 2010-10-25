@@ -1,10 +1,10 @@
 # vim: set filetype=conf
 match /trunk/KDE/${MODULE}/
-    repository KDE/${MODULE}
+    repository ${MODULE}
     branch master
 end match
 match /trunk/${MODULE}/
-    repository KDE/${MODULE}
+    repository ${MODULE}
     branch master
     max revision 409202
 end match
