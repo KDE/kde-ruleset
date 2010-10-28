@@ -8,7 +8,7 @@ IFS="
 
 echo -n > account-map
 
-function process_file {
+process_file () {
 	for person in `cat $1`; do
 		LINE=`echo $person | sed -e "s/\>[[:blank:]]*\</ /g;\
 			s/[[:graph:]]*@[[:graph:]]*/<&>/" -`

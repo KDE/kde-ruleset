@@ -1,0 +1,20 @@
+#                                                                                           
+# Created by Gaël de Chalendar <kleag@free.fr>
+#                                                                                           
+
+#
+# Create the kgraphviewer repository
+#                      
+create repository kgraphviewer
+end repository         
+
+# Import master
+match /trunk/extragear/graphics/kgraphviewer/
+  repository kgraphviewer
+  branch master                                                      
+end match                                                            
+
+# Ignore everything else
+match /
+end match
+

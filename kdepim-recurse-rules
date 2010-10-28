@@ -1,3 +1,4 @@
+# vim: set filetype=conf
 match /trunk/$
     action recurse
 end match
