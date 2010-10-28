@@ -1,0 +1,8 @@
+#===================================
+# Directory rules (skeleton)...
+
+match trunk/KDE/kdeexamples/
+    repository KDE/kdeexamples
+    branch master
+end match
+
