@@ -93,7 +93,7 @@ end repository
 create repository KDE/kdeedu/kmessedwords
 end repository
 
-#abandoned for KDE 4.0 due to lack of maintainer
+#abandoned/moved stuff
 create repository KDE/kdeedu/keduca
 end repository
 create repository KDE/kdeedu/klatin
@@ -159,7 +159,7 @@ end repository
 create repository KDE/kdegraphics/libs/mobipocket
 end repository
 
-#abandoned stuff
+#abandoned/moved stuff
 create repository KDE/kdegraphics/kghostview
 end repository
 create repository KDE/kdegraphics/kview
@@ -202,6 +202,8 @@ create repository KDE/kdegraphics/kmrml
 end repository
 create repository KDE/kdegraphics/kpdf
 end repository
+create repository KDE/kdegraphics/ligature
+end repository
 
 create repository KDE/kdemultimedia/cmake
 end repository
@@ -228,7 +230,7 @@ end repository
 create repository KDE/kdemultimedia/krec
 end repository
 
-#abandoned stuff
+#abandoned/moved stuff
 create repository KDE/kdemultimedia/kscd
 end repository
 create repository KDE/kdemultimedia/kmedia
@@ -277,6 +279,20 @@ create repository KDE/kdemultimedia/xine_artsplugin
 end repository
 create repository KDE/kdemultimedia/kappfinder-data
 end repository
+create repository KDE/kdemultimedia/akode #TODO now in kdesupport
+end repository
+create repository KDE/kdemultimedia/akode_artsplugin
+end repository
+create repository KDE/kdemultimedia/libkmid
+end repository
+create repository KDE/kdemultimedia/phonon-nmm #merge with phonon-backends?
+end repository
+create repository KDE/kdemultimedia/phonon-xine #merge with phonon-backends?
+end repository
+create repository KDE/kdemultimedia/phonon-gst #merge with phonon-backends?
+end repository
+create repository KDE/kdemultimedia/phonon-gst2 #merge with phonon-backends?
+end repository
 
 create repository KDE/kdenetwork/cmake
 end repository
@@ -299,7 +315,7 @@ end repository
 create repository KDE/kdenetwork/torrent
 end repository
 
-#abandoned stuff
+#abandoned/moved stuff
 create repository KDE/kdenetwork/kmail #correct rules in extra rule file
 end repository
 create repository KDE/kdenetwork/krn
@@ -426,7 +442,7 @@ end repository
 create repository KDE/kdesdk/okteta
 end repository
 
-#abandoned stuff
+#abandoned/moved stuff
 create repository KDE/kdesdk/kbabel
 end repository
 create repository KDE/kdesdk/kdedoc
@@ -479,7 +495,7 @@ end repository
 create repository KDE/kdeutils/sweeper
 end repository
 
-#abandoned stuff
+#abandoned/moved stuff
 create repository KDE/kdeutils/kedit
 end repository
 create repository KDE/kdeutils/khexedit
@@ -1370,9 +1386,6 @@ create repository extragear/kiconedit
 end repository
 
 create repository extragear/kpovmodeler
-end repository
-
-create repository extragear/ligature
 end repository
 
 create repository extragear/kfacebook
@@ -2688,6 +2701,8 @@ end repository
 create repository extragear/nepomuktelepathyservice
 end repository
 
+create repository extragear/strigi-analyzer #/trunk/playground/base/strigi-analyzer/, moved from /trunk/KDE/kdeaddons/strigi-analyzer
+end repository
 
 #
 # Ignore rules
@@ -3264,6 +3279,14 @@ match /(branches|tags)/KDE/([^/]+)/(kdeutils)/okteta/
   branch KDE/\2
 end match
 
+match /trunk/KDE/kdeutils/privacy/
+  repository KDE/kdeutils/sweeper
+  branch master
+end match
+#TODO Other sweeper locations:
+#/trunk/KDE/kdebase/workspace/kcontrol/privacy
+#/trunk/KDE/kdebase/kcontrol
+
 #skip files directly in module
 match /(trunk(/KDE)?|(branches|tags)/(KDE/)?[^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/[^/]+$
 end match
@@ -3328,10 +3351,6 @@ match /trunk/playground/edu/mathematik/
   min revision 409209
 end match
 
-match /trunk/kdenonbeta/kgeography/
-  repository KDE/kdeedu/kgeography
-  branch master
-end match
 
 #kdenetwork special branches
 match /trunk/kdenonbeta/kdnssd/
@@ -3360,6 +3379,11 @@ match /trunk/(kdereview|playground/devtools)/kapptemplate/
   branch master
 end match
 
+match /trunk/(kdereview|playground/devtools|kdenonbeta|extragear/utils)/ktranslator/
+  repository KDE/kdesdk/ktranslator
+  branch master
+end match
+
 #kdeutils special branches
 match /branches/work/libarchive-based-ark/
   repository KDE/kdeutils/ark
@@ -3381,14 +3405,6 @@ match /trunk/kdereview/printer-applet/
   branch master
 end match
 
-match /trunk/KDE/kdeutils/privacy/
-  repository KDE/kdeutils/sweeper
-  branch master
-end match
-#TODO Other sweeper locations:
-#/trunk/KDE/kdebase/workspace/kcontrol/privacy
-#/trunk/KDE/kdebase/kcontrol
-
 #kdemultimedia special branches
 match /trunk/kdereview/dragonplayer/
   repository KDE/kdemultimedia/dragonplayer
@@ -3405,18 +3421,29 @@ match /trunk/(kdereview|playground/multimedia)/mplayerthumbs/
   branch master
 end match
 
-#kdegraphics special branches
-match /(trunk|branches/work/kde4)/playground/graphics/(gwenview|okular|svgpart)/
-  repository KDE/kdegraphics/\1
+match /trunk/extragear/multimedia/(kaudiocreator)/
+  repository KDE/kdemultimedia/\1
   branch master
 end match
-match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(gwenview)/
+
+#kdegraphics special branches
+match /(trunk|branches/work/kde4)/playground/graphics/(gwenview|okular|svgpart)/
+  repository KDE/kdegraphics/\2
+  branch master
+end match
+match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(gwenview|kuickshow|ligature)/
   repository KDE/kdegraphics/\2
   branch master
 end match
 match /trunk/playground/graphics/(ksaneservice|ksaneplugin)/
   repository KDE/kdegraphics/ksaneplugin
   branch master
+end match
+match /trunk/playground/graphics/oKular/[^/]+$
+  #ignore files
+end match
+match /trunk/playground/graphics/oKular/doc/
+  #ignore
 end match
 match /trunk/playground/graphics/oKular/kpdf/   # KDE 3 version
   repository KDE/kdegraphics/okular
@@ -3436,11 +3463,10 @@ match /branches/work/kde4/playground/graphics/okular/kpdf/
   min revision 520782
   max revision 551163
 end match
-match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(libkipi)/
+match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(libkipi|libkexiv2|libkdcraw|libksane)/
   repository KDE/kdegraphics/libs/\2
   branch master
 end match
-
 
 
 #cvs tags
