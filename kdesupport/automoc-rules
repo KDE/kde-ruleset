@@ -9,7 +9,7 @@ end repository
 ##### Main Rules #####
 
 # kdesupport/automoc (last rev 1108065)
-match /trunk/kdesupport/automoc
+match /trunk/kdesupport/automoc/
     repository ${REPO}
     branch master
 end match
