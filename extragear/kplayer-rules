@@ -14,11 +14,25 @@ match /trunk/kdeextragear-3/kplayer/
   branch master
 end match
 
+match /trunk/kdeextragear-3/doc/kplayer/
+  repository kplayer
+  prefix doc/
+  branch master
+end match
+
 match /trunk/extragear/multimedia/kplayer/
   repository kplayer
   branch master
   min revision 409209
   max revision 664319
+end match
+
+match /trunk/extragear/multimedia/doc/kplayer/
+  repository kplayer
+  prefix doc/
+  branch master
+  min revision 409209
+  max revision 664620
 end match
 
 match /branches/extragear/kde3/multimedia/kplayer/
