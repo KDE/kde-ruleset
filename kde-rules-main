@@ -2904,6 +2904,13 @@ match /file$
   max revision 409232
 end match
 
+# Ignore kfile plugins up to that rev as they got moved to kdepim
+# at this rev the torrent plugin got added
+match /(trunk|(branches|tags)/KDE(_/)[^/]*)/kdenetwork/kfile-plugins
+  max revision 342869
+end match
+
+
 #
 # Match the l10n repository
 #
