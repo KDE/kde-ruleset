@@ -6,14 +6,14 @@ end repository
 # Start in playground. Initial import in revision r465791
 match /trunk/playground/utils/rsibreak/
   repository rsibreak
-  branch kde3
+  branch master
   max revision 553032
 end match
 
 # move to kdereview in r553033
 match /trunk/kdereview/rsibreak/
   repository rsibreak
-  branch kde3
+  branch master
   max revision 554825
 end match
 
@@ -21,13 +21,13 @@ end match
 match /trunk/extragear/utils/rsibreak/
   max revision 690342
   repository rsibreak
-  branch kde3
+  branch master
 end match
 
 # move to branch when trunk/extragear needed to be kde4, moved in r670725
 match /branches/extragear/kde3/utils/rsibreak/
   repository rsibreak
-  branch kde3
+  branch master
 end match
 
 # KDE 4 porting starts in revision r690343 up to present.
