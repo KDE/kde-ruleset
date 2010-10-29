@@ -1,7 +1,10 @@
 #!/bin/sh
 
-svn export -q  svn://anonsvn.kde.org/home/kde/trunk/kde-common/accounts accounts.tmp
-svn export -q  svn://anonsvn.kde.org/home/kde/trunk/kde-common/disabled-accounts disabled.tmp
+ACCOUNTSTMP=`mktemp`
+DISABLEDTMP=`mktemp`
+
+svn export -q  svn://anonsvn.kde.org/home/kde/trunk/kde-common/accounts $ACCOUNTSTMP
+svn export -q  svn://anonsvn.kde.org/home/kde/trunk/kde-common/disabled-accounts $DISABLEDTMP
 
 IFS="
 "
@@ -16,7 +19,7 @@ process_file () {
 	done
 }
 
-process_file accounts.tmp
-process_file disabled.tmp
+process_file $ACCOUNTSTMP
+process_file $DISABLEDTMP
 
-rm -f accounts.tmp disabled.tmp
+rm -f $ACCOUNTSTMP $DISABLEDTMP
