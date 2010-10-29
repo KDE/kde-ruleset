@@ -1,0 +1,32 @@
+# Rules for kdesupport/automoc
+# Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
+
+##### Create the repository #####
+declare REPO=automoc
+create repository ${REPO}
+end repository
+
+##### Main Rules #####
+
+# kdesupport/automoc (last rev 1108065)
+match /trunk/kdesupport/automoc
+    repository ${REPO}
+    branch master
+end match
+
+# kdelibs/cmake/automoc from 685719 to 800840
+match /trunk/KDE/kdelibs/cmake/automoc/
+    repository ${REPO}
+    branch master
+    max revision 800840
+end match
+
+##### Tags #####
+match /tags/automoc4/([^/]+)/
+    repository ${REPO}
+    branch refs/tags/v\1
+end match
+
+##### ignore everything else #####
+match /
+end match
