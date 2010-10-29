@@ -22,4 +22,4 @@ process_file () {
 process_file $ACCOUNTSTMP
 process_file $DISABLEDTMP
 
-rm -f $ACCOUNTSTMP $DISABLEDTMP
+trap "rm -f $ACCOUNTSTMP $DISABLEDTMP" EXIT
