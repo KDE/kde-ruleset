@@ -1,3 +1,4 @@
+# vim: set filetype=conf
 # Ignore the first tagging try...
 match /tags/KDE/4.4.1/(${MODULE})/
     max revision 1096480

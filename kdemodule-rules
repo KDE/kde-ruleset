@@ -59,12 +59,6 @@ end repository
 create repository KDE/kdenetwork
 end repository
 
-create repository KDE/kdepim
-end repository
-
-create repository KDE/kdepimlibs
-end repository
-
 create repository KDE/kdesdk
 end repository
 
@@ -99,7 +93,7 @@ match /
   min revision 409202
   max revision 409210
 end match
-match /branches/KDE/4.0/(kdevplatform|kdevelop|kdepim)
+match /branches/KDE/4.0/(kdevplatform|kdevelop)
   min revision 757196
   max revision 800000
 end match
@@ -124,14 +118,14 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdeaccessibility|kdeadmin|kdebase|kdegam
   max revision 409202
 end match
 
-match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeadmin|kdeartwork|kdebase|kdebindings|kdeedu|kdegames|kdegraphics|kdelibs|kdemultimedia|kdenetwork|kdepim|kdesdk|kdetoys|kdeutils|kdevelop|kdewebdev)/
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeadmin|kdeartwork|kdebase|kdebindings|kdeedu|kdegames|kdegraphics|kdelibs|kdemultimedia|kdenetwork|kdesdk|kdetoys|kdeutils|kdevelop|kdewebdev)/
   repository KDE/\3
   branch refs/tags/KDE/\1.\2.0
   annotated true
   max revision 409202
 end match
 
-match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeadmin|kdeartwork|kdebase|kdebindings|kdeedu|kdegames|kdegraphics|kdelibs|kdemultimedia|kdenetwork|kdepim|kdesdk|kdetoys|kdeutils|kdevelop|kdewebdev)/
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeadmin|kdeartwork|kdebase|kdebindings|kdeedu|kdegames|kdegraphics|kdelibs|kdemultimedia|kdenetwork|kdesdk|kdetoys|kdeutils|kdevelop|kdewebdev)/
   repository KDE/\3
   branch refs/tags/KDE/\1.\2.0
   annotated true
@@ -139,20 +133,20 @@ match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeadmin|kdeartwork|kdebas
   min revision 68154
 end match
 
-match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeadmin|kdeartwork|kdebase|kdebindings|kdeedu|kdegames|kdegraphics|kdelibs|kdemultimedia|kdenetwork|kdepim|kdesdk|kdetoys|kdeutils|kdevelop|kdewebdev)/
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeadmin|kdeartwork|kdebase|kdebindings|kdeedu|kdegames|kdegraphics|kdelibs|kdemultimedia|kdenetwork|kdesdk|kdetoys|kdeutils|kdevelop|kdewebdev)/
   repository KDE/\4
   branch refs/tags/KDE/\1.\2.\3
   annotated true
   max revision 409202
 end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdeaccessibility|kdeadmin|kdeartwork|kdebase|kdebindings|kdeedu|kdegames|kdegraphics|kdelibs|kdemultimedia|kdenetwork|kdepim|kdesdk|kdetoys|kdeutils|kdevelop|kdewebdev)/
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdeaccessibility|kdeadmin|kdeartwork|kdebase|kdebindings|kdeedu|kdegames|kdegraphics|kdelibs|kdemultimedia|kdenetwork|kdesdk|kdetoys|kdeutils|kdevelop|kdewebdev)/
   repository KDE/\4
   branch refs/tags/KDE/\1.\2.\3a
   annotated true
   min revision 192719
   max revision 409202
 end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdeaccessibility|kdeadmin|kdeartwork|kdebase|kdebindings|kdeedu|kdegames|kdegraphics|kdelibs|kdemultimedia|kdenetwork|kdepim|kdesdk|kdetoys|kdeutils|kdevelop|kdewebdev)/
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdeaccessibility|kdeadmin|kdeartwork|kdebase|kdebindings|kdeedu|kdegames|kdegraphics|kdelibs|kdemultimedia|kdenetwork|kdesdk|kdetoys|kdeutils|kdevelop|kdewebdev)/
   repository KDE/\5
   branch refs/tags/KDE/\1.\2.\3-beta\4
   annotated true

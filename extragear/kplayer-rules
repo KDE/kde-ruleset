@@ -1,0 +1,72 @@
+#
+# Created by Andrius Štikonas <stikonas@gmail.com>
+#
+
+#
+# Create the kplayer repository
+#
+create repository kplayer
+end repository
+
+# Import KDE3 codebase
+match /trunk/kdeextragear-3/kplayer/
+  repository kplayer
+  branch master
+end match
+
+match /trunk/kdeextragear-3/doc/kplayer/
+  repository kplayer
+  prefix doc/
+  branch master
+end match
+
+match /trunk/extragear/multimedia/kplayer/
+  repository kplayer
+  branch master
+  min revision 409209
+  max revision 664319
+end match
+
+match /trunk/extragear/multimedia/doc/kplayer/
+  repository kplayer
+  prefix doc/
+  branch master
+  min revision 409209
+  max revision 670802
+end match
+
+match /branches/extragear/kde3/multimedia/kplayer/
+  repository kplayer
+  branch master
+  min revision 670815
+  max revision 710647
+end match
+
+match /branches/extragear/kde3/multimedia/doc/kplayer/
+  repository kplayer
+  prefix doc/
+  branch master
+  min revision 670802
+  max revision 710647
+end match
+
+# Import KDE4 codebase
+match /trunk/extragear/multimedia/kplayer/
+  repository kplayer
+  branch master
+  min revision 710647
+end match
+
+match /trunk/extragear/multimedia/doc/kplayer/
+  repository kplayer
+  prefix doc/
+  branch master
+  min revision 710647
+end match
+
+# Tags
+# There are no KPlayer tags in SVN repository. They should be added manually after import.
+
+# Ignore everything else
+match /
+end match
