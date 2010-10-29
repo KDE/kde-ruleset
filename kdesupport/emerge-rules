@@ -1,0 +1,31 @@
+# Rules for kdesupport/emerge
+# Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
+
+##### Create the repository #####
+declare REPO=emerge
+create repository ${REPO}
+end repository
+
+##### Main Rules #####
+
+# kdesupport/emerge (starts at r643819)
+match /trunk/kdesupport/emerge/
+    repository ${REPO}
+    branch master
+end match
+
+match /trunk/kdesupport/kdewin32/emerge/
+    repository ${REPO}
+    branch master
+    max revision 760454
+end match
+
+##### Tags #####
+match /tags/emerge/([^/]+)/
+    repository ${REPO}
+    branch refs/tags/v\1
+end match
+
+##### ignore everything else #####
+match /
+end match
