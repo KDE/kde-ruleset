@@ -1,0 +1,48 @@
+# Rules for kdesupport/cagibi
+# Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
+
+##### Create the repository #####
+declare REPO=cagibi
+create repository ${REPO}
+end repository
+
+##### Main Rules #####
+match /
+    max revision 1119544
+    min revision 1119544
+end match
+
+# kdesupport/cagibi
+match /trunk/kdesupport/cagibi/
+    repository ${REPO}
+    branch master
+end match
+
+# playground/network/cagibi
+match /trunk/playground/network/cagibi/
+    repository ${REPO}
+    branch master
+end match
+
+# branches/work/kupnp-oio
+match /branches/work/kupnp-oio/server/
+    repository ${REPO}
+    branch master
+    prefix daemon/
+end match
+
+##### Branches #####
+match /branches/cagibi/([^/]+)/
+    repository ${REPO}
+    branch \1
+end match
+
+##### Tags #####
+match /tags/cagibi/([^/]+)/
+    repository ${REPO}
+    branch refs/tags/v\1
+end match
+
+##### ignore everything else #####
+match /
+end match
