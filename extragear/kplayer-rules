@@ -11,18 +11,18 @@ end repository
 # Import KDE3 codebase
 match /trunk/kdeextragear-3/kplayer/
   repository kplayer
-  branch master
+  branch kde3
 end match
 
 match /trunk/kdeextragear-3/doc/kplayer/
   repository kplayer
   prefix doc/
-  branch master
+  branch kde3
 end match
 
 match /trunk/extragear/multimedia/kplayer/
   repository kplayer
-  branch master
+  branch kde3
   min revision 409210
   max revision 664319
 end match
@@ -30,14 +30,14 @@ end match
 match /trunk/extragear/multimedia/doc/kplayer/
   repository kplayer
   prefix doc/
-  branch master
+  branch kde3
   min revision 409210
   max revision 670801
 end match
 
 match /branches/extragear/kde3/multimedia/kplayer/
   repository kplayer
-  branch master
+  branch kde3
   min revision 670816
   max revision 710647
 end match
@@ -45,7 +45,7 @@ end match
 match /branches/extragear/kde3/multimedia/doc/kplayer/
   repository kplayer
   prefix doc/
-  branch master
+  branch kde3
   min revision 670803
   max revision 710647
 end match
