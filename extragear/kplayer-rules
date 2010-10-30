@@ -23,7 +23,7 @@ end match
 match /trunk/extragear/multimedia/kplayer/
   repository kplayer
   branch master
-  min revision 409209
+  min revision 409210
   max revision 664319
 end match
 
@@ -31,14 +31,14 @@ match /trunk/extragear/multimedia/doc/kplayer/
   repository kplayer
   prefix doc/
   branch master
-  min revision 409209
-  max revision 670802
+  min revision 409210
+  max revision 670801
 end match
 
 match /branches/extragear/kde3/multimedia/kplayer/
   repository kplayer
   branch master
-  min revision 670815
+  min revision 670816
   max revision 710647
 end match
 
@@ -46,7 +46,7 @@ match /branches/extragear/kde3/multimedia/doc/kplayer/
   repository kplayer
   prefix doc/
   branch master
-  min revision 670802
+  min revision 670803
   max revision 710647
 end match
 
@@ -62,6 +62,15 @@ match /trunk/extragear/multimedia/doc/kplayer/
   prefix doc/
   branch master
   min revision 710647
+end match
+
+match /branches/extragear/kde3/multimedia/kplayer
+    action recurse
+    max revision 716184
+end match
+
+match /branches/extragear/kde3/multimedia/doc/kplayer
+    action recurse
 end match
 
 # Tags
