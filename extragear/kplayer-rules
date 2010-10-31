@@ -39,7 +39,6 @@ match /branches/extragear/kde3/multimedia/kplayer/
   repository kplayer
   branch kde3
   min revision 670816
-  max revision 710647
 end match
 
 match /branches/extragear/kde3/multimedia/doc/kplayer/
@@ -47,7 +46,6 @@ match /branches/extragear/kde3/multimedia/doc/kplayer/
   prefix doc/
   branch kde3
   min revision 670803
-  max revision 710647
 end match
 
 # Import KDE4 codebase
