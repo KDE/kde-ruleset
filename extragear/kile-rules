@@ -10,7 +10,7 @@ end repository
 
 match /trunk/kdeextragear-2/kile/
   repository kile
-  branch kde3
+  branch master
 end match
 
 match /trunk/kdeextragear-2/doc/kile/
