@@ -1,0 +1,88 @@
+#
+# Created by Andrius Štikonas <stikonas@gmail.com>
+#
+
+#
+# Create the kile repository
+#
+create repository kile
+end repository
+
+match /trunk/kdeextragear-2/kile/
+  repository kile
+  branch kde3
+end match
+
+match /trunk/kdeextragear-2/doc/kile/
+  repository kile
+  prefix doc/
+  branch master
+end match
+
+match /trunk/extragear/office/kile/
+  repository kile
+  branch master
+  min revision 409209
+  max revision 670764
+end match
+
+match /trunk/extragear/office/doc/kile/
+  repository kile
+  prefix doc/
+  branch master
+  min revision 409209
+  max revision 670764
+end match
+
+match /branches/extragear/kde3/office/kile/
+  repository kile
+  branch master
+  min revision 670764
+  max revision 740242
+end match
+
+match /branches/extragear/kde3/office/doc/kile/
+  repository kile
+  prefix doc/
+  branch master
+  min revision 670764
+  max revision 740242
+end match
+
+match /branches/extragear/kde3/office/kile/
+  repository kile
+  branch kde3
+  max revision 740243
+end match
+
+match /branches/extragear/kde3/office/doc/kile/
+  repository kile
+  prefix doc/
+  branch kde3
+  min revision 740243
+end match
+
+# Import KDE4 codebase
+match /trunk/extragear/office/kile/
+  repository kile
+  branch master
+  min revision 740243
+end match
+
+match /trunk/extragear/office/doc/kile/
+  repository kile
+  prefix doc/
+  branch master
+  min revision 740243
+end match
+
+# Tags
+match /tags/kile/([^/]+)/
+  repository kile
+  branch refs/tags/v\1
+  annotated true
+end match
+
+# Ignore everything else
+match /
+end match
