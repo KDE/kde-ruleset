@@ -8,6 +8,16 @@
 create repository kile
 end repository
 
+# Ignore some upheaval in KDE's SVN history.
+match /
+  min revision 409202
+  max revision 409210
+end match
+match /
+  min revision 411973
+  max revision 411973
+end match
+
 match /trunk/kdeextragear-2/kile/
   repository kile
   branch master
@@ -22,22 +32,17 @@ end match
 match /trunk/extragear/office/kile/
   repository kile
   branch master
-  min revision 409209
-  max revision 670764
 end match
 
 match /trunk/extragear/office/doc/kile/
   repository kile
   prefix doc/
   branch master
-  min revision 409209
-  max revision 670764
 end match
 
 match /branches/extragear/kde3/office/kile/
   repository kile
   branch master
-  min revision 670764
   max revision 740242
 end match
 
@@ -45,35 +50,71 @@ match /branches/extragear/kde3/office/doc/kile/
   repository kile
   prefix doc/
   branch master
-  min revision 670764
   max revision 740242
 end match
 
 match /branches/extragear/kde3/office/kile/
   repository kile
   branch kde3
-  min revision 740243
 end match
 
 match /branches/extragear/kde3/office/doc/kile/
   repository kile
   prefix doc/
   branch kde3
-  min revision 740243
 end match
 
-# Import KDE4 codebase
-match /trunk/extragear/office/kile/
+# Branches
+
+match /branches/branch_katepart_testing/kdeextragear-2/kile
   repository kile
-  branch master
-  min revision 740243
+  branch branch_katepart_testing
 end match
 
-match /trunk/extragear/office/doc/kile/
+match /branches/branch_1_6/kdeextragear-2/kile/
+  repository kile
+  branch branch_1_6
+end match
+
+match /branches/branch_1_6/kdeextragear-2/kile/doc/
   repository kile
   prefix doc/
-  branch master
-  min revision 740243
+  branch branch_1_6
+end match
+
+match /branches/kile_1_7_branch/kdeextragear-2/kile/
+  repository kile
+  branch 1.7
+end match
+
+match /branches/kile_1_7_branch/kdeextragear-2/doc/
+  repository kile
+  prefix doc/
+  branch 1.7
+end match
+
+match /branches/kile/1.8/
+  repository kile
+  branch 1.8
+end match
+
+match /branches/kile/1.9/
+  repository kile
+  branch 1.9
+end match
+
+match /branches/kile/1.9/doc/kile/
+  repository kile
+  prefix doc/
+  branch 1.9
+end match
+
+match /branches/extragear/kde3/office/kile
+    action recurse
+end match
+
+match /(branches|tags)/kile/([^/])/
+    action recurse
 end match
 
 # Tags
