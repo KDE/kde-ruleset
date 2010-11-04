@@ -68,18 +68,18 @@ end match
 
 match /branches/branch_katepart_testing/kdeextragear-2/kile/
   repository kile
-  branch branch_katepart_testing
+  branch katepart_testing
 end match
 
 match /branches/branch_1_6/kdeextragear-2/kile/
   repository kile
-  branch branch_1_6
+  branch 1.6
 end match
 
 match /branches/branch_1_6/kdeextragear-2/kile/doc/
   repository kile
   prefix doc/
-  branch branch_1_6
+  branch 1.6
 end match
 
 match /branches/kile_1_7_branch/kdeextragear-2/kile/
