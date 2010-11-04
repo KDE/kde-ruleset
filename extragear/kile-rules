@@ -52,7 +52,7 @@ end match
 match /branches/extragear/kde3/office/kile/
   repository kile
   branch kde3
-  max revision 740243
+  min revision 740243
 end match
 
 match /branches/extragear/kde3/office/doc/kile/
