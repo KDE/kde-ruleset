@@ -1,0 +1,52 @@
+#
+# Created by George Goldberg <grundleborg@googlemail.com>
+#
+
+################
+# Create the repositories
+################
+
+create repository telepathy-presence-dataengine
+end repository
+
+create repository telepathy-presence-applet
+end repository
+
+
+################
+# Trunk match rules
+################
+
+####
+# telepathy-presence-applet match rules
+
+match /trunk/playground/base/plasma/applets/presence
+  repository telepathy-presence-applet
+  branch master
+  min revision 777021
+end match
+
+####
+# telepathy-presence-dataengine match rules
+
+match /trunk/playground/base/plasma/engines/presence
+  repository telepathy-presence-dataengine
+  branch master
+  min revision 777018
+  max revision 894378
+end match
+
+match /trunk/playground/base/plasma/dataengines/presence
+  repository telepathy-presence-dataengine
+  branch master
+  min revision 903862
+end match
+
+################
+# Ignore what's left over
+################
+
+# Ignore everything else
+match /
+end match
+
