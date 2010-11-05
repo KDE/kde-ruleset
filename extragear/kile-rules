@@ -109,11 +109,39 @@ match /branches/kile/1.9/doc/kile/
   branch 1.9
 end match
 
-match /branches/extragear/kde3/office/kile/
+match /branches/extragear/kde3/office/kile/$
     action recurse
 end match
 
 match /(branches|tags)/kile/([^/])/
+    action recurse
+end match
+
+match /branches/branch_katepart_testing/kdeextragear-2/$
+    min revision 232218
+    max revision 232218
+    action recurse
+end match
+
+match /branches/branch_katepart_testing/$
+    min revision 232218
+    max revision 232218
+    action recurse
+end match
+
+match /branches/branch_1_6/kdeextragear-2/$
+    min revision 252827
+    max revision 252827
+    action recurse
+end match
+
+match /branches/branch_1_6/$
+    min revision 252827
+    max revision 252827
+    action recurse
+end match
+
+match /branches/kile_1_7_branch/$
     action recurse
 end match
 
