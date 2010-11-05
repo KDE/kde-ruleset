@@ -10,58 +10,60 @@ end repository
 
 # Ignore some upheaval in KDE's SVN history.
 match /
-  min revision 409202
-  max revision 409210
+    min revision 409202
+    max revision 409210
 end match
 match /
-  min revision 411973
-  max revision 411973
+    min revision 411973
+    max revision 411973
 end match
 
 match /trunk/kdeextragear-2/kile/
-  repository kile
-  branch master
+    repository kile
+    branch kde3
 end match
 
 match /trunk/kdeextragear-2/doc/kile/
-  repository kile
-  prefix doc/
-  branch master
+    repository kile
+    prefix doc/
+    branch kde3
 end match
 
 match /trunk/extragear/office/kile/
-  repository kile
-  branch master
+    repository kile
+    branch kde3
+    max revision 670762
 end match
 
 match /trunk/extragear/office/doc/kile/
-  repository kile
-  prefix doc/
-  branch master
+    repository kile
+    prefix doc/
+    branch kde3
+    max revision 670762
 end match
 
 match /branches/extragear/kde3/office/kile/
-  repository kile
-  branch master
-  max revision 740242
+    repository kile
+    branch kde3
 end match
 
 match /branches/extragear/kde3/office/doc/kile/
-  repository kile
-  prefix doc/
-  branch master
-  max revision 740242
+    repository kile
+    prefix doc/
+    branch kde3
 end match
 
-match /branches/extragear/kde3/office/kile/
-  repository kile
-  branch kde3
+match /trunk/extragear/office/kile/
+    repository kile
+    branch master
+    min revision 740243
 end match
 
-match /branches/extragear/kde3/office/doc/kile/
-  repository kile
-  prefix doc/
-  branch kde3
+match /trunk/extragear/office/doc/kile/
+    repository kile
+    prefix doc/
+    branch master
+    min revision 740243
 end match
 
 # Branches
@@ -69,50 +71,46 @@ end match
 # Also, the katepart_testing, 1.6, 1.7, 1.8 aren't worth importing, in my opinion.
 
 # match /branches/branch_katepart_testing/kdeextragear-2/kile/
-#   repository kile
-#   branch katepart_testing
+#     repository kile
+#     branch katepart_testing
 # end match
 
 # match /branches/branch_1_6/kdeextragear-2/kile/
-#   repository kile
-#   branch 1.6
+#     repository kile
+#     branch 1.6
 # end match
 
 # match /branches/branch_1_6/kdeextragear-2/kile/doc/
-#   repository kile
-#   prefix doc/
-#   branch 1.6
+#     repository kile
+#     prefix doc/
+#     branch 1.6
 # end match
 
 # match /branches/kile_1_7_branch/kdeextragear-2/kile/
-#   repository kile
-#   branch 1.7
+#     repository kile
+#     branch 1.7
 # end match
 
 # match /branches/kile_1_7_branch/kdeextragear-2/doc/
-#   repository kile
-#   prefix doc/
-#   branch 1.7
+#     repository kile
+#     prefix doc/
+#     branch 1.7
 # end match
 
 # match /branches/kile/1.8/
-#   repository kile
-#   branch 1.8
+#     repository kile
+#     branch 1.8
 # end match
 
 match /branches/kile/1.9/kile/
-  repository kile
-  branch 1.9
+    repository kile
+    branch 1.9
 end match
 
 match /branches/kile/1.9/doc/kile/
-  repository kile
-  prefix doc/
-  branch 1.9
-end match
-
-match /branches/extragear/kde3/office/kile/$
-    action recurse
+    repository kile
+    prefix doc/
+    branch 1.9
 end match
 
 # match /branches/branch_katepart_testing/kdeextragear-2/$
@@ -163,11 +161,23 @@ match /branches/extragear/kde3/office/$
     action recurse
 end match
 
+match /branches/extragear/kde3/$
+    min revision 670764
+    max revision 670764
+    action recurse
+end match
+
+match /trunk/extragear/office/kile/$
+    action recurse
+    min revision 740243
+    max revision 740243
+end match
+
 # Tags
 match /tags/kile/([^/]+)/
-  repository kile
-  branch refs/tags/v\1
-  annotated true
+    repository kile
+    branch refs/tags/v\1
+    annotated true
 end match
 
 match /tags/kile/([^/])/
