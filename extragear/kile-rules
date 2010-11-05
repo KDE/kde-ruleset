@@ -65,40 +65,42 @@ match /branches/extragear/kde3/office/doc/kile/
 end match
 
 # Branches
+# Old branches are commented out.
+# Also, the katepart_testing, 1.6, 1.7, 1.8 aren't worth importing, in my opinion.
 
-match /branches/branch_katepart_testing/kdeextragear-2/kile/
-  repository kile
-  branch katepart_testing
-end match
+# match /branches/branch_katepart_testing/kdeextragear-2/kile/
+#   repository kile
+#   branch katepart_testing
+# end match
 
-match /branches/branch_1_6/kdeextragear-2/kile/
-  repository kile
-  branch 1.6
-end match
+# match /branches/branch_1_6/kdeextragear-2/kile/
+#   repository kile
+#   branch 1.6
+# end match
 
-match /branches/branch_1_6/kdeextragear-2/kile/doc/
-  repository kile
-  prefix doc/
-  branch 1.6
-end match
+# match /branches/branch_1_6/kdeextragear-2/kile/doc/
+#   repository kile
+#   prefix doc/
+#   branch 1.6
+# end match
 
-match /branches/kile_1_7_branch/kdeextragear-2/kile/
-  repository kile
-  branch 1.7
-end match
+# match /branches/kile_1_7_branch/kdeextragear-2/kile/
+#   repository kile
+#   branch 1.7
+# end match
 
-match /branches/kile_1_7_branch/kdeextragear-2/doc/
-  repository kile
-  prefix doc/
-  branch 1.7
-end match
+# match /branches/kile_1_7_branch/kdeextragear-2/doc/
+#   repository kile
+#   prefix doc/
+#   branch 1.7
+# end match
 
-match /branches/kile/1.8/
-  repository kile
-  branch 1.8
-end match
+# match /branches/kile/1.8/
+#   repository kile
+#   branch 1.8
+# end match
 
-match /branches/kile/1.9/
+match /branches/kile/1.9/kile/
   repository kile
   branch 1.9
 end match
@@ -113,35 +115,51 @@ match /branches/extragear/kde3/office/kile/$
     action recurse
 end match
 
-match /(branches|tags)/kile/([^/])/
+# match /branches/branch_katepart_testing/kdeextragear-2/$
+#     min revision 232218
+#     max revision 232218
+#     action recurse
+# end match
+
+# match /branches/branch_katepart_testing/$
+#     min revision 232218
+#     max revision 232218
+#     action recurse
+# end match
+
+# match /branches/branch_1_6/kdeextragear-2/$
+#     min revision 252827
+#     max revision 252827
+#     action recurse
+# end match
+
+# match /branches/branch_1_6/$
+#     min revision 252827
+#     max revision 252827
+#     action recurse
+# end match
+
+# match /branches/kile_1_7_branch/kdeextragear-2/$
+#     min revision 355277
+#     max revision 355277
+#     action recurse
+# end match
+
+# match /branches/kile_1_7_branch/$
+#     min revision 355277
+#     max revision 355277
+#     action recurse
+# end match
+
+match /branches/kile/1.9/$
+    min revision 520376
+    max revision 520376
     action recurse
 end match
 
-match /branches/branch_katepart_testing/kdeextragear-2/$
-    min revision 232218
-    max revision 232218
-    action recurse
-end match
-
-match /branches/branch_katepart_testing/$
-    min revision 232218
-    max revision 232218
-    action recurse
-end match
-
-match /branches/branch_1_6/kdeextragear-2/$
-    min revision 252827
-    max revision 252827
-    action recurse
-end match
-
-match /branches/branch_1_6/$
-    min revision 252827
-    max revision 252827
-    action recurse
-end match
-
-match /branches/kile_1_7_branch/$
+match /branches/extragear/kde3/office/$
+    min revision 670764
+    max revision 670764
     action recurse
 end match
 
@@ -150,6 +168,10 @@ match /tags/kile/([^/]+)/
   repository kile
   branch refs/tags/v\1
   annotated true
+end match
+
+match /tags/kile/([^/])/
+    action recurse
 end match
 
 # Ignore everything else
