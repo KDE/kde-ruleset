@@ -20,37 +20,37 @@ end match
 
 match /trunk/kdeextragear-2/kile/
     repository kile
-    branch kde3
+    branch 2.0
 end match
 
 match /trunk/kdeextragear-2/doc/kile/
     repository kile
     prefix doc/
-    branch kde3
+    branch 2.0
 end match
 
 match /trunk/extragear/office/kile/
     repository kile
-    branch kde3
+    branch 2.0
     max revision 670762
 end match
 
 match /trunk/extragear/office/doc/kile/
     repository kile
     prefix doc/
-    branch kde3
+    branch 2.0
     max revision 670762
 end match
 
 match /branches/extragear/kde3/office/kile/
     repository kile
-    branch kde3
+    branch 2.0
 end match
 
 match /branches/extragear/kde3/office/doc/kile/
     repository kile
     prefix doc/
-    branch kde3
+    branch 2.0
 end match
 
 match /trunk/extragear/office/kile/
@@ -75,16 +75,16 @@ end match
 #     branch katepart_testing
 # end match
 
-# match /branches/branch_1_6/kdeextragear-2/kile/
-#     repository kile
-#     branch 1.6
-# end match
+match /branches/branch_1_6/kdeextragear-2/kile/
+    repository kile
+    branch 1.6
+end match
 
-# match /branches/branch_1_6/kdeextragear-2/kile/doc/
-#     repository kile
-#     prefix doc/
-#     branch 1.6
-# end match
+match /branches/branch_1_6/kdeextragear-2/kile/doc/
+    repository kile
+    prefix doc/
+    branch 1.6
+end match
 
 # match /branches/kile_1_7_branch/kdeextragear-2/kile/
 #     repository kile
@@ -125,17 +125,17 @@ end match
 #     action recurse
 # end match
 
-# match /branches/branch_1_6/kdeextragear-2/$
-#     min revision 252827
-#     max revision 252827
-#     action recurse
-# end match
+match /branches/branch_1_6/kdeextragear-2/$
+   min revision 252827
+   max revision 252827
+   action recurse
+end match
 
-# match /branches/branch_1_6/$
-#     min revision 252827
-#     max revision 252827
-#     action recurse
-# end match
+match /branches/branch_1_6/$
+    min revision 252827
+    max revision 252827
+    action recurse
+end match
 
 # match /branches/kile_1_7_branch/kdeextragear-2/$
 #     min revision 355277
@@ -174,13 +174,213 @@ match /trunk/extragear/office/kile/$
 end match
 
 # Tags
-match /tags/kile/([^/]+)/
+#match /tags/kile/([^/]+)/
+#    repository kile
+#    branch refs/tags/v\1
+#    annotated true
+#end match
+
+#match /tags/kile/([^/])/$
+#    action recurse
+#end match
+
+match /tags/v1_5_1/kdeextragear-2/kile/$
     repository kile
-    branch refs/tags/v\1
+    branch refs/tags/v1.5.1
     annotated true
 end match
 
-match /tags/kile/([^/])/
+match /tags/v1_5_1/kdeextragear-2/$
+    min revision 223493
+    max revision 223493
+    action recurse
+end match
+
+match /tags/v1_5_1/$
+    min revision 223493
+    max revision 223493
+    action recurse
+end match
+
+match /tags/v1_5_2a/kdeextragear-2/kile/$
+    repository kile
+    branch refs/tags/v1.5.2a
+    annotated true
+end match
+
+match /tags/v1_5_2a/kdeextragear-2/$
+    min revision 227743
+    max revision 227743
+    action recurse
+end match
+
+match /tags/v1_5_2a/$
+    min revision 227743
+    max revision 227743
+    action recurse
+end match
+
+match /tags/v1_5_2b/kdeextragear-2/kile/$
+    repository kile
+    branch refs/tags/v1.5.2b
+    annotated true
+end match
+
+match /tags/v1_5_2b/kdeextragear-2/$
+    min revision 232219
+    max revision 232219
+    action recurse
+end match
+
+match /tags/v1_5_2b/$
+    min revision 232219
+    max revision 232219
+    action recurse
+end match
+
+match /tags/release_1_5_2/kdeextragear-2/kile/$
+    repository kile
+    branch refs/tags/v1.5.2
+    annotated true
+end match
+
+match /tags/release_1_5_2/kdeextragear-2/$
+    min revision 236979
+    max revision 236979
+    action recurse
+end match
+
+match /tags/release_1_5_2/$
+    min revision 236979
+    max revision 236979
+    action recurse
+end match
+
+match /tags/release_1_5_2_patch_1/kdeextragear-2/kile/$
+    repository kile
+    branch refs/tags/v1.5.2p1
+    annotated true
+end match
+
+match /tags/release_1_5_2_patch_1/kdeextragear-2/$
+    min revision 248773
+    max revision 248773
+    action recurse
+end match
+
+match /tags/release_1_5_2_patch_1/$
+    min revision 248773
+    max revision 248773
+    action recurse
+end match
+
+match /tags/release_1_6b1/kdeextragear-2/kile/$
+    repository kile
+    branch refs/tags/v1.6b1
+    annotated true
+end match
+
+match /tags/release_1_6b1/kdeextragear-2/$
+    min revision 252186
+    max revision 252186
+    action recurse
+end match
+
+match /tags/release_1_6b1/$
+    min revision 252186
+    max revision 252186
+    action recurse
+end match
+
+match /tags/release_1_6b2/kdeextragear-2/kile/$
+    repository kile
+    branch refs/tags/v1.6b2
+    annotated true
+end match
+
+match /tags/release_1_6b2/kdeextragear-2/$
+    min revision 254779
+    max revision 254779
+    action recurse
+end match
+
+match /tags/release_1_6b2/$
+    min revision 254779
+    max revision 254779
+    action recurse
+end match
+
+# 1.6-1.6.3 tags do not want to work. They have to be recreated manually.
+
+match /tags/kile_1_7_release/kdeextragear-2/kile/$
+    repository kile
+    branch refs/tags/v1.7
+    min revision 354419
+    max revision 354419
+    annotated true
+end match
+
+match /tags/kile_1_7_release/kdeextragear-2/$
+    action recurse
+end match
+
+match /tags/kile_1_7_release/$
+    action recurse
+end match
+
+match /tags/kile/1.7/$
+    action recurse
+end match
+
+# 1.7.1 contains only localization changes.
+
+match /tags/kile/1.9/kile/$
+    repository kile
+    branch refs/tags/v1.9
+    annotated true
+end match
+
+match /tags/kile/1.9/$
+    min revision 520375
+    max revision 520375
+    action recurse
+end match
+
+match /tags/kile/1.9.2/kile/$
+    repository kile
+    branch refs/tags/v1.9.2
+    annotated true
+end match
+
+match /tags/kile/1.9.2/$
+    min revision 577358
+    max revision 577358
+    action recurse
+end match
+
+match /tags/kile/2([^/]+)/kile/$
+    repository kile
+    branch refs/tags/v2\1
+    max revision 722036
+    annotated true
+end match
+
+match /tags/kile/([^/]+)/src/
+    repository kile
+    branch refs/tags/v\1
+    min revision 738000
+    max revision 980000
+    annotated true
+end match
+
+match /tags/kile/([^/]+)/
+    repository kile
+    branch refs/tags/v\1
+    min revision 980000
+    annotated true
+end match
+
+match /tags/kile/2([^/]+)/$
     action recurse
 end match
 
