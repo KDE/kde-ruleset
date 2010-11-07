@@ -75,6 +75,11 @@ end match
 #     branch katepart_testing
 # end match
 
+match /branches/__release_1_5_2/kdeextragear-2/kile/
+    repository kile
+    branch 1.5.2
+end match
+
 match /branches/branch_1_6/kdeextragear-2/kile/
     repository kile
     branch 1.6
@@ -124,6 +129,14 @@ end match
 #     max revision 232218
 #     action recurse
 # end match
+
+match /branches/__release_1_5_2/kdeextragear-2/$
+    action recurse
+end match
+
+match /branches/__release_1_5_2/$
+    action recurse
+end match
 
 match /branches/branch_1_6/kdeextragear-2/$
    min revision 252827
