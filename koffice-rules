@@ -40,6 +40,18 @@ match /tags/koffice/([^/]+)/koffice/
   annotated true
 end match
 
+match /branches/work/koffice-([^/]+)/
+ min revision 881250
+ repository koffice
+ branch koffice/\1
+end match
+
+match /branches/work/koffice_trk/
+  min revision 784863
+  repository koffice
+  branch koffice/trk
+end match
+
 #added by tz
 match /tags/koffice/(1.9.9[12345])/
   min revision 681282
