@@ -75,11 +75,6 @@ end match
 #     branch katepart_testing
 # end match
 
-match /branches/__release_1_5_2/kdeextragear-2/kile/
-    repository kile
-    branch 1.5.2
-end match
-
 match /branches/branch_1_6/kdeextragear-2/kile/
     repository kile
     branch 1.6
@@ -130,14 +125,6 @@ end match
 #     action recurse
 # end match
 
-match /branches/__release_1_5_2/kdeextragear-2/$
-    action recurse
-end match
-
-match /branches/__release_1_5_2/$
-    action recurse
-end match
-
 match /branches/branch_1_6/kdeextragear-2/$
    min revision 252827
    max revision 252827
@@ -187,15 +174,6 @@ match /trunk/extragear/office/kile/$
 end match
 
 # Tags
-#match /tags/kile/([^/]+)/
-#    repository kile
-#    branch refs/tags/v\1
-#    annotated true
-#end match
-
-#match /tags/kile/([^/])/$
-#    action recurse
-#end match
 
 match /tags/v1_5_1/kdeextragear-2/kile/$
     repository kile
@@ -254,36 +232,58 @@ end match
 match /tags/release_1_5_2/kdeextragear-2/kile/$
     repository kile
     branch refs/tags/v1.5.2
+    max revision 400000
+    annotated true
+end match
+
+match /tags/kile/1.5.2/kdeextragear-2/kile/$
+    repository kile
+    branch refs/tags/v1.5.2
     annotated true
 end match
 
 match /tags/release_1_5_2/kdeextragear-2/$
-    min revision 236979
-    max revision 236979
     action recurse
 end match
 
 match /tags/release_1_5_2/$
-    min revision 236979
-    max revision 236979
     action recurse
 end match
 
-match /tags/release_1_5_2_patch_1/kdeextragear-2/kile/$
+match /tags/kile/1.5.2/kdeextragear-2/$
+    action recurse
+end match
+
+match /tags/kile/1.5.2/$
+    action recurse
+end match
+
+match /tags/release_1_5_2_patch_1/kdeextragear-2/kile/
+    repository kile
+    branch refs/tags/v1.5.2p1
+    max revision 400000
+    annotated true
+end match
+
+match /tags/kile/1.5.2p1/kdeextragear-2/kile/$
     repository kile
     branch refs/tags/v1.5.2p1
     annotated true
 end match
 
 match /tags/release_1_5_2_patch_1/kdeextragear-2/$
-    min revision 248773
-    max revision 248773
     action recurse
 end match
 
 match /tags/release_1_5_2_patch_1/$
-    min revision 248773
-    max revision 248773
+    action recurse
+end match
+
+match /tags/kile/1.5.2p1/kdeextragear-2/$
+    action recurse
+end match
+
+match /tags/kile/1.5.2p1/$
     action recurse
 end match
 
@@ -324,6 +324,11 @@ match /tags/release_1_6b2/$
 end match
 
 # 1.6-1.6.3 tags do not want to work. They have to be recreated manually.
+# GIT_COMMITTER_DATE="2004-05-09 12:17:53 +0000" git tag -a -f -m "Tagging Kile 1.6.3." v1.6.3 94097a571d42a57ad743bea7cce8f14d2659f23a
+# GIT_COMMITTER_DATE="2004-03-22 18:39:13 +0000" git tag -a -f -m "Tagging Kile 1.6.2." v1.6.2 6d4caabdd22868d2e291ceeb246b0acb9a2e4995
+# GIT_COMMITTER_DATE="2004-01-29 14:27:29 +0000" git tag -a -f -m "Tagging Kile 1.6.1." v1.6.1 51533185d64d30d093f0a8426e96f9e58fa4183f
+# GIT_COMMITTER_DATE="2003-10-29 20:44:13 +0000" git tag -a -f -m "Tagging Kile 1.6." v1.6 f12db8d0a2508e244809964f4c3ec096012a6da6 
+# GIT_COMMITTER_DATE="2003-09-29 10:33:54 +0000" git tag -a -f -m "Tagging Kile 1.6b2." v1.6b2 b6babcd880db6655cb3f748f1124e7418916b076
 
 match /tags/kile_1_7_release/kdeextragear-2/kile/$
     repository kile
