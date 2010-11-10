@@ -150,6 +150,8 @@ create repository KDE/kdegraphics/thumbnailers
 end repository
 create repository KDE/kdegraphics/libs/libkdcraw
 end repository
+create repository KDE/kdegraphics/libs/libkdcraw-libraw #separate?
+end repository
 create repository KDE/kdegraphics/libs/libkexiv2
 end repository
 create repository KDE/kdegraphics/libs/libkipi
@@ -374,8 +376,6 @@ create repository KDE/kdenetwork/kioslaves
 end repository
 create repository KDE/kdenetwork/ktnef
 end repository
-create repository KDE/kdenetwork/strigi-analyzer
-end repository
 create repository KDE/kdenetwork/wifi
 end repository
 create repository KDE/kdenetwork/dcoprss
@@ -493,6 +493,8 @@ end repository
 create repository KDE/kdeutils/superkaramba
 end repository
 create repository KDE/kdeutils/sweeper
+end repository
+create repository KDE/kdeutils/filelight
 end repository
 
 #abandoned/moved stuff
@@ -676,9 +678,6 @@ create repository extragear/digikamimageplugins
 end repository
 
 create repository extragear/kplayer
-end repository
-
-create repository extragear/filelight
 end repository
 
 create repository extragear/ksupplicant
@@ -2704,6 +2703,9 @@ end repository
 create repository extragear/strigi-analyzer #/trunk/playground/base/strigi-analyzer/, moved from /trunk/KDE/kdeaddons/strigi-analyzer
 end repository
 
+create repository extragear/nepomukshell
+end repository
+
 #
 # Ignore rules
 #
@@ -2892,10 +2894,6 @@ end match
 match /tags/KDE/[^/]*/kdesupport/
   min revision 416394
   max revision 416398
-end match
-
-# Ignore kdenonbeta
-match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/
 end match
 
 # Ignore this stupid commit
@@ -3166,6 +3164,20 @@ match /(branches|tags)/KDE/([^/]+)/kdeplasmoids/
   max revision 830065
 end match
 
+match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/$
+  action recurse
+end match
+
+match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/[^/]+$                 # ignore top-level files
+end match
+match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/admin/
+end match
+
+match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/([^/]+)/
+  repository extragear/\4
+  branch master
+end match
+
 # kdeedu, kdesdk, kdenetwork, kdeutils, kdemultimedia, kdegraphics
 match /trunk/(KDE/)?(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/$
   action recurse
@@ -3205,59 +3217,59 @@ match /trunk/(KDE/)?kdesdk/ksgmltools/
   branch master
 end match
 
-
-match /trunk/(KDE/)?kdenetwork/kfile-plugins/torrent/
+match /(trunk/(KDE/)?|(branches|tags)/(KDE/)?([^/]+)/)kdenetwork/(kfile-plugins|strigi-analyzer)/$
+  action recurse
+end match
+match /trunk/(KDE/)?kdenetwork/(kfile-plugins|strigi-analyzer)/torrent/
   repository KDE/kdenetwork/torrent
   branch master
 end match
-match /(branches|tags)/KDE/([^/]+)/kdenetwork/kfile-plugins/torrent/
+match /(branches|tags)/(KDE/)?([^/]+)/kdenetwork/(kfile-plugins|strigi-analyzer)/torrent/
   repository KDE/kdenetwork/torrent
-  branch KDE/\2
+  branch KDE/\3
   min revision 409209
 end match
 
 #only match torrent (above)
-match /trunk/(KDE/)?kdenetwork/kfile-plugins/
-end match
-match /(branches|tags)/KDE/([^/]+)/kdenetwork/kfile-plugins/
+match /(trunk/(KDE/)?|(branches|tags)/(KDE/)?([^/]+)/)kdenetwork/kfile-plugins/
 end match
 
-match /trunk/(KDE/)?(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+match /trunk/(KDE/)?(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\2/strigi-analyzer
   branch master
 end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\3/strigi-analyzer
   branch KDE/\1.\2
   max revision 409202
 end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\4/strigi-analyzer
   branch KDE/\1.\2.\3
   max revision 409202
 end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\5/strigi-analyzer
   branch KDE/\1.\2.\3-beta\4
   min revision 376088
   max revision 409202
 end match
-match /(branches|tags)/KDE/([^/]+)/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+match /(branches|tags)/KDE/([^/]+)/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\3/strigi-analyzer
   branch KDE/\2
   min revision 409209
 end match
-match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\3/strigi-analyzer
   branch KDE/\1.\2.0
   max revision 409202
 end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\3/strigi-analyzer
   branch KDE/\1.\2
   max revision 409202
 end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdesdk|kdemultimedia|kdegraphics|kdenetwork)/kfile-plugins/
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\4/strigi-analyzer
   branch KDE/\1.\2.\3a
   min revision 192719
@@ -3276,11 +3288,10 @@ match /trunk/playground/utils/okteta/
   repository KDE/kdesdk/okteta
   branch master
 end match
-match /trunk/(KDE/)?kdeedu/okteta/
+match /trunk/(KDE/)?kdeutils/okteta/
   repository KDE/kdesdk/okteta
   branch master
 end match
-
 match /(branches|tags)/KDE/([^/]+)/(kdeutils)/okteta/
   repository KDE/kdesdk/okteta
   branch KDE/\2
@@ -3293,6 +3304,13 @@ end match
 #TODO Other sweeper locations:
 #/trunk/KDE/kdebase/workspace/kcontrol/privacy
 #/trunk/KDE/kdebase/kcontrol
+
+match /(trunk/KDE|(branches|tags)/KDE/([^/]+))/(kdegraphics)/(libkipi|libkexiv2|libkdcraw|libksane)/
+  repository KDE/kdegraphics/libs/\5
+  branch master
+end match
+
+
 
 #skip files directly in module
 match /(trunk(/KDE)?|(branches|tags)/(KDE/)?[^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/[^/]+$
@@ -3391,6 +3409,12 @@ match /trunk/(kdereview|playground/devtools|kdenonbeta|extragear/utils)/ktransla
   branch master
 end match
 
+match /trunk/(kdereview)/(okteta)/
+  repository KDE/kdesdk/\2
+  branch master
+end match
+
+
 #kdeutils special branches
 match /branches/work/libarchive-based-ark/
   repository KDE/kdeutils/ark
@@ -3402,7 +3426,7 @@ match /branches/work/kdelirc/
   branch work
 end match
 
-match /trunk/((KDE/)?kdeutils|kdereview|playground/utils)/kdelirc/
+match /trunk/((KDE/)?kdeutils|kdereview|playground/utils)/(kdelirc|kremotecontrol)/
   repository KDE/kdeutils/kremotecontrol
   branch master
 end match
@@ -3411,6 +3435,24 @@ match /trunk/kdereview/printer-applet/
   repository KDE/kdeutils/printer-applet
   branch master
 end match
+
+match /trunk/(kdereview|playground/utils)/(kregexpeditor|filelight)/
+  repository KDE/kdeutils/\2
+  branch master
+end match
+
+match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(filelight)/
+  repository KDE/kdeutils/\2
+  branch master
+end match
+
+match /trunk/kdenonbeta/filelight/
+  repository KDE/kdeutils/filelight
+  branch master
+end match
+
+
+
 
 #kdemultimedia special branches
 match /trunk/kdereview/dragonplayer/
@@ -3434,15 +3476,19 @@ match /trunk/extragear/multimedia/(kaudiocreator)/
 end match
 
 #kdegraphics special branches
-match /(trunk|branches/work/kde4)/playground/graphics/(gwenview|okular|svgpart)/
+match /(trunk|branches/work/kde4)/playground/graphics/(gwenview|okular|svgpart|kooka)/
   repository KDE/kdegraphics/\2
+  branch master
+end match
+match /tags/unmaintained/4/(kooka)/
+  repository KDE/kdegraphics/\1
   branch master
 end match
 match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(gwenview|kuickshow|ligature)/
   repository KDE/kdegraphics/\2
   branch master
 end match
-match /trunk/playground/graphics/(ksaneservice|ksaneplugin)/
+match /trunk/(playground/graphics|kdereview)/(ksaneservice|ksaneplugin)/
   repository KDE/kdegraphics/ksaneplugin
   branch master
 end match
@@ -3470,8 +3516,38 @@ match /branches/work/kde4/playground/graphics/okular/kpdf/
   min revision 520782
   max revision 551163
 end match
-match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(libkipi|libkexiv2|libkdcraw|libksane)/
+match /trunk/(kdereview|playground/graphics)/(okular)/(epub) #is this rule correct?
+  prefix \3
+  repository KDE/kdegraphics/\2
+  branch master
+end match
+match /trunk/(extragear/[^/]+|kdeextragear-[^/]+|kdereview)/(libkipi|libkexiv2|libkdcraw|libksane)/
   repository KDE/kdegraphics/libs/\2
+  branch master
+end match
+match /trunk/(kdereview)/mobipocket/[^/]+
+  #ignore files
+end match
+match /trunk/(kdereview)/mobipocket/$
+  action recurse
+end match
+match /trunk/(kdereview)/mobipocket/okular
+  repository KDE/kdegraphics/okular
+  prefix generators/mobipocket
+  branch master
+end match
+match /trunk/(kdereview)/mobipocket/strigi-analyzer
+  repository KDE/kdegraphics/strigi-analyzer
+  prefix mobi
+  branch master
+end match
+match /trunk/(kdereview)/mobipocket/thumbnailers
+  repository KDE/kdegraphics/thumbnailers
+  prefix mobi
+  branch master
+end match
+match /trunk/(kdereview)/mobipocket/libs
+  repository KDE/kdegraphics/libs/mobipocket
   branch master
 end match
 
@@ -3616,6 +3692,19 @@ match /(branches|tags)/KDE
   action recurse
   min revision 757126
 end match
+match /trunk/kdereview/$
+  action recurse
+end match
+match /trunk/playground/$
+  action recurse
+end match
+match /trunk/playground/[^/]/$
+  action recurse
+end match
+match /trunk/kdeplayground-[^/]/$
+  action recurse
+end match
+
 
 match /branches/kopete/0.12/
   min revision 506299
@@ -4328,6 +4417,11 @@ match /trunk/playground/graphics/solidkreator/
   min revision 841491
 end match
 
+match /trunk/playground/utils/dragonegg_kde3/
+  repository extragear/dragonegg
+  branch kde3
+end match
+
 match /trunk/playground/games/kfile-plugins/
 end match
 
@@ -4384,3 +4478,4 @@ end match
 match /(tags|branches)/
   min revision 409209
 end match
+
