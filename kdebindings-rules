@@ -46,6 +46,14 @@ match /branches/KDE/([^/]+)/$
     action recurse
 end match
 
+match /trunk/KDE/kdebindings/ruby/$
+    action recurse
+end match
+
+match /trunk/KDE/kdebindings/ruby/(qtruby|korundum)/$
+    action recurse
+end match
+
 #
 # branches
 #
