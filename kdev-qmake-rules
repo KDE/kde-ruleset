@@ -1,0 +1,55 @@
+# svn2git rules for KDevelop QMake plugin
+# Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
+
+
+create repository kdev-qmake
+end repository
+
+match /trunk/playground/devtools/kdevelop4-extra-plugins/qmake/
+  repository kdev-qmake
+  branch master
+end match
+
+match /trunk/KDE/kdevelop/projectmanagers/qmake/
+  repository kdev-qmake
+  branch master
+end match
+
+match /trunk/KDE/kdevelop/plugins/managers/qmake/
+  repository kdev-qmake
+  branch master
+end match
+
+match /trunk/KDE/kdevelop/buildtools/managers/qmake/
+  repository kdev-qmake
+  branch master
+end match
+
+match /trunk/KDE/kdevelop/buildtools/importers/qmake/
+  repository kdev-qmake
+  branch master
+end match
+
+
+# qmake builder used to be a separate plugin in a different dir.
+# Put it in a branch to get merged later via filter-branch.
+
+match /trunk/playground/devtools/kdevelop4-extra-plugins/qmakebuilder/
+  repository kdev-qmake
+  branch qmakebuilder
+end match
+
+match /trunk/KDE/kdevelop/projectbuilders/qmakebuilder/
+  repository kdev-qmake
+  branch qmakebuilder
+end match
+
+match /trunk/KDE/kdevelop/plugins/builders/qmakebuilder/
+  repository kdev-qmake
+  branch qmakebuilder
+end match
+
+
+match /
+end match
+# vim: set ft=conf ts=2 sw=2 et:
