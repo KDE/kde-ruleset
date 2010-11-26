@@ -30,6 +30,10 @@ match /trunk/KDE/kdevelop/buildtools/importers/qmake/
   branch master
 end match
 
+match /branches/work/kdevelop4-merge/buildtools/importers/qmake/
+  repository kdev-qmake
+  branch master
+end match
 
 # qmake builder used to be a separate plugin in a different dir.
 # Put it in a branch to get merged later via filter-branch.
