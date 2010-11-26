@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repo=kdev-qmake-export
+repo=kdev-qmake # this is hardcoded in rules too!
 repofixed=kdev-qmake-filtered
 
 set -e
