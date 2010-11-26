@@ -4,6 +4,8 @@
 
 create repository kdev-qmake
 end repository
+create repository kdev-builder-qmake
+end repository
 
 match /trunk/playground/devtools/kdevelop4-extra-plugins/qmake/
   repository kdev-qmake
@@ -36,21 +38,21 @@ match /branches/work/kdevelop4-merge/buildtools/importers/qmake/
 end match
 
 # qmake builder used to be a separate plugin in a different dir.
-# Put it in a branch to get merged later via filter-branch.
+# Put it in a separate repo to get merged later via filter-branch.
 
 match /trunk/playground/devtools/kdevelop4-extra-plugins/qmakebuilder/
-  repository kdev-qmake
-  branch qmakebuilder
+  repository kdev-builder-qmake
+  branch master
 end match
 
 match /trunk/KDE/kdevelop/projectbuilders/qmakebuilder/
-  repository kdev-qmake
-  branch qmakebuilder
+  repository kdev-builder-qmake
+  branch master
 end match
 
 match /trunk/KDE/kdevelop/plugins/builders/qmakebuilder/
-  repository kdev-qmake
-  branch qmakebuilder
+  repository kdev-builder-qmake
+  branch master
 end match
 
 
