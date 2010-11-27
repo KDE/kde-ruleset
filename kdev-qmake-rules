@@ -55,6 +55,11 @@ match /trunk/KDE/kdevelop/plugins/builders/qmakebuilder/
   branch master
 end match
 
+match /trunk/KDE/kdevelop/buildtools/builders/qmakebuilder/
+  repository kdev-builder-qmake
+  branch master
+end match
+
 
 match /
 end match
