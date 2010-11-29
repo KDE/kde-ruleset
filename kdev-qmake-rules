@@ -41,6 +41,14 @@ match /branches/work/kdevelop4-merge/buildtools/importers/qmake/
   prefix qmake/
 end match
 
+# qmake plugin branch, adding duchain support.
+# Quite short-lived, but not mergeable with fast-forward.
+match /branches/work/kdevelop-qmake-duchain/
+  repository kdev-qmake
+  branch duchain
+  prefix qmake/
+end match
+
 # qmake builder used to be a separate plugin in a different dir.
 
 match /trunk/playground/devtools/kdevelop4-extra-plugins/qmakebuilder/
