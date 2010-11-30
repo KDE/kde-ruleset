@@ -1,57 +1,77 @@
-#                                                                                           
-# Created by Abdurrahman AVCI <abdurrahmanavci@gmail.com>                                   
-#                                                                                           
+#
+# Created by Abdurrahman AVCI <abdurrahmanavci@gmail.com>
+# Contributor: Michal Malek <michalm@jabster.pl>
+#
 
 #
 # Create the k3b repository
-#                      
-create repository k3b  
-end repository         
+#
+create repository k3b
+end repository
 
 # Ignore some upheaval in KDE's SVN history.
-match /                                     
-  min revision 409202                       
-  max revision 409210                       
-end match                                   
-match /                                     
-  min revision 411973                       
-  max revision 411973                       
-end match                                   
+match /
+  min revision 409202
+  max revision 409210
+end match
+match /
+  min revision 411973
+  max revision 411973
+end match
 
 # Import master
 match /trunk/(kdemultimedia|kdeextragear-1|extragear/multimedia)/k3b/
-  repository k3b                                                     
-  branch master                                                      
-end match                                                            
-
-match /branches/extragear/kde3/multimedia/k3b/
-  repository k3b                              
-  branch master                               
-end match                                     
-
-# Import branches
-# 0.11 branch
-match /branches/(k3b_0_11_branch|k3b/0.11)/kdeextragear-1/k3b/
-  repository k3b                            
-  branch 0.11                               
-end match                                   
-# dvd_rw branch
-match /branches/(k3b_dvd_rw_branch|k3b/dvd_rw_branch)/kdeextragear-1/k3b/
-  repository k3b                                     
-  branch dvd_rw
+  repository k3b
+  branch master
 end match
-# 0.12 branch
+
+# Import 0.11 branch
+match /branches/(k3b_0_11_branch|k3b/0.11)/kdeextragear-1/k3b/
+  repository k3b
+  branch 0.11
+end match
+
+# Import 0.12 branch
 match /branches/k3b/0.12/k3b/
-  repository k3b             
-  branch 0.12                
-end match                    
-# libk3b-redesign and other branches if any exists
-match /branches/k3b/([^/]+)/
-  repository k3b            
-  branch \1
+  repository k3b
+  branch 0.12
+end match
+
+# Import 1.0 branch
+match /branches/stable/extragear/multimedia/k3b/
+  repository k3b
+  branch 1.0
+  max revision 824605
+end match
+
+# Import 1.1 branch
+match /branches/extragear/kde3/multimedia/k3b/
+  repository k3b
+  branch 1.1
+  max revision 1059561
+end match
+
+# Import 2.0 branch
+match /branches/k3b/2.0/
+  repository k3b
+  branch 2.0
+end match
+
+# Import dvd_rw feature branch
+match /branches/(k3b_dvd_rw_branch|k3b/dvd_rw_branch)/kdeextragear-1/k3b/
+  repository k3b
+  branch dvd-rw
+end match
+
+# Import libk3b-redesign and other branches if any exists
+match /branches/k3b/libk3b-redesign/
+  repository k3b
+  branch libk3b-redesign
 end match
 
 # Import tags
+# NOTE: remove "v2.0" tag after the import. In SVN it was deleted shortly after it was created
+#       so in Git it'll point to a non-existing commit. Please do "git tag -d v2.0".
 match /tags/k3b/([^/]+)/
   repository k3b
   branch refs/tags/v\1
@@ -61,4 +81,3 @@ end match
 # Ignore everything else
 match /
 end match
-
