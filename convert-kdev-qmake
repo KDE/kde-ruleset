@@ -7,7 +7,7 @@ set -e
 
 if true; then
 rm -rf "$repo"
-svn-all-fast-export --add-metadata --identity-map /home/gitmaster/kde-ruleset/account-map --rules rules/kdev-qmake-rules /home/gitmaster/svn/
+svn-all-fast-export --add-metadata --identity-map /home/gitmaster/kde-ruleset/account-map --rules rules/kdev-qmake-rules "$@" /home/gitmaster/svn/
 fi
 
 rm -rf "$repofixed"
