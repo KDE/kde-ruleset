@@ -499,6 +499,7 @@ dnaber Daniel Naber <daniel.naber@t-online.de>
 dnadlinger David Nadlinger <code@klickverbot.at>
 dnavin Danishka Navin <danishka@gmail.com>
 dobbe Winfried Dobbe <winfried_mb2@casema.nl>
+doerner Sebastian Doerner <sebastian@sebastian-doerner.de>
 doerr Oliver Dörr <kde@doerr-privat.de>
 dolzhenko Vladimir Dolzhenko <bobdva@2ka.mipt.ru>
 domseichter Dominik Seichter <domseichter@web.de>
@@ -542,9 +543,9 @@ eilers Stefan Eilers <stefan.eilers@basyskom.de>
 eitzenbe Eitzenberger Thomas <eth@gmx.at>
 eivanov Evgeniy Ivanov <pfx.kde@gmail.com>
 elaine Ellen Reitmayr <ellen@kde.org>
+elenamramirez Elena M Ramírez <eramirez@ximdex.com>
 eljungdahl Emil Ljungdahl <emil@kratern.se>
 elter Matthias Elter <m.elter@kde.org>
-elvis Elvis Pfuetzenreuter <epx@altoriopreto.com.br>
 elylevy Ely Levy <elylevy@cs.huji.ac.il>
 elzubeir Mohammed Elzubeir <elzubeir@arabeyes.org>
 emmott Fred Emmott <kde@fredemmott.co.uk>
@@ -673,6 +674,7 @@ gallium Karol Szwed <gallium@kde.org>
 gamaral Guillermo Antonio Amaral Bastidas <gamaral@kde.org>
 ganeshp Ganesh Paramasivam <ganesh@crystalfab.com>
 garbanzo Alex Zepeda <zipzippy@sonic.net>
+garg Rohan Garg <rohangarg@kubuntu.org>
 garrett Michael Garrett <michael@thehouseofgarrett.net>
 gassauer Ferdinand Gassauer <f.gassauer@aon.at>
 gasson James Gasson <gasson@clear.net.nz>
@@ -910,6 +912,7 @@ jarmond Jonathan Armond <jon.armond@gmail.com>
 jaroszynski Piotr Jaroszyński <p.jaroszynski@gmail.com>
 jas Simon Josefsson <jas@extundo.com>
 jaseone Jason Bainbridge <jaseone@myrealbox.com>
+jasonyeh Jason Yeh <jasonyeh0908@gmail.com>
 jaudureau Jérôme Audureau <jaudureau@gmail.com>
 jb John Birch <jbb@kdevelop.org>
 jbache Jens Bache-Wiig <jbache@trolltech.com>
@@ -965,6 +968,7 @@ jleves Joshua Levesque <guitarist198@yahoo.com>
 jloehnert Johannes Loehnert <loehnert.kde@gmx.de>
 jlugagne Jeremy Florent Lugagne <lugagne.jeremy@gmail.com>
 jlvergara José Luis Vergara <pentalis@gmail.com>
+jmaceachern Jeffery MacEachern <j.maceachern@gmail.com>
 jmarco Joël Marco <crynt@hotmail.com>
 jmhoffmann Jens-Michael Hoffmann <jensmh@gmx.de>
 jminton Jasen Minton <jasen.minton@gmail.com>
@@ -1226,6 +1230,7 @@ lnettnay Lonny Nettnay <lnettnay@hotmail.com>
 lodewyck Jérôme Lodewyck <jerome.lodewyck@normalesup.org>
 lofi Michael Nottebrock <lofi@freebsd.org>
 logi Logi Ragnarsson <logi@logi.org>
+loker Koray Löker <loker@pardus.org.tr>
 lomin Dmitry Lomin <ldn@chermet.tula.net>
 loschwitz Martin Loschwitz <madkiss@madkiss.org>
 loubaton Shlomi Loubaton <loubaton.shlomi@012.net.il>
@@ -1456,7 +1461,7 @@ msalibaba Michel Saliba <msalibaba@gmail.com>
 msciubidlo Michal Sciubidlo <michal.sciubidlo@gmail.com>
 msoeken Mathias Soeken <soeken@pprojekt.de>
 msommer Martin Sommer <sommer451@gmx.de>
-mssola Miquel Sabaté Solà <mikisabate@gmail.com>
+mssola Miquel Sabaté <mikisabate@gmail.com>
 mstein Manuarii Stein <manuarii.stein@gmail.com>
 mstemle Michael D. Stemle Jr.          <manchicken@notsosoft.net>
 mstocker Mirko Stocker <me@misto.ch>
@@ -1485,12 +1490,13 @@ mwiese Manfred Wiese <m.j.wiese@web.de>
 mwiesweg Marcel Wiesweg <marcel.wiesweg@gmx.de>
 mwoehlke Matthew Woehlke <mw_triad@users.sourceforge.net>
 mwolff Milian Wolff <mail@milianw.de>
-mzanetti Michael Zanetti <michael_zanetti@gmx.net>
+mzanetti Michael Zanetti <mzanetti@kde.org>
 mzarzycki Maciek Zarzycki <zarzych@gmail.com>
 mzilz Martin Zilz <oore.mofux@gmx.de>
 nadavvin Nadav Vinik <nadavvin@gmail.com>
 nael Oscar Blumberg <o.blumberg@robertlan.eu.org>
 nalvarez Nicolas Alvarez <nicolas.alvarez@gmail.com>
+nanditasuri nandita suri <suri.nandita@gmail.com>
 nannolangstraat Nanno Langstraat <langstr@gmail.com>
 narachai Phuwanat Sakornsakolpat <narachai@gmail.com>
 nardi Matteo Nardi <91.matteo@gmail.com>
@@ -1595,7 +1601,7 @@ pdamsten Petri Damstén <petri.damsten@kdemail.net>
 pecoult Romain Pecoult <pecoultrom@aol.com>
 pedretti Fabio Pedretti <fabio.ped@libero.it>
 pedrol Pedro Lopez-Cabanillas <pedro.lopez.cabanillas@gmail.com>
-pedrosc Pedro Suarez Casal <gauleng@gmail.com>
+pedrosc Pedro Suárez Casal <gauleng@gmail.com>
 pegon Marc Pegon <pe.marc@free.fr>
 pelcak Vit Pelcak <vit@pelcak.org>
 pelouas Guillaume Pelouas <pelouas@hotmail.fr>
@@ -1650,6 +1656,7 @@ porangaba Tiago Pereira Porangaba <tiago.porangaba@ltia.fc.unesp.br>
 porten Harri Porten <porten@kde.org>
 pospisek Tomas Pospisek <tpo@sourcepole.ch>
 pothibault Pier-Olivier Thibault <ximaginex@gmail.com>
+poulain Benjamin Poulain <ikipou@gmail.com>
 pour Andreas Pour <pour@mieterra.com>
 poyraz Işıl Poyraz <isil@pardus.org.tr>
 ppenz Peter Penz <peter.penz19@gmail.com>
@@ -1749,6 +1756,7 @@ rickehrle Ricardo Kehrle Miranda <rickehrle@yahoo.com.br>
 rickxing Rick Xing <jianxing@redflag-linux.com>
 rieger Klaus Rieger <blinux@klausrieger.de>
 rinse Rinse de Vries <rinsedevries@kde.nl>
+risenberg Dmitry Risenberg <dmitry.risenberg@gmail.com>
 ritzert Michael Ritzert <michael@ritzert.de>
 rivol Rivo Laks <rivolaks@hot.ee>
 rizsanyi Zsolt Rizsanyi <rizsanyi@users.sourceforge.net>
@@ -1917,6 +1925,7 @@ shashwath T.R. Shashwath <trshash84@gmail.com>
 sheedy Frédéric Sheedy <sheedf@gmail.com>
 sheidric Stefan Heidrich <sheidric@rz.uni-potsdam.de>
 sheldonc Sheldon Cumming <sheldonc4@gmail.com>
+sheridan Charles Sheridan <casheridan@gmail.com>
 shift Franck Quelain <shift@free.fr>
 shikede Shi Kede <shikede@gmail.com>
 shin Shintaro Matsuoka <shin@shoegazed.org>
@@ -1960,7 +1969,6 @@ smethurst Nick Smethurst <nick.smethurst@free.fr>
 smigaj Wojciech Smigajh <achu@klub.chip.pl>
 smileaf Stephen Leaf <smileaf@gmail.com>
 smparrish Steven Malone Parrish <smparrish@shallowcreek.net>
-snel Ewald Snel <ewald@rambo.its.tudelft.nl>
 snewton Scott Newton <scottn@ihug.co.nz>
 sngeorgaras Spiros Georgaras <sngeorgaras@otenet.gr>
 somogyi Andy Somogyi <andy_somogyi@hotmail.com>
@@ -2150,7 +2158,7 @@ usta Ömer Fadıl Usta <omerusta@gmail.com>
 uwolfer Urs Wolfer <uwolfer@kde.org>
 uzak Matus Uzak <matus.uzak@ixonos.com>
 vaclavjuza Václav Jůza <vaclavjuza@gmail.com>
-valouch Stefan Martin Valouch <stefan@valouch.de>
+valouch Stefan Valouch <stefan@valouch.de>
 vandenoever Jos van den Oever <jos@vandenoever.info>
 vandrie Jeroen van Drie <jeroen@comdev.nl>
 vanhardenberg Peter van Hardenberg <pvh@pvh.ca>
@@ -2191,6 +2199,7 @@ vljubovic Vedran Ljubovic <vljubovic@smartnet.ba>
 vlukman Vera Lukman <vla24@sfu.ca>
 voglrobe Robert Vogl <voglrobe@web.de>
 vojtaeus Vojtěch Zeisek <vojta.sc@seznam.cz>
+volden Morten Volden <mvolden2@gmail.com>
 vollerthun Tom Vollerthun <vollerthun@gmx.de>
 vollmerk Karl Vollmer <vollmer@ampache.org>
 vonreth Patrick von Reth <patrick.vonreth@gmail.com>
@@ -2226,6 +2235,7 @@ whiting Jeremy Paul Whiting <jpwhiting@kde.org>
 whuss Wilfried Huss <wilfried.huss@gmx.at>
 widman Larry Widman <widman@cardiothink.com>
 wiebe Don Wiebe <dwiebe@physics.utoronto.ca>
+wiedenroth Sebastian Wiedenroth <wiedi@frubar.net>
 wiesel Fabian Wiesel <fabian.wiesel@googlemail.com>
 wijnhout Jeroen Wijnhout <wijnhout@science.uva.nl>
 wildfox Nikolas Zimmermann <wildfox@kde.org>
@@ -2414,6 +2424,7 @@ eikelange Eike Lange <eike.lange@kdemail.net>
 eisfuchs Dario Abatianni <eisfuchs@tigress.com>
 elan Sarah Elan <sarahelan@yahoo.com>
 ellis Ellis Whitehead <kde@ellisw.net>
+elvis Elvis Pfuetzenreuter <epx@altoriopreto.com.br>
 emily Jo Dillon <emily@thelonious.new.ox.ac.uk>
 engstad Pal-Kristian Engstad <engstad@att.net>
 erbsland Tobias Erbsland <te@profzone.ch>
@@ -2594,6 +2605,7 @@ nbetcher Nick Betcher <nbetcher@kde.org>
 neerfeld Christoph Neerfeld <chris@kde.org>
 neil Neil Stevens <neil@qualityassistant.com>
 niedner Sven Niedner <niedner@physik.uni-kiel.de>
+nobody KDE Sysadmin <cvs2svn@kde.org>
 nokweed Tim T <oneall1@yahoo.com>
 nsinlock Nicholas Andrew Sinlock <isolatedincident@gmail.com>
 number1 Christian A Strømmen <number1@realityx.net>
@@ -2603,6 +2615,7 @@ olegn Oleg Noskov <olegn@corel.com>
 oneugene Eugene Onischenko <oneugene@ukr.net>
 oord Stefan van den Oord <s.m.vandenoord@student.utwente.nl>
 pahajoki Kalle Pahajoki <kalle@pahajoki.org>
+palmbos Robert Palmbos <palm9744@kettering.edu>
 pammann Patrick Ammann <pammann@aro.ch>
 pamroberts Pam Roberts <pamroberts@blueyonder.co.uk>
 pascalk Pascal Krahmer <pascal@beast.de>
@@ -2661,6 +2674,7 @@ simnacher Florian Simnacher <simnacher@gmx.de>
 sio4 SiO4 Yong Hwan <sio4@linuxkorea.co.kr>
 siva Sivakumar Shanmugasundaram <sshanmu@yahoo.com>
 smonach Scott Monachello <smonach@cox.net>
+snel Ewald Snel <ewald@rambo.its.tudelft.nl>
 soben Leang Chumsoben <soben@khmeros.info>
 soldatos Theodore J. Soldatos <theodore@eexi.gr>
 spalt Leo Spalteholz <leo@spalteholz.ca>
