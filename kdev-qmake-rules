@@ -49,6 +49,20 @@ match /branches/work/kdevelop-qmake-duchain/
   prefix qmake/
 end match
 
+# qmake_read_mkspecs branch
+match /branches/work/kdevelop/qmake_read_mkspecs/
+  repository kdev-qmake
+  branch read-mkspecs
+  prefix qmake/
+end match
+
+# qmake_parser_experiment branch
+match /branches/work/kdevelop/qmake_parser_experiment/
+  repository kdev-qmake
+  branch parser-experiment
+  prefix qmake/
+end match
+
 # qmake builder used to be a separate plugin in a different dir.
 
 match /trunk/playground/devtools/kdevelop4-extra-plugins/qmakebuilder/
