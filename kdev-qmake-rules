@@ -60,7 +60,7 @@ end match
 match /branches/work/kdevelop/qmake_parser_experiment/
   repository kdev-qmake
   branch parser-experiment
-  prefix qmake/
+  prefix qmake/parser/
 end match
 
 # qmake builder used to be a separate plugin in a different dir.
