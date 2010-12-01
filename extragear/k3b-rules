@@ -31,6 +31,18 @@ match /branches/(k3b_0_11_branch|k3b/0.11)/kdeextragear-1/k3b/
   branch 0.11
 end match
 
+match /branches/k3b_0_11_branch/kdeextragear-1/$
+  min revision 283933
+  max revision 283933
+  action recurse
+end match
+
+match /branches/k3b_0_11_branch/$
+  min revision 283933
+  max revision 283933
+  action recurse
+end match
+
 # Import 0.12 branch
 match /branches/k3b/0.12/k3b/
   repository k3b
@@ -61,6 +73,18 @@ end match
 match /branches/(k3b_dvd_rw_branch|k3b/dvd_rw_branch)/kdeextragear-1/k3b/
   repository k3b
   branch dvd-rw
+end match
+
+match /branches/k3b_dvd_rw_branch/kdeextragear-1/$
+  min revision 231791
+  max revision 231791
+  action recurse
+end match
+
+match /branches/k3b_dvd_rw_branch/$
+  min revision 231791
+  max revision 231791
+  action recurse
 end match
 
 # Import libk3b-redesign and other branches if any exists
