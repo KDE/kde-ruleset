@@ -19,6 +19,11 @@
 
 set -e
 
+parentmap="$1"
+if [[ $parentmap = '-' ]]; then
+    parentmap=/dev/stdin; # Not portable. So sue me.
+fi
+
 codebefore='
 merge_gitrev=;
 case $GIT_COMMIT in
@@ -34,7 +39,7 @@ code="$codebefore"
 while read srcrev newparent; do
     code="$code    $srcrev) newparent=$newparent;;
 "
-done < "$1"
+done < "$parentmap"
 code="$code$codeafter"
 shift
 
