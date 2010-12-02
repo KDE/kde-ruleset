@@ -208,6 +208,7 @@ match /tags/KDE/([^/]+)/kdeplasma-addons/
   repository kdeplasma-addons
   min revision 710835
   branch refs/tags/v\1
+  annotated true
 end match
 
 
