@@ -13,4 +13,4 @@ fi
 rm -rf "$repofixed"
 git clone "$repo" "$repofixed"
 cd $repofixed
-git filter-branch
+../rules/generate-parent-map.py ../rules/kdev-qmake-parent-map | ../rules/add-parents /dev/stdin
