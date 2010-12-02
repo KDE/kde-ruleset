@@ -17,7 +17,7 @@ code="$codebefore"
 while read srcrev newparent; do
     code="$code    $srcrev) newparent=$newparent;;
 "
-done < <(python generate-parent-map.py "$1")
+done < "$1"
 code="$code$codeafter"
 
 git filter-branch --parent-filter "$code" HEAD
