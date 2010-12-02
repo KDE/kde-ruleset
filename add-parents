@@ -1,29 +1,23 @@
 #!/bin/bash
 
-git filter-branch --parent-filter '
-svnrev_from_git() {
-    grep "$1" ../../rev-map | cut -d" " -f1
-}
-gitrev_from_svn() {
-    grep "$1" ../../rev-map | cut -d" " -f2
-}
-svnrev=$(svnrev_from_git $GIT_COMMIT);
+set -e
+
+codebefore='
 merge_gitrev=;
-if [ $svnrev = 693080 ]; then
-    merge_gitrev=$(gitrev_from_svn 693079);
-elif [ $svnrev = 697148 ]; then
-    merge_gitrev=$(gitrev_from_svn 697125);
-elif [ $svnrev = 706643 ]; then
-    merge_gitrev=$(gitrev_from_svn 705917);
-elif [ $svnrev = 712331 ]; then
-    merge_gitrev=$(gitrev_from_svn 711283);
-elif [ $svnrev = 719692 ]; then
-    merge_gitrev=$(gitrev_from_svn 719318);
-elif [ $svnrev = 738338 ]; then
-    merge_gitrev=$(gitrev_from_svn 735531);
-fi
+case $GIT_COMMIT in
+'
+codeafter='
+esac;
 if [ -n "$merge_gitrev" ]; then
     echo "$(cat) -p $(map $merge_gitrev)";
 else
     cat;
-fi' HEAD
+fi'
+code="$codebefore"
+while read srcrev newparent; do
+    code="$code    $srcrev) newparent=$newparent;;
+"
+done < <(python generate-parent-map.py "$1")
+code="$code$codeafter"
+
+git filter-branch --parent-filter "$code" HEAD
