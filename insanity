@@ -1,11 +1,5 @@
 #!/bin/bash
 
-if [ -f .git/refs/original/refs/heads/master ]; then
-    git reset --hard refs/original/refs/heads/master
-    rm -r .git/refs/original
-fi
-rm -rf .git-rewrite;
-
 git filter-branch --parent-filter '
 svnrev_from_git() {
     grep "$1" ../../rev-map | cut -d" " -f1
