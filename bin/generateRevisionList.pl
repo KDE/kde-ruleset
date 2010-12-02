@@ -16,7 +16,8 @@ my %gargs = (
     'module' => "",
     'mode' => 0,
     'root' => "",
-    'append' => 0
+    'append' => 0,
+    'ignore' => ""
 );
 my @commands = ();
 
@@ -37,14 +38,18 @@ sub listSubDirs
     while( <$CMD> ) {
         chomp;
         if( /(\S+)\/$/ ) {
-            if( length( $args->{'path'} ) > 0 && substr( $args->{'path'}, -1 ) ne "/" ) {
-                $args->{'path'} = "$args->{'path'}/";
+            if( $args->{'ignore'} eq "" or not /$args->{'ignore'}/ ) {
+                if( length( $args->{'path'} ) > 0 && substr( $args->{'path'}, -1 ) ne "/" ) {
+                    $args->{'path'} = "$args->{'path'}/";
+                }
+                print( "listSubDirs:\tAdding: $args->{'path'}$_\n" );
+                push( @dirs, "$args->{'path'}$1" );
+                my %subargs = %{$args};
+                $subargs{'path'} = "$args->{'path'}$_";
+                push( @dirs, listSubDirs(\%subargs) );
+            } else {
+                print( "listSubDirs:\tSkipping; $args->{'path'}$_\n" );
             }
-            print( "listSubDirs:\tAdding: $args->{'path'}$_\n" );
-            push( @dirs, "$args->{'path'}$1" );
-            my %subargs = %{$args};
-            $subargs{'path'} = "$args->{'path'}$_";
-            push( @dirs, listSubDirs(\%subargs) );
         } else {
             if( length( $args->{'path'} ) > 0 && substr( $args->{'path'}, -1 ) eq "/" ) {
                 $args->{'path'} = substr($args->{'path'}, 0, -1);
@@ -94,18 +99,19 @@ for($argnum = 0; $argnum <= $#ARGV; $argnum++ ) {
         case "--module" { $gargs{'module'} = $ARGV[++$argnum]; }
         case "--append" { $gargs{'append'} = 1; }
         case "--root"   { $gargs{'root'} = $ARGV[++$argnum]; }
+        case "--ignore" { $gargs{'ignore'} = "$ARGV[++$argnum]"; }
         else            { print "Unknown option: $ARGV[$argnum]\n"; exit; }
     }
 }
 if( $#ARGV < 5 ) {
-    print( "Usage: generateRevisionList.pl --repo repository --root rootpath --path path [--path path]* --module module [--append]\n");
+    print( "Usage: generateRevisionList.pl --repo repository --root rootpath --path path [--path path]* --module module [--append] [--ignore path]\n" );
     exit;
 }
 print Dumper(%gargs);
 
 my $fileName = "$gargs{'module'}-revisions.txt";
 print("Getting a list of paths...\n");
-my %args = ( 'repository' => $gargs{'repository'}, 'root' => $gargs{'root'}, 'path' => "" );
+my %args = ( 'repository' => $gargs{'repository'}, 'root' => $gargs{'root'}, 'path' => "", 'ignore' => $gargs{'ignore'} );
 my @dirs;
 
 foreach my $dir (@{$gargs{'path'}}) {
