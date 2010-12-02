@@ -5,7 +5,7 @@ import re
 import sys
 
 def get_log_messages():
-    p = subprocess.Popen(['git','log','-z', '--format=format:%H%x01%B', '--all'],
+    p = subprocess.Popen(['git','log','-z', '--format=format:%H%x01%b', '--all'],
             stdout=subprocess.PIPE)
 
     rawdata = p.communicate()[0]
