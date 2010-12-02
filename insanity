@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [ -f .git/refs/original/refs/heads/master ]; then
+    git reset --hard refs/original/refs/heads/master
+    rm -r .git/refs/original
+fi
+rm -rf .git-rewrite;
+
+git filter-branch --parent-filter '
+svnrev_from_git() {
+    grep "$1" ../../rev-map | cut -d" " -f1
+}
+gitrev_from_svn() {
+    grep "$1" ../../rev-map | cut -d" " -f2
+}
+svnrev=$(svnrev_from_git $GIT_COMMIT);
+merge_gitrev=;
+if [ $svnrev = 693080 ]; then
+    merge_gitrev=$(gitrev_from_svn 693079);
+elif [ $svnrev = 697148 ]; then
+    merge_gitrev=$(gitrev_from_svn 697125);
+elif [ $svnrev = 706643 ]; then
+    merge_gitrev=$(gitrev_from_svn 705917);
+elif [ $svnrev = 712331 ]; then
+    merge_gitrev=$(gitrev_from_svn 711283);
+elif [ $svnrev = 719692 ]; then
+    merge_gitrev=$(gitrev_from_svn 719318);
+elif [ $svnrev = 738338 ]; then
+    merge_gitrev=$(gitrev_from_svn 735531);
+fi
+if [ -n "$merge_gitrev" ]; then
+    echo "$(cat) -p $(map $merge_gitrev)";
+else
+    cat;
+fi' HEAD
