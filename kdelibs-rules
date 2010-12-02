@@ -1,0 +1,153 @@
+#
+# Create the KDE modules
+#
+create repository KDE/kdelibs
+end repository
+
+#
+# Ignore rules
+#
+
+# ignore the SVN-adjusting commits
+match /
+  min revision 409202
+  max revision 409209
+end match
+match /tags/KDE/4.0.80/(kdevelop)
+  min revision 813323
+end match
+match /branches/KDE/4.1/(kdevelop|kdevplatform)
+  min revision 829867
+end match
+
+# Ignore branches and tags that start with a non-uppercase letter
+match /(branches|tags)/[^A-Z]
+  max revision 409202
+end match
+
+# Ignore these branches and tags
+match /(tags/RELEASE_0_9_9|tags/KDE_2_1_RELEASET|tags/KDE_2_1|tags/MPG123LIB|tags/OGG_VORBIS|tags/KDAB_.*|tags/KOFFICE_1_1_BRANCHPOINT|tags/KDEVELOP_2_KACTION_START|tags/KDEVELOP_2_MERGE|branches/KWORD_RICHTEXT|branches/KWORD_WYSIWYG|branches/AEGYPTEN_BRANCH|branches/KFILEMETAINFO_BRANCH|branches/Unstable_Development|branches/kicker)/
+end match
+
+# Ignore this stupid commit
+match /file$
+  min revision 409232
+  max revision 409232
+end match
+
+
+#
+# Main KDE modules
+#
+match /trunk/kdelibs/
+  repository KDE/kdelibs
+  branch master
+  max revision 409202
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdelibs/
+  repository KDE/kdelibs
+  branch refs/tags/v\1.\2.0
+  max revision 409202
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdelibs/
+  repository KDE/kdelibs
+  branch refs/tags/v\1.\2.0
+  max revision 85028
+  min revision 68154
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdelibs/
+  repository KDE/kdelibs
+  branch refs/tags/v\1.\2.\3
+  max revision 409202
+  annotated true
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdelibs/
+  repository KDE/kdelibs
+  branch refs/tags/v\1.\2.\3a
+  min revision 192719
+  max revision 409202
+  annotated true
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdelibs/
+  repository KDE/kdelibs
+  branch refs/tags/v\1.\2.\3-beta\4
+  min revision 376088
+  max revision 409202
+  annotated true
+end match
+
+match /trunk/KDE/kdelibs/
+  repository KDE/kdelibs
+  branch master
+  min revision 409209
+end match
+match /tags/KDE/3.5.0-alpha1/kdelibs/
+  repository KDE/kdelibs
+  branch refs/tags/v3.4.90
+  min revision 443441
+  max revision 445561
+  annotated true
+end match
+match /tags/KDE/3.5.0-beta1/kdelibs/
+  repository KDE/kdelibs
+  branch refs/tags/v3.4.91
+  min revision 459298
+  max revision 460260
+  annotated true
+end match
+match /tags/KDE/([^/]+)A/kdelibs/
+  repository KDE/kdelibs
+  branch refs/tags/v\2a
+  min revision 409209
+  annotated true
+end match
+match /tags/KDE/([^/]+)/kdelibs/
+  repository KDE/kdelibs
+  branch refs/tags/v\2
+  min revision 409209
+  annotated true
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdelibs/
+  repository KDE/kdelibs
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+match /branches/KDE/([^/]+)A/kdelibs/
+  repository KDE/kdelibs
+  branch KDE/\2a
+  min revision 409209
+end match
+match /branches/KDE/([^/]+)/kdelibs/
+  repository KDE/kdelibs
+  branch KDE/\1
+  min revision 409209
+end match
+
+
+#
+# Final rules
+#
+
+match /branches/work/kde4/kdelibs/
+  min revision 411284
+  max revision 450000
+  repository KDE/kdelibs
+  branch kde4-work
+end match
+
+# I don't know what to do with the kdelibs4_snapshot
+#match /branches/work/kde4/kdelibs4_snapshot
+#  min revision 557941
+#  max revision 600000
+#end match
+
+# Ignore all other tags and branches
+match /
+end match
