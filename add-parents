@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: add-parents <parentmap>
+# Usage: add-parents <parentmap> [<filter-branch options>...] [--] [<rev-list options...>]
 #
 # parentmap must be a filename with *git* revisions formatted like this:
 # 
@@ -11,6 +11,11 @@
 # as a new parent for the first revision, via filter-branch. The revisions
 # must not be abbreviated. Only full SHA-1 IDs are supported, not general
 # refspecs.
+#
+# You can pass extra filter-branch options to add-parents, for example to
+# run another filter, or to limit revisions with rev-list options. However,
+# you must not pass --parent-filter, since that's used internally by
+# add-parents.
 
 set -e
 
@@ -31,5 +36,6 @@ while read srcrev newparent; do
 "
 done < "$1"
 code="$code$codeafter"
+shift
 
-git filter-branch --parent-filter "$code" HEAD
+git filter-branch --parent-filter "$code" "$@"
