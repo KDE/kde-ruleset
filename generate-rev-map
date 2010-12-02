@@ -1,9 +1,0 @@
-#!/bin/bash
-git rev-list --all |
-while read rev; do
-    lastline=$(git log -n 1 --format='format:%B' "$rev" | tail -1)
-    svnrev=$(echo "$lastline" | sed -n 's/^svn path=.*; revision=\([0-9]\+\)$/\1/p')
-    if [[ -n "$svnrev" ]]; then
-        echo "$svnrev $rev"
-    fi
-done
