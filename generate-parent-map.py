@@ -16,8 +16,7 @@ def get_log_messages():
 def create_svn_map(msg_map):
     svnmap = {}
     for gitrev, msg in msg_map.items():
-        svnline = msg[msg.rstrip().rfind('\n'):].strip()
-        match = re.match(r"^svn path=([^; ]+); revision=(\d+)", svnline)
+        match = re.search(r"^svn path=([^; ]+); revision=(\d+)", msg, re.MULTILINE)
         if match:
             svnrev = int(match.group(2))
             svnmap[svnrev] = gitrev
