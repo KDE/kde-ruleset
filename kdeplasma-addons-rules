@@ -1,0 +1,217 @@
+#
+# Created by Artur Duque de Souza <asouza@kde.org>
+#
+
+#
+# Create the kdeplasma-addons repository
+#
+create repository kdeplasma-addons
+end repository
+
+##
+# Old place of plasma addons
+##
+match /trunk/extragear/plasma/
+  repository kdeplasma-addons
+  min revision 710834
+  max revision 813309
+  branch master
+end match
+
+##
+# New place - main rule
+##
+match /trunk/KDE/kdeplasma-addons/
+  repository kdeplasma-addons
+  min revision 813309 
+  branch master
+end match
+
+
+##
+# History of bookmarks applet
+##
+match /trunk/kdereview/plasma/applets/bookmarks/
+  repository kdeplasma-addons
+  min revision 1073347
+  max revision 1081251
+  branch master
+end match
+
+match /trunk/playground/base/plasma/applets/bookmarks/
+  repository kdeplasma-addons
+  min revision 1061514
+  max revision 1073346
+  branch master
+end match
+
+
+##
+# History of grouping desktop containment
+##
+# some mess with the directories
+match /trunk/KDE/kdeplasma-addons/containments/lib/
+  repository kdeplasma-addons
+  min revision 1161126
+  max revision 1161130
+  branch master
+end match
+
+match /trunk/KDE/kdeplasma-addons/containments/panel/
+  repository kdeplasma-addons
+  min revision 1161126
+  max revision 1161130
+  branch master
+end match
+
+match /trunk/KDE/kdeplasma-addons/containments/desktop/
+  repository kdeplasma-addons
+  min revision 1161126
+  max revision 1161130
+  branch master
+end match
+
+match /trunk/kdereview/plasma/containments/groupingdesktop/
+  repository kdeplasma-addons
+  min revision 1161124
+  max revision 1161125
+  branch master
+end match
+
+match /trunk/playground/base/plasma/containments/groupingdesktop/
+  repository kdeplasma-addons
+  min revision 1035793
+  max revision 1153216
+  branch master
+end match
+
+
+##
+# History of kdeobservatory dataengine
+##
+match /trunk/kdereview/plasma/dataengines/kdeobservatory/
+  repository kdeplasma-addons
+  min revision 1123064
+  max revision 1126729
+  branch master
+end match
+
+match /trunk/playground/base/plasma/dataengines/kdeobservatory/
+  repository kdeplasma-addons
+  min revision 1119651
+  max revision 1123063
+  branch master
+end match
+
+match /trunk/playground/base/plasma/dataengines/kdecommits/
+  repository kdeplasma-addons
+  min revision 1113316
+  max revision 1119650
+  branch master
+end match
+
+
+##
+# History of kdeobservatory applet
+##
+match /trunk/kdereview/plasma/applets/kdeobservatory/
+  repository kdeplasma-addons
+  min revision 1123065
+  max revision 1126730
+  branch master
+end match
+
+# a small mess with the directory
+match /trunk/kdereview/kdeobservatory/
+  repository kdeplasma-addons
+  min revision 1049332
+  max revision 1050151
+  branch master
+end match
+
+match /trunk/playground/base/plasma/applets/kdeobservatory/
+  repository kdeplasma-addons
+  min revision 1041812
+  max revision 1049331
+  branch master
+end match
+
+
+###
+# History of lancelot and lancelot-models
+# - it came from the lancelot applet, so no need for special rules
+# - thanks ivan :)
+###
+
+
+##
+# History of events
+##
+# could not find playground path for the events runner
+match /trunk/kdereview/plasma/runners/events/
+  repository kdeplasma-addons
+  min revision 1082159
+  max revision 1171370
+  branch master
+end match
+
+
+##
+# History of characters (runner)
+##
+# could not find kdereview path for the characters runner
+# could not find playground path for the characters runner
+
+
+##
+# History of datetime
+##
+match /trunk/kdereview/plasma/runners/datetime/
+  repository kdeplasma-addons
+  min revision 1106704
+  max revision 1126356
+  branch master
+end match
+
+match /trunk/playground/base/plasma/runners/datetime/
+  repository kdeplasma-addons
+  min revision 1105356
+  max revision 1106703
+  branch master
+end match
+
+
+
+### Branches:
+
+#
+# recursion
+#
+match /branches/KDE/([^/]+)/$
+  action recurse
+  min revision 710835
+end match
+
+#
+# branches
+#
+match /branches/KDE/([^/]+)/kdeplasma-addons/
+  repository kdeplasma-addons
+  min revision 710835
+  branch \1
+end match
+
+
+## Tags:
+
+match /tags/KDE/([^/]+)/kdeplasma-addons/
+  repository kdeplasma-addons
+  min revision 710835
+  branch refs/tags/v\1
+end match
+
+
+# Ignore everything else
+# Do we need this always!?
+match /
+end match
