@@ -30,8 +30,8 @@ sub listSubDirs
     $args->{'root'} = "$args->{'root'}/" if substr($args->{'root'},-1) ne "/" and $args->{'root'} ne "/"; 
     my $cmd = "svn ls $args->{'repository'}$args->{'root'}$args->{'path'}";
     push( @commands, $cmd );
-
     my @dirs;
+    push( @dirs, "$args->{'root'}$args->{'path'}" );
     open( my $CMD, "-|", "$cmd" ) || die "listSubDirs: Failed to run \"$cmd\": $!\n";
 
     print( "listSubDirs: Running: $cmd\n" );
@@ -43,7 +43,7 @@ sub listSubDirs
                     $args->{'path'} = "$args->{'path'}/";
                 }
                 print( "listSubDirs:\tAdding: $args->{'path'}$_\n" );
-                push( @dirs, "$args->{'path'}$1" );
+                #push( @dirs, "$args->{'path'}$1" );
                 my %subargs = %{$args};
                 $subargs{'path'} = "$args->{'path'}$_";
                 push( @dirs, listSubDirs(\%subargs) );
@@ -71,22 +71,25 @@ sub addRevisionsForPath
 
     $args->{'root'} = "" if $args->{'root'} eq "/";
     $args->{'root'} = "$args->{'root'}/" if substr($args->{'root'},-1) ne "/" and $args->{'root'} ne "/"; 
-    my $cmd = "svn log $args->{'repository'}$args->{'root'}$args->{'path'}";
+    my $cmd = "svn log -v $args->{'repository'}$args->{'root'}$args->{'path'}";
     #print( "addRevisionsForPath: Running: $cmd\n" );
     push( @commands, $cmd );
-
+    #print(" $cmd\n");
     open( my $CMD, "-|", "$cmd" ) || die "getRevisions: Failed to run \"$cmd\": $!\n";
     my $nbr = 0;
-    my $last;
+    my $last = -1;
+    my $rev;
+    print "$args->{'path'}: ";
     while( <$CMD> ) {
         if( /^r(\d+) / ) {
-            $args->{'revisions'}->{$1} = 1;
+            $rev = $1;
+            $args->{'revisions'}->{$rev} = 1;
             $nbr++;
-            $last = $1;
+            $last = $rev;
         }
     }
     close( $CMD );
-    print "$args->{'path'}: $nbr revs ($last)\n";
+    print "$nbr revs ($last)\n";
 }
 
 my $argnum;
