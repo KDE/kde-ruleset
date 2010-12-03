@@ -1,0 +1,24 @@
+#!/bin/bash
+
+idmap=/home/gitmaster/kde-ruleset/account-map
+rulesdir=$(pwd)/rules
+toolsdir=$rulesdir
+svndir=/home/gitmaster/svn/
+
+repo=kdev-qmake # this is hardcoded in rules too!
+
+set -e
+
+rm -rf "$repo"
+svn-all-fast-export --add-metadata --identity-map "$idmap" --rules "$rulesdir/kdev-qmake-rules" "$@" "$svndir"
+
+cd "$repo"
+
+# Synthesize merge commits, and delete vim swapfiles.
+git filter-branch \
+    --parent-filter "$($toolsdir/add-parents <($toolsdir/generate-parent-map.py $rulesdir/kdev-qmake-parent-map))" \
+    --tree-filter 'rm -f qmake/duchain/.qmakeeditorintegrator.cpp.swp' \
+    -- --all
+
+# When qmakebuilder was moved into qmake/qmakebuilder, move contents of qmake into the root.
+git filter-branch -f --subdirectory-filter "qmake" "$(git rev-parse ":/Move qmakebuilder into qmake plugin")^..HEAD"

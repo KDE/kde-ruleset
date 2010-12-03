@@ -1,0 +1,95 @@
+# svn2git rules for KDevelop QMake plugin
+# Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
+
+
+create repository kdev-qmake
+end repository
+
+match /trunk/playground/devtools/kdevelop4-extra-plugins/qmake/
+  repository kdev-qmake
+  branch master
+  prefix qmake/
+end match
+
+match /trunk/KDE/kdevelop/projectmanagers/qmake/
+  repository kdev-qmake
+  branch master
+  prefix qmake/
+end match
+
+match /trunk/KDE/kdevelop/plugins/managers/qmake/
+  repository kdev-qmake
+  branch master
+  prefix qmake/
+end match
+
+match /trunk/KDE/kdevelop/buildtools/managers/qmake/
+  repository kdev-qmake
+  branch master
+  prefix qmake/
+end match
+
+match /trunk/KDE/kdevelop/buildtools/importers/qmake/
+  repository kdev-qmake
+  branch master
+  prefix qmake/
+end match
+
+match /branches/work/kdevelop4-merge/buildtools/importers/qmake/
+  repository kdev-qmake
+  branch master
+  prefix qmake/
+end match
+
+# qmake plugin branch, adding duchain support.
+# Quite short-lived, but not mergeable with fast-forward.
+match /branches/work/kdevelop-qmake-duchain/
+  repository kdev-qmake
+  branch duchain
+  prefix qmake/
+end match
+
+# qmake_read_mkspecs branch
+match /branches/work/kdevelop/qmake_read_mkspecs/
+  repository kdev-qmake
+  branch read-mkspecs
+  prefix qmake/
+end match
+
+# qmake_parser_experiment branch
+match /branches/work/kdevelop/qmake_parser_experiment/
+  repository kdev-qmake
+  branch parser-experiment
+  prefix qmake/parser/
+end match
+
+# qmake builder used to be a separate plugin in a different dir.
+
+match /trunk/playground/devtools/kdevelop4-extra-plugins/qmakebuilder/
+  repository kdev-qmake
+  branch master
+  prefix qmakebuilder/
+end match
+
+match /trunk/KDE/kdevelop/projectbuilders/qmakebuilder/
+  repository kdev-qmake
+  branch master
+  prefix qmakebuilder/
+end match
+
+match /trunk/KDE/kdevelop/plugins/builders/qmakebuilder/
+  repository kdev-qmake
+  branch master
+  prefix qmakebuilder/
+end match
+
+match /trunk/KDE/kdevelop/buildtools/builders/qmakebuilder/
+  repository kdev-qmake
+  branch master
+  prefix qmakebuilder/
+end match
+
+
+match /
+end match
+# vim: set ft=conf ts=2 sw=2 et:
