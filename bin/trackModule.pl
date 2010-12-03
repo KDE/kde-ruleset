@@ -55,10 +55,11 @@ sub getCopyFrom
 {
     my $args = $_[0];
     my %returns = ('type' => '', 'path' => '','fromRev' => 0, 'minRev' => 0 );
-    my $cmd = "svn log -v --stop-on-copy $args->{'repository'}/$args->{'path'}\@$args->{'rev'}";
-    #print( "getCopyFrom: Getting origin of '$repository / $path \@ $revision...\n" );
+    $args->{'path'} = "/$args->{'path'}" if substr($args->{'path'}, 0, 1) ne "/";
+    my $cmd = "svn log -v --stop-on-copy $args->{'repository'}$args->{'path'}\@$args->{'rev'}";
+    #print Dumper(%{$args});
     push( @commands, $cmd );
-    my $path = "/$args->{'path'}";
+    my $path = "$args->{'path'}";
     my $fromRevision = 0;
     my $fromPath = "";
 
@@ -146,8 +147,8 @@ sub getCopyFrom
             # case 3:
             if( $delayedCopyCandidate == 1 && $newPath =~ /$path\// ) {
                 print(" getCopyFrom:\t\@r$currentRev: Found dir add with delayed file move/copy '$newPath' from '$origPath' at rev $fromRev\n" );
-                my($file, $dir, $suffix) = fileparse($origPath);
-                $origPath = substr($dir, 0, -1);
+                #my($file, $dir, $suffix) = fileparse($origPath);
+                #$origPath = substr($dir, 0, -1);
                 print( $FILE "#\t[ Delayed: $newPath @ $currentRev <- $origPath @ $fromRev ]\n" );
                 $delayedCopy = 1;
                 #last;
@@ -223,6 +224,7 @@ sub getCopyFrom
     if( substr($returns{'path'},0,1) eq "/" ) {
         $returns{'path'} = substr($returns{'path'}, 1);
     }
+    #print Dumper(%returns);
     return \%returns
 
 }
@@ -266,7 +268,7 @@ sub getCopyFromRecursive
             if( $historyPart->{'path'} eq "" ) {
                 print( $FILE "match /$args->{'root'}/\n");
             } elsif( $historyPart->{'path'} eq "$args->{'path'}" ) {
-                print( $FILE "match /$args->{'root'}/$args->{'path'}/\n" );
+                print( $FILE "match $args->{'root'}/$args->{'path'}/\n" );
             } else {
                 print( $FILE  "match /$historyPart->{'path'}/\n");
             }
