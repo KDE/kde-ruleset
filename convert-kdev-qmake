@@ -15,4 +15,5 @@ git clone "$repo" "$repofixed"
 cd $repofixed
 git filter-branch \
     --parent-filter "$(../rules/add-parents <(../rules/generate-parent-map.py ../rules/kdev-qmake-parent-map))" \
+    --tree-filter 'rm -f qmake/duchain/.qmakeeditorintegrator.cpp.swp' \
     -- --all
