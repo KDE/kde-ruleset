@@ -13,7 +13,11 @@ fi
 rm -rf "$repofixed"
 git clone "$repo" "$repofixed"
 cd $repofixed
+
 git filter-branch \
     --parent-filter "$(../rules/add-parents <(../rules/generate-parent-map.py ../rules/kdev-qmake-parent-map))" \
     --tree-filter 'rm -f qmake/duchain/.qmakeeditorintegrator.cpp.swp' \
     -- --all
+
+# When qmakebuilder was moved into qmake/qmakebuilder, move contents of qmake into the root.
+git filter-branch --subdirectory-filter "qmake" "$(git rev-parse ":/Move qmakebuilder into qmake plugin")^..HEAD"
