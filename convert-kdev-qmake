@@ -1,19 +1,15 @@
 #!/bin/bash
 
 repo=kdev-qmake # this is hardcoded in rules too!
-repofixed=kdev-qmake-filtered
 
 set -e
 
-if true; then
 rm -rf "$repo"
 svn-all-fast-export --add-metadata --identity-map /home/gitmaster/kde-ruleset/account-map --rules rules/kdev-qmake-rules "$@" /home/gitmaster/svn/
-fi
 
-rm -rf "$repofixed"
-git clone "$repo" "$repofixed"
-cd $repofixed
+cd "$repo"
 
+# Synthesize merge commits, and delete vim swapfiles.
 git filter-branch \
     --parent-filter "$(../rules/add-parents <(../rules/generate-parent-map.py ../rules/kdev-qmake-parent-map))" \
     --tree-filter 'rm -f qmake/duchain/.qmakeeditorintegrator.cpp.swp' \
