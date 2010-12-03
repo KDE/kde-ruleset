@@ -102,13 +102,13 @@ match /tags/KDE/3.5.0-beta1/kdelibs/
 end match
 match /tags/KDE/([^/]+)A/kdelibs/
   repository KDE/kdelibs
-  branch refs/tags/v\2a
+  branch refs/tags/v\1a
   min revision 409209
   annotated true
 end match
 match /tags/KDE/([^/]+)/kdelibs/
   repository KDE/kdelibs
-  branch refs/tags/v\2
+  branch refs/tags/v\1
   min revision 409209
   annotated true
 end match
@@ -121,7 +121,7 @@ end match
 
 match /branches/KDE/([^/]+)A/kdelibs/
   repository KDE/kdelibs
-  branch KDE/\2a
+  branch KDE/\1a
   min revision 409209
 end match
 match /branches/KDE/([^/]+)/kdelibs/
