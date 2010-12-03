@@ -20,4 +20,4 @@ git filter-branch \
     -- --all
 
 # When qmakebuilder was moved into qmake/qmakebuilder, move contents of qmake into the root.
-git filter-branch --subdirectory-filter "qmake" "$(git rev-parse ":/Move qmakebuilder into qmake plugin")^..HEAD"
+git filter-branch -f --subdirectory-filter "qmake" "$(git rev-parse ":/Move qmakebuilder into qmake plugin")^..HEAD"
