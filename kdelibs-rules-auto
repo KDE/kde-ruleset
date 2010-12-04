@@ -1,0 +1,2640 @@
+# --repo# file:///code/kde/svnrepo/svn# --path# /trunk/KDE/kdelibs# --module# kdelibs# --subdirs# --recurse# 2
+create repository kdelibs
+end repository
+
+#   [ move trunk/kdelibs 409202 0 ]
+match /trunk/kdelibs/
+    repository kdelibs
+    branch master
+    max revision 409202
+end match
+
+#   ------< /trunk/KDE/kdelibs >------
+#   [ Move/Replace: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add  HEAD 409202 ]
+
+#   [ move trunk/kdelibs 409202 0 ]
+
+#   ------< /trunk/KDE/kdelibs/cmake >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/cmake @ 502383 <- /trunk/KDE/kdesdk/cmake @ 501773 ]
+#   [ add cmake HEAD 501773 ]
+#match /trunk/KDE/kdelibs/cmake/
+#    repository kdelibs
+#    prefix cmake/
+#    branch master
+#    min revision 501773
+#end match
+
+#   [ move trunk/KDE/kdesdk/cmake 501773 0 ]
+match /trunk/KDE/kdesdk/cmake/
+    repository kdelibs
+    prefix cmake/
+    branch master
+    max revision 501773
+end match
+
+#   ------< /trunk/KDE/kdelibs/cmake/modules >------
+#   [ Parent: /trunk/KDE/kdelibs/cmake @ 502383 <- /trunk/KDE/kdesdk/cmake @ 501773 ]
+#   [ add cmake/modules HEAD 501773 ]
+#match /trunk/KDE/kdelibs/cmake/modules/
+#    repository kdelibs
+#    prefix cmake/modules/
+#    branch master
+#    min revision 501773
+#end match
+
+#   [ parent trunk/KDE/kdesdk/cmake/modules 501773 0 ]
+#match /trunk/KDE/kdesdk/cmake/modules/
+#    repository kdelibs
+#    prefix cmake/modules/
+#    branch master
+#    max revision 501773
+#end match
+
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests >------
+#   [ add cmake/modules-tests HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/AGG >------
+#   [ add cmake/modules-tests/AGG HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/Blitz >------
+#   [ add cmake/modules-tests/Blitz HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/BlueZ >------
+#   [ add cmake/modules-tests/BlueZ HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/ENCHANT >------
+#   [ add cmake/modules-tests/ENCHANT HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/Eigen2 >------
+#   [ add cmake/modules-tests/Eigen2 HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/FFmpeg >------
+#   [ add cmake/modules-tests/FFmpeg HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/Flac >------
+#   [ add cmake/modules-tests/Flac HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/Flex >------
+#   [ add cmake/modules-tests/Flex HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/GObject >------
+#   [ add cmake/modules-tests/GObject HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/GStreamer >------
+#   [ add cmake/modules-tests/GStreamer HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/LCMS >------
+#   [ add cmake/modules-tests/LCMS HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/LibArt >------
+#   [ add cmake/modules-tests/LibArt HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/LibXslt >------
+#   [ add cmake/modules-tests/LibXslt HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/OpenEXR >------
+#   [ add cmake/modules-tests/OpenEXR HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/PCRE >------
+#   [ add cmake/modules-tests/PCRE HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/QCA2 >------
+#   [ add cmake/modules-tests/QCA2 HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/QImageBlitz >------
+#   [ add cmake/modules-tests/QImageBlitz HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/Sqlite >------
+#   [ add cmake/modules-tests/Sqlite HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/Strigi >------
+#   [ add cmake/modules-tests/Strigi HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/USB >------
+#   [ add cmake/modules-tests/USB HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/Xine >------
+#   [ add cmake/modules-tests/Xine HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/modules-tests/Xmms >------
+#   [ add cmake/modules-tests/Xmms HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/cmake/systeminfo >------
+#   [ add cmake/systeminfo HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/dnssd >------
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/Makefile.am @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/Makefile.am @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/domainbrowser.cpp @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/domainbrowser.cpp @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/domainbrowser.h @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/domainbrowser.h @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/kcm_kdnssd.kcfg @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/kcm_kdnssd.kcfg @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/publicservice.cpp @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/publicservice.cpp @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/publicservice.h @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/publicservice.h @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/query.cpp @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/query.cpp @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/query.h @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/query.h @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/remoteservice.cpp @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/remoteservice.cpp @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/remoteservice.h @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/remoteservice.h @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/responder.cpp @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/responder.cpp @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/responder.h @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/responder.h @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/sdevent.h @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/sdevent.h @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/servicebase.cpp @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/servicebase.cpp @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/servicebase.h @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/servicebase.h @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/servicebrowser.cpp @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/servicebrowser.cpp @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/servicebrowser.h @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/servicebrowser.h @ 368435 ]
+#   [ Delayed: /trunk/kdelibs/dnssd/settings.kcfgc @ 368436 <- /trunk/kdenonbeta/kdnssd/dnssd/settings.kcfgc @ 368435 ]
+#   [ add dnssd HEAD 409202 ]
+#match /trunk/KDE/kdelibs/dnssd/
+#    repository kdelibs
+#    prefix dnssd/
+#    branch master
+#    min revision 409202
+#end match
+
+#   [ parent trunk/kdelibs/dnssd 409202 0 ]
+#match /trunk/kdelibs/dnssd/
+#    repository kdelibs
+#    prefix dnssd/
+#    branch master
+#    max revision 409202
+#end match
+
+#   ------< /trunk/KDE/kdelibs/doc >------
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add doc HEAD 409202 ]
+#match /trunk/KDE/kdelibs/doc/
+#    repository kdelibs
+#    prefix doc/
+#    branch master
+#    min revision 409202
+#end match
+
+#   [ parent trunk/kdelibs/doc 409202 0 ]
+#match /trunk/kdelibs/doc/
+#    repository kdelibs
+#    prefix doc/
+#    branch master
+#    max revision 409202
+#end match
+
+#   ------< /trunk/KDE/kdelibs/doc/api >------
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add doc/api HEAD 409202 ]
+#match /trunk/KDE/kdelibs/doc/api/
+#    repository kdelibs
+#    prefix doc/api/
+#    branch master
+#    min revision 409202
+#end match
+
+#   [ parent trunk/kdelibs/doc/api 409202 0 ]
+#match /trunk/kdelibs/doc/api/
+#    repository kdelibs
+#    prefix doc/api/
+#    branch master
+#    max revision 409202
+#end match
+
+#   ------< /trunk/KDE/kdelibs/doc/checkXML >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/checkXML/man-checkXML.1.docbook @ 717308 <- /trunk/KDE/kdelibs/doc/kdelibs/man-checkXML.1.docbook @ 717056 ]
+#   [ add doc/checkXML HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/common >------
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add doc/common HEAD 409202 ]
+#match /trunk/KDE/kdelibs/doc/common/
+#    repository kdelibs
+#    prefix doc/common/
+#    branch master
+#    min revision 409202
+#end match
+
+#   [ parent trunk/kdelibs/doc/common 409202 0 ]
+#match /trunk/kdelibs/doc/common/
+#    repository kdelibs
+#    prefix doc/common/
+#    branch master
+#    max revision 409202
+#end match
+
+#   ------< /trunk/KDE/kdelibs/doc/kbuildsycoca4 >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kbuildsycoca4/man-kbuildsycoca4.8.docbook @ 717308 <- /trunk/KDE/kdelibs/doc/kdelibs/man-kbuildsycoca4.8.docbook @ 717056 ]
+#   [ add doc/kbuildsycoca4 HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kconfig_compiler >------
+#   [ add doc/kconfig_compiler HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kcookiejar4 >------
+#   [ add doc/kcookiejar4 HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kde4-config >------
+#   [ add doc/kde4-config HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kded4 >------
+#   [ add doc/kded4 HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kdeinit4 >------
+#   [ add doc/kdeinit4 HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kdeoptions >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kdeoptions/man-kdeoptions.7.docbook @ 717468 <- /trunk/KDE/kdelibs/doc/kdelibs/man-kdeoptions.7.docbook @ 717416 ]
+#   [ add doc/kdeoptions HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kioslave >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/data/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/data.docbook @ 866038 ]
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/file/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/file.docbook @ 866038 ]
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/ftp/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/ftp.docbook @ 866038 ]
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/help/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/help.docbook @ 866038 ]
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/http/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/http.docbook @ 866038 ]
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/mailto/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/mailto.docbook @ 866038 ]
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/rlogin/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/rlogin.docbook @ 866038 ]
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/telnet/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/telnet.docbook @ 866038 ]
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/webdav/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/webdav.docbook @ 866038 ]
+#   [ add doc/kioslave HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kioslave/data >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/data/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/data.docbook @ 866038 ]
+#   [ add doc/kioslave/data HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kioslave/file >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/file/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/file.docbook @ 866038 ]
+#   [ add doc/kioslave/file HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kioslave/ftp >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/ftp/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/ftp.docbook @ 866038 ]
+#   [ add doc/kioslave/ftp HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kioslave/help >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/help/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/help.docbook @ 866038 ]
+#   [ add doc/kioslave/help HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kioslave/http >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/http/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/http.docbook @ 866038 ]
+#   [ add doc/kioslave/http HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kioslave/mailto >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/mailto/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/mailto.docbook @ 866038 ]
+#   [ add doc/kioslave/mailto HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kioslave/rlogin >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/rlogin/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/rlogin.docbook @ 866038 ]
+#   [ add doc/kioslave/rlogin HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kioslave/telnet >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/telnet/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/telnet.docbook @ 866038 ]
+#   [ add doc/kioslave/telnet HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kioslave/webdav >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/kioslave/webdav/index.docbook @ 883365 <- /trunk/KDE/kdebase/runtime/doc/kioslave/webdav.docbook @ 866038 ]
+#   [ add doc/kioslave/webdav HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kjs >------
+#   [ add doc/kjs HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kjscmd >------
+#   [ add doc/kjscmd HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/kross >------
+#   [ add doc/kross HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/makekdewidgets >------
+#   [ add doc/makekdewidgets HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/meinproc4 >------
+#   [ add doc/meinproc4 HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/preparetips >------
+#   [ add doc/preparetips HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/qtoptions >------
+#   [ Delayed: /trunk/KDE/kdelibs/doc/qtoptions/man-qtoptions.7.docbook @ 717468 <- /trunk/KDE/kdelibs/doc/kdelibs/man-qtoptions.7.docbook @ 717416 ]
+#   [ add doc/qtoptions HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/doc/sonnet >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/doc/sonnet @ 626252 <- /trunk/KDE/kdelibs/doc/kspell @ 626243 ]
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add doc/sonnet HEAD 626243 ]
+#match /trunk/KDE/kdelibs/doc/sonnet/
+#    repository kdelibs
+#    prefix doc/sonnet/
+#    branch master
+#    min revision 626243
+#end match
+
+#   [ move trunk/KDE/kdelibs/doc/kspell 626243 409202 ]
+#match /trunk/KDE/kdelibs/doc/kspell/
+#    repository kdelibs
+#    prefix doc/sonnet/
+#    branch master
+#    max revision 626243
+#    min revision 409202
+#end match
+#
+##   [ parent trunk/kdelibs/doc/kspell 409202 0 ]
+#match /trunk/kdelibs/doc/kspell/
+#    repository kdelibs
+#    prefix doc/sonnet/
+#    branch master
+#    max revision 409202
+#end match
+#
+##   ------< /trunk/KDE/kdelibs/experimental >------
+##   [ add experimental HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/includes >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/
+#    repository kdelibs
+#    prefix includes/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ move branches/work/forwardingincludes 602483 0 ]
+match /branches/work/forwardingincludes/
+    repository kdelibs
+    prefix includes/
+    branch master
+    max revision 602483
+end match
+
+#   ------< /trunk/KDE/kdelibs/includes/ConversionCheck >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/ConversionCheck HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/ConversionCheck/
+#    repository kdelibs
+#    prefix includes/ConversionCheck/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/ConversionCheck 602483 0 ]
+#match /branches/work/forwardingincludes/ConversionCheck/
+#    repository kdelibs
+#    prefix includes/ConversionCheck/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/DNSSD >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/DNSSD HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/DNSSD/
+#    repository kdelibs
+#    prefix includes/DNSSD/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/DNSSD 602483 0 ]
+#match /branches/work/forwardingincludes/DNSSD/
+#    repository kdelibs
+#    prefix includes/DNSSD/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/DOM >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/DOM HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/DOM/
+#    repository kdelibs
+#    prefix includes/DOM/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/DOM 602483 0 ]
+#match /branches/work/forwardingincludes/DOM/
+#    repository kdelibs
+#    prefix includes/DOM/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KAccelGen >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KAccelGen HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KAccelGen/
+#    repository kdelibs
+#    prefix includes/KAccelGen/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KAccelGen 602483 0 ]
+#match /branches/work/forwardingincludes/KAccelGen/
+#    repository kdelibs
+#    prefix includes/KAccelGen/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KAuth >------
+#   [ add includes/KAuth HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/includes/KHE >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KHE HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KHE/
+#    repository kdelibs
+#    prefix includes/KHE/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KHE 602483 0 ]
+#match /branches/work/forwardingincludes/KHE/
+#    repository kdelibs
+#    prefix includes/KHE/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KIO >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KIO HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KIO/
+#    repository kdelibs
+#    prefix includes/KIO/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KIO 602483 0 ]
+#match /branches/work/forwardingincludes/KIO/
+#    repository kdelibs
+#    prefix includes/KIO/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KJS >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KJS HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KJS/
+#    repository kdelibs
+#    prefix includes/KJS/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KJS 602483 0 ]
+#match /branches/work/forwardingincludes/KJS/
+#    repository kdelibs
+#    prefix includes/KJS/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KJSEmbed >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KJSEmbed HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KJSEmbed/
+#    repository kdelibs
+#    prefix includes/KJSEmbed/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KJSEmbed 602483 0 ]
+#match /branches/work/forwardingincludes/KJSEmbed/
+#    repository kdelibs
+#    prefix includes/KJSEmbed/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KMediaPlayer >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KMediaPlayer HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KMediaPlayer/
+#    repository kdelibs
+#    prefix includes/KMediaPlayer/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KMediaPlayer 602483 0 ]
+#match /branches/work/forwardingincludes/KMediaPlayer/
+#    repository kdelibs
+#    prefix includes/KMediaPlayer/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KNS >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KNS HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KNS/
+#    repository kdelibs
+#    prefix includes/KNS/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KNS 602483 0 ]
+#match /branches/work/forwardingincludes/KNS/
+#    repository kdelibs
+#    prefix includes/KNS/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KNS3 >------
+#   [ add includes/KNS3 HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/includes/KNetwork >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KNetwork HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KNetwork/
+#    repository kdelibs
+#    prefix includes/KNetwork/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KNetwork 602483 0 ]
+#match /branches/work/forwardingincludes/KNetwork/
+#    repository kdelibs
+#    prefix includes/KNetwork/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KParts >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KParts HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KParts/
+#    repository kdelibs
+#    prefix includes/KParts/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KParts 602483 0 ]
+#match /branches/work/forwardingincludes/KParts/
+#    repository kdelibs
+#    prefix includes/KParts/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KSettings >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KSettings HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KSettings/
+#    repository kdelibs
+#    prefix includes/KSettings/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KSettings 602483 0 ]
+#match /branches/work/forwardingincludes/KSettings/
+#    repository kdelibs
+#    prefix includes/KSettings/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KTextEditor >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KTextEditor HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KTextEditor/
+#    repository kdelibs
+#    prefix includes/KTextEditor/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ parent branches/work/forwardingincludes/KTextEditor 602483 0 ]
+#match /branches/work/forwardingincludes/KTextEditor/
+#    repository kdelibs
+#    prefix includes/KTextEditor/
+#    branch master
+#    max revision 602483
+#end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KUnitConversion >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/includes/KUnitConversion @ 1020408 <- /trunk/KDE/kdelibs/kunitconversion/KUnitConversion @ 1020332 ]
+#   [ Parent: /trunk/KDE/kdelibs/kunitconversion @ 1020332 <- /trunk/kdereview/kunitconversion @ 1020331 ]
+#   [ Parent: /trunk/kdereview/kunitconversion @ 1018660 <- /trunk/kdereview/conversion @ 1018648 ]
+#   [ add includes/KUnitConversion HEAD 1020332 ]
+#match /trunk/KDE/kdelibs/includes/KUnitConversion/
+#    repository kdelibs
+#    prefix includes/KUnitConversion/
+#    branch master
+#    min revision 1020332
+#end match
+
+#   [ move trunk/KDE/kdelibs/kunitconversion/KUnitConversion 1020332 1020331 ]
+#match /trunk/KDE/kdelibs/kunitconversion/KUnitConversion/
+#    repository kdelibs
+#    prefix includes/KUnitConversion/
+#    branch master
+#    max revision 1020332
+#    min revision 1020331
+#end match
+
+#   [ parent trunk/kdereview/kunitconversion/KUnitConversion 1020331 1018648 ]
+match /trunk/kdereview/kunitconversion/KUnitConversion/
+    repository kdelibs
+    prefix includes/KUnitConversion/
+    branch master
+    max revision 1020331
+    min revision 1018648
+end match
+
+#   [ parent trunk/kdereview/conversion/KUnitConversion 1018648 0 ]
+match /trunk/kdereview/conversion/KUnitConversion/
+    repository kdelibs
+    prefix includes/KUnitConversion/
+    branch master
+    max revision 1018648
+end match
+
+#   ------< /trunk/KDE/kdelibs/includes/KUnitTest >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/KUnitTest HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KUnitTest/
+#    repository kdelibs
+#    prefix includes/KUnitTest/
+#    branch master
+#    min revision 602483
+#end match
+#
+##   [ parent branches/work/forwardingincludes/KUnitTest 602483 0 ]
+#match /branches/work/forwardingincludes/KUnitTest/
+#    repository kdelibs
+#    prefix includes/KUnitTest/
+#    branch master
+#    max revision 602483
+#end match
+#
+##   ------< /trunk/KDE/kdelibs/includes/KWallet >------
+##   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+##   [ add includes/KWallet HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/KWallet/
+#    repository kdelibs
+#    prefix includes/KWallet/
+#    branch master
+#    min revision 602483
+end match
+
+#   [ parent branches/work/forwardingincludes/KWallet 602483 0 ]
+#match /branches/work/forwardingincludes/KWallet/
+#    repository kdelibs
+#    prefix includes/KWallet/
+#    branch master
+#    max revision 602483
+#end match
+#
+##   ------< /trunk/KDE/kdelibs/includes/Kross >------
+##   [ add includes/Kross HEAD 0 ]
+##   ------< /trunk/KDE/kdelibs/includes/Nepomuk >------
+##   [ add includes/Nepomuk HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/includes/Nepomuk/Query >------
+#   [ add includes/Nepomuk/Query HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/includes/Nepomuk/Types >------
+#   [ add includes/Nepomuk/Types HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/includes/Plasma >------
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/AbstractRunner @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/AbstractRunner @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/AnimationDriver @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/AnimationDriver @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Animator @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Animator @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Applet @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Applet @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/AppletScript @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/AppletScript @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/BusyWidget @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/BusyWidget @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/CheckBox @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/CheckBox @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/ComboBox @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/ComboBox @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/ConfigLoader @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/ConfigLoader @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Containment @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Containment @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Context @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Context @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Corona @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Corona @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/DataContainer @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/DataContainer @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/DataEngine @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/DataEngine @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/DataEngineManager @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/DataEngineManager @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/DataEngineScript @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/DataEngineScript @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Delegate @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Delegate @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Dialog @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Dialog @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Extender @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Extender @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/ExtenderItem @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/ExtenderItem @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/FlashingLabel @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/FlashingLabel @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Frame @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Frame @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/FrameSvg @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/FrameSvg @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/GLApplet @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/GLApplet @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/GroupBox @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/GroupBox @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/IconWidget @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/IconWidget @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Label @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Label @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/LineEdit @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/LineEdit @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Meter @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Meter @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Package @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Package @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/PackageMetadata @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/PackageMetadata @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/PackageStructure @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/PackageStructure @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/PaintUtils @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/PaintUtils @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Plasma @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Plasma @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/PopupApplet @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/PopupApplet @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/PushButton @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/PushButton @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/QueryMatch @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/QueryMatch @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/RadioButton @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/RadioButton @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/RunnerContext @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/RunnerContext @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/RunnerManager @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/RunnerManager @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/RunnerScript @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/RunnerScript @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/ScriptEngine @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/ScriptEngine @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/ScrollBar @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/ScrollBar @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Service @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Service @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/ServiceJob @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/ServiceJob @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/SignalPlotter @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/SignalPlotter @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Slider @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Slider @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Svg @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Svg @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/SvgWidget @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/SvgWidget @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/TabBar @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/TabBar @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/TextEdit @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/TextEdit @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Theme @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Theme @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/ToolTipManager @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/ToolTipManager @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/TreeView @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/TreeView @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/UiLoader @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/UiLoader @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Version @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Version @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/View @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/View @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/Wallpaper @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/Wallpaper @ 879820 ]
+#   [ Delayed: /trunk/KDE/kdelibs/includes/Plasma/WebView @ 879848 <- /trunk/KDE/kdelibs/plasma/includes/WebView @ 879820 ]
+#   [ add includes/Plasma HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/includes/Solid >------
+#   [ Parent: /trunk/KDE/kdelibs/includes @ 602484 <- /branches/work/forwardingincludes @ 602483 ]
+#   [ add includes/Solid HEAD 602483 ]
+#match /trunk/KDE/kdelibs/includes/Solid/
+#    repository kdelibs
+#    prefix includes/Solid/
+#    branch master
+#    min revision 602483
+#end match
+
+#   [ move branches/work/kdelibs-phonon/interfaces/kmediaplayer/kfileaudiopreview 520713 498929 ]
+match /branches/work/kdelibs-phonon/interfaces/kmediaplayer/kfileaudiopreview/
+    repository kdelibs
+    prefix interfaces/kmediaplayer/kfileaudiopreview/
+    branch master
+    max revision 520713
+    min revision 498929
+end match
+
+#   [ parent branches/work/kdelibs-kdem2m/interfaces/kmediaplayer/kfileaudiopreview 498929 479842 ]
+match /branches/work/kdelibs-kdem2m/interfaces/kmediaplayer/kfileaudiopreview/
+    repository kdelibs
+    prefix interfaces/kmediaplayer/kfileaudiopreview/
+    branch master
+    max revision 498929
+    min revision 479842
+end match
+
+#   [ move trunk/playground/devtools/kte_autobrace 1051646 0 ]
+match /trunk/playground/devtools/kte_autobrace/
+    repository kdelibs
+    prefix kate/plugins/autobrace/
+    branch master
+    max revision 1051646
+end match
+
+
+
+#   [ move trunk/playground/devtools/kte_iconinserter 1092667 0 ]
+match /trunk/playground/devtools/kte_iconinserter/
+    repository kdelibs
+    prefix kate/plugins/kte_iconinserter/
+    branch master
+    max revision 1092667
+end match
+
+#   [ move trunk/playground/devtools/kte_insanehtml_le 1117910 0 ]
+match /trunk/playground/devtools/kte_insanehtml_le/
+    repository kdelibs
+    prefix kate/plugins/kte_insanehtml_le/
+    branch master
+    max revision 1117910
+end match
+
+
+#   [ move branches/work/kdelibs-libkauth/kdecore/auth 1017585 1017459 ]
+match /branches/work/kdelibs-libkauth/kdecore/auth/
+    repository kdelibs
+    prefix kdecore/auth/
+    branch master
+    max revision 1017585
+    min revision 1017459
+end match
+
+#   [ move branches/work/kdelibs-libkauth/kdecore/kauth 1017459 1012511 ]
+match /branches/work/kdelibs-libkauth/kdecore/kauth/
+    repository kdelibs
+    prefix kdecore/auth/
+    branch master
+    max revision 1017459
+    min revision 1012511
+end match
+
+#   [ move trunk/kdereview/libkauth 1012511 998482 ]
+match /trunk/kdereview/libkauth/
+    repository kdelibs
+    prefix kdecore/auth/
+    branch master
+    max revision 1012511
+    min revision 998482
+end match
+
+#   [ move trunk/playground/base/libkauth 998482 0 ]
+match /trunk/playground/base/libkauth/
+    repository kdelibs
+    prefix kdecore/auth/
+    branch master
+    max revision 998482
+end match
+
+
+#   [ parent branches/work/kdelibs-libkauth/kdecore/auth/backends 1017585 1017459 ]
+match /branches/work/kdelibs-libkauth/kdecore/auth/backends/
+    repository kdelibs
+    prefix kdecore/auth/backends/
+    branch master
+    max revision 1017585
+    min revision 1017459
+end match
+
+#   [ parent branches/work/kdelibs-libkauth/kdecore/kauth/backends 1017459 1012511 ]
+match /branches/work/kdelibs-libkauth/kdecore/kauth/backends/
+    repository kdelibs
+    prefix kdecore/auth/backends/
+    branch master
+    max revision 1017459
+    min revision 1012511
+end match
+
+#   [ parent trunk/kdereview/libkauth/backends 1012511 998482 ]
+match /trunk/kdereview/libkauth/backends/
+    repository kdelibs
+    prefix kdecore/auth/backends/
+    branch master
+    max revision 1012511
+    min revision 998482
+end match
+
+#   [ parent trunk/playground/base/libkauth/backends 998482 0 ]
+match /trunk/playground/base/libkauth/backends/
+    repository kdelibs
+    prefix kdecore/auth/backends/
+    branch master
+    max revision 998482
+end match
+
+
+#   [ parent branches/work/kdelibs-libkauth/kdecore/auth/policy-gen 1017585 1017459 ]
+match /branches/work/kdelibs-libkauth/kdecore/auth/policy-gen/
+    repository kdelibs
+    prefix kdecore/auth/policy-gen/
+    branch master
+    max revision 1017585
+    min revision 1017459
+end match
+
+#   [ parent branches/work/kdelibs-libkauth/kdecore/kauth/policy-gen 1017459 1012511 ]
+match /branches/work/kdelibs-libkauth/kdecore/kauth/policy-gen/
+    repository kdelibs
+    prefix kdecore/auth/policy-gen/
+    branch master
+    max revision 1017459
+    min revision 1012511
+end match
+
+#   [ parent trunk/kdereview/libkauth/policy-gen 1012511 0 ]
+match /trunk/kdereview/libkauth/policy-gen/
+    repository kdelibs
+    prefix kdecore/auth/policy-gen/
+    branch master
+    max revision 1012511
+end match
+
+
+
+#   [ move trunk/KDE/kdepim/akonadi/kdeui_next/dox 999655 997697 ]
+match /trunk/KDE/kdepim/akonadi/kdeui_next/dox/
+    repository kdelibs
+    prefix kdeui/itemviews/dox/
+    branch master
+    max revision 999655
+    min revision 997697
+end match
+
+#   [ move trunk/KDE/kdepim/akonadi/akonadi_next/dox 997697 0 ]
+match /trunk/KDE/kdepim/akonadi/akonadi_next/dox/
+    repository kdelibs
+    prefix kdeui/itemviews/dox/
+    branch master
+    max revision 997697
+end match
+
+#   [ move trunk/KDE/kdeedu/libkdeedu/kdeeduplot 646872 409202 ]
+match /trunk/KDE/kdeedu/libkdeedu/kdeeduplot/
+    repository kdelibs
+    prefix kdeui/plotting/
+    branch master
+    max revision 646872
+    min revision 409202
+end match
+
+#   [ parent trunk/kdeedu/libkdeedu/kdeeduplot 409202 0 ]
+match /trunk/kdeedu/libkdeedu/kdeeduplot/
+    repository kdelibs
+    prefix kdeui/plotting/
+    branch master
+    max revision 409202
+end match
+
+
+#   [ move trunk/kdereview/kdewebkit 1046372 1040167 ]
+match /trunk/kdereview/kdewebkit/
+    repository kdelibs
+    prefix kdewebkit/
+    branch master
+    max revision 1046372
+    min revision 1040167
+end match
+
+#   [ move trunk/playground/libs/webkitkde/kdewebkit 1040167 0 ]
+match /trunk/playground/libs/webkitkde/kdewebkit/
+    repository kdelibs
+    prefix kdewebkit/
+    branch master
+    max revision 1040167
+end match
+
+#   [ move trunk/kdebase/kioslave/help/customization 102825 0 ]
+match /trunk/kdebase/kioslave/help/customization/
+    repository kdelibs
+    prefix kdoctools/customization/
+    branch master
+    max revision 102825
+end match
+
+
+#   [ move trunk/kdebase/kioslave/help/docbook 102825 0 ]
+match /trunk/kdebase/kioslave/help/docbook/
+    repository kdelibs
+    prefix kdoctools/docbook/
+    branch master
+    max revision 102825
+end match
+
+#   [ parent trunk/kdebase/kioslave/help/docbook/xsl 102825 0 ]
+match /trunk/kdebase/kioslave/help/docbook/xsl/
+    repository kdelibs
+    prefix kdoctools/docbook/xsl/
+    branch master
+    max revision 102825
+end match
+
+#   ------< /trunk/KDE/kdelibs/kfile >------
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/k3filedetailview.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/k3filedetailview.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/k3filedetailview.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/k3filedetailview.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/k3fileiconview.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/k3fileiconview.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/k3fileiconview.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/k3fileiconview.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/k3filetreeview.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/k3filetreeview.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/k3filetreeview.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/k3filetreeview.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/k3filetreeviewitem.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/k3filetreeviewitem.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/k3filetreeviewitem.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/k3filetreeviewitem.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kcombiview.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kcombiview.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kcombiview.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kcombiview.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kdiroperator.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kdiroperator.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kdiroperator.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kdiroperator.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kdirselectdialog.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kdirselectdialog.cpp @ 649195 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kdirselectdialog.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kdirselectdialog.h @ 649195 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfilebookmarkhandler.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfilebookmarkhandler.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfilebookmarkhandler.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfilebookmarkhandler.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfilefiltercombo.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfilefiltercombo.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfilefiltercombo.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfilefiltercombo.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfilepreview.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfilepreview.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfilepreview.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfilepreview.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfilespeedbar.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfilespeedbar.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfilespeedbar.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfilespeedbar.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfiletreebranch.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfiletreebranch.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfiletreebranch.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfiletreebranch.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfileview.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfileview.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfileview.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfileview.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfilewidget.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfilewidget.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kfilewidget.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kfilewidget.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kurlbar.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kurlbar.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/kurlbar.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/kurlbar.h @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/tests/kdirselectdialogtest.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/tests/kdirselectdialogtest.cpp @ 649195 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/tests/kfiletreeviewtest.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/tests/kfiletreeviewtest.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/tests/kfiletreeviewtest.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/tests/kfiletreeviewtest.h @ 648884 ]
+#   [ add kfile HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/kfile/tests >------
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/tests/kdirselectdialogtest.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/tests/kdirselectdialogtest.cpp @ 649195 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/tests/kfiletreeviewtest.cpp @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/tests/kfiletreeviewtest.cpp @ 648884 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kfile/tests/kfiletreeviewtest.h @ 649211 <- /trunk/KDE/kdelibs/kio/kfile/tests/kfiletreeviewtest.h @ 648884 ]
+#   [ add kfile/tests HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/khtml >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/khtml @ 496562 <- /branches/work/kdelibs-js/khtml @ 496549 ]
+#   [ Parent: /branches/work/kdelibs-js @ 478730 <- /trunk/KDE/kdelibs @ 478729 ]
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add khtml HEAD 496549 ]
+
+#   [ move branches/work/kdelibs-js/khtml 496549 478729 ]
+match /branches/work/kdelibs-js/khtml/
+    repository kdelibs
+    prefix khtml/
+    branch master
+    max revision 496549
+    min revision 478729
+end match
+
+
+
+match /branches/work/kdelibs-js/kio/misc/kpac/
+    repository kdelibs
+    prefix kio/misc/kpac/
+    branch master
+    max revision 496549
+    min revision 478729
+end match
+
+
+
+#   [ move trunk/kdebase/kioslave/ftp 41122 0 ]
+match /trunk/kdebase/kioslave/ftp/
+    repository kdelibs
+    prefix kioslave/ftp/
+    branch master
+    max revision 41122
+end match
+#   [ move trunk/kdebase/kioslave/http 41122 0 ]
+match /trunk/kdebase/kioslave/http/
+    repository kdelibs
+    prefix kioslave/http/
+    branch master
+    max revision 41122
+end match
+
+
+#   [ move branches/work/kjs-frostbyte/kjs 809422 773277 ]
+match /branches/work/kjs-frostbyte/kjs/
+    repository kdelibs
+    prefix kjs/
+    branch master
+    max revision 809422
+    min revision 773277
+end match
+
+#   [ move branches/KDE/4.0/kdelibs/kjs 773277 757127 ]
+match /branches/KDE/4.0/kdelibs/kjs/
+    repository kdelibs
+    prefix kjs/
+    branch master
+    max revision 773277
+    min revision 757127
+end match
+
+#   [ move branches/work/kdelibs-js/kjs 496549 478729 ]
+match /branches/work/kdelibs-js/kjs/
+    repository kdelibs
+    prefix kjs/
+    branch master
+    max revision 496549
+    min revision 478729
+end match
+
+#   [ move branches/work/kdelibs-js/kxmlcore 496549 0 ]
+match /branches/work/kdelibs-js/kxmlcore/
+    repository kdelibs
+    prefix kjs/wtf/
+    branch master
+    max revision 496549
+end match
+
+#   [ move branches/work/knewstuff2/data 649323 0 ]
+match /branches/work/knewstuff2/data/
+    repository kdelibs
+    prefix knewstuff/data/
+    branch master
+    max revision 649323
+end match
+
+#   [ move branches/work/knewstuff2/doc 649323 0 ]
+match /branches/work/knewstuff2/doc/
+    repository kdelibs
+    prefix knewstuff/doc/
+    branch master
+    max revision 649323
+end match
+
+#   [ move branches/work/knewstuff2/knewstuff2 649323 0 ]
+match /branches/work/knewstuff2/knewstuff2/
+    repository kdelibs
+    prefix knewstuff/knewstuff2/
+    branch master
+    max revision 649323
+end match
+
+#   ------< /trunk/KDE/kdelibs/knewstuff/knewstuff2/core >------
+#   [ Parent: /trunk/KDE/kdelibs/knewstuff/knewstuff2 @ 649493 <- /branches/work/knewstuff2/knewstuff2 @ 649323 ]
+#   [ Move/Replace: /branches/work/knewstuff2/knewstuff2/core @ 644211 <- /branches/work/knewstuff2/kdxs/src/knewstuff2 @ 644207 ]
+#   [ add knewstuff/knewstuff2/core HEAD 649323 ]
+
+#   [ parent branches/work/knewstuff2/knewstuff2/core 649323 644207 ]
+match /branches/work/knewstuff2/knewstuff2/core/
+    repository kdelibs
+    prefix knewstuff/knewstuff2/core/
+    branch master
+    max revision 649323
+    min revision 644207
+end match
+
+#   [ move branches/work/knewstuff2/kdxs/src/knewstuff2 644207 0 ]
+match /branches/work/knewstuff2/kdxs/src/knewstuff2/
+    repository kdelibs
+    prefix knewstuff/knewstuff2/core/
+    branch master
+    max revision 644207
+end match
+
+#   [ parent branches/work/knewstuff2/knewstuff2/dxs 649323 644207 ]
+match /branches/work/knewstuff2/knewstuff2/dxs/
+    repository kdelibs
+    prefix knewstuff/knewstuff2/dxs/
+    branch master
+    max revision 649323
+    min revision 644207
+end match
+
+#   [ move branches/work/knewstuff2/kdxs/src 644207 0 ]
+match /branches/work/knewstuff2/kdxs/src/
+    repository kdelibs
+    prefix knewstuff/knewstuff2/dxs/
+    branch master
+    max revision 644207
+end match
+
+#   [ parent branches/work/knewstuff2/knewstuff2/ui 649323 0 ]
+match /branches/work/knewstuff2/knewstuff2/ui/
+    repository kdelibs
+    prefix knewstuff/knewstuff2/ui/
+    branch master
+    max revision 649323
+end match
+
+#   [ move branches/work/knewstuffrefactor/knewstuff3 1051997 0 ]
+match /branches/work/knewstuffrefactor/knewstuff3/
+    repository kdelibs
+    prefix knewstuff/knewstuff3/
+    branch master
+    max revision 1051997
+end match
+
+#   [ parent branches/work/knewstuffrefactor/knewstuff3/ui 1051997 0 ]
+match /branches/work/knewstuffrefactor/knewstuff3/ui/
+    repository kdelibs
+    prefix knewstuff/knewstuff3/ui/
+    branch master
+    max revision 1051997
+end match
+
+#   [ move branches/work/knewstuff2/tests 649323 0 ]
+match /branches/work/knewstuff2/tests/
+    repository kdelibs
+    prefix knewstuff/tests/
+    branch master
+    max revision 649323
+end match
+#   [ parent branches/work/knewstuff2/tests/testdata 649323 647492 ]
+match /branches/work/knewstuff2/tests/testdata/
+    repository kdelibs
+    prefix knewstuff/tests/testdata/
+    branch master
+    max revision 649323
+    min revision 647492
+end match
+
+#   [ move branches/work/knewstuff2/knewstuff2/core/testdata 647492 644207 ]
+match /branches/work/knewstuff2/knewstuff2/core/testdata/
+    repository kdelibs
+    prefix knewstuff/tests/testdata/
+    branch master
+    max revision 647492
+    min revision 644207
+end match
+
+#   [ parent branches/work/knewstuff2/kdxs/src/knewstuff2/testdata 644207 0 ]
+match /branches/work/knewstuff2/kdxs/src/knewstuff2/testdata/
+    repository kdelibs
+    prefix knewstuff/tests/testdata/
+    branch master
+    max revision 644207
+end match
+
+#   [ move branches/work/kde4/kdelibs/knotify 439321 435413 ]
+match /branches/work/kde4/kdelibs/knotify/
+    repository kdelibs
+    prefix knotify/
+    branch master
+    max revision 439321
+    min revision 435413
+end match
+
+#   [ move branches/work/kdemm/knotify 435413 419937 ]
+match /branches/work/kdemm/knotify/
+    repository kdelibs
+    prefix knotify/
+    branch master
+    max revision 435413
+    min revision 419937
+end match
+
+#   [ move branches/work/kdemm/kdelibs/arts/knotify 419937 419702 ]
+match /branches/work/kdemm/kdelibs/arts/knotify/
+    repository kdelibs
+    prefix knotify/
+    branch master
+    max revision 419937
+    min revision 419702
+end match
+
+#   [ parent branches/cvs/make_kdemm_cool/kdelibs/arts/knotify 419702 409204 ]
+match /branches/cvs/make_kdemm_cool/kdelibs/arts/knotify/
+    repository kdelibs
+    prefix knotify/
+    branch master
+    max revision 419702
+    min revision 409204
+end match
+
+#   [ parent branches/make_kdemm_cool/kdelibs/arts/knotify 409204 338993 ]
+match /branches/make_kdemm_cool/kdelibs/arts/knotify/
+    repository kdelibs
+    prefix knotify/
+    branch master
+    max revision 409204
+    min revision 338993
+end match
+
+#   [ move branches/work/kde4_knotify/config 492308 0 ]
+match /branches/work/kde4_knotify/config/
+    repository kdelibs
+    prefix knotify/config/
+    branch master
+    max revision 492308
+end match
+
+#   [ move branches/work/kde4_knotify/tests 492308 0 ]
+match /branches/work/kde4_knotify/tests/
+    repository kdelibs
+    prefix knotify/tests/
+    branch master
+    max revision 492308
+end match
+
+#   [ move trunk/koffice/libs/kross/console 608511 599873 ]
+match /trunk/koffice/libs/kross/console/
+    repository kdelibs
+    prefix kross/console/
+    branch master
+    max revision 608511
+    min revision 599873
+end match
+
+#   [ move trunk/koffice/libs/kross/runner 599873 523173 ]
+match /trunk/koffice/libs/kross/runner/
+    repository kdelibs
+    prefix kross/console/
+    branch master
+    max revision 599873
+    min revision 523173
+end match
+
+#   [ parent trunk/koffice/lib/kross/runner 523173 0 ]
+match /trunk/koffice/lib/kross/runner/
+    repository kdelibs
+    prefix kross/console/
+    branch master
+    max revision 523173
+end match
+
+#   ------< /trunk/KDE/kdelibs/kross/core >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/kross/core @ 608504 <- /trunk/koffice/libs/kross/core @ 608503 ]
+#   [ Move/Replace: /trunk/koffice/libs/kross/core @ 572845 <- /trunk/koffice/libs/kross/api @ 572836 ]
+#   [ Parent: /trunk/koffice/libs @ 523188 <- /trunk/koffice/lib @ 523173 ]
+#   [ Parent: /trunk/koffice/lib/kross @ 480076 <- /trunk/koffice/kexi/scriptingcore @ 480057 ]
+#   [ Parent: /trunk/koffice/kexi/scriptingcore @ 453845 <- /trunk/koffice/kexi/scripting @ 453836 ]
+#   [ add kross/core HEAD 608503 ]
+
+#   [ move trunk/koffice/libs/kross/core 608503 572836 ]
+match /trunk/koffice/libs/kross/core/
+    repository kdelibs
+    prefix kross/core/
+    branch master
+    max revision 608503
+    min revision 572836
+end match
+
+#   [ move trunk/koffice/libs/kross/api 572836 523173 ]
+match /trunk/koffice/libs/kross/api/
+    repository kdelibs
+    prefix kross/core/
+    branch master
+    max revision 572836
+    min revision 523173
+end match
+
+#   [ parent trunk/koffice/lib/kross/api 523173 480057 ]
+match /trunk/koffice/lib/kross/api/
+    repository kdelibs
+    prefix kross/core/
+    branch master
+    max revision 523173
+    min revision 480057
+end match
+
+#   [ parent trunk/koffice/kexi/scriptingcore/api 480057 453836 ]
+match /trunk/koffice/kexi/scriptingcore/api/
+    repository kdelibs
+    prefix kross/core/
+    branch master
+    max revision 480057
+    min revision 453836
+end match
+
+#   [ parent trunk/koffice/kexi/scripting/api 453836 0 ]
+match /trunk/koffice/kexi/scripting/api/
+    repository kdelibs
+    prefix kross/core/
+    branch master
+    max revision 453836
+end match
+
+#   ------< /trunk/KDE/kdelibs/kross/docs >------
+#   [ Delayed: /trunk/KDE/kdelibs/kross/docs/CHANGES @ 611196 <- /trunk/KDE/kdelibs/kross/CHANGES @ 610998 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kross/docs/Mainpage.dox @ 611196 <- /trunk/KDE/kdelibs/kross/Mainpage.dox @ 610998 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kross/docs/TODO @ 611196 <- /trunk/KDE/kdelibs/kross/TODO @ 610998 ]
+#   [ Delayed: /trunk/KDE/kdelibs/kross/docs/doxy2doc.py @ 611196 <- /trunk/KDE/kdelibs/kross/doxy2doc.py @ 611193 ]
+#   [ add kross/docs HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/kross/kjs >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/kross/kjs @ 608511 <- /trunk/koffice/libs/kross/kjs @ 608510 ]
+#   [ add kross/kjs HEAD 608510 ]
+
+#   [ move trunk/koffice/libs/kross/kjs 608510 0 ]
+match /trunk/koffice/libs/kross/kjs/
+    repository kdelibs
+    prefix kross/kjs/
+    branch master
+    max revision 608510
+end match
+
+#   [ move trunk/koffice/libs/kross/modules 608504 0 ]
+match /trunk/koffice/libs/kross/modules/
+    repository kdelibs
+    prefix kross/modules/
+    branch master
+    max revision 608504
+end match
+
+#   [ move trunk/koffice/libs/kross/test 608506 523173 ]
+match /trunk/koffice/libs/kross/test/
+    repository kdelibs
+    prefix kross/test/
+    branch master
+    max revision 608506
+    min revision 523173
+end match
+
+#   [ parent trunk/koffice/lib/kross/test 523173 480057 ]
+match /trunk/koffice/lib/kross/test/
+    repository kdelibs
+    prefix kross/test/
+    branch master
+    max revision 523173
+    min revision 480057
+end match
+
+#   [ parent trunk/koffice/kexi/scriptingcore/test 480057 453836 ]
+match /trunk/koffice/kexi/scriptingcore/test/
+    repository kdelibs
+    prefix kross/test/
+    branch master
+    max revision 480057
+    min revision 453836
+end match
+
+#   [ parent trunk/koffice/kexi/scripting/test 453836 0 ]
+match /trunk/koffice/kexi/scripting/test/
+    repository kdelibs
+    prefix kross/test/
+    branch master
+    max revision 453836
+end match
+
+#   [ move trunk/kdereview/kunitconversion 1020331 1018648 ]
+match /trunk/kdereview/kunitconversion/
+    repository kdelibs
+    prefix kunitconversion/
+    branch master
+    max revision 1020331
+    min revision 1018648
+end match
+
+#   [ move trunk/kdereview/conversion 1018648 1001599 ]
+match /trunk/kdereview/conversion/
+    repository kdelibs
+    prefix kunitconversion/
+    branch master
+    max revision 1018648
+    min revision 1001599
+end match
+
+#   [ move trunk/KDE/kdeplasma-addons/libs/conversion 1001599 0 ]
+match /trunk/KDE/kdeplasma-addons/libs/conversion/
+    repository kdelibs
+    prefix kunitconversion/
+    branch master
+    max revision 1001599
+end match
+
+#   [ move trunk/kdereview/emoticonslib 809220 803070 ]
+match /trunk/kdereview/emoticonslib/
+    repository kdelibs
+    prefix kutils/kemoticons/
+    branch master
+    max revision 809220
+    min revision 803070
+end match
+
+#   [ move trunk/playground/libs/emoticons 803070 0 ]
+match /trunk/playground/libs/emoticons/
+    repository kdelibs
+    prefix kutils/kemoticons/
+    branch master
+    max revision 803070
+end match
+
+#   [ parent trunk/kdereview/emoticonslib/providers 809220 807296 ]
+match /trunk/kdereview/emoticonslib/providers/
+    repository kdelibs
+    prefix kutils/kemoticons/providers/
+    branch master
+    max revision 809220
+    min revision 807296
+end match
+
+#   [ move trunk/kdereview/emoticonslib/theme_parsers 807296 803297 ]
+match /trunk/kdereview/emoticonslib/theme_parsers/
+    repository kdelibs
+    prefix kutils/kemoticons/providers/
+    branch master
+    max revision 807296
+    min revision 803297
+end match
+
+#   [ move trunk/kdereview/emoticonslib/themes 803297 803070 ]
+match /trunk/kdereview/emoticonslib/themes/
+    repository kdelibs
+    prefix kutils/kemoticons/providers/
+    branch master
+    max revision 803297
+    min revision 803070
+end match
+
+#   [ parent trunk/playground/libs/emoticons/themes 803070 0 ]
+match /trunk/playground/libs/emoticons/themes/
+    repository kdelibs
+    prefix kutils/kemoticons/providers/
+    branch master
+    max revision 803070
+end match
+#   [ parent trunk/kdereview/emoticonslib/tests 809220 803070 ]
+match /trunk/kdereview/emoticonslib/tests/
+    repository kdelibs
+    prefix kutils/kemoticons/tests/
+    branch master
+    max revision 809220
+    min revision 803070
+end match
+
+#   [ parent trunk/playground/libs/emoticons/tests 803070 0 ]
+match /trunk/playground/libs/emoticons/tests/
+    repository kdelibs
+    prefix kutils/kemoticons/tests/
+    branch master
+    max revision 803070
+end match
+
+#   [ move trunk/kdereview/kidle 1000935 992385 ]
+match /trunk/kdereview/kidle/
+    repository kdelibs
+    prefix kutils/kidletime/
+    branch master
+    max revision 1000935
+    min revision 992385
+end match
+
+#   [ move trunk/playground/libs/kidle 992385 0 ]
+match /trunk/playground/libs/kidle/
+    repository kdelibs
+    prefix kutils/kidletime/
+    branch master
+    max revision 992385
+end match
+
+#   ------< /trunk/KDE/kdelibs/kutils/ksettings >------
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add kutils/ksettings HEAD 409202 ]
+
+#   [ parent trunk/kdelibs/kutils/ksettings 409202 0 ]
+
+#   ------< /trunk/KDE/kdelibs/licenses >------
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add licenses HEAD 409202 ]
+
+#   [ parent trunk/kdelibs/licenses 409202 0 ]
+
+#   ------< /trunk/KDE/kdelibs/mimetypes >------
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ Move/Replace: /trunk/kdelibs/mimetypes @ 27506 <- /trunk/kdebase/mimetypes @ 27505 ]
+#   [ add mimetypes HEAD 409202 ]
+
+#   [ parent trunk/kdelibs/mimetypes 409202 27505 ]
+
+#   [ move trunk/kdebase/mimetypes 27505 0 ]
+match /trunk/kdebase/mimetypes/
+    repository kdelibs
+    prefix mimetypes/
+    branch master
+    max revision 27505
+end match
+
+#   ------< /trunk/KDE/kdelibs/nepomuk >------
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/CMakeLists.txt @ 674110 <- /trunk/KDE/kdelibs/kmetadata/CMakeLists.txt @ 671788 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/Mainpage.dox @ 674110 <- /trunk/KDE/kdelibs/kmetadata/Mainpage.dox @ 671788 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/TODO @ 674110 <- /trunk/KDE/kdelibs/kmetadata/TODO @ 671788 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata @ 671788 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/CMakeLists.txt @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/CMakeLists.txt @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/generated @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/generated @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology @ 674110 <- /trunk/KDE/kdelibs/konto @ 671788 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/CMakeLists.txt @ 674110 <- /trunk/KDE/kdelibs/konto/CMakeLists.txt @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/README @ 674110 <- /trunk/KDE/kdelibs/konto/README @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/class.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/class.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/class.h @ 674110 <- /trunk/KDE/kdelibs/konto/class.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/class_p.h @ 674110 <- /trunk/KDE/kdelibs/konto/class_p.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/desktopontologyloader.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/desktopontologyloader.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/desktopontologyloader.h @ 674110 <- /trunk/KDE/kdelibs/konto/desktopontologyloader.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/entity.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/entity.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/entity.h @ 674110 <- /trunk/KDE/kdelibs/konto/entity.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/entity_p.h @ 674110 <- /trunk/KDE/kdelibs/konto/entity_p.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/fileontologyloader.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/fileontologyloader.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/fileontologyloader.h @ 674110 <- /trunk/KDE/kdelibs/konto/fileontologyloader.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/global.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/global.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/global.h @ 674110 <- /trunk/KDE/kdelibs/konto/global.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/literal.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/literal.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/literal.h @ 674110 <- /trunk/KDE/kdelibs/konto/literal.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/literal_p.h @ 674110 <- /trunk/KDE/kdelibs/konto/literal_p.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/nepomukontologyloader.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/nepomukontologyloader.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/nepomukontologyloader.h @ 674110 <- /trunk/KDE/kdelibs/konto/nepomukontologyloader.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/ontology.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/ontology.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/ontology.h @ 674110 <- /trunk/KDE/kdelibs/konto/ontology.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/ontology_p.h @ 674110 <- /trunk/KDE/kdelibs/konto/ontology_p.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/ontologyloader.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/ontologyloader.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/ontologyloader.h @ 674110 <- /trunk/KDE/kdelibs/konto/ontologyloader.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/ontologymanager.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/ontologymanager.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/ontologymanager.h @ 674110 <- /trunk/KDE/kdelibs/konto/ontologymanager.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/property.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/property.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/property.h @ 674110 <- /trunk/KDE/kdelibs/konto/property.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/property_p.h @ 674110 <- /trunk/KDE/kdelibs/konto/property_p.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/qurlhash.cpp @ 674110 <- /trunk/KDE/kdelibs/konto/qurlhash.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/qurlhash.h @ 674110 <- /trunk/KDE/kdelibs/konto/qurlhash.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ontology/test @ 674110 <- /trunk/KDE/kdelibs/konto/test @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/resource.cpp.in @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/resource.cpp.in @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/resource.h.in @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/resource.h.in @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/resourcedata.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/resourcedata.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/resourcedata.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/resourcedata.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/resourcemanager.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/resourcemanager.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/resourcemanager.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/resourcemanager.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests @ 671788 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/CMakeLists.txt @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/CMakeLists.txt @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/datetimetest.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/datetimetest.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/datetimetest.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/datetimetest.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/resourcedatatest.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/resourcedatatest.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/resourcedatatest.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/resourcedatatest.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/resourcetest.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/resourcetest.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/resourcetest.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/resourcetest.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/speedtest.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/speedtest.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/speedtest.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/speedtest.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/tagcloudtest.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/tagcloudtest.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/testbase.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/testbase.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/testbase.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/testbase.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/varianttest.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/varianttest.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/test/varianttest.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/tests/varianttest.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/tools.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/tools.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/tools.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/tools.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/ui @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/ui @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/variant.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/variant.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/core/variant.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata/variant.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware @ 674110 <- /trunk/KDE/kdelibs/knepomuk @ 671788 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/CMakeLists.txt @ 674110 <- /trunk/KDE/kdelibs/knepomuk/CMakeLists.txt @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/Mainpage.dox @ 674110 <- /trunk/KDE/kdelibs/knepomuk/Mainpage.dox @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/TODO @ 674110 <- /trunk/KDE/kdelibs/knepomuk/TODO @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/dbustools.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/dbustools.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/dbustools.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/dbustools.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/error.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/error.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/message.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/message.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/message.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/message.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/rdf @ 674110 <- /trunk/KDE/kdelibs/knepomuk/rdf @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/registry.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/registry.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/registry.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/registry.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/registrydbusbackend.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/registrydbusbackend.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/registrydbusbackend.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/registrydbusbackend.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/registrydbusinterface.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/registrydbusinterface.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/registrydbusinterface.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/registrydbusinterface.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/result.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/result.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/result.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/result.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/service.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/service.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/service.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/service.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/servicedbusinterfacebackend.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/servicedbusinterfacebackend.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/servicedbusinterfacebackend.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/servicedbusinterfacebackend.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/servicedesc.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/servicedesc.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/servicepublisher.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/servicepublisher.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/servicepublisher.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/servicepublisher.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/servicepublisherdbusinterface.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/servicepublisherdbusinterface.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/servicepublisherdbusinterface.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/servicepublisherdbusinterface.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/services @ 674110 <- /trunk/KDE/kdelibs/knepomuk/services @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/servicewrapper.cpp @ 674110 <- /trunk/KDE/kdelibs/knepomuk/servicewrapper.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/middleware/servicewrapper.h @ 674110 <- /trunk/KDE/kdelibs/knepomuk/servicewrapper.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies @ 671788 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/CMakeLists.txt @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/CMakeLists.txt @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/dces.desktop @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/dces.desktop @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/dces.rdf @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/dces.rdf @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/dcq.desktop @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/dcq.desktop @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/dcq.rdf @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/dcq.rdf @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/dctype.desktop @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/dctype.desktop @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/dctype.rdf @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/dctype.rdf @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/nao.desktop @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/nao.desktop @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/nao.nrl @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/nao.nrl @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/nfo.desktop @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/nfo.desktop @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/nfo.rdfs @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/nfo.rdfs @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/nrl.desktop @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/nrl.desktop @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/nrl.rdfs @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/nrl.rdfs @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/rdf.desktop @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/rdf.desktop @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/rdf.rdfs @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/rdf.rdfs @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/rdfs.desktop @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/rdfs.desktop @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/ontologies/rdfs.rdfs @ 674110 <- /trunk/KDE/kdelibs/kmetadata/ontologies/rdfs.rdfs @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/rcgen @ 674110 <- /trunk/KDE/kdelibs/kmetadata/rcgen @ 671788 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/rcgen/CMakeLists.txt @ 674110 <- /trunk/KDE/kdelibs/kmetadata/rcgen/CMakeLists.txt @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/rcgen/ontologyparser.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/rcgen/ontologyparser.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/rcgen/ontologyparser.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/rcgen/ontologyparser.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/rcgen/rcgen.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/rcgen/rcgen.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/rcgen/resourceclass.cpp @ 674110 <- /trunk/KDE/kdelibs/kmetadata/rcgen/resourceclass.cpp @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/rcgen/resourceclass.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/rcgen/resourceclass.h @ 673991 ]
+#   [ Delayed: /trunk/KDE/kdelibs/nepomuk/rcgen/resourcetemplate.h @ 674110 <- /trunk/KDE/kdelibs/kmetadata/rcgen/resourcetemplate.h @ 673991 ]
+#   [ add nepomuk HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/nepomuk/core >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/nepomuk/core @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata @ 671788 ]
+#   [ Parent: /trunk/KDE/kdelibs/kmetadata @ 659840 <- /trunk/kdereview/nepomuk-kde/kmetadata @ 659730 ]
+#   [ Parent: /trunk/kdereview/nepomuk-kde/kmetadata @ 644581 <- /trunk/playground/base/nepomuk-kde/kmetadata @ 644580 ]
+#   [ Parent: /trunk/playground/base/nepomuk-kde @ 610587 <- /branches/work/nepomuk-kde @ 610586 ]
+#   [ add nepomuk/core HEAD 671788 ]
+
+#   [ move trunk/KDE/kdelibs/kmetadata/kmetadata 671788 659730 ]
+
+#   [ parent trunk/kdereview/nepomuk-kde/kmetadata/kmetadata 659730 644580 ]
+match /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/
+    repository kdelibs
+    prefix nepomuk/core/
+    branch master
+    max revision 659730
+    min revision 644580
+end match
+
+#   [ parent trunk/playground/base/nepomuk-kde/kmetadata/kmetadata 644580 610586 ]
+match /trunk/playground/base/nepomuk-kde/kmetadata/kmetadata/
+    repository kdelibs
+    prefix nepomuk/core/
+    branch master
+    max revision 644580
+    min revision 610586
+end match
+
+#   [ parent branches/work/nepomuk-kde/kmetadata/kmetadata 610586 0 ]
+match /branches/work/nepomuk-kde/kmetadata/kmetadata/
+    repository kdelibs
+    prefix nepomuk/core/
+    branch master
+    max revision 610586
+end match
+
+#   ------< /trunk/KDE/kdelibs/nepomuk/query >------
+#   [ add nepomuk/query HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/nepomuk/rcgen >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/nepomuk/rcgen @ 674110 <- /trunk/KDE/kdelibs/kmetadata/rcgen @ 671788 ]
+#   [ Parent: /trunk/KDE/kdelibs/kmetadata @ 659840 <- /trunk/kdereview/nepomuk-kde/kmetadata @ 659730 ]
+#   [ Parent: /trunk/kdereview/nepomuk-kde/kmetadata @ 644581 <- /trunk/playground/base/nepomuk-kde/kmetadata @ 644580 ]
+#   [ Move/Replace: /trunk/playground/base/nepomuk-kde/kmetadata/rcgen @ 615117 <- /trunk/playground/base/nepomuk-kde/kmetadata/tools @ 615113 ]
+#   [ Parent: /trunk/playground/base/nepomuk-kde @ 610587 <- /branches/work/nepomuk-kde @ 610586 ]
+#   [ add nepomuk/rcgen HEAD 671788 ]
+
+#   [ move trunk/KDE/kdelibs/kmetadata/rcgen 671788 659730 ]
+
+#   [ parent trunk/kdereview/nepomuk-kde/kmetadata/rcgen 659730 644580 ]
+match /trunk/kdereview/nepomuk-kde/kmetadata/rcgen/
+    repository kdelibs
+    prefix nepomuk/rcgen/
+    branch master
+    max revision 659730
+    min revision 644580
+end match
+
+#   [ parent trunk/playground/base/nepomuk-kde/kmetadata/rcgen 644580 615113 ]
+match /trunk/playground/base/nepomuk-kde/kmetadata/rcgen/
+    repository kdelibs
+    prefix nepomuk/rcgen/
+    branch master
+    max revision 644580
+    min revision 615113
+end match
+
+#   [ move trunk/playground/base/nepomuk-kde/kmetadata/tools 615113 610586 ]
+match /trunk/playground/base/nepomuk-kde/kmetadata/tools/
+    repository kdelibs
+    prefix nepomuk/rcgen/
+    branch master
+    max revision 615113
+    min revision 610586
+end match
+
+#   [ parent branches/work/nepomuk-kde/kmetadata/tools 610586 0 ]
+match /branches/work/nepomuk-kde/kmetadata/tools/
+    repository kdelibs
+    prefix nepomuk/rcgen/
+    branch master
+    max revision 610586
+end match
+
+#   ------< /trunk/KDE/kdelibs/nepomuk/rcgen/templates >------
+#   [ add nepomuk/rcgen/templates HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/nepomuk/test >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/nepomuk/test @ 1136046 <- /trunk/KDE/kdelibs/nepomuk/query/test @ 1136036 ]
+#   [ add nepomuk/test HEAD 1136036 ]
+
+#   [ move trunk/KDE/kdelibs/nepomuk/query/test 1136036 0 ]
+
+#   ------< /trunk/KDE/kdelibs/nepomuk/types >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/nepomuk/types @ 1136043 <- /trunk/KDE/kdelibs/nepomuk/core/types @ 1136002 ]
+#   [ Move/Replace: /trunk/KDE/kdelibs/nepomuk/core/types @ 1123611 <- /trunk/KDE/kdelibs/nepomuk/core/ontology @ 1122109 ]
+#   [ Parent: /trunk/KDE/kdelibs/nepomuk/core @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata @ 671788 ]
+#   [ add nepomuk/types HEAD 1136002 ]
+
+#   [ move trunk/KDE/kdelibs/nepomuk/core/types 1136002 1122109 ]
+
+#   [ move trunk/KDE/kdelibs/nepomuk/core/ontology 1122109 671788 ]
+
+#   [ parent trunk/KDE/kdelibs/kmetadata/kmetadata/ontology 671788 0 ]
+
+#   ------< /trunk/KDE/kdelibs/nepomuk/ui >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/nepomuk/ui @ 1136043 <- /trunk/KDE/kdelibs/nepomuk/core/ui @ 1136002 ]
+#   [ Parent: /trunk/KDE/kdelibs/nepomuk/core @ 674110 <- /trunk/KDE/kdelibs/kmetadata/kmetadata @ 671788 ]
+#   [ Parent: /trunk/KDE/kdelibs/kmetadata @ 659840 <- /trunk/kdereview/nepomuk-kde/kmetadata @ 659730 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/CMakeLists.txt @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/CMakeLists.txt @ 650518 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/kautoscrollarea.cpp @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/kautoscrollarea.cpp @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/kautoscrollarea.h @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/kautoscrollarea.h @ 650517 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/kblocklayout.cpp @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/kblocklayout.cpp @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/kblocklayout.h @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/kblocklayout.h @ 650517 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/kmetadatatagcloud.cpp @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/kmetadatatagcloud.cpp @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/kmetadatatagcloud.h @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/kmetadatatagcloud.h @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/kmetadatatagwidget.cpp @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/kmetadatatagwidget.cpp @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/kmetadatatagwidget.h @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/kmetadatatagwidget.h @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/kratingwidget.cpp @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/kratingwidget.cpp @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/kratingwidget.h @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/kratingwidget.h @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/ktagcloudwidget.cpp @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/ktagcloudwidget.cpp @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/ktagcloudwidget.h @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/ktagcloudwidget.h @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/ktagdisplaywidget.cpp @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/ktagdisplaywidget.cpp @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/ktagdisplaywidget.h @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/ktagdisplaywidget.h @ 650497 ]
+#   [ Delayed: /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/pics @ 650528 <- /trunk/kdereview/nepomuk-kde/kmetadata/tools/pics @ 650497 ]
+#   [ add nepomuk/ui HEAD 1136002 ]
+
+#   [ move trunk/KDE/kdelibs/nepomuk/core/ui 1136002 671788 ]
+
+#   [ parent trunk/KDE/kdelibs/kmetadata/kmetadata/ui 671788 659730 ]
+
+#   [ parent trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui 659730 0 ]
+match /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/
+    repository kdelibs
+    prefix nepomuk/ui/
+    branch master
+    max revision 659730
+end match
+
+#   ------< /trunk/KDE/kdelibs/nepomuk/utils >------
+#   [ add nepomuk/utils HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/plasma @ 879759 <- /trunk/KDE/kdebase/workspace/libs/plasma @ 879758 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 879758 <- /trunk/KDE/kdelibs/plasma @ 879757 ]
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879757 <- /trunk/KDE/kdebase/workspace/libs @ 879755 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 676120 <- /trunk/KDE/kdebase/workspace/lib @ 675747 ]
+#   [ Move/Replace: /trunk/KDE/kdebase/workspace/lib/plasma @ 670850 <- /trunk/KDE/kdebase/workspace/plasma/lib @ 670824 ]
+#   [ add plasma HEAD 879758 ]
+
+#   [ move trunk/KDE/kdebase/workspace/libs/plasma 879758 879757 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/
+    repository kdelibs
+    prefix plasma/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+#   [ parent trunk/KDE/kdelibs/plasma/plasma 879757 879755 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma 879755 675747 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/
+    repository kdelibs
+    prefix plasma/
+    branch master
+    max revision 879755
+    min revision 675747
+end match
+
+#   [ parent trunk/KDE/kdebase/workspace/lib/plasma 675747 670824 ]
+match /trunk/KDE/kdebase/workspace/lib/plasma/
+    repository kdelibs
+    prefix plasma/
+    branch master
+    max revision 675747
+    min revision 670824
+end match
+
+#   [ move trunk/KDE/kdebase/workspace/plasma/lib 670824 0 ]
+match /trunk/KDE/kdebase/workspace/plasma/lib/
+    repository kdelibs
+    prefix plasma/
+    branch master
+    max revision 670824
+end match
+
+#   ------< /trunk/KDE/kdelibs/plasma/animations >------
+#   [ add plasma/animations HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma/animations/bindings >------
+#   [ add plasma/animations/bindings HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma/data >------
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/data/kconfig_updates @ 1019549 <- /trunk/KDE/kdelibs/plasma/kconfig_updates @ 1019528 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/data/operations @ 1019549 <- /trunk/KDE/kdelibs/plasma/operations @ 1019533 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/data/servicetypes @ 1019549 <- /trunk/KDE/kdelibs/plasma/servicetypes @ 1019526 ]
+#   [ add plasma/data HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma/data/kconfig_updates >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/plasma/data/kconfig_updates @ 1019549 <- /trunk/KDE/kdelibs/plasma/kconfig_updates @ 1019528 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/kconfig_updates/plasma_popupapplet_fix_groups.pl @ 1019528 <- /trunk/KDE/kdelibs/plasma/plasma_popupapplet_fix_groups.pl @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/kconfig_updates/plasma_popupapplet_fix_groups.upd @ 1019528 <- /trunk/KDE/kdelibs/plasma/plasma_popupapplet_fix_groups.upd @ 1019526 ]
+#   [ add plasma/data/kconfig_updates HEAD 1019528 ]
+
+#   [ move trunk/KDE/kdelibs/plasma/kconfig_updates 1019528 0 ]
+
+#   ------< /trunk/KDE/kdelibs/plasma/data/kconfigxt >------
+#   [ add plasma/data/kconfigxt HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma/data/knewstuff >------
+#   [ add plasma/data/knewstuff HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma/data/operations >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/plasma/data/operations @ 1019549 <- /trunk/KDE/kdelibs/plasma/operations @ 1019533 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/operations/dataengineservice.operations @ 1019533 <- /trunk/KDE/kdelibs/plasma/dataengineservice.operations @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/operations/plasmoidservice.operations @ 1019533 <- /trunk/KDE/kdelibs/plasma/plasmoidservice.operations @ 1019526 ]
+#   [ add plasma/data/operations HEAD 1019533 ]
+
+#   [ move trunk/KDE/kdelibs/plasma/operations 1019533 0 ]
+
+#   ------< /trunk/KDE/kdelibs/plasma/data/services >------
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/data/services/plasma-applet-extenderapplet.desktop @ 1134608 <- /trunk/KDE/kdelibs/plasma/data/servicetypes/plasma-applet-extenderapplet.desktop @ 1134607 ]
+#   [ add plasma/data/services HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma/data/servicetypes >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/plasma/data/servicetypes @ 1019549 <- /trunk/KDE/kdelibs/plasma/servicetypes @ 1019526 ]
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879759 <- /trunk/KDE/kdebase/workspace/libs/plasma @ 879758 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 879758 <- /trunk/KDE/kdelibs/plasma @ 879757 ]
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879757 <- /trunk/KDE/kdebase/workspace/libs @ 879755 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 676120 <- /trunk/KDE/kdebase/workspace/lib @ 675747 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/lib/plasma/servicetypes/plasma_animator.desktop @ 672774 <- /trunk/KDE/kdebase/workspace/lib/plasma/plasma_animator.desktop @ 672773 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/lib/plasma/servicetypes/plasma_applet.desktop @ 672774 <- /trunk/KDE/kdebase/workspace/lib/plasma/plasma_applet.desktop @ 672698 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/lib/plasma/servicetypes/plasma_dataengine.desktop @ 672774 <- /trunk/KDE/kdebase/workspace/lib/plasma/plasma_dataengine.desktop @ 672698 ]
+#   [ add plasma/data/servicetypes HEAD 1019526 ]
+
+#   [ move trunk/KDE/kdelibs/plasma/servicetypes 1019526 879758 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/servicetypes 879758 879757 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/servicetypes/
+    repository kdelibs
+    prefix plasma/data/servicetypes/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+#   [ parent trunk/KDE/kdelibs/plasma/plasma/servicetypes 879757 879755 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/servicetypes 879755 675747 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/servicetypes/
+    repository kdelibs
+    prefix plasma/data/servicetypes/
+    branch master
+    max revision 879755
+    min revision 675747
+end match
+
+#   [ parent trunk/KDE/kdebase/workspace/lib/plasma/servicetypes 675747 0 ]
+match /trunk/KDE/kdebase/workspace/lib/plasma/servicetypes/
+    repository kdelibs
+    prefix plasma/data/servicetypes/
+    branch master
+    max revision 675747
+end match
+
+#   ------< /trunk/KDE/kdelibs/plasma/deprecated >------
+#   [ add plasma/deprecated HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma/extenders >------
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/extenders/extender.cpp @ 1019570 <- /trunk/KDE/kdelibs/plasma/extender.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/extenders/extender.h @ 1019570 <- /trunk/KDE/kdelibs/plasma/extender.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/extenders/extendergroup.cpp @ 1019570 <- /trunk/KDE/kdelibs/plasma/extendergroup.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/extenders/extendergroup.h @ 1019570 <- /trunk/KDE/kdelibs/plasma/extendergroup.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/extenders/extenderitem.cpp @ 1019570 <- /trunk/KDE/kdelibs/plasma/extenderitem.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/extenders/extenderitem.h @ 1019570 <- /trunk/KDE/kdelibs/plasma/extenderitem.h @ 1019526 ]
+#   [ add plasma/extenders HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma/private >------
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879759 <- /trunk/KDE/kdebase/workspace/libs/plasma @ 879758 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 879758 <- /trunk/KDE/kdelibs/plasma @ 879757 ]
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879757 <- /trunk/KDE/kdebase/workspace/libs @ 879755 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/applet_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/applet_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/applethandle.cpp @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/applethandle.cpp @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/applethandle_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/applethandle_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/containment_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/containment_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/datacontainer_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/datacontainer_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/dataengine_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/dataengine_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/desktoptoolbox.cpp @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/desktoptoolbox.cpp @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/desktoptoolbox_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/desktoptoolbox_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/packages.cpp @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/packages.cpp @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/packages_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/packages_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/paneltoolbox.cpp @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/paneltoolbox.cpp @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/paneltoolbox_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/paneltoolbox_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/service_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/service_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/sharedtimer_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/sharedtimer_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/toolbox.cpp @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/toolbox.cpp @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/toolbox_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/toolbox_p.h @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/tooltip.cpp @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/tooltip.cpp @ 838903 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/private/tooltip_p.h @ 839792 <- /trunk/KDE/kdebase/workspace/libs/plasma/tooltip_p.h @ 838903 ]
+#   [ add plasma/private HEAD 879758 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/private 879758 879757 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/private/
+    repository kdelibs
+    prefix plasma/private/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+#   [ parent trunk/KDE/kdelibs/plasma/plasma/private 879757 879755 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/private 879755 0 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/private/
+    repository kdelibs
+    prefix plasma/private/
+    branch master
+    max revision 879755
+end match
+
+#   ------< /trunk/KDE/kdelibs/plasma/private/effects >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/plasma/private/effects @ 1019546 <- /trunk/KDE/kdelibs/plasma/effects @ 1019526 ]
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879759 <- /trunk/KDE/kdebase/workspace/libs/plasma @ 879758 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 879758 <- /trunk/KDE/kdelibs/plasma @ 879757 ]
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879757 <- /trunk/KDE/kdebase/workspace/libs @ 879755 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 676120 <- /trunk/KDE/kdebase/workspace/lib @ 675747 ]
+#   [ add plasma/private/effects HEAD 1019526 ]
+
+#   [ move trunk/KDE/kdelibs/plasma/effects 1019526 879758 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/effects 879758 879757 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/effects/
+    repository kdelibs
+    prefix plasma/private/effects/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+#   [ parent trunk/KDE/kdelibs/plasma/plasma/effects 879757 879755 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/effects 879755 675747 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/effects/
+    repository kdelibs
+    prefix plasma/private/effects/
+    branch master
+    max revision 879755
+    min revision 675747
+end match
+
+#   [ parent trunk/KDE/kdebase/workspace/lib/plasma/effects 675747 0 ]
+match /trunk/KDE/kdebase/workspace/lib/plasma/effects/
+    repository kdelibs
+    prefix plasma/private/effects/
+    branch master
+    max revision 675747
+end match
+
+#   ------< /trunk/KDE/kdelibs/plasma/private/qtjolie-branch >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/plasma/private/qtjolie-branch @ 1023814 <- /trunk/KDE/kdelibs/plasma/private/qtjolie @ 1023804 ]
+#   [ Move/Replace: /trunk/KDE/kdelibs/plasma/private/qtjolie @ 1023804 <- /branches/work/~ervin/qtjolie @ 1023802 ]
+#   [ Move/Replace: /branches/work/~ervin/qtjolie @ 959005 <- /branches/work/~ervin/sodep @ 958806 ]
+#   [ add plasma/private/qtjolie-branch HEAD 1023804 ]
+
+#   [ move trunk/KDE/kdelibs/plasma/private/qtjolie 1023804 1023802 ]
+
+#   [ move branches/work/~ervin/qtjolie 1023802 958806 ]
+match /branches/work/~ervin/qtjolie/
+    repository kdelibs
+    prefix plasma/private/qtjolie-branch/
+    branch master
+    max revision 1023802
+    min revision 958806
+end match
+
+#   [ move branches/work/~ervin/sodep 958806 0 ]
+match /branches/work/~ervin/sodep/
+    repository kdelibs
+    prefix plasma/private/qtjolie-branch/
+    branch master
+    max revision 958806
+end match
+
+#   ------< /trunk/KDE/kdelibs/plasma/remote >------
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/accessappletjob.cpp @ 1019555 <- /trunk/KDE/kdelibs/plasma/accessappletjob.cpp @ 1019542 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/accessappletjob.h @ 1019555 <- /trunk/KDE/kdelibs/plasma/accessappletjob.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/accessmanager.cpp @ 1019555 <- /trunk/KDE/kdelibs/plasma/accessmanager.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/accessmanager.h @ 1019555 <- /trunk/KDE/kdelibs/plasma/accessmanager.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/authorizationinterface.cpp @ 1019555 <- /trunk/KDE/kdelibs/plasma/authorizationinterface.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/authorizationinterface.h @ 1019555 <- /trunk/KDE/kdelibs/plasma/authorizationinterface.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/authorizationmanager.cpp @ 1019555 <- /trunk/KDE/kdelibs/plasma/authorizationmanager.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/authorizationmanager.h @ 1019555 <- /trunk/KDE/kdelibs/plasma/authorizationmanager.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/authorizationrule.cpp @ 1019555 <- /trunk/KDE/kdelibs/plasma/authorizationrule.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/authorizationrule.h @ 1019555 <- /trunk/KDE/kdelibs/plasma/authorizationrule.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/clientpinrequest.cpp @ 1019555 <- /trunk/KDE/kdelibs/plasma/clientpinrequest.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/clientpinrequest.h @ 1019555 <- /trunk/KDE/kdelibs/plasma/clientpinrequest.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/credentials.cpp @ 1019555 <- /trunk/KDE/kdelibs/plasma/credentials.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/credentials.h @ 1019555 <- /trunk/KDE/kdelibs/plasma/credentials.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/serviceaccessjob.cpp @ 1019555 <- /trunk/KDE/kdelibs/plasma/serviceaccessjob.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/remote/serviceaccessjob.h @ 1019555 <- /trunk/KDE/kdelibs/plasma/serviceaccessjob.h @ 1019526 ]
+#   [ add plasma/remote HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma/runners >------
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/runners/abstractrunner.cpp @ 1019561 <- /trunk/KDE/kdelibs/plasma/abstractrunner.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/runners/abstractrunner.h @ 1019561 <- /trunk/KDE/kdelibs/plasma/abstractrunner.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/runners/querymatch.cpp @ 1019561 <- /trunk/KDE/kdelibs/plasma/querymatch.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/runners/querymatch.h @ 1019561 <- /trunk/KDE/kdelibs/plasma/querymatch.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/runners/runnercontext.cpp @ 1019561 <- /trunk/KDE/kdelibs/plasma/runnercontext.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/runners/runnercontext.h @ 1019561 <- /trunk/KDE/kdelibs/plasma/runnercontext.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/runners/runnermanager.cpp @ 1019561 <- /trunk/KDE/kdelibs/plasma/runnermanager.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/runners/runnermanager.h @ 1019561 <- /trunk/KDE/kdelibs/plasma/runnermanager.h @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/runners/runnersyntax.cpp @ 1019561 <- /trunk/KDE/kdelibs/plasma/runnersyntax.cpp @ 1019526 ]
+#   [ Delayed: /trunk/KDE/kdelibs/plasma/runners/runnersyntax.h @ 1019561 <- /trunk/KDE/kdelibs/plasma/runnersyntax.h @ 1019526 ]
+#   [ add plasma/runners HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/plasma/scripting >------
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879759 <- /trunk/KDE/kdebase/workspace/libs/plasma @ 879758 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 879758 <- /trunk/KDE/kdelibs/plasma @ 879757 ]
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879757 <- /trunk/KDE/kdebase/workspace/libs @ 879755 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/scripting/scriptengine.cpp @ 765971 <- /trunk/KDE/kdebase/workspace/libs/plasma/scriptengine.cpp @ 765837 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/libs/plasma/scripting/scriptengine.h @ 765971 <- /trunk/KDE/kdebase/workspace/libs/plasma/scriptengine.h @ 765837 ]
+#   [ add plasma/scripting HEAD 879758 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/scripting 879758 879757 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/scripting/
+    repository kdelibs
+    prefix plasma/scripting/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+#   [ parent trunk/KDE/kdelibs/plasma/plasma/scripting 879757 879755 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/scripting 879755 0 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/scripting/
+    repository kdelibs
+    prefix plasma/scripting/
+    branch master
+    max revision 879755
+end match
+
+#   ------< /trunk/KDE/kdelibs/plasma/tests >------
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879759 <- /trunk/KDE/kdebase/workspace/libs/plasma @ 879758 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 879758 <- /trunk/KDE/kdelibs/plasma @ 879757 ]
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879757 <- /trunk/KDE/kdebase/workspace/libs @ 879755 ]
+#   [ add plasma/tests HEAD 879758 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/tests 879758 879757 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/tests/
+    repository kdelibs
+    prefix plasma/tests/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+#   [ parent trunk/KDE/kdelibs/plasma/plasma/tests 879757 879755 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/tests 879755 0 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/tests/
+    repository kdelibs
+    prefix plasma/tests/
+    branch master
+    max revision 879755
+end match
+
+#   ------< /trunk/KDE/kdelibs/plasma/tests/testcontainmentactionsplugin >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/plasma/tests/testcontainmentactionsplugin @ 1159219 <- /trunk/KDE/kdebase/workspace/plasma/generic/containmentactions/test @ 1159218 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/plasma/generic/containmentactions @ 1023511 <- /trunk/KDE/kdebase/workspace/plasma/containmentactions @ 1023065 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/plasma/containmentactions/test/CMakeLists.txt @ 1012692 <- /trunk/KDE/kdebase/workspace/plasma/contextactions/test/CMakeLists.txt @ 1012667 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/plasma/containmentactions/test/config.ui @ 1012692 <- /trunk/KDE/kdebase/workspace/plasma/contextactions/test/config.ui @ 1012667 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/plasma/containmentactions/test/plasma-containmentactions-test.desktop @ 1012692 <- /trunk/KDE/kdebase/workspace/plasma/contextactions/test/plasma-containmentactions-test.desktop @ 1012667 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/plasma/containmentactions/test/test.cpp @ 1012692 <- /trunk/KDE/kdebase/workspace/plasma/contextactions/test/test.cpp @ 1012667 ]
+#   [ Delayed: /trunk/KDE/kdebase/workspace/plasma/containmentactions/test/test.h @ 1012692 <- /trunk/KDE/kdebase/workspace/plasma/contextactions/test/test.h @ 1012667 ]
+#   [ add plasma/tests/testcontainmentactionsplugin HEAD 1159218 ]
+
+#   [ move trunk/KDE/kdebase/workspace/plasma/generic/containmentactions/test 1159218 1023065 ]
+match /trunk/KDE/kdebase/workspace/plasma/generic/containmentactions/test/
+    repository kdelibs
+    prefix plasma/tests/testcontainmentactionsplugin/
+    branch master
+    max revision 1159218
+    min revision 1023065
+end match
+
+#   [ parent trunk/KDE/kdebase/workspace/plasma/containmentactions/test 1023065 0 ]
+match /trunk/KDE/kdebase/workspace/plasma/containmentactions/test/
+    repository kdelibs
+    prefix plasma/tests/testcontainmentactionsplugin/
+    branch master
+    max revision 1023065
+end match
+
+#   ------< /trunk/KDE/kdelibs/plasma/tests/testengine >------
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879759 <- /trunk/KDE/kdebase/workspace/libs/plasma @ 879758 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 879758 <- /trunk/KDE/kdelibs/plasma @ 879757 ]
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879757 <- /trunk/KDE/kdebase/workspace/libs @ 879755 ]
+#   [ add plasma/tests/testengine HEAD 879758 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/tests/testengine 879758 879757 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/tests/testengine/
+    repository kdelibs
+    prefix plasma/tests/testengine/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+#   [ parent trunk/KDE/kdelibs/plasma/plasma/tests/testengine 879757 879755 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/tests/testengine 879755 0 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/tests/testengine/
+    repository kdelibs
+    prefix plasma/tests/testengine/
+    branch master
+    max revision 879755
+end match
+
+#   ------< /trunk/KDE/kdelibs/plasma/widgets >------
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879759 <- /trunk/KDE/kdebase/workspace/libs/plasma @ 879758 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 879758 <- /trunk/KDE/kdelibs/plasma @ 879757 ]
+#   [ Parent: /trunk/KDE/kdelibs/plasma @ 879757 <- /trunk/KDE/kdebase/workspace/libs @ 879755 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/libs @ 676120 <- /trunk/KDE/kdebase/workspace/lib @ 675747 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/lib/plasma @ 670850 <- /trunk/KDE/kdebase/workspace/plasma/lib @ 670824 ]
+#   [ add plasma/widgets HEAD 879758 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/widgets 879758 879757 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/widgets/
+    repository kdelibs
+    prefix plasma/widgets/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+#   [ parent trunk/KDE/kdelibs/plasma/plasma/widgets 879757 879755 ]
+
+#   [ parent trunk/KDE/kdebase/workspace/libs/plasma/widgets 879755 675747 ]
+match /trunk/KDE/kdebase/workspace/libs/plasma/widgets/
+    repository kdelibs
+    prefix plasma/widgets/
+    branch master
+    max revision 879755
+    min revision 675747
+end match
+
+#   [ parent trunk/KDE/kdebase/workspace/lib/plasma/widgets 675747 670824 ]
+match /trunk/KDE/kdebase/workspace/lib/plasma/widgets/
+    repository kdelibs
+    prefix plasma/widgets/
+    branch master
+    max revision 675747
+    min revision 670824
+end match
+
+#   [ parent trunk/KDE/kdebase/workspace/plasma/lib/widgets 670824 0 ]
+match /trunk/KDE/kdebase/workspace/plasma/lib/widgets/
+    repository kdelibs
+    prefix plasma/widgets/
+    branch master
+    max revision 670824
+end match
+
+#   ------< /trunk/KDE/kdelibs/security >------
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto @ 672391 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/CMakeLists.txt @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/CMakeLists.txt @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/Messages.sh @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/Messages.sh @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/README @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/README @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/certexport.cpp @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/certexport.cpp @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/certexport.h @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/certexport.h @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/certgen.ui @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/certgen.ui @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/crypto.cpp @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/crypto.cpp @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/crypto.desktop @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/crypto.desktop @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/crypto.h @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/crypto.h @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/kdatetimedlg.cpp @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/kdatetimedlg.cpp @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/crypto/kdatetimedlg.h @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto/kdatetimedlg.h @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kcert @ 673115 <- /trunk/KDE/kdebase/runtime/kcert @ 672391 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kcert/CMakeLists.txt @ 673115 <- /trunk/KDE/kdebase/runtime/kcert/CMakeLists.txt @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kcert/kcertpart.cc @ 673115 <- /trunk/KDE/kdebase/runtime/kcert/kcertpart.cc @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kcert/kcertpart.desktop @ 673115 <- /trunk/KDE/kdebase/runtime/kcert/kcertpart.desktop @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kcert/kcertpart.h @ 673115 <- /trunk/KDE/kdebase/runtime/kcert/kcertpart.h @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kcert/kcertpart.rc @ 673115 <- /trunk/KDE/kdebase/runtime/kcert/kcertpart.rc @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver @ 672406 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/CMakeLists.txt @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/CMakeLists.txt @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/kuiserver.desktop @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/kuiserver.desktop @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/kuiserversettings.kcfg @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/kuiserversettings.kcfg @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/kuiserversettings.kcfgc @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/kuiserversettings.kcfgc @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/pics @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/pics @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/progresslistdelegate.cpp @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/progresslistdelegate.cpp @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/progresslistdelegate.h @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/progresslistdelegate.h @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/progresslistdelegate_p.h @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/progresslistdelegate_p.h @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/progresslistmodel.cpp @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/progresslistmodel.cpp @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/progresslistmodel.h @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/progresslistmodel.h @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/tests @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/tests @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/uiserver.cpp @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/uiserver.cpp @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/uiserver.h @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/uiserver.h @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/uiserverConfigDialog.ui @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/uiserverConfigDialog.ui @ 673114 ]
+#   [ Delayed: /trunk/KDE/kdelibs/security/kuiserver/uiserver_p.h @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver/uiserver_p.h @ 673114 ]
+#   [ add security HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/security/crypto >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/security/crypto @ 673115 <- /trunk/KDE/kdebase/runtime/kcontrol/crypto @ 672391 ]
+#   [ Move/Replace: /trunk/KDE/kdebase/runtime/kcontrol/crypto @ 630467 <- /trunk/KDE/kdebase/workspace/kcontrol/crypto @ 630457 ]
+#   [ Parent: /trunk/KDE/kdebase/workspace/kcontrol @ 455942 <- /trunk/KDE/kdebase/kcontrol @ 455864 ]
+#   [ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#   [ add security/crypto HEAD 672391 ]
+
+#   [ move trunk/KDE/kdebase/runtime/kcontrol/crypto 672391 630457 ]
+match /trunk/KDE/kdebase/runtime/kcontrol/crypto/
+    repository kdelibs
+    prefix security/crypto/
+    branch master
+    max revision 672391
+    min revision 630457
+end match
+
+#   [ move trunk/KDE/kdebase/workspace/kcontrol/crypto 630457 455864 ]
+match /trunk/KDE/kdebase/workspace/kcontrol/crypto/
+    repository kdelibs
+    prefix security/crypto/
+    branch master
+    max revision 630457
+    min revision 455864
+end match
+
+#   [ parent trunk/KDE/kdebase/kcontrol/crypto 455864 409202 ]
+match /trunk/KDE/kdebase/kcontrol/crypto/
+    repository kdelibs
+    prefix security/crypto/
+    branch master
+    max revision 455864
+    min revision 409202
+end match
+
+#   [ parent trunk/kdebase/kcontrol/crypto 409202 0 ]
+match /trunk/kdebase/kcontrol/crypto/
+    repository kdelibs
+    prefix security/crypto/
+    branch master
+    max revision 409202
+end match
+
+#   ------< /trunk/KDE/kdelibs/security/kcert >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/security/kcert @ 673115 <- /trunk/KDE/kdebase/runtime/kcert @ 672391 ]
+#   [ Move/Replace: /trunk/KDE/kdebase/runtime/kcert @ 670184 <- /trunk/KDE/kdelibs/kcert @ 669428 ]
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add security/kcert HEAD 672391 ]
+
+#   [ move trunk/KDE/kdebase/runtime/kcert 672391 669428 ]
+match /trunk/KDE/kdebase/runtime/kcert/
+    repository kdelibs
+    prefix security/kcert/
+    branch master
+    max revision 672391
+    min revision 669428
+end match
+
+#   [ move trunk/KDE/kdelibs/kcert 669428 409202 ]
+
+#   [ parent trunk/kdelibs/kcert 409202 0 ]
+
+#   ------< /trunk/KDE/kdelibs/solid >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/solid @ 659752 <- /branches/work/phonon-solid-sprint/kdelibs/solid @ 659751 ]
+#   [ Parent: /branches/work/phonon-solid-sprint @ 654948 <- /trunk/KDE @ 654946 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/README @ 590216 <- /branches/work/kdehw/README @ 590197 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/TODO @ 590216 <- /branches/work/kdehw/TODO @ 590197 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/backends/CMakeLists.txt @ 590216 <- /branches/work/kdehw/backends/CMakeLists.txt @ 590197 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/backends/fakehw @ 590216 <- /branches/work/kdehw/backends/fakehw @ 590197 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/backends/fakenet @ 590216 <- /branches/work/kdehw/backends/fakenet @ 590197 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/doc @ 590216 <- /branches/work/kdehw/doc @ 590197 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/solid @ 590216 <- /branches/work/kdehw/solid @ 590197 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/tests @ 590216 <- /branches/work/kdehw/tests @ 590197 ]
+#   [ add solid HEAD 659751 ]
+
+#   [ move branches/work/phonon-solid-sprint/kdelibs/solid 659751 654946 ]
+match /branches/work/phonon-solid-sprint/kdelibs/solid/
+    repository kdelibs
+    prefix solid/
+    branch master
+    max revision 659751
+    min revision 654946
+end match
+
+#   [ parent trunk/KDE/kdelibs/solid 654946 0 ]
+
+#   ------< /trunk/KDE/kdelibs/solid/doc >------
+#   [ Parent: /trunk/KDE/kdelibs/solid @ 659752 <- /branches/work/phonon-solid-sprint/kdelibs/solid @ 659751 ]
+#   [ Parent: /branches/work/phonon-solid-sprint @ 654948 <- /trunk/KDE @ 654946 ]
+#   [ Move/Replace: /trunk/KDE/kdelibs/solid/doc @ 590216 <- /branches/work/kdehw/doc @ 590197 ]
+#   [ add solid/doc HEAD 659751 ]
+
+#   [ parent branches/work/phonon-solid-sprint/kdelibs/solid/doc 659751 654946 ]
+
+
+#   [ parent trunk/KDE/kdelibs/solid/doc 654946 590197 ]
+
+#   [ move branches/work/kdehw/doc 590197 0 ]
+match /branches/work/kdehw/doc/
+    repository kdelibs
+    prefix solid/doc/
+    branch master
+    max revision 590197
+end match
+
+#   ------< /trunk/KDE/kdelibs/solid/solid >------
+#   [ Parent: /trunk/KDE/kdelibs/solid @ 659752 <- /branches/work/phonon-solid-sprint/kdelibs/solid @ 659751 ]
+#   [ Parent: /branches/work/phonon-solid-sprint @ 654948 <- /trunk/KDE @ 654946 ]
+#   [ Move/Replace: /trunk/KDE/kdelibs/solid/solid @ 590216 <- /branches/work/kdehw/solid @ 590197 ]
+#   [ Move/Replace: /branches/work/kdehw/solid @ 542224 <- /branches/work/kdehw/kdehw @ 542056 ]
+#   [ add solid/solid HEAD 659751 ]
+
+#   [ parent branches/work/phonon-solid-sprint/kdelibs/solid/solid 659751 654946 ]
+
+
+#   [ parent trunk/KDE/kdelibs/solid/solid 654946 590197 ]
+
+#   [ move branches/work/kdehw/solid 590197 542056 ]
+match /branches/work/kdehw/solid/
+    repository kdelibs
+    prefix solid/solid/
+    branch master
+    max revision 590197
+    min revision 542056
+end match
+
+#   [ move branches/work/kdehw/kdehw 542056 0 ]
+match /branches/work/kdehw/kdehw/
+    repository kdelibs
+    prefix solid/solid/
+    branch master
+    max revision 542056
+end match
+
+#   ------< /trunk/KDE/kdelibs/solid/solid/backends >------
+#   [ Parent: /trunk/KDE/kdelibs/solid @ 659752 <- /branches/work/phonon-solid-sprint/kdelibs/solid @ 659751 ]
+#   [ Move/Replace: /branches/work/phonon-solid-sprint/kdelibs/solid/solid/backends @ 658760 <- /branches/work/phonon-solid-sprint/kdelibs/solid/backends @ 658699 ]
+#   [ Parent: /branches/work/phonon-solid-sprint @ 654948 <- /trunk/KDE @ 654946 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/backends/CMakeLists.txt @ 590216 <- /branches/work/kdehw/backends/CMakeLists.txt @ 590197 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/backends/fakehw @ 590216 <- /branches/work/kdehw/backends/fakehw @ 590197 ]
+#   [ Delayed: /trunk/KDE/kdelibs/solid/backends/fakenet @ 590216 <- /branches/work/kdehw/backends/fakenet @ 590197 ]
+#   [ add solid/solid/backends HEAD 659751 ]
+
+#   [ parent branches/work/phonon-solid-sprint/kdelibs/solid/solid/backends 659751 658699 ]
+
+
+#   [ move branches/work/phonon-solid-sprint/kdelibs/solid/backends 658699 654946 ]
+
+
+#   [ parent trunk/KDE/kdelibs/solid/backends 654946 0 ]
+
+#   ------< /trunk/KDE/kdelibs/solid/solid/ifaces >------
+#   [ Parent: /trunk/KDE/kdelibs/solid @ 659752 <- /branches/work/phonon-solid-sprint/kdelibs/solid @ 659751 ]
+#   [ Parent: /branches/work/phonon-solid-sprint @ 654948 <- /trunk/KDE @ 654946 ]
+#   [ Parent: /trunk/KDE/kdelibs/solid/solid @ 590216 <- /branches/work/kdehw/solid @ 590197 ]
+#   [ Parent: /branches/work/kdehw/solid @ 542224 <- /branches/work/kdehw/kdehw @ 542056 ]
+#   [ add solid/solid/ifaces HEAD 659751 ]
+
+#   [ parent branches/work/phonon-solid-sprint/kdelibs/solid/solid/ifaces 659751 654946 ]
+
+
+#   [ parent trunk/KDE/kdelibs/solid/solid/ifaces 654946 590197 ]
+
+#   [ parent branches/work/kdehw/solid/ifaces 590197 542056 ]
+match /branches/work/kdehw/solid/ifaces/
+    repository kdelibs
+    prefix solid/solid/ifaces/
+    branch master
+    max revision 590197
+    min revision 542056
+end match
+
+#   [ parent branches/work/kdehw/kdehw/ifaces 542056 0 ]
+match /branches/work/kdehw/kdehw/ifaces/
+    repository kdelibs
+    prefix solid/solid/ifaces/
+    branch master
+    max revision 542056
+end match
+
+#   ------< /trunk/KDE/kdelibs/solid/tests >------
+#   [ Parent: /trunk/KDE/kdelibs/solid @ 659752 <- /branches/work/phonon-solid-sprint/kdelibs/solid @ 659751 ]
+#   [ Parent: /branches/work/phonon-solid-sprint @ 654948 <- /trunk/KDE @ 654946 ]
+#   [ Move/Replace: /trunk/KDE/kdelibs/solid/tests @ 590216 <- /branches/work/kdehw/tests @ 590197 ]
+#   [ add solid/tests HEAD 659751 ]
+
+#   [ parent branches/work/phonon-solid-sprint/kdelibs/solid/tests 659751 654946 ]
+
+
+#   [ parent trunk/KDE/kdelibs/solid/tests 654946 590197 ]
+
+#   [ move branches/work/kdehw/tests 590197 0 ]
+match /branches/work/kdehw/tests/
+    repository kdelibs
+    prefix solid/tests/
+    branch master
+    max revision 590197
+end match
+
+#   ------< /trunk/KDE/kdelibs/sonnet >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/sonnet @ 557110 <- /trunk/KDE/kdelibs/kspell2 @ 557047 ]
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add sonnet HEAD 557047 ]
+
+#   [ move trunk/KDE/kdelibs/kspell2 557047 409202 ]
+
+#   [ parent trunk/kdelibs/kspell2 409202 0 ]
+
+#   ------< /trunk/KDE/kdelibs/sonnet/plugins >------
+#   [ Parent: /trunk/KDE/kdelibs/sonnet @ 557110 <- /trunk/KDE/kdelibs/kspell2 @ 557047 ]
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add sonnet/plugins HEAD 557047 ]
+
+#   [ parent trunk/KDE/kdelibs/kspell2/plugins 557047 409202 ]
+
+#   [ parent trunk/kdelibs/kspell2/plugins 409202 0 ]
+
+#   ------< /trunk/KDE/kdelibs/sonnet/plugins/aspell >------
+#   [ Parent: /trunk/KDE/kdelibs/sonnet @ 557110 <- /trunk/KDE/kdelibs/kspell2 @ 557047 ]
+#   [ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#   [ add sonnet/plugins/aspell HEAD 557047 ]
+
+#   [ parent trunk/KDE/kdelibs/kspell2/plugins/aspell 557047 409202 ]
+
+#   [ parent trunk/kdelibs/kspell2/plugins/aspell 409202 0 ]
+
+#   ------< /trunk/KDE/kdelibs/sonnet/plugins/enchant >------
+#   [ add sonnet/plugins/enchant HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/sonnet/plugins/hspell >------
+#   [ Parent: /trunk/KDE/kdelibs/sonnet @ 557110 <- /trunk/KDE/kdelibs/kspell2 @ 557047 ]
+#   [ add sonnet/plugins/hspell HEAD 557047 ]
+
+#   [ parent trunk/KDE/kdelibs/kspell2/plugins/hspell 557047 0 ]
+
+#   ------< /trunk/KDE/kdelibs/sonnet/plugins/hunspell >------
+#   [ add sonnet/plugins/hunspell HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/sonnet/unicode >------
+#   [ add sonnet/unicode HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/sonnet/unicode/data >------
+#   [ add sonnet/unicode/data HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/sonnet/unicode/parseucd >------
+#   [ add sonnet/unicode/parseucd HEAD 0 ]
+#   ------< /trunk/KDE/kdelibs/threadweaver >------
+#   [ Move/Replace: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ add threadweaver HEAD 615258 ]
+
+#   [ move trunk/kdenonbeta/threadweaver 615258 0 ]
+match /trunk/kdenonbeta/threadweaver/
+    repository kdelibs
+    prefix threadweaver/
+    branch master
+    max revision 615258
+end match
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Docs >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ add threadweaver/Docs HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Docs 615258 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Docs/Tutorial >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ add threadweaver/Docs/Tutorial HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Docs/Tutorial 615258 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Examples >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ Move/Replace: /trunk/kdenonbeta/threadweaver/Examples @ 527671 <- /trunk/kdenonbeta/threadweaver/Tests @ 527542 ]
+#   [ add threadweaver/Examples HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Examples 615258 527542 ]
+
+
+#   [ move trunk/kdenonbeta/threadweaver/Tests 527542 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Examples/Construction >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ Parent: /trunk/kdenonbeta/threadweaver/Examples @ 527671 <- /trunk/kdenonbeta/threadweaver/Tests @ 527542 ]
+#   [ add threadweaver/Examples/Construction HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Examples/Construction 615258 527542 ]
+
+
+#   [ parent trunk/kdenonbeta/threadweaver/Tests/Construction 527542 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Examples/Jobs >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ Parent: /trunk/kdenonbeta/threadweaver/Examples @ 527671 <- /trunk/kdenonbeta/threadweaver/Tests @ 527542 ]
+#   [ add threadweaver/Examples/Jobs HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Examples/Jobs 615258 527542 ]
+
+
+#   [ parent trunk/kdenonbeta/threadweaver/Tests/Jobs 527542 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Examples/QProcessJob >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ Parent: /trunk/kdenonbeta/threadweaver/Examples @ 527671 <- /trunk/kdenonbeta/threadweaver/Tests @ 527542 ]
+#   [ add threadweaver/Examples/QProcessJob HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Examples/QProcessJob 615258 527542 ]
+
+
+#   [ parent trunk/kdenonbeta/threadweaver/Tests/QProcessJob 527542 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Examples/SMIV >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ Parent: /trunk/kdenonbeta/threadweaver/Examples @ 527671 <- /trunk/kdenonbeta/threadweaver/Tests @ 527542 ]
+#   [ add threadweaver/Examples/SMIV HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Examples/SMIV 615258 527542 ]
+
+
+#   [ parent trunk/kdenonbeta/threadweaver/Tests/SMIV 527542 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Experimental >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Experimental/FileLoaderJob.cpp @ 461101 <- /trunk/kdenonbeta/threadweaver/Tests/SMIV/FileLoaderJob.cpp @ 460775 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Experimental/FileLoaderJob.h @ 461101 <- /trunk/kdenonbeta/threadweaver/Tests/SMIV/FileLoaderJob.h @ 460775 ]
+#   [ add threadweaver/Experimental HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Experimental 615258 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Scripts >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ Move/Replace: /trunk/kdenonbeta/threadweaver/Scripts @ 562872 <- /trunk/kdenonbeta/threadweaver/scripts @ 562871 ]
+#   [ add threadweaver/Scripts HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Scripts 615258 562871 ]
+
+
+#   [ move trunk/kdenonbeta/threadweaver/scripts 562871 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Tests >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ add threadweaver/Tests HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Tests 615258 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/Weaver >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/CMakeLists.txt @ 615223 <- /trunk/KDE/kdelibs/threadweaver/CMakeLists.txt @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/DebuggingAids.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/DebuggingAids.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/DebuggingAids.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/DebuggingAids.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/DependencyPolicy.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/DependencyPolicy.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/DependencyPolicy.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/DependencyPolicy.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/DestructedState.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/DestructedState.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/DestructedState.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/DestructedState.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/InConstructionState.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/InConstructionState.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/InConstructionState.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/InConstructionState.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/IncludeMocs.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/IncludeMocs.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/Job.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/Job.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/Job.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/Job.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/JobCollection.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/JobCollection.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/JobCollection.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/JobCollection.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/JobCollection_p.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/JobCollection_p.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/JobSequence.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/JobSequence.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/JobSequence.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/JobSequence.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/Job_p.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/Job_p.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/QueuePolicy.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/QueuePolicy.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/ResourceRestrictionPolicy.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/ResourceRestrictionPolicy.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/ResourceRestrictionPolicy.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/ResourceRestrictionPolicy.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/ShuttingDownState.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/ShuttingDownState.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/ShuttingDownState.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/ShuttingDownState.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/State.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/State.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/State.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/State.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/StateImplementation.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/StateImplementation.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/StateImplementation.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/StateImplementation.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/SuspendedState.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/SuspendedState.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/SuspendedState.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/SuspendedState.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/SuspendingState.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/SuspendingState.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/SuspendingState.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/SuspendingState.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/Thread.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/Thread.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/Thread.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/Thread.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/ThreadWeaver.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/ThreadWeaver.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/ThreadWeaver.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/ThreadWeaver.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/Thread_p.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/Thread_p.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/WeaverImpl.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/WeaverImpl.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/WeaverImpl.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/WeaverImpl.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/WeaverInterface.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/WeaverInterface.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/WeaverInterface.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/WeaverInterface.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/WeaverObserver.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/WeaverObserver.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/WeaverObserver.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/WeaverObserver.h @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/WorkingHardState.cpp @ 615223 <- /trunk/KDE/kdelibs/threadweaver/WorkingHardState.cpp @ 614985 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/Weaver/WorkingHardState.h @ 615223 <- /trunk/KDE/kdelibs/threadweaver/WorkingHardState.h @ 614985 ]
+#   [ add threadweaver/Weaver HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/Weaver 615258 0 ]
+
+
+#   ------< /trunk/KDE/kdelibs/threadweaver/WeaverGui >------
+#   [ Parent: /trunk/KDE/kdelibs/threadweaver @ 615259 <- /trunk/kdenonbeta/threadweaver @ 615258 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/WeaverGui/WeaverThreadGrid.cpp @ 579825 <- /trunk/kdenonbeta/threadweaver/Examples/Jobs/WeaverThreadGrid.cpp @ 578996 ]
+#   [ Delayed: /trunk/kdenonbeta/threadweaver/WeaverGui/WeaverThreadGrid.h @ 579825 <- /trunk/kdenonbeta/threadweaver/Examples/Jobs/WeaverThreadGrid.h @ 578996 ]
+#   [ add threadweaver/WeaverGui HEAD 615258 ]
+
+#   [ parent trunk/kdenonbeta/threadweaver/WeaverGui 615258 0 ]
+
+
+match /
+end match
+#First revision used: 2
