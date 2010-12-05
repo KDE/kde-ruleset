@@ -148,6 +148,1016 @@ end match
 #  max revision 600000
 #end match
 
+##
+#DEEP HISTORY. BEWARE
+##
+
+match /trunk/KDE/kdesdk/cmake/
+    repository KDE/kdelibs
+    prefix cmake/
+    branch master
+    max revision 501773
+end match
+
+
+match /branches/work/forwardingincludes/
+    repository KDE/kdelibs
+    prefix includes/
+    branch master
+    max revision 602483
+end match
+
+match /trunk/kdereview/kunitconversion/KUnitConversion/
+    repository KDE/kdelibs
+    prefix includes/KUnitConversion/
+    branch master
+    max revision 1020331
+    min revision 1018648
+end match
+
+match /trunk/kdereview/conversion/KUnitConversion/
+    repository KDE/kdelibs
+    prefix includes/KUnitConversion/
+    branch master
+    max revision 1018648
+end match
+
+match /branches/work/kdelibs-phonon/interfaces/kmediaplayer/kfileaudiopreview/
+    repository KDE/kdelibs
+    prefix interfaces/kmediaplayer/kfileaudiopreview/
+    branch master
+    max revision 520713
+    min revision 498929
+end match
+
+match /branches/work/kdelibs-kdem2m/interfaces/kmediaplayer/kfileaudiopreview/
+    repository KDE/kdelibs
+    prefix interfaces/kmediaplayer/kfileaudiopreview/
+    branch master
+    max revision 498929
+    min revision 479842
+end match
+
+match /trunk/playground/devtools/kte_autobrace/
+    repository KDE/kdelibs
+    prefix kate/plugins/autobrace/
+    branch master
+    max revision 1051646
+end match
+
+match /trunk/playground/devtools/kte_iconinserter/
+    repository KDE/kdelibs
+    prefix kate/plugins/kte_iconinserter/
+    branch master
+    max revision 1092667
+end match
+
+match /trunk/playground/devtools/kte_insanehtml_le/
+    repository KDE/kdelibs
+    prefix kate/plugins/kte_insanehtml_le/
+    branch master
+    max revision 1117910
+end match
+
+match /branches/work/kdelibs-libkauth/kdecore/auth/
+    repository KDE/kdelibs
+    prefix kdecore/auth/
+    branch master
+    max revision 1017585
+    min revision 1017459
+end match
+
+match /branches/work/kdelibs-libkauth/kdecore/kauth/
+    repository KDE/kdelibs
+    prefix kdecore/auth/
+    branch master
+    max revision 1017459
+    min revision 1012511
+end match
+
+match /trunk/kdereview/libkauth/
+    repository KDE/kdelibs
+    prefix kdecore/auth/
+    branch master
+    max revision 1012511
+    min revision 998482
+end match
+
+match /trunk/playground/base/libkauth/
+    repository KDE/kdelibs
+    prefix kdecore/auth/
+    branch master
+    max revision 998482
+end match
+
+match /branches/work/kdelibs-libkauth/kdecore/auth/backends/
+    repository KDE/kdelibs
+    prefix kdecore/auth/backends/
+    branch master
+    max revision 1017585
+    min revision 1017459
+end match
+
+match /branches/work/kdelibs-libkauth/kdecore/kauth/backends/
+    repository KDE/kdelibs
+    prefix kdecore/auth/backends/
+    branch master
+    max revision 1017459
+    min revision 1012511
+end match
+
+match /trunk/kdereview/libkauth/backends/
+    repository KDE/kdelibs
+    prefix kdecore/auth/backends/
+    branch master
+    max revision 1012511
+    min revision 998482
+end match
+
+match /trunk/playground/base/libkauth/backends/
+    repository KDE/kdelibs
+    prefix kdecore/auth/backends/
+    branch master
+    max revision 998482
+end match
+
+match /branches/work/kdelibs-libkauth/kdecore/auth/policy-gen/
+    repository KDE/kdelibs
+    prefix kdecore/auth/policy-gen/
+    branch master
+    max revision 1017585
+    min revision 1017459
+end match
+
+match /branches/work/kdelibs-libkauth/kdecore/kauth/policy-gen/
+    repository KDE/kdelibs
+    prefix kdecore/auth/policy-gen/
+    branch master
+    max revision 1017459
+    min revision 1012511
+end match
+
+match /trunk/kdereview/libkauth/policy-gen/
+    repository KDE/kdelibs
+    prefix kdecore/auth/policy-gen/
+    branch master
+    max revision 1012511
+end match
+
+match /trunk/KDE/kdepim/akonadi/kdeui_next/dox/
+    repository KDE/kdelibs
+    prefix kdeui/itemviews/dox/
+    branch master
+    max revision 999655
+    min revision 997697
+end match
+
+match /trunk/KDE/kdepim/akonadi/akonadi_next/dox/
+    repository KDE/kdelibs
+    prefix kdeui/itemviews/dox/
+    branch master
+    max revision 997697
+end match
+
+match /trunk/KDE/kdeedu/libkdeedu/kdeeduplot/
+    repository KDE/kdelibs
+    prefix kdeui/plotting/
+    branch master
+    max revision 646872
+    min revision 409202
+end match
+
+match /trunk/kdeedu/libkdeedu/kdeeduplot/
+    repository KDE/kdelibs
+    prefix kdeui/plotting/
+    branch master
+    max revision 409202
+end match
+
+match /trunk/kdereview/kdewebkit/
+    repository KDE/kdelibs
+    prefix kdewebkit/
+    branch master
+    max revision 1046372
+    min revision 1040167
+end match
+
+match /trunk/playground/libs/webkitkde/kdewebkit/
+    repository KDE/kdelibs
+    prefix kdewebkit/
+    branch master
+    max revision 1040167
+end match
+
+match /trunk/kdebase/kioslave/help/customization/
+    repository KDE/kdelibs
+    prefix kdoctools/customization/
+    branch master
+    max revision 102825
+end match
+
+match /trunk/kdebase/kioslave/help/docbook/
+    repository KDE/kdelibs
+    prefix kdoctools/docbook/
+    branch master
+    max revision 102825
+end match
+
+match /trunk/kdebase/kioslave/help/docbook/xsl/
+    repository KDE/kdelibs
+    prefix kdoctools/docbook/xsl/
+    branch master
+    max revision 102825
+end match
+
+match /branches/work/kdelibs-js/khtml/
+    repository KDE/kdelibs
+    prefix khtml/
+    branch master
+    max revision 496549
+    min revision 478729
+end match
+
+match /branches/work/kdelibs-js/kio/misc/kpac/
+    repository KDE/kdelibs
+    prefix kio/misc/kpac/
+    branch master
+    max revision 496549
+    min revision 478729
+end match
+
+match /trunk/kdebase/kioslave/ftp/
+    repository KDE/kdelibs
+    prefix kioslave/ftp/
+    branch master
+    max revision 41122
+end match
+
+match /trunk/kdebase/kioslave/http/
+    repository KDE/kdelibs
+    prefix kioslave/http/
+    branch master
+    max revision 41122
+end match
+
+match /branches/work/kjs-frostbyte/kjs/
+    repository KDE/kdelibs
+    prefix kjs/
+    branch master
+    max revision 809422
+    min revision 773277
+end match
+
+match /branches/KDE/4.0/kdelibs/kjs/
+    repository KDE/kdelibs
+    prefix kjs/
+    branch master
+    max revision 773277
+    min revision 757127
+end match
+
+match /branches/work/kdelibs-js/kjs/
+    repository KDE/kdelibs
+    prefix kjs/
+    branch master
+    max revision 496549
+    min revision 478729
+end match
+
+match /branches/work/kdelibs-js/kxmlcore/
+    repository KDE/kdelibs
+    prefix kjs/wtf/
+    branch master
+    max revision 496549
+end match
+
+match /branches/work/knewstuff2/data/
+    repository KDE/kdelibs
+    prefix knewstuff/data/
+    branch master
+    max revision 649323
+end match
+
+match /branches/work/knewstuff2/doc/
+    repository KDE/kdelibs
+    prefix knewstuff/doc/
+    branch master
+    max revision 649323
+end match
+
+match /branches/work/knewstuff2/knewstuff2/
+    repository KDE/kdelibs
+    prefix knewstuff/knewstuff2/
+    branch master
+    max revision 649323
+end match
+
+match /branches/work/knewstuff2/knewstuff2/core/
+    repository KDE/kdelibs
+    prefix knewstuff/knewstuff2/core/
+    branch master
+    max revision 649323
+    min revision 644207
+end match
+
+match /branches/work/knewstuff2/kdxs/src/knewstuff2/
+    repository KDE/kdelibs
+    prefix knewstuff/knewstuff2/core/
+    branch master
+    max revision 644207
+end match
+
+match /branches/work/knewstuff2/knewstuff2/dxs/
+    repository KDE/kdelibs
+    prefix knewstuff/knewstuff2/dxs/
+    branch master
+    max revision 649323
+    min revision 644207
+end match
+
+match /branches/work/knewstuff2/kdxs/src/
+    repository KDE/kdelibs
+    prefix knewstuff/knewstuff2/dxs/
+    branch master
+    max revision 644207
+end match
+
+match /branches/work/knewstuff2/knewstuff2/ui/
+    repository KDE/kdelibs
+    prefix knewstuff/knewstuff2/ui/
+    branch master
+    max revision 649323
+end match
+
+match /branches/work/knewstuffrefactor/knewstuff3/
+    repository KDE/kdelibs
+    prefix knewstuff/knewstuff3/
+    branch master
+    max revision 1051997
+end match
+
+match /branches/work/knewstuffrefactor/knewstuff3/ui/
+    repository KDE/kdelibs
+    prefix knewstuff/knewstuff3/ui/
+    branch master
+    max revision 1051997
+end match
+
+match /branches/work/knewstuff2/tests/
+    repository KDE/kdelibs
+    prefix knewstuff/tests/
+    branch master
+    max revision 649323
+end match
+
+match /branches/work/knewstuff2/tests/testdata/
+    repository KDE/kdelibs
+    prefix knewstuff/tests/testdata/
+    branch master
+    max revision 649323
+    min revision 647492
+end match
+
+match /branches/work/knewstuff2/knewstuff2/core/testdata/
+    repository KDE/kdelibs
+    prefix knewstuff/tests/testdata/
+    branch master
+    max revision 647492
+    min revision 644207
+end match
+
+match /branches/work/knewstuff2/kdxs/src/knewstuff2/testdata/
+    repository KDE/kdelibs
+    prefix knewstuff/tests/testdata/
+    branch master
+    max revision 644207
+end match
+
+match /branches/work/kde4/kdelibs/knotify/
+    repository KDE/kdelibs
+    prefix knotify/
+    branch master
+    max revision 439321
+    min revision 435413
+end match
+
+match /branches/work/kdemm/knotify/
+    repository KDE/kdelibs
+    prefix knotify/
+    branch master
+    max revision 435413
+    min revision 419937
+end match
+
+match /branches/work/kdemm/kdelibs/arts/knotify/
+    repository KDE/kdelibs
+    prefix knotify/
+    branch master
+    max revision 419937
+    min revision 419702
+end match
+
+match /branches/cvs/make_kdemm_cool/kdelibs/arts/knotify/
+    repository KDE/kdelibs
+    prefix knotify/
+    branch master
+    max revision 419702
+    min revision 409204
+end match
+
+match /branches/make_kdemm_cool/kdelibs/arts/knotify/
+    repository KDE/kdelibs
+    prefix knotify/
+    branch master
+    max revision 409204
+    min revision 338993
+end match
+
+match /branches/work/kde4_knotify/config/
+    repository KDE/kdelibs
+    prefix knotify/config/
+    branch master
+    max revision 492308
+end match
+
+match /branches/work/kde4_knotify/tests/
+    repository KDE/kdelibs
+    prefix knotify/tests/
+    branch master
+    max revision 492308
+end match
+
+match /trunk/koffice/libs/kross/console/
+    repository KDE/kdelibs
+    prefix kross/console/
+    branch master
+    max revision 608511
+    min revision 599873
+end match
+
+match /trunk/koffice/libs/kross/runner/
+    repository KDE/kdelibs
+    prefix kross/console/
+    branch master
+    max revision 599873
+    min revision 523173
+end match
+
+match /trunk/koffice/lib/kross/runner/
+    repository KDE/kdelibs
+    prefix kross/console/
+    branch master
+    max revision 523173
+end match
+
+match /trunk/koffice/libs/kross/core/
+    repository KDE/kdelibs
+    prefix kross/core/
+    branch master
+    max revision 608503
+    min revision 572836
+end match
+
+match /trunk/koffice/libs/kross/api/
+    repository KDE/kdelibs
+    prefix kross/core/
+    branch master
+    max revision 572836
+    min revision 523173
+end match
+
+match /trunk/koffice/lib/kross/api/
+    repository KDE/kdelibs
+    prefix kross/core/
+    branch master
+    max revision 523173
+    min revision 480057
+end match
+
+match /trunk/koffice/kexi/scriptingcore/api/
+    repository KDE/kdelibs
+    prefix kross/core/
+    branch master
+    max revision 480057
+    min revision 453836
+end match
+
+match /trunk/koffice/kexi/scripting/api/
+    repository KDE/kdelibs
+    prefix kross/core/
+    branch master
+    max revision 453836
+end match
+
+match /trunk/koffice/libs/kross/kjs/
+    repository KDE/kdelibs
+    prefix kross/kjs/
+    branch master
+    max revision 608510
+end match
+
+match /trunk/koffice/libs/kross/modules/
+    repository KDE/kdelibs
+    prefix kross/modules/
+    branch master
+    max revision 608504
+end match
+
+match /trunk/koffice/libs/kross/test/
+    repository KDE/kdelibs
+    prefix kross/test/
+    branch master
+    max revision 608506
+    min revision 523173
+end match
+
+match /trunk/koffice/lib/kross/test/
+    repository KDE/kdelibs
+    prefix kross/test/
+    branch master
+    max revision 523173
+    min revision 480057
+end match
+
+match /trunk/koffice/kexi/scriptingcore/test/
+    repository KDE/kdelibs
+    prefix kross/test/
+    branch master
+    max revision 480057
+    min revision 453836
+end match
+
+match /trunk/koffice/kexi/scripting/test/
+    repository KDE/kdelibs
+    prefix kross/test/
+    branch master
+    max revision 453836
+end match
+
+match /trunk/kdereview/kunitconversion/
+    repository KDE/kdelibs
+    prefix kunitconversion/
+    branch master
+    max revision 1020331
+    min revision 1018648
+end match
+
+match /trunk/kdereview/conversion/
+    repository KDE/kdelibs
+    prefix kunitconversion/
+    branch master
+    max revision 1018648
+    min revision 1001599
+end match
+
+match /trunk/KDE/kdeplasma-addons/libs/conversion/
+    repository KDE/kdelibs
+    prefix kunitconversion/
+    branch master
+    max revision 1001599
+end match
+
+match /trunk/kdereview/emoticonslib/
+    repository KDE/kdelibs
+    prefix kutils/kemoticons/
+    branch master
+    max revision 809220
+    min revision 803070
+end match
+
+match /trunk/playground/libs/emoticons/
+    repository KDE/kdelibs
+    prefix kutils/kemoticons/
+    branch master
+    max revision 803070
+end match
+
+match /trunk/kdereview/emoticonslib/providers/
+    repository KDE/kdelibs
+    prefix kutils/kemoticons/providers/
+    branch master
+    max revision 809220
+    min revision 807296
+end match
+
+match /trunk/kdereview/emoticonslib/theme_parsers/
+    repository KDE/kdelibs
+    prefix kutils/kemoticons/providers/
+    branch master
+    max revision 807296
+    min revision 803297
+end match
+
+match /trunk/kdereview/emoticonslib/themes/
+    repository KDE/kdelibs
+    prefix kutils/kemoticons/providers/
+    branch master
+    max revision 803297
+    min revision 803070
+end match
+
+match /trunk/playground/libs/emoticons/themes/
+    repository KDE/kdelibs
+    prefix kutils/kemoticons/providers/
+    branch master
+    max revision 803070
+end match
+
+match /trunk/kdereview/emoticonslib/tests/
+    repository KDE/kdelibs
+    prefix kutils/kemoticons/tests/
+    branch master
+    max revision 809220
+    min revision 803070
+end match
+
+match /trunk/playground/libs/emoticons/tests/
+    repository KDE/kdelibs
+    prefix kutils/kemoticons/tests/
+    branch master
+    max revision 803070
+end match
+
+match /trunk/kdereview/kidle/
+    repository KDE/kdelibs
+    prefix kutils/kidletime/
+    branch master
+    max revision 1000935
+    min revision 992385
+end match
+
+match /trunk/playground/libs/kidle/
+    repository KDE/kdelibs
+    prefix kutils/kidletime/
+    branch master
+    max revision 992385
+end match
+
+match /trunk/kdebase/mimetypes/
+    repository KDE/kdelibs
+    prefix mimetypes/
+    branch master
+    max revision 27505
+end match
+
+match /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/
+    repository KDE/kdelibs
+    prefix nepomuk/core/
+    branch master
+    max revision 659730
+    min revision 644580
+end match
+
+match /trunk/playground/base/nepomuk-kde/kmetadata/kmetadata/
+    repository KDE/kdelibs
+    prefix nepomuk/core/
+    branch master
+    max revision 644580
+    min revision 610586
+end match
+
+match /branches/work/nepomuk-kde/kmetadata/kmetadata/
+    repository KDE/kdelibs
+    prefix nepomuk/core/
+    branch master
+    max revision 610586
+end match
+
+match /trunk/kdereview/nepomuk-kde/kmetadata/rcgen/
+    repository KDE/kdelibs
+    prefix nepomuk/rcgen/
+    branch master
+    max revision 659730
+    min revision 644580
+end match
+
+match /trunk/playground/base/nepomuk-kde/kmetadata/rcgen/
+    repository KDE/kdelibs
+    prefix nepomuk/rcgen/
+    branch master
+    max revision 644580
+    min revision 615113
+end match
+
+match /trunk/playground/base/nepomuk-kde/kmetadata/tools/
+    repository KDE/kdelibs
+    prefix nepomuk/rcgen/
+    branch master
+    max revision 615113
+    min revision 610586
+end match
+
+match /branches/work/nepomuk-kde/kmetadata/tools/
+    repository KDE/kdelibs
+    prefix nepomuk/rcgen/
+    branch master
+    max revision 610586
+end match
+
+match /trunk/kdereview/nepomuk-kde/kmetadata/kmetadata/ui/
+    repository KDE/kdelibs
+    prefix nepomuk/ui/
+    branch master
+    max revision 659730
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/
+    repository KDE/kdelibs
+    prefix plasma/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/
+    repository KDE/kdelibs
+    prefix plasma/
+    branch master
+    max revision 879755
+    min revision 675747
+end match
+
+match /trunk/KDE/kdebase/workspace/lib/plasma/
+    repository KDE/kdelibs
+    prefix plasma/
+    branch master
+    max revision 675747
+    min revision 670824
+end match
+
+match /trunk/KDE/kdebase/workspace/plasma/lib/
+    repository KDE/kdelibs
+    prefix plasma/
+    branch master
+    max revision 670824
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/servicetypes/
+    repository KDE/kdelibs
+    prefix plasma/data/servicetypes/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/servicetypes/
+    repository KDE/kdelibs
+    prefix plasma/data/servicetypes/
+    branch master
+    max revision 879755
+    min revision 675747
+end match
+
+match /trunk/KDE/kdebase/workspace/lib/plasma/servicetypes/
+    repository KDE/kdelibs
+    prefix plasma/data/servicetypes/
+    branch master
+    max revision 675747
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/private/
+    repository KDE/kdelibs
+    prefix plasma/private/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/private/
+    repository KDE/kdelibs
+    prefix plasma/private/
+    branch master
+    max revision 879755
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/effects/
+    repository KDE/kdelibs
+    prefix plasma/private/effects/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/effects/
+    repository KDE/kdelibs
+    prefix plasma/private/effects/
+    branch master
+    max revision 879755
+    min revision 675747
+end match
+
+match /trunk/KDE/kdebase/workspace/lib/plasma/effects/
+    repository KDE/kdelibs
+    prefix plasma/private/effects/
+    branch master
+    max revision 675747
+end match
+
+match /branches/work/~ervin/qtjolie/
+    repository KDE/kdelibs
+    prefix plasma/private/qtjolie-branch/
+    branch master
+    max revision 1023802
+    min revision 958806
+end match
+
+match /branches/work/~ervin/sodep/
+    repository KDE/kdelibs
+    prefix plasma/private/qtjolie-branch/
+    branch master
+    max revision 958806
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/scripting/
+    repository KDE/kdelibs
+    prefix plasma/scripting/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/scripting/
+    repository KDE/kdelibs
+    prefix plasma/scripting/
+    branch master
+    max revision 879755
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/tests/
+    repository KDE/kdelibs
+    prefix plasma/tests/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/tests/
+    repository KDE/kdelibs
+    prefix plasma/tests/
+    branch master
+    max revision 879755
+end match
+
+match /trunk/KDE/kdebase/workspace/plasma/generic/containmentactions/test/
+    repository KDE/kdelibs
+    prefix plasma/tests/testcontainmentactionsplugin/
+    branch master
+    max revision 1159218
+    min revision 1023065
+end match
+
+match /trunk/KDE/kdebase/workspace/plasma/containmentactions/test/
+    repository KDE/kdelibs
+    prefix plasma/tests/testcontainmentactionsplugin/
+    branch master
+    max revision 1023065
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/tests/testengine/
+    repository KDE/kdelibs
+    prefix plasma/tests/testengine/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/tests/testengine/
+    repository KDE/kdelibs
+    prefix plasma/tests/testengine/
+    branch master
+    max revision 879755
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/widgets/
+    repository KDE/kdelibs
+    prefix plasma/widgets/
+    branch master
+    max revision 879758
+    min revision 879757
+end match
+
+match /trunk/KDE/kdebase/workspace/libs/plasma/widgets/
+    repository KDE/kdelibs
+    prefix plasma/widgets/
+    branch master
+    max revision 879755
+    min revision 675747
+end match
+
+match /trunk/KDE/kdebase/workspace/lib/plasma/widgets/
+    repository KDE/kdelibs
+    prefix plasma/widgets/
+    branch master
+    max revision 675747
+    min revision 670824
+end match
+
+match /trunk/KDE/kdebase/workspace/plasma/lib/widgets/
+    repository KDE/kdelibs
+    prefix plasma/widgets/
+    branch master
+    max revision 670824
+end match
+
+match /trunk/KDE/kdebase/runtime/kcontrol/crypto/
+    repository KDE/kdelibs
+    prefix security/crypto/
+    branch master
+    max revision 672391
+    min revision 630457
+end match
+
+match /trunk/KDE/kdebase/workspace/kcontrol/crypto/
+    repository KDE/kdelibs
+    prefix security/crypto/
+    branch master
+    max revision 630457
+    min revision 455864
+end match
+
+match /trunk/KDE/kdebase/kcontrol/crypto/
+    repository KDE/kdelibs
+    prefix security/crypto/
+    branch master
+    max revision 455864
+    min revision 409202
+end match
+
+match /trunk/kdebase/kcontrol/crypto/
+    repository KDE/kdelibs
+    prefix security/crypto/
+    branch master
+    max revision 409202
+end match
+
+match /trunk/KDE/kdebase/runtime/kcert/
+    repository KDE/kdelibs
+    prefix security/kcert/
+    branch master
+    max revision 672391
+    min revision 669428
+end match
+
+match /branches/work/phonon-solid-sprint/kdelibs/solid/
+    repository KDE/kdelibs
+    prefix solid/
+    branch master
+    max revision 659751
+    min revision 654946
+end match
+
+match /branches/work/kdehw/doc/
+    repository KDE/kdelibs
+    prefix solid/doc/
+    branch master
+    max revision 590197
+end match
+
+match /branches/work/kdehw/solid/
+    repository KDE/kdelibs
+    prefix solid/solid/
+    branch master
+    max revision 590197
+    min revision 542056
+end match
+
+match /branches/work/kdehw/kdehw/
+    repository KDE/kdelibs
+    prefix solid/solid/
+    branch master
+    max revision 542056
+end match
+
+match /branches/work/kdehw/solid/ifaces/
+    repository KDE/kdelibs
+    prefix solid/solid/ifaces/
+    branch master
+    max revision 590197
+    min revision 542056
+end match
+
+match /branches/work/kdehw/kdehw/ifaces/
+    repository KDE/kdelibs
+    prefix solid/solid/ifaces/
+    branch master
+    max revision 542056
+end match
+
+match /branches/work/kdehw/tests/
+    repository KDE/kdelibs
+    prefix solid/tests/
+    branch master
+    max revision 590197
+end match
+
+match /trunk/kdenonbeta/threadweaver/
+    repository KDE/kdelibs
+    prefix threadweaver/
+    branch master
+    max revision 615258
+end match
+
+
 # Ignore all other tags and branches
 match /
 end match
