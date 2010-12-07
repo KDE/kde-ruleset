@@ -50,6 +50,19 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeaccessibility/
   max revision 409202
 end match
 
+match /tags/KDE/([^/]+)A/kdeaccessibility/
+  repository KDE/kdeaccessibility
+  branch KDE/\1a
+  annotated true
+  min revision 409209
+end match
+match /tags/KDE/([^/]+)/kdeaccessibility/
+  repository KDE/kdeaccessibility
+  branch KDE/\1
+  annotated true
+  min revision 409209
+end match
+
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeaccessibility/
   repository KDE/kdeaccessibility
   branch refs/tags/KDE/\1.\2.0
