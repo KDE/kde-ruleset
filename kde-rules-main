@@ -2675,6 +2675,9 @@ end repository
 create repository extragear/nepomukshell
 end repository
 
+create repository extragear/kticker
+end repository
+
 #
 # Ignore rules
 #
