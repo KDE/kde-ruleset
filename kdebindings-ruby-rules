@@ -5,38 +5,26 @@
 create repository KDE/kdebindings-ruby
 end repository
 
-match /trunk/KDE/kdebindings/ruby/
+match /trunk/(KDE/)?kdebindings/ruby/
     repository KDE/kdebindings-ruby
     branch master
-    min revision 646833
+    min revision 646834
 end match
 
-match /trunk/KDE/kdebindings/qtruby/
+match /trunk/(KDE/)?kdebindings/qtruby/
     repository KDE/kdebindings-ruby
     branch master
-    min revision 409202
-    max revision 646835
+    prefix qtruby
+    # qtruby was moved from / to /ruby/ in 653117 - so skip that commit to not match the deletion of the dir
+    max revision 653116
 end match
 
-match /trunk/kdebindings/qtruby/
+match /trunk/(KDE/)?kdebindings/korundum/
     repository KDE/kdebindings-ruby
     branch master
-    max revision 409204
-    min revision 239991
-end match
-
-match /trunk/KDE/kdebindings/korundum/
-    repository KDE/kdebindings-ruby
-    branch master
-    min revision 409202
-    max revision 653122
-end match
-
-match /trunk/kdebindings/korundum/
-    repository KDE/kdebindings-ruby
-    branch master
-    max revision 409202
-    min revision 270720
+    prefix korundum
+    # korundum was moved from / to /ruby/ in 653122 - so skip that commit to not match the deletion of the dir
+    max revision 653121
 end match
 
 #
@@ -46,18 +34,35 @@ match /branches/KDE/([^/]+)/$
     action recurse
 end match
 
+# recurse when qtruby and korundum where moved
+match /trunk/KDE/kdebindings/ruby/(qtruby|korundum)/$
+    action recurse
+end match
+
 #
 # branches
 #
 
 # svn
 
-match /branches/KDE/([^/]+)A/kdebindings/(ruby|qtruby|korundum)/
+match /branches/KDE/([^/]+)A/kdebindings/(qtruby|korundum)/
+    repository KDE/kdebindings-ruby
+    prefix \2
+    branch KDE/\1a
+end match
+
+match /branches/KDE/([^/]+)A/kdebindings/ruby/
     repository KDE/kdebindings-ruby
     branch KDE/\1a
 end match
 
-match /branches/KDE/([^/]+)/kdebindings/(ruby|qtruby|korundum)/
+match /branches/KDE/([^/]+)/kdebindings/(qtruby|korundum)/
+    repository KDE/kdebindings-ruby
+    prefix \2
+    branch KDE/\1
+end match
+
+match /branches/KDE/([^/]+)/kdebindings/ruby/
     repository KDE/kdebindings-ruby
     branch KDE/\1
 end match
@@ -66,6 +71,7 @@ end match
 
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdebindings/(qtruby|korundum)/
   repository KDE/kdebindings-ruby
+  prefix \3
   branch KDE/\1.\2
   max revision 409202
 end match
@@ -80,6 +86,7 @@ match /tags/KDE_(\d+)_(\d+)_RELEASE/kdebindings/(qtruby|korundum)/
   repository KDE/kdebindings-ruby
   branch refs/tags/v\1.\2.0
   max revision 409202
+  prefix \3
   annotated true
 end match
 
@@ -88,6 +95,7 @@ match /tags/KDE_(\d+)_(\d+)_RELEASE/kdebindings/(qtruby|korundum)/
   branch refs/tags/v\1.\2.0
   max revision 85028
   min revision 68154
+  prefix \3
   annotated true
 end match
 
@@ -95,6 +103,7 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdebindings/(qtruby|korundum)/
   repository KDE/kdebindings-ruby
   branch refs/tags/v\1.\2.\3
   max revision 409202
+  prefix \4
   annotated true
 end match
 
@@ -103,6 +112,7 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdebindings/(qtruby|korundum)/
   branch refs/tags/v\1.\2.\3a
   min revision 192719
   max revision 409202
+  prefix \4
   annotated true
 end match
 
@@ -111,34 +121,51 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdebindings/(qtruby|korundum)/
   branch refs/tags/v\1.\2.\3-beta\4
   min revision 376088
   max revision 409202
+  prefix \5
   annotated true
 end match
 
 # svn time
 
-match /tags/KDE/([^/]+)A/kdebindings/(ruby|qtruby|korundum)/
+match /tags/KDE/([^/]+)A/kdebindings/ruby/
     repository KDE/kdebindings-ruby
     branch refs/tags/v\1a
     annotated true
 end match
 
-match /tags/KDE/([^/]+)/kdebindings/(ruby|qtruby|korundum)/
+match /tags/KDE/([^/]+)A/kdebindings/(qtruby|korundum)/
+    repository KDE/kdebindings-ruby
+    branch refs/tags/v\1a
+    prefix \2
+    annotated true
+end match
+
+match /tags/KDE/([^/]+)/kdebindings/ruby/
     repository KDE/kdebindings-ruby
     branch refs/tags/v\1
     annotated true
 end match
 
-match /tags/KDE/3.5.0-alpha1/kdebindings/(ruby|qtruby|korundum)/
+match /tags/KDE/([^/]+)/kdebindings/(qtruby|korundum)/
+    repository KDE/kdebindings-ruby
+    branch refs/tags/v\1
+    prefix \2
+    annotated true
+end match
+
+match /tags/KDE/3.5.0-alpha1/kdebindings/(qtruby|korundum)/
   repository KDE/kdebindings-ruby
   branch refs/tags/v3.4.90
+  prefix \1
   min revision 443441
   max revision 445561
   annotated true
 end match
 
-match /tags/KDE/3.5.0-beta1/kdebindings/(ruby|qtruby|korundum)/
+match /tags/KDE/3.5.0-beta1/kdebindings/(qtruby|korundum)/
   repository KDE/kdebindings-ruby
   branch refs/tags/v3.4.91
+  prefix \1
   min revision 459298
   max revision 460260
   annotated true
