@@ -2678,6 +2678,189 @@ end repository
 create repository extragear/kticker
 end repository
 
+create repository extragear/kcmbind
+end repository
+
+create repository extragear/kcmdhcpd
+end repository
+
+create repository extragear/kcmdhcpd
+end repository
+
+create repository extragear/pws
+end repository
+
+create repository extragear/kmessage
+end repository
+
+create repository extragear/gofai-wmt
+end repository
+
+create repository extragear/ksciplot
+end repository
+
+create repository extragear/kcurve
+end repository
+
+create repository extragear/konv
+end repository
+
+create repository extragear/NetManager2
+end repository
+
+create repository extragear/kafka
+end repository
+
+create repository extragear/doc #TODO
+end repository
+
+create repository extragear/thememgr
+end repository
+
+create repository extragear/dcopbindings
+end repository
+
+create repository extragear/katalog
+end repository
+
+create repository extragear/knu
+end repository
+
+create repository extragear/kcmdrkonqi
+end repository
+
+create repository extragear/ktalk
+end repository
+
+create repository extragear/kappdock
+end repository
+
+create repository extragear/kio-rio
+end repository
+
+create repository extragear/kicq
+end repository
+
+create repository extragear/applets
+end repository
+
+create repository extragear/knapster
+end repository
+
+create repository extragear/smb
+end repository
+
+create repository extragear/kio_rdate
+end repository
+
+create repository extragear/karchiver
+end repository
+
+create repository extragear/kdestdiface
+end repository
+
+create repository extragear/devcenter
+end repository
+
+create repository extragear/kifcfg
+end repository
+
+create repository extragear/reaktivate
+end repository
+
+create repository extragear/audiofile_artsplugin
+end repository
+
+create repository extragear/monopd
+end repository
+
+create repository extragear/ksystrayproxy
+end repository
+
+create repository extragear/arts
+end repository
+
+create repository extragear/cookbook
+end repository
+
+create repository extragear/konqsidebar_plugins
+end repository
+
+create repository extragear/kvidmode
+end repository
+
+create repository extragear/kio_freenet
+end repository
+
+create repository extragear/kwiz
+end repository
+
+create repository extragear/kwintv
+end repository
+
+create repository extragear/kwireless
+end repository
+
+create repository extragear/kpainter
+end repository
+
+create repository extragear/ktetrinet
+end repository
+
+create repository extragear/mathemagics
+end repository
+
+create repository extragear/fuse_kio
+end repository
+
+create repository extragear/ksblive
+end repository
+
+create repository extragear/libktextedit
+end repository
+
+create repository extragear/kalypso
+end repository
+
+create repository extragear/kcmsplash
+end repository
+
+create repository extragear/kue
+end repository
+
+create repository extragear/kwintv3
+end repository
+
+create repository extragear/saape
+end repository
+
+create repository extragear/arts-video
+end repository
+
+create repository extragear/dcopservices
+end repository
+
+create repository extragear/psi
+end repository
+
+create repository extragear/unsermake
+end repository
+
+create repository extragear/koncd
+end repository
+
+create repository extragear/libkcdr
+end repository
+
+create repository extragear/dcopjs
+end repository
+
+create repository extragear/kmameleon
+end repository
+
+create repository extragear/kscriptperl
+end repository
+
 #
 # Ignore rules
 #
