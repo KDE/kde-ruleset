@@ -983,6 +983,9 @@ end repository
 create repository extragear/libqgs
 end repository
 
+create repository extragear/libkgs
+end repository
+
 create repository extragear/kio_rar
 end repository
 create repository extragear/kio_p7zip
@@ -2928,16 +2931,16 @@ match /(trunk/kdesupport|(branches|tags)/[^/]+/kdesupport)/(bsd-port|debian|audi
 end match
 
 match /trunk/kdesupport/libkgs/
-  repository extragear/libqgs
+  repository extragear/libkgs
   branch master
-  min revision 473084
-  max revision 473090
+  #min revision 473084
+  #max revision 473090
 end match
 match /trunk/kdesupport/libqgs/
   repository extragear/libqgs
   branch master
-  min revision 473090
-  max revision 551165
+  #min revision 473090
+  #max revision 551165
 end match
 match /branches/kdesupport/3.5/kdesupport/libqgs/
   repository extragear/libqgs
