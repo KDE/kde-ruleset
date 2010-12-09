@@ -1,0 +1,1327 @@
+create repository kdebase-workspace
+end repository
+
+
+match /trunk/KDE/kdebase/workspace/
+    repository kdebase-workspace
+    branch master
+    min revision 455350
+end match
+
+match /tags/KDE/([^/]+)A/kdebase/workspace/
+  repository kdebase-workspace
+  branch refs/tags/v\1a
+  min revision 409209
+  annotated true
+end match
+match /tags/KDE/([^/]+)/kdebase/workspace/
+  repository kdebase-workspace
+  branch refs/tags/v\1
+  min revision 409209
+  annotated true
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdebase/workspace/
+  repository kdebase-workspace
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+match /branches/KDE/([^/]+)A/kdebase/workspace/
+  repository kdebase-workspace
+  branch KDE/\1a
+  min revision 409209
+end match
+match /branches/KDE/([^/]+)/kdebase/workspace/
+  repository kdebase-workspace
+  branch KDE/\1
+  min revision 409209
+end match
+
+
+##
+# DEEP HISTORY
+##
+
+match /trunk/KDE/kdebase/cmake/
+    repository kdebase-workspace
+    prefix cmake/
+    branch master
+    max revision 673753
+end match
+
+match /trunk/playground/artwork/cursors/
+    repository kdebase-workspace
+    prefix cursors/
+    branch master
+    max revision 825270
+end match
+
+match /trunk/playground/artwork/Oxygen/cursors/src/
+    repository kdebase-workspace
+    prefix cursors/src/
+    branch master
+    max revision 824056
+end match
+
+match /trunk/playground/artwork/Oxygen/cursors/src/config/
+    repository kdebase-workspace
+    prefix cursors/src/config/
+    branch master
+    max revision 824056
+end match
+
+match /trunk/extragear/base/doc/PolicyKit-kde/
+    repository kdebase-workspace
+    prefix doc/PolicyKit-kde/
+    branch master
+    max revision 945635
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/autostart/
+    repository kdebase-workspace
+    prefix doc/kcontrol/autostart/
+    branch master
+    max revision 811591
+    min revision 792064
+end match
+
+match /trunk/kdereview/doc/autostart/
+    repository kdebase-workspace
+    prefix doc/kcontrol/autostart/
+    branch master
+    max revision 792064
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/bell/
+    repository kdebase-workspace
+    prefix doc/kcontrol/bell/
+    branch master
+    max revision 811679
+    min revision 811615
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/bell/
+    repository kdebase-workspace
+    prefix doc/kcontrol/bell/
+    branch master
+    max revision 811615
+    min revision 706490
+end match
+
+match /trunk/KDE/kdebase/doc/kcontrol/bell/
+    repository kdebase-workspace
+    prefix doc/kcontrol/bell/
+    branch master
+    max revision 706490
+    min revision 409202
+end match
+
+match /trunk/kdebase/doc/kcontrol/bell/
+    repository kdebase-workspace
+    prefix doc/kcontrol/bell/
+    branch master
+    max revision 409202
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/clock/
+    repository kdebase-workspace
+    prefix doc/kcontrol/clock/
+    branch master
+    max revision 811591
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/colors/
+    repository kdebase-workspace
+    prefix doc/kcontrol/colors/
+    branch master
+    max revision 811591
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/desktop/
+    repository kdebase-workspace
+    prefix doc/kcontrol/desktop/
+    branch master
+    max revision 1050626
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/fontinst/
+    repository kdebase-workspace
+    prefix doc/kcontrol/fontinst/
+    branch master
+    max revision 811765
+    min revision 609715
+end match
+
+match /trunk/KDE/kdebase/doc/kcontrol/kcmfontinst/
+    repository kdebase-workspace
+    prefix doc/kcontrol/fontinst/
+    branch master
+    max revision 609715
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/fonts/
+    repository kdebase-workspace
+    prefix doc/kcontrol/fonts/
+    branch master
+    max revision 811757
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/kcmaccess/
+    repository kdebase-workspace
+    prefix doc/kcontrol/kcmaccess/
+    branch master
+    max revision 811591
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/kcmsmserver/
+    repository kdebase-workspace
+    prefix doc/kcontrol/kcmsmserver/
+    branch master
+    max revision 863419
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/kcmstyle/
+    repository kdebase-workspace
+    prefix doc/kcontrol/kcmstyle/
+    branch master
+    max revision 811768
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/keyboard/
+    repository kdebase-workspace
+    prefix doc/kcontrol/keyboard/
+    branch master
+    max revision 811758
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/keys/
+    repository kdebase-workspace
+    prefix doc/kcontrol/keys/
+    branch master
+    max revision 811761
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/kwindecoration/
+    repository kdebase-workspace
+    prefix doc/kcontrol/kwindecoration/
+    branch master
+    max revision 812867
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/mouse/
+    repository kdebase-workspace
+    prefix doc/kcontrol/mouse/
+    branch master
+    max revision 862281
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/paths/
+    repository kdebase-workspace
+    prefix doc/kcontrol/paths/
+    branch master
+    max revision 1092514
+end match
+
+match /trunk/kdereview/doc/powerdevil/
+    repository kdebase-workspace
+    prefix doc/kcontrol/powerdevil/
+    branch master
+    max revision 860044
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/screensaver/
+    repository kdebase-workspace
+    prefix doc/kcontrol/screensaver/
+    branch master
+    max revision 811766
+end match
+
+match /trunk/kdereview/doc/solid-actions/
+    repository kdebase-workspace
+    prefix doc/kcontrol/solid-actions/
+    branch master
+    max revision 934338
+end match
+
+match /trunk/KDE/kdebase/runtime/doc/kcontrol/windowmanagement/
+    repository kdebase-workspace
+    prefix doc/kcontrol/windowspecific/
+    branch master
+    max revision 838252
+end match
+
+match /trunk/KDE/kdebase/doc/kdm/
+    repository kdebase-workspace
+    prefix doc/kdm/
+    branch master
+    max revision 706330
+end match
+
+match /trunk/KDE/kdebase/apps/doc/kinfocenter/
+    repository kdebase-workspace
+    prefix doc/kinfocenter/
+    branch master
+    max revision 1091576
+    min revision 769197
+end match
+
+match /trunk/KDE/kdebase/doc/kinfocenter/
+    repository kdebase-workspace
+    prefix doc/kinfocenter/
+    branch master
+    max revision 706089
+end match
+
+match /trunk/KDE/kdebase/doc/klipper/
+    repository kdebase-workspace
+    prefix doc/klipper/
+    branch master
+    max revision 706089
+end match
+
+match /trunk/KDE/kdebase/doc/kmenuedit/
+    repository kdebase-workspace
+    prefix doc/kmenuedit/
+    branch master
+    max revision 706089
+end match
+
+match /trunk/KDE/kdebase/doc/ksysguard/
+    repository kdebase-workspace
+    prefix doc/ksysguard/
+    branch master
+    max revision 706089
+end match
+
+match /trunk/kdereview/freespacenotifier/
+    repository kdebase-workspace
+    prefix freespacenotifier/
+    branch master
+    max revision 1125155
+    min revision 1117718
+end match
+
+match /trunk/playground/base/freespacenotifier/
+    repository kdebase-workspace
+    prefix freespacenotifier/
+    branch master
+    max revision 1117718
+end match
+
+match /trunk/KDE/kdebase/kcheckpass/
+    repository kdebase-workspace
+    prefix kcheckpass/
+    branch master
+    max revision 572734
+end match
+
+match /trunk/KDE/kdebase/kcminit/
+    repository kdebase-workspace
+    prefix kcminit/
+    branch master
+    max revision 635644
+end match
+
+match /trunk/KDE/kdebase/kcontrol/
+    repository kdebase-workspace
+    prefix kcontrol/
+    branch master
+    max revision 455864
+end match
+
+match /trunk/KDE/kdebase/kcontrol/access/
+    repository kdebase-workspace
+    prefix kcontrol/access/
+    branch master
+    max revision 455864
+end match
+
+match /trunk/kdereview/autostart/
+    repository kdebase-workspace
+    prefix kcontrol/autostart/
+    branch master
+    max revision 792064
+    min revision 786180
+end match
+
+match /trunk/playground/base/autostart/
+    repository kdebase-workspace
+    prefix kcontrol/autostart/
+    branch master
+    max revision 786180
+    min revision 719369
+end match
+
+match /tags/unmaintained/4/autostart/
+    repository kdebase-workspace
+    prefix kcontrol/autostart/
+    branch master
+    max revision 719369
+    min revision 709834
+end match
+
+match /trunk/kdereview/autostart/
+    repository kdebase-workspace
+    prefix kcontrol/autostart/
+    branch master
+    max revision 709834
+end match
+
+match /trunk/playground/base/colors2/
+    repository kdebase-workspace
+    prefix kcontrol/colors/
+    branch master
+    max revision 714891
+end match
+
+match /trunk/kdereview/keyboard2/
+    repository kdebase-workspace
+    prefix kcontrol/keyboard/
+    branch master
+    max revision 1125243
+    min revision 1118847
+end match
+
+match /trunk/playground/base/keyboard2/
+    repository kdebase-workspace
+    prefix kcontrol/keyboard/
+    branch master
+    max revision 1118847
+end match
+
+match /trunk/KDE/kdebase/runtime/kcontrol/krdb/
+    repository kdebase-workspace
+    prefix kcontrol/krdb/
+    branch master
+    max revision 660949
+    min revision 629691
+end match
+
+match /trunk/KDE/kdebase/runtime/kcontrol/krdb/ad/
+    repository kdebase-workspace
+    prefix kcontrol/krdb/ad/
+    branch master
+    max revision 660949
+    min revision 629691
+end match
+
+match /trunk/kdebase/kcontrol/display/ad/
+    repository kdebase-workspace
+    prefix kcontrol/krdb/ad/
+    branch master
+    max revision 141088
+end match
+
+match /trunk/kdebase/kcontrol/display/pics/
+    repository kdebase-workspace
+    prefix kcontrol/krdb/pics/
+    branch master
+    max revision 141088
+end match
+
+match /branches/work/~seli/randr43/
+    repository kdebase-workspace
+    prefix kcontrol/randr/
+    branch master
+    max revision 1044709
+    min revision 1012443
+end match
+
+match /branches/KDE/4.3/kdebase/workspace/kcontrol/randr/
+    repository kdebase-workspace
+    prefix kcontrol/randr/
+    branch master
+    max revision 1012443
+    min revision 986142
+end match
+
+match /branches/work/~seli/randr43/module/
+    repository kdebase-workspace
+    prefix kcontrol/randr/module/
+    branch master
+    max revision 1044709
+    min revision 854238
+end match
+
+match /branches/work/~seli/randr/module/
+    repository kdebase-workspace
+    prefix kcontrol/randr/module/
+    branch master
+    max revision 854238
+end match
+
+match /trunk/KDE/kdebase/runtime/kcontrol/style/
+    repository kdebase-workspace
+    prefix kcontrol/style/
+    branch master
+    max revision 660949
+    min revision 629691
+end match
+
+match /trunk/KDE/kdebase/kdm/
+    repository kdebase-workspace
+    prefix kdm/
+    branch master
+    max revision 515253
+end match
+
+match /trunk/KDE/kdebase/kdm/backend/
+    repository kdebase-workspace
+    prefix kdm/backend/
+    branch master
+    max revision 515253
+end match
+
+match /trunk/kdebase/kdm/pics/
+    repository kdebase-workspace
+    prefix kdm/kfrontend/pics/
+    branch master
+    max revision 101376
+end match
+
+match /trunk/KDE/kdebase/khotkeys/
+    repository kdebase-workspace
+    prefix khotkeys/
+    branch master
+    max revision 629803
+end match
+
+match /trunk/KDE/kdebase/khotkeys/app/
+    repository kdebase-workspace
+    prefix khotkeys/app/
+    branch master
+    max revision 629803
+end match
+
+match /branches/work/khotkeys-redesign/khotkeys/kcm_hotkeys/
+    repository kdebase-workspace
+    prefix khotkeys/kcm_hotkeys/
+    branch master
+    max revision 831919
+end match
+
+match /branches/work/khotkeys-redesign/khotkeys/kcm_hotkeys/ui/
+    repository kdebase-workspace
+    prefix khotkeys/kcm_hotkeys/ui/
+    branch master
+    max revision 831919
+end match
+
+match /branches/work/khotkeys-redesign/khotkeys/libkhotkeysprivate/daemon/
+    repository kdebase-workspace
+    prefix khotkeys/libkhotkeysprivate/daemon/
+    branch master
+    max revision 831919
+    min revision 800821
+end match
+
+match /branches/work/khotkeys-redesign/khotkeys/test/
+    repository kdebase-workspace
+    prefix khotkeys/test/
+    branch master
+    max revision 831919
+end match
+
+match /trunk/kdereview/kinfocenter2/
+    repository kdebase-workspace
+    prefix kinfocenter/
+    branch master
+    max revision 1118381
+    min revision 1111524
+end match
+
+match /trunk/playground/base/kinfocenter2/
+    repository kdebase-workspace
+    prefix kinfocenter/
+    branch master
+    max revision 1111524
+end match
+
+match /trunk/kdereview/kinfocenter2/Modules/
+    repository kdebase-workspace
+    prefix kinfocenter/Modules/
+    branch master
+    max revision 1118381
+    min revision 1111524
+end match
+
+match /trunk/playground/base/kinfocenter2/Modules/
+    repository kdebase-workspace
+    prefix kinfocenter/Modules/
+    branch master
+    max revision 1111524
+end match
+
+match /trunk/KDE/kdebase/apps/kinfocenter/base/
+    repository kdebase-workspace
+    prefix kinfocenter/Modules/base/
+    branch master
+    max revision 1091576
+end match
+
+match /branches/KDE/4.4/kdebase/apps/kinfocenter/nics/
+    repository kdebase-workspace
+    prefix kinfocenter/Modules/nics/
+    branch master
+    max revision 1116138
+    min revision 1070757
+end match
+
+match /trunk/KDE/kdebase/apps/kinfocenter/nics/
+    repository kdebase-workspace
+    prefix kinfocenter/Modules/nics/
+    branch master
+    max revision 1070757
+    min revision 769662
+end match
+
+match /trunk/KDE/kdebase/runtime/kcontrol/samba/
+    repository kdebase-workspace
+    prefix kinfocenter/Modules/samba/
+    branch master
+    max revision 797436
+    min revision 650302
+end match
+
+match /trunk/KDE/kdebase/klipper/
+    repository kdebase-workspace
+    prefix klipper/
+    branch master
+    max revision 547371
+end match
+
+match /trunk/KDE/kdebase/kmenuedit/
+    repository kdebase-workspace
+    prefix kmenuedit/
+    branch master
+    max revision 546605
+end match
+
+match /trunk/KDE/kdebase/kmenuedit/pixmaps/
+    repository kdebase-workspace
+    prefix kmenuedit/pixmaps/
+    branch master
+    max revision 546605
+end match
+
+match /trunk/KDE/kdebase/kdesktop/lock/
+    repository kdebase-workspace
+    prefix krunner/lock/
+    branch master
+    max revision 478089
+end match
+
+match /trunk/KDE/kdebase/kscreensaver/
+    repository kdebase-workspace
+    prefix kscreensaver/
+    branch master
+    max revision 477210
+end match
+
+match /trunk/KDE/kdebase/kscreensaver/kblank_screensaver/
+    repository kdebase-workspace
+    prefix kscreensaver/kblank_screensaver/
+    branch master
+    max revision 477210
+end match
+
+match /trunk/KDE/kdelibs/libkscreensaver/
+    repository kdebase-workspace
+    prefix kscreensaver/libkscreensaver/
+    branch master
+    max revision 478094
+    min revision 409202
+end match
+
+match /trunk/kdelibs/libkscreensaver/
+    repository kdebase-workspace
+    prefix kscreensaver/libkscreensaver/
+    branch master
+    max revision 409202
+end match
+
+match /trunk/KDE/kdebase/ksmserver/
+    repository kdebase-workspace
+    prefix ksmserver/
+    branch master
+    max revision 467451
+end match
+
+match /branches/work/ksplashx/
+    repository kdebase-workspace
+    prefix ksplash/
+    branch master
+    max revision 643073
+end match
+
+match /branches/work/ksplashx/kcm/
+    repository kdebase-workspace
+    prefix ksplash/kcm/
+    branch master
+    max revision 643073
+    min revision 637753
+end match
+
+match /trunk/KDE/kdebase/ksplashml/kcmksplash/
+    repository kdebase-workspace
+    prefix ksplash/kcm/
+    branch master
+    max revision 536352
+end match
+
+match /trunk/KDE/kdebase/runtime/kstyles/
+    repository kdebase-workspace
+    prefix kstyles/
+    branch master
+    max revision 1097762
+    min revision 703066
+end match
+
+match /trunk/KDE/kdelibs/kstyles/
+    repository kdebase-workspace
+    prefix kstyles/
+    branch master
+    max revision 703066
+end match
+
+match /trunk/KDE/kdebase/runtime/kstyles/highcolor/
+    repository kdebase-workspace
+    prefix kstyles/highcolor/
+    branch master
+    max revision 1097762
+    min revision 703066
+end match
+
+match /trunk/KDE/kdelibs/kstyles/highcolor/
+    repository kdebase-workspace
+    prefix kstyles/highcolor/
+    branch master
+    max revision 703066
+end match
+
+match /trunk/KDE/kdebase/runtime/kcontrol/style/keramik/
+    repository kdebase-workspace
+    prefix kstyles/keramik/config/
+    branch master
+    max revision 660949
+    min revision 629691
+end match
+
+match /trunk/playground/artwork/Oxygen/style/oxygen/
+    repository kdebase-workspace
+    prefix kstyles/oxygen/
+    branch master
+    max revision 702999
+end match
+
+match /branches/work/oxygen-style-animated/animations/
+    repository kdebase-workspace
+    prefix kstyles/oxygen/animations/
+    branch master
+    max revision 1043633
+end match
+
+match /trunk/playground/artwork/Oxygen/style/oxygen/config/
+    repository kdebase-workspace
+    prefix kstyles/oxygen/config/
+    branch master
+    max revision 702999
+    min revision 687094
+end match
+
+match /trunk/playground/artwork/Oxygen/style/config/
+    repository kdebase-workspace
+    prefix kstyles/oxygen/config/
+    branch master
+    max revision 687094
+    min revision 687083
+end match
+
+match /trunk/KDE/kdelibs/kstyles/plastik/config/
+    repository kdebase-workspace
+    prefix kstyles/oxygen/config/
+    branch master
+    max revision 687083
+    min revision 346818
+end match
+
+match /trunk/kdeartwork/styles/plastik/config/
+    repository kdebase-workspace
+    prefix kstyles/oxygen/config/
+    branch master
+    max revision 346818
+end match
+
+match /trunk/KDE/kdebase/ksysguard/
+    repository kdebase-workspace
+    prefix ksysguard/
+    branch master
+    max revision 469599
+end match
+
+match /trunk/KDE/kdebase/ksysguard/example/
+    repository kdebase-workspace
+    prefix ksysguard/example/
+    branch master
+    max revision 469599
+end match
+
+match /trunk/kdeutils/ktop/gui/
+    repository kdebase-workspace
+    prefix ksysguard/gui/
+    branch master
+    max revision 57323
+end match
+
+match /trunk/kdeutils/ktop/ktopd/
+    repository kdebase-workspace
+    prefix ksysguard/ksysguardd/
+    branch master
+    max revision 57323
+end match
+
+match /trunk/kdeutils/ktop/CContLib/
+    repository kdebase-workspace
+    prefix ksysguard/ksysguardd/CContLib/
+    branch master
+    max revision 57323
+end match
+
+match /trunk/kdeutils/ktop/ktopd/FreeBSD/
+    repository kdebase-workspace
+    prefix ksysguard/ksysguardd/FreeBSD/
+    branch master
+    max revision 57323
+end match
+
+match /trunk/kdeutils/ktop/pics/
+    repository kdebase-workspace
+    prefix ksysguard/pics/
+    branch master
+    max revision 57323
+end match
+
+match /trunk/KDE/kdebase/ksystraycmd/
+    repository kdebase-workspace
+    prefix ksystraycmd/
+    branch master
+    max revision 524300
+end match
+
+match /branches/work/kwin_composite/
+    repository kdebase-workspace
+    prefix kwin/
+    branch master
+    max revision 659195
+    min revision 558148
+end match
+
+match /trunk/KDE/kdebase/kwin/
+    repository kdebase-workspace
+    prefix kwin/
+    branch master
+    max revision 455844
+end match
+
+match /branches/work/kwin_composite/clients/
+    repository kdebase-workspace
+    prefix kwin/clients/
+    branch master
+    max revision 659195
+    min revision 558148
+end match
+
+match /trunk/KDE/kdebase/kwin/clients/
+    repository kdebase-workspace
+    prefix kwin/clients/
+    branch master
+    max revision 455844
+end match
+
+match /trunk/playground/artwork/aurorae/
+    repository kdebase-workspace
+    prefix kwin/clients/aurorae/
+    branch master
+    max revision 989425
+end match
+
+match /trunk/KDE/kdeartwork/kwin-styles/b2/
+    repository kdebase-workspace
+    prefix kwin/clients/b2/
+    branch master
+    max revision 1154459
+    min revision 1154443
+end match
+
+match /trunk/KDE/kdeartwork/kwin-styles/laptop/
+    repository kdebase-workspace
+    prefix kwin/clients/laptop/
+    branch master
+    max revision 1154459
+    min revision 1154443
+end match
+
+match /trunk/KDE/kdeartwork/kwin-styles/plastik/
+    repository kdebase-workspace
+    prefix kwin/clients/plastik/
+    branch master
+    max revision 1154459
+    min revision 1154443
+end match
+
+match /trunk/kdeartwork/kwin-styles/plastik/
+    repository kdebase-workspace
+    prefix kwin/clients/plastik/
+    branch master
+    max revision 347279
+end match
+
+match /trunk/KDE/kdeartwork/kwin-styles/tabstrip/
+    repository kdebase-workspace
+    prefix kwin/clients/tabstrip/
+    branch master
+    max revision 1154459
+    min revision 1154443
+end match
+
+match /trunk/kdebase/kcontrol/kwindecoration/
+    repository kdebase-workspace
+    prefix kwin/kcmkwin/kwindecoration/
+    branch master
+    max revision 131922
+end match
+
+match /trunk/kdebase/kcontrol/kwm/
+    repository kdebase-workspace
+    prefix kwin/kcmkwin/kwinoptions/
+    branch master
+    max revision 131922
+end match
+
+match /trunk/KDE/kdelibs/plasma/
+    repository kdebase-workspace
+    prefix libs/
+    branch master
+    max revision 879757
+    min revision 879755
+end match
+
+match /trunk/KDE/kdelibs/plasma/kdm/
+    repository kdebase-workspace
+    prefix libs/kdm/
+    branch master
+    max revision 879757
+    min revision 879755
+end match
+
+match /trunk/kdereview/kephal/
+    repository kdebase-workspace
+    prefix libs/kephal/
+    branch master
+    max revision 883539
+    min revision 875426
+end match
+
+match /trunk/playground/base/plasma/screenmanagement/kephal/
+    repository kdebase-workspace
+    prefix libs/kephal/
+    branch master
+    max revision 875426
+end match
+
+match /trunk/kdereview/kephal/kephal/
+    repository kdebase-workspace
+    prefix libs/kephal/kephal/
+    branch master
+    max revision 883539
+    min revision 875426
+end match
+
+match /trunk/playground/base/plasma/screenmanagement/kephal/kephal/
+    repository kdebase-workspace
+    prefix libs/kephal/kephal/
+    branch master
+    max revision 875426
+    min revision 852338
+end match
+
+match /trunk/playground/base/plasma/screenmanagement/kephal/common/
+    repository kdebase-workspace
+    prefix libs/kephal/kephal/
+    branch master
+    max revision 852338
+end match
+
+match /branches/work/kdehw/solidstats/tests/
+    repository kdebase-workspace
+    prefix libs/ksysguard/tests/
+    branch master
+    max revision 640425
+end match
+
+match /trunk/KDE/kdebase/runtime/kstyles/oxygen/lib/
+    repository kdebase-workspace
+    prefix libs/oxygen/
+    branch master
+    max revision 1097762
+end match
+
+match /trunk/playground/base/plasma/applets/libplasmaclock/
+    repository kdebase-workspace
+    prefix libs/plasmaclock/
+    branch master
+    max revision 758210
+end match
+
+match /branches/work/soc-plasma-appletbrowser/shells/common/newWidgetsExplorer/
+    repository kdebase-workspace
+    prefix libs/plasmagenericshell/widgetsexplorer/
+    branch master
+    max revision 1017471
+end match
+
+match /trunk/KDE/kdebase/runtime/solid/control/solid/
+    repository kdebase-workspace
+    prefix libs/solid/
+    branch master
+    max revision 683373
+    min revision 659754
+end match
+
+match /branches/work/phonon-solid-sprint/kdebase/runtime/solid/control/solid/
+    repository kdebase-workspace
+    prefix libs/solid/
+    branch master
+    max revision 659754
+end match
+
+match /branches/work/phonon-solid-sprint/kdelibs/solid/solid/experimental/
+    repository kdebase-workspace
+    prefix libs/solid/control/
+    branch master
+    max revision 657158
+end match
+
+match /trunk/KDE/kdebase/kicker/taskmanager/
+    repository kdebase-workspace
+    prefix libs/taskmanager/
+    branch master
+    max revision 514468
+end match
+
+match /trunk/playground/base/plasma/netbook/applets/
+    repository kdebase-workspace
+    prefix plasma/netbook/applets/
+    branch master
+    max revision 1018570
+end match
+
+match /trunk/playground/base/plasma/netbook/containments/
+    repository kdebase-workspace
+    prefix plasma/netbook/containments/
+    branch master
+    max revision 1018569
+end match
+
+match /trunk/playground/base/plasma/netbook/dataengines/
+    repository kdebase-workspace
+    prefix plasma/netbook/dataengines/
+    branch master
+    max revision 1018591
+end match
+
+match /trunk/playground/base/plasma/netbook/desktoptheme/
+    repository kdebase-workspace
+    prefix plasma/netbook/desktoptheme/
+    branch master
+    max revision 1018594
+end match
+
+match /trunk/playground/base/plasma/netbook/shells/netbook/
+    repository kdebase-workspace
+    prefix plasma/netbook/shell/
+    branch master
+    max revision 1018429
+    min revision 993895
+end match
+
+match /trunk/playground/base/plasma/netbook/shells/mid/
+    repository kdebase-workspace
+    prefix plasma/netbook/shell/
+    branch master
+    max revision 993895
+    min revision 973242
+end match
+
+match /trunk/playground/base/plasma/netbook/shell/mid/
+    repository kdebase-workspace
+    prefix plasma/netbook/shell/
+    branch master
+    max revision 973242
+end match
+
+match /trunk/kdereview/powerdevil/
+    repository kdebase-workspace
+    prefix powerdevil/
+    branch master
+    max revision 860964
+    min revision 854511
+end match
+
+match /trunk/playground/utils/powerdevil/
+    repository kdebase-workspace
+    prefix powerdevil/
+    branch master
+    max revision 854511
+end match
+
+match /trunk/kdereview/powerdevil/daemon/
+    repository kdebase-workspace
+    prefix powerdevil/daemon/
+    branch master
+    max revision 860964
+    min revision 854511
+end match
+
+match /trunk/playground/utils/powerdevil/daemon/
+    repository kdebase-workspace
+    prefix powerdevil/daemon/
+    branch master
+    max revision 854511
+end match
+
+match /trunk/kdereview/qguiplatformplugin_kde/
+    repository kdebase-workspace
+    prefix qguiplatformplugin_kde/
+    branch master
+    max revision 1053994
+end match
+
+match /trunk/KDE/kdebase/runtime/solid/
+    repository kdebase-workspace
+    prefix solid/
+    branch master
+    max revision 683373
+    min revision 659754
+end match
+
+match /branches/work/phonon-solid-sprint/kdebase/runtime/solid/
+    repository kdebase-workspace
+    prefix solid/
+    branch master
+    max revision 659754
+    min revision 654946
+end match
+
+match /trunk/KDE/kdebase/runtime/solid/
+    repository kdebase-workspace
+    prefix solid/
+    branch master
+    max revision 654946
+end match
+
+match /branches/work/phonon-solid-sprint/kdelibs/solid/kcm/
+    repository kdebase-workspace
+    prefix solid/kcm/
+    branch master
+    max revision 658699
+end match
+
+match /branches/work/~wstephens/solid_refactoring/networkmanager-0.7/dbus/
+    repository kdebase-workspace
+    prefix solid/networkmanager-0.7/dbus/
+    branch master
+    max revision 807198
+end match
+
+match /trunk/kdereview/solid-actions-kcm/
+    repository kdebase-workspace
+    prefix solid/solid-actions-kcm/
+    branch master
+    max revision 934300
+    min revision 925752
+end match
+
+match /trunk/playground/base/solid-actions-kcm/
+    repository kdebase-workspace
+    prefix solid/solid-actions-kcm/
+    branch master
+    max revision 925752
+end match
+
+match /trunk/kdereview/solid-actions-kcm/device-actions/
+    repository kdebase-workspace
+    prefix solid/solid-actions-kcm/device-actions/
+    branch master
+    max revision 934300
+end match
+
+match /branches/work/kdehw/apps/solidshell/
+    repository kdebase-workspace
+    prefix solid/solidshell/
+    branch master
+    max revision 602593
+end match
+
+match /trunk/kdereview/solid-wicd/
+    repository kdebase-workspace
+    prefix solid/wicd/
+    branch master
+    max revision 952637
+    min revision 945962
+end match
+
+match /trunk/playground/base/solid-wicd/
+    repository kdebase-workspace
+    prefix solid/wicd/
+    branch master
+    max revision 945962
+end match
+
+match /trunk/playground/base/plasma/systemtraydaemon/
+    repository kdebase-workspace
+    prefix statusnotifierwatcher/
+    branch master
+    max revision 927478
+end match
+
+match /trunk/kdereview/systemsettings/
+    repository kdebase-workspace
+    prefix systemsettings/
+    branch master
+    max revision 680184
+    min revision 679078
+end match
+
+match /branches/work/kde4/systemsettings_kde4/
+    repository kdebase-workspace
+    prefix systemsettings/
+    branch master
+    max revision 679078
+    min revision 662899
+end match
+
+match /trunk/playground/base/systemsettings-kde3/
+    repository kdebase-workspace
+    prefix systemsettings/
+    branch master
+    max revision 662899
+    min revision 631611
+end match
+
+match /trunk/playground/base/systemsettings/
+    repository kdebase-workspace
+    prefix systemsettings/
+    branch master
+    max revision 631611
+    min revision 475777
+end match
+
+match /branches/kat/0.6/systemsettings/
+    repository kdebase-workspace
+    prefix systemsettings/
+    branch master
+    max revision 475777
+    min revision 475773
+end match
+
+match /trunk/playground/base/systemsettings/
+    repository kdebase-workspace
+    prefix systemsettings/
+    branch master
+    max revision 475773
+    min revision 424952
+end match
+
+match /trunk/playground/base/systempreferences/
+    repository kdebase-workspace
+    prefix systemsettings/
+    branch master
+    max revision 424952
+    min revision 409206
+end match
+
+match /trunk/kdeplayground-base/systempreferences/
+    repository kdebase-workspace
+    prefix systemsettings/
+    branch master
+    max revision 409206
+end match
+
+match /trunk/kdereview/kcontrol4/app/
+    repository kdebase-workspace
+    prefix systemsettings/app/
+    branch master
+    max revision 961380
+    min revision 959821
+end match
+
+match /trunk/kdereview/kcontrol4/src/app/
+    repository kdebase-workspace
+    prefix systemsettings/app/
+    branch master
+    max revision 959821
+    min revision 953523
+end match
+
+match /trunk/playground/base/kcontrol4/src/app/
+    repository kdebase-workspace
+    prefix systemsettings/app/
+    branch master
+    max revision 953523
+end match
+
+match /trunk/kdereview/systemsettings/categories/
+    repository kdebase-workspace
+    prefix systemsettings/categories/
+    branch master
+    max revision 680184
+    min revision 679078
+end match
+
+match /branches/work/kde4/systemsettings_kde4/categories/
+    repository kdebase-workspace
+    prefix systemsettings/categories/
+    branch master
+    max revision 679078
+end match
+
+match /trunk/kdereview/kcontrol4/src/classic/
+    repository kdebase-workspace
+    prefix systemsettings/classic/
+    branch master
+    max revision 959821
+end match
+
+match /trunk/kdereview/kcontrol4/src/core/
+    repository kdebase-workspace
+    prefix systemsettings/core/
+    branch master
+    max revision 959821
+end match
+
+match /trunk/kdereview/kcontrol4/src/core/ToolTips/
+    repository kdebase-workspace
+    prefix systemsettings/core/ToolTips/
+    branch master
+    max revision 959821
+end match
+
+match /trunk/kdereview/kcontrol4/src/icons/
+    repository kdebase-workspace
+    prefix systemsettings/icons/
+    branch master
+    max revision 959821
+end match
+
+match /trunk/KDE/kdebase/pics/wallpapers/
+    repository kdebase-workspace
+    prefix wallpapers/
+    branch master
+    max revision 474131
+end match
+
+match /
+end match
+
