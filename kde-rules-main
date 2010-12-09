@@ -19,9 +19,6 @@ end repository
 create repository kdesupport/automoc
 end repository
 
-create repository KDE/kdelibs
-end repository
-
 create repository KDE/kdeaccessibility
 end repository
 
@@ -3056,31 +3053,6 @@ match /branches/ARTS_(\d+)_(\d+)_BRANCH/arts/
   branch arts/\1.\2
 end match
 
-match /tags/ARTS_(\d+)_(\d+)_RELEASE/kdelibs/
-  min revision 145162
-  max revision 409202
-  repository KDE/kdelibs
-  branch arts/\1.\2.0
-end match
-match /tags/ARTS_(\d+)_(\d+)_(\d+)_RELEASE/kdelibs/
-  min revision 145162
-  max revision 409202
-  repository KDE/kdelibs
-  branch arts/\1.\2.\3
-end match
-match /tags/ARTS_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdelibs/
-  min revision 192719
-  max revision 409202
-  repository KDE/kdelibs
-  branch arts/\1.\2.\3a
-end match
-match /branches/ARTS_(\d+)_(\d+)_BRANCH/kdelibs/
-  min revision 147167
-  max revision 409202
-  repository KDE/kdelibs
-  branch arts/\1.\2
-end match
-
 #
 # KOrganizer is kdepim
 #
@@ -3618,43 +3590,43 @@ end match
 #
 # Main KDE modules
 #
-match /trunk/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdelibs|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
+match /trunk/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
   repository KDE/\1
   branch master
   max revision 409202
 end match
 
-match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdelibs|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
   repository KDE/\3
   branch KDE/\1.\2
   max revision 409202
 end match
 
-match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdelibs|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
   repository KDE/\3
   branch KDE/\1.\2.0
   max revision 409202
 end match
 
-match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdelibs|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
   repository KDE/\3
   branch KDE/\1.\2.0
   max revision 85028
   min revision 68154
 end match
 
-match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdelibs|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
   repository KDE/\4
   branch KDE/\1.\2.\3
   max revision 409202
 end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdelibs|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
   repository KDE/\4
   branch KDE/\1.\2.\3a
   min revision 192719
   max revision 409202
 end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdelibs|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
   repository KDE/\5
   branch KDE/\1.\2.\3-beta\4
   min revision 376088
@@ -4445,7 +4417,7 @@ match /branches/work/kde4/(kde-common|unsermake|[^/]+$)
   min revision 411069
   max revision 628065
 end match
-match /branches/work/kde4/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdelibs|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
+match /branches/work/kde4/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdebindings|kdegames|kdepim|kdepimlibs|kdetoys|kdevelop|kdevplatform|kdewebdev)/
   min revision 411284
   max revision 450000
   repository KDE/\1
@@ -4480,6 +4452,6 @@ match /(tags|branches)/
 end match
 
 # Ignore those repositories as they are imported using other rules
-match /.*/(kdebase)/
+match /.*/(kdebase|kdelibs)/
 end match
 
