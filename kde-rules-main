@@ -2405,9 +2405,6 @@ end repository
 create repository extragear/ksfpm_testcase
 end repository
 
-create repository extragear/quanta
-end repository
-
 create repository extragear/kxsldbg
 end repository
 
@@ -2706,12 +2703,6 @@ match /tags/KDE/2.0.1/koffice/
   max revision 416398
   repository koffice
   branch KDE/2.0.1
-end match
-match /tags/(KDE/[^/]+)/quanta/
-  min revision 416394
-  max revision 416398
-  repository KDE/kdewebdev
-  branch \1
 end match
 match /tags/KDE/3.0.2/kdeextragear-1/
   min revision 416394
@@ -3013,42 +3004,6 @@ match /branches/ARTS_(\d+)_(\d+)_BRANCH/arts/
   max revision 409202
   repository arts
   branch arts/\1.\2
-end match
-
-# Quanta is kdewebdev
-match /trunk/quanta/
-  repository KDE/kdewebdev
-  branch master
-  min revision 64087
-  max revision 409202
-end match
-match /tags/QUANTA_(\d+)_(\d+)(_RELEASE)?/quanta/
-  repository KDE/kdewebdev
-  min revision 158633
-  max revision 409202
-  branch quanta/\1.\2.0
-end match
-match /tags/QUANTA_(\d+)_(\d+)_(\d+)(_RELEASE)?/(quanta|kdewebdev)/
-  repository KDE/kdewebdev
-  min revision 158633
-  max revision 409202
-  branch quanta/\1.\2.\3
-end match
-match /branches/QUANTA_(\d+)_(\d+)_BRANCH/quanta/
-  repository KDE/kdewebdev
-  max revision 409202
-  min revision 191620
-  branch quanta/\1.\2
-end match
-match /branches/QUANTA_3_1_BRANCH/kdewebdev/
-  # probably an artifact of server-side copying in CVS
-  min revision 191620
-  max revision 191620
-end match
-match /tags/QUANTA_3_1/kdewebdev/
-  # probably an artifact of server-side copying in CVS
-  min revision 199549
-  max revision 199549
 end match
 
 # kdeplasmoids is kdeplasma-addons/
@@ -3739,36 +3694,6 @@ match /branches/KVIEW_3_BRANCH/kdegraphics/kview/
   branch 3
 end match
 
-# Quanta 3.0-PR1 and PR2
-match /tags/QUANTA_3_0_PR(\d)/quanta/
-  min revision 169093
-  max revision 176816
-  repository KDE/kdewebdev
-  branch quanta/3.0.0-pr\1
-end match
-
-# Quanta 3.0-PR2A
-match /tags/QUANTA_3_0_PR2A/quanta/
-  min revision 177143
-  max revision 177143
-  repository KDE/kdewebdev
-  branch quanta/3.0.0-pr2a
-end match
-
-# Quanta's KDE 3.2 tags
-match /tags/KDE_3_2_(\d+)_RELEASE/quanta/
-  min revision 282533
-  max revision 316997
-  repository KDE/kdewebdev
-  branch quanta/KDE-3.2.\1
-end match
-match /branches/KDE_3_2_BRANCH/quanta/
-  min revision 280544
-  max revision 350000
-  repository KDE/kdewebdev
-  branch quanta/KDE-3.2
-end match
-
 # Kooka 0.xx
 match /tags/KOOKA_(\d+)_(\d+)/
   min revision 171704
@@ -4325,6 +4250,6 @@ match /(tags|branches)/
 end match
 
 # Ignore those repositories as they are imported using other rules
-match /.*/(kdebase|kdelibs|kdebindings|kdejava|kdevelop|kdevplatform|kdepim|kdepimlibs)/
+match /.*/(kdebase|kdelibs|kdebindings|kdejava|kdevelop|kdevplatform|kdepim|kdepimlibs|quanta)/
 end match
 
