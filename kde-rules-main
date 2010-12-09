@@ -554,9 +554,6 @@ end repository
 create repository KDE/kdeplasma-addons
 end repository
 
-create repository koffice
-end repository
-
 create repository extragear/konversation
 end repository
 
@@ -2691,19 +2688,6 @@ match /branches/KDE/4.1/kdeplasmoids
   min revision 830065
 end match
 
-# fix-up these
-match /tags/KDE/2.0/koffice/
-  min revision 416394
-  max revision 416394
-  repository koffice
-  branch KDE/2.0.0
-end match
-match /tags/KDE/2.0.1/koffice/
-  min revision 416398
-  max revision 416398
-  repository koffice
-  branch KDE/2.0.1
-end match
 match /tags/KDE/3.0.2/kdeextragear-1/
   min revision 416394
   max revision 416394
@@ -3561,6 +3545,9 @@ match /trunk/kdeplayground-[^/]/$
   action recurse
 end match
 
+# Ignore those repositories as they are imported using other rules
+match /.*/(kdebase|kdelibs|kdebindings|kdejava|kdevelop|kdevplatform|kdepim|kdepimlibs|quanta|koffice)/
+end match
 
 match /branches/kopete/0.12/
   min revision 506299
@@ -3572,62 +3559,6 @@ match /tags/kopete/(0\.[^/]+)/
   min revision 506884
   repository KDE/kdenetwork/kopete
   branch \1
-end match
-
-# KOffice
-match /trunk/koffice/
-  repository koffice
-  branch master
-end match
-match /(branches|tags)/koffice/([^/]+)/koffice/
-  min revision 409209
-  repository koffice
-  branch koffice/\2
-end match
-match /branches/KOFFICE_(\d+)_(\d+)_BRANCH/koffice/
-  max revision 409202
-  repository koffice
-  branch koffice/\1.\2
-end match
-match /tags/KOFFICE_(\d+)_(\d+)_RELEASE/koffice/
-  min revision 175775  # first found with 1.2.0
-  max revision 409202
-  repository koffice
-  branch koffice/\1.\2.0
-end match
-match /tags/KOFFICE_(\d+)_(\d+)_(\d+)_RELEASE/koffice/
-  min revision 178008  # first found with 1.1.1
-  max revision 409202
-  repository koffice
-  branch koffice/\1.\2.\3
-end match
-match /tags/KOFFICE_(\d+)_(\d+)_BETA(\d+)/koffice/
-  min revision 406710
-  max revision 409202
-  repository koffice
-  branch koffice/\1.\2.0-beta\3
-end match
-match /tags/KDE_(\d+)_(\d+)_RELEASE/koffice/
-  repository koffice
-  branch KDE/\1.\2.0
-  max revision 409202
-end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/koffice/
-  repository koffice
-  branch KDE/\1.\2.\3
-  max revision 409202
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/koffice/
-  repository koffice
-  branch KDE/\1.\2
-  max revision 409202
-end match
-
-match /branches/KOFFICE_1_1_BRANCH_KDE3/koffice/
-  min revision 136433
-  max revision 200000
-  repository koffice
-  branch koffice/1.1-kde3
 end match
 
 # KBabel 0.6, 0.7 and 0.9
@@ -3730,14 +3661,6 @@ match /tags/JUK_1_RELEASE/kdemultimedia/juk/
   max revision 207650
   repository KDE/kdemultimedia/juk
   branch 1.0.0
-end match
-
-# Kexi 0.9
-match /branches/kexi/(kexi_0_1_branch|0.9)/
-  min revision 409279
-  max revision 529615
-  repository koffice
-  branch kexi/0.9
 end match
 
 #
@@ -4247,9 +4170,5 @@ end match
 # Ignore all other tags and branches
 match /(tags|branches)/
   min revision 409209
-end match
-
-# Ignore those repositories as they are imported using other rules
-match /.*/(kdebase|kdelibs|kdebindings|kdejava|kdevelop|kdevplatform|kdepim|kdepimlibs|quanta)/
 end match
 
