@@ -31,7 +31,11 @@ end match
 #
 # recursion
 #
-match /branches/KDE/([^/]+)/$
+match /(branches|tags)/KDE/([^/]+)/$
+    action recurse
+end match
+
+match /(branches|tags)/KDE/([^/]+)/kdebindings/$
     action recurse
 end match
 
