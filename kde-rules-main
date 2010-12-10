@@ -3194,6 +3194,15 @@ end repository
 create repository extragear/keximdb
 end repository
 
+create repository extragear/khtml2
+end repository
+
+create repository extragear/qunittest
+end repository
+
+create repository extragear/kxslt
+end repository
+
 #
 # Ignore rules
 #
@@ -3528,7 +3537,7 @@ match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/$
 end match
 
 # Ignore those repositories as they are imported using other rules
-match /.*/(kdebase|kdelibs|kdebindings|kdejava|kdevelop|kdevplatform|kdepim|kdepimlibs|quanta|koffice|korganizer)/
+match /.*/(kdebase|kdelibs|kdebindings|kdejava|kdevelop|kdevplatform|kdepim|kdepimlibs|quanta|koffice|korganizer|office)/
 end match
 
 match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/[^/]+$                 # ignore top-level files
