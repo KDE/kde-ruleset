@@ -3203,11 +3203,6 @@ end match
 match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/admin/
 end match
 
-match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/([^/]+)/
-  repository extragear/\4
-  branch master
-end match
-
 # kdeedu, kdesdk, kdenetwork, kdeutils, kdemultimedia, kdegraphics
 match /trunk/(KDE/)?(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/$
   action recurse
@@ -4314,6 +4309,13 @@ match /trunk/playground/[^/]+/([^/]+)/
   branch master
   min revision 409209
 end match
+
+
+match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/([^/]+)/
+  repository extragear/\4
+  branch master
+end match
+
 
 #
 # Final rules
