@@ -2861,6 +2861,339 @@ end repository
 create repository extragear/kscriptperl
 end repository
 
+create repository extragear/kdatabase
+end repository
+
+create repository extragear/gst
+end repository
+
+create repository extragear/mono
+end repository
+
+create repository extragear/kabpasswd
+end repository
+
+create repository extragear/skli
+end repository
+
+create repository extragear/kmath
+end repository
+
+create repository extragear/cupslogtool
+end repository
+
+create repository extragear/kpolicy
+end repository
+
+create repository extragear/kdeprintphoto
+end repository
+
+create repository extragear/finglonger
+end repository
+
+create repository extragear/deltav
+end repository
+
+create repository extragear/kp3p
+end repository
+
+create repository extragear/kfs
+end repository
+
+create repository extragear/acap
+end repository
+
+create repository extragear/kswfdec
+end repository
+
+create repository extragear/kaphorism
+end repository
+
+create repository extragear/testwidgets
+end repository
+
+create repository extragear/libqt-addon
+end repository
+
+create repository extragear/kssl-smime
+end repository
+
+create repository extragear/opal
+end repository
+
+create repository extragear/kggst
+end repository
+
+create repository extragear/kaxul
+end repository
+
+create repository extragear/klaviatura
+end repository
+
+create repository extragear/style-workshop
+end repository
+
+create repository extragear/kio_httpmail
+end repository
+
+create repository extragear/klogoturtle
+end repository
+
+create repository extragear/oscar
+end repository
+
+create repository extragear/khexedit2
+end repository
+
+create repository extragear/kdeautorun
+end repository
+
+create repository extragear/kdeutil
+end repository
+
+create repository extragear/kickme
+end repository
+
+create repository extragear/flac_artsplugin
+end repository
+
+create repository extragear/modplug_artsplugin
+end repository
+
+create repository extragear/sidplay2_artsplugin
+end repository
+
+create repository extragear/kxconfig
+end repository
+
+create repository extragear/pax
+end repository
+
+create repository extragear/gopher_kioslave
+end repository
+
+create repository extragear/nonlinux
+end repository
+
+create repository extragear/icecream
+end repository
+
+create repository extragear/kgallery
+end repository
+
+create repository extragear/krichtexteditor
+end repository
+
+create repository extragear/kwhatsbroken
+end repository
+
+create repository extragear/kontextbar
+end repository
+
+create repository extragear/kwuftpd
+end repository
+
+create repository extragear/kbrain
+end repository
+
+create repository extragear/kdmthemes
+end repository
+
+create repository extragear/kspell
+end repository
+
+create repository extragear/kdedebian
+end repository
+
+create repository extragear/qtgtk
+end repository
+
+create repository extragear/sslio
+end repository
+
+create repository extragear/kdom
+end repository
+
+create repository extragear/kstyle2
+end repository
+
+create repository extragear/konserve
+end repository
+
+create repository extragear/threadweaver
+end repository
+
+create repository extragear/kchangelogmaker
+end repository
+
+create repository extragear/kfly
+end repository
+
+create repository extragear/imap4
+end repository
+
+create repository extragear/xpath
+end repository
+
+create repository extragear/kmathprof
+end repository
+
+create repository extragear/kcontrol3
+end repository
+
+create repository extragear/realrekord
+end repository
+
+create repository extragear/quality
+end repository
+
+create repository extragear/kgeography
+end repository
+
+create repository extragear/usagemonitor
+end repository
+
+create repository extragear/uirtk
+end repository
+
+create repository extragear/ksvg2
+end repository
+
+create repository extragear/kimproxy
+end repository
+
+create repository extragear/kdecvs-build
+end repository
+
+create repository extragear/talen
+end repository
+
+create repository extragear/UserManager
+end repository
+
+create repository extragear/daleks
+end repository
+
+create repository extragear/libkrdf
+end repository
+
+create repository extragear/gadget
+end repository
+
+create repository extragear/kcanvas
+end repository
+
+create repository extragear/jabberservices
+end repository
+
+create repository extragear/kifi
+end repository
+
+create repository extragear/libkxpath
+end repository
+
+create repository extragear/xinput
+end repository
+
+create repository extragear/kafilah
+end repository
+
+create repository extragear/KeepIt
+end repository
+
+create repository extragear/kautorename
+end repository
+
+create repository extragear/lyod
+end repository
+
+create repository extragear/krafty
+end repository
+
+create repository extragear/kbstateapplet
+end repository
+
+create repository extragear/kio_smbro
+end repository
+
+create repository extragear/mediatv
+end repository
+
+create repository extragear/ktracer
+end repository
+
+create repository extragear/kimgio_examples
+end repository
+
+create repository extragear/kvm
+end repository
+
+create repository extragear/kubication
+end repository
+
+create repository extragear/businesskard
+end repository
+
+create repository extragear/knx
+end repository
+
+create repository extragear/klink
+end repository
+
+create repository extragear/kcmregtester
+end repository
+
+create repository extragear/nvidia
+end repository
+
+create repository extragear/kverbos #TODO kdeedu
+end repository
+
+create repository extragear/kbatterymonitor
+end repository
+
+create repository extragear/propertyeditor
+end repository
+
+create repository extragear/kunittest #TODO kdesdk?
+end repository
+
+create repository extragear/kifidaemon
+end repository
+
+create repository extragear/korrent
+end repository
+
+create repository extragear/kmozilla
+end repository
+
+create repository extragear/kio_mhtml
+end repository
+
+create repository extragear/kcardtools #TODO kdeutils
+end repository
+
+create repository extragear/ksmartcard
+end repository
+
+create repository extragear/koralizer
+end repository
+
+create repository extragear/kfind-revisited #TODO branch?
+end repository
+
+create repository extragear/kcmlinuz
+end repository
+
+create repository extragear/examples
+end repository
+
+create repository extragear/sanedefaults
+end repository
+
+create repository extragear/keximdb
+end repository
+
 #
 # Ignore rules
 #
