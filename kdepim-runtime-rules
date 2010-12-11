@@ -4,26 +4,14 @@
 declare MODULE=kdepim/runtime
 declare REPO=kdepim-runtime
 
-create repository kdepim-runtime
+create repository ${REPO}
 end repository
 
 include kdepim-common-ignore-rules
+include kdepim-recurse-rules
+include kdepim-tags-rules
+include kdepim-branches-rules
 
-#	------< trunk/KDE/kdepim/runtime >------
-#	[ Move/Replace: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
-#	[ add  HEAD 1061321 ]
-match /trunk/KDE/kdepim/runtime/
-    repository kdepim-runtime
-    branch master
-    min revision 1061321
-end match
-
-#	[ move trunk/KDE/kdepim/akonadi 1061321 0 ]
-match /trunk/KDE/kdepim/akonadi/
-    repository kdepim-runtime
-    branch master
-    max revision 1061321
-end match
 
 #	------< trunk/KDE/kdepim/runtime/accountwizard >------
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/accountwizard @ 1113315 <- /branches/work/toma-akonadi-account-wizard-ghns-integration/accountwizard @ 1113314 ]
@@ -31,13 +19,6 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/accountwizard @ 1073702 <- /branches/work/akonadi-ports/kdepim/runtime/accountwizard @ 1073674 ]
 #	[ Parent: /branches/work/akonadi-ports/kdepim/runtime @ 1061292 <- /branches/work/akonadi-ports/kdepim/akonadi @ 1061290 ]
 #	[ add accountwizard HEAD 1113314 ]
-match /trunk/KDE/kdepim/runtime/accountwizard/
-    repository kdepim-runtime
-    prefix accountwizard/
-    branch master
-    min revision 1113314
-end match
-
 #	[ move branches/work/toma-akonadi-account-wizard-ghns-integration/accountwizard 1113314 1111119 ]
 match /branches/work/toma-akonadi-account-wizard-ghns-integration/accountwizard/
     repository kdepim-runtime
@@ -48,14 +29,6 @@ match /branches/work/toma-akonadi-account-wizard-ghns-integration/accountwizard/
 end match
 
 #	[ parent trunk/KDE/kdepim/runtime/accountwizard 1111119 1073674 ]
-match /trunk/KDE/kdepim/runtime/accountwizard/
-    repository kdepim-runtime
-    prefix accountwizard/
-    branch master
-    max revision 1111119
-    min revision 1073674
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/runtime/accountwizard 1073674 1061290 ]
 match /branches/work/akonadi-ports/kdepim/runtime/accountwizard/
     repository kdepim-runtime
@@ -78,13 +51,6 @@ end match
 #	------< trunk/KDE/kdepim/runtime/agents >------
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ add agents HEAD 1061321 ]
-match /trunk/KDE/kdepim/runtime/agents/
-    repository kdepim-runtime
-    prefix agents/
-    branch master
-    min revision 1061321
-end match
-
 #	[ parent trunk/KDE/kdepim/akonadi/agents 1061321 0 ]
 match /trunk/KDE/kdepim/akonadi/agents/
     repository kdepim-runtime
@@ -97,13 +63,6 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/agents/calendarsearch @ 1075164 <- /branches/work/akonadi-ports/kdepim/runtime/agents/calendarsearch @ 1075150 ]
 #	[ Parent: /branches/work/akonadi-ports/kdepim/runtime @ 1061292 <- /branches/work/akonadi-ports/kdepim/akonadi @ 1061290 ]
 #	[ add agents/calendarsearch HEAD 1075150 ]
-match /trunk/KDE/kdepim/runtime/agents/calendarsearch/
-    repository kdepim-runtime
-    prefix agents/calendarsearch/
-    branch master
-    min revision 1075150
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/runtime/agents/calendarsearch 1075150 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/agents/calendarsearch/
     repository kdepim-runtime
@@ -118,13 +77,6 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/agents/invitations @ 1075164 <- /branches/work/akonadi-ports/kdepim/runtime/agents/invitations @ 1075153 ]
 #	[ Parent: /branches/work/akonadi-ports/kdepim/runtime @ 1061292 <- /branches/work/akonadi-ports/kdepim/akonadi @ 1061290 ]
 #	[ add agents/invitations HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/agents/invitations/
-    repository kdepim-runtime
-    prefix agents/invitations/
-    branch master
-    min revision 1161348
-end match
-
 #	[ move branches/work/kdepim_kcalcore/runtime/agents/invitations 1161348 1149028 ]
 match /branches/work/kdepim_kcalcore/runtime/agents/invitations/
     repository kdepim-runtime
@@ -135,14 +87,6 @@ match /branches/work/kdepim_kcalcore/runtime/agents/invitations/
 end match
 
 #	[ parent trunk/KDE/kdepim/runtime/agents/invitations 1149028 1075153 ]
-match /trunk/KDE/kdepim/runtime/agents/invitations/
-    repository kdepim-runtime
-    prefix agents/invitations/
-    branch master
-    max revision 1149028
-    min revision 1075153
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/runtime/agents/invitations 1075153 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/agents/invitations/
     repository kdepim-runtime
@@ -157,13 +101,6 @@ end match
 #	[ Move/Replace: /branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher @ 986743 <- /branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher @ 977512 ]
 #	[ Move/Replace: /branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher @ 977512 <- /trunk/playground/pim/maildispatcheragent @ 977493 ]
 #	[ add agents/maildispatcher HEAD 1010069 ]
-match /trunk/KDE/kdepim/runtime/agents/maildispatcher/
-    repository kdepim-runtime
-    prefix agents/maildispatcher/
-    branch master
-    min revision 1010069
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher 1010069 977512 ]
 match /branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher/
     repository kdepim-runtime
@@ -195,13 +132,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/akonadi/agents/maildispatcher @ 1010075 <- /branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher @ 1010069 ]
 #	[ Move/Replace: /branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher/tests @ 986747 <- /branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests @ 979150 ]
 #	[ add agents/maildispatcher/tests HEAD 1010069 ]
-match /trunk/KDE/kdepim/runtime/agents/maildispatcher/tests/
-    repository kdepim-runtime
-    prefix agents/maildispatcher/tests/
-    branch master
-    min revision 1010069
-end match
-
 #	[ parent branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher/tests 1010069 979150 ]
 match /branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher/tests/
     repository kdepim-runtime
@@ -224,13 +154,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/akonadi/agents/maildispatcher @ 1010075 <- /branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher @ 1010069 ]
 #	[ Parent: /branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher/tests @ 986747 <- /branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests @ 979150 ]
 #	[ add agents/maildispatcher/tests/unittestenv HEAD 979150 ]
-match /trunk/KDE/kdepim/runtime/agents/maildispatcher/tests/unittestenv/
-    repository kdepim-runtime
-    prefix agents/maildispatcher/tests/unittestenv/
-    branch master
-    min revision 979150
-end match
-
 #	[ parent branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests/unittestenv 979150 0 ]
 match /branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests/unittestenv/
     repository kdepim-runtime
@@ -274,13 +197,6 @@ end match
 #	[ Parent: /branches/work/kdepim_kcalcore @ 1149030 <- /trunk/KDE/kdepim @ 1149028 ]
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ add agents/nepomuk_calendar_feeder HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/agents/nepomuk_calendar_feeder/
-    repository kdepim-runtime
-    prefix agents/nepomuk_calendar_feeder/
-    branch master
-    min revision 1161348
-end match
-
 #	[ move branches/work/kdepim_kcalcore/runtime/agents/nepomuk_calendar_feeder 1161348 0 ]
 match /branches/work/kdepim_kcalcore/runtime/agents/nepomuk_calendar_feeder/
     repository kdepim-runtime
@@ -299,13 +215,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/agents/ontologies @ 1035169 <- /trunk/KDE/kdepim/akonadi/agents/nie_fast @ 1034979 ]
 #	[ add agents/ontologies HEAD 1034979 ]
-match /trunk/KDE/kdepim/runtime/agents/ontologies/
-    repository kdepim-runtime
-    prefix agents/ontologies/
-    branch master
-    min revision 1034979
-end match
-
 #	[ move trunk/KDE/kdepim/akonadi/agents/nie_fast 1034979 0 ]
 match /trunk/KDE/kdepim/akonadi/agents/nie_fast/
     repository kdepim-runtime
@@ -350,13 +259,6 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/kresources @ 983139 <- /trunk/KDE/kdepim/kresources/akonadi @ 982988 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/kresources/akonadi @ 772775 <- /trunk/playground/pim/akonadi-kres @ 772772 ]
 #	[ add kresources HEAD 982988 ]
-match /trunk/KDE/kdepim/runtime/kresources/
-    repository kdepim-runtime
-    prefix kresources/
-    branch master
-    min revision 982988
-end match
-
 #	[ move trunk/KDE/kdepim/kresources/akonadi 982988 772772 ]
 match /trunk/KDE/kdepim/kresources/akonadi/
     repository kdepim-runtime
@@ -379,13 +281,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/akonadi/kresources @ 983139 <- /trunk/KDE/kdepim/kresources/akonadi @ 982988 ]
 #	[ Parent: /trunk/KDE/kdepim/kresources/akonadi @ 772775 <- /trunk/playground/pim/akonadi-kres @ 772772 ]
 #	[ add kresources/kabc HEAD 982988 ]
-match /trunk/KDE/kdepim/runtime/kresources/kabc/
-    repository kdepim-runtime
-    prefix kresources/kabc/
-    branch master
-    min revision 982988
-end match
-
 #	[ parent trunk/KDE/kdepim/kresources/akonadi/kabc 982988 772772 ]
 match /trunk/KDE/kdepim/kresources/akonadi/kabc/
     repository kdepim-runtime
@@ -423,13 +318,6 @@ end match
 #	[ Delayed: /trunk/kdepim/libkdepim/kprefsdialog.cpp @ 163949 <- /trunk/kdepim/korganizer @ 163948 ]
 #	[ Delayed: /trunk/kdepim/libkdepim/kprefsdialog.h @ 163949 <- /trunk/kdepim/korganizer @ 163948 ]
 #	[ add libkdepim-copy HEAD 982582 ]
-match /trunk/KDE/kdepim/runtime/libkdepim-copy/
-    repository kdepim-runtime
-    prefix libkdepim-copy/
-    branch master
-    min revision 982582
-end match
-
 #	[ move trunk/KDE/kdepim/libkdepim 982582 455550 ]
 match /trunk/KDE/kdepim/libkdepim/
     repository kdepim-runtime
@@ -477,13 +365,6 @@ end match
 #	------< trunk/KDE/kdepim/runtime/migration/kjots >------
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/migration/kjots @ 1085610 <- /branches/work/akonadi-ports/kdepim/runtime/migration/kjots @ 1085609 ]
 #	[ add migration/kjots HEAD 1085609 ]
-match /trunk/KDE/kdepim/runtime/migration/kjots/
-    repository kdepim-runtime
-    prefix migration/kjots/
-    branch master
-    min revision 1085609
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/runtime/migration/kjots 1085609 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/migration/kjots/
     repository kdepim-runtime
@@ -497,13 +378,6 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim/runtime @ 1061292 <- /branches/work/akonadi-ports/kdepim/akonadi @ 1061290 ]
 #	[ Move/Replace: /branches/work/akonadi-ports/kdepim/akonadi/migration/kmail @ 987556 <- /trunk/KDE/kdepim/akonadi/migration/kmail @ 987531 ]
 #	[ add migration/kmail HEAD 1073674 ]
-match /trunk/KDE/kdepim/runtime/migration/kmail/
-    repository kdepim-runtime
-    prefix migration/kmail/
-    branch master
-    min revision 1073674
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/runtime/migration/kmail 1073674 987531 ]
 match /branches/work/akonadi-ports/kdepim/runtime/migration/kmail/
     repository kdepim-runtime
@@ -568,13 +442,6 @@ end match
 #	[ Delayed: /trunk/KDE/kdepim/runtime/qml/kde/kdeintegration.h @ 1103618 <- /trunk/playground/pim/akonadi/kde-qml @ 1103517 ]
 #	[ Delayed: /trunk/KDE/kdepim/runtime/qml/kde/tests/icons.qml @ 1103618 <- /trunk/playground/pim/akonadi/kde-qml/tests @ 1102005 ]
 #	[ add qml HEAD 1146852 ]
-match /trunk/KDE/kdepim/runtime/qml/
-    repository kdepim-runtime
-    prefix qml/
-    branch master
-    min revision 1146852
-end match
-
 #	[ move branches/work/komo/kdepim/runtime/qml 1146852 1129062 ]
 match /branches/work/komo/kdepim/runtime/qml/
     repository kdepim-runtime
@@ -585,24 +452,10 @@ match /branches/work/komo/kdepim/runtime/qml/
 end match
 
 #	[ parent trunk/KDE/kdepim/runtime/qml 1129062 0 ]
-match /trunk/KDE/kdepim/runtime/qml/
-    repository kdepim-runtime
-    prefix qml/
-    branch master
-    max revision 1129062
-end match
-
 #	------< trunk/KDE/kdepim/runtime/qml/akonadi >------
 #	[ Parent: /trunk/KDE/kdepim/runtime/qml @ 1146853 <- /branches/work/komo/kdepim/runtime/qml @ 1146852 ]
 #	[ Parent: /branches/work/komo/kdepim @ 1129064 <- /trunk/KDE/kdepim @ 1129062 ]
 #	[ add qml/akonadi HEAD 1146852 ]
-match /trunk/KDE/kdepim/runtime/qml/akonadi/
-    repository kdepim-runtime
-    prefix qml/akonadi/
-    branch master
-    min revision 1146852
-end match
-
 #	[ parent branches/work/komo/kdepim/runtime/qml/akonadi 1146852 0 ]
 match /branches/work/komo/kdepim/runtime/qml/akonadi/
     repository kdepim-runtime
@@ -620,13 +473,6 @@ end match
 #	[ Parent: /branches/work/komo/kdepim @ 1129064 <- /trunk/KDE/kdepim @ 1129062 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/qml/kde @ 1103618 <- /trunk/playground/pim/akonadi/kde-qml @ 1101913 ]
 #	[ add qml/kde HEAD 1101913 ]
-match /trunk/KDE/kdepim/runtime/qml/kde/
-    repository kdepim-runtime
-    prefix qml/kde/
-    branch master
-    min revision 1101913
-end match
-
 #	[ move trunk/playground/pim/akonadi/kde-qml 1101913 0 ]
 match /trunk/playground/pim/akonadi/kde-qml/
     repository kdepim-runtime
@@ -640,13 +486,6 @@ end match
 #	[ Parent: /branches/work/komo/kdepim @ 1129064 <- /trunk/KDE/kdepim @ 1129062 ]
 #	[ Parent: /trunk/KDE/kdepim/runtime/qml/kde @ 1103618 <- /trunk/playground/pim/akonadi/kde-qml @ 1101913 ]
 #	[ add qml/kde/tests HEAD 1101913 ]
-match /trunk/KDE/kdepim/runtime/qml/kde/tests/
-    repository kdepim-runtime
-    prefix qml/kde/tests/
-    branch master
-    min revision 1101913
-end match
-
 #	[ parent trunk/playground/pim/akonadi/kde-qml/tests 1101913 0 ]
 match /trunk/playground/pim/akonadi/kde-qml/tests/
     repository kdepim-runtime
@@ -673,13 +512,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources @ 559038 <- /trunk/KDE/kdepim/akonadiresources @ 559016 ]
 #	[ add resources HEAD 559016 ]
-match /trunk/KDE/kdepim/runtime/resources/
-    repository kdepim-runtime
-    prefix resources/
-    branch master
-    min revision 559016
-end match
-
 #	[ move trunk/KDE/kdepim/akonadiresources 559016 0 ]
 match /trunk/KDE/kdepim/akonadiresources/
     repository kdepim-runtime
@@ -692,13 +524,6 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/resources/akonotes @ 1085609 <- /branches/work/akonadi-ports/kdepim/runtime/resources/akonotes @ 1085608 ]
 #	[ Parent: /branches/work/akonadi-ports/kdepim/runtime @ 1061292 <- /branches/work/akonadi-ports/kdepim/akonadi @ 1061290 ]
 #	[ add resources/akonotes HEAD 1085608 ]
-match /trunk/KDE/kdepim/runtime/resources/akonotes/
-    repository kdepim-runtime
-    prefix resources/akonotes/
-    branch master
-    min revision 1085608
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/runtime/resources/akonotes 1085608 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/akonotes/
     repository kdepim-runtime
@@ -712,13 +537,6 @@ end match
 #	[ Parent: /branches/work/kdepim_kcalcore @ 1149030 <- /trunk/KDE/kdepim @ 1149028 ]
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ add resources/birthdays HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/resources/birthdays/
-    repository kdepim-runtime
-    prefix resources/birthdays/
-    branch master
-    min revision 1161348
-end match
-
 #	[ move branches/work/kdepim_kcalcore/runtime/resources/birthdays 1161348 0 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/birthdays/
     repository kdepim-runtime
@@ -736,13 +554,6 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/resources/dav @ 1117317 <- /trunk/kdereview/dav @ 1117316 ]
 #	[ Move/Replace: /trunk/kdereview/dav @ 1106038 <- /trunk/playground/pim/dav @ 1106037 ]
 #	[ add resources/dav HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/resources/dav/
-    repository kdepim-runtime
-    prefix resources/dav/
-    branch master
-    min revision 1161348
-end match
-
 #	[ move branches/work/kdepim_kcalcore/runtime/resources/dav 1161348 1117316 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/dav/
     repository kdepim-runtime
@@ -775,13 +586,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime/resources/dav @ 1117317 <- /trunk/kdereview/dav @ 1117316 ]
 #	[ Parent: /trunk/kdereview/dav @ 1106038 <- /trunk/playground/pim/dav @ 1106037 ]
 #	[ add resources/dav/common HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/resources/dav/common/
-    repository kdepim-runtime
-    prefix resources/dav/common/
-    branch master
-    min revision 1161348
-end match
-
 #	[ parent branches/work/kdepim_kcalcore/runtime/resources/dav/common 1161348 1117316 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/dav/common/
     repository kdepim-runtime
@@ -827,13 +631,6 @@ end match
 #	[ Parent: /trunk/kdereview/dav @ 1106038 <- /trunk/playground/pim/dav @ 1106037 ]
 #	[ Move/Replace: /trunk/playground/pim/dav/resource @ 1096674 <- /trunk/playground/pim/dav/davcalendar @ 1096042 ]
 #	[ add resources/dav/resource HEAD 1096042 ]
-match /trunk/KDE/kdepim/runtime/resources/dav/resource/
-    repository kdepim-runtime
-    prefix resources/dav/resource/
-    branch master
-    min revision 1096042
-end match
-
 #	[ move trunk/playground/pim/dav/davcalendar 1096042 0 ]
 match /trunk/playground/pim/dav/davcalendar/
     repository kdepim-runtime
@@ -849,13 +646,6 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources/ical @ 656879 <- /trunk/KDE/kdepim/akonadi/resources/src/ical @ 656871 ]
 #	[ Parent: /trunk/KDE/kdepim/akonadi/resources @ 559038 <- /trunk/KDE/kdepim/akonadiresources @ 559016 ]
 #	[ add resources/ical HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/resources/ical/
-    repository kdepim-runtime
-    prefix resources/ical/
-    branch master
-    min revision 1161348
-end match
-
 #	[ move branches/work/kdepim_kcalcore/runtime/resources/ical 1161348 656871 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/ical/
     repository kdepim-runtime
@@ -888,13 +678,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ Delayed: /trunk/KDE/kdepim/akonadi/resources/ical/notes/notesresource.desktop @ 1002295 <- /trunk/KDE/kdepim/akonadi/resources/ical @ 998969 ]
 #	[ add resources/ical/notes HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/resources/ical/notes/
-    repository kdepim-runtime
-    prefix resources/ical/notes/
-    branch master
-    min revision 1161348
-end match
-
 #	[ parent branches/work/kdepim_kcalcore/runtime/resources/ical/notes 1161348 0 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/ical/notes/
     repository kdepim-runtime
@@ -920,13 +703,6 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim @ 982690 <- /trunk/KDE/kdepim @ 982689 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources/imap @ 788340 <- /trunk/playground/pim/mailody/akonadi_resource @ 788319 ]
 #	[ add resources/imap HEAD 1073676 ]
-match /trunk/KDE/kdepim/runtime/resources/imap/
-    repository kdepim-runtime
-    prefix resources/imap/
-    branch master
-    min revision 1073676
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/runtime/resources/imap 1073676 982689 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/imap/
     repository kdepim-runtime
@@ -956,13 +732,6 @@ end match
 #	------< trunk/KDE/kdepim/runtime/resources/imap/tests >------
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/resources/imap/tests @ 1140653 <- /branches/work/~ervin/imap-resource-refactor/tests @ 1139084 ]
 #	[ add resources/imap/tests HEAD 1139084 ]
-match /trunk/KDE/kdepim/runtime/resources/imap/tests/
-    repository kdepim-runtime
-    prefix resources/imap/tests/
-    branch master
-    min revision 1139084
-end match
-
 #	[ move branches/work/~ervin/imap-resource-refactor/tests 1139084 0 ]
 match /branches/work/~ervin/imap-resource-refactor/tests/
     repository kdepim-runtime
@@ -975,13 +744,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime/resources/imap @ 1073702 <- /branches/work/akonadi-ports/kdepim/runtime/resources/imap @ 1073676 ]
 #	[ Parent: /branches/work/akonadi-ports/kdepim/runtime @ 1061292 <- /branches/work/akonadi-ports/kdepim/akonadi @ 1061290 ]
 #	[ add resources/imap/wizard HEAD 1073676 ]
-match /trunk/KDE/kdepim/runtime/resources/imap/wizard/
-    repository kdepim-runtime
-    prefix resources/imap/wizard/
-    branch master
-    min revision 1073676
-end match
-
 #	[ parent branches/work/akonadi-ports/kdepim/runtime/resources/imap/wizard 1073676 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/imap/wizard/
     repository kdepim-runtime
@@ -1004,13 +766,6 @@ end match
 #	[ Move/Replace: /trunk/playground/pim/akonadi/knut @ 904181 <- /trunk/KDE/kdepim/akonadi/resources/knut @ 904174 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources/knut @ 656879 <- /trunk/KDE/kdepim/akonadi/resources/src/knut @ 656871 ]
 #	[ add resources/knut HEAD 906081 ]
-match /trunk/KDE/kdepim/runtime/resources/knut/
-    repository kdepim-runtime
-    prefix resources/knut/
-    branch master
-    min revision 906081
-end match
-
 #	[ move trunk/playground/pim/akonadi/knut 906081 904174 ]
 match /trunk/playground/pim/akonadi/knut/
     repository kdepim-runtime
@@ -1041,13 +796,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ Parent: /trunk/KDE/kdepim/akonadi/resources/knut @ 906803 <- /trunk/playground/pim/akonadi/knut @ 906081 ]
 #	[ add resources/knut/tests HEAD 906081 ]
-match /trunk/KDE/kdepim/runtime/resources/knut/tests/
-    repository kdepim-runtime
-    prefix resources/knut/tests/
-    branch master
-    min revision 906081
-end match
-
 #	[ parent trunk/playground/pim/akonadi/knut/tests 906081 0 ]
 match /trunk/playground/pim/akonadi/knut/tests/
     repository kdepim-runtime
@@ -1061,13 +809,6 @@ end match
 #	[ Parent: /branches/work/kdepim_kcalcore @ 1149030 <- /trunk/KDE/kdepim @ 1149028 ]
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ add resources/kolabproxy HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/resources/kolabproxy/
-    repository kdepim-runtime
-    prefix resources/kolabproxy/
-    branch master
-    min revision 1161348
-end match
-
 #	[ move branches/work/kdepim_kcalcore/runtime/resources/kolabproxy 1161348 0 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/kolabproxy/
     repository kdepim-runtime
@@ -1081,13 +822,6 @@ end match
 #	[ Parent: /branches/work/kdepim_kcalcore @ 1149030 <- /trunk/KDE/kdepim @ 1149028 ]
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ add resources/kolabproxy/tests HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/resources/kolabproxy/tests/
-    repository kdepim-runtime
-    prefix resources/kolabproxy/tests/
-    branch master
-    min revision 1161348
-end match
-
 #	[ parent branches/work/kdepim_kcalcore/runtime/resources/kolabproxy/tests 1161348 0 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/kolabproxy/tests/
     repository kdepim-runtime
@@ -1122,13 +856,6 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/resources/kolabproxy/wizard @ 1073702 <- /branches/work/akonadi-ports/kdepim/runtime/resources/kolabproxy/wizard @ 1073677 ]
 #	[ Parent: /branches/work/akonadi-ports/kdepim/runtime @ 1061292 <- /branches/work/akonadi-ports/kdepim/akonadi @ 1061290 ]
 #	[ add resources/kolabproxy/wizard HEAD 1073677 ]
-match /trunk/KDE/kdepim/runtime/resources/kolabproxy/wizard/
-    repository kdepim-runtime
-    prefix resources/kolabproxy/wizard/
-    branch master
-    min revision 1073677
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/runtime/resources/kolabproxy/wizard 1073677 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/kolabproxy/wizard/
     repository kdepim-runtime
@@ -1145,13 +872,6 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim/runtime @ 1061292 <- /branches/work/akonadi-ports/kdepim/akonadi @ 1061290 ]
 #	[ Parent: /branches/work/akonadi-ports/kdepim @ 982690 <- /trunk/KDE/kdepim @ 982689 ]
 #	[ add resources/maildir HEAD 1073679 ]
-match /trunk/KDE/kdepim/runtime/resources/maildir/
-    repository kdepim-runtime
-    prefix resources/maildir/
-    branch master
-    min revision 1073679
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/runtime/resources/maildir 1073679 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/maildir/
     repository kdepim-runtime
@@ -1166,13 +886,6 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim @ 982690 <- /trunk/KDE/kdepim @ 982689 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources/maildir/libmaildir @ 908932 <- /trunk/KDE/kdepim/maildir @ 908869 ]
 #	[ add resources/maildir/libmaildir HEAD 1073679 ]
-match /trunk/KDE/kdepim/runtime/resources/maildir/libmaildir/
-    repository kdepim-runtime
-    prefix resources/maildir/libmaildir/
-    branch master
-    min revision 1073679
-end match
-
 #	[ parent branches/work/akonadi-ports/kdepim/runtime/resources/maildir/libmaildir 1073679 908869 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/maildir/libmaildir/
     repository kdepim-runtime
@@ -1196,13 +909,6 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim @ 982690 <- /trunk/KDE/kdepim @ 982689 ]
 #	[ Parent: /trunk/KDE/kdepim/akonadi/resources/maildir/libmaildir @ 908932 <- /trunk/KDE/kdepim/maildir @ 908869 ]
 #	[ add resources/maildir/libmaildir/tests HEAD 908869 ]
-match /trunk/KDE/kdepim/runtime/resources/maildir/libmaildir/tests/
-    repository kdepim-runtime
-    prefix resources/maildir/libmaildir/tests/
-    branch master
-    min revision 908869
-end match
-
 #	[ parent trunk/KDE/kdepim/maildir/tests 908869 0 ]
 match /trunk/KDE/kdepim/maildir/tests/
     repository kdepim-runtime
@@ -1221,13 +927,6 @@ end match
 #	[ Move/Replace: /branches/work/akonadi-ports/kdepim/akonadi/resources/maildir/tests/maildir @ 1024683 <- /trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir @ 1024156 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir @ 1024154 <- /trunk/playground/pim/akonaditest/resourcetester/tests/maildir @ 1023876 ]
 #	[ add resources/maildir/tests/maildir HEAD 1024156 ]
-match /trunk/KDE/kdepim/runtime/resources/maildir/tests/maildir/
-    repository kdepim-runtime
-    prefix resources/maildir/tests/maildir/
-    branch master
-    min revision 1024156
-end match
-
 #	[ move trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir 1024156 1023876 ]
 match /trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir/
     repository kdepim-runtime
@@ -1251,13 +950,6 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim/akonadi/resources/maildir/tests/maildir @ 1024683 <- /trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir @ 1024156 ]
 #	[ Parent: /trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir @ 1024154 <- /trunk/playground/pim/akonaditest/resourcetester/tests/maildir @ 1023876 ]
 #	[ add resources/maildir/tests/maildir/.root.directory HEAD 1024156 ]
-match /trunk/KDE/kdepim/runtime/resources/maildir/tests/maildir/.root.directory/
-    repository kdepim-runtime
-    prefix resources/maildir/tests/maildir/.root.directory/
-    branch master
-    min revision 1024156
-end match
-
 #	[ parent trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir/.root.directory 1024156 1023876 ]
 match /trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir/.root.directory/
     repository kdepim-runtime
@@ -1415,13 +1107,6 @@ end match
 #	[ Move/Replace: /branches/work/akonadi-ports/kdepim/akonadi/resources/mailtransport_dummy @ 986743 <- /branches/kdepim/soc/kdepim/akonadi/resources/mailtransport_dummy @ 977512 ]
 #	[ Move/Replace: /branches/kdepim/soc/kdepim/akonadi/resources/mailtransport_dummy @ 977512 <- /trunk/playground/pim/akonadi/mailtransport_dummy_resource @ 977493 ]
 #	[ add resources/mailtransport_dummy HEAD 1010069 ]
-match /trunk/KDE/kdepim/runtime/resources/mailtransport_dummy/
-    repository kdepim-runtime
-    prefix resources/mailtransport_dummy/
-    branch master
-    min revision 1010069
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/akonadi/resources/mailtransport_dummy 1010069 977512 ]
 match /branches/work/akonadi-ports/kdepim/akonadi/resources/mailtransport_dummy/
     repository kdepim-runtime
@@ -1454,13 +1139,6 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim/akonadi/resources/mailtransport_dummy @ 986743 <- /branches/kdepim/soc/kdepim/akonadi/resources/mailtransport_dummy @ 977512 ]
 #	[ Parent: /branches/kdepim/soc/kdepim/akonadi/resources/mailtransport_dummy @ 977512 <- /trunk/playground/pim/akonadi/mailtransport_dummy_resource @ 977493 ]
 #	[ add resources/mailtransport_dummy/tests HEAD 1010069 ]
-match /trunk/KDE/kdepim/runtime/resources/mailtransport_dummy/tests/
-    repository kdepim-runtime
-    prefix resources/mailtransport_dummy/tests/
-    branch master
-    min revision 1010069
-end match
-
 #	[ parent branches/work/akonadi-ports/kdepim/akonadi/resources/mailtransport_dummy/tests 1010069 977512 ]
 match /branches/work/akonadi-ports/kdepim/akonadi/resources/mailtransport_dummy/tests/
     repository kdepim-runtime
@@ -1496,13 +1174,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources/microblog @ 949072 <- /trunk/playground/pim/microblog @ 949068 ]
 #	[ add resources/microblog HEAD 949068 ]
-match /trunk/KDE/kdepim/runtime/resources/microblog/
-    repository kdepim-runtime
-    prefix resources/microblog/
-    branch master
-    min revision 949068
-end match
-
 #	[ move trunk/playground/pim/microblog 949068 0 ]
 match /trunk/playground/pim/microblog/
     repository kdepim-runtime
@@ -1522,13 +1193,6 @@ end match
 #	------< trunk/KDE/kdepim/runtime/resources/mixedmaildir/tests >------
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/resources/mixedmaildir/tests @ 1153208 <- /branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests @ 1153205 ]
 #	[ add resources/mixedmaildir/tests HEAD 1153205 ]
-match /trunk/KDE/kdepim/runtime/resources/mixedmaildir/tests/
-    repository kdepim-runtime
-    prefix resources/mixedmaildir/tests/
-    branch master
-    min revision 1153205
-end match
-
 #	[ move branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests 1153205 0 ]
 match /branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/
     repository kdepim-runtime
@@ -1540,13 +1204,6 @@ end match
 #	------< trunk/KDE/kdepim/runtime/resources/mixedmaildir/tests/data >------
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/resources/mixedmaildir/tests/data @ 1154045 <- /branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/data @ 1154043 ]
 #	[ add resources/mixedmaildir/tests/data HEAD 1154043 ]
-match /trunk/KDE/kdepim/runtime/resources/mixedmaildir/tests/data/
-    repository kdepim-runtime
-    prefix resources/mixedmaildir/tests/data/
-    branch master
-    min revision 1154043
-end match
-
 #	[ move branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/data 1154043 0 ]
 match /branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/data/
     repository kdepim-runtime
@@ -1558,13 +1215,6 @@ end match
 #	------< trunk/KDE/kdepim/runtime/resources/mixedmaildir/tests/data/dimap >------
 #	[ Parent: /trunk/KDE/kdepim/runtime/resources/mixedmaildir/tests/data @ 1154045 <- /branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/data @ 1154043 ]
 #	[ add resources/mixedmaildir/tests/data/dimap HEAD 1154043 ]
-match /trunk/KDE/kdepim/runtime/resources/mixedmaildir/tests/data/dimap/
-    repository kdepim-runtime
-    prefix resources/mixedmaildir/tests/data/dimap/
-    branch master
-    min revision 1154043
-end match
-
 #	[ parent branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/data/dimap 1154043 0 ]
 match /branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/data/dimap/
     repository kdepim-runtime
@@ -1613,13 +1263,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources/nntp @ 656879 <- /trunk/KDE/kdepim/akonadi/resources/src/nntp @ 656871 ]
 #	[ add resources/nntp HEAD 656871 ]
-match /trunk/KDE/kdepim/runtime/resources/nntp/
-    repository kdepim-runtime
-    prefix resources/nntp/
-    branch master
-    min revision 656871
-end match
-
 #	[ move trunk/KDE/kdepim/akonadi/resources/src/nntp 656871 0 ]
 match /trunk/KDE/kdepim/akonadi/resources/src/nntp/
     repository kdepim-runtime
@@ -1633,13 +1276,6 @@ end match
 #	[ Parent: /branches/work/kdepim_kcalcore @ 1149030 <- /trunk/KDE/kdepim @ 1149028 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/resources/openxchange @ 1079550 <- /trunk/playground/pim/openxchange @ 1079549 ]
 #	[ add resources/openxchange HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/resources/openxchange/
-    repository kdepim-runtime
-    prefix resources/openxchange/
-    branch master
-    min revision 1161348
-end match
-
 #	[ move branches/work/kdepim_kcalcore/runtime/resources/openxchange 1161348 1079549 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/openxchange/
     repository kdepim-runtime
@@ -1662,13 +1298,6 @@ end match
 #	[ Parent: /branches/work/kdepim_kcalcore @ 1149030 <- /trunk/KDE/kdepim @ 1149028 ]
 #	[ Parent: /trunk/KDE/kdepim/runtime/resources/openxchange @ 1079550 <- /trunk/playground/pim/openxchange @ 1079549 ]
 #	[ add resources/openxchange/icons HEAD 1161348 ]
-match /trunk/KDE/kdepim/runtime/resources/openxchange/icons/
-    repository kdepim-runtime
-    prefix resources/openxchange/icons/
-    branch master
-    min revision 1161348
-end match
-
 #	[ parent branches/work/kdepim_kcalcore/runtime/resources/openxchange/icons 1161348 1079549 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/openxchange/icons/
     repository kdepim-runtime
@@ -1696,13 +1325,6 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim/runtime @ 1061292 <- /branches/work/akonadi-ports/kdepim/akonadi @ 1061290 ]
 #	[ Move/Replace: /branches/work/akonadi-ports/kdepim/akonadi/resources/pop3 @ 986770 <- /trunk/playground/pim/akonadi/pop3 @ 986769 ]
 #	[ add resources/pop3 HEAD 1073676 ]
-match /trunk/KDE/kdepim/runtime/resources/pop3/
-    repository kdepim-runtime
-    prefix resources/pop3/
-    branch master
-    min revision 1073676
-end match
-
 #	[ move branches/work/akonadi-ports/kdepim/runtime/resources/pop3 1073676 986769 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/pop3/
     repository kdepim-runtime
@@ -1725,13 +1347,6 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim/runtime @ 1061292 <- /branches/work/akonadi-ports/kdepim/akonadi @ 1061290 ]
 #	[ Parent: /branches/work/akonadi-ports/kdepim/akonadi/resources/pop3 @ 986770 <- /trunk/playground/pim/akonadi/pop3 @ 986769 ]
 #	[ add resources/pop3/tests HEAD 1073676 ]
-match /trunk/KDE/kdepim/runtime/resources/pop3/tests/
-    repository kdepim-runtime
-    prefix resources/pop3/tests/
-    branch master
-    min revision 1073676
-end match
-
 #	[ parent branches/work/akonadi-ports/kdepim/runtime/resources/pop3/tests 1073676 986769 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/pop3/tests/
     repository kdepim-runtime
@@ -1839,13 +1454,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources/vcard @ 656879 <- /trunk/KDE/kdepim/akonadi/resources/src/vcard @ 656871 ]
 #	[ add resources/vcard HEAD 656871 ]
-match /trunk/KDE/kdepim/runtime/resources/vcard/
-    repository kdepim-runtime
-    prefix resources/vcard/
-    branch master
-    min revision 656871
-end match
-
 #	[ move trunk/KDE/kdepim/akonadi/resources/src/vcard 656871 0 ]
 match /trunk/KDE/kdepim/akonadi/resources/src/vcard/
     repository kdepim-runtime
@@ -1904,13 +1512,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resourcetester/tests/unittestenv @ 1023887 <- /trunk/playground/pim/akonaditest/resourcetester/tests/unittestenv @ 1023876 ]
 #	[ add resourcetester/tests/unittestenv HEAD 1023876 ]
-match /trunk/KDE/kdepim/runtime/resourcetester/tests/unittestenv/
-    repository kdepim-runtime
-    prefix resourcetester/tests/unittestenv/
-    branch master
-    min revision 1023876
-end match
-
 #	[ move trunk/playground/pim/akonaditest/resourcetester/tests/unittestenv 1023876 0 ]
 match /trunk/playground/pim/akonaditest/resourcetester/tests/unittestenv/
     repository kdepim-runtime
@@ -1923,13 +1524,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ Parent: /trunk/KDE/kdepim/akonadi/resourcetester/tests/unittestenv @ 1023887 <- /trunk/playground/pim/akonaditest/resourcetester/tests/unittestenv @ 1023876 ]
 #	[ add resourcetester/tests/unittestenv/kdehome HEAD 1023876 ]
-match /trunk/KDE/kdepim/runtime/resourcetester/tests/unittestenv/kdehome/
-    repository kdepim-runtime
-    prefix resourcetester/tests/unittestenv/kdehome/
-    branch master
-    min revision 1023876
-end match
-
 #	[ parent trunk/playground/pim/akonaditest/resourcetester/tests/unittestenv/kdehome 1023876 0 ]
 match /trunk/playground/pim/akonaditest/resourcetester/tests/unittestenv/kdehome/
     repository kdepim-runtime
@@ -1970,13 +1564,6 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/xml @ 946946 <- /trunk/playground/pim/akonadi/xml @ 946339 ]
 #	[ Move/Replace: /trunk/playground/pim/akonadi/xml @ 939443 <- /trunk/playground/pim/libakonadi-xml @ 939440 ]
 #	[ add xml HEAD 946339 ]
-match /trunk/KDE/kdepim/runtime/xml/
-    repository kdepim-runtime
-    prefix xml/
-    branch master
-    min revision 946339
-end match
-
 #	[ move trunk/playground/pim/akonadi/xml 946339 939440 ]
 match /trunk/playground/pim/akonadi/xml/
     repository kdepim-runtime
@@ -1999,13 +1586,6 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/akonadi/xml @ 946946 <- /trunk/playground/pim/akonadi/xml @ 946339 ]
 #	[ Parent: /trunk/playground/pim/akonadi/xml @ 939443 <- /trunk/playground/pim/libakonadi-xml @ 939440 ]
 #	[ add xml/tests HEAD 946339 ]
-match /trunk/KDE/kdepim/runtime/xml/tests/
-    repository kdepim-runtime
-    prefix xml/tests/
-    branch master
-    min revision 946339
-end match
-
 #	[ parent trunk/playground/pim/akonadi/xml/tests 946339 939440 ]
 match /trunk/playground/pim/akonadi/xml/tests/
     repository kdepim-runtime
@@ -2023,10 +1603,22 @@ match /trunk/playground/pim/libakonadi-xml/tests/
     max revision 939440
 end match
 
+#	------< trunk/KDE/kdepim/runtime >------
+#	[ Move/Replace: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
+#	[ add  HEAD 1061321 ]
+# match /trunk/KDE/kdepim/runtime/
+#     repository kdepim-runtime
+#     branch master
+#     min revision 1061321
+# end match
 include kdepim-modules-rules
-include kdepim-branches-rules
-include kdepim-tags-rules
-include kdepim-recurse-rules
+
+#	[ move trunk/KDE/kdepim/akonadi 1061321 0 ]
+match /trunk/KDE/kdepim/akonadi/
+    repository kdepim-runtime
+    branch master
+    max revision 1061321
+end match
 
 match /
 end match

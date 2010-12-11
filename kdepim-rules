@@ -7,41 +7,19 @@ create repository ${REPO}
 end repository
 
 include kdepim-common-ignore-rules
+include kdepim-recurse-rules
+include kdepim-tags-rules
+include kdepim-branches-rules
+
+# /runtime/ is another module
+match /.*/kdepim/runtime/
+end match
 
 #	------< trunk/KDE/kdepim >------
 #	[ Move/Replace: /trunk/KDE/kdepim @ 455551 <- /branches/KDE/3.5/kdepim @ 455550 ]
 #	[ Move/Replace: /branches/KDE/3.5/kdepim @ 438982 <- /trunk/KDE/kdepim @ 438981 ]
 #	[ Move/Replace: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add  HEAD 455550 ]
-match /trunk/KDE/kdepim/
-    repository kdepim
-    branch master
-    min revision 455550
-end match
-
-#	[ move branches/KDE/3.5/kdepim 455550 438981 ]
-match /branches/KDE/3.5/kdepim/
-    repository kdepim
-    branch master
-    max revision 455550
-    min revision 438981
-end match
-
-#	[ move trunk/KDE/kdepim 438981 409202 ]
-match /trunk/KDE/kdepim/
-    repository kdepim
-    branch master
-    max revision 438981
-    min revision 409202
-end match
-
-#	[ move trunk/kdepim 409202 0 ]
-match /trunk/kdepim/
-    repository kdepim
-    branch master
-    max revision 409202
-end match
-
 #	------< trunk/KDE/kdepim/akonadi_next >------
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi_next @ 1165704 <- /trunk/KDE/kdepim/akonadi/akonadi_next @ 1165573 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/akonadi_next @ 949011 <- /trunk/playground/pim/akonadi/akonadi_next @ 949009 ]
@@ -4721,9 +4699,6 @@ end match
 #	[ add wizards/tests HEAD 0 ]
 
 include kdepim-modules-rules
-include kdepim-branches-rules
-include kdepim-tags-rules
-include kdepim-recurse-rules
 
 match /
 end match

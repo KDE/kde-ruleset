@@ -1,11 +1,40 @@
 # vim: set filetype=conf
+# match /trunk/KDE/${MODULE}/
+#     repository ${MODULE}
+#     branch master
+# end match
+# 
+# match /trunk/${MODULE}/
+#     repository ${MODULE}
+#     branch master
+#     max revision 409202
+# end match
+
 match /trunk/KDE/${MODULE}/
-    repository ${MODULE}
+    repository ${REPO}
     branch master
+    min revision 455550
 end match
+
+#	[ move branches/KDE/3.5/kdepim 455550 438981 ]
+match /branches/KDE/3.5/${MODULE}/
+    repository ${REPO}
+    branch master
+    max revision 455550
+    min revision 438981
+end match
+
+#	[ move trunk/KDE/kdepim 438981 409202 ]
+match /trunk/KDE/${MODULE}/
+    repository ${REPO}
+    branch master
+    max revision 438981
+    min revision 409202
+end match
+
+#	[ move trunk/kdepim 409202 0 ]
 match /trunk/${MODULE}/
-    repository ${MODULE}
+    repository ${REPO}
     branch master
     max revision 409202
 end match
-
