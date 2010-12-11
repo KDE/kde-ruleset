@@ -1,0 +1,4704 @@
+#
+# Create the KDE modules
+#
+create repository arts
+end repository
+
+create repository kdesupport/qca
+end repository
+create repository kdesupport/taglib
+end repository
+create repository kdesupport/strigi
+end repository
+create repository kdesupport/soprano
+end repository
+create repository kdesupport/phonon
+end repository
+create repository kdesupport/akonadi
+end repository
+create repository kdesupport/automoc
+end repository
+
+create repository KDE/kdeaccessibility
+end repository
+
+create repository KDE/kdeaddons
+end repository
+
+create repository KDE/kdeadmin
+end repository
+
+create repository KDE/kdeartwork
+end repository
+
+create repository KDE/kdeedu/blinken
+end repository
+create repository KDE/kdeedu/cantor
+end repository
+create repository KDE/kdeedu/kalgebra
+end repository
+create repository KDE/kdeedu/kalzium
+end repository
+create repository KDE/kdeedu/kanagram
+end repository
+create repository KDE/kdeedu/kbruch
+end repository
+create repository KDE/kdeedu/kgeography
+end repository
+create repository KDE/kdeedu/khangman
+end repository
+create repository KDE/kdeedu/kig
+end repository
+create repository KDE/kdeedu/kiten
+end repository
+create repository KDE/kdeedu/klettres
+end repository
+create repository KDE/kdeedu/kmplot
+end repository
+create repository KDE/kdeedu/kstars
+end repository
+create repository KDE/kdeedu/ktouch
+end repository
+create repository KDE/kdeedu/kturtle
+end repository
+create repository KDE/kdeedu/kwordquiz
+end repository
+create repository KDE/kdeedu/marble
+end repository
+create repository KDE/kdeedu/parley
+end repository
+create repository KDE/kdeedu/rocs
+end repository
+create repository KDE/kdeedu/step
+end repository
+create repository KDE/kdeedu/cmake
+end repository
+create repository KDE/kdeedu/data
+end repository
+create repository KDE/kdeedu/libkdeedu
+end repository
+create repository KDE/kdeedu/doc
+end repository
+
+#got replaced by kanagram
+create repository KDE/kdeedu/kmessedwords
+end repository
+
+#abandoned/moved stuff
+create repository KDE/kdeedu/keduca
+end repository
+create repository KDE/kdeedu/klatin
+end repository
+create repository KDE/kdeedu/kgeo
+end repository
+create repository KDE/kdeedu/kpercentage
+end repository
+create repository KDE/kdeedu/kverbos
+end repository
+create repository KDE/kdeedu/flashkard
+end repository
+create repository KDE/kdeedu/knorskverbs
+end repository
+create repository KDE/kdeedu/kmathtool
+end repository
+create repository KDE/kdeedu/applnk
+end repository
+create repository KDE/kdeedu/menus
+end repository
+create repository KDE/kdeedu/plasma
+end repository
+
+create repository KDE/kdegames
+end repository
+
+create repository KDE/kdegraphics/cmake
+end repository
+create repository KDE/kdegraphics/doc
+end repository
+create repository KDE/kdegraphics/gwenview
+end repository
+create repository KDE/kdegraphics/kamera
+end repository
+create repository KDE/kdegraphics/kcolorchooser
+end repository
+create repository KDE/kdegraphics/kgamma
+end repository
+create repository KDE/kdegraphics/kolourpaint
+end repository
+create repository KDE/kdegraphics/kruler
+end repository
+create repository KDE/kdegraphics/ksaneplugin
+end repository
+create repository KDE/kdegraphics/ksnapshot
+end repository
+create repository KDE/kdegraphics/okular
+end repository
+create repository KDE/kdegraphics/strigi-analyzer
+end repository
+create repository KDE/kdegraphics/svgpart
+end repository
+create repository KDE/kdegraphics/thumbnailers
+end repository
+create repository KDE/kdegraphics/libs/libkdcraw
+end repository
+create repository KDE/kdegraphics/libs/libkdcraw-libraw #separate?
+end repository
+create repository KDE/kdegraphics/libs/libkexiv2
+end repository
+create repository KDE/kdegraphics/libs/libkipi
+end repository
+create repository KDE/kdegraphics/libs/libksane
+end repository
+create repository KDE/kdegraphics/libs/mobipocket
+end repository
+
+#abandoned/moved stuff
+create repository KDE/kdegraphics/kghostview
+end repository
+create repository KDE/kdegraphics/kview
+end repository
+create repository KDE/kdegraphics/kpaint
+end repository
+create repository KDE/kdegraphics/kfax
+end repository
+create repository KDE/kdegraphics/kfract
+end repository
+create repository KDE/kdegraphics/kdvi
+end repository
+create repository KDE/kdegraphics/kiconedit
+end repository
+create repository KDE/kdegraphics/katalog
+end repository
+create repository KDE/kdegraphics/kpixmap2bitmap
+end repository
+create repository KDE/kdegraphics/libminimagick
+end repository
+create repository KDE/kdegraphics/pixie
+end repository
+create repository KDE/kdegraphics/kviewshell
+end repository
+create repository KDE/kdegraphics/kfaxview
+end repository
+create repository KDE/kdegraphics/kcoloredit
+end repository
+create repository KDE/kdegraphics/libkscan
+end repository
+create repository KDE/kdegraphics/kooka
+end repository
+create repository KDE/kdegraphics/kpovmodeler
+end repository
+create repository KDE/kdegraphics/ksvg
+end repository
+create repository KDE/kdegraphics/kuickshow
+end repository
+create repository KDE/kdegraphics/kmrml
+end repository
+create repository KDE/kdegraphics/kpdf
+end repository
+create repository KDE/kdegraphics/ligature
+end repository
+
+create repository KDE/kdemultimedia/cmake
+end repository
+create repository KDE/kdemultimedia/doc
+end repository
+create repository KDE/kdemultimedia/dragonplayer
+end repository
+create repository KDE/kdemultimedia/ffmpegthumbs
+end repository
+create repository KDE/kdemultimedia/kioslave
+end repository
+create repository KDE/kdemultimedia/kmix
+end repository
+create repository KDE/kdemultimedia/libkcddb
+end repository
+create repository KDE/kdemultimedia/libkcompactdisc
+end repository
+create repository KDE/kdemultimedia/libkdemultimedia
+end repository
+create repository KDE/kdemultimedia/mplayerthumbs
+end repository
+create repository KDE/kdemultimedia/strigi-analyzer
+end repository
+create repository KDE/kdemultimedia/krec
+end repository
+
+#abandoned/moved stuff
+create repository KDE/kdemultimedia/kscd
+end repository
+create repository KDE/kdemultimedia/kmedia
+end repository
+create repository KDE/kdemultimedia/kmid
+end repository
+create repository KDE/kdemultimedia/kmidi
+end repository
+create repository KDE/kdemultimedia/arts
+end repository
+create repository KDE/kdemultimedia/kautorun
+end repository
+create repository KDE/kdemultimedia/kaiman
+end repository
+create repository KDE/kdemultimedia/aktion
+end repository
+create repository KDE/kdemultimedia/kmix2
+end repository
+create repository KDE/kdemultimedia/noatun
+end repository
+create repository KDE/kdemultimedia/mpeglib
+end repository
+create repository KDE/kdemultimedia/mpeglib_artsplug
+end repository
+create repository KDE/kdemultimedia/kaboodle
+end repository
+create repository KDE/kdemultimedia/k3b
+end repository
+create repository KDE/kdemultimedia/mpg123_artsplugin
+end repository
+create repository KDE/kdemultimedia/oggvorbis_artsplugin
+end repository
+create repository KDE/kdemultimedia/koncd
+end repository
+create repository KDE/kdemultimedia/kaudiocreator
+end repository
+create repository KDE/kdemultimedia/noatun-plugins
+end repository
+create repository KDE/kdemultimedia/juk
+end repository
+create repository KDE/kdemultimedia/audiofile_artsplugin
+end repository
+create repository KDE/kdemultimedia/kreatecd
+end repository
+create repository KDE/kdemultimedia/xine_artsplugin
+end repository
+create repository KDE/kdemultimedia/kappfinder-data
+end repository
+create repository KDE/kdemultimedia/akode #TODO now in kdesupport
+end repository
+create repository KDE/kdemultimedia/akode_artsplugin
+end repository
+create repository KDE/kdemultimedia/libkmid
+end repository
+create repository KDE/kdemultimedia/phonon-nmm #merge with phonon-backends?
+end repository
+create repository KDE/kdemultimedia/phonon-xine #merge with phonon-backends?
+end repository
+create repository KDE/kdemultimedia/phonon-gst #merge with phonon-backends?
+end repository
+create repository KDE/kdemultimedia/phonon-gst2 #merge with phonon-backends?
+end repository
+
+create repository KDE/kdenetwork/cmake
+end repository
+create repository KDE/kdenetwork/doc
+end repository
+create repository KDE/kdenetwork/filesharing
+end repository
+create repository KDE/kdenetwork/kdnssd
+end repository
+create repository KDE/kdenetwork/kget
+end repository
+create repository KDE/kdenetwork/kopete
+end repository
+create repository KDE/kdenetwork/kppp
+end repository
+create repository KDE/kdenetwork/krdc
+end repository
+create repository KDE/kdenetwork/krfb
+end repository
+create repository KDE/kdenetwork/torrent
+end repository
+
+#abandoned/moved stuff
+create repository KDE/kdenetwork/kmail #correct rules in extra rule file
+end repository
+create repository KDE/kdenetwork/krn
+end repository
+create repository KDE/kdenetwork/knu
+end repository
+create repository KDE/kdenetwork/korn
+end repository
+create repository KDE/kdenetwork/ksirc
+end repository
+create repository KDE/kdenetwork/ktalkd
+end repository
+create repository KDE/kdenetwork/kbiff
+end repository
+create repository KDE/kdenetwork/kfinger
+end repository
+create repository KDE/kdenetwork/karchie
+end repository
+create repository KDE/kdenetwork/caitoo
+end repository
+create repository KDE/kdenetwork/columbo
+end repository
+create repository KDE/kdenetwork/libsearch
+end repository
+create repository KDE/kdenetwork/kxmlrpc
+end repository
+create repository KDE/kdenetwork/keystone
+end repository
+create repository KDE/kdenetwork/knode
+end repository
+create repository KDE/kdenetwork/kit
+end repository
+create repository KDE/kdenetwork/knewsticker
+end repository
+create repository KDE/kdenetwork/kmailcvt
+end repository
+create repository KDE/kdenetwork/csmb
+end repository
+create repository KDE/kdenetwork/lanbrowsing
+end repository
+create repository KDE/kdenetwork/kdict
+end repository
+create repository KDE/kdenetwork/libkdenetwork
+end repository
+create repository KDE/kdenetwork/mimelib
+end repository
+create repository KDE/kdenetwork/kpf
+end repository
+create repository KDE/kdenetwork/kchat
+end repository
+create repository KDE/kdenetwork/librss
+end repository
+create repository KDE/kdenetwork/certmanager
+end repository
+create repository KDE/kdenetwork/kioslaves
+end repository
+create repository KDE/kdenetwork/ktnef
+end repository
+create repository KDE/kdenetwork/wifi
+end repository
+create repository KDE/kdenetwork/dcoprss
+end repository
+
+
+create repository KDE/kdesdk/cervisia
+end repository
+create repository KDE/kdesdk/cmake
+end repository
+create repository KDE/kdesdk/doc
+end repository
+create repository KDE/kdesdk/dolphin-plugins
+end repository
+create repository KDE/kdesdk/kapptemplate
+end repository
+create repository KDE/kdesdk/kate
+end repository
+create repository KDE/kdesdk/kbugbuster
+end repository
+create repository KDE/kdesdk/kcachegrind
+end repository
+create repository KDE/kdesdk/kdeaccounts-plugin
+end repository
+create repository KDE/kdesdk/kdepalettes
+end repository
+create repository KDE/kdesdk/kioslave
+end repository
+create repository KDE/kdesdk/kmtrace
+end repository
+create repository KDE/kdesdk/kompare
+end repository
+create repository KDE/kdesdk/kpartloader
+end repository
+create repository KDE/kdesdk/kprofilemethod
+end repository
+create repository KDE/kdesdk/kspy
+end repository
+create repository KDE/kdesdk/kstartperf
+end repository
+create repository KDE/kdesdk/kuiviewer
+end repository
+create repository KDE/kdesdk/kunittest
+end repository
+create repository KDE/kdesdk/lokalize
+end repository
+create repository KDE/kdesdk/poxml
+end repository
+create repository KDE/kdesdk/scheck
+end repository
+create repository KDE/kdesdk/scripts
+end repository
+create repository KDE/kdesdk/strigi-analyzer
+end repository
+create repository KDE/kdesdk/umbrello
+end repository
+create repository KDE/kdesdk/okteta
+end repository
+
+#abandoned/moved stuff
+create repository KDE/kdesdk/kbabel
+end repository
+create repository KDE/kdesdk/kdedoc
+end repository
+create repository KDE/kdesdk/kexample
+end repository
+create repository KDE/kdesdk/kdesgmltools
+end repository
+create repository KDE/kdesdk/kappgen
+end repository
+create repository KDE/kdesdk/kscreenruler
+end repository
+create repository KDE/kdesdk/kdewidgets
+end repository
+create repository KDE/kdesdk/ebn
+end repository
+create repository KDE/kdesdk/ktranslator
+end repository
+
+
+create repository KDE/kdetoys
+end repository
+
+create repository KDE/kdeutils/ark
+end repository
+create repository KDE/kdeutils/cmake
+end repository
+create repository KDE/kdeutils/doc
+end repository
+create repository KDE/kdeutils/kcalc
+end repository
+create repository KDE/kdeutils/kcharselect
+end repository
+create repository KDE/kdeutils/kdf
+end repository
+create repository KDE/kdeutils/kfloppy
+end repository
+create repository KDE/kdeutils/kgpg
+end repository
+create repository KDE/kdeutils/kremotecontrol
+end repository
+create repository KDE/kdeutils/ktimer
+end repository
+create repository KDE/kdeutils/kwallet
+end repository
+create repository KDE/kdeutils/printer-applet
+end repository
+create repository KDE/kdeutils/superkaramba
+end repository
+create repository KDE/kdeutils/sweeper
+end repository
+create repository KDE/kdeutils/filelight
+end repository
+
+#abandoned/moved stuff
+create repository KDE/kdeutils/kedit
+end repository
+create repository KDE/kdeutils/khexedit
+end repository
+create repository KDE/kdeutils/khexdit
+end repository
+create repository KDE/kdeutils/kjots
+end repository
+create repository KDE/kdeutils/knotes
+end repository
+create repository KDE/kdeutils/karm #renamed to ktimetracker (kdepim)
+end repository
+create repository KDE/kdeutils/kzip
+end repository
+create repository KDE/kdeutils/kljettool
+end repository
+create repository KDE/kdeutils/ktop
+end repository
+create repository KDE/kdeutils/kwrite #belongs to kate repository
+end repository
+create repository KDE/kdeutils/kab
+end repository
+create repository KDE/kdeutils/kpm
+end repository
+create repository KDE/kdeutils/klpq
+end repository
+create repository KDE/kdeutils/klipper
+end repository
+create repository KDE/kdeutils/ktimemon
+end repository
+create repository KDE/kdeutils/ktreebrowser
+end repository
+create repository KDE/kdeutils/iconpackager
+end repository
+create repository KDE/kdeutils/klaptopdaemon
+end repository
+create repository KDE/kdeutils/kdepasswd
+end repository
+create repository KDE/kdeutils/kdessh
+end repository
+create repository KDE/kdeutils/kfind
+end repository
+create repository KDE/kdeutils/kfontmanager
+end repository
+create repository KDE/kdeutils/charselectapplet
+end repository
+create repository KDE/kdeutils/klprfax
+end repository
+create repository KDE/kdeutils/ksim
+end repository
+create repository KDE/kdeutils/kregexpeditor
+end repository
+create repository KDE/kdeutils/regexptest
+end repository
+create repository KDE/kdeutils/kcardtools
+end repository
+create repository KDE/kdeutils/keurocalc
+end repository
+create repository KDE/kdeutils/cdbakeoven
+end repository
+create repository KDE/kdeutils/kmilo
+end repository
+create repository KDE/kdeutils/kdelirc
+end repository
+
+
+create repository KDE/kdewebdev
+end repository
+
+create repository KDE/kdeplasma-addons
+end repository
+
+create repository extragear/konversation
+end repository
+
+create repository extragear/k3b
+end repository
+
+create repository extragear/kmyfirewall
+end repository
+
+create repository extragear/kfish
+end repository
+
+create repository extragear/kallers
+end repository
+
+create repository extragear/kreatecd
+end repository
+
+create repository extragear/cdbakeoven
+end repository
+
+create repository extragear/kfortune
+end repository
+
+create repository extragear/kcpuload
+end repository
+create repository extragear/knetload
+end repository
+
+create repository extragear/kimdaba
+end repository
+
+create repository extragear/kmplayer
+end repository
+
+create repository extragear/kst
+end repository
+
+create repository extragear/kile
+end repository
+
+create repository extragear/krecipes
+end repository
+
+create repository extragear/kdebluetooth
+end repository
+
+create repository extragear/kmldonkey
+end repository
+
+create repository extragear/klicker
+end repository
+
+create repository extragear/amarok
+end repository
+
+create repository extragear/kdiff3
+end repository
+
+create repository extragear/showimg
+end repository
+
+create repository extragear/kiosktool
+end repository
+
+create repository extragear/kdetv
+end repository
+
+create repository extragear/keurocalc
+end repository
+
+create repository extragear/kipi-plugins
+end repository
+
+create repository extragear/libkonfig
+end repository
+
+create repository extragear/kcfgcreator
+end repository
+
+create repository extragear/kconfigeditor
+end repository
+
+create repository extragear/digikam
+end repository
+
+create repository extragear/libkexif
+end repository
+
+create repository extragear/pwmanager
+end repository
+
+create repository extragear/libkeg
+end repository
+
+create repository extragear/digikamimageplugins
+end repository
+
+create repository extragear/kplayer
+end repository
+
+create repository extragear/ksupplicant
+end repository
+
+create repository extragear/ksynaptics
+end repository
+
+create repository extragear/viki
+end repository
+
+create repository extragear/eqchem
+end repository
+
+create repository extragear/libkholidays_ng
+end repository
+
+create repository extragear/systempreferences
+end repository
+
+create repository extragear/plastik2
+end repository
+
+create repository extragear/datakiosk
+end repository
+
+create repository extragear/kast
+end repository
+
+create repository extragear/defense
+end repository
+
+create repository extragear/kchart-previews
+end repository
+
+create repository extragear/kqf
+end repository
+
+create repository extragear/jukquiz
+end repository
+
+create repository extragear/kickpim
+end repository
+
+create repository extragear/daap
+end repository
+
+create repository extragear/kextprocess
+end repository
+
+create repository extragear/smooth-blend
+end repository
+
+create repository extragear/libical
+end repository
+
+create repository extragear/kopete-plugins
+end repository
+
+create repository extragear/knetwalk
+end repository
+
+create repository extragear/kdissert
+end repository
+
+create repository extragear/kio_sql
+end repository
+
+create repository extragear/kapture
+end repository
+
+create repository extragear/kdetestscripts
+end repository
+
+create repository extragear/rkdebuilder
+end repository
+
+create repository extragear/kopete-protocols
+end repository
+
+create repository extragear/ksystemlog
+end repository
+
+create repository extragear/ksmssend
+end repository
+
+create repository extragear/kchat
+end repository
+
+create repository extragear/knetworksettings
+end repository
+
+create repository extragear/kftpgrabber
+end repository
+
+create repository extragear/ktorrent
+end repository
+
+create repository extragear/kard
+end repository
+
+create repository extragear/kfeedbackwizard
+end repository
+
+create repository extragear/ksniffer
+end repository
+
+create repository extragear/acldlg
+end repository
+
+create repository extragear/kdombinder
+end repository
+
+create repository extragear/kalcul
+end repository
+
+create repository extragear/kmathtool
+end repository
+
+create repository extragear/knemo
+end repository
+
+create repository extragear/metabar
+end repository
+
+create repository extragear/systemsettings
+end repository
+
+create repository extragear/konquitheripper
+end repository
+
+create repository extragear/oscartestserver
+end repository
+
+create repository extragear/kraft
+end repository
+
+create repository extragear/chinchilla
+end repository
+
+create repository extragear/hiq
+end repository
+
+create repository extragear/dragonegg
+end repository
+
+create repository extragear/kio-clucene
+end repository
+
+create repository extragear/kalva
+end repository
+
+create repository extragear/kro
+end repository
+
+create repository extragear/pekunia
+end repository
+
+create repository extragear/tenor
+end repository
+
+create repository extragear/kcall
+end repository
+
+create repository extragear/ksim
+end repository
+
+create repository extragear/fraqtive
+end repository
+
+create repository extragear/kboggle
+end repository
+
+create repository extragear/kamion
+end repository
+
+create repository extragear/adept
+end repository
+
+create repository extragear/kopete_skype
+end repository
+
+create repository extragear/klabelbrowser
+end repository
+
+create repository extragear/eclipse
+end repository
+
+create repository extragear/koto
+end repository
+
+create repository extragear/kinstaller
+end repository
+
+create repository extragear/kat
+end repository
+
+create repository extragear/nokey
+end repository
+
+create repository extragear/pptfilter
+end repository
+
+create repository extragear/abakus
+end repository
+
+create repository extragear/kio_gopher
+end repository
+
+create repository extragear/kdnssd-avahi
+end repository
+
+create repository extragear/knoware
+end repository
+
+create repository extragear/kurriculum
+end repository
+
+create repository extragear/ewok
+end repository
+
+create repository extragear/kabcclient
+end repository
+
+create repository extragear/kfile_chemical
+end repository
+
+create repository extragear/guidance
+end repository
+
+create repository extragear/tweakkde
+end repository
+
+create repository extragear/kaffeine
+end repository
+
+create repository extragear/gamefu
+end repository
+
+create repository extragear/koware
+end repository
+
+create repository extragear/rsibreak
+end repository
+
+create repository extragear/kvpnc
+end repository
+
+create repository extragear/knetd
+end repository
+
+create repository extragear/appfs
+end repository
+
+create repository extragear/miniscons
+end repository
+
+create repository extragear/komacro
+end repository
+
+create repository extragear/kimono
+end repository
+
+create repository extragear/lsbcpp
+end repository
+
+create repository extragear/kwest
+end repository
+
+create repository extragear/guieditor
+end repository
+
+create repository extragear/kdigest
+end repository
+
+create repository extragear/plasma
+end repository
+
+create repository extragear/atmosphere
+end repository
+
+create repository extragear/keep
+end repository
+
+create repository extragear/kphotoalbum
+end repository
+
+create repository extragear/jultagger
+end repository
+
+create repository extragear/krita-plugins
+end repository
+
+create repository extragear/kdbus
+end repository
+
+create repository kdesupport/akode
+end repository
+
+create repository kdesupport/indexlib
+end repository
+
+create repository extragear/libqgs
+end repository
+
+create repository extragear/libkgs
+end repository
+
+create repository extragear/kio_rar
+end repository
+create repository extragear/kio_p7zip
+end repository
+
+create repository extragear/kwin-decor-suse2
+end repository
+
+create repository extragear/kross-kspread
+end repository
+
+create repository extragear/smoothslidesaver
+end repository
+
+create repository extragear/khalkhiapplet
+end repository
+
+create repository extragear/waf
+end repository
+
+create repository extragear/kedulaunch
+end repository
+
+create repository extragear/kalculus
+end repository
+
+create repository extragear/katapult
+end repository
+
+create repository extragear/sessionapplet
+end repository
+
+create repository extragear/medialib
+end repository
+
+create repository extragear/knetstats
+end repository
+
+create repository extragear/flake
+end repository
+
+create repository extragear/yakuake
+end repository
+
+create repository extragear/kmobiletools
+end repository
+
+create repository extragear/knetworkmanager
+end repository
+
+create repository extragear/kerry
+end repository
+
+create repository extragear/krazy
+end repository
+
+create repository extragear/kmobile
+end repository
+
+create repository extragear/Oxygen
+end repository
+
+create repository kdesupport/strigi
+end repository
+
+create repository extragear/workflow
+end repository
+
+create repository extragear/icemon
+end repository
+
+create repository kdesupport/kdewin32
+end repository
+
+create repository extragear/strigiapplet
+end repository
+
+create repository extragear/kiriki
+end repository
+
+create repository extragear/kombination
+end repository
+
+create repository extragear/market
+end repository
+
+create repository extragear/draughts
+end repository
+
+create repository extragear/kgraphviewer
+end repository
+
+create repository extragear/cokoon
+end repository
+
+create repository extragear/qrdf
+end repository
+
+create repository extragear/kholiday_editor
+end repository
+
+create repository extragear/physiks
+end repository
+
+create repository extragear/konstantin
+end repository
+
+create repository extragear/kreative3d
+end repository
+
+create repository extragear/ktu
+end repository
+
+create repository extragear/workflow-addons
+end repository
+
+create repository extragear/dbmodeler
+end repository
+
+create repository kdesupport/eigen
+end repository
+
+create repository kdesupport/dbus
+end repository
+
+create repository extragear/oskar
+end repository
+
+create repository extragear/kbfx_plasma
+end repository
+
+create repository extragear/seebytouch
+end repository
+
+create repository extragear/orca-dbus
+end repository
+
+create repository extragear/kgrab
+end repository
+
+create repository extragear/whatsthisabout
+end repository
+
+create repository extragear/kboard
+end repository
+
+create repository extragear/livedesigner
+end repository
+
+create repository extragear/strigiplasmoid
+end repository
+
+create repository extragear/raptor
+end repository
+
+create repository extragear/smoker
+end repository
+
+create repository extragear/uiextractor
+end repository
+
+create repository extragear/kblog
+end repository
+
+create repository extragear/qma
+end repository
+
+create repository extragear/datasources
+end repository
+
+create repository extragear/odbcstats
+end repository
+
+create repository extragear/tripod
+end repository
+
+create repository extragear/sqlquery
+end repository
+
+create repository extragear/ktabedit
+end repository
+
+create repository extragear/mailody
+end repository
+
+create repository extragear/carddecks
+end repository
+
+create repository extragear/kallery
+end repository
+
+create repository extragear/kdevelop-pg
+end repository
+
+create repository extragear/dolphin
+end repository
+
+create repository extragear/kldraw
+end repository
+
+create repository extragear/kwlan
+end repository
+
+create repository extragear/UNNAMED_READER
+end repository
+
+create repository extragear/vtkdesigner
+end repository
+
+create repository extragear/nepomuk-kde
+end repository
+
+create repository extragear/contacts
+end repository
+
+create repository extragear/khalkhicards
+end repository
+
+create repository extragear/ksquares
+end repository
+
+create repository extragear/kdevelop3-extra-plugins
+end repository
+
+create repository extragear/koregressions
+end repository
+
+create repository extragear/xmlstat
+end repository
+
+create repository extragear/kedit
+end repository
+
+create repository extragear/ideal
+end repository
+
+create repository extragear/arboretum
+end repository
+
+create repository extragear/Oxygen-sound
+end repository
+
+create repository extragear/grama
+end repository
+
+create repository extragear/plastik-focus
+end repository
+
+create repository extragear/kttt
+end repository
+
+create repository kdesupport/gmm
+end repository
+
+create repository extragear/kdiskmanager
+end repository
+
+create repository extragear/plasmagik
+end repository
+
+create repository extragear/kcompmgr
+end repository
+
+create repository extragear/libplasmagik
+end repository
+
+create repository extragear/klegendary
+end repository
+
+create repository extragear/sonnet
+end repository
+
+create repository extragear/dragonplayer
+end repository
+
+create repository kdesupport/decibel
+end repository
+
+create repository extragear/khalkhi
+end repository
+
+create repository extragear/ksudoku
+end repository
+
+create repository extragear/bovo
+end repository
+
+create repository extragear/kdevelop4-extra-plugins
+end repository
+
+create repository extragear/athec
+end repository
+
+create repository extragear/kbackup
+end repository
+
+create repository extragear/recipientspicker
+end repository
+
+create repository extragear/kbandwidth
+end repository
+
+create repository extragear/galmuri
+end repository
+
+create repository extragear/ksirk
+end repository
+
+create repository kdesupport/kdewin-installer
+end repository
+
+create repository extragear/kluje
+end repository
+
+create repository extragear/qsr
+end repository
+
+create repository extragear/kirocker
+end repository
+
+create repository extragear/kremas
+end repository
+
+create repository extragear/colors
+end repository
+
+create repository extragear/krep
+end repository
+
+create repository extragear/krossjava
+end repository
+
+create repository extragear/kollision
+end repository
+
+create repository extragear/kblogger
+end repository
+
+create repository extragear/kio_mtp
+end repository
+
+create repository extragear/kvkbd
+end repository
+
+create repository extragear/ion
+end repository
+
+create repository extragear/klickety
+end repository
+
+create repository extragear/kjumpingcube
+end repository
+
+create repository extragear/kfouleggs
+end repository
+
+create repository extragear/kpoker
+end repository
+
+create repository extragear/ktron
+end repository
+
+create repository extragear/atlantik
+end repository
+
+create repository extragear/ksokoban
+end repository
+
+create repository extragear/kasteroids
+end repository
+
+create repository extragear/kenolaba
+end repository
+
+create repository extragear/ksnake
+end repository
+
+create repository extragear/atlantikdesigner
+end repository
+
+create repository extragear/khtml_userscript
+end repository
+
+create repository extragear/kpackagemaker
+end repository
+
+create repository extragear/webtech
+end repository
+
+create repository extragear/webkitkde
+end repository
+
+create repository extragear/phpqt
+end repository
+
+create repository extragear/kcoloredit
+end repository
+
+create repository extragear/kiconedit
+end repository
+
+create repository extragear/kpovmodeler
+end repository
+
+create repository extragear/kfacebook
+end repository
+
+create repository extragear/kollagame
+end repository
+
+create repository extragear/strigi-chemical
+end repository
+
+create repository extragear/QReplayingPainter
+end repository
+
+create repository extragear/gwenrename
+end repository
+
+create repository extragear/pinentry-qt4
+end repository
+
+create repository extragear/ktrace
+end repository
+
+create repository extragear/kbfx
+end repository
+
+create repository extragear/kblocks
+end repository
+
+create repository extragear/mirrors
+end repository
+
+create repository extragear/ksirtet
+end repository
+
+create repository extragear/libksirtet
+end repository
+
+create repository extragear/Icon_Rename
+end repository
+
+create repository extragear/tagua
+end repository
+
+create repository extragear/habitat
+end repository
+
+create repository extragear/kdesktop
+end repository
+
+create repository extragear/kpager
+end repository
+
+create repository extragear/phonon-backends
+end repository
+
+create repository extragear/kmid
+end repository
+
+create repository extragear/kfax
+end repository
+
+create repository extragear/charm
+end repository
+
+create repository kdesupport/qimageblitz
+end repository
+
+create repository extragear/inspektor
+end repository
+
+create repository extragear/KDiplomacy
+end repository
+
+create repository extragear/ksimili
+end repository
+
+create repository extragear/colors2
+end repository
+
+create repository extragear/krossfalcon
+end repository
+
+create repository extragear/dealornodeal
+end repository
+
+create repository extragear/del.icio.us
+end repository
+
+create repository extragear/elampo
+end repository
+
+create repository extragear/kpicross
+end repository
+
+create repository extragear/phonon-mixer
+end repository
+
+create repository extragear/pixieplus
+end repository
+
+create repository extragear/noatun-plugins
+end repository
+
+create repository extragear/konq-plugins
+end repository
+
+create repository extragear/knewsticker-scripts
+end repository
+
+create repository extragear/ksig
+end repository
+
+create repository extragear/kbreakout
+end repository
+
+create repository extragear/kiofuse
+end repository
+
+create repository extragear/autostart
+end repository
+
+create repository extragear/phonon-controlwidgets
+end repository
+
+create repository extragear/qbtgstreamer
+end repository
+
+create repository extragear/phonon-pcmio
+end repository
+
+create repository extragear/kdeprint
+end repository
+
+create repository extragear/strigi-foaf
+end repository
+
+create repository extragear/kopete-cryptography
+end repository
+
+create repository extragear/sendimages
+end repository
+
+create repository extragear/pykdesdk4
+end repository
+
+create repository extragear/kopete-scripting
+end repository
+
+create repository extragear/kbackgammon
+end repository
+
+create repository extragear/phonon-phononplay
+end repository
+
+create repository extragear/kapman
+end repository
+
+create repository extragear/conversationview
+end repository
+
+create repository extragear/dashboard
+end repository
+
+create repository extragear/keduca
+end repository
+
+create repository extragear/strigi-bibtex
+end repository
+
+create repository extragear/goya
+end repository
+
+create repository extragear/tamponi
+end repository
+
+create repository extragear/kenvy24
+end repository
+
+create repository extragear/kdevelop-pg-qt
+end repository
+
+create repository extragear/plasmaappletdesigner
+end repository
+
+create repository extragear/plastik
+end repository
+
+create repository extragear/glimpse
+end repository
+
+create repository kdesupport/chrpath
+end repository
+
+create repository extragear/phonon-proxybackend
+end repository
+
+create repository extragear/kcabinet
+end repository
+
+create repository extragear/flickr
+end repository
+
+create repository extragear/createtarball
+end repository
+
+create repository extragear/ktankeditor
+end repository
+
+create repository extragear/ktank
+end repository
+
+create repository extragear/kio-giobridge
+end repository
+
+create repository kdesupport/emerge
+end repository
+
+create repository extragear/binary-clock
+end repository
+
+create repository extragear/kepas
+end repository
+
+create repository extragear/httpform
+end repository
+
+create repository extragear/kommander-plugins
+end repository
+
+create repository extragear/fuzzy-clock
+end repository
+
+create repository extragear/kgllib
+end repository
+
+create repository extragear/akonadi-kres
+end repository
+
+create repository extragear/ksite
+end repository
+
+create repository extragear/krone
+end repository
+
+create repository extragear/krita2-plugins
+end repository
+
+create repository extragear/kdiamond
+end repository
+
+create repository extragear/kdynamicsetting
+end repository
+
+create repository extragear/luna
+end repository
+
+create repository extragear/emoticonskcm
+end repository
+
+create repository extragear/kopete-bonjour
+end repository
+
+create repository extragear/raptormenu
+end repository
+
+create repository extragear/kte_quicksnippet
+end repository
+
+create repository extragear/kubrick
+end repository
+
+create repository extragear/akregator
+end repository
+
+create repository extragear/quasar
+end repository
+
+create repository extragear/kconfig
+end repository
+
+create repository extragear/kapptemplate
+end repository
+
+create repository extragear/libopensync-plugin-kdepim-0.36
+end repository
+
+create repository kdesupport/telepathy-qt
+end repository
+
+create repository extragear/killbots
+end repository
+
+create repository extragear/astrododge
+end repository
+
+create repository extragear/secpolicy
+end repository
+
+create repository extragear/musicbrainz
+end repository
+
+create repository extragear/kagenda
+end repository
+
+create repository extragear/palapeli
+end repository
+
+create repository extragear/safra
+end repository
+
+create repository extragear/skanlite
+end repository
+
+create repository extragear/kio-beagle
+end repository
+
+create repository extragear/parsek
+end repository
+
+create repository extragear/emoticons
+end repository
+
+create repository extragear/wordKubes
+end repository
+
+create repository extragear/PolicyKit-kde
+end repository
+
+create repository extragear/knetworkmanager4
+end repository
+
+create repository extragear/superpong
+end repository
+
+create repository extragear/klesson
+end repository
+
+create repository extragear/ksaneservice
+end repository
+
+create repository extragear/krichtext
+end repository
+
+create repository extragear/waterflow
+end repository
+
+create repository extragear/kiddraw
+end repository
+
+create repository extragear/xesamclient
+end repository
+
+create repository extragear/kscoremanager
+end repository
+
+create repository extragear/kde4powersave
+end repository
+
+create repository extragear/krss
+end repository
+
+create repository extragear/kaffeinegl
+end repository
+
+create repository extragear/guidance-power-kde4
+end repository
+create repository extragear/guidance-power-manager
+end repository
+
+create repository extragear/kfeed
+end repository
+
+create repository extragear/kdelirc
+end repository
+
+create repository extragear/nonogram
+end repository
+
+create repository extragear/shaman
+end repository
+
+create repository extragear/kdevmon
+end repository
+
+create repository extragear/decibel-kde
+end repository
+
+create repository extragear/kthumb
+end repository
+
+create repository extragear/akonaditest
+end repository
+
+create repository kdesupport/tapioca-qt
+end repository
+
+create repository extragear/geoshape
+end repository
+
+create repository extragear/kio_perldoc
+end repository
+
+create repository extragear/kio_sysinfo
+end repository
+
+create repository extragear/mplayerthumbs
+end repository
+
+create repository extragear/cursors
+end repository
+
+create repository extragear/popupdropper
+end repository
+
+create repository extragear/nepomuk
+end repository
+
+create repository extragear/katebuild-plugin
+end repository
+
+create repository extragear/kbluetooth4
+end repository
+
+create repository extragear/bomber
+end repository
+
+create repository extragear/dekoroom
+end repository
+
+create repository extragear/powerdevil
+end repository
+
+create repository extragear/kommodity
+end repository
+
+create repository extragear/galleryexport
+end repository
+
+create repository extragear/lqt
+end repository
+
+create repository extragear/kloss
+end repository
+
+create repository extragear/darkroom
+end repository
+
+create repository extragear/kgo
+end repository
+
+create repository extragear/Rocs
+end repository
+
+create repository kdesupport/cpptoxml
+end repository
+
+create repository extragear/google_gadgets
+end repository
+
+create repository extragear/kdisplay
+end repository
+
+create repository extragear/kio_bookmarks
+end repository
+
+create repository extragear/kalva2
+end repository
+
+create repository kdesupport/eigen2
+end repository
+
+create repository extragear/kio-pish
+end repository
+
+create repository kdesupport/twine
+end repository
+
+create repository extragear/kwalletkeyring
+end repository
+
+create repository extragear/guidedog
+end repository
+
+create repository extragear/KGLEngineRefactoring
+end repository
+
+create repository extragear/lithium
+end repository
+
+create repository extragear/system-config-printer-kde
+end repository
+
+create repository extragear/asciiquarium
+end repository
+
+create repository extragear/libkmediaplayercontrol
+end repository
+
+create repository extragear/attica
+end repository
+
+create repository extragear/rawthumbnail
+end repository
+
+create repository extragear/dekorator
+end repository
+
+create repository extragear/kremail
+end repository
+
+create repository extragear/kde3to4
+end repository
+
+create repository extragear/kate-ctags
+end repository
+
+create repository extragear/kosdwidget
+end repository
+
+create repository extragear/oooicons
+end repository
+
+create repository extragear/minim
+end repository
+
+create repository extragear/taskbar
+end repository
+
+create repository extragear/richtextbuilders
+end repository
+
+create repository extragear/klotz
+end repository
+
+create repository extragear/partitionmanager
+end repository
+
+create repository extragear/knowit4
+end repository
+
+create repository extragear/kjotsrewrite
+end repository
+
+create repository extragear/kpackagekit
+end repository
+
+create repository extragear/kte_autobrace
+end repository
+
+create repository extragear/kephal
+end repository
+
+create repository extragear/kmimecontentstrategy
+end repository
+
+create repository extragear/kolor-manager
+end repository
+
+create repository extragear/qjson
+end repository
+
+create repository extragear/kte_linter
+end repository
+
+create repository extragear/kigo
+end repository
+
+create repository extragear/platform #base/platform
+end repository
+
+create repository extragear/sshaskpass
+end repository
+
+create repository extragear/kolf-ng
+end repository
+
+create repository extragear/proxymodeltest
+end repository
+
+create repository extragear/kmj
+end repository
+
+create repository extragear/choqok
+end repository
+
+create repository extragear/fruitwars
+end repository
+
+create repository extragear/kalternatives
+end repository
+
+create repository extragear/kgoldrunner
+end repository
+
+create repository extragear/granatier
+end repository
+
+create repository extragear/akonadi
+end repository
+
+create repository extragear/kssh4
+end repository
+
+create repository extragear/KDEArtWork.port
+end repository
+
+create repository extragear/magazynier
+end repository
+
+create repository extragear/telepathy-accountmanager-kwallet
+end repository
+
+create repository extragear/konqueror
+end repository
+
+create repository extragear/solid-actions-kcm
+end repository
+
+create repository extragear/maildispatcheragent
+end repository
+
+create repository extragear/rtm
+end repository
+
+create repository extragear/telepathy-accounts-kcm
+end repository
+
+create repository extragear/base
+end repository
+
+create repository extragear/kamala
+end repository
+
+create repository extragear/tote
+end repository
+
+create repository extragear/lintv
+end repository
+
+create repository extragear/kcontrol4
+end repository
+
+create repository extragear/googledata
+end repository
+
+create repository extragear/kio_slp
+end repository
+
+create repository extragear/pege
+end repository
+
+create repository extragear/blazer
+end repository
+
+create repository extragear/microblog
+end repository
+
+create repository extragear/networkkio
+end repository
+
+create repository extragear/KALEngine
+end repository
+
+create repository extragear/smoke_gobject
+end repository
+
+create repository extragear/tellico
+end repository
+
+create repository extragear/kopier
+end repository
+
+create repository extragear/drkonqi
+end repository
+
+create repository extragear/KGLEngine
+end repository
+
+create repository extragear/libakonadi-xml
+end repository
+
+create repository kdesupport/polkit-qt
+end repository
+
+create repository extragear/katimon
+end repository
+
+create repository extragear/kode
+end repository
+
+create repository extragear/noenter
+end repository
+
+create repository extragear/KCLEngine
+end repository
+
+create repository extragear/taglib-extras
+end repository
+
+create repository extragear/KMessageStyle
+end repository
+
+create repository kdesupport/oxygen-icons
+end repository
+
+create repository kdesupport/taglib-extras
+end repository
+
+create repository extragear/kauthorize
+end repository
+
+create repository extragear/devicesync
+end repository
+
+create repository extragear/solid-wicd
+end repository
+
+create repository extragear/ui
+end repository
+
+create repository extragear/knut
+end repository
+
+create repository extragear/gobject-consume
+end repository
+
+create repository extragear/plasmaapplets
+end repository
+
+create repository extragear/kmodifierkeyinfo
+end repository
+
+create repository extragear/kbackendselector
+end repository
+
+create repository extragear/kmathml
+end repository
+
+create repository extragear/drkonqi2
+end repository
+
+create repository extragear/aki
+end repository
+
+create repository extragear/solid-sysclass
+end repository
+
+create repository extragear/utils
+end repository
+
+create repository extragear/cubetest
+end repository
+
+create repository extragear/rememberthemilk
+end repository
+
+create repository extragear/libknotificationitem
+end repository
+
+create repository extragear/libs
+end repository
+
+create repository extragear/skrooge
+end repository
+
+create repository extragear/rekonq
+end repository
+
+create repository extragear/CueTeeGraph
+end repository
+
+create repository extragear/mancala
+end repository
+
+create repository extragear/akiirc
+end repository
+
+create repository extragear/kmymoney
+end repository
+
+create repository extragear/kformat
+end repository
+
+create repository extragear/outboxinterface
+end repository
+
+create repository extragear/ksana
+end repository
+
+create repository extragear/kcam
+end repository
+
+create repository extragear/smokegenerator
+end repository
+
+create repository extragear/krusader
+end repository
+
+create repository extragear/syncml
+end repository
+
+create repository extragear/falkor
+end repository
+
+create repository extragear/klipper-ng
+end repository
+
+create repository extragear/KOrganizerAgendaView
+end repository
+
+create repository extragear/mailreader
+end repository
+
+create repository extragear/backgammon
+end repository
+
+create repository extragear/telepathy-contacts-resource
+end repository
+
+create repository extragear/aurorae
+end repository
+
+create repository extragear/telepathy-integration-daemon
+end repository
+
+create repository kdesupport/kdewin
+end repository
+
+create repository extragear/libkauth
+end repository
+
+create repository extragear/rubots
+end repository
+
+create repository extragear/kidle
+end repository
+
+create repository extragear/kbarbu-GC
+end repository
+
+create repository extragear/kross-rework
+end repository
+
+create repository extragear/kopete-telepathy-protocol
+end repository
+
+create repository extragear/binspekt
+end repository
+
+create repository extragear/rekonq2
+end repository
+
+create repository extragear/device-automounter
+end repository
+
+create repository extragear/kidletime
+end repository
+
+create repository extragear/conversion
+end repository
+
+create repository extragear/kapptemplatecli
+end repository
+
+create repository extragear/telepathy-accounts-kcm-plugins
+end repository
+
+create repository extragear/khtmlxsltplugin
+end repository
+
+create repository extragear/translatoid
+end repository
+
+create repository extragear/ultracopier
+end repository
+
+create repository extragear/ktimechooser
+end repository
+
+create repository extragear/palette
+end repository
+
+create repository extragear/konsume
+end repository
+
+create repository extragear/kunitconversion
+end repository
+
+create repository extragear/KWarBots
+end repository
+
+create repository extragear/kspiral
+end repository
+
+create repository extragear/krita-exp
+end repository
+
+create repository extragear/kbluetooth
+end repository
+
+create repository extragear/telepathy-launcher-kded
+end repository
+
+create repository extragear/blogilo
+end repository
+
+create repository extragear/controlflowgraph
+end repository
+
+create repository extragear/libkdiskmanager
+end repository
+
+create repository extragear/disksdaemon
+end repository
+
+create repository extragear/python
+end repository
+
+create repository extragear/kopete-runner
+end repository
+
+create repository extragear/krosswordpuzzle
+end repository
+
+create repository extragear/palapeli.old
+end repository
+
+create repository extragear/kscore
+end repository
+
+create repository extragear/kupnp
+end repository
+
+create repository extragear/kss-slideshow
+end repository
+
+create repository extragear/kfingerprint
+end repository
+
+create repository KDE/kdeexamples
+end repository
+
+create repository extragear/kannasaver
+end repository
+
+create repository extragear/kdevelop4-extra-libraries
+end repository
+
+create repository extragear/nepomuk-activities-service
+end repository
+
+create repository extragear/kte_iconinserter
+end repository
+
+create repository extragear/kdewebkit
+end repository
+
+create repository extragear/nepomuk-kio-timeline
+end repository
+
+create repository extragear/calgo
+end repository
+
+create repository extragear/kmid2
+end repository
+
+create repository extragear/audex
+end repository
+
+create repository extragear/smb4k
+end repository
+
+create repository extragear/comicbook-thumbnails
+end repository
+
+create repository extragear/qyotoassemblygen
+end repository
+
+create repository extragear/KStarStack
+end repository
+
+create repository extragear/qguiplatformplugin_kde
+end repository
+
+create repository extragear/dav
+end repository
+
+create repository extragear/freespacenotifier
+end repository
+
+create repository extragear/solid
+end repository
+
+create repository extragear/solidrunner
+end repository
+
+create repository extragear/networkmanagement
+end repository
+
+create repository extragear/kdeobservatory
+end repository
+
+create repository extragear/localimageakonadiresource
+end repository
+
+create repository extragear/example_akonadi_imageviewer
+end repository
+
+create repository extragear/kcm_devinfo
+end repository
+
+create repository kdesupport/attica
+end repository
+
+create repository extragear/skank
+end repository
+
+create repository extragear/polkit-qt-1
+end repository
+
+create repository extragear/akonadi_kdeforum
+end repository
+
+create repository extragear/polkit-kde
+end repository
+
+create repository extragear/openxchange
+end repository
+
+create repository extragear/skanlite-sk
+end repository
+
+create repository extragear/skanlite-ng
+end repository
+
+create repository extragear/ksfpm_testcase
+end repository
+
+create repository extragear/kxsldbg
+end repository
+
+create repository extragear/kblocks-refactoring
+end repository
+
+create repository extragear/skansuite
+end repository
+
+create repository extragear/kragonegg_kde3
+end repository
+
+create repository extragear/cantor-backends
+end repository
+
+create repository extragear/highlight
+end repository
+
+create repository extragear/kitchensync
+end repository
+
+create repository extragear/tvanytime
+end repository
+
+create repository extragear/ldap
+end repository
+
+create repository extragear/kdevelop-php
+end repository
+
+create repository extragear/kdevelop-php-docs
+end repository
+
+create repository extragear/remotewidgets
+end repository
+
+create repository kdesupport/polkit-qt-1
+end repository
+
+create repository extragear/polkit-kde-1
+end repository
+
+create repository extragear/solid-dumper
+end repository
+
+create repository extragear/kte_acomment
+end repository
+
+create repository extragear/kpilot
+end repository
+
+create repository extragear/crashcatching
+end repository
+
+create repository extragear/kdevelop-plugins
+end repository
+
+create repository extragear/kajongg
+end repository
+
+create repository extragear/quickpen
+end repository
+
+create repository extragear/kwebkitpart
+end repository
+
+create repository extragear/aboutdata
+end repository
+
+create repository extragear/ksecretservice
+end repository
+
+create repository extragear/kolf2
+end repository
+
+create repository extragear/print-manager
+end repository
+
+create repository extragear/synaptiks
+end repository
+
+create repository extragear/telepathy-contactlist
+end repository
+
+create repository extragear/perlqt4
+end repository
+
+create repository extragear/pam_kwallet
+end repository
+
+create repository extragear/leute
+end repository
+
+create repository extragear/plasmoidax
+end repository
+
+create repository extragear/kmid.old
+end repository
+
+create repository extragear/kcm_tablet
+end repository
+
+create repository extragear/kpws
+end repository
+
+create repository extragear/kio-locate
+end repository
+
+create repository kdesupport/cmake_external_project
+end repository
+
+create repository extragear/keyboard2
+end repository
+
+create repository extragear/bluedevil
+end repository
+
+create repository extragear/kinfocenter2
+end repository
+
+create repository extragear/kategdbplugin
+end repository
+
+create repository extragear/libqapt
+end repository
+
+create repository extragear/kappfinder
+end repository
+
+create repository extragear/kxtodvd
+end repository
+
+create repository extragear/libktorrent
+end repository
+
+create repository extragear/kte_insanehtml_le
+end repository
+
+create repository extragear/videocatcher
+end repository
+
+create repository extragear/cagibi
+end repository
+
+create repository extragear/activities
+end repository
+
+create repository extragear/calendarviews
+end repository
+
+create repository extragear/kpeg
+end repository
+
+create repository kdesupport/cagibi
+end repository
+
+create repository extragear/knights
+end repository
+
+create repository extragear/kded_kosd
+end repository
+
+create repository extragear/kless
+end repository
+
+create repository extragear/telepathy-chat-handler
+end repository
+
+create repository extragear/ksayit
+end repository
+
+create repository extragear/releaseschedule
+end repository
+
+create repository extragear/smaragd
+end repository
+
+create repository extragear/alkimia
+end repository
+
+create repository extragear/palapeli-goldberg-slicer
+end repository
+
+create repository extragear/appstats
+end repository
+
+create repository extragear/kio_torrent
+end repository
+
+create repository extragear/zippl
+end repository
+
+create repository extragear/libdebconf-kde
+end repository
+
+create repository extragear/muon
+end repository
+
+create repository extragear/kdumppixmap
+end repository
+
+create repository extragear/kofficeplugins
+end repository
+
+create repository extragear/kwhiteboard
+end repository
+
+create repository extragear/nunosview
+end repository
+
+create repository extragear/libktelepathy
+end repository
+
+create repository extragear/oxygen-transparent
+end repository
+
+create repository extragear/people
+end repository
+
+create repository extragear/meta-experiments
+end repository
+
+create repository extragear/konqueror-sendtoplugin
+end repository
+
+create repository extragear/libktelepathy-examples
+end repository
+
+create repository extragear/telepathy-testlib
+end repository
+
+create repository extragear/wacomtablet
+end repository
+
+create repository extragear/plasma-kpart
+end repository
+
+create repository extragear/kcm_nic
+end repository
+
+create repository extragear/okteta-kdevelop4-plugin
+end repository
+
+create repository extragear/kfprintee
+end repository
+
+create repository extragear/kio_magnet
+end repository
+
+create repository extragear/telepathy-approver
+end repository
+
+create repository extragear/telepathy-contactlist-qml
+end repository
+
+create repository extragear/akonaditelepathy
+end repository
+
+create repository extragear/nepomukservicetelepathy
+end repository
+
+create repository extragear/workout
+end repository
+
+create repository extragear/nepomuktelepathyservice
+end repository
+
+create repository extragear/strigi-analyzer #/trunk/playground/base/strigi-analyzer/, moved from /trunk/KDE/kdeaddons/strigi-analyzer
+end repository
+
+create repository extragear/nepomukshell
+end repository
+
+create repository extragear/kticker
+end repository
+
+create repository extragear/kcmbind
+end repository
+
+create repository extragear/kcmdhcpd
+end repository
+
+create repository extragear/kcmdhcpd
+end repository
+
+create repository extragear/pws
+end repository
+
+create repository extragear/kmessage
+end repository
+
+create repository extragear/gofai-wmt
+end repository
+
+create repository extragear/ksciplot
+end repository
+
+create repository extragear/kcurve
+end repository
+
+create repository extragear/konv
+end repository
+
+create repository extragear/NetManager2
+end repository
+
+create repository extragear/kafka
+end repository
+
+create repository extragear/doc #TODO
+end repository
+
+create repository extragear/thememgr
+end repository
+
+create repository extragear/dcopbindings
+end repository
+
+create repository extragear/katalog
+end repository
+
+create repository extragear/knu
+end repository
+
+create repository extragear/kcmdrkonqi
+end repository
+
+create repository extragear/ktalk
+end repository
+
+create repository extragear/kappdock
+end repository
+
+create repository extragear/kio-rio
+end repository
+
+create repository extragear/kicq
+end repository
+
+create repository extragear/applets
+end repository
+
+create repository extragear/knapster
+end repository
+
+create repository extragear/smb
+end repository
+
+create repository extragear/kio_rdate
+end repository
+
+create repository extragear/karchiver
+end repository
+
+create repository extragear/kdestdiface
+end repository
+
+create repository extragear/devcenter
+end repository
+
+create repository extragear/kifcfg
+end repository
+
+create repository extragear/reaktivate
+end repository
+
+create repository extragear/audiofile_artsplugin
+end repository
+
+create repository extragear/monopd
+end repository
+
+create repository extragear/ksystrayproxy
+end repository
+
+create repository extragear/arts
+end repository
+
+create repository extragear/cookbook
+end repository
+
+create repository extragear/konqsidebar_plugins
+end repository
+
+create repository extragear/kvidmode
+end repository
+
+create repository extragear/kio_freenet
+end repository
+
+create repository extragear/kwiz
+end repository
+
+create repository extragear/kwintv
+end repository
+
+create repository extragear/kwireless
+end repository
+
+create repository extragear/kpainter
+end repository
+
+create repository extragear/ktetrinet
+end repository
+
+create repository extragear/mathemagics
+end repository
+
+create repository extragear/fuse_kio
+end repository
+
+create repository extragear/ksblive
+end repository
+
+create repository extragear/libktextedit
+end repository
+
+create repository extragear/kalypso
+end repository
+
+create repository extragear/kcmsplash
+end repository
+
+create repository extragear/kue
+end repository
+
+create repository extragear/kwintv3
+end repository
+
+create repository extragear/saape
+end repository
+
+create repository extragear/arts-video
+end repository
+
+create repository extragear/dcopservices
+end repository
+
+create repository extragear/psi
+end repository
+
+create repository extragear/unsermake
+end repository
+
+create repository extragear/koncd
+end repository
+
+create repository extragear/libkcdr
+end repository
+
+create repository extragear/dcopjs
+end repository
+
+create repository extragear/kmameleon
+end repository
+
+create repository extragear/kscriptperl
+end repository
+
+create repository extragear/kdatabase
+end repository
+
+create repository extragear/gst
+end repository
+
+create repository extragear/mono
+end repository
+
+create repository extragear/kabpasswd
+end repository
+
+create repository extragear/skli
+end repository
+
+create repository extragear/kmath
+end repository
+
+create repository extragear/cupslogtool
+end repository
+
+create repository extragear/kpolicy
+end repository
+
+create repository extragear/kdeprintphoto
+end repository
+
+create repository extragear/finglonger
+end repository
+
+create repository extragear/deltav
+end repository
+
+create repository extragear/kp3p
+end repository
+
+create repository extragear/kfs
+end repository
+
+create repository extragear/acap
+end repository
+
+create repository extragear/kswfdec
+end repository
+
+create repository extragear/kaphorism
+end repository
+
+create repository extragear/testwidgets
+end repository
+
+create repository extragear/libqt-addon
+end repository
+
+create repository extragear/kssl-smime
+end repository
+
+create repository extragear/opal
+end repository
+
+create repository extragear/kggst
+end repository
+
+create repository extragear/kaxul
+end repository
+
+create repository extragear/klaviatura
+end repository
+
+create repository extragear/style-workshop
+end repository
+
+create repository extragear/kio_httpmail
+end repository
+
+create repository extragear/klogoturtle
+end repository
+
+create repository extragear/oscar
+end repository
+
+create repository extragear/khexedit2
+end repository
+
+create repository extragear/kdeautorun
+end repository
+
+create repository extragear/kdeutil
+end repository
+
+create repository extragear/kickme
+end repository
+
+create repository extragear/flac_artsplugin
+end repository
+
+create repository extragear/modplug_artsplugin
+end repository
+
+create repository extragear/sidplay2_artsplugin
+end repository
+
+create repository extragear/kxconfig
+end repository
+
+create repository extragear/pax
+end repository
+
+create repository extragear/gopher_kioslave
+end repository
+
+create repository extragear/nonlinux
+end repository
+
+create repository extragear/icecream
+end repository
+
+create repository extragear/kgallery
+end repository
+
+create repository extragear/krichtexteditor
+end repository
+
+create repository extragear/kwhatsbroken
+end repository
+
+create repository extragear/kontextbar
+end repository
+
+create repository extragear/kwuftpd
+end repository
+
+create repository extragear/kbrain
+end repository
+
+create repository extragear/kdmthemes
+end repository
+
+create repository extragear/kspell
+end repository
+
+create repository extragear/kdedebian
+end repository
+
+create repository extragear/qtgtk
+end repository
+
+create repository extragear/sslio
+end repository
+
+create repository extragear/kdom
+end repository
+
+create repository extragear/kstyle2
+end repository
+
+create repository extragear/konserve
+end repository
+
+create repository extragear/threadweaver
+end repository
+
+create repository extragear/kchangelogmaker
+end repository
+
+create repository extragear/kfly
+end repository
+
+create repository extragear/imap4
+end repository
+
+create repository extragear/xpath
+end repository
+
+create repository extragear/kmathprof
+end repository
+
+create repository extragear/kcontrol3
+end repository
+
+create repository extragear/realrekord
+end repository
+
+create repository extragear/quality
+end repository
+
+create repository extragear/kgeography
+end repository
+
+create repository extragear/usagemonitor
+end repository
+
+create repository extragear/uirtk
+end repository
+
+create repository extragear/ksvg2
+end repository
+
+create repository extragear/kimproxy
+end repository
+
+create repository extragear/kdecvs-build
+end repository
+
+create repository extragear/talen
+end repository
+
+create repository extragear/UserManager
+end repository
+
+create repository extragear/daleks
+end repository
+
+create repository extragear/libkrdf
+end repository
+
+create repository extragear/gadget
+end repository
+
+create repository extragear/kcanvas
+end repository
+
+create repository extragear/jabberservices
+end repository
+
+create repository extragear/kifi
+end repository
+
+create repository extragear/libkxpath
+end repository
+
+create repository extragear/xinput
+end repository
+
+create repository extragear/kafilah
+end repository
+
+create repository extragear/KeepIt
+end repository
+
+create repository extragear/kautorename
+end repository
+
+create repository extragear/lyod
+end repository
+
+create repository extragear/krafty
+end repository
+
+create repository extragear/kbstateapplet
+end repository
+
+create repository extragear/kio_smbro
+end repository
+
+create repository extragear/mediatv
+end repository
+
+create repository extragear/ktracer
+end repository
+
+create repository extragear/kimgio_examples
+end repository
+
+create repository extragear/kvm
+end repository
+
+create repository extragear/kubication
+end repository
+
+create repository extragear/businesskard
+end repository
+
+create repository extragear/knx
+end repository
+
+create repository extragear/klink
+end repository
+
+create repository extragear/kcmregtester
+end repository
+
+create repository extragear/nvidia
+end repository
+
+create repository extragear/kverbos #TODO kdeedu
+end repository
+
+create repository extragear/kbatterymonitor
+end repository
+
+create repository extragear/propertyeditor
+end repository
+
+create repository extragear/kunittest #TODO kdesdk?
+end repository
+
+create repository extragear/kifidaemon
+end repository
+
+create repository extragear/korrent
+end repository
+
+create repository extragear/kmozilla
+end repository
+
+create repository extragear/kio_mhtml
+end repository
+
+create repository extragear/kcardtools #TODO kdeutils
+end repository
+
+create repository extragear/ksmartcard
+end repository
+
+create repository extragear/koralizer
+end repository
+
+create repository extragear/kfind-revisited #TODO branch?
+end repository
+
+create repository extragear/kcmlinuz
+end repository
+
+create repository extragear/examples
+end repository
+
+create repository extragear/sanedefaults
+end repository
+
+create repository extragear/keximdb
+end repository
+
+create repository extragear/khtml2
+end repository
+
+create repository extragear/qunittest
+end repository
+
+create repository extragear/kxslt
+end repository
+
+#
+# Ignore rules
+#
+
+# ignore the SVN-adjusting commits
+match /
+  min revision 409202
+  max revision 409209
+end match
+match /branches/KDE/4.1/kdeplasmoids
+  min revision 830065
+end match
+
+match /tags/KDE/3.0.2/kdeextragear-1/
+  min revision 416394
+  max revision 416394
+end match
+match /tags/KDE/([^/]+)/oxygen-icons/
+  repository kdesupport/oxygen-icons
+  branch KDE/\1
+end match
+
+
+# Don't import the WWW repository
+match /trunk/(www|[^/]+\.kde\.org|devel-home|bugs|kdewiki)/
+end match
+match /(branches|tags)/[^/]*/(www|[^/]+\.kde\.org|devel-home|bugs)/
+end match
+match /trunk/playground/www
+  min revision 829408
+end match
+
+# Don't import kde-common
+match /(trunk|trunk/KDE|(branches|tags)(/KDE)?/[^/]*)/kde-common/
+end match
+
+# Don't import qt-copy or the addons
+match /(trunk|branches(/QT_[^/]*)?|tags/QT_[^/]*)/(qt-copy|kde-qt-addon)/
+end match
+match /branches/work/kde4/qt-copy/
+  min revision 411055
+end match
+
+# Don't import khtmltests
+match /trunk/khtmltests/
+  min revision 68276
+  max revision 411524
+end match
+match /branches/KDE_3_2_BRANCH/khtmltests/
+  min revision 280544
+  max revision 300000
+end match
+
+# Don't import kofficetests
+match /trunk/kofficetests/
+  min revision 150575
+  max revision 411524
+end match
+
+# Don't import ksvgtests
+match /trunk/ksvgtests/
+  min revision 394644
+  max revision 411524
+end match
+
+# Don't import all tests
+match /trunk/tests/
+  min revision 411524
+end match
+
+
+# Don't import kdenox
+match /(trunk|branches/KONQE_[^/]*|tags/KONQE_[^/]*)/kdenox/
+  min revision 70293
+end match
+
+# Don't import kdesecurity
+match /trunk/kdesecurity/
+  min revision 191088
+  max revision 194836
+end match
+
+# Don't import promo
+match /trunk/promo/
+  min revision 443988
+end match
+
+# Don't import quality
+match /trunk/quality/
+  min revision 698222
+end match
+
+# Don't import valgrind
+match /trunk/valgrind/
+  min revision 144350
+  max revision 439786
+end match
+match /(branches|tags)/[^/]*/valgrind/
+  min revision 168852
+  max revision 439786
+end match
+
+# Don't import konstruct
+match /trunk/konstruct/
+  min revision 192841
+end match
+match /(branches|tags)/KDE_[^/]*/konstruct
+  min revision 192841
+  max revision 409202
+end match
+match /(branches|tags)/KDE/[^/]+/konstruct
+  min revision 409273
+end match
+
+# Don't import icecream
+match /trunk/icecream/
+  min revision 519553  # copy with history
+end match
+
+# Ignore these programs
+match /(trunk|(branches|tags)/[^/]*)/(kmusic|kfte|klyx|kdoc|sysconfig|kdeinstaller|kckde|kdekiosk|artskde)/
+end match
+match /tags/KDE/[^/]+/kdoc/
+  min revision 416394
+  max revision 416398
+end match
+
+match /trunk/art-devel/
+  min revision 130758
+  max revision 150000
+end match
+
+# I have no idea what this is, so ignore it
+match /trunk/foundation/
+  min revision 31108
+end match
+
+# Ignore branches and tags that start with a non-uppercase letter
+match /(branches|tags)/[^A-Z]
+  max revision 409202
+end match
+
+# Ignore these branches and tags
+match /(tags/RELEASE_0_9_9|tags/KDE_2_1_RELEASET|tags/KDE_2_1|tags/MPG123LIB|tags/OGG_VORBIS|tags/KDAB_.*|tags/KOFFICE_1_1_BRANCHPOINT|tags/KDEVELOP_2_KACTION_START|tags/KDEVELOP_2_MERGE|branches/KWORD_RICHTEXT|branches/KWORD_WYSIWYG|branches/AEGYPTEN_BRANCH|branches/KFILEMETAINFO_BRANCH|branches/Unstable_Development|branches/kicker)/
+end match
+
+# Ignore kdesupport branches
+match /(tags|branches)/[^/]*/kdesupport/
+  max revision 1439
+end match
+match /tags/KDE/[^/]*/kdesupport/
+  min revision 416394
+  max revision 416398
+end match
+
+# Ignore this stupid commit
+match /file$
+  min revision 409232
+  max revision 409232
+end match
+
+# Ignore kfile plugins up to that rev as they got moved to kdepim
+# at this rev the torrent plugin got added
+match /(trunk|(branches|tags)/KDE(_/)[^/]*)/kdenetwork/kfile-plugins
+  max revision 342869
+end match
+
+
+#
+# Match the l10n repository
+#
+match /trunk/(kde-i18n|l10n|l10n-support|l10n-kde\d)/
+end match
+match /(trunk/KDE|(tags|branches)/KDE/[^/]+)/kde-(i18n|l10n)/
+  min revision 409209
+end match
+match /(branches|tags)/[^/]*/kde-i18n
+  max revision 409202
+end match
+
+#
+# Match kde-support
+#
+match /(trunk/kdesupport|(branches|tags)/[^/]+/kdesupport)/(bsd-port|debian|audiofile|giflib30|gdbm|jpeglib6[ab]|js|jslibaps|libaps|libart_lgpl|libpcre|libxml|libsmb|libxslt|QwSpriteField|mimelib|odbc|rdb|uulib|zipios)
+end match
+
+match /trunk/kdesupport/libkgs/
+  repository extragear/libkgs
+  branch master
+  #min revision 473084
+  #max revision 473090
+end match
+match /trunk/kdesupport/libqgs/
+  repository extragear/libqgs
+  branch master
+  #min revision 473090
+  #max revision 551165
+end match
+match /branches/kdesupport/3.5/kdesupport/libqgs/
+  repository extragear/libqgs
+  branch master
+  min revision 504785
+end match
+
+match /trunk/kdesupport/qt-dbus
+  min revision 542546
+  max revision 557294
+end match
+
+match /trunk/kdesupport/blitz/
+  repository kdesupport/qimageblitz
+  branch master
+  min revision 698744
+  max revision 705162
+end match
+
+match /trunk/kdesupport/([^/]+)/
+  repository kdesupport/\1
+  branch master
+end match
+match /trunk/kdesupport/([^/]+)$
+end match
+
+match /branches/kdesupport/3.5/kdesupport/debian
+  min revision 504781
+end match
+match /branches/kdesupport/3.5/kdesupport/indexlib
+  min revision 542523
+  max revision 542523
+end match
+
+match /branches/kdesupport/3.5/kdesupport/([^/]+)/
+  repository kdesupport/\1
+  branch KDE/3.5
+  min revision 504781
+end match
+match /branches/kdesupport/$
+  action recurse
+  min revision 504781
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdesupport
+  max revision 409202
+end match
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdesupport
+  max revision 409202
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdesupport
+  max revision 409202
+end match
+match /(branches|tags)/(akode|akonadi|automoc|decibel|eigen|phonon|qca|qimageblitz|soprano|strigi|taglib|tapioca-qt|telepathy-qt)/([^/]+)/
+  repository kdesupport/\2
+  branch \3
+  min revision 409202
+end match
+match /trunk/kdeextragear-2/taglib/
+  repository kdesupport/taglib
+  branch master
+  min revision 168944
+end match
+
+#
+# aRts
+#
+match /trunk/(KDE/)?arts/
+  repository arts
+  branch master
+  min revision 115011
+end match
+match /tags/arts/1.5.0-alpha1/arts/
+  repository arts
+  branch arts/1.4.90
+  min revision 443441
+  max revision 443441
+end match
+match /tags/arts/1.5.0-beta1/arts/
+  repository arts
+  branch arts/1.4.91
+  min revision 459298
+  max revision 459298
+end match
+match /(branches|tags)/arts/([^/]+)A/arts/
+  repository arts
+  branch arts/\2a
+  min revision 409209
+end match
+match /(branches|tags)/arts/([^/]+)/arts/
+  repository arts
+  branch arts/\2
+  min revision 409209
+end match
+match /tags/ARTS_(\d+)_(\d+)_RELEASE/arts/
+  min revision 145162
+  max revision 409202
+  repository arts
+  branch arts/\1.\2.0
+end match
+match /tags/ARTS_(\d+)_(\d+)_(\d+)_RELEASE/arts/
+  min revision 145162
+  max revision 409202
+  repository arts
+  branch arts/\1.\2.\3
+end match
+match /tags/ARTS_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/arts/
+  min revision 192719
+  max revision 409202
+  repository arts
+  branch arts/\1.\2.\3a
+end match
+match /branches/ARTS_(\d+)_(\d+)_BRANCH/arts/
+  min revision 147167
+  max revision 409202
+  repository arts
+  branch arts/\1.\2
+end match
+
+# kdeplasmoids is kdeplasma-addons/
+match /trunk/KDE/kdeplasmoids/
+  repository KDE/kdeplasma-addons
+  branch master
+  min revision 813310
+  max revision 830060
+end match
+match /(branches|tags)/KDE/([^/]+)/kdeplasmoids/
+  repository KDE/kdeplasma-addons
+  branch KDE/\2
+  min revision 821790
+  max revision 830065
+end match
+
+match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/$
+  action recurse
+end match
+
+# Ignore those repositories as they are imported using other rules
+match /.*/(kdebase|kdelibs|kdebindings|kdejava|kdevelop|kdevplatform|kdepim|kdepimlibs|quanta|koffice|korganizer)/
+end match
+
+match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/[^/]+$                 # ignore top-level files
+end match
+match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/admin/
+end match
+
+# kdeedu, kdesdk, kdenetwork, kdeutils, kdemultimedia, kdegraphics
+match /trunk/(KDE/)?(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/$
+  action recurse
+end match
+
+match /branches/work/kde4/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/$
+  action recurse
+end match
+
+match /(branches(/work)?|tags)/(KDE/)?[^/]+/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/$
+  action recurse
+end match
+
+
+match /trunk/(KDE/)?kdeedu/kvoctrain/
+  repository KDE/kdeedu/parley
+  branch master
+end match
+
+match /(branches|tags)/KDE/([^/]+)/(kdeedu)/kvoctrain/
+  repository KDE/kdeedu/parley
+  branch KDE/\2
+  min revision 409209
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdeedu)/kvoctrain/
+  repository KDE/kdeedu/parley
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+#skip older tags, more rules would be needed for them
+match /tags/([^/]+)/(kdeedu)/(kvoctrain)/
+end match
+
+match /trunk/(KDE/)?kdesdk/ksgmltools/
+  repository KDE/kdesdk/kdesgmltools
+  branch master
+end match
+
+match /(trunk/(KDE/)?|(branches|tags)/(KDE/)?([^/]+)/)kdenetwork/(kfile-plugins|strigi-analyzer)/$
+  action recurse
+end match
+match /trunk/(KDE/)?kdenetwork/(kfile-plugins|strigi-analyzer)/torrent/
+  repository KDE/kdenetwork/torrent
+  branch master
+end match
+match /(branches|tags)/(KDE/)?([^/]+)/kdenetwork/(kfile-plugins|strigi-analyzer)/torrent/
+  repository KDE/kdenetwork/torrent
+  branch KDE/\3
+  min revision 409209
+end match
+
+#only match torrent (above)
+match /(trunk/(KDE/)?|(branches|tags)/(KDE/)?([^/]+)/)kdenetwork/kfile-plugins/
+end match
+
+match /trunk/(KDE/)?(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+  repository KDE/\2/strigi-analyzer
+  branch master
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+  repository KDE/\3/strigi-analyzer
+  branch KDE/\1.\2
+  max revision 409202
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+  repository KDE/\4/strigi-analyzer
+  branch KDE/\1.\2.\3
+  max revision 409202
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+  repository KDE/\5/strigi-analyzer
+  branch KDE/\1.\2.\3-beta\4
+  min revision 376088
+  max revision 409202
+end match
+match /(branches|tags)/KDE/([^/]+)/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+  repository KDE/\3/strigi-analyzer
+  branch KDE/\2
+  min revision 409209
+end match
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+  repository KDE/\3/strigi-analyzer
+  branch KDE/\1.\2.0
+  max revision 409202
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+  repository KDE/\3/strigi-analyzer
+  branch KDE/\1.\2
+  max revision 409202
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+  repository KDE/\4/strigi-analyzer
+  branch KDE/\1.\2.\3a
+  min revision 192719
+  max revision 409202
+end match
+
+
+
+match /trunk/KDE/kdesdk/dolphin/
+  repository KDE/kdesdk/dolphin-plugins
+  branch master
+end match
+
+
+match /trunk/playground/utils/okteta/
+  repository KDE/kdesdk/okteta
+  branch master
+end match
+match /trunk/(KDE/)?kdeutils/okteta/
+  repository KDE/kdesdk/okteta
+  branch master
+end match
+match /(branches|tags)/KDE/([^/]+)/(kdeutils)/okteta/
+  repository KDE/kdesdk/okteta
+  branch KDE/\2
+end match
+
+match /trunk/KDE/kdeutils/privacy/
+  repository KDE/kdeutils/sweeper
+  branch master
+end match
+#TODO Other sweeper locations:
+#/trunk/KDE/kdebase/workspace/kcontrol/privacy
+#/trunk/KDE/kdebase/kcontrol
+
+match /(trunk/KDE|(branches|tags)/KDE/([^/]+))/(kdegraphics)/(libkipi|libkexiv2|libkdcraw|libksane)/
+  repository KDE/kdegraphics/libs/\5
+  branch master
+end match
+
+
+
+#skip files directly in module
+match /(trunk(/KDE)?|(branches|tags)/(KDE/)?[^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/[^/]+$
+end match
+
+#skip this one, not sure if it will be needed
+match /(trunk(/KDE)?|(branches(/work)?|tags)(/KDE)?/[^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/(debian|admin|po|bsd-port)/
+end match
+
+match /trunk/KDE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\1/\3
+  branch master
+  min revision 409209
+end match
+
+match /trunk/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\1/\3
+  branch master
+  max revision 409202
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\3/\5
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+#kdeedu special branches
+match /trunk/playground/[^/]+/(marble|kalgebra|kanagram|kgeography|step|keduca|kverbos)/
+  repository KDE/kdeedu/\1
+  branch master
+  min revision 409209
+end match
+
+match /trunk/kdereview/(marble|blinken|cantor|kalgebra|kanagram|kgeography|rocs|step)/
+  repository KDE/kdeedu/\1
+  branch master
+end match
+
+match /trunk/playground/edu/Rocs/
+  repository KDE/kdeedu/rocs
+  branch master
+end match
+
+match /trunk/kdereview/ksimon/
+  repository KDE/kdeedu/blinken
+  branch master
+end match
+
+match /trunk/(playground/edu|kdeplayground-edu)/ksimon/
+  repository KDE/kdeedu/blinken
+  branch master
+end match
+
+match /trunk/kdereview/mathematik/
+  repository KDE/kdeedu/cantor
+  branch master
+end match
+
+match /trunk/playground/edu/mathematik/
+  repository KDE/kdeedu/cantor
+  branch master
+  min revision 409209
+end match
+
+
+#kdenetwork special branches
+match /trunk/kdenonbeta/kdnssd/
+  repository KDE/kdenetwork/kdnssd
+  branch master
+end match
+
+match /branches/(work|cvs)/make_kget_cool/(kdenetwork/)?kget/
+  repository KDE/kdenetwork/kget
+  branch make_kget_cool
+end match
+
+match /branches/work/soc-krdc/krdc/
+  repository KDE/kdenetwork/krdc
+  branch soc-krdc
+end match
+
+#kdesdk special branches
+match /trunk/(extragear/sdk|kdereview|playground/devtools)/kaider/
+  repository KDE/kdesdk/lokalize
+  branch master
+end match
+
+match /trunk/(kdereview|playground/devtools)/kapptemplate/
+  repository KDE/kdesdk/kapptemplate
+  branch master
+end match
+
+match /trunk/(kdereview|playground/devtools|kdenonbeta|extragear/utils)/ktranslator/
+  repository KDE/kdesdk/ktranslator
+  branch master
+end match
+
+match /trunk/(kdereview)/(okteta)/
+  repository KDE/kdesdk/\2
+  branch master
+end match
+
+
+#kdeutils special branches
+match /branches/work/libarchive-based-ark/
+  repository KDE/kdeutils/ark
+  branch libarchive-based-ark
+end match
+
+match /branches/work/kdelirc/
+  repository KDE/kdeutils/kremotecontrol
+  branch work
+end match
+
+match /trunk/((KDE/)?kdeutils|kdereview|playground/utils)/(kdelirc|kremotecontrol)/
+  repository KDE/kdeutils/kremotecontrol
+  branch master
+end match
+
+match /trunk/kdereview/printer-applet/
+  repository KDE/kdeutils/printer-applet
+  branch master
+end match
+
+match /trunk/(kdereview|playground/utils)/(kregexpeditor|filelight)/
+  repository KDE/kdeutils/\2
+  branch master
+end match
+
+match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(filelight)/
+  repository KDE/kdeutils/\2
+  branch master
+end match
+
+match /trunk/kdenonbeta/filelight/
+  repository KDE/kdeutils/filelight
+  branch master
+end match
+
+
+
+
+#kdemultimedia special branches
+match /trunk/kdereview/dragonplayer/
+  repository KDE/kdemultimedia/dragonplayer
+  branch master
+end match
+
+match /trunk/playground/multimedia/videoplayer/
+  repository KDE/kdemultimedia/dragonplayer
+  branch master
+end match
+
+match /trunk/(kdereview|playground/multimedia)/mplayerthumbs/
+  repository KDE/kdemultimedia/dragonplayer
+  branch master
+end match
+
+match /trunk/extragear/multimedia/(kaudiocreator)/
+  repository KDE/kdemultimedia/\1
+  branch master
+end match
+
+#kdegraphics special branches
+match /(trunk|branches/work/kde4)/playground/graphics/(gwenview|okular|svgpart|kooka)/
+  repository KDE/kdegraphics/\2
+  branch master
+end match
+match /tags/unmaintained/4/(kooka)/
+  repository KDE/kdegraphics/\1
+  branch master
+end match
+match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/(gwenview|kuickshow|ligature)/
+  repository KDE/kdegraphics/\2
+  branch master
+end match
+match /trunk/(playground/graphics|kdereview)/(ksaneservice|ksaneplugin)/
+  repository KDE/kdegraphics/ksaneplugin
+  branch master
+end match
+match /trunk/playground/graphics/oKular/[^/]+$
+  #ignore files
+end match
+match /trunk/playground/graphics/oKular/doc/
+  #ignore
+end match
+match /trunk/playground/graphics/oKular/kpdf/   # KDE 3 version
+  repository KDE/kdegraphics/okular
+  branch master
+  min revision 431968
+  max revision 520781
+end match
+match /trunk/playground/graphics/oKular/kpdf/   # KDE 3 version
+  repository KDE/kdegraphics/okular
+  branch kde3
+  min revision 520782
+  max revision 552283
+end match
+match /branches/work/kde4/playground/graphics/okular/kpdf/
+  repository KDE/kdegraphics/okular
+  branch master
+  min revision 520782
+  max revision 551163
+end match
+match /trunk/(kdereview|playground/graphics)/(okular)/(epub) #is this rule correct?
+  prefix \3
+  repository KDE/kdegraphics/\2
+  branch master
+end match
+match /trunk/(extragear/[^/]+|kdeextragear-[^/]+|kdereview)/(libkipi|libkexiv2|libkdcraw|libksane)/
+  repository KDE/kdegraphics/libs/\2
+  branch master
+end match
+match /trunk/(kdereview)/mobipocket/[^/]+
+  #ignore files
+end match
+match /trunk/(kdereview)/mobipocket/$
+  action recurse
+end match
+match /trunk/(kdereview)/mobipocket/okular
+  repository KDE/kdegraphics/okular
+  prefix generators/mobipocket
+  branch master
+end match
+match /trunk/(kdereview)/mobipocket/strigi-analyzer
+  repository KDE/kdegraphics/strigi-analyzer
+  prefix mobi
+  branch master
+end match
+match /trunk/(kdereview)/mobipocket/thumbnailers
+  repository KDE/kdegraphics/thumbnailers
+  prefix mobi
+  branch master
+end match
+match /trunk/(kdereview)/mobipocket/libs
+  repository KDE/kdegraphics/libs/mobipocket
+  branch master
+end match
+
+
+#cvs tags
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\3/\5
+  branch KDE/\1.\2.0
+  max revision 409202
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\3/\5
+  branch KDE/\1.\2.0
+  max revision 85028
+  min revision 68154
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\4/\6
+  branch KDE/\1.\2.\3
+  max revision 409202
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\4/\6
+  branch KDE/\1.\2.\3a
+  min revision 192719
+  max revision 409202
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\5/\7
+  branch KDE/\1.\2.\3-beta\4
+  min revision 376088
+  max revision 409202
+end match
+
+match /tags/KDE/3.5.0-alpha1/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\1/\3
+  branch KDE/3.4.90
+  min revision 443441
+  max revision 445561
+end match
+match /tags/KDE/3.5.0-beta1/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\1/\3
+  branch KDE/3.4.91
+  min revision 459298
+  max revision 460260
+end match
+match /(branches|tags)/KDE/([^/]+)A/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\3/\5
+  branch KDE/\2a
+  min revision 409209
+end match
+match /(branches|tags)/KDE/([^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\3/\5
+  branch KDE/\2
+  min revision 409209
+end match
+
+match /branches/work/kde4/(keedu)/([^/]+)/
+  min revision 411284
+  max revision 450000
+  repository KDE/\1/\2
+  branch kde4-work
+end match
+
+
+#
+# Main KDE modules
+#
+match /trunk/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
+  repository KDE/\1
+  branch master
+  max revision 409202
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
+  repository KDE/\3
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
+  repository KDE/\3
+  branch KDE/\1.\2.0
+  max revision 409202
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
+  repository KDE/\3
+  branch KDE/\1.\2.0
+  max revision 85028
+  min revision 68154
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
+  repository KDE/\4
+  branch KDE/\1.\2.\3
+  max revision 409202
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
+  repository KDE/\4
+  branch KDE/\1.\2.\3a
+  min revision 192719
+  max revision 409202
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
+  repository KDE/\5
+  branch KDE/\1.\2.\3-beta\4
+  min revision 376088
+  max revision 409202
+end match
+
+match /trunk/KDE/([^/]+)/
+  repository KDE/\1
+  branch master
+  min revision 409209
+end match
+match /tags/KDE/3.5.0-alpha1/([^/]+)/
+  repository KDE/\1
+  branch KDE/3.4.90
+  min revision 443441
+  max revision 445561
+end match
+match /tags/KDE/3.5.0-beta1/([^/]+)/
+  repository KDE/\1
+  branch KDE/3.4.91
+  min revision 459298
+  max revision 460260
+end match
+match /(branches|tags)/KDE/([^/]+)A/([^/]+)/
+  repository KDE/\3
+  branch KDE/\2a
+  min revision 409209
+end match
+match /(branches|tags)/KDE/([^/]+)/([^/]+)/
+  repository KDE/\3
+  branch KDE/\2
+  min revision 409209
+end match
+match /(branches|tags)/KDE
+  action recurse
+  min revision 757126
+end match
+match /trunk/kdereview/$
+  action recurse
+end match
+match /trunk/playground/$
+  action recurse
+end match
+match /trunk/playground/[^/]/$
+  action recurse
+end match
+match /trunk/kdeplayground-[^/]/$
+  action recurse
+end match
+
+match /branches/kopete/0.12/
+  min revision 506299
+  max revision 573904
+  repository KDE/kdenetwork/kopete
+  branch 0.12
+end match
+match /tags/kopete/(0\.[^/]+)/
+  min revision 506884
+  repository KDE/kdenetwork/kopete
+  branch \1
+end match
+
+# KBabel 0.6, 0.7 and 0.9
+match /tags/KBABEL.0_(\d)/kdesdk/
+  min revision 68025
+  #max revision 70121
+  max revision 97087
+  repository KDE/kdesdk/kbabel
+  branch 0.\1
+end match
+
+# KSysV 2.0
+match /branches/KSYSV_2_0_BRANCH/kdeadmin/
+  min revision 75324
+  repository KDE/kdeadmin
+  branch ksysv/2.0
+end match
+
+# KMag 0.5.0
+match /tags/KMAG_0_5_0/kdeaccessibility/
+  min revision 114710
+  max revision 114710
+  repository KDE/kdeaccessibility
+  branch kmag/0.5.0
+end match
+
+# KMag 0.6.0
+match /tags/KMAG_0_6_0_RELEASE/kdeaccessibility/
+  min revision 123457
+  max revision 123457
+  repository KDE/kdeaccessibility
+  branch kmag/0.6.0
+end match
+
+# KMag 0.7.0
+match /tags/KMAG_0_7_0_RELEASE/kdeaccessibility/
+  min revision 135568
+  max revision 135568
+  repository KDE/kdeaccessibility
+  branch kmag/0.7.0
+end match
+
+# KMag 0.8.0
+match /tags/KMAG_0_8_0_RELEASE/kdeaccessibility/
+  min revision 151752
+  max revision 151752
+  repository KDE/kdeaccessibility
+  branch kmag/0.8.0
+end match
+
+# Kiten 0.5.0
+match /tags/KITEN_0_5_RELEASE/kdeedu/kiten/
+  min revision 121771
+  max revision 121771
+  repository KDE/kdeedu/kiten
+  branch 0.5.0
+end match
+
+# KView 3
+match /branches/KVIEW_3_BRANCH/kdegraphics/kview/
+  min revision 128245
+  max revision 409202
+  repository KDE/kdegraphics/kview
+  branch 3
+end match
+
+# Kooka 0.xx
+match /tags/KOOKA_(\d+)_(\d+)/
+  min revision 171704
+  max revision 171704
+  repository KDE/kdegraphics/kooka
+  branch \1.\2
+end match
+
+# Kig 0.1
+match /tags/KIG_0_1/kdeedu/kig/
+  min revision 175053
+  max revision 175053
+  repository KDE/kdeedu/kig
+  branch 0.1.0
+end match
+
+# KPovModeler 1.1
+match /branches/KPOVMODELER_1_1_BRANCH/kdegraphics/kpovmodeler/
+  min revision 177938
+  max revision 200000
+  repository KDE/kdegraphics/kpovmodeler
+  branch 1.1
+end match
+
+# Juk 1.0
+match /branches/JUK_1_BRANCH/kdemultimedia/juk/
+  min revision 207648
+  max revision 250000
+  repository KDE/kdemultimedia/juk
+  branch 1.0
+end match
+match /tags/JUK_1_RELEASE/kdemultimedia/juk/
+  min revision 207650
+  max revision 207650
+  repository KDE/kdemultimedia/juk
+  branch 1.0.0
+end match
+
+#
+# Extragear modules
+#
+match /trunk/kdeextragear-([^/]+)/[^/]+$      # top-level files in the extragears -- ignore
+  min revision 153377
+  max revision 409202
+end match
+match /trunk/kdeextragear-([^/]+)/doc/        # extragear doc -- ignore them all now
+  min revision 153377
+  max revision 409202
+end match
+match /trunk/kdeextragear-([^/]+)/debian/     # extragear's debian dir -- ignore them all now
+  min revision 178854
+  max revision 409202
+end match
+match /tags/KDE_3_0_2_RELEASE/kdeextragear-[123]/  # Ignore KDE tags in extragears
+  min revision 163129
+  max revision 163129
+end match
+
+match /trunk/(extragear|playground)/[^/]+$
+  min revision 647241
+end match
+match /trunk/(extragear|playground)/[^/]+/[^/]+$
+  min revision 409209
+end match
+match /trunk/(extragear|playground)/[^/]+/doc
+  min revision 409209
+end match
+match /trunk/(kdereview|(playground|extragear)/[^/]+)/cmake
+  min revision 551166
+end match
+
+match /trunk/kdeextragear-1/kbruch/
+  min revision 153377
+  max revision 177232    # Merged to kmath
+end match
+
+match /trunk/kdeextragear-1/vimpart/
+  min revision 158634
+  max revision 244490    # Moved to kdeaddons
+end match
+
+match /trunk/kdeextragear-1/scripts
+  min revision 167891
+  max revision 400065    # abandoned
+end match
+
+match /trunk/extragear/pim/(kpilot|kontact)
+  min revision 533883
+  max revision 670789
+end match
+
+match /tags/unmaintained
+  min revision 643078
+end match
+
+match /trunk/extragear/guidance/
+  repository extragear/guidance
+  branch master
+  min revision 655381
+  max revision 655384
+end match
+
+match /trunk/extragear/plasma/
+  repository extragear/plasma
+  branch master
+  min revision 710835
+  max revision 813309
+end match
+
+match /trunk/extragear/pim/kfile-plugins/
+  #TODO
+end match
+
+match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/([^/]+)/
+  repository extragear/\2
+  branch master
+end match
+match /(branches|tags)/([^/]+)/kdeextragear-[^/]+/
+end match
+match /(branches|tags)/([^/]+)/([^/+])/
+  repository extragear/\2
+  branch \3
+end match
+
+#
+# KDE Review
+#
+match /trunk/kdereview/[^/]+$                 # ignore top-level files
+  min revision 241980
+end match
+match /trunk/kdereview/doc/                   # ignore kdereview docs
+  min revision 241980
+end match
+match /trunk/kdereview/knetworkconf/
+  min revision 241980
+  max revision 444225        # moved to kdeadmin
+end match
+match /trunk/kdereview/superkaramba/
+  min revision 417080
+  max revision 450000        # moved to kdeutils
+end match
+
+match /tags/KNETWORKCONF_0_5_BETA1/kdereview/    # knetworkconf/
+  min revision 260960
+  max revision 260960
+end match
+match /tags/KNETWORKCONF_0_5_BETA2/kdereview/    # knetworkconf/
+  min revision 279523
+  max revision 279523
+end match
+match /tags/KNETWORKCONF_0_5_FINAL/kdereview/    # knetworkconf/
+  min revision 291161
+  max revision 291161
+end match
+match /tags/KNETWORKCONF_0_6/kdereview/          # knetworkconf/
+  min revision 336544
+  max revision 336544
+end match
+match /tags/KNETWORKCONF_0_6_1/kdereview/          # knetworkconf/
+  min revision 391899
+  max revision 391899
+end match
+
+match /trunk/kdereview/phonon/
+  min revision 753484
+end match
+
+match /trunk/kdereview/kopete/(plugins|protocols)/
+  repository extragear/kopete-\1
+  branch master
+  min revision 761548
+end match
+
+match /trunk/kdereview/decibel/
+  repository kdesupport/decibel
+  branch master
+  min revision 773599
+  max revision 816665
+end match
+
+match /trunk/kdereview/emoticonslib/
+  repository extragear/emoticons
+  branch master
+  min revision 803071
+  max revision 809220
+end match
+
+match /trunk/kdereview/([^/]+)/
+  repository extragear/\1
+  branch master
+end match
+
+#
+# KDE Playground modules
+#
+match /trunk/kdeplayground-[^/]+/[^/]+$       # ignore top-level files
+  min revision 219147
+  max revision 409202
+end match
+match /trunk/kdeplayground-[^/]+/doc/         # ignore playground docs
+  min revision 219147
+  max revision 409202
+end match
+match /trunk/playground/[^/]+/[^/]+$
+  min revision 409210
+end match
+match /trunk/playground/[^/]+/admin
+  min revision 409210
+end match
+
+match /trunk/kdeplayground-network/knetworksettings/
+  min revision 219147
+  max revision 398606      # abandoned
+end match
+
+match /trunk/kdeplayground-artwork/oooicons/
+  min revision 370870
+  max revision 409202
+end match
+match /trunk/playground/artwork/oooicons/
+  min revision 409522
+  max revision 700000
+end match
+
+match /trunk/kdeplayground-artwork/smooth-blend-1.0/
+  min revision 400664
+  max revision 400671
+  repository extragear/smooth-blend
+  branch master
+end match
+
+match /trunk/playground/edu/kidsplay/
+  min revision 412155
+  max revision 420000
+end match
+
+match /trunk/playground/edu/widgets/
+  min revision 418112
+  max revision 700000
+end match
+
+match /trunk/playground/artwork/plasma/
+  min revision 425894
+  max revision 450000
+end match
+
+match /trunk/playground/utils/kro-0.1
+  min revision 430534
+  max revision 430536
+end match
+
+match /trunk/kdeplayground-network/kopete/plugins/
+  repository extragear/kopete-plugins
+  branch master
+  min revision 407746
+  max revision 409202
+end match
+match /trunk/playground/network/kopete/(plugins|protocols)/
+  repository extragear/kopete-\1
+  branch master
+  min revision 411539
+end match
+match /trunk/playground/network/kopete/[^/]+
+  min revision 411539
+end match
+
+match /trunk/playground/office/kange/
+  repository extragear/kraft
+  branch master
+  min revision 427170
+  max revision 563682
+end match
+
+match /trunk/playground/utils/ksim2/
+  min revision 433644
+  max revision 433654
+  repository extragear/ksim
+  branch master
+end match
+
+match /trunk/playground/sysadmin/ept/
+  min revision 436941
+  max revision 544676
+  repository extragear/adept
+  branch master
+end match
+
+match /trunk/playground/edu/kuriculum/
+  max revision 456629
+  min revision 456371
+  repository extragear/kurriculum
+  branch master
+end match
+
+match /trunk/playground/accessibility/src    # Non atomic rename
+  min revision 446292
+  max revision 446296
+end match
+
+match /trunk/playground/libs/ui
+  min revision 460914
+  max revision 800000
+end match
+
+match /trunk/playground/games/kamefu/
+  repository extragear/gamefu
+  branch master
+  min revision 465379
+  max revision 558781
+end match
+
+match /trunk/playground/devtools/debugging
+  min revision 501755
+  max revision 550000
+end match
+
+match /trunk/playground/utils/kfile-chemical/
+  repository extragear/kfile_chemical
+  branch master
+  min revision 503266
+end match
+
+match /trunk/playground/pim/contactsmenu/
+  repository extragear/khalkhiapplet
+  branch master
+  min revision 510914
+  max revision 514676
+end match
+match /trunk/playground/pim/contactsapplet/
+  repository extragear/khalkhiapplet
+  branch master
+  min revision 514676
+  max revision 637019
+end match
+
+match /trunk/playground/base/kitten/
+  repository kdesupport/strigi
+  branch master
+  min revision 547578   # copied from /branches/work/kde4/playground/libs/archivereader
+  max revision 551679   # renamed to strigi
+end match
+match /trunk/playground/base/strigi/
+  repository kdesupport/strigi
+  branch master
+  min revision 551679   # renamed to strigi
+  max revision 637789   # moved to kdesupport
+end match
+
+match /trunk/playground/base/kittenapplet/
+  repository extragear/strigiapplet
+  branch master
+  min revision 547578
+  max revision 551688
+end match
+
+match /trunk/playground/devtools/icemon-kde3/
+  repository extragear/icemon
+  branch kde3
+  min revision 548828
+end match
+
+match /trunk/playground/pim/contactcards/
+  repository extragear/khalkhicards
+  branch master
+  min revision 558125
+  max revision 637006
+end match
+
+match /trunk/playground/utils/kate
+  min revision 566240
+  max revision 566253
+end match
+
+match /trunk/playground/utils/kbabeldebug
+  min revision 572858
+  max revision 729175   # abandoned
+end match
+
+match /trunk/playground/datasources/
+  repository extragear/datasources
+  branch master
+  min revision 596153
+  max revision 596157
+end match
+
+match /trunk/playground/odbcstats/
+  repository extragear/odbcstats
+  branch master
+  min revision 596154
+  max revision 596158
+end match
+
+match /trunk/playground/base/systemsettings-kde3/
+  repository extragear/systemsettings
+  branch kde3
+  min revision 631619
+end match
+
+match /trunk/playground/utils/workflow-kde3/
+  repository extragear/workflow
+  branch kde3
+  min revision 631625
+end match
+
+match /trunk/playground/kdeui-mousegestures  # branch of kdecore/kdeui, not a project
+  min revision 633776
+  max revision 640000
+end match
+
+match /trunk/playground/bindings/qtscript
+  min revision 634622
+  max revision 750000
+end match
+
+match /trunk/playground/multimedia/videoplayer/
+  repository extragear/dragonplayer
+  branch master
+  min revision 635017
+end match
+
+match /trunk/playground/artwork/Oxygen-Sound-Alternative/
+  repository extragear/Oxygen-sound
+  branch alternative
+  min revision 660158
+end match
+
+match /trunk/playground/pim/decibel/
+  repository kdesupport/decibel
+  branch master
+  min revision 684157
+  max revision 788416
+end match
+
+match /trunk/playground/multimedia/phonon-nmm/
+  repository extragear/phonon-backends
+  branch master
+  min revision 695593
+  max revision 695610
+end match
+
+match /trunk/playground/kpoker/
+  repository extragear/kpoker
+  branch master
+  min revision 713587
+  max revision 713589
+end match
+
+match /trunk/playground/multimedia/phonon/([^/]+)/
+  repository extragear/phonon-\1
+  branch master
+  min revision 714441
+end match
+match /trunk/playground/multimedia/phonon/[^/]+$
+  min revision 714441
+end match
+
+match /trunk/playground/base/kickoff-rewrite-kde4
+  min revision 716466
+  max revision 728094
+end match
+
+match /trunk/playground/bindings/python/pykdesdk4/
+  repository extragear/pykdesdk4
+  branch master
+  min revision 732102
+end match
+
+match /trunk/playground/libs/newssl
+  min revision 733895
+  max revision 733911
+end match
+
+match /trunk/playground/graphics/Dekoroom/
+  repository extragear/dekoroom
+  branch master
+  min revision 829604
+  max revision 829809
+end match
+
+match /trunk/playground/graphics/solidkreator/
+  repository extragear/kreative3d
+  branch master
+  min revision 841491
+end match
+
+match /trunk/playground/utils/dragonegg_kde3/
+  repository extragear/dragonegg
+  branch kde3
+end match
+
+match /trunk/playground/games/kfile-plugins/
+end match
+
+match /trunk/kdeplayground-[^/]+/([^/]+)/
+  repository extragear/\1
+  branch master
+  max revision 409202
+end match
+match /trunk/playground/[^/]+/([^/]+)/
+  repository extragear/\1
+  branch master
+  min revision 409209
+end match
+
+
+match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/([^/]+)/
+  repository extragear/\4
+  branch master
+end match
+
+
+#
+# Final rules
+#
+
+# KDE 4 branches
+match /branches/work/kde4/(kde-common|unsermake|[^/]+$)
+  min revision 411069
+  max revision 628065
+end match
+match /branches/work/kde4/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
+  min revision 411284
+  max revision 450000
+  repository KDE/\1
+  branch kde4-work
+end match
+match /branches/work/kde4/playground/?
+  min revision 417477
+  max revision 631726
+end match
+match /branches/work/kde4/extragear/
+  min revision 433042
+end match
+match /branches/work/kde4/systemsettings_kde4(/|$)
+  min revision 662901     # copy-with-history from playground/utils/systemsettings-kde3
+  max revision 679079
+end match
+
+# I don't know what to do with the kdelibs4_snapshot
+match /branches/work/kde4/kdelibs4_snapshot
+  min revision 557941
+  max revision 600000
+end match
+
+# Error out on work/kde4 use
+match /branches/work/kde4/
+  max revision 700000
+end match
+
+# Ignore all other tags and branches
+match /(tags|branches)/
+  min revision 409209
+end match
+
