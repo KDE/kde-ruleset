@@ -133,12 +133,12 @@ sub getCopyFrom
                 $returns{'type'} = "parent";
                 my %history = %returns;
                 $history{'path'} = $newPath;
-                if( exists $parentMoves{"$newPath:$fromRev"} ) {
-                    $returns{'type'} = "skip";
-                    #print "> Skipping\n";
-                } else {
+                #if( exists $parentMoves{"$newPath:$fromRev"} ) {
+                #    $returns{'type'} = "skip";
+                #    #print "> Skipping\n";
+                #} else {
                     $parentMoves{"$newPath:$fromRev"} = 1;
-                }
+                #}
                 #print "Parents: " . Dumper(%parentMoves);
                 print( $FILE "#\t[ Parent: $newPath @ $currentRev <- $origPath @ $fromRev ]\n" );
                 last;
@@ -239,7 +239,7 @@ sub getCopyFromRecursive
     my $fromRev = $args->{'rev'};
     my $fromPath = $args->{'root'};
     $fromPath = "$args->{'root'}/$args->{'path'}" if( $args->{'path'} ne "" );
-    
+
     open(my $FILE, ">>", "$gargs{'module'}-rules-auto") || die "!!$!\n";
     print( $FILE "#\t------< $fromPath >------\n" );    
     my $ret = {};
