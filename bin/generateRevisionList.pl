@@ -21,42 +21,65 @@ my %gargs = (
 );
 my @commands = ();
 
+sub ltrim
+{
+    my $string = shift;
+    $string =~ s/^\/+//;
+    return $string;
+}
+
+sub rtrim
+{
+    my $string = shift;
+    $string =~ s/\/+$//;
+    return $string;
+}
+
+sub trim
+{
+    my $string = shift;
+    $string = ltrim($string);
+    $string = rtrim($string);
+    return $string;
+}
+
+sub trimdupe
+{
+    my ($string, $dupe) = @_;
+    $string =~ s/$dupe{2,}/$dupe/;
+    return $string;
+}
+
 sub listSubDirs
 {
-    print("Getting a list of subdirs...\n");
+    #print("Getting a list of subdirs...\n");
     my $args = $_[0];
     #print "list:" . Dumper($args);
-    $args->{'root'} = "" if $args->{'root'} eq "/";
-    $args->{'root'} = "$args->{'root'}/" if substr($args->{'root'},-1) ne "/" and $args->{'root'} ne "/"; 
-    my $cmd = "svn ls $args->{'repository'}$args->{'root'}$args->{'path'}";
+    $args->{'root'} = trim($args->{'root'});
+    $args->{'path'} = trim($args->{'path'});
+    $args->{'path'} = $args->{'path'} . "/" if( $args->{'path'} ne "" );
+
+    my $cmd = "svn ls $args->{'repository'}" . trimdupe("/$args->{'root'}/$args->{'path'}", "/");
     push( @commands, $cmd );
     my @dirs;
-    push( @dirs, "$args->{'root'}$args->{'path'}" );
+    print( "Adding:\t$args->{'path'}\n");
+    push( @dirs, "$args->{'path'}" );
     open( my $CMD, "-|", "$cmd" ) || die "listSubDirs: Failed to run \"$cmd\": $!\n";
 
-    print( "listSubDirs: Running: $cmd\n" );
+    #print( "listSubDirs: Running: $cmd\n" );
     while( <$CMD> ) {
         chomp;
         if( /(\S+)\/$/ ) {
             if( $args->{'ignore'} eq "" or not /$args->{'ignore'}/ ) {
-                if( length( $args->{'path'} ) > 0 && substr( $args->{'path'}, -1 ) ne "/" ) {
-                    $args->{'path'} = "$args->{'path'}/";
-                }
-                print( "listSubDirs:\tAdding: $args->{'path'}$_\n" );
-                #push( @dirs, "$args->{'path'}$1" );
                 my %subargs = %{$args};
                 $subargs{'path'} = "$args->{'path'}$_";
                 push( @dirs, listSubDirs(\%subargs) );
             } else {
-                print( "listSubDirs:\tSkipping; $args->{'path'}$_\n" );
+                print( "Skipping:\t" . "$args->{'path'}$_\n" );
             }
         } else {
-            if( length( $args->{'path'} ) > 0 && substr( $args->{'path'}, -1 ) eq "/" ) {
-                $args->{'path'} = substr($args->{'path'}, 0, -1);
-            }
-            my $file = "$args->{'path'}/$_";
-            print( "listSubDirs:\tAdding: $file\n" );
-            push( @dirs, $file );
+            print( "Adding:\t" . "$args->{'path'}$_\n" );
+            push( @dirs, "$args->{'path'}$_" );
         }
     }
     close( $CMD );
@@ -67,6 +90,7 @@ sub addRevisionsForPath
 {
     my ($revs, $repository, $root, $path) = @_;
     my $args = $_[0];
+    my @spinner = ('|', '/', '-', '\\', '-');
     #print "add:" . Dumper($args);
 
     $args->{'root'} = "" if $args->{'root'} eq "/";
@@ -79,9 +103,11 @@ sub addRevisionsForPath
     my $nbr = 0;
     my $last = -1;
     my $rev;
-    print "$args->{'path'}: ";
+    print "$args->{'path'}: " . $spinner[0];
+    my $i = 0;
     while( <$CMD> ) {
         if( /^r(\d+) / ) {
+            print( "\b" . $spinner[++$i % 5] );
             $rev = $1;
             $args->{'revisions'}->{$rev} = 1;
             $nbr++;
@@ -89,13 +115,13 @@ sub addRevisionsForPath
         }
     }
     close( $CMD );
-    print "$nbr revs ($last)\n";
+    print "\b$nbr revs ($last)\n";
 }
 
 my $argnum;
 
 for($argnum = 0; $argnum <= $#ARGV; $argnum++ ) {
-    print "Argument #$argnum: $ARGV[$argnum]\n";
+    #print "Argument #$argnum: $ARGV[$argnum]\n";
     switch ($ARGV[$argnum]) {
         case "--repo"   { $gargs{'repository'} = $ARGV[++$argnum]; }
         case "--path"   { push( @{$gargs{'path'}}, $ARGV[++$argnum] ); }
@@ -110,7 +136,7 @@ if( $#ARGV < 5 ) {
     print( "Usage: generateRevisionList.pl --repo repository --root rootpath --path path [--path path]* --module module [--append] [--ignore path]\n" );
     exit;
 }
-print Dumper(%gargs);
+#print Dumper(%gargs);
 
 my $fileName = "$gargs{'module'}-revisions.txt";
 print("Getting a list of paths...\n");
@@ -125,6 +151,7 @@ foreach my $dir (@{$gargs{'path'}}) {
 
 my %revs = ();
 my $i = 0;
+print("Getting revisions for paths (" . $gargs{'root'} . ")\n");
 foreach( @dirs )
 {
     #print( "Scanning '$gargs{'path'} / $_'...\n" );
