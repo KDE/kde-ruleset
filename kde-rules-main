@@ -3537,7 +3537,7 @@ match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/$
 end match
 
 # Ignore those repositories as they are imported using other rules
-match /.*/(kdebase|kdelibs|kdebindings|kdejava|kdevelop|kdevplatform|kdepim|kdepimlibs|quanta|koffice|korganizer|office)/
+match /.*/(kdebase|kdelibs|kdebindings|kdejava|kdevelop|kdevplatform|kdepim|kdepimlibs|quanta|koffice|korganizer)/
 end match
 
 match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/[^/]+$                 # ignore top-level files
