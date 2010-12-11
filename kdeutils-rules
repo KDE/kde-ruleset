@@ -1,0 +1,290 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+##### Create the KDE module #####
+create repository KDE/kdeutils
+end repository
+
+##### Ignore/Delete rules #####
+### Ignore the SVN-adjusting commits
+match /
+  min revision 409202
+  max revision 409209
+end match
+
+##### Main rules #####
+### trunk/kdeutils
+match /trunk/kdeutils/
+  repository KDE/kdeutils
+  branch master
+  max revision 409202
+end match
+
+### trunk/KDE/kdeutils
+match /trunk/KDE/kdeutils/
+  repository KDE/kdeutils
+  branch master
+  min revision 409209
+end match
+
+##### Branches #####
+### CVS branches
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/
+  repository KDE/kdeutils
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+match /branches/KDE/([^/]+)A/kdeutils/
+  repository KDE/kdeutils
+  branch KDE/\1a
+  min revision 409209
+end match
+
+### Release branches
+match /branches/KDE/([^/]+)/kdeutils/
+  repository KDE/kdeutils
+  branch KDE/\1
+  min revision 409209
+end match
+
+### Create branches in each sub-repository
+match /branches/KDE/([^/]+)/$
+  action recurse
+  min revision 757128
+end match
+
+##### Tags #####
+### CVS/old-style tags
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/
+  repository KDE/kdeutils
+  branch refs/tags/v\1.\2.0
+  annotated true
+  min revision 68154
+  max revision 85028
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/
+  repository KDE/kdeutils
+  branch refs/tags/v\1.\2.0
+  annotated true
+  max revision 409202
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdeutils/
+  repository KDE/kdeutils
+  branch refs/tags/v\1.\2.\3
+  annotated true
+  max revision 409202
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdeutils/
+  repository KDE/kdeutils
+  branch refs/tags/v\1.\2.\3a
+  annotated true
+  min revision 192719
+  max revision 409202
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdeutils/
+  repository KDE/kdeutils
+  branch refs/tags/v\1.\2.\3-beta\4
+  annotated true
+  min revision 376088
+  max revision 409202
+end match
+
+### 3.5.0-alpha1
+match /tags/KDE/3.5.0-alpha1/kdeutils/
+  repository KDE/kdeutils
+  branch refs/tags/v3.4.90
+  min revision 443441
+  max revision 445561
+  annotated true
+end match
+
+### 3.5.0-beta1
+match /tags/KDE/3.5.0-beta1/kdeutils/
+  repository KDE/kdeutils
+  branch refs/tags/v3.4.91
+  min revision 459298
+  max revision 460260
+  annotated true
+end match
+
+### New-style tags
+match /tags/KDE/([^/]+)A/kdeutils/
+  repository KDE/kdeutils
+  branch refs/tags/v\1a
+  annotated true
+end match
+
+match /tags/KDE/([^/]+)/kdeutils/
+  repository KDE/kdeutils
+  branch refs/tags/v\1
+  annotated true
+end match
+
+##### Application-specific rules #####
+### Ark in branches/work/libarchive-based-ark/ark
+match /branches/work/libarchive-based-ark/ark/
+  repository KDE/kdeutils
+  prefix ark/
+  branch master
+  min revision 672750
+  max revision 694571
+end match
+
+### Filelight in playground
+match /trunk/playground/utils/filelight/
+  repository KDE/kdeutils
+  branch master
+  min revision 920168
+  max revision 1174509
+end match
+
+### Filelight in kdereview
+match /trunk/kdereview/filelight/
+  repository KDE/kdeutils
+  branch master
+  min revision 1081624
+  max revision 1181066
+end match
+
+### KGpg in branches/work/kgpg2
+match /branches/work/kgpg2/
+  repository KDE/kdeutils
+  prefix kgpg/
+  branch master
+  min revision 738904
+  max revision 766859
+end match
+
+### Okteta in playground/utils/okteta
+match /trunk/playground/utils/okteta/
+  repository KDE/kdeutils
+  prefix okteta/
+  branch master
+  min revision 728529
+  max revision 792016
+end match
+
+### Okteta in kdereview
+match /trunk/kdereview/okteta/
+  repository KDE/kdeutils
+  prefix okteta/
+  branch master
+  min revision 792016
+  max revision 797377
+end match
+
+### KRemoteControl as kdelirc
+match /trunk/kdeutils/kdelirc/
+  repository KDE/kdeutils
+  prefix kremotecontrol/
+  branch master
+  min revision 228301
+  max revision 407135
+end match
+match /trunk/KDE/kdeutils/kdelirc/
+  repository KDE/kdeutils
+  prefix kremotecontrol/
+  branch master
+  min revision 409203
+  max revision 1075787
+end match
+match /trunk/playground/utils/kdelirc/
+  repository KDE/kdeutils
+  prefix kremotecontrol/
+  branch master
+  min revision 807315
+  max revision 956538
+end match
+match /trunk/kdereview/utils/kdelirc/
+  repository KDE/kdeutils
+  prefix kremotecontrol/
+  branch master
+  min revision 956538
+  max revision 957548
+end match
+match /trunk/kdereview/kdelirc/
+  repository KDE/kdeutils
+  prefix kremotecontrol/
+  branch master
+  min revision 956548
+  max revision 963348
+end match
+match /branches/work/kdelirc/
+  repository KDE/kdeutils
+  prefix kremotecontrol/
+  branch master
+  min revision 1075787
+  max revision 1102497
+end match
+match /trunk/kdereview/kremotecontrol/
+  repository KDE/kdeutils
+  branch master
+  min revision 1102497
+  max revision 1109704
+end match
+
+### printer-applet in kdereview
+match /trunk/kdereview/printer-applet/
+  repository KDE/kdeutils
+  branch master
+  min revision 789361
+  max revision 798615
+end match
+
+### printer-applet in kdebase-workspace
+match /trunk/KDE/kdebase/workspace/printer-applet/
+  repository KDE/kdeutils
+  branch master
+  min revision 798615
+  max revision 802902
+end match
+
+### SuperKaramba in kdereview
+match /trunk/kdereview/superkaramba/
+  repository KDE/kdeutils
+  branch master
+  min revision 417080
+  max revision 450000
+end match
+
+### Sweeper in kdebase
+match /trunk/kdebase/kcontrol/privacy/
+  repository KDE/kdeutils
+  prefix sweeper/
+  branch master
+  min revision 203673
+  max revision 455942
+end match
+match /trunk/KDE/kdebase/kcontrol/privacy/
+  repository KDE/kdeutils
+  prefix sweeper/
+  branch master
+  min revision 409203
+  max revision 455942
+end match
+match /trunk/KDE/kdebase/workspace/kcontrol/privacy/
+  repository KDE/kdeutils
+  prefix sweeper/
+  branch master
+  min revision 455942
+  max revision 464767
+end match
+
+### Sweeper as kdeutils/privacy
+match /trunk/KDE/kdeutils/privacy/
+  repository KDE/kdeutils
+  prefix sweeper/
+  branch master
+  min revision 464767
+  max revision 468678
+end match
+
+##### Ignore everything else #####
+match /
+end match
