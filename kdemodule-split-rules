@@ -151,6 +151,10 @@ create repository KDE/kdegraphics/libs/libksane
 end repository
 create repository KDE/kdegraphics/libs/mobipocket
 end repository
+create repository KDE/kdegraphics/libkface
+end repository
+create repository KDE/kdegraphics/libkmap
+end repository
 
 #abandoned/moved stuff
 create repository KDE/kdegraphics/kghostview
@@ -3843,8 +3847,8 @@ match /trunk/extragear/multimedia/(kaudiocreator)/
 end match
 
 #kdegraphics special branches
-match /(trunk|branches/work/kde4)/playground/graphics/(gwenview|okular|svgpart|kooka)/
-  repository KDE/kdegraphics/\2
+match /((trunk|branches/work/kde4)/playground/graphics|trunk/kdereview)/(gwenview|okular|svgpart|kooka|libkface|libkmap)/
+  repository KDE/kdegraphics/\3
   branch master
 end match
 match /tags/unmaintained/4/(kooka)/
