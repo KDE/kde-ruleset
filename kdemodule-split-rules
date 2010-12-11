@@ -2459,7 +2459,7 @@ end repository
 create repository extragear/kdevelop-plugins
 end repository
 
-create repository extragear/kajongg
+create repository extragear/kajongg #TODO kdegames
 end repository
 
 create repository extragear/quickpen
