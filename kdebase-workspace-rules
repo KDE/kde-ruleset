@@ -43,6 +43,12 @@ end match
 # DEEP HISTORY
 ##
 
+match /trunk/kdebase/kdm/
+    repository kdebase-workspace
+    prefix kdm/
+    branch master
+end match
+
 match /trunk/KDE/kdebase/cmake/
     repository kdebase-workspace
     prefix cmake/
@@ -466,20 +472,6 @@ match /trunk/KDE/kdebase/kdm/
     max revision 515253
 end match
 
-match /trunk/KDE/kdebase/kdm/backend/
-    repository kdebase-workspace
-    prefix kdm/backend/
-    branch master
-    max revision 515253
-end match
-
-match /trunk/kdebase/kdm/pics/
-    repository kdebase-workspace
-    prefix kdm/kfrontend/pics/
-    branch master
-    max revision 101376
-end match
-
 match /trunk/KDE/kdebase/khotkeys/
     repository kdebase-workspace
     prefix khotkeys/
@@ -487,41 +479,13 @@ match /trunk/KDE/kdebase/khotkeys/
     max revision 629803
 end match
 
-match /trunk/KDE/kdebase/khotkeys/app/
+match /branches/work/khotkeys-redesign/khotkeys/ #human
     repository kdebase-workspace
-    prefix khotkeys/app/
-    branch master
-    max revision 629803
-end match
-
-match /branches/work/khotkeys-redesign/khotkeys/kcm_hotkeys/
-    repository kdebase-workspace
-    prefix khotkeys/kcm_hotkeys/
+    prefix khotkeys/
     branch master
     max revision 831919
 end match
 
-match /branches/work/khotkeys-redesign/khotkeys/kcm_hotkeys/ui/
-    repository kdebase-workspace
-    prefix khotkeys/kcm_hotkeys/ui/
-    branch master
-    max revision 831919
-end match
-
-match /branches/work/khotkeys-redesign/khotkeys/libkhotkeysprivate/daemon/
-    repository kdebase-workspace
-    prefix khotkeys/libkhotkeysprivate/daemon/
-    branch master
-    max revision 831919
-    min revision 800821
-end match
-
-match /branches/work/khotkeys-redesign/khotkeys/test/
-    repository kdebase-workspace
-    prefix khotkeys/test/
-    branch master
-    max revision 831919
-end match
 
 match /trunk/kdereview/kinfocenter2/
     repository kdebase-workspace
@@ -544,13 +508,6 @@ match /trunk/kdereview/kinfocenter2/Modules/
     branch master
     max revision 1118381
     min revision 1111524
-end match
-
-match /trunk/playground/base/kinfocenter2/Modules/
-    repository kdebase-workspace
-    prefix kinfocenter/Modules/
-    branch master
-    max revision 1111524
 end match
 
 match /trunk/KDE/kdebase/apps/kinfocenter/base/
@@ -598,12 +555,6 @@ match /trunk/KDE/kdebase/kmenuedit/
     max revision 546605
 end match
 
-match /trunk/KDE/kdebase/kmenuedit/pixmaps/
-    repository kdebase-workspace
-    prefix kmenuedit/pixmaps/
-    branch master
-    max revision 546605
-end match
 
 match /trunk/KDE/kdebase/kdesktop/lock/
     repository kdebase-workspace
@@ -653,14 +604,6 @@ match /branches/work/ksplashx/
     prefix ksplash/
     branch master
     max revision 643073
-end match
-
-match /branches/work/ksplashx/kcm/
-    repository kdebase-workspace
-    prefix ksplash/kcm/
-    branch master
-    max revision 643073
-    min revision 637753
 end match
 
 match /trunk/KDE/kdebase/ksplashml/kcmksplash/
@@ -822,6 +765,14 @@ match /trunk/KDE/kdebase/kwin/
     prefix kwin/
     branch master
     max revision 455844
+    min revision 409203
+end match
+
+match /trunk/kdebase/kwin/ #human
+    repository kdebase-workspace
+    prefix kwin/
+    branch master
+    max revision 409202
 end match
 
 match /branches/work/kwin_composite/clients/
