@@ -10,16 +10,12 @@ match /trunk/(KDE/)?kdebindings/qtruby/
     repository KDE/kdebindings-ruby
     branch master
     prefix qtruby/
-    # qtruby was moved from / to /ruby/ in 653117 - so skip that commit to not match the deletion of the dir
-    max revision 653116
 end match
 
 match /trunk/(KDE/)?kdebindings/korundum/
     repository KDE/kdebindings-ruby
     branch master
     prefix korundum/
-    # korundum was moved from / to /ruby/ in 653122 - so skip that commit to not match the deletion of the dir
-    max revision 653121
 end match
 
 match /trunk/(KDE/)?kdebindings/ruby/
