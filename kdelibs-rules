@@ -349,6 +349,13 @@ match /trunk/playground/libs/webkitkde/kdewebkit/
     max revision 1040167
 end match
 
+match /trunk/playground/libs/webkitkde/(kwebpage.*|network/kwebview.*|searchbar.*)
+    repository KDE/kdelibs
+    prefix kdewebkit/\1
+    branch master
+    max revision 851084
+end match
+
 match /trunk/kdebase/kioslave/help/customization/
     repository KDE/kdelibs
     prefix kdoctools/customization/
