@@ -1,3 +1,9 @@
 Ruby:
- - Follow past history of krossruby, when it was in koffice/kross (moved in r646836).
+ - Follow past history of krossruby, when it was in koffice/libs/kross
+   (moved in r646836).
+ - Convert the "modular smoke branch" (merged in r807397).
+
+Python:
+ - Follow past history of krosspython, when it was in koffice/libs/kross
+   (moved in r646837), and earlier in kexi.
  - Convert the "modular smoke branch" (merged in r807397).
