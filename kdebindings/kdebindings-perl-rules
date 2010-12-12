@@ -1,0 +1,128 @@
+#
+# Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
+#
+
+create repository KDE/kdebindings-perl
+end repository
+
+match /trunk/(KDE/)?kdebindings/perl/
+    repository KDE/kdebindings-perl
+    branch master
+end match
+
+#
+# recursion
+#
+match /(branches|tags)/KDE/([^/]+)/$
+    action recurse
+end match
+
+match /(branches|tags)/KDE/([^/]+)/kdebindings/$
+    action recurse
+end match
+
+#
+# branches
+#
+
+# svn
+
+match /branches/KDE/([^/]+)A/kdebindings/perl/
+    repository KDE/kdebindings-perl
+    branch KDE/\1a
+end match
+
+match /branches/KDE/([^/]+)/kdebindings/perl/
+    repository KDE/kdebindings-perl
+    branch KDE/\1
+end match
+
+# cvs
+
+# this commit is messed up - ignore it
+match /branches/KDE_3_4_BRANCH/kdebindings/
+    min revision 400296
+    max revision 400296
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdebindings/perl/
+  repository KDE/kdebindings-perl
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+#
+# tags
+#
+
+# cvs time
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdebindings/perl/
+  repository KDE/kdebindings-perl
+  branch refs/tags/v\1.\2.0
+  max revision 409202
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdebindings/perl/
+  repository KDE/kdebindings-perl
+  branch refs/tags/v\1.\2.0
+  max revision 85028
+  min revision 68154
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdebindings/perl/
+  repository KDE/kdebindings-perl
+  branch refs/tags/v\1.\2.\3
+  max revision 409202
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdebindings/perl/
+  repository KDE/kdebindings-perl
+  branch refs/tags/v\1.\2.\3a
+  min revision 192719
+  max revision 409202
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdebindings/perl/
+  repository KDE/kdebindings-perl
+  branch refs/tags/v\1.\2.\3-beta\4
+  min revision 376088
+  max revision 409202
+  annotated true
+end match
+
+# svn time
+
+match /tags/KDE/([^/]+)A/kdebindings/perl/
+    repository KDE/kdebindings-perl
+    branch refs/tags/v\1a
+    annotated true
+end match
+
+match /tags/KDE/([^/]+)/kdebindings/perl/
+    repository KDE/kdebindings-perl
+    branch refs/tags/v\1
+    annotated true
+end match
+
+match /tags/KDE/3.5.0-alpha1/kdebindings/perl/
+  repository KDE/kdebindings-perl
+  branch refs/tags/v3.4.90
+  annotated true
+end match
+
+match /tags/KDE/3.5.0-beta1/kdebindings/perl/
+  repository KDE/kdebindings-perl
+  branch refs/tags/v3.4.91
+  annotated true
+end match
+
+#
+# ignore everything else
+#
+match /
+end match
