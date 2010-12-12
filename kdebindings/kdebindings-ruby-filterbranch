@@ -1,0 +1,15 @@
+#!/bin/sh
+
+git filter-branch --tag-name-filter cat --tree-filter '
+handle_move() {
+if test -d old/$1; then
+    if test -d $1; then
+        rm -rf old/$1
+    else
+        mv old/$1 .
+    fi
+fi
+}
+handle_move qtruby
+handle_move korundum
+' -- --all

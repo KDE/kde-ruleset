@@ -9,13 +9,13 @@ end repository
 match /trunk/(KDE/)?kdebindings/qtruby/
     repository KDE/kdebindings-ruby
     branch master
-    prefix qtruby/
+    prefix old/qtruby/
 end match
 
 match /trunk/(KDE/)?kdebindings/korundum/
     repository KDE/kdebindings-ruby
     branch master
-    prefix korundum/
+    prefix old/korundum/
 end match
 
 match /trunk/(KDE/)?kdebindings/ruby/
