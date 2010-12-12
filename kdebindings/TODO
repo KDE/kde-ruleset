@@ -1,0 +1,3 @@
+Ruby:
+ - Follow past history of krossruby, when it was in koffice/kross (moved in r646836).
+ - Convert the "modular smoke branch" (merged in r807397).
