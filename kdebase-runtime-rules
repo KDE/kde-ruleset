@@ -460,7 +460,7 @@ end match
 
 match /trunk/(KDE/)?kdelibs/kio/tests/kmimetypefinder.cpp
     repository kdebase-runtime
-    prefix kmimetypefinder/
+    prefix kmimetypefinder/kmimetypefinder.cpp
     branch master
 end match
 

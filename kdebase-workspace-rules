@@ -291,33 +291,27 @@ match /trunk/playground/base/freespacenotifier/
     max revision 1117718
 end match
 
-match /trunk/KDE/kdebase/kcheckpass/
+match /trunk/(KDE/)?kdebase/kcheckpass/
     repository kdebase-workspace
     prefix kcheckpass/
     branch master
     max revision 572734
 end match
 
-match /trunk/KDE/kdebase/kcminit/
+match /trunk/(KDE/)?kdebase/kcminit/
     repository kdebase-workspace
     prefix kcminit/
     branch master
     max revision 635644
 end match
 
-match /trunk/KDE/kdebase/kcontrol/
+match /trunk/(KDE/)?kdebase/kcontrol/
     repository kdebase-workspace
     prefix kcontrol/
     branch master
     max revision 455864
 end match
 
-match /trunk/KDE/kdebase/kcontrol/access/
-    repository kdebase-workspace
-    prefix kcontrol/access/
-    branch master
-    max revision 455864
-end match
 
 match /trunk/kdereview/autostart/
     repository kdebase-workspace
@@ -380,14 +374,6 @@ match /trunk/KDE/kdebase/runtime/kcontrol/krdb/
     min revision 629691
 end match
 
-match /trunk/KDE/kdebase/runtime/kcontrol/krdb/ad/
-    repository kdebase-workspace
-    prefix kcontrol/krdb/ad/
-    branch master
-    max revision 660949
-    min revision 629691
-end match
-
 match /trunk/kdebase/kcontrol/display/ad/
     repository kdebase-workspace
     prefix kcontrol/krdb/ad/
@@ -441,14 +427,14 @@ match /trunk/KDE/kdebase/runtime/kcontrol/style/
     min revision 629691
 end match
 
-match /trunk/KDE/kdebase/kdm/
+match /trunk/(KDE/)?kdebase/kdm/
     repository kdebase-workspace
     prefix kdm/
     branch master
     max revision 515253
 end match
 
-match /trunk/KDE/kdebase/khotkeys/
+match /trunk/(KDE/)?kdebase/khotkeys/
     repository kdebase-workspace
     prefix khotkeys/
     branch master
@@ -486,7 +472,7 @@ match /trunk/kdereview/kinfocenter2/Modules/
     min revision 1111524
 end match
 
-match /trunk/KDE/kdebase/apps/kinfocenter/base/
+match /trunk/(KDE/)?kdebase/apps/kinfocenter/base/
     repository kdebase-workspace
     prefix kinfocenter/Modules/base/
     branch master
@@ -501,7 +487,7 @@ match /branches/KDE/4.4/kdebase/apps/kinfocenter/nics/
     min revision 1070757
 end match
 
-match /trunk/KDE/kdebase/apps/kinfocenter/nics/
+match /trunk/(KDE/)?kdebase/apps/kinfocenter/nics/
     repository kdebase-workspace
     prefix kinfocenter/Modules/nics/
     branch master
@@ -509,7 +495,7 @@ match /trunk/KDE/kdebase/apps/kinfocenter/nics/
     min revision 769662
 end match
 
-match /trunk/KDE/kdebase/runtime/kcontrol/samba/
+match /trunk/(KDE/)?kdebase/runtime/kcontrol/samba/
     repository kdebase-workspace
     prefix kinfocenter/Modules/samba/
     branch master
@@ -517,14 +503,14 @@ match /trunk/KDE/kdebase/runtime/kcontrol/samba/
     min revision 650302
 end match
 
-match /trunk/KDE/kdebase/klipper/
+match /trunk/(KDE/)?kdebase/klipper/
     repository kdebase-workspace
     prefix klipper/
     branch master
     max revision 547371
 end match
 
-match /trunk/KDE/kdebase/kmenuedit/
+match /trunk/(KDE/)?kdebase/kmenuedit/
     repository kdebase-workspace
     prefix kmenuedit/
     branch master
@@ -532,43 +518,28 @@ match /trunk/KDE/kdebase/kmenuedit/
 end match
 
 
-match /trunk/KDE/kdebase/kdesktop/lock/
+match /trunk/(KDE/)?kdebase/kdesktop/lock/
     repository kdebase-workspace
     prefix krunner/lock/
     branch master
     max revision 478089
 end match
 
-match /trunk/KDE/kdebase/kscreensaver/
+match /trunk/(KDE/)?kdebase/kscreensaver/
     repository kdebase-workspace
     prefix kscreensaver/
     branch master
     max revision 477210
 end match
 
-match /trunk/KDE/kdebase/kscreensaver/kblank_screensaver/
-    repository kdebase-workspace
-    prefix kscreensaver/kblank_screensaver/
-    branch master
-    max revision 477210
-end match
-
-match /trunk/KDE/kdelibs/libkscreensaver/
+match /trunk/(KDE/)?kdelibs/libkscreensaver/
     repository kdebase-workspace
     prefix kscreensaver/libkscreensaver/
     branch master
     max revision 478094
-    min revision 409202
 end match
 
-match /trunk/kdelibs/libkscreensaver/
-    repository kdebase-workspace
-    prefix kscreensaver/libkscreensaver/
-    branch master
-    max revision 409202
-end match
-
-match /trunk/KDE/kdebase/ksmserver/
+match /trunk/(KDE/)?kdebase/ksmserver/
     repository kdebase-workspace
     prefix ksmserver/
     branch master
@@ -582,7 +553,7 @@ match /branches/work/ksplashx/
     max revision 643073
 end match
 
-match /trunk/KDE/kdebase/ksplashml/kcmksplash/
+match /trunk/(KDE/)?kdebase/ksplashml/kcmksplash/
     repository kdebase-workspace
     prefix ksplash/kcm/
     branch master
@@ -597,24 +568,9 @@ match /trunk/KDE/kdebase/runtime/kstyles/
     min revision 703066
 end match
 
-match /trunk/KDE/kdelibs/kstyles/
+match /trunk/(KDE/)?kdelibs/kstyles/
     repository kdebase-workspace
     prefix kstyles/
-    branch master
-    max revision 703066
-end match
-
-match /trunk/KDE/kdebase/runtime/kstyles/highcolor/
-    repository kdebase-workspace
-    prefix kstyles/highcolor/
-    branch master
-    max revision 1097762
-    min revision 703066
-end match
-
-match /trunk/KDE/kdelibs/kstyles/highcolor/
-    repository kdebase-workspace
-    prefix kstyles/highcolor/
     branch master
     max revision 703066
 end match
@@ -672,7 +628,7 @@ match /trunk/kdeartwork/styles/plastik/config/
     max revision 346818
 end match
 
-match /trunk/KDE/kdebase/ksysguard/
+match /trunk/(KDE/)?kdebase/ksysguard/
     repository kdebase-workspace
     prefix ksysguard/
     branch master
@@ -686,42 +642,15 @@ match /trunk/KDE/kdebase/ksysguard/example/
     max revision 469599
 end match
 
-match /trunk/kdeutils/ktop/gui/
+match /trunk/kdeutils/ktop/
     repository kdebase-workspace
-    prefix ksysguard/gui/
+    prefix ksysguard/
     branch master
     max revision 57323
 end match
 
-match /trunk/kdeutils/ktop/ktopd/
-    repository kdebase-workspace
-    prefix ksysguard/ksysguardd/
-    branch master
-    max revision 57323
-end match
 
-match /trunk/kdeutils/ktop/CContLib/
-    repository kdebase-workspace
-    prefix ksysguard/ksysguardd/CContLib/
-    branch master
-    max revision 57323
-end match
-
-match /trunk/kdeutils/ktop/ktopd/FreeBSD/
-    repository kdebase-workspace
-    prefix ksysguard/ksysguardd/FreeBSD/
-    branch master
-    max revision 57323
-end match
-
-match /trunk/kdeutils/ktop/pics/
-    repository kdebase-workspace
-    prefix ksysguard/pics/
-    branch master
-    max revision 57323
-end match
-
-match /trunk/KDE/kdebase/ksystraycmd/
+match /trunk/(KDE/)?kdebase/ksystraycmd/
     repository kdebase-workspace
     prefix ksystraycmd/
     branch master
@@ -736,19 +665,11 @@ match /branches/work/kwin_composite/
     min revision 558148
 end match
 
-match /trunk/KDE/kdebase/kwin/
+match /trunk/(KDE/)?kdebase/kwin/
     repository kdebase-workspace
     prefix kwin/
     branch master
     max revision 455844
-    min revision 409203
-end match
-
-match /trunk/kdebase/kwin/ #human
-    repository kdebase-workspace
-    prefix kwin/
-    branch master
-    max revision 409202
 end match
 
 match /branches/work/kwin_composite/clients/
@@ -930,7 +851,7 @@ match /branches/work/phonon-solid-sprint/kdelibs/solid/solid/experimental/
     max revision 657158
 end match
 
-match /trunk/KDE/kdebase/kicker/taskmanager/
+match /trunk/(KDE/)?kdebase/kicker/taskmanager/
     repository kdebase-workspace
     prefix libs/taskmanager/
     branch master
@@ -1025,14 +946,6 @@ match /trunk/kdereview/qguiplatformplugin_kde/
     max revision 1053994
 end match
 
-match /trunk/KDE/kdebase/runtime/solid/
-    repository kdebase-workspace
-    prefix solid/
-    branch master
-    max revision 683373
-    min revision 659754
-end match
-
 match /branches/work/phonon-solid-sprint/kdebase/runtime/solid/
     repository kdebase-workspace
     prefix solid/
@@ -1045,7 +958,7 @@ match /trunk/KDE/kdebase/runtime/solid/
     repository kdebase-workspace
     prefix solid/
     branch master
-    max revision 654946
+    max revision 683373
 end match
 
 match /branches/work/phonon-solid-sprint/kdelibs/solid/kcm/
@@ -1242,7 +1155,7 @@ match /trunk/kdereview/kcontrol4/src/icons/
     max revision 959821
 end match
 
-match /trunk/KDE/kdebase/pics/wallpapers/
+match /trunk/(KDE/)?kdebase/pics/wallpapers/
     repository kdebase-workspace
     prefix wallpapers/
     branch master
