@@ -3207,6 +3207,12 @@ end repository
 create repository extragear/kxslt
 end repository
 
+create repository extragear/libalkimia
+end repository
+
+create repository extragear/titrationplot
+end repository
+
 #
 # Ignore rules
 #
@@ -4643,6 +4649,11 @@ match /trunk/playground/utils/dragonegg_kde3/
 end match
 
 match /trunk/playground/games/kfile-plugins/
+end match
+
+match /trunk/playground/office/alkimia/libalkimia/
+  repository extragear/libalkimia
+  branch master
 end match
 
 match /trunk/kdeplayground-[^/]+/([^/]+)/
