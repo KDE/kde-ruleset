@@ -1,0 +1,29 @@
+match /tags/KDE/([^/]+)A/kdebase/${MODULE}/
+  repository ${REPO}
+  branch refs/tags/v\1a
+  min revision 409209
+  annotated true
+end match
+match /tags/KDE/([^/]+)/kdebase/${MODULE}/
+  repository ${REPO}
+  branch refs/tags/v\1
+  min revision 409209
+  annotated true
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdebase/${MODULE}/
+  repository ${REPO}
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+match /branches/KDE/([^/]+)A/kdebase/${MODULE}/
+  repository ${REPO}
+  branch KDE/\1a
+  min revision 409209
+end match
+match /branches/KDE/([^/]+)/kdebase/${MODULE}/
+  repository ${REPO}
+  branch KDE/\1
+  min revision 409209
+end match

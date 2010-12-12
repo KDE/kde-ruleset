@@ -1,0 +1,913 @@
+    # --repo# file:///mnt/tera/kde-svn/kde# --path# /trunk/KDE/kdebase/runtime# --module# kdebase-runtime# --subdirs# --ignore# l10n
+declare MODULE=(coreapps|runtime)
+declare REPO=kdebase-runtime
+
+
+create repository ${REPO}
+end repository
+
+include kdebase-branches-tags-rules
+
+match /trunk/KDE/kdebase/runtime/
+    repository kdebase-runtime
+    branch master
+    min revision 547337
+end match
+
+#	[ move trunk/KDE/kdebase/coreapps 547337 0 ]
+match /trunk/KDE/kdebase/coreapps/
+    repository kdebase-runtime
+    branch master
+    max revision 547337
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/activitymanager >------
+#	[ add activitymanager HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/attica >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/attica/kdeplugin @ 1051552 <- /trunk/kdereview/attica/kdeplugin @ 1051551 ]
+#	[ add attica HEAD 0 ]
+
+match /trunk/kdereview/attica/ #human
+    repository kdebase-runtime 
+    branch master
+    prefix attica/
+    max revision 1051552
+end match
+
+#the stuff in runtime doesn't actually reach this far back:
+#match /branches/work/attica/ocs/ #human
+#    repository kdebase-runtime
+#    branch master
+#    prefix attica/
+#    max revision 1044369
+#end match  
+
+
+
+
+#	------< /trunk/KDE/kdebase/runtime/cmake >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/cmake/CMakeLists.txt @ 699521 <- /trunk/KDE/kdebase/workspace/cmake/CMakeLists.txt @ 699510 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/cmake/modules/CMakeLists.txt @ 699521 <- /trunk/KDE/kdebase/workspace/cmake/modules/CMakeLists.txt @ 699510 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/cmake/modules/FindXCB.cmake @ 699521 <- /trunk/KDE/kdemultimedia/cmake/modules/FindXCB.cmake @ 699510 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/cmake/modules/FindXine.cmake @ 699521 <- /trunk/KDE/kdemultimedia/cmake/modules/FindXine.cmake @ 699510 ]
+#	[ add cmake HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/desktoptheme >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/desktoptheme @ 897769 <- /trunk/KDE/kdebase/workspace/plasma/desktoptheme @ 897726 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/workspace/plasma/desktoptheme @ 670579 <- /trunk/KDE/kdebase/workspace/plasma/images @ 670531 ]
+#	[ add desktoptheme HEAD 897726 ]
+
+
+#	[ move trunk/KDE/kdebase/workspace/plasma/desktoptheme 897726 670531 ]
+match /trunk/KDE/kdebase/workspace/plasma/desktoptheme/
+    repository kdebase-runtime
+    prefix desktoptheme/
+    branch master
+    max revision 897726
+    min revision 670531
+end match
+
+#	[ move trunk/KDE/kdebase/workspace/plasma/images 670531 0 ]
+match /trunk/KDE/kdebase/workspace/plasma/images/
+    repository kdebase-runtime
+    prefix desktoptheme/
+    branch master
+    max revision 670531
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/doc >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/CMakeLists.txt @ 706565 <- /trunk/KDE/kdebase/doc/CMakeLists.txt @ 706563 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/api @ 706565 <- /trunk/KDE/kdebase/doc/api @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/faq @ 706565 <- /trunk/KDE/kdebase/doc/faq @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/glossary @ 706565 <- /trunk/KDE/kdebase/doc/glossary @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/kcontrol @ 706565 <- /trunk/KDE/kdebase/doc/kcontrol @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/kdebugdialog @ 706565 <- /trunk/KDE/kdebase/doc/kdebugdialog @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/kdeprint @ 706565 <- /trunk/KDE/kdebase/doc/kdeprint @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/kdesu @ 706565 <- /trunk/KDE/kdebase/doc/kdesu @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/khelpcenter @ 706565 <- /trunk/KDE/kdebase/doc/khelpcenter @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/kioslave @ 706565 <- /trunk/KDE/kdebase/doc/kioslave @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/knetattach @ 706565 <- /trunk/KDE/kdebase/doc/knetattach @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/quickstart @ 706565 <- /trunk/KDE/kdebase/doc/quickstart @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/userguide @ 706565 <- /trunk/KDE/kdebase/doc/userguide @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/doc/visualdict @ 706565 <- /trunk/KDE/kdebase/doc/visualdict @ 706490 ]
+#	[ add doc HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/drkonqi >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/drkonqi @ 962321 <- /trunk/kdereview/drkonqi2 @ 962320 ]
+#	[ Move/Replace: /trunk/kdereview/drkonqi2 @ 953886 <- /branches/work/drkonqi-newdialog @ 953885 ]
+#	[ Move/Replace: /branches/work/drkonqi-newdialog @ 928891 <- /trunk/playground/base/drkonqi @ 928890 ]
+#	[ Move/Replace: /trunk/playground/base/drkonqi @ 928125 <- /trunk/KDE/kdebase/runtime/drkonqi @ 928124 ]
+#	[ Parent: /trunk/KDE/kdebase/runtime @ 547373 <- /trunk/KDE/kdebase/coreapps @ 547337 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/coreapps/drkonqi @ 541512 <- /trunk/KDE/kdebase/drkonqi @ 541493 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add drkonqi HEAD 962320 ]
+
+
+#	[ move trunk/kdereview/drkonqi2 962320 953885 ]
+match /trunk/kdereview/drkonqi2/
+    repository kdebase-runtime
+    prefix drkonqi/
+    branch master
+    max revision 962320
+    min revision 953885
+end match
+
+#	[ move branches/work/drkonqi-newdialog 953885 928890 ]
+match /branches/work/drkonqi-newdialog/
+    repository kdebase-runtime
+    prefix drkonqi/
+    branch master
+    max revision 953885
+    min revision 928890
+end match
+
+#	[ move trunk/playground/base/drkonqi 928890 928124 ]
+match /trunk/playground/base/drkonqi/
+    repository kdebase-runtime
+    prefix drkonqi/
+    branch master
+    max revision 928890
+    min revision 928124
+end match
+
+#	[ move trunk/KDE/kdebase/runtime/drkonqi 928124 547337 ]
+
+
+#	[ parent trunk/KDE/kdebase/coreapps/drkonqi 547337 541493 ]
+match /trunk/KDE/kdebase/coreapps/drkonqi/
+    repository kdebase-runtime
+    prefix drkonqi/
+    branch master
+    max revision 547337
+    min revision 541493
+end match
+
+#	[ move trunk/KDE/kdebase/drkonqi 541493 409202 ]
+match /trunk/KDE/kdebase/drkonqi/
+    repository kdebase-runtime
+    prefix drkonqi/
+    branch master
+    max revision 541493
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/drkonqi 409202 0 ]
+match /trunk/kdebase/drkonqi/
+    repository kdebase-runtime
+    prefix drkonqi/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kcmshell >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/kcmshell @ 635577 <- /trunk/KDE/kdelibs/kcmshell @ 635530 ]
+#	[ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#	[ add kcmshell HEAD 635530 ]
+
+
+#	[ move trunk/KDE/kdelibs/kcmshell 635530 409202 ]
+match /trunk/KDE/kdelibs/kcmshell/
+    repository kdebase-runtime
+    prefix kcmshell/
+    branch master
+    max revision 635530
+    min revision 409202
+end match
+
+#	[ parent trunk/kdelibs/kcmshell 409202 0 ]
+match /trunk/kdelibs/kcmshell/
+    repository kdebase-runtime
+    prefix kcmshell/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kcontrol >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kcontrol/icons @ 629703 <- /trunk/KDE/kdebase/workspace/kcontrol/icons @ 629691 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kcontrol/kcontrol @ 629703 <- /trunk/KDE/kdebase/workspace/kcontrol/kcontrol @ 629691 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kcontrol/kcontrol/toplevel.cpp @ 629703 <- /trunk/KDE/kdebase/workspace/kcontrol/kcontrol/toplevel.cpp @ 629693 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kcontrol/krdb @ 629703 <- /trunk/KDE/kdebase/workspace/kcontrol/krdb @ 629691 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kcontrol/locale @ 629703 <- /trunk/KDE/kdebase/workspace/kcontrol/locale @ 629691 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kcontrol/style @ 629703 <- /trunk/KDE/kdebase/workspace/kcontrol/style @ 629691 ]
+
+
+declare KCONTROL_SUBDIRS=(icons|kcontrol|krdb|locale|style)
+
+match /trunk/KDE/kdebase/workspace/kcontrol/${KCONTROL_SUBDIRS}/
+    repository kdebase-runtime
+    prefix kcontrol/\1/
+    branch master
+    max revision 629691
+end match
+
+match /trunk/KDE/kdebase/kcontrol/${KCONTROL_SUBDIRS}/
+    repository kdebase-runtime
+    prefix kcontrol/\1/
+    branch master
+    max revision 455942
+end match
+
+match /trunk/kdebase/kcontrol/${KCONTROL_SUBDIRS}/
+    repository kdebase-runtime
+    prefix kcontrol/\1/
+    branch master
+end match
+
+#	[ add kcontrol HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/kde-menu >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kde-menu/kde-menu.cpp @ 670205 <- /trunk/KDE/kdelibs/kded/kde-menu.cpp @ 670204 ]
+#	[ add kde-menu HEAD 0 ]
+
+match /trunk/(KDE/)?kdelibs/kded/kde-menu.cpp
+    repository kdebase-runtime
+    prefix kde-menu/kde-menu.cpp
+    branch master
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kdebugdialog >------
+#	[ Parent: /trunk/KDE/kdebase/runtime @ 547373 <- /trunk/KDE/kdebase/coreapps @ 547337 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/coreapps/kdebugdialog @ 541512 <- /trunk/KDE/kdebase/kdebugdialog @ 541493 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add kdebugdialog HEAD 541493 ]
+
+
+#	[ move trunk/KDE/kdebase/kdebugdialog 541493 0 ]
+match /trunk/KDE/kdebase/kdebugdialog/
+    repository kdebase-runtime
+    prefix kdebugdialog/
+    branch master
+    max revision 541493
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kdeeject >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/kdeeject @ 729037 <- /trunk/KDE/kdebase/apps/kdeeject @ 729023 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/kdeeject @ 729000 <- /trunk/KDE/kdebase/runtime/kdeeject @ 728517 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/kdeeject @ 635959 <- /trunk/KDE/kdebase/kdeeject @ 635694 ]
+#	[ Delayed: /trunk/KDE/kdebase/kdeeject/kdeeject @ 418311 <- /trunk/KDE/kdebase/kdesktop/kdeeject @ 418308 ]
+#	[ add kdeeject HEAD 729023 ]
+
+
+#	[ move trunk/KDE/kdebase/apps/kdeeject 729023 728517 ]
+match /trunk/KDE/kdebase/apps/kdeeject/
+    repository kdebase-runtime
+    prefix kdeeject/
+    branch master
+    max revision 729023
+    min revision 728517
+end match
+
+#	[ move trunk/KDE/kdebase/runtime/kdeeject 728517 635694 ]
+
+
+#	[ move trunk/KDE/kdebase/kdeeject 635694 0 ]
+match /trunk/KDE/kdebase/kdeeject/
+    repository kdebase-runtime
+    prefix kdeeject/
+    branch master
+    max revision 635694
+end match
+
+match /trunk/KDE/kdebase/kdesktop/kdeeject/ #human
+    repository kdebase-runtime
+    prefix kdeeject/
+    branch master    
+end match
+
+match /trunk/kdebase/kdesktop/kdeeject/ #human
+    repository kdebase-runtime
+    prefix kdeeject/
+    branch master
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kdesu >------
+#	[ Parent: /trunk/KDE/kdebase/runtime @ 547373 <- /trunk/KDE/kdebase/coreapps @ 547337 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/coreapps/kdesu @ 541512 <- /trunk/KDE/kdebase/kdesu @ 541493 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add kdesu HEAD 541493 ]
+
+
+#	[ move trunk/KDE/kdebase/kdesu 541493 0 ]
+match /trunk/KDE/kdebase/kdesu/
+    repository kdebase-runtime
+    prefix kdesu/
+    branch master
+    max revision 541493
+end match
+
+match /trunk/kdebase/kdesu/ #human
+    repository kdebase-runtime
+    prefix kdesu/
+    branch master
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kdontchangethehostname >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kdontchangethehostname/khostname.cpp @ 1107546 <- /trunk/KDE/kdelibs/kded/khostname.cpp @ 1107474 ]
+#	[ add kdontchangethehostname HEAD 0 ]
+
+match /trunk/(KDE/)?kdelibs/kded/khostname.cpp
+    repository kdebase-runtime
+    prefix kdontchangethehostname/khostname.cpp
+    branch master
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/keditfiletype >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/keditfiletype @ 942059 <- /trunk/KDE/kdebase/apps/konqueror/settings/filetypes @ 941928 ]
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/konqueror/settings/filetypes @ 458505 <- /trunk/KDE/kdebase/workspace/kcontrol/filetypes @ 458459 ]
+#	[ Parent: /trunk/KDE/kdebase/workspace/kcontrol @ 455942 <- /trunk/KDE/kdebase/kcontrol @ 455864 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add keditfiletype HEAD 941928 ]
+
+
+#	[ move trunk/KDE/kdebase/apps/konqueror/settings/filetypes 941928 659438 ]
+match /trunk/KDE/kdebase/apps/konqueror/settings/filetypes/
+    repository kdebase-runtime
+    prefix keditfiletype/
+    branch master
+    max revision 941928
+    min revision 659438
+end match
+
+#	[ parent trunk/KDE/kdebase/konqueror/settings/filetypes 659438 458459 ]
+match /trunk/KDE/kdebase/konqueror/settings/filetypes/
+    repository kdebase-runtime
+    prefix keditfiletype/
+    branch master
+    max revision 659438
+    min revision 458459
+end match
+
+#	[ move trunk/KDE/kdebase/workspace/kcontrol/filetypes 458459 455864 ]
+match /trunk/KDE/kdebase/workspace/kcontrol/filetypes/
+    repository kdebase-runtime
+    prefix keditfiletype/
+    branch master
+    max revision 458459
+    min revision 455864
+end match
+
+#	[ parent trunk/KDE/kdebase/kcontrol/filetypes 455864 0 ]
+match /trunk/(KDE/)?kdebase/kcontrol/filetypes/ #human
+    repository kdebase-runtime
+    prefix keditfiletype/
+    branch master
+    max revision 455864
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kfile >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/kfile @ 649194 <- /trunk/KDE/kdelibs/kio/misc/kfile @ 649191 ]
+#	[ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#	[ add kfile HEAD 649191 ]
+
+
+#	[ move trunk/KDE/kdelibs/kio/misc/kfile 649191 0 ]
+match /trunk/(KDE/)?kdelibs/kio/misc/kfile/
+    repository kdebase-runtime
+    prefix kfile/
+    branch master
+    max revision 649191
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kglobalaccel >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/component.cpp @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/component.cpp @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/component.h @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/component.h @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/globalshortcut.cpp @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/globalshortcut.cpp @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/globalshortcut.h @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/globalshortcut.h @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/globalshortcutcontext.cpp @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/globalshortcutcontext.cpp @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/globalshortcutcontext.h @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/globalshortcutcontext.h @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/globalshortcutsregistry.cpp @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/globalshortcutsregistry.cpp @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/globalshortcutsregistry.h @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/globalshortcutsregistry.h @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kconf/kdedglobalaccel_kde42.upd @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kconf/kdedglobalaccel_kde42.upd @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalaccel.cpp @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kdedglobalaccel.cpp @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalaccel.desktop @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kdedglobalaccel.desktop @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalaccel_mac.cpp @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kglobalaccel_mac.cpp @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalaccel_mac.h @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kglobalaccel_mac.h @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalaccel_qws.cpp @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kglobalaccel_qws.cpp @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalaccel_qws.h @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kglobalaccel_qws.h @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalaccel_win.cpp @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kglobalaccel_win.cpp @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalaccel_win.h @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kglobalaccel_win.h @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalaccel_x11.cpp @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kglobalaccel_x11.cpp @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalaccel_x11.h @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kglobalaccel_x11.h @ 926500 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kglobalaccel/kglobalacceld.h @ 926711 <- /trunk/KDE/kdebase/runtime/kdedglobalaccel/kdedglobalaccel.h @ 926500 ]
+#	[ add kglobalaccel HEAD 0 ]
+
+match /trunk/(KDE/)?kdelibs/kdedglobalaccel/ #human
+    repository kdebase-runtime
+    prefix kdedglobalaccel/
+    branch master
+    max revision 873183
+end match
+
+
+#	------< /trunk/KDE/kdebase/runtime/khelpcenter >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/khelpcenter @ 629692 <- /trunk/KDE/kdebase/khelpcenter @ 629282 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add khelpcenter HEAD 629282 ]
+
+
+#	[ move trunk/KDE/kdebase/khelpcenter 629282 0 ]
+match /trunk/(KDE/)?kdebase/khelpcenter/ #human edit
+    repository kdebase-runtime
+    prefix khelpcenter/
+    branch master
+    max revision 629282
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kiconfinder >------
+#	[ add kiconfinder HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/kioclient >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kioclient/kioclient.cpp @ 559390 <- /trunk/KDE/kdebase/konqueror/client/kfmclient.cc @ 558777 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kioclient/kioclient.h @ 559390 <- /trunk/KDE/kdebase/konqueror/client/kfmclient.h @ 558777 ]
+#	[ add kioclient HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/kioexec >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/kioexec @ 642120 <- /trunk/KDE/kdelibs/kio/kioexec @ 642111 ]
+#	[ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#	[ Move/Replace: /trunk/kdelibs/kio/kioexec @ 251307 <- /trunk/kdebase/konqueror/kfmexec @ 251306 ]
+#	[ add kioexec HEAD 642111 ]
+
+
+#	[ move trunk/KDE/kdelibs/kio/kioexec 642111 251306 ]
+match /trunk/KDE/kdelibs/kio/kioexec/
+    repository kdebase-runtime
+    prefix kioexec/
+    branch master
+    max revision 642111
+    min revision 251306
+end match
+
+#	[ move trunk/kdebase/konqueror/kfmexec 251306 0 ]
+match /trunk/kdebase/konqueror/kfmexec/
+    repository kdebase-runtime
+    prefix kioexec/
+    branch master
+    max revision 251306
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kioslave >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/kioslave @ 547378 <- /trunk/KDE/kdebase/kioslave @ 547371 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add kioslave HEAD 547371 ]
+
+
+#	[ move trunk/KDE/kdebase/kioslave 547371 0 ]
+match /trunk/(KDE/)?kdebase/kioslave/
+    repository kdebase-runtime
+    prefix kioslave/
+    branch master
+    max revision 547371
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kmimetypefinder >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kmimetypefinder/kmimetypefinder.cpp @ 646818 <- /trunk/KDE/kdelibs/kio/tests/kmimetypefinder.cpp @ 646611 ]
+
+match /trunk/(KDE/)?kdelibs/kio/tests/kmimetypefinder.cpp
+    repository kdebase-runtime
+    prefix kmimetypefinder/
+    branch master
+end match
+
+#	[ add kmimetypefinder HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/knetattach >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/knetattach @ 661019 <- /trunk/KDE/kdebase/knetattach @ 660996 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add knetattach HEAD 660996 ]
+
+
+#	[ move trunk/KDE/kdebase/knetattach 660996 0 ]
+match /trunk/(KDE/)?kdebase/knetattach/
+    repository kdebase-runtime
+    prefix knetattach/
+    branch master
+    max revision 660996
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/knewstuff >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knewstuff/khotnewstuff.cpp @ 630605 <- /trunk/KDE/kdelibs/knewstuff/khotnewstuff.cpp @ 630448 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knewstuff/khotnewstuffrc @ 630605 <- /trunk/KDE/kdelibs/knewstuff/khotnewstuffrc @ 630448 ]
+#	[ add knewstuff HEAD 0 ]
+
+match /trunk/(KDE/)?kdelibs/knewstuff/khotnewstuff(.cpp|rc)
+    repository kdebase-runtime
+    prefix knewstuff/khotnewstuff\2
+    branch master
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/knotify >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/knotify @ 649213 <- /trunk/KDE/kdelibs/knotify/daemon @ 649191 ]
+#	[ Move/Replace: /trunk/KDE/kdelibs/knotify/daemon @ 492715 <- /branches/work/kde4_knotify/daemon @ 492308 ]
+#	[ add knotify HEAD 649191 ]
+
+
+#	[ move trunk/KDE/kdelibs/knotify/daemon 649191 492308 ]
+match /trunk/KDE/kdelibs/knotify/daemon/
+    repository kdebase-runtime
+    prefix knotify/
+    branch master
+    max revision 649191
+    min revision 492308
+end match
+
+#	[ move branches/work/kde4_knotify/daemon 492308 0 ]
+match /branches/work/kde4_knotify/daemon/
+    repository kdebase-runtime
+    prefix knotify/
+    branch master
+    max revision 492308
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kpasswdserver >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/kpasswdserver @ 642120 <- /trunk/KDE/kdelibs/kio/kpasswdserver @ 641968 ]
+#	[ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#	[ add kpasswdserver HEAD 641968 ]
+
+
+#	[ move trunk/KDE/kdelibs/kio/kpasswdserver 641968 0 ]
+match /trunk/(KDE/)?kdelibs/kio/kpasswdserver/
+    repository kdebase-runtime
+    prefix kpasswdserver/
+    branch master
+    max revision 641968
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kquitapp >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/kquitapp @ 614225 <- /trunk/KDE/kdebase/runtime/dbusquit @ 614217 ]
+#	[ add kquitapp HEAD 614217 ]
+
+
+#	[ move trunk/KDE/kdebase/runtime/dbusquit 614217 0 ]
+
+
+#	------< /trunk/KDE/kdebase/runtime/kreadconfig >------
+#	[ Parent: /trunk/KDE/kdebase/runtime @ 547373 <- /trunk/KDE/kdebase/coreapps @ 547337 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/coreapps/kreadconfig @ 541512 <- /trunk/KDE/kdebase/kreadconfig @ 541493 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add kreadconfig HEAD 541493 ]
+
+
+#	[ move trunk/KDE/kdebase/kreadconfig 541493 0 ]
+match /trunk/(KDE/)?kdebase/kreadconfig/
+    repository kdebase-runtime
+    prefix kreadconfig/
+    branch master
+    max revision 541493
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kstart >------
+#	[ Parent: /trunk/KDE/kdebase/runtime @ 547373 <- /trunk/KDE/kdebase/coreapps @ 547337 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/coreapps/kstart @ 541512 <- /trunk/KDE/kdebase/kstart @ 541493 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add kstart HEAD 541493 ]
+
+
+#	[ move trunk/KDE/kdebase/kstart 541493 0 ]
+match /trunk/(KDE/)?kdebase/kstart/
+    repository kdebase-runtime
+    prefix kstart/
+    branch master
+    max revision 541493
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/ktimezoned >------
+#	[ add ktimezoned HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/ktraderclient >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/ktraderclient/ktraderclient.cpp @ 670179 <- /trunk/KDE/kdelibs/kio/tests/ktradertest.cpp @ 670114 ]
+#	[ add ktraderclient HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/kuiserver >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/kuiserver @ 673123 <- /trunk/KDE/kdelibs/security/kuiserver @ 673122 ]
+#	[ Move/Replace: /trunk/KDE/kdelibs/security/kuiserver @ 673115 <- /trunk/KDE/kdebase/runtime/kuiserver @ 672406 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/kuiserver.desktop @ 624226 <- /trunk/KDE/kdelibs/kio/misc/kio_uiserver.desktop @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/pics @ 624226 <- /trunk/KDE/kdelibs/kio/pics @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/progresslistdelegate.cpp @ 624226 <- /trunk/KDE/kdelibs/kio/misc/progresslistdelegate.cpp @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/progresslistdelegate.h @ 624226 <- /trunk/KDE/kdelibs/kio/misc/progresslistdelegate.h @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/progresslistdelegate_p.h @ 624226 <- /trunk/KDE/kdelibs/kio/misc/progresslistdelegate_p.h @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/progresslistmodel.cpp @ 624226 <- /trunk/KDE/kdelibs/kio/misc/progresslistmodel.cpp @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/progresslistmodel.h @ 624226 <- /trunk/KDE/kdelibs/kio/misc/progresslistmodel.h @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/uiserver.cpp @ 624226 <- /trunk/KDE/kdelibs/kio/misc/uiserver.cpp @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/uiserver.h @ 624226 <- /trunk/KDE/kdelibs/kio/misc/uiserver.h @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/uiserverConfigDialog.ui @ 624226 <- /trunk/KDE/kdelibs/kio/misc/uiserverConfigDialog.ui @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/uiserver_p.h @ 624226 <- /trunk/KDE/kdelibs/kio/misc/uiserver_p.h @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/uiserveradaptor.cpp @ 624226 <- /trunk/KDE/kdelibs/kio/misc/uiserveradaptor.cpp @ 624202 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/kuiserver/uiserveradaptor_p.h @ 624226 <- /trunk/KDE/kdelibs/kio/misc/uiserveradaptor_p.h @ 624202 ]
+#	[ add kuiserver HEAD 673122 ]
+
+
+#	[ move trunk/KDE/kdelibs/security/kuiserver 673122 672406 ]
+match /trunk/KDE/kdelibs/security/kuiserver/
+    repository kdebase-runtime
+    prefix kuiserver/
+    branch master
+    max revision 673122
+    min revision 672406
+end match
+
+#	[ move trunk/KDE/kdebase/runtime/kuiserver 672406 0 ]
+
+
+match /trunk/(KDE/)?kdelibs/kio/misc/
+    repository kdebase-runtime
+    prefix kuiserver/
+    branch master
+    max revision 624226
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/kurifilter-plugins >------
+#	[ Parent: /trunk/KDE/kdebase/runtime @ 547373 <- /trunk/KDE/kdebase/coreapps @ 547337 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/coreapps/kurifilter-plugins @ 542081 <- /trunk/KDE/kdebase/konqueror/settings/ebrowsing/plugins @ 541602 ]
+#	[ Parent: /trunk/KDE/kdebase/konqueror/settings @ 457262 <- /trunk/KDE/kdebase/konqueror/kcontrol @ 457243 ]
+#	[ Parent: /trunk/KDE/kdebase/konqueror/kcontrol/ebrowsing @ 456703 <- /trunk/KDE/kdebase/workspace/kcontrol/ebrowsing @ 456607 ]
+#	[ Parent: /trunk/KDE/kdebase/workspace/kcontrol @ 455942 <- /trunk/KDE/kdebase/kcontrol @ 455864 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add kurifilter-plugins HEAD 541602 ]
+
+
+#	[ move trunk/KDE/kdebase/konqueror/settings/ebrowsing/plugins 541602 457243 ]
+match /trunk/KDE/kdebase/konqueror/settings/ebrowsing/plugins/
+    repository kdebase-runtime
+    prefix kurifilter-plugins/
+    branch master
+    max revision 541602
+    min revision 457243
+end match
+
+#	[ parent trunk/KDE/kdebase/konqueror/kcontrol/ebrowsing/plugins 457243 456607 ]
+match /trunk/KDE/kdebase/konqueror/kcontrol/ebrowsing/plugins/
+    repository kdebase-runtime
+    prefix kurifilter-plugins/
+    branch master
+    max revision 457243
+    min revision 456607
+end match
+
+#	[ parent trunk/KDE/kdebase/workspace/kcontrol/ebrowsing/plugins 456607 0 ]
+match /trunk/KDE/kdebase/workspace/kcontrol/ebrowsing/plugins/
+    repository kdebase-runtime
+    prefix kurifilter-plugins/
+    branch master
+    max revision 456607
+end match
+
+# match /trunk/(KDE/)?kdebase/workspace/kcontrol/ebrowsing/plugins/ #human
+#     repository kdebase-runtime
+#     prefix kurifilter-plugins/
+#     branch master
+#     max revision 456703
+# end match
+
+#	------< /trunk/KDE/kdebase/runtime/kwalletd >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/kwalletd @ 860236 <- /trunk/KDE/kdelibs/kio/misc/kwalletd @ 860184 ]
+#	[ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#	[ add kwalletd HEAD 860184 ]
+
+
+#	[ move trunk/KDE/kdelibs/kio/misc/kwalletd 860184 0 ]
+match /trunk/(KDE/)?kdelibs/kio/misc/kwalletd/
+    repository kdebase-runtime
+    prefix kwalletd/
+    branch master
+    max revision 860184
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/localization >------
+#	[ add localization HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/menu >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/menu @ 792954 <- /trunk/KDE/kdebase/runtime/menu @ 792374 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/menu @ 792364 <- /trunk/KDE/kdebase/workspace/menu @ 792201 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/workspace/menu @ 475603 <- /trunk/KDE/kdebase/workspace/application-packages @ 475601 ]
+#	[ add menu HEAD 792374 ]
+
+
+#	[ move trunk/KDE/kdebase/runtime/menu 792374 792201 ]
+
+
+#	[ move trunk/KDE/kdebase/workspace/menu 792201 475601 ]
+match /trunk/KDE/kdebase/workspace/menu/
+    repository kdebase-runtime
+    prefix menu/
+    branch master
+    max revision 792201
+    min revision 475601
+end match
+
+#	[ move trunk/KDE/kdebase/workspace/application-packages 475601 0 ]
+match /trunk/KDE/kdebase/workspace/application-packages/
+    repository kdebase-runtime
+    prefix menu/
+    branch master
+    max revision 475601
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/nepomuk >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/nepomuk @ 674117 <- /trunk/KDE/kdebase/runtime/knepomuk @ 674115 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/CMakeLists.txt @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/CMakeLists.txt @ 659730 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices @ 659730 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/CMakeLists.txt @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/CMakeLists.txt @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/cache.cpp @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/cache.cpp @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/cache.h @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/cache.h @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/coreservices.cpp @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/coreservices.cpp @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/coreservices.h @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/coreservices.h @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/dbusinterface.cpp @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/dbusinterface.cpp @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/dbusinterface.h @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/dbusinterface.h @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/knepomuk-coreservices.desktop @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/knepomuk-coreservices.desktop @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/main.cpp @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/main.cpp @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/querydefinition.cpp @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/querydefinition.cpp @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/querydefinition.h @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/querydefinition.h @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/sopranordfrepository.cpp @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/sopranordfrepository.cpp @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/sopranordfrepository.h @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/sopranordfrepository.h @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/uniqueurigenerator.cpp @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/uniqueurigenerator.cpp @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/coreservices/uniqueurigenerator.h @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/coreservices/uniqueurigenerator.h @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/service-registry @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/service-registry @ 659730 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/service-registry/CMakeLists.txt @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/service-registry/CMakeLists.txt @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/service-registry/TODO @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/service-registry/TODO @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/service-registry/core @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/service-registry/core @ 659838 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/knepomuk/service-registry/daemon @ 659840 <- /trunk/kdereview/nepomuk-kde/backbone/service-registry/daemon @ 659838 ]
+#	[ add nepomuk HEAD 674115 ]
+# match /trunk/KDE/kdebase/runtime/nepomuk/
+#     repository kdebase-runtime
+#     prefix nepomuk/
+#     branch master
+#     min revision 674115
+# end match
+# 
+# #	[ move trunk/KDE/kdebase/runtime/knepomuk 674115 0 ]
+# match /trunk/KDE/kdebase/runtime/knepomuk/
+#     repository kdebase-runtime
+#     prefix nepomuk/
+#     branch master
+#     max revision 674115
+# end match
+
+#	------< /trunk/KDE/kdebase/runtime/phonon >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/phonon/xine @ 699521 <- /trunk/KDE/kdemultimedia/phonon-xine @ 699516 ]
+#	[ add phonon HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/pics >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/pics @ 699615 <- /trunk/KDE/kdelibs/pics @ 699614 ]
+#	[ Parent: /trunk/KDE/kdelibs @ 409203 <- /trunk/kdelibs @ 409202 ]
+#	[ add pics HEAD 699614 ]
+# match /trunk/KDE/kdebase/runtime/pics/
+#     repository kdebase-runtime
+#     prefix pics/
+#     branch master
+#     min revision 699614
+# end match
+
+#	[ move trunk/KDE/kdelibs/pics 699614 0 ]
+match /trunk/KDE/kdelibs/pics/
+    repository kdebase-runtime
+    prefix pics/
+    branch master
+    max revision 699614
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/plasma >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/plasma/scriptengines/javascript @ 966840 <- /trunk/KDE/kdebase/workspace/plasma/scriptengines/javascript @ 966838 ]
+
+match /trunk/(KDE/)?kdebase/workspace/plasma/scriptengines/javascript/# human
+    repository kdebase-runtime
+    prefix plasma/scriptengines/javascript/
+    branch master
+    max revision 966840
+end match
+
+#	[ Delayed: /trunk/KDE/kdebase/runtime/plasma/tools/plasmapkg @ 966840 <- /trunk/KDE/kdebase/workspace/plasma/tools/plasmapkg @ 965482 ]
+#	[ add plasma HEAD 0 ]
+match /trunk/(KDE/)?kdebase/runtime/plasma/tools/plasmapkg/
+    repository kdebase-runtime
+    prefix plasma/tools/plasmapkg/
+    branch master
+    max revision 966840
+end match
+
+
+#	------< /trunk/KDE/kdebase/runtime/platforms >------
+#	[ add platforms HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/renamedlgplugins >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/renamedlgplugins @ 716431 <- /trunk/KDE/kdeaddons/renamedlgplugins @ 716422 ]
+#	[ Parent: /trunk/KDE/kdeaddons @ 409203 <- /trunk/kdeaddons @ 409202 ]
+#	[ add renamedlgplugins HEAD 716422 ]
+# mtch /trunk/KDE/kdebase/runtime/renamedlgplugins/
+#     repository kdebase-runtime
+#     prefix renamedlgplugins/
+#     branch master
+#     min revision 716422
+# end match
+
+#	[ move trunk/KDE/kdeaddons/renamedlgplugins 716422 409202 ]
+match /trunk/KDE/kdeaddons/renamedlgplugins/
+    repository kdebase-runtime
+    prefix renamedlgplugins/
+    branch master
+    max revision 716422
+    min revision 409202
+end match
+
+#	[ parent trunk/kdeaddons/renamedlgplugins 409202 0 ]
+match /trunk/kdeaddons/renamedlgplugins/
+    repository kdebase-runtime
+    prefix renamedlgplugins/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/solid-device-automounter >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/solid-device-automounter @ 1053951 <- /trunk/kdereview/device-automounter @ 1053950 ]
+#	[ Move/Replace: /trunk/kdereview/device-automounter @ 1009344 <- /trunk/playground/base/device-automounter @ 1009341 ]
+#	[ add solid-device-automounter HEAD 1053950 ]
+
+
+#	[ move trunk/kdereview/device-automounter 1053950 1009341 ]
+match /trunk/kdereview/device-automounter/
+    repository kdebase-runtime
+    prefix solid-device-automounter/
+    branch master
+    max revision 1053950
+    min revision 1009341
+end match
+
+#	[ move trunk/playground/base/device-automounter 1009341 0 ]
+match /trunk/playground/base/device-automounter/
+    repository kdebase-runtime
+    prefix solid-device-automounter/
+    branch master
+    max revision 1009341
+end match
+
+#	------< /trunk/KDE/kdebase/runtime/solid-hardware >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid-hardware/CMakeLists.txt @ 787151 <- /trunk/KDE/kdebase/workspace/solid/solidshell/CMakeLists.txt @ 787024 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid-hardware/solid-hardware.cpp @ 787151 <- /trunk/KDE/kdebase/workspace/solid/solidshell/solid-hardware.cpp @ 787024 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid-hardware/solid-hardware.h @ 787151 <- /trunk/KDE/kdebase/workspace/solid/solidshell/solid-hardware.h @ 787024 ]
+#	[ add solid-hardware HEAD 0 ]
+
+match /trunk/(KDE/)?kdebase/workspace/solid/solidshell/
+    repository kdebase-runtime
+    prefix solid-hardware/
+    branch master
+end match
+
+
+#	------< /trunk/KDE/kdebase/runtime/solid-networkstatus >------
+#	[ Move/Replace: /trunk/KDE/kdebase/runtime/solid-networkstatus @ 1175455 <- /trunk/KDE/kdebase/workspace/solid/networking @ 1175422 ]
+#	[ Parent: /trunk/KDE/kdebase/workspace/solid @ 683376 <- /trunk/KDE/kdebase/runtime/solid @ 683373 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/DESIGN @ 680348 <- /trunk/KDE/kdepim/networkstatus/DESIGN @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/KDE4_PLAN @ 680348 <- /trunk/KDE/kdepim/networkstatus/KDE4_PLAN @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/README @ 680348 <- /trunk/KDE/kdepim/networkstatus/README @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/README.statetransition @ 680348 <- /trunk/KDE/kdepim/networkstatus/README.statetransition @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/kded/CMakeLists.txt @ 680348 <- /trunk/KDE/kdepim/networkstatus/CMakeLists.txt @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/kded/network.cpp @ 680348 <- /trunk/KDE/kdepim/networkstatus/network.cpp @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/kded/network.h @ 680348 <- /trunk/KDE/kdepim/networkstatus/network.h @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/kded/networkstatus.cpp @ 680348 <- /trunk/KDE/kdepim/networkstatus/networkstatus.cpp @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/kded/networkstatus.desktop @ 680348 <- /trunk/KDE/kdepim/networkstatus/networkstatus.desktop @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/kded/networkstatus.h @ 680348 <- /trunk/KDE/kdepim/networkstatus/networkstatus.h @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/org.kde.Solid.Networking.Service.xml @ 680348 <- /trunk/KDE/kdepim/networkstatus/libs/org.kde.Solid.Networking.Service.xml @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/tests/CMakeLists.txt @ 680348 <- /trunk/KDE/kdepim/networkstatus/tests/CMakeLists.txt @ 680321 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/tests/networkingservice.cpp @ 680348 <- /trunk/KDE/kdepim/networkstatus/tests/service.cpp @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/tests/networkingservice.h @ 680348 <- /trunk/KDE/kdepim/networkstatus/tests/service.h @ 680148 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/solid/networking/tests/networkingserviceview.ui @ 680348 <- /trunk/KDE/kdepim/networkstatus/tests/testserviceview.ui @ 680148 ]
+#	[ add solid-networkstatus HEAD 1175422 ]
+
+
+#	[ move trunk/KDE/kdebase/workspace/solid/networking 1175422 683373 ]
+match /trunk/KDE/kdebase/workspace/solid/networking/
+    repository kdebase-runtime
+    prefix solid-networkstatus/
+    branch master
+    max revision 1175422
+    min revision 683373
+end match
+
+#so it should pick up the tests, fall through, and pick up the rest
+match /trunk/KDE/kdepim/networkstatus/tests/
+    repository kdebase-runtime
+    prefix solid-networkstatus/tests/
+    branch master
+    max revision 680348
+end match
+
+match /trunk/KDE/kdepim/networkstatus/
+    repository kdebase-runtime
+    prefix solid-networkstatus/kded/
+    branch master
+    max revision 680348
+end match
+
+#	[ parent trunk/KDE/kdebase/runtime/solid/networking 683373 0 ]
+
+
+#	------< /trunk/KDE/kdebase/runtime/solidautoeject >------
+#	[ add solidautoeject HEAD 0 ]
+#	------< /trunk/KDE/kdebase/runtime/soliduiserver >------
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/CMakeLists.txt @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/medianotifier/CMakeLists.txt @ 684808 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/Messages.sh @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/medianotifier/Messages.sh @ 684808 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/deviceaction.cpp @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/libmediacommon/notifieraction.cpp @ 684828 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/deviceaction.h @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/libmediacommon/notifieraction.h @ 684828 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/deviceactionsdialog.cpp @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/medianotifier/notificationdialog.cpp @ 684808 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/deviceactionsdialog.h @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/medianotifier/notificationdialog.h @ 684808 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/deviceactionsdialogview.ui @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/medianotifier/notificationdialogview.ui @ 684808 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/devicenothingaction.cpp @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/libmediacommon/notifiernothingaction.cpp @ 684828 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/devicenothingaction.h @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/libmediacommon/notifiernothingaction.h @ 684828 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/deviceserviceaction.cpp @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/libmediacommon/notifierserviceaction.cpp @ 684828 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/deviceserviceaction.h @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/libmediacommon/notifierserviceaction.h @ 684828 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/soliduiserver.cpp @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/medianotifier/medianotifier.cpp @ 684808 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/soliduiserver.desktop @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/medianotifier/medianotifier.desktop @ 684808 ]
+#	[ Delayed: /trunk/KDE/kdebase/runtime/soliduiserver/soliduiserver.h @ 689079 <- /trunk/KDE/kdebase/runtime/kioslave/media/medianotifier/medianotifier.h @ 684808 ]
+#	[ add soliduiserver HEAD 0 ]
+match /
+end match
+#First revision used: 11631

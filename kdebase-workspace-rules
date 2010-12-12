@@ -1,41 +1,17 @@
-create repository kdebase-workspace
+declare MODULE=workspace
+declare REPO=kdebase-workspace
+
+
+create repository ${REPO}
 end repository
 
+include kdebase-branches-tags-rules
 
-match /trunk/KDE/kdebase/workspace/
-    repository kdebase-workspace
+
+match /trunk/KDE/kdebase/${MODULE}/
+    repository ${REPO}
     branch master
     min revision 455350
-end match
-
-match /tags/KDE/([^/]+)A/kdebase/workspace/
-  repository kdebase-workspace
-  branch refs/tags/v\1a
-  min revision 409209
-  annotated true
-end match
-match /tags/KDE/([^/]+)/kdebase/workspace/
-  repository kdebase-workspace
-  branch refs/tags/v\1
-  min revision 409209
-  annotated true
-end match
-
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdebase/workspace/
-  repository kdebase-workspace
-  branch KDE/\1.\2
-  max revision 409202
-end match
-
-match /branches/KDE/([^/]+)A/kdebase/workspace/
-  repository kdebase-workspace
-  branch KDE/\1a
-  min revision 409209
-end match
-match /branches/KDE/([^/]+)/kdebase/workspace/
-  repository kdebase-workspace
-  branch KDE/\1
-  min revision 409209
 end match
 
 
