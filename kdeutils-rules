@@ -139,6 +139,7 @@ end match
 ### Filelight in playground
 match /trunk/playground/utils/filelight/
   repository KDE/kdeutils
+  prefix filelight/
   branch master
   min revision 920168
   max revision 1174509
@@ -147,6 +148,7 @@ end match
 ### Filelight in kdereview
 match /trunk/kdereview/filelight/
   repository KDE/kdeutils
+  prefix filelight/
   branch master
   min revision 1081624
   max revision 1181066
@@ -232,6 +234,7 @@ end match
 ### printer-applet in kdereview
 match /trunk/kdereview/printer-applet/
   repository KDE/kdeutils
+  prefix printer-applet/
   branch master
   min revision 789361
   max revision 798615
@@ -240,6 +243,7 @@ end match
 ### printer-applet in kdebase-workspace
 match /trunk/KDE/kdebase/workspace/printer-applet/
   repository KDE/kdeutils
+  prefix printer-applet/
   branch master
   min revision 798615
   max revision 802902
@@ -248,6 +252,7 @@ end match
 ### SuperKaramba in kdereview
 match /trunk/kdereview/superkaramba/
   repository KDE/kdeutils
+  prefix superkaramba/
   branch master
   min revision 417080
   max revision 450000
