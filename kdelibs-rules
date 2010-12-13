@@ -13,6 +13,12 @@ match /
   min revision 409202
   max revision 409209
 end match
+
+match /
+    min revision 416394
+    max revision 416394
+end match
+
 match /tags/KDE/4.0.80/(kdevelop)
   min revision 813323
 end match
