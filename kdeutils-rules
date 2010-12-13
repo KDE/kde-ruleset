@@ -181,55 +181,48 @@ match /trunk/kdereview/okteta/
   # max revision 797376
 end match
 
-### KRemoteControl as kdelirc
-match /trunk/kdeutils/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-  min revision 228301
-  max revision 407135
-end match
-match /trunk/KDE/kdeutils/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-  min revision 409203
-  max revision 1075787
-end match
-match /trunk/playground/utils/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-  min revision 807315
-  max revision 956538
-end match
-match /trunk/kdereview/utils/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-  min revision 956538
-  max revision 957548
-end match
-match /trunk/kdereview/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-  min revision 956548
-  max revision 963348
-end match
-match /branches/work/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-  min revision 1075787
-  max revision 1102497
-end match
-match /trunk/kdereview/kremotecontrol/
-  repository KDE/kdeutils
-  branch master
-  min revision 1102497
-  max revision 1109704
-end match
+# ### KRemoteControl as kdelirc
+# match /trunk/kdeutils/kdelirc/
+#   repository KDE/kdeutils
+#   prefix kremotecontrol/
+#   branch master
+#   # min revision 228301
+#   # max revision 407135
+# end match
+# match /trunk/playground/utils/kdelirc/
+#   repository KDE/kdeutils
+#   prefix kremotecontrol/
+#   branch master
+#   # min revision 807315
+#   # max revision 956537
+# end match
+# match /trunk/kdereview/utils/kdelirc/
+#   repository KDE/kdeutils
+#   prefix kremotecontrol/
+#   branch master
+#   # min revision 956538
+#   # max revision 956547
+# end match
+# match /trunk/kdereview/kdelirc/
+#   repository KDE/kdeutils
+#   prefix kremotecontrol/
+#   branch master
+#   # min revision 956548
+#   # max revision 963347
+# end match
+# match /branches/work/kdelirc/
+#   repository KDE/kdeutils
+#   prefix kremotecontrol/
+#   branch master
+#   # min revision 1075787
+#   # max revision 1102496
+# end match
+# match /trunk/kdereview/kremotecontrol/
+#   repository KDE/kdeutils
+#   branch master
+#   # min revision 1102497
+#   # max revision 1109703
+# end match
 
 ### printer-applet in kdereview
 match /trunk/kdereview/printer-applet/
