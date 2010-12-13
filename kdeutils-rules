@@ -141,8 +141,8 @@ match /trunk/playground/utils/filelight/
   repository KDE/kdeutils
   prefix filelight/
   branch master
-  min revision 920168
-  max revision 1174509
+  # min revision 920168
+  # max revision 1174508
 end match
 
 ### Filelight in kdereview
@@ -150,8 +150,8 @@ match /trunk/kdereview/filelight/
   repository KDE/kdeutils
   prefix filelight/
   branch master
-  min revision 1081624
-  max revision 1181066
+  # min revision 1081625
+  # max revision 1181065
 end match
 
 ### KGpg in branches/work/kgpg2
@@ -168,8 +168,8 @@ match /trunk/playground/utils/okteta/
   repository KDE/kdeutils
   prefix okteta/
   branch master
-  min revision 728529
-  max revision 792016
+  # min revision 728529
+  # max revision 792015
 end match
 
 ### Okteta in kdereview
@@ -177,8 +177,8 @@ match /trunk/kdereview/okteta/
   repository KDE/kdeutils
   prefix okteta/
   branch master
-  min revision 792016
-  max revision 797377
+  # min revision 792016
+  # max revision 797376
 end match
 
 ### KRemoteControl as kdelirc
@@ -236,8 +236,8 @@ match /trunk/kdereview/printer-applet/
   repository KDE/kdeutils
   prefix printer-applet/
   branch master
-  min revision 789361
-  max revision 798615
+  # min revision 789361
+  # max revision 798592
 end match
 
 ### printer-applet in kdebase-workspace
@@ -245,8 +245,8 @@ match /trunk/KDE/kdebase/workspace/printer-applet/
   repository KDE/kdeutils
   prefix printer-applet/
   branch master
-  min revision 798615
-  max revision 802902
+  # min revision 798615
+  # max revision 802901
 end match
 
 ### SuperKaramba in kdereview
@@ -263,22 +263,22 @@ match /trunk/kdebase/kcontrol/privacy/
   repository KDE/kdeutils
   prefix sweeper/
   branch master
-  min revision 203673
-  max revision 455942
+  # min revision 203673
+  # max revision 409202
 end match
 match /trunk/KDE/kdebase/kcontrol/privacy/
   repository KDE/kdeutils
   prefix sweeper/
   branch master
-  min revision 409203
-  max revision 455942
+  # min revision 409203
+  # max revision 455941
 end match
 match /trunk/KDE/kdebase/workspace/kcontrol/privacy/
   repository KDE/kdeutils
   prefix sweeper/
   branch master
-  min revision 455942
-  max revision 464767
+  # min revision 455942
+  # max revision 464766
 end match
 
 ### Sweeper as kdeutils/privacy
@@ -286,8 +286,8 @@ match /trunk/KDE/kdeutils/privacy/
   repository KDE/kdeutils
   prefix sweeper/
   branch master
-  min revision 464767
-  max revision 468678
+  # min revision 464767
+  # max revision 468677
 end match
 
 ##### Ignore everything else #####
