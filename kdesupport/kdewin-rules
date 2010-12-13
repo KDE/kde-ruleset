@@ -1,0 +1,88 @@
+# Rules for kdesupport/kdewin
+# Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
+
+##### Create the repository #####
+declare REPO=kdewin
+create repository ${REPO}
+end repository
+declare REPO2=kdewin-installer
+create repository ${REPO2}
+end repository
+
+##### Main Rules #####
+# completed the rebranding of kdewin32 to kdewin
+match /
+    min revision 987475
+    max revision 987475
+end match
+
+# moved from kdelibs to kdesupport
+match /
+    min revision 548915
+    max revision 548915
+end match
+
+# kdewin installer is independent from kdewin32, so move it out
+match /
+    min revision 646153
+    max revision 646153
+end match
+
+##### Main Rules #####
+
+# kdesupport/kdewin
+match /trunk/kdesupport/kdewin/
+    repository ${REPO}
+    branch master
+end match
+
+# kdesupport/kdewin-installer
+match /trunk/kdesupport/kdewin-installer/
+    repository ${REPO2}
+    branch master
+end match
+
+# kdesupport/kdewin32/installer
+match /trunk/kdesupport/kdewin32/installer/
+    repository ${REPO2}
+    branch master
+    max revision 646152
+end match
+
+# kdesupport/kdewin32/3rdparty
+match /trunk/kdesupport/kdewin32/3rdparty/
+    repository ${REPO2}
+    branch master
+end match
+
+# kdesupport/kdewin32
+match /trunk/kdesupport/kdewin32/
+    repository ${REPO}
+    branch master
+    max revision 987474
+end match
+
+# kdelibs/win
+match /trunk/KDE/kdelibs/win/
+    repository ${REPO}
+    branch master
+    max revision 548914
+    min revision 345282
+end match
+
+##### Branches #####
+
+##### Tags #####
+match /tags/kdewin32/([^/]+)/
+    repository ${REPO}
+    branch refs/tags/v\1
+end match
+
+match /tags/kdewin-installer/([^/]+)/
+    repository ${REPO2}
+    branch refs/tags/v\1
+end match
+
+##### ignore everything else #####
+match /
+end match
