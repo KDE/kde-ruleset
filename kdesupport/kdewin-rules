@@ -9,7 +9,7 @@ declare REPO2=kdewin-installer
 create repository ${REPO2}
 end repository
 
-##### Main Rules #####
+##### Ignore/Delete rules #####
 # completed the rebranding of kdewin32 to kdewin
 match /
     min revision 987475
@@ -28,8 +28,8 @@ match /
     max revision 646153
 end match
 
-##### Main Rules #####
 
+##### Main Rules #####
 # kdesupport/kdewin
 match /trunk/kdesupport/kdewin/
     repository ${REPO}
@@ -49,10 +49,12 @@ match /trunk/kdesupport/kdewin32/installer/
     max revision 646152
 end match
 
-# kdesupport/kdewin32/3rdparty
+# kdesupport/kdewin32/installer/3rdparty was moved to kdewin32/ then back in installer/
+# and finally recreated in kdewin32 in r720595 (after the -installer split)
 match /trunk/kdesupport/kdewin32/3rdparty/
     repository ${REPO2}
     branch master
+    max revision 646152
 end match
 
 # kdesupport/kdewin32
