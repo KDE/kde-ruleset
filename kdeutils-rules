@@ -154,6 +154,13 @@ match /trunk/kdereview/filelight/
   # max revision 1181065
 end match
 
+### KFontManager in kdebase
+match /trunk/kdebase/kfontmanager/
+  repository KDE/kdeutils
+  prefix kfontmanager/
+  branch master
+end match
+
 ### KGpg in branches/work/kgpg2
 match /branches/work/kgpg2/
   repository KDE/kdeutils
