@@ -4368,6 +4368,10 @@ match /trunk/playground/[^/]+/admin
   min revision 409210
 end match
 
+match /trunk/playground/k?office/flake
+end match
+
+
 match /trunk/kdeplayground-network/knetworksettings/
   min revision 219147
   max revision 398606      # abandoned
