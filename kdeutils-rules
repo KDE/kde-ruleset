@@ -154,6 +154,14 @@ match /trunk/kdereview/filelight/
   # max revision 1181065
 end match
 
+### KFind in kdebase
+match /trunk/kdebase/kfind/
+  repository KDE/kdeutils
+  prefix kfind/
+  branch master
+  max revision 45496
+end match
+
 ### KFontManager in kdebase
 match /trunk/kdebase/kfontmanager/
   repository KDE/kdeutils
