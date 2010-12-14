@@ -1,0 +1,24 @@
+#
+# Created by Anne-Marie Mahfouf <annma@kde.org>
+#
+
+# Kard history in KDE SVN starts with r497540
+# so svn2git can be run with --resume-from option
+
+# Kard was never branched or tagged, so this is
+# straight-forward.
+
+# Create the kard repository
+create repository kard
+end repository
+
+# Kard from playground
+match /trunk/playground/edu/kard/
+  repository kard
+  branch master
+end match
+
+# Ignore the rest
+match /
+end match
+
