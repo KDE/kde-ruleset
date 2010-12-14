@@ -10,6 +10,14 @@ match /trunk/(KDE/)?kdebindings/perl/
     branch master
 end match
 
+# Previous locations
+
+match /trunk/playground/bindings/perlqt4/
+    repository KDE/kdebindings-perl
+    branch master
+    max revision 1198508 # revision before playground dir got deleted
+end match
+
 #
 # recursion
 #
