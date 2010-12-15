@@ -196,40 +196,46 @@ match /trunk/kdereview/okteta/
   # max revision 797376
 end match
 
-### KRemoteControl as kdelirc
-match /trunk/kdeutils/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-  # min revision 228301
-  # max revision 407135
-end match
-match /trunk/KDE/kdeutils/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-end match
-match /trunk/playground/utils/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-  # min revision 807315
-  # max revision 956537
-end match
-match /trunk/kdereview/utils/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-  # min revision 956538
-  # max revision 956547
-end match
-match /trunk/kdereview/kdelirc/
-  repository KDE/kdeutils
-  prefix kremotecontrol/
-  branch master
-  # min revision 956548
-  # max revision 963347
-end match
+# Commented out because the history is not linear.
+# KRemoteControl, according to its author, could be considered a "fork"
+# of KDELirc.
+#
+# ### KRemoteControl as kdelirc
+# match /trunk/kdeutils/kdelirc/
+#   repository KDE/kdeutils
+#   prefix kremotecontrol/
+#   branch master
+#   # min revision 228301
+#   # max revision 407135
+# end match
+# match /trunk/KDE/kdeutils/kdelirc/
+#   repository KDE/kdeutils
+#   prefix kremotecontrol/
+#   branch master
+# end match
+# match /trunk/playground/utils/kdelirc/
+#   repository KDE/kdeutils
+#   prefix kremotecontrol/
+#   branch master
+#   # min revision 807315
+#   # max revision 956537
+# end match
+# match /trunk/kdereview/utils/kdelirc/
+#   repository KDE/kdeutils
+#   prefix kremotecontrol/
+#   branch master
+#   # min revision 956538
+#   # max revision 956547
+# end match
+# match /trunk/kdereview/kdelirc/
+#   repository KDE/kdeutils
+#   prefix kremotecontrol/
+#   branch master
+#   # min revision 956548
+#   # max revision 963347
+# end match
+
+### KRemoteControl in branches/work/kdelirc
 match /branches/work/kdelirc/
   repository KDE/kdeutils
   prefix kremotecontrol/
@@ -237,6 +243,8 @@ match /branches/work/kdelirc/
   # min revision 1075787
   # max revision 1102496
 end match
+
+### KRemoteControl in kdereview
 match /trunk/kdereview/kremotecontrol/
   repository KDE/kdeutils
   prefix kremotecontrol/
