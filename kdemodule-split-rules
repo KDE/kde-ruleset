@@ -548,9 +548,6 @@ create repository KDE/kdeutils/cdbakeoven
 end repository
 create repository KDE/kdeutils/kmilo
 end repository
-create repository KDE/kdeutils/kdelirc
-end repository
-
 
 create repository KDE/kdewebdev
 end repository
@@ -1738,9 +1735,6 @@ create repository extragear/guidance-power-manager
 end repository
 
 create repository extragear/kfeed
-end repository
-
-create repository extragear/kdelirc
 end repository
 
 create repository extragear/nonogram
@@ -3211,6 +3205,9 @@ create repository extragear/libalkimia
 end repository
 
 create repository extragear/titrationplot
+end repository
+
+create repository extragear/KWelcomeWidget
 end repository
 
 #
