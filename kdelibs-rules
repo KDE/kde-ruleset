@@ -51,6 +51,10 @@ match /trunk/kdelibs/
   max revision 409202
 end match
 
+match /(branches|tags)/[^/]+/$
+  action recurse
+end match
+
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdelibs/
   repository KDE/kdelibs
   branch refs/tags/v\1.\2.0
