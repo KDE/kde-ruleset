@@ -1,0 +1,17 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+create repository www/sites/freebsd
+end repository
+
+##### Main rule: match /trunk/www/sites/freebsd #####
+match /trunk/www/sites/freebsd/
+  repository www/sites/freebsd
+  branch master
+  # min revision 642851
+end match
+
+##### Ignore everything else #####
+match /
+end match
