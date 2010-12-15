@@ -1,4 +1,4 @@
-# Rules for kdesupport/strigi
+# Rules for kdesupport/strigi (first commit: 526249)
 # Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
 
 ##### Create the repository #####
@@ -7,39 +7,44 @@ create repository ${REPO}
 end repository
 
 ##### Ignore rules #####
+# Oops, the code is back after an accidental delete. (r919029)
+# Remove Strigi 0.6.3 to be replaced with 0.6.4. (r919026)
+match /trunk/kdesupport/strigi/
+    min revision 919025
+    max revision 919030
+end match
+
+# Rename Kitten to Strigi (r551679)
+match /
+    min revision 551679
+    max revision 551679
+end match
 
 ##### Main Rules #####
 match /trunk/kdesupport/strigi/
     repository ${REPO}
     branch master
-    min revision 919030
 end match
 
-match /trunk/kdesupport/strigi/
-    repository ${REPO}
-    branch master
-    max revision 919022
-end match
-
+# playground/base/strigi/ (until r637789)
 match /trunk/playground/base/strigi/
     repository ${REPO}
     branch master
-    max revision 637788
-    min revision 551677
+    max revision 637790
 end match
 
+# playground/base/kitten (until r551679)
 match /trunk/playground/base/kitten/
     repository ${REPO}
     branch master
-    max revision 551677
-    min revision 547576
+    max revision 551680
 end match
 
+# branches/work/kde4/playground/libs/archivereader/ (until r547578)
 match /branches/work/kde4/playground/libs/archivereader/
     repository ${REPO}
     branch master
-    max revision 547576
-    min revision 526249
+    max revision 547579
 end match
 
 ##### Branches #####
