@@ -3686,32 +3686,6 @@ end match
 
 
 
-#skip files directly in module
-match /(trunk(/KDE)?|(branches|tags)/(KDE/)?[^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/[^/]+$
-end match
-
-#skip this one, not sure if it will be needed
-match /(trunk(/KDE)?|(branches(/work)?|tags)(/KDE)?/[^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/(debian|admin|po|bsd-port)/
-end match
-
-match /trunk/KDE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
-  repository KDE/\1/\3
-  branch master
-  min revision 409209
-end match
-
-match /trunk/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
-  repository KDE/\1/\3
-  branch master
-  max revision 409202
-end match
-
-match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
-  repository KDE/\3/\5
-  branch KDE/\1.\2
-  max revision 409202
-end match
-
 #kdeedu special branches
 match /trunk/playground/[^/]+/(marble|kalgebra|kanagram|kgeography|step|keduca|kverbos)/
   repository KDE/kdeedu/\1
@@ -3923,6 +3897,33 @@ end match
 match /trunk/(kdereview)/mobipocket/libs
   repository KDE/kdegraphics/libs/mobipocket
   branch master
+end match
+
+
+#skip files directly in module
+match /(trunk(/KDE)?|(branches|tags)/(KDE/)?[^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/[^/]+$
+end match
+
+#skip this one, not sure if it will be needed
+match /(trunk(/KDE)?|(branches(/work)?|tags)(/KDE)?/[^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/(debian|admin|po|bsd-port)/
+end match
+
+match /trunk/KDE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\1/\3
+  branch master
+  min revision 409209
+end match
+
+match /trunk/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\1/\3
+  branch master
+  max revision 409202
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\3/\5
+  branch KDE/\1.\2
+  max revision 409202
 end match
 
 
