@@ -1,0 +1,233 @@
+#
+# Created by Marcel Wiesweg <marcel.wiesweg@gmx.de>
+#
+
+#
+# Create the digikam repository
+#
+create repository digikam
+end repository
+
+# Ignore some upheaval in KDE's SVN history.
+match /
+    min revision 409202
+    max revision 409210
+end match
+match /
+    min revision 411973
+    max revision 411973
+end match
+
+# ---- Master -----
+
+#match /trunk/(kdeextragear-3|kdeextragear-libs-1|kde-extragear/graphics)/(digikam/|digikamimageplugins/|kipi-plugins)$
+#    action recurse
+#end match
+
+# -- Digikam Core --
+
+# 945619: Moving trunk to /branches/extragear/graphics/digikam/0.10-trunk (no further development there)
+# 945625: Moving /branches/extragear/graphics/digikam/0.11 to trunk
+# 675278: Moved /branches/work/digikam-dbconsolidation to trunk
+# 670778: Moved /trunk/extragear/graphics/digikam to /branches/extragear/kde3/graphics/digikam
+# 308800: Initial commit (from "digikam core")
+# min revision 409209
+match /trunk/extragear/graphics/digikam/
+    repository digikam
+    branch master
+end match
+
+# path until 409208
+match /trunk/kdeextragear-3/digikam/
+    repository digikam 
+    branch master
+end match
+
+# -- Digikam Imageplugins --
+
+# merged back to digikam in 644929
+match /trunk/extragear/graphics/digikamimageplugins/
+    repository digikam
+    prefix imageplugins/
+    branch master
+end match
+
+# 409208: to extragear
+# 337741: initial commit
+match /trunk/kdeextragear-3/digikamimageplugins/
+    repository digikam
+    prefix imageplugins/
+    branch master
+end match
+
+# -- Kipiplugins --
+
+match /trunk/extragear/graphics/kipi-plugins/
+    repository digikam
+    prefix kipi-plugins/
+    branch master
+end match
+
+# 672392: started KDE4 port, copied from /branches/extragear/kde3/libs/kipi-plugins:672391
+# 670712: moved to kde3 branch
+# 816153: moved to extragear/graphics (lib separated)
+match /trunk/extragear/libs/kipi-plugins/
+    repository digikam  
+    prefix kipi-plugins/
+    branch master
+end match
+
+# 305942: Initial commit (from "digikam plugins")
+# 409208: Moved to extragear/libs
+match /trunk/kdeextragear-libs-1/kipi-plugins/
+    repository digikam
+    prefix kipi-plugins/
+    branch master
+end match
+
+
+# ---- 2.0 (GSoc-2010) -----
+
+#match /branches/extragear/graphics/digikam/core/
+#    min revision 1205532
+#    repository digikam
+#    branch gsoc-2010
+#end match
+
+match /branches/extragear/graphics/digikam/
+    repository digikam
+#    max revision 1205532
+    branch gsoc-2010
+    min revision 1144518
+end match
+
+match /branches/extragear/graphics/digikam-gosc2010/gsoc-2010/
+    repository digikam
+    branch gsoc-2010
+    min revision 1144517
+    max revision 1144517
+end match
+
+# 1126687: created branch
+match /branches/extragear/graphics/digikam/gsoc-2010/
+    repository digikam
+    branch gsoc-2010
+    max revision 1144516
+end match
+
+# 1205533: moved to digikam
+match /branches/extragear/graphics/kipi-plugins/
+    repository digikam
+    branch gsoc-2010
+    prefix extra/kipi-plugins/
+    min revision 1144580
+    max revision 1205533
+end match
+
+match /trunk/kdereview/libkmap/
+    repository digikam
+    prefix extra/libkmap/
+    branch gsoc-2010
+end match
+
+match /branches/extragear/graphics/libkmap/
+    repository digikam
+    prefix extra/libkmap/
+    branch gsoc-2010
+end match  
+
+match /trunk/kdereview/libkface/
+    repository digikam
+    prefix extra/libkface/
+    branch gsoc-2010
+end match
+
+match /branches/extragear/graphics/libkface/
+    repository digikam
+    prefix extra/libkface/
+    branch gsoc-2010
+end match
+
+
+# ---- Older branches ----
+
+match /branches/extragear/graphics/digikam/1.0-databaseext/
+    max revision 1126684
+    repository digikam
+    branch 1.0-databaseext
+end match
+
+match /branches/extragear/graphics/digikam/0.11/
+    max revision 945624
+    min revision 925855
+    repository digikam
+    branch 0.11
+end match
+
+match /branches/extragear/graphics/digikam/digikam/
+    max revision 925854
+    min revision 925853
+    repository digikam 
+    branch 0.11       
+end match
+
+match /branches/work/digikam-dbconsolidation/
+    max revision 675277
+    repository digikam
+    branch db-consolidation
+end match
+
+match /branches/work/digikam-dbconsolidation/
+    max revision 675277
+    repository digikam
+    branch db-consolidation
+end match
+
+# ---- KDE3 branches ----
+
+match /branches/extragear/kde3/graphics/digikam/
+    repository digikam
+    branch kde3
+    #min revision 670778
+end match
+
+match /branches/extragear/kde3/libs/kipi-plugins/
+    # started kde4 port 672392
+    prefix kipi-plugins/
+    repository digikam
+    branch kde3
+    #min revision 670778
+end match
+
+# ---- Tags ----
+
+match /tags/digikam/digikam_0_7_3-1_stable/
+# seems to cause trouble
+end match
+
+match /tags/digikam/digikam_([^/]+)/
+  repository digikam
+  branch refs/tags/v\1
+  annotated true
+end match
+
+match /tags/digikam/digikamimageplugins_([^/]+)/
+  repository digikam
+  branch refs/tags/v\1-imageplugins
+  annotated true
+end match
+
+match /tags/digikam/doc_([^/]+)/
+# dont know what that was. A single tag.
+end match
+
+match /tags/digikam/([^/]+)/
+  repository digikam
+  branch refs/tags/v\1
+  annotated true
+end match
+
+# Ignore everything else
+match /
+end match
+
