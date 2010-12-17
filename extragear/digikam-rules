@@ -88,122 +88,190 @@ end match
 
 # ---- 2.0 (GSoc-2010) -----
 
-#match /branches/extragear/graphics/digikam/core/
-#    min revision 1205532
+# -- digikam "core" --
+
+# intermediate location at 1144517
+#match /branches/extragear/graphics/digikam-gosc2010/gsoc-2010/
 #    repository digikam
 #    branch gsoc-2010
 #end match
 
+# ignore renaming
 match /branches/extragear/graphics/digikam/
-    repository digikam
-#    max revision 1205532
-    branch gsoc-2010
-    min revision 1144518
-end match
-
-match /branches/extragear/graphics/digikam-gosc2010/gsoc-2010/
-    repository digikam
-    branch gsoc-2010
     min revision 1144517
-    max revision 1144517
+    max revision 1144518
 end match
 
-# 1126687: created branch
+# 1126687: branch created
 match /branches/extragear/graphics/digikam/gsoc-2010/
     repository digikam
     branch gsoc-2010
-    max revision 1144516
 end match
+
+# first location of software compilation, digikam in core/
+match /branches/extragear/graphics/digikam/
+    repository digikam
+    branch gsoc-2010
+    min revision 1144520
+end match
+
+# -- kipi-plugins --
 
 # 1205533: moved to digikam
 match /branches/extragear/graphics/kipi-plugins/
     repository digikam
     branch gsoc-2010
-    prefix extra/kipi-plugins/
+    prefix kipi-plugins/
     min revision 1144580
-    max revision 1205533
+end match
+
+match /branches/extragear/graphics/kipi-plugins/$
+   min revision 1144580
+   max revision 1144580
+   action recurse
+end match
+
+match /branches/extragear/graphics/gpssync2/
+    repository digikam
+    prefix kipi-plugins/gpssync2/
+    branch gsoc-2010
+end match  
+
+match /branches/extragear/graphics/kipi-plugins/gpssync2/
+    repository digikam
+    prefix kipi-plugins/gpssync2/
+    branch gsoc-2010
+end match  
+
+# -- libkmap --
+
+match /branches/extragear/graphics/digikam/worldmapwidget2/
+    repository digikam
+    prefix kipi-plugins/worldmapwidget2/
+    branch gsoc-2010
 end match
 
 match /trunk/kdereview/libkmap/
     repository digikam
-    prefix extra/libkmap/
+    prefix libkmap/
     branch gsoc-2010
 end match
 
 match /branches/extragear/graphics/libkmap/
     repository digikam
-    prefix extra/libkmap/
+    prefix libkmap/
     branch gsoc-2010
 end match  
 
+match /branches/extragear/graphics/digikam/libkmap/
+    repository digikam
+    prefix libkmap/
+    branch gsoc-2010
+end match  
+
+# -- libkface --
+
 match /trunk/kdereview/libkface/
     repository digikam
-    prefix extra/libkface/
+    prefix libkface/
     branch gsoc-2010
 end match
 
 match /branches/extragear/graphics/libkface/
     repository digikam
-    prefix extra/libkface/
+    prefix libkface/
     branch gsoc-2010
 end match
 
+match /branches/extragear/graphics/digikam/libkface/
+    repository digikam
+    prefix libkface/
+    branch gsoc-2010
+end match
+
+# -- kdegraphics libs branches --
+
+match /branches/extragear/graphics/libkdcraw/
+    repository digikam
+    prefix libkface/
+    branch gsoc-2010
+end match
+
+match /branches/extragear/graphics/digikam/libkexiv2/
+    repository digikam
+    prefix libkface/
+    branch gsoc-2010
+end match
 
 # ---- Older branches ----
 
+# living until 1126684
 match /branches/extragear/graphics/digikam/1.0-databaseext/
-    max revision 1126684
     repository digikam
     branch 1.0-databaseext
 end match
 
+# living from 925855 to 945624
 match /branches/extragear/graphics/digikam/0.11/
-    max revision 945624
-    min revision 925855
     repository digikam
     branch 0.11
 end match
 
+# living for a short time to become 0.11. Some upheaval before, ignored.
 match /branches/extragear/graphics/digikam/digikam/
-    max revision 925854
+    max revision 925855
     min revision 925853
     repository digikam 
     branch 0.11       
 end match
 
+# living until 675277
 match /branches/work/digikam-dbconsolidation/
-    max revision 675277
     repository digikam
     branch db-consolidation
 end match
 
-match /branches/work/digikam-dbconsolidation/
-    max revision 675277
+match /branches/digikam/0.8-experimental/
     repository digikam
-    branch db-consolidation
+    branch 0.8-experimental
+end match
+
+match /branches/extragear/graphics/digikam/modelviewport/digikam/
+    repository digikam
+    branch modelviewport
+end match
+
+match /branches/stable/extragear/graphics/digikam/
+    repository digikam
+    branch stable-0.8
+end match
+
+match /branches/stable/extragear/graphics/digikamimageplugins/
+    repository digikam
+    branch stable-0.8-imageplugins
 end match
 
 # ---- KDE3 branches ----
 
+# started at 670778
 match /branches/extragear/kde3/graphics/digikam/
     repository digikam
     branch kde3
-    #min revision 670778
 end match
 
+# moved from trunk at 670778
+# started kde4 port 672392
 match /branches/extragear/kde3/libs/kipi-plugins/
-    # started kde4 port 672392
-    prefix kipi-plugins/
     repository digikam
+    prefix kipi-plugins/
     branch kde3
-    #min revision 670778
 end match
 
 # ---- Tags ----
 
-match /tags/digikam/digikam_0_7_3-1_stable/
+# match /tags/digikam/digikam_0_7_3-1_stable/
 # seems to cause trouble
-end match
+# (later dangling), delete manually
 
 match /tags/digikam/digikam_([^/]+)/
   repository digikam
@@ -227,7 +295,8 @@ match /tags/digikam/([^/]+)/
   annotated true
 end match
 
-# Ignore everything else
+# ---- Ignore everything else ----
+
 match /
 end match
 
