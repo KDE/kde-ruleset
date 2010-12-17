@@ -3282,7 +3282,6 @@ match /trunk/tests/
   min revision 411524
 end match
 
-
 # Don't import kdenox
 match /(trunk|branches/KONQE_[^/]*|tags/KONQE_[^/]*)/kdenox/
   min revision 70293
@@ -3377,6 +3376,9 @@ end match
 # at this rev the torrent plugin got added
 match /(trunk|(branches|tags)/KDE(_/)[^/]*)/kdenetwork/kfile-plugins
   max revision 342869
+end match
+
+match /trunk/.git-checkout
 end match
 
 
