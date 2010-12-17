@@ -14,9 +14,19 @@ match /
   max revision 409209
 end match
 
+# These three commits add svn:externals to old tags.
+# They cause annoying history graphs; so let's remove them.
+match /
+    min revision 416386
+    max revision 416386
+end match
 match /
     min revision 416394
     max revision 416394
+end match
+match /
+    min revision 416398
+    max revision 416398
 end match
 
 match /tags/KDE/4.0.80/(kdevelop)
@@ -31,8 +41,11 @@ match /(branches|tags)/[^A-Z]
   max revision 409202
 end match
 
-# Ignore these branches and tags
-match /(tags/RELEASE_0_9_9|tags/KDE_2_1_RELEASET|tags/KDE_2_1|tags/MPG123LIB|tags/OGG_VORBIS|tags/KDAB_.*|tags/KOFFICE_1_1_BRANCHPOINT|tags/KDEVELOP_2_KACTION_START|tags/KDEVELOP_2_MERGE|branches/KWORD_RICHTEXT|branches/KWORD_WYSIWYG|branches/AEGYPTEN_BRANCH|branches/KFILEMETAINFO_BRANCH|branches/Unstable_Development|branches/kicker)/
+# Ignore these branches
+match /branches/(KWORD_RICHTEXT|KWORD_WYSIWYG|AEGYPTEN_BRANCH|KFILEMETAINFO_BRANCH|Unstable_Development|kicker)/
+end match
+# Ignore these tags too
+match /tags/(RELEASE_0_9_9|KDE_2_1_RELEASET|KDE_2_1|MPG123LIB|OGG_VORBIS|KDAB_.*|KOFFICE_1_1_BRANCHPOINT|KDEVELOP_2_KACTION_START|KDEVELOP_2_MERGE)/
 end match
 
 # Ignore this stupid commit
