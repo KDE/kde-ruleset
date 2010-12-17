@@ -486,6 +486,8 @@ create repository KDE/kdeutils/filelight
 end repository
 
 #abandoned/moved stuff
+create repository KDE/kdeutils/kdelirc
+end repository
 create repository KDE/kdeutils/kedit
 end repository
 create repository KDE/kdeutils/khexedit
