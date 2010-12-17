@@ -31,8 +31,11 @@ match /(branches|tags)/[^A-Z]
   max revision 409202
 end match
 
-# Ignore these branches and tags
-match /(tags/RELEASE_0_9_9|tags/KDE_2_1_RELEASET|tags/KDE_2_1|tags/MPG123LIB|tags/OGG_VORBIS|tags/KDAB_.*|tags/KOFFICE_1_1_BRANCHPOINT|tags/KDEVELOP_2_KACTION_START|tags/KDEVELOP_2_MERGE|branches/KWORD_RICHTEXT|branches/KWORD_WYSIWYG|branches/AEGYPTEN_BRANCH|branches/KFILEMETAINFO_BRANCH|branches/Unstable_Development|branches/kicker)/
+# Ignore these branches
+match /branches/(KWORD_RICHTEXT|KWORD_WYSIWYG|AEGYPTEN_BRANCH|KFILEMETAINFO_BRANCH|Unstable_Development|kicker)/
+end match
+# Ignore these tags too
+match /tags/(RELEASE_0_9_9|KDE_2_1_RELEASET|KDE_2_1|MPG123LIB|OGG_VORBIS|KDAB_.*|KOFFICE_1_1_BRANCHPOINT|KDEVELOP_2_KACTION_START|KDEVELOP_2_MERGE)/
 end match
 
 # Ignore this stupid commit
