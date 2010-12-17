@@ -14,9 +14,19 @@ match /
   max revision 409209
 end match
 
+# These three commits add svn:externals to old tags.
+# They cause annoying history graphs; so let's remove them.
+match /
+    min revision 416386
+    max revision 416386
+end match
 match /
     min revision 416394
     max revision 416394
+end match
+match /
+    min revision 416398
+    max revision 416398
 end match
 
 match /tags/KDE/4.0.80/(kdevelop)
