@@ -3047,9 +3047,6 @@ end repository
 create repository extragear/quality
 end repository
 
-create repository extragear/kgeography
-end repository
-
 create repository extragear/usagemonitor
 end repository
 
@@ -3752,7 +3749,7 @@ end match
 
 
 #kdeedu special branches
-match /trunk/playground/[^/]+/(marble|kalgebra|kanagram|kgeography|step|keduca|kverbos)/
+match /(trunk/playground/[^/]+|kdenonbeta)/(marble|kalgebra|kanagram|kgeography|step|keduca|kverbos)/
   repository KDE/kdeedu/\1
   branch master
   min revision 409209
