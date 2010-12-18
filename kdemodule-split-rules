@@ -3463,10 +3463,16 @@ end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdesupport
   max revision 409202
 end match
-match /(branches|tags)/(akode|akonadi|automoc|decibel|eigen|phonon|qca|qimageblitz|soprano|strigi|taglib|tapioca-qt|telepathy-qt)/([^/]+)/
+match /(branches)/(akode|akonadi|automoc|decibel|eigen|phonon|qca|qimageblitz|soprano|strigi|taglib|tapioca-qt|telepathy-qt)/([^/]+)/
   repository kdesupport/\2
   branch \3
   min revision 409202
+end match
+match /(tags)/(akode|akonadi|automoc|decibel|eigen|phonon|qca|qimageblitz|soprano|strigi|taglib|tapioca-qt|telepathy-qt)/([^/]+)/
+  repository kdesupport/\2
+  branch refs/tags/v\3
+  annotated true
+  max revision 409202
 end match
 match /trunk/kdeextragear-2/taglib/
   repository kdesupport/taglib
@@ -3484,49 +3490,61 @@ match /trunk/(KDE/)?arts/
 end match
 match /tags/arts/1.5.0-alpha1/arts/
   repository arts
-  branch arts/1.4.90
+  branch refs/tags/v1.4.90
+  annotated true
   min revision 443441
   max revision 443441
 end match
 match /tags/arts/1.5.0-beta1/arts/
   repository arts
-  branch arts/1.4.91
+  branch refs/tags/v1.4.91
+  annotated true
   min revision 459298
   max revision 459298
 end match
-match /(branches|tags)/arts/([^/]+)A/arts/
+match /(tags)/arts/([^/]+)A/arts/
   repository arts
-  branch arts/\2a
+  branch refs/tags/v\2a
+  annotated true
+end match
+match /(branches)/arts/([^/]+)/arts/
+  repository arts
+  branch \2
   min revision 409209
 end match
-match /(branches|tags)/arts/([^/]+)/arts/
+match /(tags)/arts/([^/]+)/arts/
   repository arts
-  branch arts/\2
+  branch refs/tags/v\2
+  annotated true
+  min revision 409209
   min revision 409209
 end match
 match /tags/ARTS_(\d+)_(\d+)_RELEASE/arts/
   min revision 145162
   max revision 409202
   repository arts
-  branch arts/\1.\2.0
+  branch refs/tags/v\1.\2.0
+  annotated true
 end match
 match /tags/ARTS_(\d+)_(\d+)_(\d+)_RELEASE/arts/
   min revision 145162
   max revision 409202
   repository arts
-  branch arts/\1.\2.\3
+  branch refs/tags/v\1.\2.\3
+  annotated true
 end match
 match /tags/ARTS_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/arts/
   min revision 192719
   max revision 409202
   repository arts
-  branch arts/\1.\2.\3a
+  branch refs/tags/v\1.\2.\3a
+  annotated true
 end match
 match /branches/ARTS_(\d+)_(\d+)_BRANCH/arts/
   min revision 147167
   max revision 409202
   repository arts
-  branch arts/\1.\2
+  branch \1.\2
 end match
 
 # kdeplasmoids is kdeplasma-addons/
@@ -3536,9 +3554,16 @@ match /trunk/KDE/kdeplasmoids/
   min revision 813310
   max revision 830060
 end match
-match /(branches|tags)/KDE/([^/]+)/kdeplasmoids/
+match /(branches)/KDE/([^/]+)/kdeplasmoids/
   repository KDE/kdeplasma-addons
   branch KDE/\2
+  min revision 821790
+  max revision 830065
+end match
+match /(tags)/KDE/([^/]+)/kdeplasmoids/
+  repository KDE/kdeplasma-addons
+  branch refs/tags/v\2
+  annotated true
   min revision 821790
   max revision 830065
 end match
@@ -3575,9 +3600,15 @@ match /trunk/(KDE/)?kdeedu/kvoctrain/
   branch master
 end match
 
-match /(branches|tags)/KDE/([^/]+)/(kdeedu)/kvoctrain/
+match /(branches)/KDE/([^/]+)/(kdeedu)/kvoctrain/
   repository KDE/kdeedu/parley
   branch KDE/\2
+  min revision 409209
+end match
+match /(tags)/KDE/([^/]+)/(kdeedu)/kvoctrain/
+  repository KDE/kdeedu/parley
+  branch refs/tags/v\2
+  annotated true
   min revision 409209
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdeedu)/kvoctrain/
@@ -3602,9 +3633,15 @@ match /trunk/(KDE/)?kdenetwork/(kfile-plugins|strigi-analyzer)/torrent/
   repository KDE/kdenetwork/torrent
   branch master
 end match
-match /(branches|tags)/(KDE/)?([^/]+)/kdenetwork/(kfile-plugins|strigi-analyzer)/torrent/
+match /(branches)/(KDE/)?([^/]+)/kdenetwork/(kfile-plugins|strigi-analyzer)/torrent/
   repository KDE/kdenetwork/torrent
   branch KDE/\3
+  min revision 409209
+end match
+match /(tags)/(KDE/)?([^/]+)/kdenetwork/(kfile-plugins|strigi-analyzer)/torrent/
+  repository KDE/kdenetwork/torrent
+  branch refs/tags/v\3
+  annotated true
   min revision 409209
 end match
 
@@ -3623,23 +3660,32 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics)/kfile-
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\4/strigi-analyzer
-  branch KDE/\1.\2.\3
+  branch refs/tags/v\1.\2.\3
+  annotated true
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\5/strigi-analyzer
-  branch KDE/\1.\2.\3-beta\4
+  branch refs/tags/v\1.\2.\3-beta\4
+  annotated true
   min revision 376088
   max revision 409202
 end match
-match /(branches|tags)/KDE/([^/]+)/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+match /(branches)/KDE/([^/]+)/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\3/strigi-analyzer
   branch KDE/\2
   min revision 409209
 end match
+match /(tags)/KDE/([^/]+)/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
+  repository KDE/\3/strigi-analyzer
+  branch refs/tags/v\2
+  annotated true
+  min revision 409209
+end match
 match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\3/strigi-analyzer
-  branch KDE/\1.\2.0
+  branch refs/tags/v\1.\2.0
+  annotated true
   max revision 409202
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
@@ -3649,7 +3695,8 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdesdk|kdemultimedia|kdegraphics)/kfile-
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdesdk|kdemultimedia|kdegraphics)/kfile-plugins/
   repository KDE/\4/strigi-analyzer
-  branch KDE/\1.\2.\3a
+  branch refs/tags/v\1.\2.\3a
+  annotated true
   min revision 192719
   max revision 409202
 end match
@@ -3670,9 +3717,14 @@ match /trunk/(KDE/)?kdeutils/okteta/
   repository KDE/kdesdk/okteta
   branch master
 end match
-match /(branches|tags)/KDE/([^/]+)/(kdeutils)/okteta/
+match /(branches)/KDE/([^/]+)/(kdeutils)/okteta/
   repository KDE/kdesdk/okteta
   branch KDE/\2
+end match
+match /(tags)/KDE/([^/]+)/(kdeutils)/okteta/
+  repository KDE/kdesdk/okteta
+  branch refs/tags/v\2
+  annotated true
 end match
 
 match /trunk/KDE/kdeutils/privacy/
@@ -3683,9 +3735,18 @@ end match
 #/trunk/KDE/kdebase/workspace/kcontrol/privacy
 #/trunk/KDE/kdebase/kcontrol
 
-match /(trunk/KDE|(branches|tags)/KDE/([^/]+))/(kdegraphics)/(libkipi|libkexiv2|libkdcraw|libksane)/
-  repository KDE/kdegraphics/libs/\5
+match /trunk/KDE/(kdegraphics)/(libkipi|libkexiv2|libkdcraw|libksane)/
+  repository KDE/\1/libs/\2
   branch master
+end match
+match /branches/KDE/([^/]+)/(kdegraphics)/(libkipi|libkexiv2|libkdcraw|libksane)/
+  repository KDE/\2/libs/\3
+  branch KDE/\1
+end match
+match /tags/KDE/([^/]+)/(kdegraphics)/(libkipi|libkexiv2|libkdcraw|libksane)/
+  repository KDE/\2/libs/\3
+  branch refs/tags/v\1
+  annotated true
 end match
 
 
@@ -3934,55 +3995,65 @@ end match
 #cvs tags
 match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
   repository KDE/\3/\5
-  branch KDE/\1.\2.0
+  branch refs/tags/v\1.\2.0
+  annotated true
   max revision 409202
 end match
-
-match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
-  repository KDE/\3/\5
-  branch KDE/\1.\2.0
-  max revision 85028
-  min revision 68154
-end match
-
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
   repository KDE/\4/\6
-  branch KDE/\1.\2.\3
+  branch refs/tags/v\1.\2.\3
+  annotated true
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
   repository KDE/\4/\6
-  branch KDE/\1.\2.\3a
+  branch refs/tags/v\1.\2.\3a
+  annotated true
   min revision 192719
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
   repository KDE/\5/\7
-  branch KDE/\1.\2.\3-beta\4
+  branch refs/tags/v\1.\2.\3-beta\4
+  annotated true
   min revision 376088
   max revision 409202
 end match
 
 match /tags/KDE/3.5.0-alpha1/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
   repository KDE/\1/\3
-  branch KDE/3.4.90
+  branch refs/tags/v3.4.90
+  annotated true
   min revision 443441
   max revision 445561
 end match
 match /tags/KDE/3.5.0-beta1/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
   repository KDE/\1/\3
-  branch KDE/3.4.91
+  branch refs/tags/v3.4.91
+  annotated true
   min revision 459298
   max revision 460260
 end match
-match /(branches|tags)/KDE/([^/]+)A/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+match /(branches)/KDE/([^/]+)A/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
   repository KDE/\3/\5
   branch KDE/\2a
   min revision 409209
 end match
-match /(branches|tags)/KDE/([^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+match /(tags)/KDE/([^/]+)A/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\3/\5
+  branch refs/tags/v\2a
+  annotated true
+  min revision 409209
+end match
+match /(branches)/KDE/([^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
   repository KDE/\3/\5
   branch KDE/\2
+  min revision 409209
+end match
+match /(tags)/KDE/([^/]+)/(kdeedu|kdesdk|kdenetwork|kdeutils|kdemultimedia|kdegraphics(/libs)?)/([^/]+)/
+  repository KDE/\3/\5
+  branch refs/tags/v\2
+  annotated true
   min revision 409209
 end match
 
@@ -4011,31 +4082,28 @@ end match
 
 match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
   repository KDE/\3
-  branch KDE/\1.\2.0
+  branch refs/tags/v\1.\2.0
+  annotated true
   max revision 409202
-end match
-
-match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
-  repository KDE/\3
-  branch KDE/\1.\2.0
-  max revision 85028
-  min revision 68154
 end match
 
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
   repository KDE/\4
-  branch KDE/\1.\2.\3
+  branch refs/tags/v\1.\2.\3
+  annotated true
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
   repository KDE/\4
-  branch KDE/\1.\2.\3a
+  branch refs/tags/v\1.\2.\3a
+  annotated true
   min revision 192719
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdeaccessibility|kdeaddons|kdeadmin|kdeartwork|kdegames|kdetoys|kdewebdev)/
   repository KDE/\5
-  branch KDE/\1.\2.\3-beta\4
+  branch refs/tags/v\1.\2.\3-beta\4
+  annotated true
   min revision 376088
   max revision 409202
 end match
@@ -4047,24 +4115,38 @@ match /trunk/KDE/([^/]+)/
 end match
 match /tags/KDE/3.5.0-alpha1/([^/]+)/
   repository KDE/\1
-  branch KDE/3.4.90
+  branch refs/tags/v3.4.90
+  annotated true
   min revision 443441
   max revision 445561
 end match
 match /tags/KDE/3.5.0-beta1/([^/]+)/
   repository KDE/\1
-  branch KDE/3.4.91
+  branch refs/tags/v3.4.91
+  annotated true
   min revision 459298
   max revision 460260
 end match
-match /(branches|tags)/KDE/([^/]+)A/([^/]+)/
+match /(branches)/KDE/([^/]+)A/([^/]+)/
   repository KDE/\3
   branch KDE/\2a
   min revision 409209
 end match
-match /(branches|tags)/KDE/([^/]+)/([^/]+)/
+match /(tags)/KDE/([^/]+)A/([^/]+)/
+  repository KDE/\3
+  branch refs/tags/v\2a
+  annotated true
+  min revision 409209
+end match
+match /(branches)/KDE/([^/]+)/([^/]+)/
   repository KDE/\3
   branch KDE/\2
+  min revision 409209
+end match
+match /(tags)/KDE/([^/]+)/([^/]+)/
+  repository KDE/\3
+  branch refs/tags/v\2
+  annotated true
   min revision 409209
 end match
 match /(branches|tags)/KDE
@@ -4093,7 +4175,8 @@ end match
 match /tags/kopete/(0\.[^/]+)/
   min revision 506884
   repository KDE/kdenetwork/kopete
-  branch \1
+  branch refs/tags/v\1
+  annotated true
 end match
 
 # KBabel 0.6, 0.7 and 0.9
@@ -4102,7 +4185,8 @@ match /tags/KBABEL.0_(\d)/kdesdk/
   #max revision 70121
   max revision 97087
   repository KDE/kdesdk/kbabel
-  branch 0.\1
+  branch refs/tags/v0.\1
+  annotated true
 end match
 
 # KSysV 2.0
@@ -4117,7 +4201,8 @@ match /tags/KMAG_0_5_0/kdeaccessibility/
   min revision 114710
   max revision 114710
   repository KDE/kdeaccessibility
-  branch kmag/0.5.0
+  branch refs/tags/v0.5.0
+  annotated true
 end match
 
 # KMag 0.6.0
@@ -4125,7 +4210,8 @@ match /tags/KMAG_0_6_0_RELEASE/kdeaccessibility/
   min revision 123457
   max revision 123457
   repository KDE/kdeaccessibility
-  branch kmag/0.6.0
+  branch refs/tags/v0.6.0
+  annotated true
 end match
 
 # KMag 0.7.0
@@ -4133,7 +4219,8 @@ match /tags/KMAG_0_7_0_RELEASE/kdeaccessibility/
   min revision 135568
   max revision 135568
   repository KDE/kdeaccessibility
-  branch kmag/0.7.0
+  branch refs/tags/v0.7.0
+  annotated true
 end match
 
 # KMag 0.8.0
@@ -4141,7 +4228,8 @@ match /tags/KMAG_0_8_0_RELEASE/kdeaccessibility/
   min revision 151752
   max revision 151752
   repository KDE/kdeaccessibility
-  branch kmag/0.8.0
+  branch refs/tags/v0.8.0
+  annotated true
 end match
 
 # Kiten 0.5.0
@@ -4149,7 +4237,8 @@ match /tags/KITEN_0_5_RELEASE/kdeedu/kiten/
   min revision 121771
   max revision 121771
   repository KDE/kdeedu/kiten
-  branch 0.5.0
+  branch refs/tags/v0.5.0
+  annotated true
 end match
 
 # KView 3
@@ -4165,7 +4254,8 @@ match /tags/KOOKA_(\d+)_(\d+)/
   min revision 171704
   max revision 171704
   repository KDE/kdegraphics/kooka
-  branch \1.\2
+  branch refs/tags/v\1.\2
+  annotated true
 end match
 
 # Kig 0.1
@@ -4173,7 +4263,8 @@ match /tags/KIG_0_1/kdeedu/kig/
   min revision 175053
   max revision 175053
   repository KDE/kdeedu/kig
-  branch 0.1.0
+  branch refs/tags/v0.1.0
+  annotated true
 end match
 
 # KPovModeler 1.1
@@ -4195,7 +4286,8 @@ match /tags/JUK_1_RELEASE/kdemultimedia/juk/
   min revision 207650
   max revision 207650
   repository KDE/kdemultimedia/juk
-  branch 1.0.0
+  branch refs/tags/v1.0.0
+  annotated true
 end match
 
 #
@@ -4279,9 +4371,14 @@ match /trunk/(extragear/[^/]+|kdeextragear-[^/]+)/([^/]+)/
 end match
 match /(branches|tags)/([^/]+)/kdeextragear-[^/]+/
 end match
-match /(branches|tags)/([^/]+)/([^/+])/
+match /(branches)/([^/]+)/([^/+])/
   repository extragear/\2
   branch \3
+end match
+match /(tags)/([^/]+)/([^/+])/
+  repository extragear/\2
+  branch refs/tags/v\3
+  annotated true
 end match
 
 #
@@ -4674,9 +4771,18 @@ match /trunk/playground/[^/]+/([^/]+)/
 end match
 
 
-match /((branches|tags)(/KDE)?/[^/]*|trunk)/kdenonbeta/([^/]+)/
-  repository extragear/\4
+match /trunk/kdenonbeta/([^/]+)/
+  repository extragear/\1
   branch master
+end match
+match /branches(/KDE)?/([^/]+)/kdenonbeta/([^/]+)/
+  repository extragear/\3
+  branch \2
+end match
+match /tags(/KDE)?/([^/]+)/kdenonbeta/([^/]+)/
+  repository extragear/\3
+  branch refs/tags/v\2
+  annotated true
 end match
 
 
