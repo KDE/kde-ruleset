@@ -3746,10 +3746,9 @@ end match
 
 
 #kdeedu special branches
-match /(trunk/playground/[^/]+|kdenonbeta)/(marble|kalgebra|kanagram|kgeography|step|keduca|kverbos)/
-  repository KDE/kdeedu/\1
+match /(trunk/playground/[^/]+|trunk/kdenonbeta)/(marble|kalgebra|kanagram|kgeography|step|keduca|kverbos)/
+  repository KDE/kdeedu/\2
   branch master
-  min revision 409209
 end match
 
 match /trunk/kdereview/(marble|blinken|cantor|kalgebra|kanagram|kgeography|rocs|step)/
