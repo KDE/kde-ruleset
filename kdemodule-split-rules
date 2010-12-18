@@ -1814,9 +1814,6 @@ end repository
 create repository extragear/kgo
 end repository
 
-create repository extragear/Rocs
-end repository
-
 create repository kdesupport/cpptoxml
 end repository
 
@@ -3760,7 +3757,13 @@ match /trunk/kdereview/(marble|blinken|cantor|kalgebra|kanagram|kgeography|rocs|
   branch master
 end match
 
+match /trunk/playground/edu/Rocs/tags/version1/
+  repository KDE/kdeedu/rocs
+  branch master
+end match
+
 match /trunk/playground/edu/Rocs/
+  min revision 1022303
   repository KDE/kdeedu/rocs
   branch master
 end match
