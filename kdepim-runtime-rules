@@ -1,5 +1,5 @@
 # vim: set filetype=conf
-# --repo# file:///mnt/backup/kdesvnrepo/svn# --path# trunk/KDE/kdepim/runtime# --module# kdepim-runtime# --subdirs# --recurse# 99999# --showcommands
+# --repo file:///mnt/backup/kdesvnrepo/svn --path trunk/KDE/kdepim/runtime --module kdepim-runtime --subdirs --recurse 99999 --showcommands
 
 declare MODULE=kdepim/runtime
 declare REPO=kdepim-runtime
@@ -10,8 +10,6 @@ end repository
 include kdepim-common-ignore-rules
 include kdepim-recurse-rules
 include kdepim-tags-rules
-include kdepim-branches-rules
-
 
 #	------< trunk/KDE/kdepim/runtime/accountwizard >------
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/accountwizard @ 1113315 <- /branches/work/toma-akonadi-account-wizard-ghns-integration/accountwizard @ 1113314 ]
@@ -21,7 +19,7 @@ include kdepim-branches-rules
 #	[ add accountwizard HEAD 1113314 ]
 #	[ move branches/work/toma-akonadi-account-wizard-ghns-integration/accountwizard 1113314 1111119 ]
 match /branches/work/toma-akonadi-account-wizard-ghns-integration/accountwizard/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix accountwizard/
     branch master
     max revision 1113314
@@ -31,7 +29,7 @@ end match
 #	[ parent trunk/KDE/kdepim/runtime/accountwizard 1111119 1073674 ]
 #	[ move branches/work/akonadi-ports/kdepim/runtime/accountwizard 1073674 1061290 ]
 match /branches/work/akonadi-ports/kdepim/runtime/accountwizard/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix accountwizard/
     branch master
     max revision 1073674
@@ -40,7 +38,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/akonadi/accountwizard 1061290 0 ]
 match /branches/work/akonadi-ports/kdepim/akonadi/accountwizard/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix accountwizard/
     branch master
     max revision 1061290
@@ -53,7 +51,7 @@ end match
 #	[ add agents HEAD 1061321 ]
 #	[ parent trunk/KDE/kdepim/akonadi/agents 1061321 0 ]
 match /trunk/KDE/kdepim/akonadi/agents/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/
     branch master
     max revision 1061321
@@ -65,7 +63,7 @@ end match
 #	[ add agents/calendarsearch HEAD 1075150 ]
 #	[ move branches/work/akonadi-ports/kdepim/runtime/agents/calendarsearch 1075150 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/agents/calendarsearch/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/calendarsearch/
     branch master
     max revision 1075150
@@ -79,7 +77,7 @@ end match
 #	[ add agents/invitations HEAD 1161348 ]
 #	[ move branches/work/kdepim_kcalcore/runtime/agents/invitations 1161348 1149028 ]
 match /branches/work/kdepim_kcalcore/runtime/agents/invitations/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/invitations/
     branch master
     max revision 1161348
@@ -89,7 +87,7 @@ end match
 #	[ parent trunk/KDE/kdepim/runtime/agents/invitations 1149028 1075153 ]
 #	[ move branches/work/akonadi-ports/kdepim/runtime/agents/invitations 1075153 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/agents/invitations/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/invitations/
     branch master
     max revision 1075153
@@ -103,7 +101,7 @@ end match
 #	[ add agents/maildispatcher HEAD 1010069 ]
 #	[ move branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher 1010069 977512 ]
 match /branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/maildispatcher/
     branch master
     max revision 1010069
@@ -112,7 +110,7 @@ end match
 
 #	[ move branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher 977512 977493 ]
 match /branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/maildispatcher/
     branch master
     max revision 977512
@@ -121,7 +119,7 @@ end match
 
 #	[ move trunk/playground/pim/maildispatcheragent 977493 0 ]
 match /trunk/playground/pim/maildispatcheragent/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/maildispatcher/
     branch master
     max revision 977493
@@ -134,7 +132,7 @@ end match
 #	[ add agents/maildispatcher/tests HEAD 1010069 ]
 #	[ parent branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher/tests 1010069 979150 ]
 match /branches/work/akonadi-ports/kdepim/akonadi/agents/maildispatcher/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/maildispatcher/tests/
     branch master
     max revision 1010069
@@ -143,7 +141,7 @@ end match
 
 #	[ move branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests 979150 0 ]
 match /branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/maildispatcher/tests/
     branch master
     max revision 979150
@@ -156,7 +154,7 @@ end match
 #	[ add agents/maildispatcher/tests/unittestenv HEAD 979150 ]
 #	[ parent branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests/unittestenv 979150 0 ]
 match /branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests/unittestenv/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/maildispatcher/tests/unittestenv/
     branch master
     max revision 979150
@@ -199,7 +197,7 @@ end match
 #	[ add agents/nepomuk_calendar_feeder HEAD 1161348 ]
 #	[ move branches/work/kdepim_kcalcore/runtime/agents/nepomuk_calendar_feeder 1161348 0 ]
 match /branches/work/kdepim_kcalcore/runtime/agents/nepomuk_calendar_feeder/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/nepomuk_calendar_feeder/
     branch master
     max revision 1161348
@@ -217,7 +215,7 @@ end match
 #	[ add agents/ontologies HEAD 1034979 ]
 #	[ move trunk/KDE/kdepim/akonadi/agents/nie_fast 1034979 0 ]
 match /trunk/KDE/kdepim/akonadi/agents/nie_fast/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix agents/ontologies/
     branch master
     max revision 1034979
@@ -261,7 +259,7 @@ end match
 #	[ add kresources HEAD 982988 ]
 #	[ move trunk/KDE/kdepim/kresources/akonadi 982988 772772 ]
 match /trunk/KDE/kdepim/kresources/akonadi/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix kresources/
     branch master
     max revision 982988
@@ -270,7 +268,7 @@ end match
 
 #	[ move trunk/playground/pim/akonadi-kres 772772 0 ]
 match /trunk/playground/pim/akonadi-kres/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix kresources/
     branch master
     max revision 772772
@@ -283,7 +281,7 @@ end match
 #	[ add kresources/kabc HEAD 982988 ]
 #	[ parent trunk/KDE/kdepim/kresources/akonadi/kabc 982988 772772 ]
 match /trunk/KDE/kdepim/kresources/akonadi/kabc/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix kresources/kabc/
     branch master
     max revision 982988
@@ -292,7 +290,7 @@ end match
 
 #	[ parent trunk/playground/pim/akonadi-kres/kabc 772772 0 ]
 match /trunk/playground/pim/akonadi-kres/kabc/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix kresources/kabc/
     branch master
     max revision 772772
@@ -320,7 +318,7 @@ end match
 #	[ add libkdepim-copy HEAD 982582 ]
 #	[ move trunk/KDE/kdepim/libkdepim 982582 455550 ]
 match /trunk/KDE/kdepim/libkdepim/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix libkdepim-copy/
     branch master
     max revision 982582
@@ -329,7 +327,7 @@ end match
 
 #	[ parent branches/KDE/3.5/kdepim/libkdepim 455550 438981 ]
 match /branches/KDE/3.5/kdepim/libkdepim/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix libkdepim-copy/
     branch master
     max revision 455550
@@ -338,7 +336,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/libkdepim 438981 409202 ]
 match /trunk/KDE/kdepim/libkdepim/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix libkdepim-copy/
     branch master
     max revision 438981
@@ -347,7 +345,7 @@ end match
 
 #	[ parent trunk/kdepim/libkdepim 409202 0 ]
 match /trunk/kdepim/libkdepim/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix libkdepim-copy/
     branch master
     max revision 409202
@@ -367,7 +365,7 @@ end match
 #	[ add migration/kjots HEAD 1085609 ]
 #	[ move branches/work/akonadi-ports/kdepim/runtime/migration/kjots 1085609 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/migration/kjots/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix migration/kjots/
     branch master
     max revision 1085609
@@ -380,7 +378,7 @@ end match
 #	[ add migration/kmail HEAD 1073674 ]
 #	[ move branches/work/akonadi-ports/kdepim/runtime/migration/kmail 1073674 987531 ]
 match /branches/work/akonadi-ports/kdepim/runtime/migration/kmail/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix migration/kmail/
     branch master
     max revision 1073674
@@ -389,7 +387,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/migration/kmail 987531 0 ]
 match /trunk/KDE/kdepim/akonadi/migration/kmail/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix migration/kmail/
     branch master
     max revision 987531
@@ -444,7 +442,7 @@ end match
 #	[ add qml HEAD 1146852 ]
 #	[ move branches/work/komo/kdepim/runtime/qml 1146852 1129062 ]
 match /branches/work/komo/kdepim/runtime/qml/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix qml/
     branch master
     max revision 1146852
@@ -458,7 +456,7 @@ end match
 #	[ add qml/akonadi HEAD 1146852 ]
 #	[ parent branches/work/komo/kdepim/runtime/qml/akonadi 1146852 0 ]
 match /branches/work/komo/kdepim/runtime/qml/akonadi/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix qml/akonadi/
     branch master
     max revision 1146852
@@ -469,13 +467,19 @@ end match
 #	[ Parent: /branches/work/komo/kdepim @ 1129064 <- /trunk/KDE/kdepim @ 1129062 ]
 #	[ add qml/akonadi/tests HEAD 0 ]
 #	------< trunk/KDE/kdepim/runtime/qml/kde >------
+match /trunk/KDE/kdepim/kmail-mobile/(SlideoutPanel.qml|SlideoutPanelContainer.qml|tests/slideoutpaneltest.qml)
+    repository ${REPO}
+    branch master
+    prefix qml/kde/\1
+    max revision 1112177
+end match
 #	[ Parent: /trunk/KDE/kdepim/runtime/qml @ 1146853 <- /branches/work/komo/kdepim/runtime/qml @ 1146852 ]
 #	[ Parent: /branches/work/komo/kdepim @ 1129064 <- /trunk/KDE/kdepim @ 1129062 ]
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/qml/kde @ 1103618 <- /trunk/playground/pim/akonadi/kde-qml @ 1101913 ]
 #	[ add qml/kde HEAD 1101913 ]
 #	[ move trunk/playground/pim/akonadi/kde-qml 1101913 0 ]
 match /trunk/playground/pim/akonadi/kde-qml/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix qml/kde/
     branch master
     max revision 1101913
@@ -488,7 +492,7 @@ end match
 #	[ add qml/kde/tests HEAD 1101913 ]
 #	[ parent trunk/playground/pim/akonadi/kde-qml/tests 1101913 0 ]
 match /trunk/playground/pim/akonadi/kde-qml/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix qml/kde/tests/
     branch master
     max revision 1101913
@@ -513,8 +517,22 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources @ 559038 <- /trunk/KDE/kdepim/akonadiresources @ 559016 ]
 #	[ add resources HEAD 559016 ]
 #	[ move trunk/KDE/kdepim/akonadiresources 559016 0 ]
+match /trunk/playground/pim/akonaditest/resourcetester/tests/(maildirtest/|maildir-empty.xml|maildir-step1.xml|maildir-step2.xml|maildir.js|maildir.xml|testmail.mbox)
+    repository ${REPO}
+    prefix resources/maildir/tests/\1
+    branch master
+    max revision 1023876
+end match
+
+match /trunk/playground/pim/akonaditest/resourcetester/tests/(CMakeLists.txt|vcardtest-readonly.js|vcardtest-readonly.xml|vcardtest.js|vcardtest.vcf|vcardtest.xml)
+    repository ${REPO}
+    prefix resources/vcard/tests/\1
+    branch master
+    max revision 1023876
+end match
+
 match /trunk/KDE/kdepim/akonadiresources/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/
     branch master
     max revision 559016
@@ -526,7 +544,7 @@ end match
 #	[ add resources/akonotes HEAD 1085608 ]
 #	[ move branches/work/akonadi-ports/kdepim/runtime/resources/akonotes 1085608 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/akonotes/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/akonotes/
     branch master
     max revision 1085608
@@ -539,7 +557,7 @@ end match
 #	[ add resources/birthdays HEAD 1161348 ]
 #	[ move branches/work/kdepim_kcalcore/runtime/resources/birthdays 1161348 0 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/birthdays/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/birthdays/
     branch master
     max revision 1161348
@@ -556,7 +574,7 @@ end match
 #	[ add resources/dav HEAD 1161348 ]
 #	[ move branches/work/kdepim_kcalcore/runtime/resources/dav 1161348 1117316 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/dav/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/dav/
     branch master
     max revision 1161348
@@ -565,7 +583,7 @@ end match
 
 #	[ move trunk/kdereview/dav 1117316 1106037 ]
 match /trunk/kdereview/dav/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/dav/
     branch master
     max revision 1117316
@@ -574,7 +592,7 @@ end match
 
 #	[ move trunk/playground/pim/dav 1106037 0 ]
 match /trunk/playground/pim/dav/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/dav/
     branch master
     max revision 1106037
@@ -588,7 +606,7 @@ end match
 #	[ add resources/dav/common HEAD 1161348 ]
 #	[ parent branches/work/kdepim_kcalcore/runtime/resources/dav/common 1161348 1117316 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/dav/common/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/dav/common/
     branch master
     max revision 1161348
@@ -597,7 +615,7 @@ end match
 
 #	[ parent trunk/kdereview/dav/common 1117316 1106037 ]
 match /trunk/kdereview/dav/common/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/dav/common/
     branch master
     max revision 1117316
@@ -606,7 +624,7 @@ end match
 
 #	[ parent trunk/playground/pim/dav/common 1106037 0 ]
 match /trunk/playground/pim/dav/common/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/dav/common/
     branch master
     max revision 1106037
@@ -633,7 +651,7 @@ end match
 #	[ add resources/dav/resource HEAD 1096042 ]
 #	[ move trunk/playground/pim/dav/davcalendar 1096042 0 ]
 match /trunk/playground/pim/dav/davcalendar/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/dav/resource/
     branch master
     max revision 1096042
@@ -648,7 +666,7 @@ end match
 #	[ add resources/ical HEAD 1161348 ]
 #	[ move branches/work/kdepim_kcalcore/runtime/resources/ical 1161348 656871 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/ical/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/ical/
     branch master
     max revision 1161348
@@ -657,7 +675,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/resources/src/ical 656871 559016 ]
 match /trunk/KDE/kdepim/akonadi/resources/src/ical/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/ical/
     branch master
     max revision 656871
@@ -666,7 +684,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/akonadiresources/src/ical 559016 0 ]
 match /trunk/KDE/kdepim/akonadiresources/src/ical/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/ical/
     branch master
     max revision 559016
@@ -680,7 +698,7 @@ end match
 #	[ add resources/ical/notes HEAD 1161348 ]
 #	[ parent branches/work/kdepim_kcalcore/runtime/resources/ical/notes 1161348 0 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/ical/notes/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/ical/notes/
     branch master
     max revision 1161348
@@ -704,8 +722,15 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/resources/imap @ 788340 <- /trunk/playground/pim/mailody/akonadi_resource @ 788319 ]
 #	[ add resources/imap HEAD 1073676 ]
 #	[ move branches/work/akonadi-ports/kdepim/runtime/resources/imap 1073676 982689 ]
+match /branches/work/~ervin/imap-resource-refactor/(addcollectiontask.cpp|addcollectiontask.h|additemtask.cpp|additemtask.h|changecollectiontask.cpp|changecollectiontask.h|changeitemtask.cpp|changeitemtask.h|expungecollectiontask.cpp|expungecollectiontask.h|movecollectiontask.cpp|movecollectiontask.h|moveitemtask.cpp|moveitemtask.h|removecollectiontask.cpp|removecollectiontask.h|removeitemtask.cpp|removeitemtask.h|resourcestate.cpp|resourcestate.h|resourcestateinterface.cpp|resourcestateinterface.h|resourcetask.cpp|resourcetask.h|retrievecollectionmetadatatask.cpp|retrievecollectionmetadatatask.h|retrievecollectionstask.cpp|retrievecollectionstask.h|retrieveitemstask.cpp|retrieveitemstask.h|retrieveitemtask.cpp|retrieveitemtask.h)
+    repository ${REPO}
+    prefix resources/imap/\1
+    branch master
+    max revision 1159184
+end match
+
 match /branches/work/akonadi-ports/kdepim/runtime/resources/imap/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/imap/
     branch master
     max revision 1073676
@@ -714,7 +739,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/akonadi/resources/imap 982689 788319 ]
 match /trunk/KDE/kdepim/akonadi/resources/imap/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/imap/
     branch master
     max revision 982689
@@ -723,7 +748,7 @@ end match
 
 #	[ move trunk/playground/pim/mailody/akonadi_resource 788319 0 ]
 match /trunk/playground/pim/mailody/akonadi_resource/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/imap/
     branch master
     max revision 788319
@@ -734,10 +759,10 @@ end match
 #	[ add resources/imap/tests HEAD 1139084 ]
 #	[ move branches/work/~ervin/imap-resource-refactor/tests 1139084 0 ]
 match /branches/work/~ervin/imap-resource-refactor/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/imap/tests/
     branch master
-    max revision 1139084
+    max revision 1159184
 end match
 
 #	------< trunk/KDE/kdepim/runtime/resources/imap/wizard >------
@@ -746,7 +771,7 @@ end match
 #	[ add resources/imap/wizard HEAD 1073676 ]
 #	[ parent branches/work/akonadi-ports/kdepim/runtime/resources/imap/wizard 1073676 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/imap/wizard/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/imap/wizard/
     branch master
     max revision 1073676
@@ -768,7 +793,7 @@ end match
 #	[ add resources/knut HEAD 906081 ]
 #	[ move trunk/playground/pim/akonadi/knut 906081 904174 ]
 match /trunk/playground/pim/akonadi/knut/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/knut/
     branch master
     max revision 906081
@@ -777,7 +802,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/resources/knut 904174 656871 ]
 match /trunk/KDE/kdepim/akonadi/resources/knut/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/knut/
     branch master
     max revision 904174
@@ -786,7 +811,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/resources/src/knut 656871 0 ]
 match /trunk/KDE/kdepim/akonadi/resources/src/knut/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/knut/
     branch master
     max revision 656871
@@ -798,7 +823,7 @@ end match
 #	[ add resources/knut/tests HEAD 906081 ]
 #	[ parent trunk/playground/pim/akonadi/knut/tests 906081 0 ]
 match /trunk/playground/pim/akonadi/knut/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/knut/tests/
     branch master
     max revision 906081
@@ -811,7 +836,7 @@ end match
 #	[ add resources/kolabproxy HEAD 1161348 ]
 #	[ move branches/work/kdepim_kcalcore/runtime/resources/kolabproxy 1161348 0 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/kolabproxy/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/kolabproxy/
     branch master
     max revision 1161348
@@ -823,8 +848,14 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ add resources/kolabproxy/tests HEAD 1161348 ]
 #	[ parent branches/work/kdepim_kcalcore/runtime/resources/kolabproxy/tests 1161348 0 ]
+match /trunk/playground/pim/akonaditest/resourcetester/tests/(create_ldap_users.py|dovecotvm.conf|event.ical|imap-quicktest.es|imap-step1.xml|imap-step2.xml|imaptest.es|kolab-step1.xml|kolab-step2.xml|kolabevent.mbox|kolabtest.es|kolabvm.conf|runimapcommand.py|task.ical|testmail.mbox)
+    repository ${REPO}
+    prefix resources/kolabproxy/tests/\1
+    branch master
+    max revision 1023876
+end match
 match /branches/work/kdepim_kcalcore/runtime/resources/kolabproxy/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/kolabproxy/tests/
     branch master
     max revision 1161348
@@ -858,7 +889,7 @@ end match
 #	[ add resources/kolabproxy/wizard HEAD 1073677 ]
 #	[ move branches/work/akonadi-ports/kdepim/runtime/resources/kolabproxy/wizard 1073677 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/kolabproxy/wizard/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/kolabproxy/wizard/
     branch master
     max revision 1073677
@@ -874,7 +905,7 @@ end match
 #	[ add resources/maildir HEAD 1073679 ]
 #	[ move branches/work/akonadi-ports/kdepim/runtime/resources/maildir 1073679 0 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/maildir/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/maildir/
     branch master
     max revision 1073679
@@ -888,7 +919,7 @@ end match
 #	[ add resources/maildir/libmaildir HEAD 1073679 ]
 #	[ parent branches/work/akonadi-ports/kdepim/runtime/resources/maildir/libmaildir 1073679 908869 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/maildir/libmaildir/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/maildir/libmaildir/
     branch master
     max revision 1073679
@@ -897,7 +928,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/maildir 908869 0 ]
 match /trunk/KDE/kdepim/maildir/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/maildir/libmaildir/
     branch master
     max revision 908869
@@ -911,7 +942,7 @@ end match
 #	[ add resources/maildir/libmaildir/tests HEAD 908869 ]
 #	[ parent trunk/KDE/kdepim/maildir/tests 908869 0 ]
 match /trunk/KDE/kdepim/maildir/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/maildir/libmaildir/tests/
     branch master
     max revision 908869
@@ -929,7 +960,7 @@ end match
 #	[ add resources/maildir/tests/maildir HEAD 1024156 ]
 #	[ move trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir 1024156 1023876 ]
 match /trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/maildir/tests/maildir/
     branch master
     max revision 1024156
@@ -938,7 +969,7 @@ end match
 
 #	[ move trunk/playground/pim/akonaditest/resourcetester/tests/maildir 1023876 0 ]
 match /trunk/playground/pim/akonaditest/resourcetester/tests/maildir/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/maildir/tests/maildir/
     branch master
     max revision 1023876
@@ -952,7 +983,7 @@ end match
 #	[ add resources/maildir/tests/maildir/.root.directory HEAD 1024156 ]
 #	[ parent trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir/.root.directory 1024156 1023876 ]
 match /trunk/KDE/kdepim/akonadi/resources/maildir/tests/maildir/.root.directory/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/maildir/tests/maildir/.root.directory/
     branch master
     max revision 1024156
@@ -961,7 +992,7 @@ end match
 
 #	[ parent trunk/playground/pim/akonaditest/resourcetester/tests/maildir/.root.directory 1023876 0 ]
 match /trunk/playground/pim/akonaditest/resourcetester/tests/maildir/.root.directory/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/maildir/tests/maildir/.root.directory/
     branch master
     max revision 1023876
@@ -1109,7 +1140,7 @@ end match
 #	[ add resources/mailtransport_dummy HEAD 1010069 ]
 #	[ move branches/work/akonadi-ports/kdepim/akonadi/resources/mailtransport_dummy 1010069 977512 ]
 match /branches/work/akonadi-ports/kdepim/akonadi/resources/mailtransport_dummy/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/mailtransport_dummy/
     branch master
     max revision 1010069
@@ -1118,7 +1149,7 @@ end match
 
 #	[ move branches/kdepim/soc/kdepim/akonadi/resources/mailtransport_dummy 977512 977493 ]
 match /branches/kdepim/soc/kdepim/akonadi/resources/mailtransport_dummy/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/mailtransport_dummy/
     branch master
     max revision 977512
@@ -1127,7 +1158,7 @@ end match
 
 #	[ move trunk/playground/pim/akonadi/mailtransport_dummy_resource 977493 0 ]
 match /trunk/playground/pim/akonadi/mailtransport_dummy_resource/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/mailtransport_dummy/
     branch master
     max revision 977493
@@ -1141,7 +1172,7 @@ end match
 #	[ add resources/mailtransport_dummy/tests HEAD 1010069 ]
 #	[ parent branches/work/akonadi-ports/kdepim/akonadi/resources/mailtransport_dummy/tests 1010069 977512 ]
 match /branches/work/akonadi-ports/kdepim/akonadi/resources/mailtransport_dummy/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/mailtransport_dummy/tests/
     branch master
     max revision 1010069
@@ -1150,7 +1181,7 @@ end match
 
 #	[ parent branches/kdepim/soc/kdepim/akonadi/resources/mailtransport_dummy/tests 977512 977493 ]
 match /branches/kdepim/soc/kdepim/akonadi/resources/mailtransport_dummy/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/mailtransport_dummy/tests/
     branch master
     max revision 977512
@@ -1159,7 +1190,7 @@ end match
 
 #	[ parent trunk/playground/pim/akonadi/mailtransport_dummy_resource/tests 977493 0 ]
 match /trunk/playground/pim/akonadi/mailtransport_dummy_resource/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/mailtransport_dummy/tests/
     branch master
     max revision 977493
@@ -1176,7 +1207,7 @@ end match
 #	[ add resources/microblog HEAD 949068 ]
 #	[ move trunk/playground/pim/microblog 949068 0 ]
 match /trunk/playground/pim/microblog/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/microblog/
     branch master
     max revision 949068
@@ -1195,7 +1226,7 @@ end match
 #	[ add resources/mixedmaildir/tests HEAD 1153205 ]
 #	[ move branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests 1153205 0 ]
 match /branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/mixedmaildir/tests/
     branch master
     max revision 1153205
@@ -1206,7 +1237,7 @@ end match
 #	[ add resources/mixedmaildir/tests/data HEAD 1154043 ]
 #	[ move branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/data 1154043 0 ]
 match /branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/data/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/mixedmaildir/tests/data/
     branch master
     max revision 1154043
@@ -1217,7 +1248,7 @@ end match
 #	[ add resources/mixedmaildir/tests/data/dimap HEAD 1154043 ]
 #	[ parent branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/data/dimap 1154043 0 ]
 match /branches/KDE/4.5/kdepim/runtime/resources/mixedmaildir/tests/data/dimap/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/mixedmaildir/tests/data/dimap/
     branch master
     max revision 1154043
@@ -1265,7 +1296,7 @@ end match
 #	[ add resources/nntp HEAD 656871 ]
 #	[ move trunk/KDE/kdepim/akonadi/resources/src/nntp 656871 0 ]
 match /trunk/KDE/kdepim/akonadi/resources/src/nntp/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/nntp/
     branch master
     max revision 656871
@@ -1278,7 +1309,7 @@ end match
 #	[ add resources/openxchange HEAD 1161348 ]
 #	[ move branches/work/kdepim_kcalcore/runtime/resources/openxchange 1161348 1079549 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/openxchange/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/openxchange/
     branch master
     max revision 1161348
@@ -1287,7 +1318,7 @@ end match
 
 #	[ move trunk/playground/pim/openxchange 1079549 0 ]
 match /trunk/playground/pim/openxchange/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/openxchange/
     branch master
     max revision 1079549
@@ -1300,7 +1331,7 @@ end match
 #	[ add resources/openxchange/icons HEAD 1161348 ]
 #	[ parent branches/work/kdepim_kcalcore/runtime/resources/openxchange/icons 1161348 1079549 ]
 match /branches/work/kdepim_kcalcore/runtime/resources/openxchange/icons/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/openxchange/icons/
     branch master
     max revision 1161348
@@ -1309,7 +1340,7 @@ end match
 
 #	[ parent trunk/playground/pim/openxchange/icons 1079549 0 ]
 match /trunk/playground/pim/openxchange/icons/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/openxchange/icons/
     branch master
     max revision 1079549
@@ -1327,7 +1358,7 @@ end match
 #	[ add resources/pop3 HEAD 1073676 ]
 #	[ move branches/work/akonadi-ports/kdepim/runtime/resources/pop3 1073676 986769 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/pop3/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/pop3/
     branch master
     max revision 1073676
@@ -1336,7 +1367,7 @@ end match
 
 #	[ move trunk/playground/pim/akonadi/pop3 986769 0 ]
 match /trunk/playground/pim/akonadi/pop3/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/pop3/
     branch master
     max revision 986769
@@ -1349,7 +1380,7 @@ end match
 #	[ add resources/pop3/tests HEAD 1073676 ]
 #	[ parent branches/work/akonadi-ports/kdepim/runtime/resources/pop3/tests 1073676 986769 ]
 match /branches/work/akonadi-ports/kdepim/runtime/resources/pop3/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/pop3/tests/
     branch master
     max revision 1073676
@@ -1358,7 +1389,7 @@ end match
 
 #	[ parent trunk/playground/pim/akonadi/pop3/tests 986769 0 ]
 match /trunk/playground/pim/akonadi/pop3/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/pop3/tests/
     branch master
     max revision 986769
@@ -1456,7 +1487,7 @@ end match
 #	[ add resources/vcard HEAD 656871 ]
 #	[ move trunk/KDE/kdepim/akonadi/resources/src/vcard 656871 0 ]
 match /trunk/KDE/kdepim/akonadi/resources/src/vcard/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resources/vcard/
     branch master
     max revision 656871
@@ -1502,6 +1533,24 @@ end match
 #	[ Delayed: /trunk/KDE/kdepim/akonadi/resourcetester/xmloperations.cpp @ 1023887 <- /trunk/playground/pim/akonaditest/resourcetester @ 1023876 ]
 #	[ Delayed: /trunk/KDE/kdepim/akonadi/resourcetester/xmloperations.h @ 1023887 <- /trunk/playground/pim/akonaditest/resourcetester @ 1023876 ]
 #	[ add resourcetester HEAD 0 ]
+match /trunk/playground/pim/akonaditest/resourcetester/(create_ldap_users.py|dovecotvm.conf|event.ical|ical-empty.xml|ical-step1.xml|icaltest.es|imap-quicktest.es|imap-step1.xml|imap-step2.xml|imaptest.es|knut-empty.xml|knut-step1.xml|knut-step2.xml|knutdemo.js|knutdemo.xml|kolab-step1.xml|kolab-step2.xml|kolabevent.mbox|kolabtest.es|kolabvm.conf|maildir-empty.xml|maildir-step1.xml|maildir-step2.xml|maildir.js|maildir.xml|runimapcommand.py|task.ical|testmail.mbox|vcardtest-readonly.js|vcardtest-readonly.xml|vcardtest.js|vcardtest.vcf|vcardtest.xml)
+end match
+match /trunk/playground/pim/akonaditest/resourcetester/tests/(CMakeLists.txt|construct.es|unittestenv/)
+    repository ${REPO}
+    prefix resourcetester/tests/\1
+    branch master
+    max revision 1023876
+end match
+match /trunk/playground/pim/akonaditest/resourcetester/tests/
+end match
+
+match /trunk/playground/pim/akonaditest/resourcetester/
+    repository ${REPO}
+    prefix resourcetester/
+    branch master
+    max revision 1023876
+end match
+
 #	------< trunk/KDE/kdepim/runtime/resourcetester/tests >------
 #	[ Parent: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ Delayed: /trunk/KDE/kdepim/akonadi/resourcetester/tests/CMakeLists.txt @ 1023887 <- /trunk/playground/pim/akonaditest/resourcetester/tests @ 1023876 ]
@@ -1514,7 +1563,7 @@ end match
 #	[ add resourcetester/tests/unittestenv HEAD 1023876 ]
 #	[ move trunk/playground/pim/akonaditest/resourcetester/tests/unittestenv 1023876 0 ]
 match /trunk/playground/pim/akonaditest/resourcetester/tests/unittestenv/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resourcetester/tests/unittestenv/
     branch master
     max revision 1023876
@@ -1526,7 +1575,7 @@ end match
 #	[ add resourcetester/tests/unittestenv/kdehome HEAD 1023876 ]
 #	[ parent trunk/playground/pim/akonaditest/resourcetester/tests/unittestenv/kdehome 1023876 0 ]
 match /trunk/playground/pim/akonaditest/resourcetester/tests/unittestenv/kdehome/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix resourcetester/tests/unittestenv/kdehome/
     branch master
     max revision 1023876
@@ -1566,16 +1615,16 @@ end match
 #	[ add xml HEAD 946339 ]
 #	[ move trunk/playground/pim/akonadi/xml 946339 939440 ]
 match /trunk/playground/pim/akonadi/xml/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix xml/
     branch master
-    max revision 946339
+    max revision 946373
     min revision 939440
 end match
 
 #	[ move trunk/playground/pim/libakonadi-xml 939440 0 ]
 match /trunk/playground/pim/libakonadi-xml/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix xml/
     branch master
     max revision 939440
@@ -1588,7 +1637,7 @@ end match
 #	[ add xml/tests HEAD 946339 ]
 #	[ parent trunk/playground/pim/akonadi/xml/tests 946339 939440 ]
 match /trunk/playground/pim/akonadi/xml/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix xml/tests/
     branch master
     max revision 946339
@@ -1597,7 +1646,7 @@ end match
 
 #	[ parent trunk/playground/pim/libakonadi-xml/tests 939440 0 ]
 match /trunk/playground/pim/libakonadi-xml/tests/
-    repository kdepim-runtime
+    repository ${REPO}
     prefix xml/tests/
     branch master
     max revision 939440
@@ -1607,7 +1656,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime @ 1061325 <- /trunk/KDE/kdepim/akonadi @ 1061321 ]
 #	[ add  HEAD 1061321 ]
 # match /trunk/KDE/kdepim/runtime/
-#     repository kdepim-runtime
+#     repository ${REPO}
 #     branch master
 #     min revision 1061321
 # end match
@@ -1615,10 +1664,13 @@ include kdepim-modules-rules
 
 #	[ move trunk/KDE/kdepim/akonadi 1061321 0 ]
 match /trunk/KDE/kdepim/akonadi/
-    repository kdepim-runtime
+    repository ${REPO}
     branch master
     max revision 1061321
 end match
+
+include kdepim-branches-rules
+include kdepim-runtime-branches
 
 match /
 end match

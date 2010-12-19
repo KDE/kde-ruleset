@@ -1,0 +1,325 @@
+# vim: set filetype=conf
+match /branches/work/~(ervin)/(imap-resource-refactor)/
+    repository ${REPO}
+    branch personal/\1/\2
+end match
+
+match /branches/(work)/(akonadi-ports)/(kdepim)/$
+    action recurse
+end match
+match /branches/(work)/(akonadi-ports)/(kdepim)/(akonadi|runtime)/
+    repository ${REPO}
+    branch \1/\2\3
+    prefix \4/
+end match
+
+#/branches/kdepim/enterprise4/kdepim/libkdepim/ldapsearchdialog.cpp
+#/branches/kdepim/enterprise4/kdepim/libkdepim/ldapsearchdialog.h
+#/branches/kdepim/enterprise4/kdepim/libkdepim/pimapplication_win.cpp
+#/branches/kdepim/enterprise4/kdepim/libkdepim/utils.cpp
+#/branches/kdepim/enterprise4/kdepim/libkdepim/utils.h
+#/branches/kdepim/proko2/kdepim/libkdepim/distributionlist.cpp
+#/branches/kdepim/proko2/kdepim/libkdepim/distributionlist.h
+#/branches/kdepim/proko2/kdepim/libkdepim/tests/testdistrlist.cpp
+#/branches/kdepim/proko2/kdepim/libkdepim/tests/testdistrlist.h
+#/branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests/aborttest.cpp
+#/branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests/aborttest.h
+#/branches/kdepim/soc/kdepim/akonadi/agents/maildispatcher/tests/TODO
+#/branches/work/akonadi-ports/kdepim/akonadi/
+#/branches/work/akonadi-ports/kdepim/runtime/agents/calendarsearch/org.freedesktop.Akonadi.CalendarSearchAgent.xml
+#/branches/work/arzie_akonadi/doc/pics/akonadi_overview_uml.ps
+#/branches/work/arzie_akonadi/libakonadi/tests/benchmarker.cpp
+#/branches/work/arzie_akonadi/libakonadi/tests/benchmarker.h
+#/branches/work/arzie_akonadi/libakonadi/tests/headfetcher.cpp
+#/branches/work/arzie_akonadi/libakonadi/tests/headfetcher.h
+#/branches/work/arzie_akonadi/server/src/handler/akappend.cpp
+#/branches/work/arzie_akonadi/server/src/handler/akappend.h
+#/branches/work/arzie_akonadi/server/tests/enron_email_dataset/courier_to_kmail_maildirformat.php
+#/branches/work/arzie_akonadi/server/tests/enron_email_dataset/to_valid_maildir.php
+#/branches/work/~ervin/imap-resource-refactor/
+
+match /branches/(work)/(kdepim_kcalcore)/(akonadi)/
+    repository ${REPO}
+    branch \1/\2
+    prefix \3/
+end match
+
+match /branches/(work)/(kdepim_kcalcore)/(runtime)/
+    repository ${REPO}
+    branch \1/\2
+    prefix \3/
+end match
+
+#/branches/work/soc-gtd/libkdepim/autoselectingchecklistitem.cpp
+#/branches/work/soc-gtd/libkdepim/autoselectingchecklistitem.h
+#/branches/work/soc-gtd/libkdepim/categoryhierarchyreader.cpp
+#/branches/work/soc-gtd/libkdepim/categoryhierarchyreader.h
+#/branches/work/soc-gtd/libkdepim/improvedlistview.cpp
+#/branches/work/soc-gtd/libkdepim/improvedlistview.h
+#/branches/work/soc-gtd/libkdepim/kdepimprotocols.h
+#/branches/work/toma-akonadi-account-wizard-ghns-integration/resources/imap/wizard/imapwizard.js
+#/trunk/KDE/kdelibs/kabc/tests/testldapclient.cpp
+#/trunk/KDE/kdelibs/kabc/tests/testldapclient.h
+#/trunk/KDE/kdelibs/kdeui/itemviews/kreparentingproxymodel.cpp
+#/trunk/KDE/kdelibs/kdeui/itemviews/kreparentingproxymodel.h
+#/trunk/KDE/kdepim/akonadiconsole
+#/trunk/KDE/kdepim/akonadi/contact/collectioncombobox.cpp
+#/trunk/KDE/kdepim/akonadi/contact/collectioncombobox.h
+#/trunk/KDE/kdepim/akonadi/kabc/contactgroupeditor.cpp
+#/trunk/KDE/kdepim/akonadi/kabc/contactgroupeditor.h
+#/trunk/KDE/kdepim/akonadi/kabc/contactgroupeditor.ui
+#/trunk/KDE/kdepim/akonadi/kabc/contactgrouplineedit.cpp
+#/trunk/KDE/kdepim/akonadi/kabc/contactgrouplineedit.h
+#/trunk/KDE/kdepim/akonadi/kabc/waitingoverlay.cpp
+#/trunk/KDE/kdepim/akonadi/kabc/waitingoverlay.h
+
+match /trunk/KDE/(kdepim)/(akonadiresources)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+match /trunk/KDE/(kdepim)/(akonadiserver)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+#/trunk/KDE/kdepim/cmake/modules/FindOpenChange.cmake
+#/trunk/KDE/kdepim/cmake/modules/MacroAddOntologyClasses.cmake
+#/trunk/KDE/kdepim/kaddressbook/abstractcontacteditorwidget.h
+#/trunk/KDE/kdepim/kaddressbook/collectioncombobox.cpp
+#/trunk/KDE/kdepim/kaddressbook/collectioncombobox.h
+#/trunk/KDE/kdepim/kaddressbook/collectionfiltermodel.cpp
+#/trunk/KDE/kdepim/kaddressbook/collectionfiltermodel.h
+#/trunk/KDE/kdepim/kaddressbook/collectionselectiondialog.cpp
+#/trunk/KDE/kdepim/kaddressbook/collectionselectiondialog.h
+#/trunk/KDE/kdepim/kaddressbook/contacteditordialog.cpp
+#/trunk/KDE/kdepim/kaddressbook/contacteditordialog.h
+#/trunk/KDE/kdepim/kaddressbook/contactgroupeditordialog.cpp
+#/trunk/KDE/kdepim/kaddressbook/contactgroupeditordialog.h
+#/trunk/KDE/kdepim/kaddressbook/contactitemeditor.cpp
+#/trunk/KDE/kdepim/kaddressbook/contactitemeditor.h
+#/trunk/KDE/kdepim/kaddressbook/contactmetadata.cpp
+#/trunk/KDE/kdepim/kaddressbook/contactmetadata.h
+
+match /trunk/KDE/(kdepim)/(kaddressbook)/(editor)/
+    repository ${REPO}
+    branch \1
+    prefix \2/\3/
+end match
+
+#/trunk/KDE/kdepim/kdepim-version.h
+#/trunk/KDE/kdepim/kmail/autoqpointer.h
+#/trunk/KDE/kdepim/kmail/colorlistbox.cpp
+#/trunk/KDE/kdepim/kmail/colorlistbox.h
+#/trunk/KDE/kdepim/kmail/csshelper.cpp
+#/trunk/KDE/kdepim/kmail/csshelper.h
+#/trunk/KDE/kdepim/kmail/dictionarycombobox.cpp
+#/trunk/KDE/kdepim/kmail/dictionarycombobox.h
+#/trunk/KDE/kdepim/kmail/kmservertest.cpp
+#/trunk/KDE/kdepim/kmail/kmservertest.h
+#/trunk/KDE/kdepim/kmail-mobile/SlideoutPanelContainer.qml
+#/trunk/KDE/kdepim/kmail-mobile/SlideoutPanel.qml
+#/trunk/KDE/kdepim/kmail-mobile/tests/slideoutpaneltest.qml
+#/trunk/KDE/kdepim/kmail/subscriptiondialog.cpp
+#/trunk/KDE/kdepim/kmail/subscriptiondialog.h
+#/trunk/KDE/kdepim/korganizer/alarmclient.cpp
+#/trunk/KDE/kdepim/korganizer/alarmclient.h
+
+match /trunk/KDE/(kdepim)/(kresources)/(akonadi)/
+    repository ${REPO}
+    branch \1
+    prefix \2/\3/
+end match
+
+match /trunk/KDE/(kdepim)/(libakonadi)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+#/trunk/KDE/kdepim/libemailfunctions/networkstatus.cpp
+#/trunk/KDE/kdepim/libemailfunctions/networkstatus.h
+#/trunk/KDE/kdepim/libkdepim/addresseeview.cpp
+#/trunk/KDE/kdepim/libkdepim/addresseeview.h
+#/trunk/KDE/kdepim/libkdepim/kbihash_p.h
+#/trunk/KDE/kdepim/libkdepim/kdatepickerpopup.cpp
+#/trunk/KDE/kdepim/libkdepim/kdatepickerpopup.h
+#/trunk/KDE/kdepim/libkdepim/kdescendantsproxymodel.cpp
+#/trunk/KDE/kdepim/libkdepim/kdescendantsproxymodel_p.h
+#/trunk/KDE/kdepim/libkdepim/kincidencechooser.cpp
+#/trunk/KDE/kdepim/libkdepim/kincidencechooser.h
+#/trunk/KDE/kdepim/libkdepim/sendsmsdialog.cpp
+#/trunk/KDE/kdepim/libkdepim/sendsmsdialog.h
+#/trunk/KDE/kdepim/libkdepim/tests/testkincidencechooser.cpp
+#/trunk/KDE/kdepim/libkdepim/uistatesaver.cpp
+#/trunk/KDE/kdepim/libkdepim/uistatesaver.h
+#/trunk/KDE/kdepimlibs/akonadi/collectioncombobox.cpp
+#/trunk/KDE/kdepimlibs/akonadi/collectioncombobox.h
+#/trunk/KDE/kdepimlibs/akonadi/itembrowser.cpp
+#/trunk/KDE/kdepimlibs/akonadi/itembrowser.h
+#/trunk/KDE/kdepimlibs/kimap/tests/fakeserver.cpp
+#/trunk/KDE/kdepimlibs/kimap/tests/fakeserver.h
+
+match /trunk/KDE/(kdepimlibs)/(libmbox)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+#/trunk/KDE/kdepimlibs/mailtransport/configmodule.cpp
+#/trunk/KDE/kdepimlibs/mailtransport/configmodule.h
+#/trunk/KDE/kdepimlibs/mailtransport/kcm_mailtransport.desktop
+#/trunk/KDE/kdepimlibs/mailtransport/mailtransport_export.h
+#/trunk/KDE/kdepimlibs/mailtransport/transportmanagementwidget.cpp
+#/trunk/KDE/kdepimlibs/mailtransport/transportmanagementwidget.h
+#/trunk/KDE/kdepimlibs/mailtransport/transportmanagementwidget.ui
+
+match /trunk/KDE/(kdepim)/(maildir)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+#/trunk/KDE/kdepim/messagecore/globalsettings.h
+#/trunk/KDE/kdepim/messagecore/messagestatus.cpp
+#/trunk/KDE/kdepim/messagecore/messagestatus.h
+#/trunk/KDE/kdepim/messagecore/messagetag.trig
+#/trunk/KDE/kdepim/runtime/resources/imap/settingsbase.kcfgc
+#/trunk/KDE/kdepim/runtime/resources/pop3/pop3resource.kcfg
+#/trunk/kdepim/kaddressbook/categoryselectdialog_base.ui
+#/trunk/kdepim/kaddressbook/kimportdialog.cpp
+#/trunk/kdepim/kaddressbook/kimportdialog.h
+#/trunk/kdepim/kaplan/DESIGN.dcopinteraction
+#/trunk/kdepim/kaplan/interfaces/kpcore.cpp
+#/trunk/kdepim/kaplan/interfaces/kpcore.h
+#/trunk/kdepim/kaplan/interfaces/kpplugin.cpp
+#/trunk/kdepim/kaplan/interfaces/kpplugin.h
+#/trunk/kdepim/kaplan/interfaces/sidebarextension.cpp
+#/trunk/kdepim/kaplan/interfaces/sidebarextension.h
+#/trunk/kdepim/kaplan/Makefile.am
+#/trunk/kdepim/kaplan/pics
+#/trunk/kdepim/kaplan/plugins
+#/trunk/kdepim/kaplan/src
+#/trunk/kdepim/kaplan/Thoughts
+#/trunk/kdepim/kmail/overlaywidget.cpp
+#/trunk/kdepim/kmail/overlaywidget.h
+#/trunk/kdepim/kmail/progressdialog.cpp
+#/trunk/kdepim/kmail/progressdialog.h
+#/trunk/kdepim/kmail/progressmanager.cpp
+#/trunk/kdepim/kmail/progressmanager.h
+#/trunk/kdepim/kmail/ssllabel.cpp
+#/trunk/kdepim/kmail/ssllabel.h
+#/trunk/kdepim/kmail/statusbarprogresswidget.cpp
+#/trunk/kdepim/kmail/statusbarprogresswidget.h
+#/trunk/kdepim/kontact/src/about/bar-bottom-left.png
+#/trunk/kdepim/kontact/src/about/bar-bottom-middle.png
+#/trunk/kdepim/kontact/src/about/bar-bottom-right.png
+#/trunk/kdepim/kontact/src/about/bar-middle-left.png
+#/trunk/kdepim/kontact/src/about/bar-middle-right.png
+#/trunk/kdepim/kontact/src/about/bar-top-left.png
+#/trunk/kdepim/kontact/src/about/bar-top-middle.png
+#/trunk/kdepim/kontact/src/about/bar-top-right.png
+#/trunk/kdepim/kontact/src/about/bottom-left.png
+#/trunk/kdepim/kontact/src/about/bottom-middle.png
+#/trunk/kdepim/kontact/src/about/bottom-right.png
+#/trunk/kdepim/kontact/src/about/box-bottom-middle.png
+#/trunk/kdepim/kontact/src/about/box-middle-left.png
+#/trunk/kdepim/kontact/src/about/box-middle-right.png
+#/trunk/kdepim/kontact/src/about/top-left.png
+#/trunk/kdepim/kontact/src/about/top-middle.png
+#/trunk/kdepim/kontact/src/about/top-right-kmail.png
+#/trunk/kdepim/korganizer/categoryeditdialog_base.ui
+#/trunk/kdepim/korganizer/kprefs.cpp
+#/trunk/kdepim/korganizer/kprefsdialog.cpp
+#/trunk/kdepim/korganizer/kprefsdialog.h
+#/trunk/kdepim/korganizer/kprefs.h
+#/trunk/kdepim/libkdenetwork/kaccount.cpp
+#/trunk/kdepim/libkdenetwork/kaccount.h
+#/trunk/kdepim/libkdenetwork/kaddrbook.cpp
+#/trunk/kdepim/libkdenetwork/kaddrbook.h
+#/trunk/kdepim/libkdenetwork/kfoldertree.cpp
+#/trunk/kdepim/libkdenetwork/kfoldertree.h
+#/trunk/kdepim/libkdenetwork/kregexp3.cpp
+#/trunk/kdepim/libkdenetwork/kregexp3.h
+#/trunk/kdepim/libkdenetwork/kscoring.cpp
+#/trunk/kdepim/libkdenetwork/kscoringeditor.cpp
+#/trunk/kdepim/libkdenetwork/kscoringeditor.h
+#/trunk/kdepim/libkdenetwork/kscoring.h
+#/trunk/kdepim/libkdenetwork/ksubscription.cpp
+#/trunk/kdepim/libkdenetwork/ksubscription.h
+#/trunk/kdepim/libkdenetwork/kwidgetlister.cpp
+#/trunk/kdepim/libkdenetwork/kwidgetlister.h
+#/trunk/kdepim/libkdenetwork/linklocator.cpp
+#/trunk/kdepim/libkdenetwork/linklocator.h
+#/trunk/kdepim/libkdenetwork/qutf7codec.cpp
+#/trunk/kdepim/libkdenetwork/qutf7codec.h
+#/trunk/kdepim/libkdenetwork/recentaddresses.cpp
+#/trunk/kdepim/libkdenetwork/recentaddresses.h
+#/trunk/kdepim/libkdenetwork/spellingfilter.cpp
+#/trunk/kdepim/libkdenetwork/spellingfilter.h
+#/trunk/kdepim/libkdenetwork/tests/test_kregexp.cpp
+#/trunk/kdepim/libkdenetwork/tests/testutf7decoder.cpp
+#/trunk/kdepim/libkdenetwork/tests/testutf7encoder2.cpp
+#/trunk/kdepim/libkdenetwork/tests/testutf7encoder.cpp
+
+match /trunk/(kdereview)/(dav)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+match /trunk/(playground)/pim/(akonadi)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+match /trunk/(playground)/pim/(dav)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+match /trunk/(playground)/pim/(libakonadi-xml)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+match /trunk/(playground)/pim/(maildispatcheragent)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+#/trunk/playground/pim/mailody/akonadi_resource
+#/trunk/playground/pim/mailody/libimap/db.cpp
+#/trunk/playground/pim/mailody/libimap/db.h
+#/trunk/playground/pim/mailody/libimap/imap_export.h
+#/trunk/playground/pim/mailody/libimap/imaplib.cpp
+#/trunk/playground/pim/mailody/libimap/imaplib.h
+#/trunk/playground/pim/mailody/libimap/README
+#/trunk/playground/pim/mailody/libimap/socket.cpp
+#/trunk/playground/pim/mailody/libimap/socket.h
+#/trunk/playground/pim/mailody/src/setupservers.cpp
+#/trunk/playground/pim/mailody/src/setupservers.h
+
+match /trunk/(playground)/pim/(microblog)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+match /trunk/(playground)/pim/(openxchange)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match
+
+match /trunk/(playground)/pim/(outboxinterface)/
+    repository ${REPO}
+    branch \1
+    prefix \2/
+end match

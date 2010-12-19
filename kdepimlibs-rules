@@ -1,5 +1,5 @@
 # vim: set filetype=conf
-# --repo# file:///code/kde/svnrepo/svn# --path# /trunk/KDE/kdepimlibs# --module# kdepimlibs# --subdirs# --recurse# 10
+# --repo file:///code/kde/svnrepo/svn --path /trunk/KDE/kdepimlibs --module kdepimlibs --subdirs --recurse 10
 declare MODULE=kdepimlibs
 declare REPO=kdepimlibs
 
@@ -7,13 +7,15 @@ create repository ${REPO}
 end repository
 
 include kdepim-common-ignore-rules
-include kdepim-recurse-rules
-include kdepim-tags-rules
-include kdepim-branches-rules
 
 match /trunk/KDE/kdepimlibs/ktnef/
     max revision 558035
 end match
+
+
+include kdepim-recurse-rules
+include kdepim-tags-rules
+
 #	------< /trunk/KDE/kdepimlibs >------
 #	[ add  HEAD 0 ]
 
@@ -36,7 +38,7 @@ end match
 #	[ add akonadi HEAD 788161 ]
 #	[ move trunk/KDE/kdepim/akonadi/libakonadi 788161 559072 ]
 match /trunk/KDE/kdepim/akonadi/libakonadi/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/
     branch master
     max revision 788161
@@ -45,34 +47,34 @@ end match
 
 #	[ move trunk/KDE/kdepim/libakonadi 559072 0 ]
 match /trunk/KDE/kdepim/libakonadi/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/
     branch master
     max revision 559072
 end match
 
 # match /trunk/KDE/kdepim/akonadi/resources/shared/(collectionquotaattribute.cpp|collectionquotaattribute.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix akonadi/\1
 #     branch master
 #     max revision 1035160
 # end match
 # 
 # match /trunk/KDE/kdepim/akonadi/resources/src/lib/(collectionsync.cpp|collectionsync.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix akonadi/\1
 #     branch master
 #     max revision 656840
 # end match
 # 
 # match /trunk/KDE/kdepim/akonadi/akonadi_next/(dragdropmanager.cpp|dragdropmanager_p.h|entitytreeview.cpp|entitytreeview.h|favoritecollectionsview.cpp|favoritecollectionsview.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix akonadi/\1
 #     branch master
 #     max revision 1030444
 # end match
 # match /trunk/KDE/kdepim/akonadi/akonadi_next/(entityfilterproxymodel.cpp|entityfilterproxymodel.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix akonadi/\1
 #     branch master
 #     max revision 1000368
@@ -107,7 +109,7 @@ end match
 #	[ add akonadi/contact HEAD 1017770 ]
 #	[ move trunk/KDE/kdepim/akonadi/contact 1017770 0 ]
 match /trunk/KDE/kdepim/akonadi/contact/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/contact/
     branch master
     max revision 1017770
@@ -188,7 +190,7 @@ end match
 #	[ add akonadi/contact/editor HEAD 1017770 ]
 #	[ parent trunk/KDE/kdepim/akonadi/contact/editor 1017770 1010125 ]
 match /trunk/KDE/kdepim/akonadi/contact/editor/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/contact/editor/
     branch master
     max revision 1017770
@@ -197,7 +199,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kaddressbook/editor 1010125 1006756 ]
 match /trunk/KDE/kdepim/kaddressbook/editor/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/contact/editor/
     branch master
     max revision 1010125
@@ -206,20 +208,20 @@ end match
 
 #	[ parent trunk/KDE/kdepim/kcontactmanager/editor 1006756 0 ]
 match /trunk/KDE/kdepim/kcontactmanager/editor/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/contact/editor/
     branch master
     max revision 1006756
 end match
 
 # match /trunk/KDE/kdepim/akonadi/libkdepim-copy/(kdatepickerpopup.cpp)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix akonadi/contact/editor/\1
 #     branch master
 #     max revision 1017770
 # end match
 # match /trunk/KDE/kdepim/akonadi/libkdepim-copy/(kdatepickerpopup).h
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix akonadi/contact/editor/\1_p.h
 #     branch master
 #     max revision 1017770
@@ -264,7 +266,7 @@ end match
 #	[ add akonadi/kmime HEAD 788366 ]
 #	[ move trunk/KDE/kdepim/akonadi/kmime 788366 0 ]
 match /trunk/KDE/kdepim/akonadi/kmime/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/kmime/
     branch master
     max revision 788366
@@ -280,7 +282,7 @@ end match
 #	[ add akonadi/kmime/tests HEAD 986737 ]
 #	[ move branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests 986737 985090 ]
 match /branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/kmime/tests/
     branch master
     max revision 986737
@@ -289,7 +291,7 @@ end match
 
 #	[ move branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests 985090 0 ]
 match /branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/kmime/tests/
     branch master
     max revision 985090
@@ -301,7 +303,7 @@ end match
 #	[ add akonadi/kmime/tests/unittestenv HEAD 986737 ]
 #	[ parent branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests/unittestenv 986737 985090 ]
 match /branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests/unittestenv/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/kmime/tests/unittestenv/
     branch master
     max revision 986737
@@ -310,7 +312,7 @@ end match
 
 #	[ parent branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests/unittestenv 985090 0 ]
 match /branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests/unittestenv/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/kmime/tests/unittestenv/
     branch master
     max revision 985090
@@ -346,7 +348,7 @@ end match
 #	[ add akonadi/tests HEAD 788161 ]
 #	[ parent trunk/KDE/kdepim/akonadi/libakonadi/tests 788161 559072 ]
 match /trunk/KDE/kdepim/akonadi/libakonadi/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/tests/
     branch master
     max revision 788161
@@ -355,7 +357,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/libakonadi/tests 559072 0 ]
 match /trunk/KDE/kdepim/libakonadi/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/tests/
     branch master
     max revision 559072
@@ -412,7 +414,7 @@ end match
 #	[ add akonadi/tests/testrunner HEAD 885714 ]
 #	[ move trunk/playground/pim/akonaditest/testrunner 885714 0 ]
 match /trunk/playground/pim/akonaditest/testrunner/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/tests/testrunner/
     branch master
     max revision 885714
@@ -423,7 +425,7 @@ end match
 #	[ add akonadi/tests/unittestenv HEAD 916406 ]
 #	[ move trunk/playground/pim/akonadi/unittestenv 916406 0 ]
 match /trunk/playground/pim/akonadi/unittestenv/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/tests/unittestenv/
     branch master
     max revision 916406
@@ -434,7 +436,7 @@ end match
 #	[ add akonadi/tests/unittestenv/kdehome HEAD 916406 ]
 #	[ parent trunk/playground/pim/akonadi/unittestenv/kdehome 916406 0 ]
 match /trunk/playground/pim/akonadi/unittestenv/kdehome/
-    repository kdepimlibs
+    repository ${REPO}
     prefix akonadi/tests/unittestenv/kdehome/
     branch master
     max revision 916406
@@ -570,7 +572,7 @@ end match
 #	[ parent trunk/KDE/kdepimlibs/gpgmepp 691386 681577 ]
 #	[ parent trunk/KDE/kdepim/gpgmepp 681577 495458 ]
 match /trunk/KDE/kdepim/gpgmepp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix gpgme++/
     branch master
     max revision 681577
@@ -579,7 +581,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/libkdenetwork/gpgmepp 495458 455550 ]
 match /trunk/KDE/kdepim/libkdenetwork/gpgmepp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix gpgme++/
     branch master
     max revision 495458
@@ -588,7 +590,7 @@ end match
 
 #	[ parent branches/KDE/3.5/kdepim/libkdenetwork/gpgmepp 455550 438981 ]
 match /branches/KDE/3.5/kdepim/libkdenetwork/gpgmepp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix gpgme++/
     branch master
     max revision 455550
@@ -597,7 +599,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/libkdenetwork/gpgmepp 438981 409202 ]
 match /trunk/KDE/kdepim/libkdenetwork/gpgmepp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix gpgme++/
     branch master
     max revision 438981
@@ -606,7 +608,7 @@ end match
 
 #	[ parent trunk/kdepim/libkdenetwork/gpgmepp 409202 0 ]
 match /trunk/kdepim/libkdenetwork/gpgmepp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix gpgme++/
     branch master
     max revision 409202
@@ -706,7 +708,7 @@ end match
 #	[ add kabc HEAD 556927 ]
 #	[ move trunk/KDE/kdelibs/kabc 556927 409202 ]
 match /trunk/KDE/kdelibs/kabc/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kabc/
     branch master
     max revision 556927
@@ -715,55 +717,55 @@ end match
 
 #	[ parent trunk/kdelibs/kabc 409202 0 ]
 match /trunk/kdelibs/kabc/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kabc/
     branch master
     max revision 409202
 end match
 # match /trunk/KDE/kdepim/libkdepim/(resourceabc.h|resourceabc.cpp)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kabc/\1
 #     branch master
 #     max revision 710701
 #     min revision 455551
 # end match
 # match /branches/KDE/3.5/kdepim/libkdepim/(resourceabc.h|resourceabc.cpp)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kabc/\1
 #     branch master
 #     max revision 455550
 #     min revision 438982
 # end match
 # match /trunk/KDE/kdepim/libkdepim/(resourceabc.h|resourceabc.cpp)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kabc/\1
 #     branch master
 #     max revision 438981
 #     min revision 409203
 # end match
 # match /trunk/kdepim/libkdepim/(resourceabc.h|resourceabc.cpp)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kabc/\1
 #     branch master
 #     max revision 409202
 # end match
 # 
 # match /trunk/kdepim/kabc/(README|TODO|address.cpp|address.h|addressbook.h|addressbook.cpp|addressee.h|addresseedialog.cpp|addresseedialog.h|distributionlist.cpp|distributionlist.h|distributionlisteditor.cpp|distributionlisteditor.h|format.h|frontend/|geo.cpp|geo.h|kab2kabc.cpp|phonenumber.cpp|phonenumber.h|scripts/|simpleformat.cpp|simpleformat.h|stdaddressbook.cpp|stdaddressbook.h|testdistlist.cpp|testkabc.cpp|testkabcdlg.cpp|timezone.cpp|timezone.h|vCard|vcardformat.cpp|vcardformat.h|vcardformatimpl.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kabc/\1
 #     branch master
 #     max revision 121329
 # end match
 # 
 # match /trunk/KDE/kdepim/libkdepim/kabc(resourcecached.cpp|resourcecached.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kabc/\1
 #     branch master
 #     max revision 625570
 #     min revision 409203
 # end match
 # match /trunk/kdepim/libkdepim/kabc(resourcecached.cpp|resourcecached.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kabc/\1
 #     branch master
 #     max revision 409202
@@ -775,7 +777,7 @@ end match
 #	[ add kabc/formats HEAD 556927 ]
 #	[ parent trunk/KDE/kdelibs/kabc/formats 556927 0 ]
 match /trunk/KDE/kdelibs/kabc/formats/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kabc/formats/
     branch master
     max revision 556927
@@ -808,7 +810,7 @@ end match
 #	[ add kabc/scripts HEAD 121329 ]
 #	[ move trunk/kdepim/kabc/scripts 121329 0 ]
 match /trunk/kdepim/kabc/scripts/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kabc/scripts/
     branch master
     max revision 121329
@@ -845,7 +847,7 @@ end match
 #	[ add kblog HEAD 645603 ]
 #	[ move trunk/playground/pim/kblog 645603 0 ]
 match /trunk/playground/pim/kblog/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kblog/
     branch master
     max revision 645603
@@ -856,7 +858,7 @@ end match
 #	[ add kblog/tests HEAD 645603 ]
 #	[ parent trunk/playground/pim/kblog/tests 645603 0 ]
 match /trunk/playground/pim/kblog/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kblog/tests/
     branch master
     max revision 645603
@@ -872,42 +874,42 @@ end match
 #	[ move trunk/KDE/kdepimlibs/libkcal 562352 562294 ]
 #	[ move trunk/KDE/kdepim/libkcal 562294 0 ]
 match /trunk/KDE/kdepim/libkcal/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcal/
     branch master
     max revision 562294
     min revision 409203
 end match
 match /branches/KDE/3.5/kdepim/libkcal/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcal/
     branch master
     max revision 455550
     min revision 438981
 end match
 match /trunk/KDE/kdepim/libkdcal/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcal/
     branch master
     max revision 438981
     min revision 409202
 end match
 match /trunk/kdepim/libkcal/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcal/
     branch master
     max revision 409202
 end match
 
 # match /branches/kdepim/enterprise/kdepim/libkcal/(calhelper.cpp|calhelper.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kcal/\1
 #     branch enterprise4
 #     max revision 1022128
 # end match
 # 
 # match /trunk/KDE/kdepimlibs/(ConfigureChecks.cmake)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kcal/\1
 #     branch master
 #     max revision 629365
@@ -923,28 +925,28 @@ end match
 #	[ parent trunk/KDE/kdepimlibs/libkcal/tests 562352 562294 ]
 #	[ parent trunk/KDE/kdepim/libkcal/tests 562294 0 ]
 match /trunk/KDE/kdepim/libkcal/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcal/tests/
     branch master
     max revision 562294
 end match
 
 match /trunk/KDE/kdepim/libkcal/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcal/tests/
     branch master
     max revision 562294
 end match
 
 # match /branches/KDE/3.5/kdepim/lib(kcal/tests/fbrecurring.cpp)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix \1
 #     branch master
 #     max revision 719675
 # end match
 # 
 # match /branches/kdepim/enterprise/kdepim/lib(kcal/tests/testfb.cpp)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix \1
 #     branch master
 #     max revision 744087
@@ -989,7 +991,7 @@ end match
 #	[ add kcal/tests/data/RecurrenceRule/KOrganizer_3.4 HEAD 416613 ]
 #	[ move trunk/KDE/kdepim/libkcal/tests/data/RecurrenceRule/KOrganizer 416613 0 ]
 match /trunk/KDE/kdepim/libkcal/tests/data/RecurrenceRule/KOrganizer/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcal/tests/data/RecurrenceRule/KOrganizer_3.4/
     branch master
     max revision 416613
@@ -1087,7 +1089,7 @@ end match
 #	[ add kcalutils HEAD 1151235 ]
 #	[ move branches/work/kdepim_kcalcore/kcalutils 1151235 1149053 ]
 match /branches/work/kdepim_kcalcore/kcalutils/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcalutils/
     branch master
     max revision 1151235
@@ -1096,7 +1098,7 @@ end match
 
 #	[ move branches/work/kcalutils 1149053 0 ]
 match /branches/work/kcalutils/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcalutils/
     branch master
     max revision 1149053
@@ -1104,21 +1106,21 @@ end match
 
 # kcalutils/kcalutils_export.h is cpoied from /trunk/KDE/kdepimlibs/kcal/kcal_export.h:1146414 but this file is also tracked.
 # match /trunk/KDE/kdepim/calendarsupport/(recurrenceactions.cpp|recurrenceactions.h|recurrenceactionsscopewidget.ui)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kcalutils/\1
 #     branch master
 #     max revision 1171935
 #     min revision 1169271
 # end match
 # match /trunk/KDE/kdepim/calendarviews/agenda/(recurrenceactions.cpp|recurrenceactions.h|recurrenceactionsscopewidget.ui)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kcalutils/\1
 #     branch master
 #     max revision 1169270
 #     min revision 1161348
 # end match
 # match /branches/work/kdepim_kcalcore/calendarviews/agenda/(recurrenceactions.cpp|recurrenceactions.h|recurrenceactionsscopewidget.ui)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kcalutils/\1
 #     branch master
 #     max revision 1161348
@@ -1129,7 +1131,7 @@ end match
 #	[ Parent: /branches/work/kdepim_kcalcore/kcalutils @ 1149054 <- /branches/work/kcalutils @ 1149053 ]
 #	[ add kcalutils/tests HEAD 1151235 ]
 match /trunk/KDE/kdepimlibs/kcalutils/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcalutils/tests/
     branch master
     min revision 1151235
@@ -1137,7 +1139,7 @@ end match
 
 #	[ parent branches/work/kdepim_kcalcore/kcalutils/tests 1151235 1149053 ]
 match /branches/work/kdepim_kcalcore/kcalutils/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcalutils/tests/
     branch master
     max revision 1151235
@@ -1146,7 +1148,7 @@ end match
 
 #	[ parent branches/work/kcalutils/tests 1149053 0 ]
 match /branches/work/kcalutils/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kcalutils/tests/
     branch master
     max revision 1149053
@@ -1224,7 +1226,7 @@ end match
 #	[ add kholidays/holidays HEAD 917268 ]
 #	[ move trunk/KDE/kdepim/libkholidays/holidays 917268 0 ]
 # match /trunk/KDE/kdepim/libkholidays/holidays/(holiday_be|holiday_gr)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kholidays/holidays/\1
 #     branch master
 #     max revision 917268
@@ -1369,7 +1371,7 @@ end match
 #	[ add kholidays/holidays/plan2 HEAD 1131482 ]
 #	[ move trunk/KDE/kdepimlibs/kholidays/holidays/plan1 1131482 0 ]
 match /branches/KDE/3.5/kdepim/trunk/KDE/kdepimlibs/kholidays/holidays/plan1/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kholidays/holidays/plan2/
     branch master
     max revision 1131482
@@ -1399,7 +1401,7 @@ end match
 #	[ add kholidays/tests HEAD 917268 ]
 #	[ move trunk/KDE/kdepim/libkholidays/tests 917268 671025 ]
 match /trunk/KDE/kdepim/libkholidays/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kholidays/tests/
     branch master
     max revision 917268
@@ -1408,7 +1410,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/libkholidays_ng/tests 671025 0 ]
 match /trunk/KDE/kdepim/libkholidays_ng/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kholidays/tests/
     branch master
     max revision 671025
@@ -1420,7 +1422,7 @@ end match
 #	[ add kholidays/tests/data HEAD 917268 ]
 #	[ parent trunk/KDE/kdepim/libkholidays/tests/data 917268 671025 ]
 match /trunk/KDE/kdepim/libkholidays/tests/data/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kholidays/tests/data/
     branch master
     max revision 917268
@@ -1429,7 +1431,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/libkholidays_ng/tests/data 671025 0 ]
 match /trunk/KDE/kdepim/libkholidays_ng/tests/data/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kholidays/tests/data/
     branch master
     max revision 671025
@@ -1459,7 +1461,7 @@ end match
 #	[ add kioslave HEAD 710601 ]
 #	[ move trunk/KDE/kdepim/kioslave 710601 461307 ]
 match /trunk/KDE/kdepim/kioslave/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/
     branch master
     max revision 710601
@@ -1468,28 +1470,28 @@ end match
 
 #	[ move trunk/KDE/kdepim/kioslaves 461307 200753 ]
 match /trunk/KDE/kdepim/kioslaves/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/
     branch master
     max revision 461307
     min revision 455551
 end match
 match /branches/KDE/3.5/kdepim/kioslaves/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/
     branch master
     max revision 455550
     min revision 438982
 end match
 match /trunk/KDE/kdepim/kioslaves/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/
     branch master
     max revision 438981
     min revision 409203
 end match
 match /trunk/kdepim/kioslaves/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/
     branch master
     max revision 409202
@@ -1498,7 +1500,7 @@ end match
 
 #	[ move trunk/kdenetwork/kioslaves 200753 0 ]
 match /trunk/kdenetwork/kioslaves/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/
     branch master
     max revision 200753
@@ -1537,7 +1539,7 @@ end match
 #	[ Delayed: /trunk/kdepim/kioslaves/imap4/selectinfo.h @ 302876 <- /trunk/kdebase/kioslave/imap4/selectinfo.h @ 302875 ]
 #	[ add kioslave/imap4 HEAD 710601 ]
 # match /trunk/kdebase/kioslave/imap4/(.emacs-dirvars|Makefile.am|PATCHING|README|imap4.h|imapcommand.cc|imapcommand.h|imapinfo.cc|imapinfo.h|imaplist.cc|imaplist.h|imapparser.cc|imapparser.h|mailaddress.cc|mailaddress.h|mailheader.cc|mailheader.h|mimehdrline.cc|mimehdrline.h|mimeheader.cc|mimeheader.h|mimeio.cc|mimeio.h|rfcdecoder.cc|rfcdecoder.h|selectinfo.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kioslave/imap4/\1
 #     branch master
 #     max revision 302875
@@ -1550,7 +1552,7 @@ end match
 #	[ add kioslave/ldap HEAD 709262 ]
 #	[ move trunk/KDE/kdebase/runtime/kioslave/ldap 709262 547371 ]
 match /trunk/KDE/kdebase/runtime/kioslave/ldap/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/ldap/
     branch master
     max revision 709262
@@ -1559,7 +1561,7 @@ end match
 
 #	[ parent trunk/KDE/kdebase/kioslave/ldap 547371 409202 ]
 match /trunk/KDE/kdebase/kioslave/ldap/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/ldap/
     branch master
     max revision 547371
@@ -1568,7 +1570,7 @@ end match
 
 #	[ parent trunk/kdebase/kioslave/ldap 409202 0 ]
 match /trunk/kdebase/kioslave/ldap/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/ldap/
     branch master
     max revision 409202
@@ -1588,35 +1590,35 @@ end match
 #	[ add kioslave/nntp HEAD 709262 ]
 #	[ move trunk/KDE/kdebase/runtime/kioslave/nntp 709262 0 ]
 match /trunk/KDE/kdebase/runtime/kioslave/nntp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/nntp/
     branch master
     max revision 709262
     min revision 547378
 end match
 match /trunk/KDE/kdebase/kioslave/nntp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/nntp/
     branch master
     max revision 547371
     min revision 455551
 end match
 match /branches/KDE/3.5/kdebase/kioslave/nntp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/
     branch master
     max revision 455550
     min revision 438982
 end match
 match /trunk/KDE/kdebase/kioslave/nntp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/nntp/
     branch master
     max revision 438981
     min revision 409203
 end match
 match /trunk/kdebase/kioslave/nntp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/nntp/
     branch master
     max revision 409202
@@ -1629,35 +1631,35 @@ end match
 #	[ add kioslave/pop3 HEAD 709262 ]
 #	[ move trunk/KDE/kdebase/runtime/kioslave/pop3 709262 0 ]
 match /trunk/KDE/kdebase/runtime/kioslave/pop3/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/pop3/
     branch master
     max revision 709262
     min revision 547378
 end match
 match /trunk/KDE/kdebase/kioslave/pop3/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/pop3/
     branch master
     max revision 547371
     min revision 455551
 end match
 match /branches/KDE/3.5/kdebase/kioslave/pop3/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/pop3/
     branch master
     max revision 455550
     min revision 438982
 end match
 match /trunk/KDE/kdebase/kioslave/pop3/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/pop3/
     branch master
     max revision 438981
     min revision 409203
 end match
 match /trunk/kdebase/kioslave/pop3/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/pop3/
     branch master
     max revision 409202
@@ -1673,7 +1675,7 @@ end match
 #	[ add kioslave/sieve HEAD 200753 ]
 #	[ parent trunk/kdenetwork/kioslaves/sieve 200753 0 ]
 match /trunk/kdenetwork/kioslaves/sieve/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/sieve/
     branch master
     max revision 200753
@@ -1686,35 +1688,35 @@ end match
 #	[ add kioslave/smtp HEAD 709262 ]
 #	[ move trunk/KDE/kdebase/runtime/kioslave/smtp 709262 0 ]
 match /trunk/KDE/kdebase/runtime/kioslave/smtp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/smtp/
     branch master
     max revision 709262
     min revision 547378
 end match
 match /trunk/KDE/kdebase/kioslave/smtp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/smtp/
     branch master
     max revision 547371
     min revision 455551
 end match
 match /branches/KDE/3.5/kdebase/kioslave/smtp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/smtp/
     branch master
     max revision 455550
     min revision 438982
 end match
 match /trunk/KDE/kdebase/kioslave/smtp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/smtp/
     branch master
     max revision 438981
     min revision 409203
 end match
 match /trunk/kdebase/kioslave/smtp/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/smtp/
     branch master
     max revision 409202
@@ -1732,7 +1734,7 @@ end match
 #	[ add kioslave/smtp/tests HEAD 709262 ]
 #	[ parent trunk/KDE/kdebase/runtime/kioslave/smtp/tests 709262 0 ]
 match /trunk/KDE/kdebase/runtime/kioslave/smtp/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kioslave/smtp/tests/
     branch master
     max revision 709262
@@ -1750,7 +1752,7 @@ end match
 #	[ add kmbox HEAD 1182310 ]
 #	[ move trunk/KDE/kdepim/runtime/resources/mbox/libmbox 1182310 1117592 ]
 match /trunk/KDE/kdepim/runtime/resources/mbox/libmbox/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmbox/
     branch master
     max revision 1182310
@@ -1760,7 +1762,7 @@ end match
 #	[ move trunk/KDE/kdepimlibs/libmbox 1117592 1117588 ]
 #	[ move trunk/KDE/kdepim/runtime/resources/mbox/libmbox 1117588 1061321 ]
 match /trunk/KDE/kdepim/runtime/resources/mbox/libmbox/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmbox/
     branch master
     max revision 1117588
@@ -1769,14 +1771,14 @@ end match
 
 #	[ parent trunk/KDE/kdepim/akonadi/resources/mbox/libmbox 1061321 0 ]
 match /trunk/KDE/kdepim/akonadi/resources/mbox/libmbox/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmbox/
     branch master
     max revision 1061321
 end match
 
 # match /branches/work/akonadi-ports/kdepim/akonadi/resources/mbox/libmbox/(mbox_p.cpp|mbox_p.h|tests/mboxbenchmark.cpp|tests/mboxbenchmark.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kmbox/\1
 #     branch master
 #     max revision 1037212
@@ -1789,7 +1791,7 @@ end match
 #	[ add kmbox/tests HEAD 1182310 ]
 #	[ parent trunk/KDE/kdepim/runtime/resources/mbox/libmbox/tests 1182310 1117592 ]
 match /trunk/KDE/kdepim/runtime/resources/mbox/libmbox/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmbox/tests/
     branch master
     max revision 1182310
@@ -1799,7 +1801,7 @@ end match
 #	[ parent trunk/KDE/kdepimlibs/libmbox/tests 1117592 1117588 ]
 #	[ parent trunk/KDE/kdepim/runtime/resources/mbox/libmbox/tests 1117588 0 ]
 match /trunk/KDE/kdepim/runtime/resources/mbox/libmbox/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmbox/tests/
     branch master
     max revision 1117588
@@ -1815,41 +1817,41 @@ end match
 #	[ move trunk/KDE/kdepimlibs/libkmime 601078 601060 ]
 #	[ move trunk/KDE/kdepim/libkmime 601060 0 ]
 match /trunk/KDE/kdepim/libkmime/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/
     branch master
     max revision 601060
     min revision 455551
 end match
 match /branches/KDE/3.5/kdepim/libkmime/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/
     branch master
     max revision 455550
     min revision 438982
 end match
 match /trunk/KDE/kdepim/libkmime/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/
     branch master
     max revision 438981
     min revision 409203
 end match
 match /trunk/kdepim/libkmime/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/
     branch master
     max revision 409202
     min revision 346544
 end match
 match /trunk/kdepim/libkdenetwork/(boolflags.cpp|boolflags.h|kmime_.*)
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/\1
     branch master
     max revision 346543
 end match
 match /trunk/kdenetwork/libkdenetwork/(boolflags.cpp|boolflags.h|kmime_.*)
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/\1
     branch master
     max revision 346543
@@ -1865,7 +1867,7 @@ end match
 #	[ parent trunk/KDE/kdepimlibs/libkmime/tests 601078 601060 ]
 #	[ parent trunk/KDE/kdepim/libkmime/tests 601060 0 ]
 match /trunk/KDE/kdepim/libkmime/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/tests/
     branch master
     max revision 601060
@@ -1928,7 +1930,7 @@ end match
 #	[ add kmime/tests/data/codec_quoted-printable HEAD 346543 ]
 #	[ move trunk/kdepim/libkdenetwork/tests/data/codec_quoted-printable 346543 200753 ]
 match /trunk/kdepim/libkdenetwork/tests/data/codec_quoted-printable/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/tests/data/codec_quoted-printable/
     branch master
     max revision 346543
@@ -1937,7 +1939,7 @@ end match
 
 #	[ move trunk/kdenetwork/libkdenetwork/tests/data/codec_quoted-printable 200753 0 ]
 match /trunk/kdenetwork/libkdenetwork/tests/data/codec_quoted-printable/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/tests/data/codec_quoted-printable/
     branch master
     max revision 200753
@@ -1961,7 +1963,7 @@ end match
 #	[ add kmime/tests/data/codec_x-uuencode HEAD 346543 ]
 #	[ move trunk/kdepim/libkdenetwork/tests/data/codec_x-uuencode 346543 200753 ]
 match /trunk/kdepim/libkdenetwork/tests/data/codec_x-uuencode/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/tests/data/codec_x-uuencode/
     branch master
     max revision 346543
@@ -1970,7 +1972,7 @@ end match
 
 #	[ move trunk/kdenetwork/libkdenetwork/tests/data/codec_x-uuencode 200753 0 ]
 match /trunk/kdenetwork/libkdenetwork/tests/data/codec_x-uuencode/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kmime/tests/data/codec_x-uuencode/
     branch master
     max revision 200753
@@ -1993,7 +1995,7 @@ end match
 #	[ move trunk/KDE/kdepimlibs/kontactinterfaces 1024403 1023819 ]
 #	[ move trunk/KDE/kdepim/kontactinterfaces 1023819 0 ]
 match /trunk/KDE/kdepim/kontactinterfaces/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kontactinterface/
     branch master
     max revision 1023819
@@ -2008,7 +2010,7 @@ end match
 #	[ add kpimidentities HEAD 680647 ]
 #	[ move branches/work/libkpimidentities 680647 679297 ]
 match /branches/work/libkpimidentities/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kpimidentities/
     branch master
     max revision 680647
@@ -2017,21 +2019,21 @@ end match
 
 #	[ move trunk/KDE/kdepim/libkpimidentities 679297 0 ]
 match /trunk/KDE/kdepim/libkpimidentities/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kpimidentities/
     branch master
     max revision 679297
     min revision 409203
 end match
 match /trunk/kdepim/libkpimidentities/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kpimidentities/
     branch master
     max revision 409202
     min revision 317526
 end match
 match /trunk/kdepim/libkdepim/(identity.*)
-    repository kdepimlibs
+    repository ${REPO}
     prefix kpimidentities/\1
     branch master
     max revision 317525
@@ -2047,7 +2049,7 @@ end match
 #	[ add kpimtextedit HEAD 952424 ]
 #	[ move trunk/KDE/kdepimlibs/pimtextedit 952424 0 ]
 # match /trunk/KDE/kdepim/libkdepim/(emailquotehighlighter.cpp|emailquotehighlighter.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kpimtextedit/\1
 #     branch master
 #     max revision 934534
@@ -2067,7 +2069,7 @@ end match
 #	[ move trunk/KDE/kdepimlibs/kpimidentities/richtextbuilders 934534 885743 ]
 #	[ move trunk/kdereview/richtextbuilders 885743 880268 ]
 match /trunk/kdereview/richtextbuilders/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kpimtextedit/richtextbuilders/
     branch master
     max revision 885743
@@ -2076,7 +2078,7 @@ end match
 
 #	[ move trunk/playground/pim/richtextbuilders 880268 0 ]
 match /trunk/playground/pim/richtextbuilders/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kpimtextedit/richtextbuilders/
     branch master
     max revision 880268
@@ -2107,7 +2109,7 @@ end match
 #	[ add kpimtextedit/richtextbuilders/tests HEAD 885743 ]
 #	[ parent trunk/kdereview/richtextbuilders/tests 885743 880268 ]
 match /trunk/kdereview/richtextbuilders/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kpimtextedit/richtextbuilders/tests/
     branch master
     max revision 885743
@@ -2116,7 +2118,7 @@ end match
 
 #	[ parent trunk/playground/pim/richtextbuilders/tests 880268 0 ]
 match /trunk/playground/pim/richtextbuilders/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kpimtextedit/richtextbuilders/tests/
     branch master
     max revision 880268
@@ -2142,7 +2144,7 @@ end match
 #	[ parent trunk/KDE/kdepimlibs/libemailfunctions/tests 556322 555224 ]
 #	[ move trunk/KDE/kdepim/libemailfunctions/tests 555224 0 ]
 match /trunk/KDE/kdepim/libemailfunctions/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kpimutils/tests/
     branch master
     max revision 555224
@@ -2171,33 +2173,33 @@ end match
 #	[ add kresources HEAD 556964 ]
 #	[ move trunk/KDE/kdelibs/kresources 556964 0 ]
 match /trunk/KDE/kdelibs/kresources/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kresources/
     branch master
     max revision 556964
     min revision 409203
 end match
 match /trunk/kdelibs/kresources/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kresources/
     branch master
     max revision 409202
 end match
 
 # match /trunk/kdepim/libkdepim/resources/(README.design|resource.cpp|resource.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kresources/\1
 #     branch master
 #     max revision 197388
 # end match
 # match /trunk/kdepim/libkdepim/resources/resource(config)dlg.(h|cpp)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kresources/\1dialog.\2
 #     branch master
 #     max revision 197388
 # end match
 # match /trunk/kdepim/libkdepim/resources/resource(configpage.cpp|configpage.h|configwidget.cpp|configwidget.h|factory.cpp|factory.h|manager.h|manageriface.h|managerimpl.cpp|managerimpl.h|selectdialog.cpp|selectdialog.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kresources/\1
 #     branch master
 #     max revision 197388
@@ -2208,13 +2210,13 @@ end match
 #	[ add kresources/tests HEAD 556964 ]
 #	[ parent trunk/KDE/kdelibs/kresources/tests 556964 0 ]
 match /trunk/KDE/kdelibs/kresources/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix kresources/tests/
     branch master
     max revision 556964
 end match
 # match /trunk/KDE/kdelibs/kresources/(testresources.cpp)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix kresources/tests/\1
 #     branch master
 #     max revision 537939
@@ -2247,7 +2249,7 @@ end match
 #	[ add mailtransport HEAD 656305 ]
 #	[ move trunk/KDE/kdepim/mailtransport 656305 0 ]
 match /trunk/KDE/kdepim/mailtransport/
-    repository kdepimlibs
+    repository ${REPO}
     prefix mailtransport/
     branch master
     max revision 656305
@@ -2258,7 +2260,7 @@ end match
 #	[ add mailtransport/kconf_update HEAD 656305 ]
 #	[ parent trunk/KDE/kdepim/mailtransport/kconf_update 656305 0 ]
 match /trunk/KDE/kdepim/mailtransport/kconf_update/
-    repository kdepimlibs
+    repository ${REPO}
     prefix mailtransport/kconf_update/
     branch master
     max revision 656305
@@ -2276,7 +2278,7 @@ end match
 #	[ move branches/work/akonadi-ports/kdepimlibs/mailtransport/tests/unittestenv 994693 993748 ]
 #	[ move branches/work/akonadi-ports/kdepimlibs/outboxinterface/tests/unittestenv 993748 977512 ]
 match /branches/work/akonadi-ports/kdepimlibs/outboxinterface/tests/unittestenv/
-    repository kdepimlibs
+    repository ${REPO}
     prefix mailtransport/tests/unittestenv/
     branch master
     max revision 993748
@@ -2285,7 +2287,7 @@ end match
 
 #	[ parent branches/kdepim/soc/kdepimlibs/outboxinterface/tests/unittestenv 977512 977493 ]
 match /branches/kdepim/soc/kdepimlibs/outboxinterface/tests/unittestenv/
-    repository kdepimlibs
+    repository ${REPO}
     prefix mailtransport/tests/unittestenv/
     branch master
     max revision 977512
@@ -2294,7 +2296,7 @@ end match
 
 #	[ parent trunk/playground/pim/outboxinterface/tests/unittestenv 977493 0 ]
 match /trunk/playground/pim/outboxinterface/tests/unittestenv/
-    repository kdepimlibs
+    repository ${REPO}
     prefix mailtransport/tests/unittestenv/
     branch master
     max revision 977493
@@ -2308,7 +2310,7 @@ end match
 #	[ add mailtransport/tests/unittestenv/kdehome HEAD 994693 ]
 #	[ parent branches/work/akonadi-ports/kdepimlibs/mailtransport/tests/unittestenv/kdehome 994693 993748 ]
 match /branches/work/akonadi-ports/kdepimlibs/mailtransport/tests/unittestenv/kdehome/
-    repository kdepimlibs
+    repository ${REPO}
     prefix mailtransport/tests/unittestenv/kdehome/
     branch master
     max revision 994693
@@ -2317,7 +2319,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepimlibs/outboxinterface/tests/unittestenv/kdehome 993748 0 ]
 match /branches/work/akonadi-ports/kdepimlibs/outboxinterface/tests/unittestenv/kdehome/
-    repository kdepimlibs
+    repository ${REPO}
     prefix mailtransport/tests/unittestenv/kdehome/
     branch master
     max revision 993748
@@ -2360,7 +2362,7 @@ end match
 #	[ move trunk/KDE/kdepimlibs/akonadi/tests/unittestenv 1038523 916406 ]
 #	[ move trunk/playground/pim/akonadi/unittestenv 916406 0 ]
 match /trunk/playground/pim/akonadi/unittestenv/
-    repository kdepimlibs
+    repository ${REPO}
     prefix mailtransport/tests/unittestenv_akonadi/
     branch master
     max revision 916406
@@ -2432,14 +2434,14 @@ end match
 #	[ Delayed: /trunk/KDE/kdepimlibs/microblog/statusitem.h @ 949061 <- /trunk/KDE/kdepim/akonadi/plugins/statusitem.h @ 949007 ]
 #	[ add microblog HEAD 0 ]
 #match /trunk/KDE/kdepim/akonadi/plugins/(statusitem.cpp|statusitem.h)
-#    repository kdepimlibs
+#    repository ${REPO}
 #    prefix microblog/\1
 #    branch master
 #    max revision 949061
 #    min revision 949007
 #end match
 # match /trunk/playground/pim/microblog/(statusitem.cpp|statusitem.h)
-#     repository kdepimlibs
+#     repository ${REPO}
 #     prefix microblog/\1
 #     branch master
 #     max revision 949001
@@ -2454,7 +2456,7 @@ end match
 #	[ add qgpgme HEAD 681577 ]
 #	[ move trunk/KDE/kdepim/qgpgme 681577 495458 ]
 match /trunk/KDE/kdepim/qgpgme/
-    repository kdepimlibs
+    repository ${REPO}
     prefix qgpgme/
     branch master
     max revision 681577
@@ -2463,14 +2465,14 @@ end match
 
 #	[ move trunk/KDE/kdepim/libkdenetwork/qgpgme 495458 0 ]
 match /trunk/KDE/kdepim/libkdenetwork/qgpgme/
-    repository kdepimlibs
+    repository ${REPO}
     prefix qgpgme/
     branch master
     max revision 495458
     min revision 409203
 end match
 match /trunk/kdepim/libkdenetwork/qgpgme/
-    repository kdepimlibs
+    repository ${REPO}
     prefix qgpgme/
     branch master
     max revision 409202
@@ -2485,7 +2487,7 @@ end match
 #	[ add qgpgme/tests HEAD 681577 ]
 #	[ parent trunk/KDE/kdepim/qgpgme/tests 681577 495458 ]
 match /trunk/KDE/kdepim/qgpgme/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix qgpgme/tests/
     branch master
     max revision 681577
@@ -2494,7 +2496,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/libkdenetwork/qgpgme/tests 495458 0 ]
 match /trunk/KDE/kdepim/libkdenetwork/qgpgme/tests/
-    repository kdepimlibs
+    repository ${REPO}
     prefix qgpgme/tests/
     branch master
     max revision 495458
@@ -2508,7 +2510,7 @@ end match
 #	[ move trunk/KDE/kdepimlibs/libsyndication 571589 571178 ]
 #	[ move trunk/KDE/kdepim/libsyndication 571178 529887 ]
 match /trunk/KDE/kdepim/libsyndication/
-    repository kdepimlibs
+    repository ${REPO}
     prefix syndication/
     branch master
     max revision 571178
@@ -2517,7 +2519,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akregator/src/libsyndication 529887 0 ]
 match /trunk/KDE/kdepim/akregator/src/libsyndication/
-    repository kdepimlibs
+    repository ${REPO}
     prefix syndication/
     branch master
     max revision 529887
@@ -2532,7 +2534,7 @@ end match
 #	[ parent trunk/KDE/kdepimlibs/libsyndication/atom 571589 571178 ]
 #	[ parent trunk/KDE/kdepim/libsyndication/atom 571178 529887 ]
 match /trunk/KDE/kdepim/libsyndication/atom/
-    repository kdepimlibs
+    repository ${REPO}
     prefix syndication/atom/
     branch master
     max revision 571178
@@ -2541,7 +2543,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/akregator/src/libsyndication/atom 529887 529874 ]
 match /trunk/KDE/kdepim/akregator/src/libsyndication/atom/
-    repository kdepimlibs
+    repository ${REPO}
     prefix syndication/atom/
     branch master
     max revision 529887
@@ -2550,7 +2552,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akregator/src/libsyndication/src/atom 529874 0 ]
 match /trunk/KDE/kdepim/akregator/src/libsyndication/src/atom/
-    repository kdepimlibs
+    repository ${REPO}
     prefix syndication/atom/
     branch master
     max revision 529874
@@ -2569,7 +2571,7 @@ end match
 #	[ add syndication/mapper HEAD 529874 ]
 #	[ move trunk/KDE/kdepim/akregator/src/libsyndication/src/mapper 529874 0 ]
 match /trunk/KDE/kdepim/akregator/src/libsyndication/src/mapper/
-    repository kdepimlibs
+    repository ${REPO}
     prefix syndication/mapper/
     branch master
     max revision 529874
@@ -2583,7 +2585,7 @@ end match
 #	[ add syndication/rdf HEAD 529874 ]
 #	[ move trunk/KDE/kdepim/akregator/src/libsyndication/src/rdf 529874 0 ]
 match /trunk/KDE/kdepim/akregator/src/libsyndication/src/rdf/
-    repository kdepimlibs
+    repository ${REPO}
     prefix syndication/rdf/
     branch master
     max revision 529874
@@ -2597,7 +2599,7 @@ end match
 #	[ add syndication/rss2 HEAD 529874 ]
 #	[ move trunk/KDE/kdepim/akregator/src/libsyndication/src/rss2 529874 0 ]
 match /trunk/KDE/kdepim/akregator/src/libsyndication/src/rss2/
-    repository kdepimlibs
+    repository ${REPO}
     prefix syndication/rss2/
     branch master
     max revision 529874
@@ -2628,6 +2630,8 @@ end match
 
 
 include kdepim-modules-rules
+
+include kdepim-branches-rules
 
 match /
 end match

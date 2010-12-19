@@ -1,5 +1,5 @@
 # vim: set filetype=conf
-# --repo# file:///mnt/backup/kdesvnrepo/svn# --path# trunk/KDE/kdepim# --ignore# runtime# --module# kdepim# --subdirs# --recurse# 99999# --showcommands
+# --repo file:///mnt/backup/kdesvnrepo/svn --path trunk/KDE/kdepim --ignore runtime --module kdepim --subdirs --recurse 99999 --showcommands
 declare MODULE=kdepim
 declare REPO=kdepim
 
@@ -7,13 +7,12 @@ create repository ${REPO}
 end repository
 
 include kdepim-common-ignore-rules
-include kdepim-recurse-rules
-include kdepim-tags-rules
-include kdepim-branches-rules
-
 # /runtime/ is another module
 match /.*/kdepim/runtime/
-end match
+    end match
+
+include kdepim-recurse-rules
+include kdepim-tags-rules
 
 #	------< trunk/KDE/kdepim >------
 #	[ Move/Replace: /trunk/KDE/kdepim @ 455551 <- /branches/KDE/3.5/kdepim @ 455550 ]
@@ -39,7 +38,7 @@ end match
 #	[ Delayed: /trunk/playground/pim/kjotsrewrite/akonadi_next/modeltest.h @ 901324 <- /trunk/playground/pim/kjotsrewrite @ 901265 ]
 #	[ add akonadi_next HEAD 1165573 ]
 match /trunk/KDE/kdepim/akonadi_next/
-    repository kdepim
+    repository ${REPO}
     prefix akonadi_next/
     branch master
     min revision 1165573
@@ -47,7 +46,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/akonadi_next 1165573 949009 ]
 match /trunk/KDE/kdepim/akonadi/akonadi_next/
-    repository kdepim
+    repository ${REPO}
     prefix akonadi_next/
     branch master
     max revision 1165573
@@ -56,7 +55,7 @@ end match
 
 #	[ move trunk/playground/pim/akonadi/akonadi_next 949009 934269 ]
 match /trunk/playground/pim/akonadi/akonadi_next/
-    repository kdepim
+    repository ${REPO}
     prefix akonadi_next/
     branch master
     max revision 949009
@@ -65,7 +64,7 @@ end match
 
 #	[ move trunk/playground/pim/kjotsrewrite/akonadi_next 934269 0 ]
 match /trunk/playground/pim/kjotsrewrite/akonadi_next/
-    repository kdepim
+    repository ${REPO}
     prefix akonadi_next/
     branch master
     max revision 934269
@@ -89,7 +88,7 @@ end match
 #	[ Delayed: /trunk/KDE/kdepim/akonadi/akonadi_next/dox/treeandlistappwithdesclist.png @ 996935 <- /trunk/KDE/kdepim/akonadi/akonadi_next @ 995800 ]
 #	[ add akonadi_next/dox HEAD 1165573 ]
 match /trunk/KDE/kdepim/akonadi_next/dox/
-    repository kdepim
+    repository ${REPO}
     prefix akonadi_next/dox/
     branch master
     min revision 1165573
@@ -97,7 +96,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/akonadi/akonadi_next/dox 1165573 0 ]
 match /trunk/KDE/kdepim/akonadi/akonadi_next/dox/
-    repository kdepim
+    repository ${REPO}
     prefix akonadi_next/dox/
     branch master
     max revision 1165573
@@ -112,7 +111,7 @@ end match
 #	[ Parent: /trunk/playground/pim/akonadi/akonadi_next @ 934271 <- /trunk/playground/pim/kjotsrewrite/akonadi_next @ 934269 ]
 #	[ add akonadi_next/tests HEAD 949009 ]
 match /trunk/KDE/kdepim/akonadi_next/tests/
-    repository kdepim
+    repository ${REPO}
     prefix akonadi_next/tests/
     branch master
     min revision 949009
@@ -120,7 +119,7 @@ end match
 
 #	[ parent trunk/playground/pim/akonadi/akonadi_next/tests 949009 934269 ]
 match /trunk/playground/pim/akonadi/akonadi_next/tests/
-    repository kdepim
+    repository ${REPO}
     prefix akonadi_next/tests/
     branch master
     max revision 949009
@@ -129,7 +128,7 @@ end match
 
 #	[ parent trunk/playground/pim/kjotsrewrite/akonadi_next/tests 934269 0 ]
 match /trunk/playground/pim/kjotsrewrite/akonadi_next/tests/
-    repository kdepim
+    repository ${REPO}
     prefix akonadi_next/tests/
     branch master
     max revision 934269
@@ -141,7 +140,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadiconsole @ 908937 <- /trunk/KDE/kdepim/akonadi/clients/akonadiconsole @ 908889 ]
 #	[ add akonadiconsole HEAD 1061319 ]
 match /trunk/KDE/kdepim/akonadiconsole/
-    repository kdepim
+    repository ${REPO}
     prefix akonadiconsole/
     branch master
     min revision 1061319
@@ -149,7 +148,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/akonadiconsole 1061319 985676 ]
 match /trunk/KDE/kdepim/akonadi/akonadiconsole/
-    repository kdepim
+    repository ${REPO}
     prefix akonadiconsole/
     branch master
     max revision 1061319
@@ -158,7 +157,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadiconsole 985676 908889 ]
 match /trunk/KDE/kdepim/akonadiconsole/
-    repository kdepim
+    repository ${REPO}
     prefix akonadiconsole/
     branch master
     max revision 985676
@@ -167,7 +166,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/clients/akonadiconsole 908889 0 ]
 match /trunk/KDE/kdepim/akonadi/clients/akonadiconsole/
-    repository kdepim
+    repository ${REPO}
     prefix akonadiconsole/
     branch master
     max revision 908889
@@ -179,7 +178,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add akregator HEAD 455550 ]
 match /trunk/KDE/kdepim/akregator/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/
     branch master
     min revision 455550
@@ -187,7 +186,7 @@ end match
 
 #	[ parent branches/KDE/3.5/kdepim/akregator 455550 438981 ]
 match /branches/KDE/3.5/kdepim/akregator/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/
     branch master
     max revision 455550
@@ -196,7 +195,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/akregator 438981 409202 ]
 match /trunk/KDE/kdepim/akregator/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/
     branch master
     max revision 438981
@@ -205,7 +204,7 @@ end match
 
 #	[ parent trunk/kdepim/akregator 409202 0 ]
 match /trunk/kdepim/akregator/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/
     branch master
     max revision 409202
@@ -243,7 +242,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add akregator/plugins/mk4storage HEAD 537222 ]
 match /trunk/KDE/kdepim/akregator/plugins/mk4storage/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/plugins/mk4storage/
     branch master
     min revision 537222
@@ -251,7 +250,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akregator/src/mk4storage 537222 0 ]
 match /trunk/KDE/kdepim/akregator/src/mk4storage/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/plugins/mk4storage/
     branch master
     max revision 537222
@@ -264,7 +263,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add akregator/plugins/mk4storage/metakit HEAD 537222 ]
 match /trunk/KDE/kdepim/akregator/plugins/mk4storage/metakit/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/plugins/mk4storage/metakit/
     branch master
     min revision 537222
@@ -272,7 +271,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/akregator/src/mk4storage/metakit 537222 0 ]
 match /trunk/KDE/kdepim/akregator/src/mk4storage/metakit/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/plugins/mk4storage/metakit/
     branch master
     max revision 537222
@@ -294,7 +293,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/akregator/plugins/onlinesync @ 809050 <- /branches/work/akregator/onlinesync/akregator/plugins/onlinesync @ 809048 ]
 #	[ add akregator/plugins/onlinesync HEAD 809048 ]
 match /trunk/KDE/kdepim/akregator/plugins/onlinesync/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/plugins/onlinesync/
     branch master
     min revision 809048
@@ -302,7 +301,7 @@ end match
 
 #	[ move branches/work/akregator/onlinesync/akregator/plugins/onlinesync 809048 0 ]
 match /branches/work/akregator/onlinesync/akregator/plugins/onlinesync/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/plugins/onlinesync/
     branch master
     max revision 809048
@@ -323,7 +322,7 @@ end match
 #	[ Delayed: /branches/work/akregator/onlinesync/akregator/plugins/onlinesync/sync/subscriptionlist.h @ 803735 <- /branches/work/akregator/onlinesync/akregator/plugins/onlinesync @ 803678 ]
 #	[ add akregator/plugins/onlinesync/sync HEAD 809048 ]
 match /trunk/KDE/kdepim/akregator/plugins/onlinesync/sync/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/plugins/onlinesync/sync/
     branch master
     min revision 809048
@@ -331,7 +330,7 @@ end match
 
 #	[ parent branches/work/akregator/onlinesync/akregator/plugins/onlinesync/sync 809048 0 ]
 match /branches/work/akregator/onlinesync/akregator/plugins/onlinesync/sync/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/plugins/onlinesync/sync/
     branch master
     max revision 809048
@@ -342,7 +341,7 @@ end match
 #	[ Move/Replace: /branches/work/akregator/onlinesync/akregator/plugins/onlinesync/ui @ 801242 <- /branches/work/akregator/onlinesync/akregator/src/feedsync/ui @ 800303 ]
 #	[ add akregator/plugins/onlinesync/ui HEAD 800303 ]
 match /trunk/KDE/kdepim/akregator/plugins/onlinesync/ui/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/plugins/onlinesync/ui/
     branch master
     min revision 800303
@@ -350,7 +349,7 @@ end match
 
 #	[ move branches/work/akregator/onlinesync/akregator/src/feedsync/ui 800303 0 ]
 match /branches/work/akregator/onlinesync/akregator/src/feedsync/ui/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/plugins/onlinesync/ui/
     branch master
     max revision 800303
@@ -383,7 +382,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add akregator/src/icons HEAD 676172 ]
 match /trunk/KDE/kdepim/akregator/src/icons/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/src/icons/
     branch master
     min revision 676172
@@ -391,7 +390,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akregator/src/pics 676172 0 ]
 match /trunk/KDE/kdepim/akregator/src/pics/
-    repository kdepim
+    repository ${REPO}
     prefix akregator/src/icons/
     branch master
     max revision 676172
@@ -406,7 +405,7 @@ end match
 #	[ Move/Replace: /trunk/kdereview/blogilo @ 1027735 <- /trunk/playground/pim/blogilo @ 1027733 ]
 #	[ add blogilo HEAD 1028588 ]
 match /trunk/KDE/kdepim/blogilo/
-    repository kdepim
+    repository ${REPO}
     prefix blogilo/
     branch master
     min revision 1028588
@@ -414,7 +413,7 @@ end match
 
 #	[ move trunk/kdereview/blogilo 1028588 1027733 ]
 match /trunk/kdereview/blogilo/
-    repository kdepim
+    repository ${REPO}
     prefix blogilo/
     branch master
     max revision 1028588
@@ -423,7 +422,7 @@ end match
 
 #	[ move trunk/playground/pim/blogilo 1027733 0 ]
 match /trunk/playground/pim/blogilo/
-    repository kdepim
+    repository ${REPO}
     prefix blogilo/
     branch master
     max revision 1027733
@@ -434,7 +433,7 @@ end match
 #	[ Parent: /trunk/kdereview/blogilo @ 1027735 <- /trunk/playground/pim/blogilo @ 1027733 ]
 #	[ add blogilo/icons HEAD 1028588 ]
 match /trunk/KDE/kdepim/blogilo/icons/
-    repository kdepim
+    repository ${REPO}
     prefix blogilo/icons/
     branch master
     min revision 1028588
@@ -442,7 +441,7 @@ end match
 
 #	[ parent trunk/kdereview/blogilo/icons 1028588 1027733 ]
 match /trunk/kdereview/blogilo/icons/
-    repository kdepim
+    repository ${REPO}
     prefix blogilo/icons/
     branch master
     max revision 1028588
@@ -451,7 +450,7 @@ end match
 
 #	[ parent trunk/playground/pim/blogilo/icons 1027733 0 ]
 match /trunk/playground/pim/blogilo/icons/
-    repository kdepim
+    repository ${REPO}
     prefix blogilo/icons/
     branch master
     max revision 1027733
@@ -481,7 +480,7 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim @ 982690 <- /trunk/KDE/kdepim @ 982689 ]
 #	[ add calendarsupport HEAD 1164901 ]
 match /trunk/KDE/kdepim/calendarsupport/
-    repository kdepim
+    repository ${REPO}
     prefix calendarsupport/
     branch master
     min revision 1164901
@@ -489,7 +488,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/kcal 1164901 1161348 ]
 match /trunk/KDE/kdepim/akonadi/kcal/
-    repository kdepim
+    repository ${REPO}
     prefix calendarsupport/
     branch master
     max revision 1164901
@@ -498,7 +497,7 @@ end match
 
 #	[ move branches/work/kdepim_kcalcore/akonadi/kcal 1161348 1149028 ]
 match /branches/work/kdepim_kcalcore/akonadi/kcal/
-    repository kdepim
+    repository ${REPO}
     prefix calendarsupport/
     branch master
     max revision 1161348
@@ -507,7 +506,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/akonadi/kcal 1149028 1075060 ]
 match /trunk/KDE/kdepim/akonadi/kcal/
-    repository kdepim
+    repository ${REPO}
     prefix calendarsupport/
     branch master
     max revision 1149028
@@ -516,7 +515,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/akonadi/kcal 1075060 982689 ]
 match /branches/work/akonadi-ports/kdepim/akonadi/kcal/
-    repository kdepim
+    repository ${REPO}
     prefix calendarsupport/
     branch master
     max revision 1075060
@@ -525,7 +524,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/akonadi/kcal 982689 0 ]
 match /trunk/KDE/kdepim/akonadi/kcal/
-    repository kdepim
+    repository ${REPO}
     prefix calendarsupport/
     branch master
     max revision 982689
@@ -535,7 +534,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/calendarviews @ 1117856 <- /trunk/playground/pim/calendarviews @ 1117855 ]
 #	[ add calendarviews HEAD 1117855 ]
 match /trunk/KDE/kdepim/calendarviews/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/
     branch master
     min revision 1117855
@@ -543,7 +542,7 @@ end match
 
 #	[ move trunk/playground/pim/calendarviews 1117855 0 ]
 match /trunk/playground/pim/calendarviews/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/
     branch master
     max revision 1117855
@@ -574,7 +573,7 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim @ 982690 <- /trunk/KDE/kdepim @ 982689 ]
 #	[ add calendarviews/eventviews/agenda HEAD 1170967 ]
 match /trunk/KDE/kdepim/calendarviews/eventviews/agenda/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/agenda/
     branch master
     min revision 1170967
@@ -582,7 +581,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/calendarviews/agenda 1170967 1161348 ]
 match /trunk/KDE/kdepim/calendarviews/agenda/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/agenda/
     branch master
     max revision 1170967
@@ -591,7 +590,7 @@ end match
 
 #	[ move branches/work/kdepim_kcalcore/calendarviews/agenda 1161348 1117855 ]
 match /branches/work/kdepim_kcalcore/calendarviews/agenda/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/agenda/
     branch master
     max revision 1161348
@@ -600,7 +599,7 @@ end match
 
 #	[ parent trunk/playground/pim/calendarviews/agenda 1117855 1117480 ]
 match /trunk/playground/pim/calendarviews/agenda/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/agenda/
     branch master
     max revision 1117855
@@ -609,7 +608,7 @@ end match
 
 #	[ move trunk/playground/pim/calendarviews/agendaview 1117480 1117479 ]
 match /trunk/playground/pim/calendarviews/agendaview/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/agenda/
     branch master
     max revision 1117480
@@ -618,7 +617,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/korganizer/views/agendaview 1117479 1076604 ]
 match /trunk/KDE/kdepim/korganizer/views/agendaview/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/agenda/
     branch master
     max revision 1117479
@@ -627,7 +626,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/korganizer/views/agendaview 1076604 0 ]
 match /branches/work/akonadi-ports/kdepim/korganizer/views/agendaview/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/agenda/
     branch master
     max revision 1076604
@@ -643,7 +642,7 @@ end match
 #	[ Delayed: /trunk/KDE/kdepim/calendarviews/multiagenda/multiagendaview.h @ 1167008 <- /branches/work/~smartins/korganizer/views/multiagendaview @ 1166813 ]
 #	[ add calendarviews/eventviews/multiagenda HEAD 1171158 ]
 match /trunk/KDE/kdepim/calendarviews/eventviews/multiagenda/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/multiagenda/
     branch master
     min revision 1171158
@@ -651,7 +650,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/calendarviews/eventviews/agenda/multiagenda 1171158 1170967 ]
 match /trunk/KDE/kdepim/calendarviews/eventviews/agenda/multiagenda/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/multiagenda/
     branch master
     max revision 1171158
@@ -660,7 +659,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/calendarviews/agenda/multiagenda 1170967 1167008 ]
 match /trunk/KDE/kdepim/calendarviews/agenda/multiagenda/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/multiagenda/
     branch master
     max revision 1170967
@@ -669,7 +668,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/calendarviews/multiagenda 1167008 0 ]
 match /trunk/KDE/kdepim/calendarviews/multiagenda/
-    repository kdepim
+    repository ${REPO}
     prefix calendarviews/eventviews/multiagenda/
     branch master
     max revision 1167008
@@ -687,7 +686,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/console/kabcclient @ 573301 <- /trunk/kdereview/kabcclient @ 573276 ]
 #	[ add console/kabcclient HEAD 573276 ]
 match /trunk/KDE/kdepim/console/kabcclient/
-    repository kdepim
+    repository ${REPO}
     prefix console/kabcclient/
     branch master
     min revision 573276
@@ -695,7 +694,7 @@ end match
 
 #	[ move trunk/kdereview/kabcclient 573276 0 ]
 match /trunk/kdereview/kabcclient/
-    repository kdepim
+    repository ${REPO}
     prefix console/kabcclient/
     branch master
     max revision 573276
@@ -705,7 +704,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/console/kabcclient @ 573301 <- /trunk/kdereview/kabcclient @ 573276 ]
 #	[ add console/kabcclient/doc HEAD 573276 ]
 match /trunk/KDE/kdepim/console/kabcclient/doc/
-    repository kdepim
+    repository ${REPO}
     prefix console/kabcclient/doc/
     branch master
     min revision 573276
@@ -713,7 +712,7 @@ end match
 
 #	[ parent trunk/kdereview/kabcclient/doc 573276 0 ]
 match /trunk/kdereview/kabcclient/doc/
-    repository kdepim
+    repository ${REPO}
     prefix console/kabcclient/doc/
     branch master
     max revision 573276
@@ -738,7 +737,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add console/konsolekalendar HEAD 573009 ]
 match /trunk/KDE/kdepim/console/konsolekalendar/
-    repository kdepim
+    repository ${REPO}
     prefix console/konsolekalendar/
     branch master
     min revision 573009
@@ -746,7 +745,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/konsolekalendar 573009 0 ]
 match /trunk/KDE/kdepim/konsolekalendar/
-    repository kdepim
+    repository ${REPO}
     prefix console/konsolekalendar/
     branch master
     max revision 573009
@@ -759,7 +758,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add console/konsolekalendar/examples HEAD 573009 ]
 match /trunk/KDE/kdepim/console/konsolekalendar/examples/
-    repository kdepim
+    repository ${REPO}
     prefix console/konsolekalendar/examples/
     branch master
     min revision 573009
@@ -767,7 +766,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/konsolekalendar/examples 573009 0 ]
 match /trunk/KDE/kdepim/konsolekalendar/examples/
-    repository kdepim
+    repository ${REPO}
     prefix console/konsolekalendar/examples/
     branch master
     max revision 573009
@@ -777,7 +776,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/console/konsolekalendar/pics @ 977056 <- /branches/kdepim/enterprise4/kdepim/console/konsolekalendar/pics @ 974150 ]
 #	[ add console/konsolekalendar/pics HEAD 974150 ]
 match /trunk/KDE/kdepim/console/konsolekalendar/pics/
-    repository kdepim
+    repository ${REPO}
     prefix console/konsolekalendar/pics/
     branch master
     min revision 974150
@@ -785,7 +784,7 @@ end match
 
 #	[ move branches/kdepim/enterprise4/kdepim/console/konsolekalendar/pics 974150 0 ]
 match /branches/kdepim/enterprise4/kdepim/console/konsolekalendar/pics/
-    repository kdepim
+    repository ${REPO}
     prefix console/konsolekalendar/pics/
     branch master
     max revision 974150
@@ -811,7 +810,7 @@ end match
 #	[ Move/Replace: /trunk/kdereview/doc/blogilo @ 1027736 <- /trunk/playground/pim/doc/blogilo @ 1027735 ]
 #	[ add doc/blogilo HEAD 1028590 ]
 match /trunk/KDE/kdepim/doc/blogilo/
-    repository kdepim
+    repository ${REPO}
     prefix doc/blogilo/
     branch master
     min revision 1028590
@@ -819,7 +818,7 @@ end match
 
 #	[ move trunk/kdereview/doc/blogilo 1028590 1027735 ]
 match /trunk/kdereview/doc/blogilo/
-    repository kdepim
+    repository ${REPO}
     prefix doc/blogilo/
     branch master
     max revision 1028590
@@ -828,7 +827,7 @@ end match
 
 #	[ move trunk/playground/pim/doc/blogilo 1027735 0 ]
 match /trunk/playground/pim/doc/blogilo/
-    repository kdepim
+    repository ${REPO}
     prefix doc/blogilo/
     branch master
     max revision 1027735
@@ -855,7 +854,7 @@ end match
 #	[ Move/Replace: /trunk/kdeutils/doc/kjots @ 18258 <- /trunk/kdeutils/kjots/doc @ 18257 ]
 #	[ add doc/kjots HEAD 808838 ]
 match /trunk/KDE/kdepim/doc/kjots/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kjots/
     branch master
     min revision 808838
@@ -863,7 +862,7 @@ end match
 
 #	[ move trunk/KDE/kdeutils/doc/kjots 808838 409202 ]
 match /trunk/KDE/kdeutils/doc/kjots/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kjots/
     branch master
     max revision 808838
@@ -872,7 +871,7 @@ end match
 
 #	[ parent trunk/kdeutils/doc/kjots 409202 18257 ]
 match /trunk/kdeutils/doc/kjots/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kjots/
     branch master
     max revision 409202
@@ -881,7 +880,7 @@ end match
 
 #	[ move trunk/kdeutils/kjots/doc 18257 0 ]
 match /trunk/kdeutils/kjots/doc/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kjots/
     branch master
     max revision 18257
@@ -894,7 +893,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/doc/kleopatra @ 319655 <- /trunk/kdepim/doc/kgpgcertmanager @ 319654 ]
 #	[ add doc/kleopatra HEAD 319654 ]
 match /trunk/KDE/kdepim/doc/kleopatra/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kleopatra/
     branch master
     min revision 319654
@@ -902,7 +901,7 @@ end match
 
 #	[ move trunk/kdepim/doc/kgpgcertmanager 319654 0 ]
 match /trunk/kdepim/doc/kgpgcertmanager/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kleopatra/
     branch master
     max revision 319654
@@ -916,7 +915,7 @@ end match
 #	[ Move/Replace: /trunk/kdenetwork/doc/kmail @ 21298 <- /trunk/kdenetwork/kmail/doc @ 21297 ]
 #	[ add doc/kmail HEAD 204755 ]
 match /trunk/KDE/kdepim/doc/kmail/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kmail/
     branch master
     min revision 204755
@@ -924,7 +923,7 @@ end match
 
 #	[ move trunk/kdenetwork/doc/kmail 204755 21297 ]
 match /trunk/kdenetwork/doc/kmail/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kmail/
     branch master
     max revision 204755
@@ -933,7 +932,7 @@ end match
 
 #	[ move trunk/kdenetwork/kmail/doc 21297 0 ]
 match /trunk/kdenetwork/kmail/doc/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kmail/
     branch master
     max revision 21297
@@ -946,7 +945,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/doc/knode @ 213465 <- /trunk/kdenetwork/doc/knode @ 213464 ]
 #	[ add doc/knode HEAD 213464 ]
 match /trunk/KDE/kdepim/doc/knode/
-    repository kdepim
+    repository ${REPO}
     prefix doc/knode/
     branch master
     min revision 213464
@@ -954,7 +953,7 @@ end match
 
 #	[ move trunk/kdenetwork/doc/knode 213464 0 ]
 match /trunk/kdenetwork/doc/knode/
-    repository kdepim
+    repository ${REPO}
     prefix doc/knode/
     branch master
     max revision 213464
@@ -968,7 +967,7 @@ end match
 #	[ Move/Replace: /trunk/kdeutils/doc/knotes @ 18258 <- /trunk/kdeutils/knotes/docs @ 18257 ]
 #	[ add doc/knotes HEAD 120751 ]
 match /trunk/KDE/kdepim/doc/knotes/
-    repository kdepim
+    repository ${REPO}
     prefix doc/knotes/
     branch master
     min revision 120751
@@ -976,7 +975,7 @@ end match
 
 #	[ move trunk/kdeutils/doc/knotes 120751 18257 ]
 match /trunk/kdeutils/doc/knotes/
-    repository kdepim
+    repository ${REPO}
     prefix doc/knotes/
     branch master
     max revision 120751
@@ -985,7 +984,7 @@ end match
 
 #	[ move trunk/kdeutils/knotes/docs 18257 0 ]
 match /trunk/kdeutils/knotes/docs/
-    repository kdepim
+    repository ${REPO}
     prefix doc/knotes/
     branch master
     max revision 18257
@@ -1005,7 +1004,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/doc/kontact-admin @ 986623 <- /branches/kdepim/enterprise4/kdepim/doc/kontact-admin @ 968006 ]
 #	[ add doc/kontact-admin HEAD 968006 ]
 match /trunk/KDE/kdepim/doc/kontact-admin/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kontact-admin/
     branch master
     min revision 968006
@@ -1013,7 +1012,7 @@ end match
 
 #	[ move branches/kdepim/enterprise4/kdepim/doc/kontact-admin 968006 0 ]
 match /branches/kdepim/enterprise4/kdepim/doc/kontact-admin/
-    repository kdepim
+    repository ${REPO}
     prefix doc/kontact-admin/
     branch master
     max revision 968006
@@ -1032,7 +1031,7 @@ end match
 #	[ Delayed: /trunk/kdepim/doc/karm/index.docbook @ 113098 <- /trunk/kdeutils/doc/karm @ 113097 ]
 #	[ add doc/ktimetracker HEAD 623165 ]
 match /trunk/KDE/kdepim/doc/ktimetracker/
-    repository kdepim
+    repository ${REPO}
     prefix doc/ktimetracker/
     branch master
     min revision 623165
@@ -1040,7 +1039,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/doc/karm 623165 0 ]
 match /trunk/KDE/kdepim/doc/karm/
-    repository kdepim
+    repository ${REPO}
     prefix doc/ktimetracker/
     branch master
     max revision 623165
@@ -1061,7 +1060,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/akonadi/resources/microblog @ 949072 <- /trunk/playground/pim/microblog @ 949068 ]
 #	[ add examples/akonablog HEAD 1032750 ]
 match /trunk/KDE/kdepim/examples/akonablog/
-    repository kdepim
+    repository ${REPO}
     prefix examples/akonablog/
     branch master
     min revision 1032750
@@ -1069,7 +1068,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/clients/akonablog 1032750 949072 ]
 match /trunk/KDE/kdepim/akonadi/clients/akonablog/
-    repository kdepim
+    repository ${REPO}
     prefix examples/akonablog/
     branch master
     max revision 1032750
@@ -1078,7 +1077,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/resources/microblog/demoapp 949072 949068 ]
 match /trunk/KDE/kdepim/akonadi/resources/microblog/demoapp/
-    repository kdepim
+    repository ${REPO}
     prefix examples/akonablog/
     branch master
     max revision 949072
@@ -1087,7 +1086,7 @@ end match
 
 #	[ parent trunk/playground/pim/microblog/demoapp 949068 0 ]
 match /trunk/playground/pim/microblog/demoapp/
-    repository kdepim
+    repository ${REPO}
     prefix examples/akonablog/
     branch master
     max revision 949068
@@ -1097,7 +1096,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/examples/akonalendar @ 1061325 <- /trunk/KDE/kdepim/akonadi/clients/akonalendar @ 1061319 ]
 #	[ add examples/akonalendar HEAD 1061319 ]
 match /trunk/KDE/kdepim/examples/akonalendar/
-    repository kdepim
+    repository ${REPO}
     prefix examples/akonalendar/
     branch master
     min revision 1061319
@@ -1105,7 +1104,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/clients/akonalendar 1061319 0 ]
 match /trunk/KDE/kdepim/akonadi/clients/akonalendar/
-    repository kdepim
+    repository ${REPO}
     prefix examples/akonalendar/
     branch master
     max revision 1061319
@@ -1117,7 +1116,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/examples/kabc @ 1034275 <- /trunk/KDE/kdepim/akonadi/clients/kabc @ 1032750 ]
 #	[ add examples/kabc HEAD 1032750 ]
 match /trunk/KDE/kdepim/examples/kabc/
-    repository kdepim
+    repository ${REPO}
     prefix examples/kabc/
     branch master
     min revision 1032750
@@ -1125,7 +1124,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/clients/kabc 1032750 0 ]
 match /trunk/KDE/kdepim/akonadi/clients/kabc/
-    repository kdepim
+    repository ${REPO}
     prefix examples/kabc/
     branch master
     max revision 1032750
@@ -1137,7 +1136,7 @@ end match
 #	[ Move/Replace: /branches/work/akonadi-ports/kdepim/mailreader @ 994099 <- /trunk/playground/pim/mailreader/src @ 994098 ]
 #	[ add examples/mailreader HEAD 1032750 ]
 match /trunk/KDE/kdepim/examples/mailreader/
-    repository kdepim
+    repository ${REPO}
     prefix examples/mailreader/
     branch master
     min revision 1032750
@@ -1145,7 +1144,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/mailreader 1032750 1032700 ]
 match /trunk/KDE/kdepim/mailreader/
-    repository kdepim
+    repository ${REPO}
     prefix examples/mailreader/
     branch master
     max revision 1032750
@@ -1154,7 +1153,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/mailreader 1032700 994098 ]
 match /branches/work/akonadi-ports/kdepim/mailreader/
-    repository kdepim
+    repository ${REPO}
     prefix examples/mailreader/
     branch master
     max revision 1032700
@@ -1163,7 +1162,7 @@ end match
 
 #	[ move trunk/playground/pim/mailreader/src 994098 0 ]
 match /trunk/playground/pim/mailreader/src/
-    repository kdepim
+    repository ${REPO}
     prefix examples/mailreader/
     branch master
     max revision 994098
@@ -1174,7 +1173,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/mailreader @ 1032746 <- /branches/work/akonadi-ports/kdepim/mailreader @ 1032700 ]
 #	[ add examples/mailreader/kmail-plasma HEAD 1032750 ]
 match /trunk/KDE/kdepim/examples/mailreader/kmail-plasma/
-    repository kdepim
+    repository ${REPO}
     prefix examples/mailreader/kmail-plasma/
     branch master
     min revision 1032750
@@ -1182,7 +1181,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/mailreader/kmail-plasma 1032750 1032700 ]
 match /trunk/KDE/kdepim/mailreader/kmail-plasma/
-    repository kdepim
+    repository ${REPO}
     prefix examples/mailreader/kmail-plasma/
     branch master
     max revision 1032750
@@ -1191,7 +1190,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/mailreader/kmail-plasma 1032700 0 ]
 match /branches/work/akonadi-ports/kdepim/mailreader/kmail-plasma/
-    repository kdepim
+    repository ${REPO}
     prefix examples/mailreader/kmail-plasma/
     branch master
     max revision 1032700
@@ -1209,7 +1208,7 @@ end match
 #	[ Parent: /branches/work/komo/kdepim @ 1129064 <- /trunk/KDE/kdepim @ 1129062 ]
 #	[ add incidenceeditor-ng HEAD 1173471 ]
 match /trunk/KDE/kdepim/incidenceeditor-ng/
-    repository kdepim
+    repository ${REPO}
     prefix incidenceeditor-ng/
     branch master
     min revision 1173471
@@ -1217,7 +1216,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/incidenceeditors/incidenceeditor-ng 1173471 1161348 ]
 match /trunk/KDE/kdepim/incidenceeditors/incidenceeditor-ng/
-    repository kdepim
+    repository ${REPO}
     prefix incidenceeditor-ng/
     branch master
     max revision 1173471
@@ -1226,7 +1225,7 @@ end match
 
 #	[ parent branches/work/kdepim_kcalcore/incidenceeditors/incidenceeditor-ng 1161348 1146648 ]
 match /branches/work/kdepim_kcalcore/incidenceeditors/incidenceeditor-ng/
-    repository kdepim
+    repository ${REPO}
     prefix incidenceeditor-ng/
     branch master
     max revision 1161348
@@ -1235,7 +1234,7 @@ end match
 
 #	[ parent branches/work/komo/kdepim/incidenceeditors/incidenceeditor-ng 1146648 1129062 ]
 match /branches/work/komo/kdepim/incidenceeditors/incidenceeditor-ng/
-    repository kdepim
+    repository ${REPO}
     prefix incidenceeditor-ng/
     branch master
     max revision 1146648
@@ -1244,7 +1243,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/incidenceeditors/incidenceeditor-ng 1129062 0 ]
 match /trunk/KDE/kdepim/incidenceeditors/incidenceeditor-ng/
-    repository kdepim
+    repository ${REPO}
     prefix incidenceeditor-ng/
     branch master
     max revision 1129062
@@ -1256,7 +1255,7 @@ end match
 #	[ Move/Replace: /branches/work/kdepim_kcalcore/incidenceeditors/incidenceeditor-ng/tests @ 1151220 <- /trunk/KDE/kdepim/incidenceeditors/incidenceeditor-ng/tests @ 1151072 ]
 #	[ add incidenceeditor-ng/tests HEAD 1173471 ]
 match /trunk/KDE/kdepim/incidenceeditor-ng/tests/
-    repository kdepim
+    repository ${REPO}
     prefix incidenceeditor-ng/tests/
     branch master
     min revision 1173471
@@ -1264,7 +1263,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/incidenceeditors/incidenceeditor-ng/tests 1173471 1151072 ]
 match /trunk/KDE/kdepim/incidenceeditors/incidenceeditor-ng/tests/
-    repository kdepim
+    repository ${REPO}
     prefix incidenceeditor-ng/tests/
     branch master
     max revision 1173471
@@ -1273,7 +1272,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/incidenceeditors/incidenceeditor-ng/tests 1151072 0 ]
 match /trunk/KDE/kdepim/incidenceeditors/incidenceeditor-ng/tests/
-    repository kdepim
+    repository ${REPO}
     prefix incidenceeditor-ng/tests/
     branch master
     max revision 1151072
@@ -1284,7 +1283,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kcontactmanager @ 908875 <- /trunk/KDE/kdepim/akonadi/kabc/kcontactmanager @ 908737 ]
 #	[ add kaddressbook HEAD 1006756 ]
 match /trunk/KDE/kdepim/kaddressbook/
-    repository kdepim
+    repository ${REPO}
     prefix kaddressbook/
     branch master
     min revision 1006756
@@ -1292,7 +1291,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kcontactmanager 1006756 908737 ]
 match /trunk/KDE/kdepim/kcontactmanager/
-    repository kdepim
+    repository ${REPO}
     prefix kaddressbook/
     branch master
     max revision 1006756
@@ -1301,7 +1300,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/kabc/kcontactmanager 908737 0 ]
 match /trunk/KDE/kdepim/akonadi/kabc/kcontactmanager/
-    repository kdepim
+    repository ${REPO}
     prefix kaddressbook/
     branch master
     max revision 908737
@@ -1323,7 +1322,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/kaddressbook @ 1007291 <- /trunk/KDE/kdepim/kcontactmanager @ 1006756 ]
 #	[ add kaddressbook/icons HEAD 1006756 ]
 match /trunk/KDE/kdepim/kaddressbook/icons/
-    repository kdepim
+    repository ${REPO}
     prefix kaddressbook/icons/
     branch master
     min revision 1006756
@@ -1331,7 +1330,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/kcontactmanager/icons 1006756 0 ]
 match /trunk/KDE/kdepim/kcontactmanager/icons/
-    repository kdepim
+    repository ${REPO}
     prefix kaddressbook/icons/
     branch master
     max revision 1006756
@@ -1346,7 +1345,7 @@ end match
 #	[ Parent: /trunk/kdepim/kaddressbook @ 163594 <- /trunk/kdebase/kaddressbook @ 163593 ]
 #	[ add kaddressbook/printing HEAD 961396 ]
 match /trunk/KDE/kdepim/kaddressbook/printing/
-    repository kdepim
+    repository ${REPO}
     prefix kaddressbook/printing/
     branch master
     min revision 961396
@@ -1354,7 +1353,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kaddressbook/printing 961396 163593 ]
 match /trunk/KDE/kdepim/kaddressbook/printing/
-    repository kdepim
+    repository ${REPO}
     prefix kaddressbook/printing/
     branch master
     max revision 961396
@@ -1363,7 +1362,7 @@ end match
 
 #	[ parent trunk/kdebase/kaddressbook/printing 163593 0 ]
 match /trunk/kdebase/kaddressbook/printing/
-    repository kdepim
+    repository ${REPO}
     prefix kaddressbook/printing/
     branch master
     max revision 163593
@@ -1442,7 +1441,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add kalarm/lib HEAD 433396 ]
 match /trunk/KDE/kdepim/kalarm/lib/
-    repository kdepim
+    repository ${REPO}
     prefix kalarm/lib/
     branch master
     min revision 433396
@@ -1450,7 +1449,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kalarm/widgets 433396 0 ]
 match /trunk/KDE/kdepim/kalarm/widgets/
-    repository kdepim
+    repository ${REPO}
     prefix kalarm/lib/
     branch master
     max revision 433396
@@ -1467,7 +1466,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kdgantt2 @ 1146860 <- /branches/work/komo/kdepim/kdgantt2 @ 1137939 ]
 #	[ add kdgantt2 HEAD 1137939 ]
 match /trunk/KDE/kdepim/kdgantt2/
-    repository kdepim
+    repository ${REPO}
     prefix kdgantt2/
     branch master
     min revision 1137939
@@ -1475,7 +1474,7 @@ end match
 
 #	[ move branches/work/komo/kdepim/kdgantt2 1137939 0 ]
 match /branches/work/komo/kdepim/kdgantt2/
-    repository kdepim
+    repository ${REPO}
     prefix kdgantt2/
     branch master
     max revision 1137939
@@ -1522,7 +1521,7 @@ end match
 #	[ Parent: /trunk/KDE/kdeutils @ 409203 <- /trunk/kdeutils @ 409202 ]
 #	[ add kjots/icons HEAD 808798 ]
 match /trunk/KDE/kdepim/kjots/icons/
-    repository kdepim
+    repository ${REPO}
     prefix kjots/icons/
     branch master
     min revision 808798
@@ -1530,7 +1529,7 @@ end match
 
 #	[ move trunk/KDE/kdeutils/kjots/icons 808798 0 ]
 match /trunk/KDE/kdeutils/kjots/icons/
-    repository kdepim
+    repository ${REPO}
     prefix kjots/icons/
     branch master
     max revision 808798
@@ -1540,7 +1539,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kjots/plasmoid @ 1090867 <- /branches/work/akonadi-ports/kdepim/kjots/plasmoid @ 1040650 ]
 #	[ add kjots/plasmoid HEAD 1040650 ]
 match /trunk/KDE/kdepim/kjots/plasmoid/
-    repository kdepim
+    repository ${REPO}
     prefix kjots/plasmoid/
     branch master
     min revision 1040650
@@ -1548,7 +1547,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/kjots/plasmoid 1040650 0 ]
 match /branches/work/akonadi-ports/kdepim/kjots/plasmoid/
-    repository kdepim
+    repository ${REPO}
     prefix kjots/plasmoid/
     branch master
     max revision 1040650
@@ -1558,7 +1557,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kjots/themes @ 1090867 <- /branches/work/akonadi-ports/kdepim/kjots/themes @ 1040526 ]
 #	[ add kjots/themes HEAD 1040526 ]
 match /trunk/KDE/kdepim/kjots/themes/
-    repository kdepim
+    repository ${REPO}
     prefix kjots/themes/
     branch master
     min revision 1040526
@@ -1566,7 +1565,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/kjots/themes 1040526 0 ]
 match /branches/work/akonadi-ports/kdepim/kjots/themes/
-    repository kdepim
+    repository ${REPO}
     prefix kjots/themes/
     branch master
     max revision 1040526
@@ -1576,7 +1575,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/kjots/themes @ 1090867 <- /branches/work/akonadi-ports/kdepim/kjots/themes @ 1040526 ]
 #	[ add kjots/themes/default HEAD 1040526 ]
 match /trunk/KDE/kdepim/kjots/themes/default/
-    repository kdepim
+    repository ${REPO}
     prefix kjots/themes/default/
     branch master
     min revision 1040526
@@ -1584,7 +1583,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/kjots/themes/default 1040526 0 ]
 match /branches/work/akonadi-ports/kdepim/kjots/themes/default/
-    repository kdepim
+    repository ${REPO}
     prefix kjots/themes/default/
     branch master
     max revision 1040526
@@ -1607,7 +1606,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/certmanager @ 200755 <- /trunk/kdenetwork/certmanager @ 200754 ]
 #	[ add kleopatra HEAD 827660 ]
 match /trunk/KDE/kdepim/kleopatra/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/
     branch master
     min revision 827660
@@ -1615,7 +1614,7 @@ end match
 
 #	[ move branches/kdepim/enterprise4/kdepim/kleopatra 827660 809772 ]
 match /branches/kdepim/enterprise4/kdepim/kleopatra/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/
     branch master
     max revision 827660
@@ -1624,7 +1623,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/kleopatra 809772 495273 ]
 match /trunk/KDE/kdepim/kleopatra/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/
     branch master
     max revision 809772
@@ -1633,7 +1632,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/certmanager 495273 200754 ]
 match /trunk/KDE/kdepim/certmanager/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/
     branch master
     max revision 495273
@@ -1642,7 +1641,7 @@ end match
 
 #	[ move trunk/kdenetwork/certmanager 200754 0 ]
 match /trunk/kdenetwork/certmanager/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/
     branch master
     max revision 200754
@@ -1653,7 +1652,7 @@ end match
 #	[ Parent: /branches/kdepim/enterprise4/kdepim @ 809773 <- /trunk/KDE/kdepim @ 809772 ]
 #	[ add kleopatra/commands HEAD 827660 ]
 match /trunk/KDE/kdepim/kleopatra/commands/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/commands/
     branch master
     min revision 827660
@@ -1661,7 +1660,7 @@ end match
 
 #	[ parent branches/kdepim/enterprise4/kdepim/kleopatra/commands 827660 0 ]
 match /branches/kdepim/enterprise4/kdepim/kleopatra/commands/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/commands/
     branch master
     max revision 827660
@@ -1676,7 +1675,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add kleopatra/conf HEAD 495273 ]
 match /trunk/KDE/kdepim/kleopatra/conf/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/conf/
     branch master
     min revision 495273
@@ -1684,7 +1683,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/certmanager/conf 495273 0 ]
 match /trunk/KDE/kdepim/certmanager/conf/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/conf/
     branch master
     max revision 495273
@@ -1720,7 +1719,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kleopatra/kcfg @ 801928 <- /trunk/KDE/kdepim/kleopatra/common @ 801904 ]
 #	[ add kleopatra/kcfg HEAD 801904 ]
 match /trunk/KDE/kdepim/kleopatra/kcfg/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/kcfg/
     branch master
     min revision 801904
@@ -1728,7 +1727,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kleopatra/common 801904 0 ]
 match /trunk/KDE/kdepim/kleopatra/common/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/kcfg/
     branch master
     max revision 801904
@@ -1741,7 +1740,7 @@ end match
 #	[ Move/Replace: /branches/work/kdab-post-4.0/kdepim/kleopatra/kgpgconf @ 728874 <- /branches/work/kdab-post-4.0/kdepim/kleopatra/kleoadmin @ 728808 ]
 #	[ add kleopatra/kgpgconf HEAD 758649 ]
 match /trunk/KDE/kdepim/kleopatra/kgpgconf/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/kgpgconf/
     branch master
     min revision 758649
@@ -1749,7 +1748,7 @@ end match
 
 #	[ move branches/work/kdab-post-4.0/kdepim/kleopatra/kgpgconf 758649 728808 ]
 match /branches/work/kdab-post-4.0/kdepim/kleopatra/kgpgconf/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/kgpgconf/
     branch master
     max revision 758649
@@ -1758,7 +1757,7 @@ end match
 
 #	[ move branches/work/kdab-post-4.0/kdepim/kleopatra/kleoadmin 728808 0 ]
 match /branches/work/kdab-post-4.0/kdepim/kleopatra/kleoadmin/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/kgpgconf/
     branch master
     max revision 728808
@@ -1785,7 +1784,7 @@ end match
 #	[ Move/Replace: /branches/kdepim/enterprise4/kdepim/kleopatra/libkleopatraclient/gui @ 810234 <- /trunk/KDE/kdepim/kleopatra/libkleopatraclient/gui @ 810182 ]
 #	[ add kleopatra/libkleopatraclient/gui HEAD 810182 ]
 match /trunk/KDE/kdepim/kleopatra/libkleopatraclient/gui/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/libkleopatraclient/gui/
     branch master
     min revision 810182
@@ -1793,7 +1792,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kleopatra/libkleopatraclient/gui 810182 0 ]
 match /trunk/KDE/kdepim/kleopatra/libkleopatraclient/gui/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/libkleopatraclient/gui/
     branch master
     max revision 810182
@@ -1816,7 +1815,7 @@ end match
 #	[ Delayed: /branches/work/kdab-post-4.0/kdepim/kleopatra/pics/CMakeLists.txt @ 750686 <- /branches/work/kdab-post-4.0/kdepim/kmail/pics @ 750677 ]
 #	[ add kleopatra/pics HEAD 758649 ]
 match /trunk/KDE/kdepim/kleopatra/pics/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/pics/
     branch master
     min revision 758649
@@ -1824,7 +1823,7 @@ end match
 
 #	[ move branches/work/kdab-post-4.0/kdepim/kleopatra/pics 758649 0 ]
 match /branches/work/kdab-post-4.0/kdepim/kleopatra/pics/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/pics/
     branch master
     max revision 758649
@@ -1838,7 +1837,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kleopatra/smartcard @ 997124 <- /branches/kdepim/enterprise4/kdepim/kleopatra/smartcard @ 990538 ]
 #	[ add kleopatra/smartcard HEAD 990538 ]
 match /trunk/KDE/kdepim/kleopatra/smartcard/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/smartcard/
     branch master
     min revision 990538
@@ -1846,7 +1845,7 @@ end match
 
 #	[ move branches/kdepim/enterprise4/kdepim/kleopatra/smartcard 990538 0 ]
 match /branches/kdepim/enterprise4/kdepim/kleopatra/smartcard/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/smartcard/
     branch master
     max revision 990538
@@ -1862,7 +1861,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kleopatra/tests/gnupg_home @ 758673 <- /branches/work/kdab-post-4.0/kdepim/kleopatra/tests/gnupg_home @ 758649 ]
 #	[ add kleopatra/tests/gnupg_home HEAD 758649 ]
 match /trunk/KDE/kdepim/kleopatra/tests/gnupg_home/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/tests/gnupg_home/
     branch master
     min revision 758649
@@ -1870,7 +1869,7 @@ end match
 
 #	[ move branches/work/kdab-post-4.0/kdepim/kleopatra/tests/gnupg_home 758649 0 ]
 match /branches/work/kdab-post-4.0/kdepim/kleopatra/tests/gnupg_home/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/tests/gnupg_home/
     branch master
     max revision 758649
@@ -1882,7 +1881,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/kleopatra/tests/gnupg_home @ 758673 <- /branches/work/kdab-post-4.0/kdepim/kleopatra/tests/gnupg_home @ 758649 ]
 #	[ add kleopatra/tests/gnupg_home/dirmngr-cache.d HEAD 758649 ]
 match /trunk/KDE/kdepim/kleopatra/tests/gnupg_home/dirmngr-cache.d/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/tests/gnupg_home/dirmngr-cache.d/
     branch master
     min revision 758649
@@ -1890,7 +1889,7 @@ end match
 
 #	[ parent branches/work/kdab-post-4.0/kdepim/kleopatra/tests/gnupg_home/dirmngr-cache.d 758649 0 ]
 match /branches/work/kdab-post-4.0/kdepim/kleopatra/tests/gnupg_home/dirmngr-cache.d/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/tests/gnupg_home/dirmngr-cache.d/
     branch master
     max revision 758649
@@ -1907,7 +1906,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kleopatra/tests/gpg-connect-agent-scripts @ 758673 <- /branches/work/kdab-post-4.0/kdepim/kleopatra/tests/gpg-connect-agent-scripts @ 758649 ]
 #	[ add kleopatra/tests/gpg-connect-agent-scripts HEAD 758649 ]
 match /trunk/KDE/kdepim/kleopatra/tests/gpg-connect-agent-scripts/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/tests/gpg-connect-agent-scripts/
     branch master
     min revision 758649
@@ -1915,7 +1914,7 @@ end match
 
 #	[ move branches/work/kdab-post-4.0/kdepim/kleopatra/tests/gpg-connect-agent-scripts 758649 0 ]
 match /branches/work/kdab-post-4.0/kdepim/kleopatra/tests/gpg-connect-agent-scripts/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/tests/gpg-connect-agent-scripts/
     branch master
     max revision 758649
@@ -1927,7 +1926,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kleopatra/uiserver @ 758673 <- /branches/work/kdab-post-4.0/kdepim/kleopatra/uiserver @ 758649 ]
 #	[ add kleopatra/uiserver HEAD 758649 ]
 match /trunk/KDE/kdepim/kleopatra/uiserver/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/uiserver/
     branch master
     min revision 758649
@@ -1935,7 +1934,7 @@ end match
 
 #	[ move branches/work/kdab-post-4.0/kdepim/kleopatra/uiserver 758649 0 ]
 match /branches/work/kdab-post-4.0/kdepim/kleopatra/uiserver/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/uiserver/
     branch master
     max revision 758649
@@ -1951,7 +1950,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kleopatra/view @ 781675 <- /trunk/KDE/kdepim/kleopatra/controllers @ 780268 ]
 #	[ add kleopatra/view HEAD 780268 ]
 match /trunk/KDE/kdepim/kleopatra/view/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/view/
     branch master
     min revision 780268
@@ -1959,7 +1958,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kleopatra/controllers 780268 0 ]
 match /trunk/KDE/kdepim/kleopatra/controllers/
-    repository kdepim
+    repository ${REPO}
     prefix kleopatra/view/
     branch master
     max revision 780268
@@ -2234,7 +2233,7 @@ end match
 #	[ Delayed: /trunk/kdepim/kmail/vcard.h @ 200753 <- /trunk/kdenetwork/kmail @ 200752 ]
 #	[ add kmail HEAD 1076458 ]
 match /trunk/KDE/kdepim/kmail/
-    repository kdepim
+    repository ${REPO}
     prefix kmail/
     branch master
     min revision 1076458
@@ -2242,7 +2241,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/kmail 1076458 0 ]
 match /branches/work/akonadi-ports/kdepim/kmail/
-    repository kdepim
+    repository ${REPO}
     prefix kmail/
     branch master
     max revision 1076458
@@ -2257,7 +2256,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/kmail/about @ 200753 <- /trunk/kdenetwork/kmail/about @ 200752 ]
 #	[ add kmail/about HEAD 1076458 ]
 match /trunk/KDE/kdepim/kmail/about/
-    repository kdepim
+    repository ${REPO}
     prefix kmail/about/
     branch master
     min revision 1076458
@@ -2265,7 +2264,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/kmail/about 1076458 200752 ]
 match /branches/work/akonadi-ports/kdepim/kmail/about/
-    repository kdepim
+    repository ${REPO}
     prefix kmail/about/
     branch master
     max revision 1076458
@@ -2273,9 +2272,9 @@ match /branches/work/akonadi-ports/kdepim/kmail/about/
 end match
 
 #	[ move trunk/kdenetwork/kmail/about 200752 0 ]
-match /trunk/kdenetwork/kmail/about/
-    repository kdepim
-    prefix kmail/about/
+match /trunk/kdenetwork/kmail/ #about/
+    repository ${REPO}
+    prefix kmail/ #about/
     branch master
     max revision 200752
 end match
@@ -2313,7 +2312,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/kmail/interfaces @ 200753 <- /trunk/kdenetwork/kmail/interfaces @ 200752 ]
 #	[ add kmail/interfaces HEAD 200752 ]
 match /trunk/KDE/kdepim/kmail/interfaces/
-    repository kdepim
+    repository ${REPO}
     prefix kmail/interfaces/
     branch master
     min revision 200752
@@ -2321,7 +2320,7 @@ end match
 
 #	[ move trunk/kdenetwork/kmail/interfaces 200752 0 ]
 match /trunk/kdenetwork/kmail/interfaces/
-    repository kdepim
+    repository ${REPO}
     prefix kmail/interfaces/
     branch master
     max revision 200752
@@ -2360,7 +2359,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/kmail/pics @ 200753 <- /trunk/kdenetwork/kmail/pics @ 200752 ]
 #	[ add kmail/pics HEAD 200752 ]
 match /trunk/KDE/kdepim/kmail/pics/
-    repository kdepim
+    repository ${REPO}
     prefix kmail/pics/
     branch master
     min revision 200752
@@ -2368,7 +2367,7 @@ end match
 
 #	[ move trunk/kdenetwork/kmail/pics 200752 0 ]
 match /trunk/kdenetwork/kmail/pics/
-    repository kdepim
+    repository ${REPO}
     prefix kmail/pics/
     branch master
     max revision 200752
@@ -2394,7 +2393,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/kmailcvt @ 200754 <- /trunk/kdenetwork/kmailcvt @ 200753 ]
 #	[ add kmailcvt HEAD 200753 ]
 match /trunk/KDE/kdepim/kmailcvt/
-    repository kdepim
+    repository ${REPO}
     prefix kmailcvt/
     branch master
     min revision 200753
@@ -2402,7 +2401,7 @@ end match
 
 #	[ move trunk/kdenetwork/kmailcvt 200753 0 ]
 match /trunk/kdenetwork/kmailcvt/
-    repository kdepim
+    repository ${REPO}
     prefix kmailcvt/
     branch master
     max revision 200753
@@ -2420,7 +2419,7 @@ end match
 #	[ Parent: /trunk/kdepim/kmailcvt @ 200754 <- /trunk/kdenetwork/kmailcvt @ 200753 ]
 #	[ add kmailcvt/samples HEAD 200753 ]
 match /trunk/KDE/kdepim/kmailcvt/samples/
-    repository kdepim
+    repository ${REPO}
     prefix kmailcvt/samples/
     branch master
     min revision 200753
@@ -2428,7 +2427,7 @@ end match
 
 #	[ parent trunk/kdenetwork/kmailcvt/samples 200753 0 ]
 match /trunk/kdenetwork/kmailcvt/samples/
-    repository kdepim
+    repository ${REPO}
     prefix kmailcvt/samples/
     branch master
     max revision 200753
@@ -2471,7 +2470,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/knode @ 200754 <- /trunk/kdenetwork/knode @ 200753 ]
 #	[ add knode HEAD 200753 ]
 match /trunk/KDE/kdepim/knode/
-    repository kdepim
+    repository ${REPO}
     prefix knode/
     branch master
     min revision 200753
@@ -2479,7 +2478,7 @@ end match
 
 #	[ move trunk/kdenetwork/knode 200753 0 ]
 match /trunk/kdenetwork/knode/
-    repository kdepim
+    repository ${REPO}
     prefix knode/
     branch master
     max revision 200753
@@ -2496,7 +2495,7 @@ end match
 #	[ Parent: /trunk/kdepim/knode @ 200754 <- /trunk/kdenetwork/knode @ 200753 ]
 #	[ add knode/filters HEAD 200753 ]
 match /trunk/KDE/kdepim/knode/filters/
-    repository kdepim
+    repository ${REPO}
     prefix knode/filters/
     branch master
     min revision 200753
@@ -2504,7 +2503,7 @@ end match
 
 #	[ parent trunk/kdenetwork/knode/filters 200753 0 ]
 match /trunk/kdenetwork/knode/filters/
-    repository kdepim
+    repository ${REPO}
     prefix knode/filters/
     branch master
     max revision 200753
@@ -2529,7 +2528,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/knotes @ 120752 <- /trunk/kdeutils/knotes @ 120751 ]
 #	[ add knotes HEAD 120751 ]
 match /trunk/KDE/kdepim/knotes/
-    repository kdepim
+    repository ${REPO}
     prefix knotes/
     branch master
     min revision 120751
@@ -2537,7 +2536,7 @@ end match
 
 #	[ move trunk/kdeutils/knotes 120751 0 ]
 match /trunk/kdeutils/knotes/
-    repository kdepim
+    repository ${REPO}
     prefix knotes/
     branch master
     max revision 120751
@@ -2571,7 +2570,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/kontact/pics @ 200743 <- /trunk/kdepim/kaplan/pics @ 200742 ]
 #	[ add kontact/pics HEAD 200742 ]
 match /trunk/KDE/kdepim/kontact/pics/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/pics/
     branch master
     min revision 200742
@@ -2579,7 +2578,7 @@ end match
 
 #	[ move trunk/kdepim/kaplan/pics 200742 0 ]
 match /trunk/kdepim/kaplan/pics/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/pics/
     branch master
     max revision 200742
@@ -2597,7 +2596,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/kontact/plugins @ 200743 <- /trunk/kdepim/kaplan/plugins @ 200742 ]
 #	[ add kontact/plugins HEAD 200742 ]
 match /trunk/KDE/kdepim/kontact/plugins/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/
     branch master
     min revision 200742
@@ -2605,7 +2604,7 @@ end match
 
 #	[ move trunk/kdepim/kaplan/plugins 200742 0 ]
 match /trunk/kdepim/kaplan/plugins/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/
     branch master
     max revision 200742
@@ -2620,7 +2619,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kontact/plugins/kaddressbook @ 1007358 <- /trunk/KDE/kdepim/kontact/plugins/kcontactmanager @ 1007307 ]
 #	[ add kontact/plugins/kaddressbook HEAD 1007307 ]
 match /trunk/KDE/kdepim/kontact/plugins/kaddressbook/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/kaddressbook/
     branch master
     min revision 1007307
@@ -2628,7 +2627,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kontact/plugins/kcontactmanager 1007307 0 ]
 match /trunk/KDE/kdepim/kontact/plugins/kcontactmanager/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/kaddressbook/
     branch master
     max revision 1007307
@@ -2648,7 +2647,7 @@ end match
 #	[ Parent: /trunk/kdepim/kontact/plugins @ 200743 <- /trunk/kdepim/kaplan/plugins @ 200742 ]
 #	[ add kontact/plugins/kmail HEAD 1076458 ]
 match /trunk/KDE/kdepim/kontact/plugins/kmail/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/kmail/
     branch master
     min revision 1076458
@@ -2656,7 +2655,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/kontact/plugins/kmail 1076458 200742 ]
 match /branches/work/akonadi-ports/kdepim/kontact/plugins/kmail/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/kmail/
     branch master
     max revision 1076458
@@ -2665,7 +2664,7 @@ end match
 
 #	[ parent trunk/kdepim/kaplan/plugins/kmail 200742 0 ]
 match /trunk/kdepim/kaplan/plugins/kmail/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/kmail/
     branch master
     max revision 200742
@@ -2693,7 +2692,7 @@ end match
 #	[ Parent: /trunk/kdepim/kontact/plugins @ 200743 <- /trunk/kdepim/kaplan/plugins @ 200742 ]
 #	[ add kontact/plugins/korganizer HEAD 1161348 ]
 match /trunk/KDE/kdepim/kontact/plugins/korganizer/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/korganizer/
     branch master
     min revision 1161348
@@ -2701,7 +2700,7 @@ end match
 
 #	[ move branches/work/kdepim_kcalcore/kontact/plugins/korganizer 1161348 1076609 ]
 match /branches/work/kdepim_kcalcore/kontact/plugins/korganizer/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/korganizer/
     branch master
     max revision 1161348
@@ -2710,7 +2709,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/kontact/plugins/korganizer 1076609 0 ]
 match /branches/work/akonadi-ports/kdepim/kontact/plugins/korganizer/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/korganizer/
     branch master
     max revision 1076609
@@ -2723,7 +2722,7 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim @ 982690 <- /trunk/KDE/kdepim @ 982689 ]
 #	[ add kontact/plugins/korganizer/tests HEAD 1161348 ]
 match /trunk/KDE/kdepim/kontact/plugins/korganizer/tests/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/korganizer/tests/
     branch master
     min revision 1161348
@@ -2731,7 +2730,7 @@ end match
 
 #	[ parent branches/work/kdepim_kcalcore/kontact/plugins/korganizer/tests 1161348 1076609 ]
 match /branches/work/kdepim_kcalcore/kontact/plugins/korganizer/tests/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/korganizer/tests/
     branch master
     max revision 1161348
@@ -2740,7 +2739,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/kontact/plugins/korganizer/tests 1076609 0 ]
 match /branches/work/akonadi-ports/kdepim/kontact/plugins/korganizer/tests/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/korganizer/tests/
     branch master
     max revision 1076609
@@ -2752,7 +2751,7 @@ end match
 #	[ Parent: /branches/KDE/3.5/kdepim @ 438982 <- /trunk/KDE/kdepim @ 438981 ]
 #	[ add kontact/plugins/ktimetracker HEAD 772165 ]
 match /trunk/KDE/kdepim/kontact/plugins/ktimetracker/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/ktimetracker/
     branch master
     min revision 772165
@@ -2760,7 +2759,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kontact/plugins/karm 772165 0 ]
 match /trunk/KDE/kdepim/kontact/plugins/karm/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/ktimetracker/
     branch master
     max revision 772165
@@ -2772,7 +2771,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/kontact/plugins/planner @ 766456 <- /branches/work/kdepim-3.5.5+/kontact/plugins/planner @ 766413 ]
 #	[ add kontact/plugins/planner HEAD 1076613 ]
 match /trunk/KDE/kdepim/kontact/plugins/planner/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/planner/
     branch master
     min revision 1076613
@@ -2780,7 +2779,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/kontact/plugins/planner 1076613 766413 ]
 match /branches/work/akonadi-ports/kdepim/kontact/plugins/planner/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/planner/
     branch master
     max revision 1076613
@@ -2789,7 +2788,7 @@ end match
 
 #	[ move branches/work/kdepim-3.5.5+/kontact/plugins/planner 766413 0 ]
 match /branches/work/kdepim-3.5.5+/kontact/plugins/planner/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/planner/
     branch master
     max revision 766413
@@ -2805,7 +2804,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add kontact/plugins/specialdates HEAD 1161348 ]
 match /trunk/KDE/kdepim/kontact/plugins/specialdates/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/specialdates/
     branch master
     min revision 1161348
@@ -2813,7 +2812,7 @@ end match
 
 #	[ move branches/work/kdepim_kcalcore/kontact/plugins/specialdates 1161348 1076609 ]
 match /branches/work/kdepim_kcalcore/kontact/plugins/specialdates/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/specialdates/
     branch master
     max revision 1161348
@@ -2822,7 +2821,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/kontact/plugins/specialdates 1076609 0 ]
 match /branches/work/akonadi-ports/kdepim/kontact/plugins/specialdates/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/plugins/specialdates/
     branch master
     max revision 1076609
@@ -2840,7 +2839,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/kontact/src @ 200743 <- /trunk/kdepim/kaplan/src @ 200742 ]
 #	[ add kontact/src HEAD 200742 ]
 match /trunk/KDE/kdepim/kontact/src/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/src/
     branch master
     min revision 200742
@@ -2848,7 +2847,7 @@ end match
 
 #	[ move trunk/kdepim/kaplan/src 200742 0 ]
 match /trunk/kdepim/kaplan/src/
-    repository kdepim
+    repository ${REPO}
     prefix kontact/src/
     branch master
     max revision 200742
@@ -2871,7 +2870,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add korganizer HEAD 1171033 ]
 match /trunk/KDE/kdepim/korganizer/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/
     branch master
     min revision 1171033
@@ -2879,7 +2878,7 @@ end match
 
 #	[ move branches/work/~smartins/korganizer 1171033 1166746 ]
 match /branches/work/~smartins/korganizer/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/
     branch master
     max revision 1171033
@@ -2888,7 +2887,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/korganizer 1166746 1161348 ]
 match /trunk/KDE/kdepim/korganizer/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/
     branch master
     max revision 1166746
@@ -2897,7 +2896,7 @@ end match
 
 #	[ move branches/work/kdepim_kcalcore/korganizer 1161348 1076604 ]
 match /branches/work/kdepim_kcalcore/korganizer/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/
     branch master
     max revision 1161348
@@ -2906,7 +2905,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/korganizer 1076604 0 ]
 match /branches/work/akonadi-ports/kdepim/korganizer/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/
     branch master
     max revision 1076604
@@ -2921,7 +2920,7 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim @ 982690 <- /trunk/KDE/kdepim @ 982689 ]
 #	[ add korganizer/agendaitem_pixmaps HEAD 1171033 ]
 match /trunk/KDE/kdepim/korganizer/agendaitem_pixmaps/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/agendaitem_pixmaps/
     branch master
     min revision 1171033
@@ -2929,7 +2928,7 @@ end match
 
 #	[ parent branches/work/~smartins/korganizer/agendaitem_pixmaps 1171033 1166746 ]
 match /branches/work/~smartins/korganizer/agendaitem_pixmaps/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/agendaitem_pixmaps/
     branch master
     max revision 1171033
@@ -2938,7 +2937,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/korganizer/agendaitem_pixmaps 1166746 1161348 ]
 match /trunk/KDE/kdepim/korganizer/agendaitem_pixmaps/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/agendaitem_pixmaps/
     branch master
     max revision 1166746
@@ -2947,7 +2946,7 @@ end match
 
 #	[ parent branches/work/kdepim_kcalcore/korganizer/agendaitem_pixmaps 1161348 0 ]
 match /branches/work/kdepim_kcalcore/korganizer/agendaitem_pixmaps/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/agendaitem_pixmaps/
     branch master
     max revision 1161348
@@ -3030,7 +3029,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/korganizer/pixmaps @ 41240 <- /trunk/korganizer/src/pixmaps @ 41239 ]
 #	[ add korganizer/pixmaps HEAD 41239 ]
 match /trunk/KDE/kdepim/korganizer/pixmaps/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/pixmaps/
     branch master
     min revision 41239
@@ -3038,7 +3037,7 @@ end match
 
 #	[ move trunk/korganizer/src/pixmaps 41239 0 ]
 match /trunk/korganizer/src/pixmaps/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/pixmaps/
     branch master
     max revision 41239
@@ -3184,7 +3183,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/korganizer/plugins/printing/year @ 615752 <- /branches/work/kdepim-3.5.5+/korganizer/plugins/printing/year @ 613730 ]
 #	[ add korganizer/plugins/printing/year HEAD 613730 ]
 match /trunk/KDE/kdepim/korganizer/plugins/printing/year/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/plugins/printing/year/
     branch master
     min revision 613730
@@ -3192,7 +3191,7 @@ end match
 
 #	[ move branches/work/kdepim-3.5.5+/korganizer/plugins/printing/year 613730 0 ]
 match /branches/work/kdepim-3.5.5+/korganizer/plugins/printing/year/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/plugins/printing/year/
     branch master
     max revision 613730
@@ -3236,7 +3235,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/korganizer/sounds @ 41240 <- /trunk/korganizer/src/sounds @ 41239 ]
 #	[ add korganizer/sounds HEAD 41239 ]
 match /trunk/KDE/kdepim/korganizer/sounds/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/sounds/
     branch master
     min revision 41239
@@ -3244,7 +3243,7 @@ end match
 
 #	[ move trunk/korganizer/src/sounds 41239 0 ]
 match /trunk/korganizer/src/sounds/
-    repository kdepim
+    repository ${REPO}
     prefix korganizer/sounds/
     branch master
     max revision 41239
@@ -3385,7 +3384,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/ksendemail @ 877088 <- /branches/kdepim/enterprise4/kdepim/ksendemail @ 874707 ]
 #	[ add ksendemail HEAD 874707 ]
 match /trunk/KDE/kdepim/ksendemail/
-    repository kdepim
+    repository ${REPO}
     prefix ksendemail/
     branch master
     min revision 874707
@@ -3393,7 +3392,7 @@ end match
 
 #	[ move branches/kdepim/enterprise4/kdepim/ksendemail 874707 0 ]
 match /branches/kdepim/enterprise4/kdepim/ksendemail/
-    repository kdepim
+    repository ${REPO}
     prefix ksendemail/
     branch master
     max revision 874707
@@ -3407,7 +3406,7 @@ end match
 #	[ Move/Replace: /trunk/kdepim/karm @ 112130 <- /trunk/kdeutils/karm @ 112129 ]
 #	[ add ktimetracker HEAD 623063 ]
 match /trunk/KDE/kdepim/ktimetracker/
-    repository kdepim
+    repository ${REPO}
     prefix ktimetracker/
     branch master
     min revision 623063
@@ -3415,7 +3414,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/karm 623063 112129 ]
 match /trunk/KDE/kdepim/karm/
-    repository kdepim
+    repository ${REPO}
     prefix ktimetracker/
     branch master
     max revision 623063
@@ -3424,7 +3423,7 @@ end match
 
 #	[ move trunk/kdeutils/karm 112129 0 ]
 match /trunk/kdeutils/karm/
-    repository kdepim
+    repository ${REPO}
     prefix ktimetracker/
     branch master
     max revision 112129
@@ -3445,7 +3444,7 @@ end match
 #	[ Delayed: /trunk/kdeutils/karm/pics/filedel.xpm @ 51056 <- /trunk/kdeutils/karm/support @ 51055 ]
 #	[ add ktimetracker/pics HEAD 623063 ]
 match /trunk/KDE/kdepim/ktimetracker/pics/
-    repository kdepim
+    repository ${REPO}
     prefix ktimetracker/pics/
     branch master
     min revision 623063
@@ -3453,7 +3452,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/karm/pics 623063 112129 ]
 match /trunk/KDE/kdepim/karm/pics/
-    repository kdepim
+    repository ${REPO}
     prefix ktimetracker/pics/
     branch master
     max revision 623063
@@ -3462,7 +3461,7 @@ end match
 
 #	[ parent trunk/kdeutils/karm/pics 112129 0 ]
 match /trunk/kdeutils/karm/pics/
-    repository kdepim
+    repository ${REPO}
     prefix ktimetracker/pics/
     branch master
     max revision 112129
@@ -3526,7 +3525,7 @@ end match
 #	[ Delayed: /branches/work/akonadi-ports/kdepim/libkdepimdbusinterfaces/urihandler.h @ 1032197 <- /branches/work/akonadi-ports/kdepim/libkdepim @ 1032196 ]
 #	[ add libkdepimdbusinterfaces HEAD 1076606 ]
 match /trunk/KDE/kdepim/libkdepimdbusinterfaces/
-    repository kdepim
+    repository ${REPO}
     prefix libkdepimdbusinterfaces/
     branch master
     min revision 1076606
@@ -3534,7 +3533,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/libkdepimdbusinterfaces 1076606 0 ]
 match /branches/work/akonadi-ports/kdepim/libkdepimdbusinterfaces/
-    repository kdepim
+    repository ${REPO}
     prefix libkdepimdbusinterfaces/
     branch master
     max revision 1076606
@@ -3552,7 +3551,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add libkleo HEAD 827660 ]
 match /trunk/KDE/kdepim/libkleo/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/
     branch master
     min revision 827660
@@ -3560,7 +3559,7 @@ end match
 
 #	[ move branches/kdepim/enterprise4/kdepim/libkleo 827660 690811 ]
 match /branches/kdepim/enterprise4/kdepim/libkleo/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/
     branch master
     max revision 827660
@@ -3569,7 +3568,7 @@ end match
 
 #	[ move trunk/KDE/kdepimlibs/kleo 690811 687074 ]
 match /trunk/KDE/kdepimlibs/kleo/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/
     branch master
     max revision 690811
@@ -3578,7 +3577,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/libkleo 687074 495443 ]
 match /trunk/KDE/kdepim/libkleo/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/
     branch master
     max revision 687074
@@ -3587,7 +3586,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kleopatra/lib 495443 0 ]
 match /trunk/KDE/kdepim/kleopatra/lib/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/
     branch master
     max revision 495443
@@ -3605,7 +3604,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add libkleo/backends HEAD 827660 ]
 match /trunk/KDE/kdepim/libkleo/backends/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/backends/
     branch master
     min revision 827660
@@ -3613,7 +3612,7 @@ end match
 
 #	[ parent branches/kdepim/enterprise4/kdepim/libkleo/backends 827660 690811 ]
 match /branches/kdepim/enterprise4/kdepim/libkleo/backends/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/backends/
     branch master
     max revision 827660
@@ -3622,7 +3621,7 @@ end match
 
 #	[ parent trunk/KDE/kdepimlibs/kleo/backends 690811 687074 ]
 match /trunk/KDE/kdepimlibs/kleo/backends/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/backends/
     branch master
     max revision 690811
@@ -3631,7 +3630,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/libkleo/backends 687074 495443 ]
 match /trunk/KDE/kdepim/libkleo/backends/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/backends/
     branch master
     max revision 687074
@@ -3640,7 +3639,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/kleopatra/lib/backends 495443 0 ]
 match /trunk/KDE/kdepim/kleopatra/lib/backends/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/backends/
     branch master
     max revision 495443
@@ -3659,7 +3658,7 @@ end match
 #	[ Parent: /branches/kdepim/proko2 @ 409205 <- /branches/proko2 @ 409204 ]
 #	[ add libkleo/backends/chiasmus HEAD 434833 ]
 match /trunk/KDE/kdepim/libkleo/backends/chiasmus/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/backends/chiasmus/
     branch master
     min revision 434833
@@ -3667,7 +3666,7 @@ end match
 
 #	[ move branches/kdepim/proko2/kdepim/certmanager/lib/backends/chiasmus 434833 409204 ]
 match /branches/kdepim/proko2/kdepim/certmanager/lib/backends/chiasmus/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/backends/chiasmus/
     branch master
     max revision 434833
@@ -3676,7 +3675,7 @@ end match
 
 #	[ parent branches/proko2/kdepim/certmanager/lib/backends/chiasmus 409204 0 ]
 match /branches/proko2/kdepim/certmanager/lib/backends/chiasmus/
-    repository kdepim
+    repository ${REPO}
     prefix libkleo/backends/chiasmus/
     branch master
     max revision 409204
@@ -3745,7 +3744,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add libkpgp HEAD 683948 ]
 match /trunk/KDE/kdepim/libkpgp/
-    repository kdepim
+    repository ${REPO}
     prefix libkpgp/
     branch master
     min revision 683948
@@ -3753,7 +3752,7 @@ end match
 
 #	[ move trunk/KDE/kdepimlibs/kpgp 683948 681819 ]
 match /trunk/KDE/kdepimlibs/kpgp/
-    repository kdepim
+    repository ${REPO}
     prefix libkpgp/
     branch master
     max revision 683948
@@ -3762,7 +3761,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/libkpgp 681819 0 ]
 match /trunk/KDE/kdepim/libkpgp/
-    repository kdepim
+    repository ${REPO}
     prefix libkpgp/
     branch master
     max revision 681819
@@ -3776,7 +3775,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add libkpgp/pics HEAD 683948 ]
 match /trunk/KDE/kdepim/libkpgp/pics/
-    repository kdepim
+    repository ${REPO}
     prefix libkpgp/pics/
     branch master
     min revision 683948
@@ -3784,7 +3783,7 @@ end match
 
 #	[ parent trunk/KDE/kdepimlibs/kpgp/pics 683948 681819 ]
 match /trunk/KDE/kdepimlibs/kpgp/pics/
-    repository kdepim
+    repository ${REPO}
     prefix libkpgp/pics/
     branch master
     max revision 683948
@@ -3793,7 +3792,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/libkpgp/pics 681819 0 ]
 match /trunk/KDE/kdepim/libkpgp/pics/
-    repository kdepim
+    repository ${REPO}
     prefix libkpgp/pics/
     branch master
     max revision 681819
@@ -3871,7 +3870,7 @@ end match
 #	[ Move/Replace: /branches/work/akonadi-ports/kdepim/messagecomposer @ 1007218 <- /branches/work/akonadi-ports/kdepimlibs/messagecomposer @ 1007215 ]
 #	[ add messagecomposer HEAD 1073923 ]
 match /trunk/KDE/kdepim/messagecomposer/
-    repository kdepim
+    repository ${REPO}
     prefix messagecomposer/
     branch master
     min revision 1073923
@@ -3879,7 +3878,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/messagecomposer 1073923 1007215 ]
 match /branches/work/akonadi-ports/kdepim/messagecomposer/
-    repository kdepim
+    repository ${REPO}
     prefix messagecomposer/
     branch master
     max revision 1073923
@@ -3888,7 +3887,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepimlibs/messagecomposer 1007215 0 ]
 match /branches/work/akonadi-ports/kdepimlibs/messagecomposer/
-    repository kdepim
+    repository ${REPO}
     prefix messagecomposer/
     branch master
     max revision 1007215
@@ -3899,7 +3898,7 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim/messagecomposer @ 1007218 <- /branches/work/akonadi-ports/kdepimlibs/messagecomposer @ 1007215 ]
 #	[ add messagecomposer/tests HEAD 1073923 ]
 match /trunk/KDE/kdepim/messagecomposer/tests/
-    repository kdepim
+    repository ${REPO}
     prefix messagecomposer/tests/
     branch master
     min revision 1073923
@@ -3907,7 +3906,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/messagecomposer/tests 1073923 1007215 ]
 match /branches/work/akonadi-ports/kdepim/messagecomposer/tests/
-    repository kdepim
+    repository ${REPO}
     prefix messagecomposer/tests/
     branch master
     max revision 1073923
@@ -3916,7 +3915,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepimlibs/messagecomposer/tests 1007215 0 ]
 match /branches/work/akonadi-ports/kdepimlibs/messagecomposer/tests/
-    repository kdepim
+    repository ${REPO}
     prefix messagecomposer/tests/
     branch master
     max revision 1007215
@@ -3956,7 +3955,7 @@ end match
 #	[ Delayed: /branches/work/akonadi-ports/kdepim/messagecore/tests/qtest_messagecore.h @ 1031853 <- /branches/work/akonadi-ports/kdepim/libkdepim/tests @ 1031819 ]
 #	[ add messagecore HEAD 1031863 ]
 match /trunk/KDE/kdepim/messagecore/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/
     branch master
     min revision 1031863
@@ -3964,7 +3963,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/messagecore 1031863 0 ]
 match /branches/work/akonadi-ports/kdepim/messagecore/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/
     branch master
     max revision 1031863
@@ -3986,7 +3985,7 @@ end match
 #	[ Delayed: /branches/work/akonadi-ports/kdepim/messagecore/tests/qtest_messagecore.h @ 1031853 <- /branches/work/akonadi-ports/kdepim/libkdepim/tests @ 1031819 ]
 #	[ add messagecore/tests HEAD 1031863 ]
 match /trunk/KDE/kdepim/messagecore/tests/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/tests/
     branch master
     min revision 1031863
@@ -3994,7 +3993,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/messagecore/tests 1031863 0 ]
 match /branches/work/akonadi-ports/kdepim/messagecore/tests/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/tests/
     branch master
     max revision 1031863
@@ -4007,7 +4006,7 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim/messagecomposer @ 1007218 <- /branches/work/akonadi-ports/kdepimlibs/messagecomposer @ 1007215 ]
 #	[ add messagecore/tests/attachments HEAD 1031819 ]
 match /trunk/KDE/kdepim/messagecore/tests/attachments/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/tests/attachments/
     branch master
     min revision 1031819
@@ -4015,7 +4014,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/libkdepim/tests/attachments 1031819 1007223 ]
 match /branches/work/akonadi-ports/kdepim/libkdepim/tests/attachments/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/tests/attachments/
     branch master
     max revision 1031819
@@ -4024,7 +4023,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/messagecomposer/tests/attachments 1007223 0 ]
 match /branches/work/akonadi-ports/kdepim/messagecomposer/tests/attachments/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/tests/attachments/
     branch master
     max revision 1007223
@@ -4035,7 +4034,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/messagecomposer @ 1073942 <- /branches/work/akonadi-ports/kdepim/messagecomposer @ 1073923 ]
 #	[ add messagecore/tests/gnupg_home HEAD 1145882 ]
 match /trunk/KDE/kdepim/messagecore/tests/gnupg_home/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/tests/gnupg_home/
     branch master
     min revision 1145882
@@ -4043,7 +4042,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/messagecomposer/tests/gnupg_home 1145882 0 ]
 match /trunk/KDE/kdepim/messagecomposer/tests/gnupg_home/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/tests/gnupg_home/
     branch master
     max revision 1145882
@@ -4053,7 +4052,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/messagecore/tests/gnupg_home @ 1145977 <- /trunk/KDE/kdepim/messagecomposer/tests/gnupg_home @ 1145882 ]
 #	[ add messagecore/tests/gnupg_home/dirmngr-cache.d HEAD 1145882 ]
 match /trunk/KDE/kdepim/messagecore/tests/gnupg_home/dirmngr-cache.d/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/tests/gnupg_home/dirmngr-cache.d/
     branch master
     min revision 1145882
@@ -4061,7 +4060,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/messagecomposer/tests/gnupg_home/dirmngr-cache.d 1145882 0 ]
 match /trunk/KDE/kdepim/messagecomposer/tests/gnupg_home/dirmngr-cache.d/
-    repository kdepim
+    repository ${REPO}
     prefix messagecore/tests/gnupg_home/dirmngr-cache.d/
     branch master
     max revision 1145882
@@ -4082,7 +4081,7 @@ end match
 #	[ Delayed: /branches/work/akonadi-ports/kdepim/messagelist/widget.h @ 1012986 <- /branches/work/akonadi-ports/kdepim/kmail/messagelistview/akonadi @ 1012899 ]
 #	[ add messagelist HEAD 1076458 ]
 match /trunk/KDE/kdepim/messagelist/
-    repository kdepim
+    repository ${REPO}
     prefix messagelist/
     branch master
     min revision 1076458
@@ -4090,7 +4089,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/messagelist 1076458 0 ]
 match /branches/work/akonadi-ports/kdepim/messagelist/
-    repository kdepim
+    repository ${REPO}
     prefix messagelist/
     branch master
     max revision 1076458
@@ -4102,7 +4101,7 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim @ 982690 <- /trunk/KDE/kdepim @ 982689 ]
 #	[ add messagelist/core HEAD 1076458 ]
 match /trunk/KDE/kdepim/messagelist/core/
-    repository kdepim
+    repository ${REPO}
     prefix messagelist/core/
     branch master
     min revision 1076458
@@ -4110,7 +4109,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/messagelist/core 1076458 1012825 ]
 match /branches/work/akonadi-ports/kdepim/messagelist/core/
-    repository kdepim
+    repository ${REPO}
     prefix messagelist/core/
     branch master
     max revision 1076458
@@ -4119,7 +4118,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/kmail/messagelistview/core 1012825 0 ]
 match /branches/work/akonadi-ports/kdepim/kmail/messagelistview/core/
-    repository kdepim
+    repository ${REPO}
     prefix messagelist/core/
     branch master
     max revision 1012825
@@ -4170,7 +4169,7 @@ end match
 #	[ Parent: /branches/work/akonadi-ports/kdepim/mailreader @ 994099 <- /trunk/playground/pim/mailreader/src @ 994098 ]
 #	[ add messageviewer HEAD 1073578 ]
 match /trunk/KDE/kdepim/messageviewer/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/
     branch master
     min revision 1073578
@@ -4178,7 +4177,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/messageviewer 1073578 1032674 ]
 match /branches/work/akonadi-ports/kdepim/messageviewer/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/
     branch master
     max revision 1073578
@@ -4187,7 +4186,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/libmessageviewer 1032674 1023217 ]
 match /branches/work/akonadi-ports/kdepim/libmessageviewer/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/
     branch master
     max revision 1032674
@@ -4196,7 +4195,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/libmailreader 1023217 994105 ]
 match /branches/work/akonadi-ports/kdepim/libmailreader/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/
     branch master
     max revision 1023217
@@ -4205,7 +4204,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/mailreader/lib 994105 994098 ]
 match /branches/work/akonadi-ports/kdepim/mailreader/lib/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/
     branch master
     max revision 994105
@@ -4214,7 +4213,7 @@ end match
 
 #	[ parent trunk/playground/pim/mailreader/src/lib 994098 0 ]
 match /trunk/playground/pim/mailreader/src/lib/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/
     branch master
     max revision 994098
@@ -4229,7 +4228,7 @@ end match
 #	[ Move/Replace: /branches/work/akonadi-ports/kdepim/libmailreader/interfaces @ 994134 <- /trunk/playground/pim/mailreader/src/lib/interfaces @ 994133 ]
 #	[ add messageviewer/interfaces HEAD 1073578 ]
 match /trunk/KDE/kdepim/messageviewer/interfaces/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/interfaces/
     branch master
     min revision 1073578
@@ -4237,7 +4236,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/messageviewer/interfaces 1073578 1032674 ]
 match /branches/work/akonadi-ports/kdepim/messageviewer/interfaces/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/interfaces/
     branch master
     max revision 1073578
@@ -4246,7 +4245,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/libmessageviewer/interfaces 1032674 1023217 ]
 match /branches/work/akonadi-ports/kdepim/libmessageviewer/interfaces/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/interfaces/
     branch master
     max revision 1032674
@@ -4255,7 +4254,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/libmailreader/interfaces 1023217 994133 ]
 match /branches/work/akonadi-ports/kdepim/libmailreader/interfaces/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/interfaces/
     branch master
     max revision 1023217
@@ -4264,7 +4263,7 @@ end match
 
 #	[ move trunk/playground/pim/mailreader/src/lib/interfaces 994133 0 ]
 match /trunk/playground/pim/mailreader/src/lib/interfaces/
-    repository kdepim
+    repository ${REPO}
     prefix messageviewer/interfaces/
     branch master
     max revision 994133
@@ -4304,7 +4303,7 @@ end match
 #	[ Parent: /branches/work/komo/kdepim @ 1129064 <- /trunk/KDE/kdepim @ 1129062 ]
 #	[ add mobile HEAD 1147182 ]
 match /trunk/KDE/kdepim/mobile/
-    repository kdepim
+    repository ${REPO}
     prefix mobile/
     branch master
     min revision 1147182
@@ -4312,7 +4311,7 @@ end match
 
 #	[ move branches/work/komo/kdepim/mobile 1147182 0 ]
 match /branches/work/komo/kdepim/mobile/
-    repository kdepim
+    repository ${REPO}
     prefix mobile/
     branch master
     max revision 1147182
@@ -4323,7 +4322,7 @@ end match
 #	[ Parent: /branches/work/komo/kdepim @ 1129064 <- /trunk/KDE/kdepim @ 1129062 ]
 #	[ add mobile/calendar HEAD 1147182 ]
 match /trunk/KDE/kdepim/mobile/calendar/
-    repository kdepim
+    repository ${REPO}
     prefix mobile/calendar/
     branch master
     min revision 1147182
@@ -4331,7 +4330,7 @@ end match
 
 #	[ parent branches/work/komo/kdepim/mobile/calendar 1147182 0 ]
 match /branches/work/komo/kdepim/mobile/calendar/
-    repository kdepim
+    repository ${REPO}
     prefix mobile/calendar/
     branch master
     max revision 1147182
@@ -4377,7 +4376,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/mobile/mail @ 1112914 <- /trunk/KDE/kdepim/kmail-mobile @ 1112909 ]
 #	[ add mobile/mail HEAD 1112909 ]
 match /trunk/KDE/kdepim/mobile/mail/
-    repository kdepim
+    repository ${REPO}
     prefix mobile/mail/
     branch master
     min revision 1112909
@@ -4385,7 +4384,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kmail-mobile 1112909 0 ]
 match /trunk/KDE/kdepim/kmail-mobile/
-    repository kdepim
+    repository ${REPO}
     prefix mobile/mail/
     branch master
     max revision 1112909
@@ -4397,7 +4396,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/mobile/mail @ 1112914 <- /trunk/KDE/kdepim/kmail-mobile @ 1112909 ]
 #	[ add mobile/mail/tests HEAD 1112909 ]
 match /trunk/KDE/kdepim/mobile/mail/tests/
-    repository kdepim
+    repository ${REPO}
     prefix mobile/mail/tests/
     branch master
     min revision 1112909
@@ -4405,7 +4404,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/kmail-mobile/tests 1112909 0 ]
 match /trunk/KDE/kdepim/kmail-mobile/tests/
-    repository kdepim
+    repository ${REPO}
     prefix mobile/mail/tests/
     branch master
     max revision 1112909
@@ -4433,7 +4432,7 @@ end match
 #	[ Delayed: /trunk/KDE/kdepim/akonadi/agents/nepomukfeeder/nepomukfeeder.h @ 727203 <- /trunk/KDE/kdepim/akonadi/searchproviders @ 727188 ]
 #	[ add nepomuk_email_feeder HEAD 1073584 ]
 match /trunk/KDE/kdepim/nepomuk_email_feeder/
-    repository kdepim
+    repository ${REPO}
     prefix nepomuk_email_feeder/
     branch master
     min revision 1073584
@@ -4441,7 +4440,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/nepomuk_email_feeder 1073584 1035246 ]
 match /branches/work/akonadi-ports/kdepim/nepomuk_email_feeder/
-    repository kdepim
+    repository ${REPO}
     prefix nepomuk_email_feeder/
     branch master
     max revision 1073584
@@ -4450,7 +4449,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/nepomuk_email_feeder 1035246 1034979 ]
 match /trunk/KDE/kdepim/nepomuk_email_feeder/
-    repository kdepim
+    repository ${REPO}
     prefix nepomuk_email_feeder/
     branch master
     max revision 1035246
@@ -4459,7 +4458,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/agents/nepomuk_email_feeder 1034979 788161 ]
 match /trunk/KDE/kdepim/akonadi/agents/nepomuk_email_feeder/
-    repository kdepim
+    repository ${REPO}
     prefix nepomuk_email_feeder/
     branch master
     max revision 1034979
@@ -4468,7 +4467,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/agents/nepomukfeeder 788161 0 ]
 match /trunk/KDE/kdepim/akonadi/agents/nepomukfeeder/
-    repository kdepim
+    repository ${REPO}
     prefix nepomuk_email_feeder/
     branch master
     max revision 788161
@@ -4480,7 +4479,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim/nepomuk_email_feeder @ 1035246 <- /trunk/KDE/kdepim/akonadi/agents/nepomuk_email_feeder @ 1034979 ]
 #	[ add nepomuk_email_feeder/shared HEAD 1073584 ]
 match /trunk/KDE/kdepim/nepomuk_email_feeder/shared/
-    repository kdepim
+    repository ${REPO}
     prefix nepomuk_email_feeder/shared/
     branch master
     min revision 1073584
@@ -4488,7 +4487,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/nepomuk_email_feeder/shared 1073584 1035246 ]
 match /branches/work/akonadi-ports/kdepim/nepomuk_email_feeder/shared/
-    repository kdepim
+    repository ${REPO}
     prefix nepomuk_email_feeder/shared/
     branch master
     max revision 1073584
@@ -4497,7 +4496,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/nepomuk_email_feeder/shared 1035246 1034979 ]
 match /trunk/KDE/kdepim/nepomuk_email_feeder/shared/
-    repository kdepim
+    repository ${REPO}
     prefix nepomuk_email_feeder/shared/
     branch master
     max revision 1035246
@@ -4506,7 +4505,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/akonadi/agents/nepomuk_email_feeder/shared 1034979 0 ]
 match /trunk/KDE/kdepim/akonadi/agents/nepomuk_email_feeder/shared/
-    repository kdepim
+    repository ${REPO}
     prefix nepomuk_email_feeder/shared/
     branch master
     max revision 1034979
@@ -4517,7 +4516,7 @@ end match
 #	[ Move/Replace: /trunk/KDE/kdepim/akonadi/agents/ontologies @ 1035169 <- /trunk/KDE/kdepim/akonadi/agents/nie_fast @ 1034979 ]
 #	[ add ontologies HEAD 1035169 ]
 match /trunk/KDE/kdepim/ontologies/
-    repository kdepim
+    repository ${REPO}
     prefix ontologies/
     branch master
     min revision 1035169
@@ -4525,7 +4524,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/agents/ontologies 1035169 1034979 ]
 match /trunk/KDE/kdepim/akonadi/agents/ontologies/
-    repository kdepim
+    repository ${REPO}
     prefix ontologies/
     branch master
     max revision 1035169
@@ -4534,7 +4533,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/akonadi/agents/nie_fast 1034979 0 ]
 match /trunk/KDE/kdepim/akonadi/agents/nie_fast/
-    repository kdepim
+    repository ${REPO}
     prefix ontologies/
     branch master
     max revision 1034979
@@ -4562,7 +4561,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add plugins/messageviewer HEAD 1076458 ]
 match /trunk/KDE/kdepim/plugins/messageviewer/
-    repository kdepim
+    repository ${REPO}
     prefix plugins/messageviewer/
     branch master
     min revision 1076458
@@ -4570,7 +4569,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/plugins/messageviewer 1076458 1059645 ]
 match /branches/work/akonadi-ports/kdepim/plugins/messageviewer/
-    repository kdepim
+    repository ${REPO}
     prefix plugins/messageviewer/
     branch master
     max revision 1076458
@@ -4579,7 +4578,7 @@ end match
 
 #	[ move branches/work/akonadi-ports/kdepim/plugins/kmail 1059645 0 ]
 match /branches/work/akonadi-ports/kdepim/plugins/kmail/
-    repository kdepim
+    repository ${REPO}
     prefix plugins/messageviewer/
     branch master
     max revision 1059645
@@ -4594,7 +4593,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add plugins/messageviewer/bodypartformatter HEAD 1076458 ]
 match /trunk/KDE/kdepim/plugins/messageviewer/bodypartformatter/
-    repository kdepim
+    repository ${REPO}
     prefix plugins/messageviewer/bodypartformatter/
     branch master
     min revision 1076458
@@ -4602,7 +4601,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/plugins/messageviewer/bodypartformatter 1076458 1059645 ]
 match /branches/work/akonadi-ports/kdepim/plugins/messageviewer/bodypartformatter/
-    repository kdepim
+    repository ${REPO}
     prefix plugins/messageviewer/bodypartformatter/
     branch master
     max revision 1076458
@@ -4611,7 +4610,7 @@ end match
 
 #	[ parent branches/work/akonadi-ports/kdepim/plugins/kmail/bodypartformatter 1059645 0 ]
 match /branches/work/akonadi-ports/kdepim/plugins/kmail/bodypartformatter/
-    repository kdepim
+    repository ${REPO}
     prefix plugins/messageviewer/bodypartformatter/
     branch master
     max revision 1059645
@@ -4624,7 +4623,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add strigi-analyzer HEAD 677409 ]
 match /trunk/KDE/kdepim/strigi-analyzer/
-    repository kdepim
+    repository ${REPO}
     prefix strigi-analyzer/
     branch master
     min revision 677409
@@ -4632,7 +4631,7 @@ end match
 
 #	[ move trunk/KDE/kdepim/kfile-plugins 677409 0 ]
 match /trunk/KDE/kdepim/kfile-plugins/
-    repository kdepim
+    repository ${REPO}
     prefix strigi-analyzer/
     branch master
     max revision 677409
@@ -4645,7 +4644,7 @@ end match
 #	[ Parent: /trunk/KDE/kdepim @ 409203 <- /trunk/kdepim @ 409202 ]
 #	[ add strigi-analyzer/ics HEAD 677409 ]
 match /trunk/KDE/kdepim/strigi-analyzer/ics/
-    repository kdepim
+    repository ${REPO}
     prefix strigi-analyzer/ics/
     branch master
     min revision 677409
@@ -4653,7 +4652,7 @@ end match
 
 #	[ parent trunk/KDE/kdepim/kfile-plugins/ics 677409 0 ]
 match /trunk/KDE/kdepim/kfile-plugins/ics/
-    repository kdepim
+    repository ${REPO}
     prefix strigi-analyzer/ics/
     branch master
     max revision 677409
@@ -4699,6 +4698,8 @@ end match
 #	[ add wizards/tests HEAD 0 ]
 
 include kdepim-modules-rules
+
+include kdepim-branches-rules
 
 match /
 end match
