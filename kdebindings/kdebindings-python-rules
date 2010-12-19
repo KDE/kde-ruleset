@@ -107,18 +107,6 @@ end match
 
 # svn time
 
-match /tags/KDE/([^/]+)A/kdebindings/python/
-    repository KDE/kdebindings-python
-    branch refs/tags/v\1a
-    annotated true
-end match
-
-match /tags/KDE/([^/]+)/kdebindings/python/
-    repository KDE/kdebindings-python
-    branch refs/tags/v\1
-    annotated true
-end match
-
 match /tags/KDE/3.5.0-alpha1/kdebindings/python/
   repository KDE/kdebindings-python
   branch refs/tags/v3.4.90
@@ -129,6 +117,18 @@ match /tags/KDE/3.5.0-beta1/kdebindings/python/
   repository KDE/kdebindings-python
   branch refs/tags/v3.4.91
   annotated true
+end match
+
+match /tags/KDE/([^/]+)A/kdebindings/python/
+    repository KDE/kdebindings-python
+    branch refs/tags/v\1a
+    annotated true
+end match
+
+match /tags/KDE/([^/]+)/kdebindings/python/
+    repository KDE/kdebindings-python
+    branch refs/tags/v\1
+    annotated true
 end match
 
 #
