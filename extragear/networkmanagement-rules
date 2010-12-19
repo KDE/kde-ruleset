@@ -1,0 +1,71 @@
+#
+# Created by Johannes Obermayr <johannesobermayr@gmx.de>
+#
+
+#
+# Create the KDE modules
+#
+
+# You should call svn-all-fast-export with '--resume-from 783823'
+
+create repository KDE/networkmanagement
+end repository
+
+match /trunk/playground/base/plasma/applets/networkmanager/
+  repository KDE/networkmanagement
+  branch master
+  min revision 783824
+  max revision 804988
+end match
+
+match /trunk/kdereview/networkmanager/
+  repository KDE/networkmanagement
+  branch master
+  min revision 804989
+  max revision 810916
+end match
+
+match /trunk/playground/base/plasma/applets/networkmanager/
+  repository KDE/networkmanagement
+  branch master
+  min revision 810917
+  max revision 821123
+end match
+
+# we can merge it directly to master because during this time was not any
+# commit to /trunk/playground/base/plasma/applets/networkmanager/
+
+match /branches/work/~wstephens/networkmanager/
+  repository KDE/networkmanagement
+  branch master
+  min revision 821124
+  max revision 821864
+end match
+
+match /trunk/playground/base/plasma/applets/networkmanager/
+  repository KDE/networkmanagement
+  branch master
+  min revision 821865
+  max revision 1048693
+end match
+
+match /trunk/kdereview/networkmanagement/
+  repository KDE/networkmanagement
+  branch master
+  min revision 1048694
+  max revision 1152587
+end match
+
+match /trunk/extragear/base/networkmanagement/
+  repository KDE/networkmanagement
+  branch master
+end match
+
+match /branches/work/knetworkmanager-4.1-openSUSE/
+  repository KDE/networkmanagement
+  branch knetworkmanager-4.1-openSUSE
+end match
+
+match /
+end match
+
