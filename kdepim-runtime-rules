@@ -10,6 +10,7 @@ end repository
 include kdepim-common-ignore-rules
 include kdepim-recurse-rules
 include kdepim-tags-rules
+include kdepim-branches-rules
 
 #	------< trunk/KDE/kdepim/runtime/accountwizard >------
 #	[ Move/Replace: /trunk/KDE/kdepim/runtime/accountwizard @ 1113315 <- /branches/work/toma-akonadi-account-wizard-ghns-integration/accountwizard @ 1113314 ]
@@ -1669,7 +1670,7 @@ match /trunk/KDE/kdepim/akonadi/
     max revision 1061321
 end match
 
-include kdepim-branches-rules
+#include kdepim-branches-rules
 include kdepim-runtime-branches
 
 match /

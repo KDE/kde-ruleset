@@ -13,6 +13,7 @@ match /.*/kdepim/runtime/
 
 include kdepim-recurse-rules
 include kdepim-tags-rules
+include kdepim-branches-rules
 
 #	------< trunk/KDE/kdepim >------
 #	[ Move/Replace: /trunk/KDE/kdepim @ 455551 <- /branches/KDE/3.5/kdepim @ 455550 ]
@@ -4699,7 +4700,7 @@ end match
 
 include kdepim-modules-rules
 
-include kdepim-branches-rules
+#include kdepim-branches-rules
 
 match /
 end match
