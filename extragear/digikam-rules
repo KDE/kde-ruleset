@@ -8,6 +8,24 @@
 create repository digikam
 end repository
 
+create repository kipi-plugins
+end repository
+
+create repository libkdcraw
+end repository
+
+create repository libkexiv2
+end repository
+
+create repository libkipi
+end repository
+
+create repository libkface
+end repository
+
+create repository libkmap
+end repository
+
 # Ignore some upheaval in KDE's SVN history.
 match /
     min revision 409202
@@ -18,13 +36,314 @@ match /
     max revision 411973
 end match
 
-# ---- Master -----
 
-#match /trunk/(kdeextragear-3|kdeextragear-libs-1|kde-extragear/graphics)/(digikam/|digikamimageplugins/|kipi-plugins)$
-#    action recurse
-#end match
 
-# -- Digikam Core --
+# ---- libkipi ----
+
+# 1164207-1164213: gsoc-2010 branch merged
+# 816112: moved to kdegraphics
+# 671746: kde4 port started (again existing: 670711)
+# 409209: from /trunk/kdeextragear-libs-1
+match /trunk/KDE/kdegraphics/libs/libkipi/
+    repository libkipi
+    branch master
+end match
+
+match /trunk/extragear/libs/libkipi/
+    repository libkipi
+    branch master
+end match
+
+# until 409208
+# 299564: initial commit
+match /trunk/kdeextragear-libs-1/libkipi/
+    repository libkipi
+    branch master
+end match
+
+match /branches/extragear/graphics/libkipi/
+    repository libkipi
+    branch gsoc-2010
+end match
+
+match /branches/extragear/graphics/libkipi-gsoc-2010/
+    repository libkipi
+    branch gsoc-2010
+end match
+
+# 670712: branched off
+match /branches/extragear/kde3/libs/libkipi/
+    repository libkipi
+    branch kde3
+end match
+
+
+
+
+
+# ---- Kipiplugins ----
+
+match /trunk/extragear/graphics/kipi-plugins/
+    repository kipi-plugins
+    branch master
+end match
+
+# 672392: started KDE4 port, copied from /branches/extragear/kde3/libs/kipi-plugins:672391
+# 670712: moved to kde3 branch
+# 816153: moved to extragear/graphics (lib separated)
+match /trunk/extragear/libs/kipi-plugins/
+    repository kipi-plugins
+    branch master
+end match
+
+# 305942: Initial commit (from "digikam plugins")
+# 409208: Moved to extragear/libs
+match /trunk/kdeextragear-libs-1/kipi-plugins/
+    repository kipi-plugins
+    branch master
+end match
+
+# -- GSoc-2010 branch --
+
+# 1205533: moved to digikam
+match /branches/extragear/graphics/kipi-plugins/
+    repository kipi-plugins
+    branch gsoc-2010
+    min revision 1144580
+end match
+
+match /branches/extragear/graphics/kipi-plugins/$
+   min revision 1144580
+   max revision 1144580
+   action recurse
+end match
+
+match /branches/extragear/graphics/gpssync2/
+    repository kipi-plugins
+    prefix gpssync2/
+    branch gsoc-2010
+end match
+
+match /branches/extragear/graphics/kipi-plugins/gpssync2/
+    repository kipi-plugins
+    prefix gpssync2/
+    branch gsoc-2010
+end match  
+
+
+
+
+
+# ---- libkdcraw ----
+
+# 1164207-1164213: gsoc-2010 branch merged
+match /trunk/KDE/kdegraphics/libs/libkdcraw/
+   repository libkdcraw
+   branch master
+end match
+
+# until 816113
+# 671600: copied from KDE3 branch (existing again in 670711)
+# initial commit: 632867
+match /trunk/extragear/libs/libkdcraw/
+   repository libkdcraw
+   branch master
+end match
+
+# -- GSoc 2010 --
+
+match /branches/extragear/graphics/libkdcraw/
+    repository libkdcraw
+    branch gsoc-2010
+end match
+
+match /branches/extragear/graphics/digikam/3rdparty/libkdcraw/
+    repository libkdcraw
+    branch gsoc-2010
+end match  
+
+match /branches/extragear/graphics/digikam/extra/libkdcraw/
+    repository libkdcraw
+    branch gsoc-2010
+end match
+
+# -- KDE 3 --
+
+# started KDE4 port from 671204
+match /branches/extragear/kde3/libs/libkdcraw/
+   repository libkdcraw
+   branch kde3
+end match
+
+# -- Older branches -- 
+
+# until 986245
+match /branches/work/~cgilles/libkdcraw/
+   repository libkdcraw
+   branch gilles-work
+end match
+
+# 859897/9: Copied from libraw port
+match /trunk/KDE/kdegraphics/libs/libkdcraw-libraw/
+   repository libkdcraw
+   branch libraw-port
+end match
+
+# 856922: created branch
+# 859698: to libkdcraw-libraw
+match /branches/work/libkdcraw-libraw/
+   repository libkdcraw
+   branch libraw-port
+end match
+
+
+
+
+
+# ---- libkexiv2 ----
+
+# 1164207-1164213: gsoc-2010 branch merged
+match /trunk/KDE/kdegraphics/libs/libkexiv2/
+   repository libkexiv2
+   branch master
+end match
+
+# until 816113
+# 671224: moved from extragear/libs to own subdir
+# 671210: copied from KDE3 branch (existing again in 670711)
+# 627390: initial commit, from kipi-plugins' "exiv2iface"
+match /trunk/extragear/libs/libkexiv2/
+   repository libkexiv2
+   branch master
+end match
+
+# copy operation gone wrong
+match /trunk/extragear/libs/
+   repository libkexiv2
+   branch master
+   min revision 671210
+   max revision 671224
+end match
+
+# -- GSoc 2010 --
+
+# 1144513: copied from digikam/libkexiv2
+match /branches/extragear/graphics/libkexiv2/
+    repository libkexiv2
+    branch gsoc-2010
+end match
+
+match /branches/extragear/graphics/digikam/libkexiv2/
+    repository libkexiv2
+    branch gsoc-2010
+end match
+
+match /branches/extragear/graphics/digikam/3rdparty/libkexiv2/
+    repository libkexiv2
+    branch gsoc-2010
+end match  
+
+match /branches/extragear/graphics/digikam/extra/libkexiv2/
+    repository libkexiv2
+    branch gsoc-2010
+end match  
+
+# -- KDE 3 --
+
+# moved from trunk 670712
+match /branches/extragear/kde3/libs/libkexiv2/
+   repository libkexiv2
+   branch kde3
+end match
+
+match /branches/extragear/kde3/libs/$
+   min revision 670712
+   max revision 670712
+   action recurse
+end match
+
+
+
+
+
+# ---- libkmap ----
+
+match /branches/extragear/graphics/digikam/worldmapwidget2/
+    repository libkmap
+    branch master
+end match
+
+match /trunk/kdereview/libkmap/
+    repository libkmap
+    branch master
+end match
+
+match /branches/extragear/graphics/libkmap/
+    repository libkmap
+    branch master
+end match
+
+match /branches/extragear/graphics/digikam/libkmap/
+    repository libkmap
+    branch master
+end match  
+
+match /branches/extragear/graphics/digikam/3rdparty/libkmap/
+    repository libkmap
+    branch master
+end match  
+
+match /branches/extragear/graphics/digikam/extra/libkmap/
+    repository libkmap
+    branch master
+end match  
+
+
+
+
+
+# ---- libkface ----
+
+match /trunk/kdereview/libkface/
+    repository libkface
+    branch master
+end match
+
+match /branches/extragear/graphics/libkface/
+    repository libkface
+    branch master
+end match
+
+match /branches/extragear/graphics/digikam/gsoc-2010/libkface/
+    repository libkface
+    branch master
+end match
+
+match /branches/extragear/graphics/digikam/libkface/
+    repository libkface
+    branch master
+end match
+
+match /branches/extragear/graphics/digikam/3rdparty/libkface/
+    repository libkface
+    branch master
+end match  
+
+match /branches/extragear/graphics/digikam/extra/libkface/
+    repository libkface
+    branch master
+end match  
+
+
+
+
+
+
+
+
+# ---- Digikam -----
+
+# -- Master --
 
 # 945619: Moving trunk to /branches/extragear/graphics/digikam/0.10-trunk (no further development there)
 # 945625: Moving /branches/extragear/graphics/digikam/0.11 to trunk
@@ -43,7 +362,7 @@ match /trunk/kdeextragear-3/digikam/
     branch master
 end match
 
-# -- Digikam Imageplugins --
+#  Imageplugins:
 
 # merged back to digikam in 644929
 match /trunk/extragear/graphics/digikamimageplugins/
@@ -60,35 +379,8 @@ match /trunk/kdeextragear-3/digikamimageplugins/
     branch master
 end match
 
-# -- Kipiplugins --
 
-match /trunk/extragear/graphics/kipi-plugins/
-    repository digikam
-    prefix kipi-plugins/
-    branch master
-end match
-
-# 672392: started KDE4 port, copied from /branches/extragear/kde3/libs/kipi-plugins:672391
-# 670712: moved to kde3 branch
-# 816153: moved to extragear/graphics (lib separated)
-match /trunk/extragear/libs/kipi-plugins/
-    repository digikam  
-    prefix kipi-plugins/
-    branch master
-end match
-
-# 305942: Initial commit (from "digikam plugins")
-# 409208: Moved to extragear/libs
-match /trunk/kdeextragear-libs-1/kipi-plugins/
-    repository digikam
-    prefix kipi-plugins/
-    branch master
-end match
-
-
-# ---- 2.0 (GSoc-2010) -----
-
-# -- digikam "core" --
+# -- digikam "core" 2.0 (GSoc-2010) --
 
 # intermediate location at 1144517
 #match /branches/extragear/graphics/digikam-gosc2010/gsoc-2010/
@@ -96,112 +388,34 @@ end match
 #    branch gsoc-2010
 #end match
 
-# ignore renaming
-match /branches/extragear/graphics/digikam/
-    min revision 1144517
-    max revision 1144518
-end match
-
 # 1126687: branch created
 match /branches/extragear/graphics/digikam/gsoc-2010/
     repository digikam
     branch gsoc-2010
 end match
 
-# first location of software compilation, digikam in core/
+# ignore renaming
+match /branches/extragear/graphics/digikam/
+    min revision 1144517
+    max revision 1144518
+end match
+
+# branch at digikam: 1144518 - 1205530
 match /branches/extragear/graphics/digikam/
     repository digikam
     branch gsoc-2010
     min revision 1144520
+    max revision 1205529
 end match
 
-# -- kipi-plugins --
-
-# 1205533: moved to digikam
-match /branches/extragear/graphics/kipi-plugins/
+# digikam in core/
+match /branches/extragear/graphics/digikam/core/
     repository digikam
     branch gsoc-2010
-    prefix kipi-plugins/
-    min revision 1144580
+    # ignore 30-33
+    min revision 1205533
 end match
 
-match /branches/extragear/graphics/kipi-plugins/$
-   min revision 1144580
-   max revision 1144580
-   action recurse
-end match
-
-match /branches/extragear/graphics/gpssync2/
-    repository digikam
-    prefix kipi-plugins/gpssync2/
-    branch gsoc-2010
-end match  
-
-match /branches/extragear/graphics/kipi-plugins/gpssync2/
-    repository digikam
-    prefix kipi-plugins/gpssync2/
-    branch gsoc-2010
-end match  
-
-# -- libkmap --
-
-match /branches/extragear/graphics/digikam/worldmapwidget2/
-    repository digikam
-    prefix kipi-plugins/worldmapwidget2/
-    branch gsoc-2010
-end match
-
-match /trunk/kdereview/libkmap/
-    repository digikam
-    prefix libkmap/
-    branch gsoc-2010
-end match
-
-match /branches/extragear/graphics/libkmap/
-    repository digikam
-    prefix libkmap/
-    branch gsoc-2010
-end match  
-
-match /branches/extragear/graphics/digikam/libkmap/
-    repository digikam
-    prefix libkmap/
-    branch gsoc-2010
-end match  
-
-# -- libkface --
-
-match /trunk/kdereview/libkface/
-    repository digikam
-    prefix libkface/
-    branch gsoc-2010
-end match
-
-match /branches/extragear/graphics/libkface/
-    repository digikam
-    prefix libkface/
-    branch gsoc-2010
-end match
-
-match /branches/extragear/graphics/digikam/libkface/
-    repository digikam
-    prefix libkface/
-    branch gsoc-2010
-end match
-
-# -- kdegraphics libs branches --
-
-match /branches/extragear/graphics/libkdcraw/
-    repository digikam
-    prefix libkface/
-    branch gsoc-2010
-end match
-
-match /branches/extragear/graphics/digikam/libkexiv2/
-    repository digikam
-    prefix libkface/
-    branch gsoc-2010
-end match
 
 # ---- Older branches ----
 
@@ -262,8 +476,7 @@ end match
 # moved from trunk at 670778
 # started kde4 port 672392
 match /branches/extragear/kde3/libs/kipi-plugins/
-    repository digikam
-    prefix kipi-plugins/
+    repository kipi-plugins
     branch kde3
 end match
 
