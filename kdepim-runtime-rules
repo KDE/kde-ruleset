@@ -8,7 +8,6 @@ create repository ${REPO}
 end repository
 
 include kdepim-common-ignore-rules
-include kdepim-recurse-rules
 include kdepim-tags-rules
 include kdepim-branches-rules
 
@@ -1672,6 +1671,7 @@ end match
 
 #include kdepim-branches-rules
 include kdepim-runtime-branches
+include kdepim-recurse-rules
 
 match /
 end match

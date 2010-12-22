@@ -9,9 +9,8 @@ end repository
 include kdepim-common-ignore-rules
 # /runtime/ is another module
 match /.*/kdepim/runtime/
-    end match
+end match
 
-include kdepim-recurse-rules
 include kdepim-tags-rules
 include kdepim-branches-rules
 
@@ -4701,6 +4700,7 @@ end match
 include kdepim-modules-rules
 
 #include kdepim-branches-rules
+include kdepim-recurse-rules
 
 match /
 end match

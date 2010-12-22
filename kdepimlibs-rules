@@ -13,7 +13,6 @@ match /trunk/KDE/kdepimlibs/ktnef/
 end match
 
 
-include kdepim-recurse-rules
 include kdepim-tags-rules
 
 #	------< /trunk/KDE/kdepimlibs >------
@@ -2632,6 +2631,7 @@ end match
 include kdepim-modules-rules
 
 include kdepim-branches-rules
+include kdepim-recurse-rules
 
 match /
 end match

@@ -31,11 +31,11 @@ match /tags/(?:__)?KDE_[^/]+/[^/]+/$
     action recurse
 end match
 
-match /tags/KDE/[^/]/$
+match /tags/KDE/[^/]+/$
     action recurse
 end match
 
-match /tags/KDE/[^/]/[^/]+/$
+match /tags/KDE/[^/]+/[^/]+/$
     action recurse
 end match
 
