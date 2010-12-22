@@ -84,3 +84,12 @@ end match
 match /branches/(osnabrueck_branch|proko2)/$
     action recurse
 end match
+match /branches/kdepim/enterprise/$
+    action recurse
+end match
+match /branches/kdepim/enterprise4/$
+    action recurse
+end match
+match /branches/kdepim/proko3/$
+    action recurse
+end match
