@@ -5,6 +5,8 @@
 create repository KDE/kdebindings-python
 end repository
 
+include common-ignores
+
 match /trunk/(KDE/)?kdebindings/python/
     repository KDE/kdebindings-python
     branch master
@@ -19,16 +21,6 @@ end match
 
 match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/$
     action recurse
-end match
-
-# ignore "sort out tags" commit that makes a mess
-match /
-    min revision 411963
-    max revision 411963
-end match
-match /
-    min revision 409205
-    max revision 409205
 end match
 
 #
@@ -48,12 +40,6 @@ match /branches/KDE/([^/]+)/kdebindings/python/
 end match
 
 # cvs
-
-# this commit is messed up - ignore it
-match /branches/KDE_3_4_BRANCH/kdebindings/
-    min revision 400296
-    max revision 400296
-end match
 
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdebindings/python/
   repository KDE/kdebindings-python

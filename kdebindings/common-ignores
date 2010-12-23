@@ -1,0 +1,24 @@
+
+# This commit is messed up. It's a cvs2svn commit to a branch, claimed to be
+# creating that branch. I don't know what it's really doing, but it makes a mess
+# in the converted repo.
+# Seems to only affect ruby, but it might as well be here.
+match /branches/KDE_3_4_BRANCH/kdebindings/
+    min revision 400296
+    max revision 400296
+end match
+
+# "sort out branches"; renames branches/KDE_<version>_BRANCH to
+# branches/KDE/<version>, which is pointless in git, and makes every branch get
+# a no-op commit at this point.
+match /
+    min revision 409205
+    max revision 409205
+end match
+# Same, with tags (tags/KDE_<ver>_RELEASE => tags/KDE/<ver>)
+match /
+    min revision 411963
+    max revision 411963
+end match
+
+# kate: hl svn2git rules;

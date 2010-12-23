@@ -5,6 +5,8 @@
 create repository KDE/kdebindings-perl
 end repository
 
+include common-ignores
+
 match /trunk/(KDE/)?kdebindings/perl/
     repository KDE/kdebindings-perl
     branch master
