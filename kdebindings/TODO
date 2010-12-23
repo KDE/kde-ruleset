@@ -11,14 +11,15 @@ Ruby:
 Python:
  - Follow past history of krosspython, when it was in koffice/libs/kross
    (moved in r646837), and earlier in kexi.
- - Convert the "modular smoke branch" (merged in r807397).
 
 Perl:
  - There seems to be a situation similar to Ruby, where something got copied
    from A to B, and A was deleted some revisions later, instead of using a
    proper svn mv. Revisions 1091178, 1091179, 1091180. [FIXED with a
    filter-branch script]
- - Convert the "modular smoke branch" (merged in r807397).
  - Something is fishy in r1129337. An entire directory got deleted. pumphaus
    doesn't know why, told me to ask burel.
 
+C#:
+ - Start writing the rules!
+ - Convert the "modular smoke branch" (merged in r807397).
