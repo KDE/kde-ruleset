@@ -3793,6 +3793,15 @@ match /trunk/playground/edu/mathematik/
   min revision 409209
 end match
 
+match /branches/kig/(post-kde-3\.5)/(kig)/
+  repository KDE/kdeedu/\2
+  branch \1
+end match
+
+match /branches/work/(parley-practice|soc-parley)/
+  repository KDE/kdeedu/parley
+  branch \1
+end match
 
 #kdenetwork special branches
 match /trunk/kdenonbeta/kdnssd/
