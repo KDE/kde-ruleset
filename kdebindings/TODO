@@ -1,3 +1,8 @@
+General:
+ - It may be possible and a good idea to extract common rules into a single
+   file that gets included from the language-specific rulefiles.
+
+
 Ruby:
  - Follow past history of krossruby, when it was in koffice/libs/kross
    (moved in r646836).
@@ -14,4 +19,6 @@ Perl:
    proper svn mv. Revisions 1091178, 1091179, 1091180. [FIXED with a
    filter-branch script]
  - Convert the "modular smoke branch" (merged in r807397).
+ - Something is fishy in r1129337. An entire directory got deleted. pumphaus
+   doesn't know why, told me to ask burel.
 
