@@ -16,7 +16,7 @@ cd "$repo"
 
 # Synthesize merge commits, and delete vim swapfiles.
 git filter-branch \
-    --parent-filter "$($toolsdir/add-parents <($toolsdir/generate-parent-map.py $rulesdir/kdev-qmake-parent-map))" \
+    --parent-filter "$($toolsdir/add-parents <($toolsdir/translateRevlist.py $rulesdir/kdev-qmake-parent-map))" \
     --tree-filter 'rm -f qmake/duchain/.qmakeeditorintegrator.cpp.swp' \
     -- --all
 

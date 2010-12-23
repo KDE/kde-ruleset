@@ -1,8 +1,17 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import subprocess
 import re
 import sys
+
+'''
+Converts a list of SVN revisions into the corresponding git revisions in the
+current repository.
+
+The input file should contain numerical SVN revisions, one or more per line,
+separated by whitespace. Any other non-numeric text will be ignored.
+'''
 
 def get_log_messages():
     p = subprocess.Popen(['git','log','-z', '--format=format:%H%x01%b', '--all'],
@@ -23,17 +32,20 @@ def create_svn_map(msg_map):
 
     return svnmap
 
-def load_parent_list(f):
-    parent_list = {}
+def load_input(f):
     for line in f:
-        pair = line.split(' ')
-        parent_list[int(pair[0])] = int(pair[1])
-    return parent_list
+        line_revs = []
+        for line_piece in re.split('\s+', line):
+            try:
+                line_revs.append(int(line_piece))
+            except ValueError:
+                pass
+        yield line_revs
 
 log_messages = get_log_messages()
 svnmap = create_svn_map(log_messages)
 
-extra_parents = load_parent_list(file(sys.argv[1]))
+input_file = file(sys.argv[1])
 
-for orig, newparent in extra_parents.items():
-    print "%s %s" % (svnmap[orig], svnmap[newparent])
+for revs_in_line in load_input(input_file):
+    print ' '.join([svnmap[rev] for rev in revs_in_line])
