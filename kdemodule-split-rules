@@ -3762,9 +3762,14 @@ match /trunk/playground/edu/Rocs/tags/version1/
 end match
 
 match /trunk/playground/edu/Rocs/
-  min revision 1022303
+  max revision 1022303
   repository KDE/kdeedu/rocs
   branch master
+end match
+
+#ignore as work continued in tags/version1
+match /trunk/playground/edu/Rocs/
+  min revision 1022304
 end match
 
 match /trunk/kdereview/ksimon/
