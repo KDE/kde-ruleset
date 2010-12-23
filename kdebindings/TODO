@@ -11,6 +11,7 @@ Python:
 Perl:
  - There seems to be a situation similar to Ruby, where something got copied
    from A to B, and A was deleted some revisions later, instead of using a
-   proper svn mv. Revisions 1091178, 1091179, 1091180.
+   proper svn mv. Revisions 1091178, 1091179, 1091180. [FIXED with a
+   filter-branch script]
  - Convert the "modular smoke branch" (merged in r807397).
 

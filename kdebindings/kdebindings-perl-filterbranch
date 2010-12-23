@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# A bunch of files were moved in very early perlqt history. However, this
+# was done by copying in one commit (r1091179) and deleting in another
+# commit (r1091180).
+#
+# This filter-branch script deletes the r1091179 commit, while keeping the
+# actual changes done in it (the file additions). Essentially, it squashes
+# r1091179 and r1091180 into one commit.
+# 
+# Requires translateRevlist.py from kde-ruleset/bin.
+
+bindir=../bin
+
+revision_to_remove=$(echo 1091179 | "$bindir/translateRevlist.py" /dev/stdin)
+
+git filter-branch --tag-name-filter cat --commit-filter '
+if [ "$(map $GIT_COMMIT)" = "'"$revision_to_remove"'" ]; then
+    skip_commit "$@";
+else
+    git commit-tree "$@";
+fi
+' -- --all
