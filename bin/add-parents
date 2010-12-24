@@ -35,7 +35,7 @@ else
 fi'
 code="$codebefore"
 while read srcrev newparent; do
-    code="$code    $srcrev) newparent=$newparent;;
+    code="$code    $srcrev) merge_gitrev=$newparent;;
 "
 done < "$parentmap"
 code="$code$codeafter"
