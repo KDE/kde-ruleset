@@ -14,6 +14,9 @@
 # revision as a new parent for the first revision, via filter-branch. The
 # revisions must not be abbreviated. Only full SHA-1 IDs are supported, not
 # general refspecs.
+#
+# It seems to work better if you use --date-order in filter-branch, though
+# I'm not 100% sure of why.
 
 set -e
 
@@ -42,3 +45,5 @@ code="$code$codeafter"
 shift
 
 echo "$code"
+
+# vim: set ts=4 sw=4 et tw=76:
