@@ -21,5 +21,6 @@ Perl:
    doesn't know why, told me to ask burel.
 
 C#:
- - Start writing the rules!
+ - Follow past history from playground/bindings/kimono (moved in 653084).
  - Convert the "modular smoke branch" (merged in r807397).
+   -> note there is a backport in r781383
