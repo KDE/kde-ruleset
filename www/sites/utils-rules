@@ -1,0 +1,17 @@
+#
+# Created by Raphael Kubo da Costa
+#
+
+create repository www/sites/utils
+end repository
+
+##### Main rule: match /trunk/www/sites/utils #####
+match /trunk/www/sites/utils/
+  repository www/sites/utils
+  branch master
+  # min revision 829522
+end match
+
+##### Ignore everything else #####
+match /
+end match
