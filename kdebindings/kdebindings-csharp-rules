@@ -7,6 +7,14 @@ end repository
 
 include common-ignores
 
+match /trunk/playground/bindings/kimono/
+    repository KDE/kdebindings-csharp
+    prefix qyoto/
+    branch master
+    # was moved in 653084
+    max revision 653083
+end match
+
 match /trunk/(KDE/)?kdebindings/csharp/
     repository KDE/kdebindings-csharp
     branch master
