@@ -3819,6 +3819,14 @@ match /branches/work/soc-krdc/krdc/
   branch soc-krdc
 end match
 
+match /trunk/KDE/kdeedu/libkdeedu/libscience/
+  repository KDE/kdeedu/kalzium
+  branch master
+  prefix libscience/
+  max revision 1208978
+end match
+
+
 #kdesdk special branches
 match /trunk/(extragear/sdk|kdereview|playground/devtools)/kaider/
   repository KDE/kdesdk/lokalize
