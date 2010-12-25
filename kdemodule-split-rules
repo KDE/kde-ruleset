@@ -3372,7 +3372,7 @@ match /(trunk|(branches|tags)/KDE(_/)[^/]*)/kdenetwork/kfile-plugins
   max revision 342869
 end match
 
-match /trunk/.git-checkout
+match /trunk/(KDE/)?\.git-checkout
 end match
 
 
