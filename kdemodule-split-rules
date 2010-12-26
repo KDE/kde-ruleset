@@ -3751,9 +3751,15 @@ match /(trunk/playground/[^/]+|trunk/kdenonbeta)/(marble|kalgebra|kanagram|kgeog
   branch master
 end match
 
-match /trunk/kdereview/(marble|blinken|cantor|kalgebra|kanagram|kgeography|rocs|step)/
+match /trunk/kdereview/(marble|blinken|cantor|kanagram|kgeography|rocs|step)/
   repository KDE/kdeedu/\1
   branch master
+end match
+
+match /trunk/kdereview/(kalgebra)/
+  repository KDE/kdeedu/\1
+  branch master
+  max revision 670400 #was cp and rm a few rev later
 end match
 
 match /trunk/playground/edu/Rocs/tags/version1/
