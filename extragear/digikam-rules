@@ -63,12 +63,12 @@ end match
 
 match /branches/extragear/graphics/libkipi/
     repository libkipi
-    branch gsoc-2010
+    branch 1.2
 end match
 
 match /branches/extragear/graphics/libkipi-gsoc-2010/
     repository libkipi
-    branch gsoc-2010
+    branch 1.2
 end match
 
 # 670712: branched off
@@ -106,31 +106,33 @@ end match
 # -- GSoc-2010 branch --
 
 # 1205533: moved to digikam
+# 1144580: created branch
 match /branches/extragear/graphics/kipi-plugins/
     repository kipi-plugins
-    branch gsoc-2010
-    min revision 1144580
+    branch 2.0
 end match
 
-match /branches/extragear/graphics/kipi-plugins/$
-   min revision 1144580
-   max revision 1144580
-   action recurse
-end match
+#match /branches/extragear/graphics/kipi-plugins/$
+#   min revision 1144580
+#   max revision 1144580
+#   action recurse
+#end match
 
 match /branches/extragear/graphics/gpssync2/
     repository kipi-plugins
     prefix gpssync2/
-    branch gsoc-2010
+    branch 2.0
 end match
 
-match /branches/extragear/graphics/kipi-plugins/gpssync2/
+match /branches/extragear/graphics/digikam/3rdparty/kipi-plugins/
     repository kipi-plugins
-    prefix gpssync2/
-    branch gsoc-2010
-end match  
+    branch 2.0
+end match
 
-
+match /branches/extragear/graphics/digikam/extra/kipi-plugins/
+    repository kipi-plugins
+    branch 2.0
+end match
 
 
 
@@ -154,17 +156,17 @@ end match
 
 match /branches/extragear/graphics/libkdcraw/
     repository libkdcraw
-    branch gsoc-2010
+    branch 2.0
 end match
 
 match /branches/extragear/graphics/digikam/3rdparty/libkdcraw/
     repository libkdcraw
-    branch gsoc-2010
+    branch 2.0
 end match  
 
 match /branches/extragear/graphics/digikam/extra/libkdcraw/
     repository libkdcraw
-    branch gsoc-2010
+    branch 2.0
 end match
 
 # -- KDE 3 --
@@ -230,22 +232,22 @@ end match
 # 1144513: copied from digikam/libkexiv2
 match /branches/extragear/graphics/libkexiv2/
     repository libkexiv2
-    branch gsoc-2010
+    branch 1.2
 end match
 
 match /branches/extragear/graphics/digikam/libkexiv2/
     repository libkexiv2
-    branch gsoc-2010
+    branch 1.2
 end match
 
 match /branches/extragear/graphics/digikam/3rdparty/libkexiv2/
     repository libkexiv2
-    branch gsoc-2010
+    branch 2.0
 end match  
 
 match /branches/extragear/graphics/digikam/extra/libkexiv2/
     repository libkexiv2
-    branch gsoc-2010
+    branch 2.0
 end match  
 
 # -- KDE 3 --
@@ -385,13 +387,13 @@ end match
 # intermediate location at 1144517
 #match /branches/extragear/graphics/digikam-gosc2010/gsoc-2010/
 #    repository digikam
-#    branch gsoc-2010
+#    branch 2.0
 #end match
 
 # 1126687: branch created
 match /branches/extragear/graphics/digikam/gsoc-2010/
     repository digikam
-    branch gsoc-2010
+    branch 2.0
 end match
 
 # ignore renaming
@@ -403,7 +405,7 @@ end match
 # branch at digikam: 1144518 - 1205530
 match /branches/extragear/graphics/digikam/
     repository digikam
-    branch gsoc-2010
+    branch 2.0
     min revision 1144520
     max revision 1205529
 end match
@@ -411,7 +413,7 @@ end match
 # digikam in core/
 match /branches/extragear/graphics/digikam/core/
     repository digikam
-    branch gsoc-2010
+    branch 2.0
     # ignore 30-33
     min revision 1205533
 end match
@@ -419,30 +421,45 @@ end match
 
 # ---- Older branches ----
 
+# For digikam
+# Note: Improperly merged as simple modification in 1109189
 # living until 1126684
 match /branches/extragear/graphics/digikam/1.0-databaseext/
     repository digikam
     branch 1.0-databaseext
+# added: does it live longer? D in 1126685
+    max version 1126684
 end match
 
 # living from 925855 to 945624
 match /branches/extragear/graphics/digikam/0.11/
     repository digikam
+# added, does it work?
+    min revision 925855
     branch 0.11
 end match
 
 # living for a short time to become 0.11. Some upheaval before, ignored.
 match /branches/extragear/graphics/digikam/digikam/
-    max revision 925855
-    min revision 925853
     repository digikam 
+    min revision 925853
+# changed 5 to 4, does it work?
+    max revision 925854
     branch 0.11       
 end match
 
-# living until 675277
+# living until 675278
 match /branches/work/digikam-dbconsolidation/
     repository digikam
+# added, does it live longer?
+    max revision 675276
     branch db-consolidation
+end match
+
+match /branches/work/digikam-dbconsolidation/libs/database/$
+    min revision 648844
+    max revision 648844
+    action recurse
 end match
 
 match /branches/digikam/0.8-experimental/
@@ -462,7 +479,8 @@ end match
 
 match /branches/stable/extragear/graphics/digikamimageplugins/
     repository digikam
-    branch stable-0.8-imageplugins
+    prefix imageplugins
+    branch stable-0.8
 end match
 
 # ---- KDE3 branches ----
@@ -482,9 +500,16 @@ end match
 
 # ---- Tags ----
 
-# match /tags/digikam/digikam_0_7_3-1_stable/
-# seems to cause trouble
-# (later dangling), delete manually
+# cvs2svn tags, unmanageable
+match /
+   min revision 435139
+   max revision 435145
+end match
+
+match /
+   min revision 439252
+   max revision 439252
+end match
 
 match /tags/digikam/digikam_([^/]+)/
   repository digikam
@@ -507,6 +532,7 @@ match /tags/digikam/([^/]+)/
   branch refs/tags/v\1
   annotated true
 end match
+
 
 # ---- Ignore everything else ----
 
