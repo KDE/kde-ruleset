@@ -65,3 +65,15 @@ match /tags/kdepim/enterprise(\d+).(\d+).(\d+).(\d+)/(${MODULE})/
     branch refs/tags/enterprise\1.\2.\3.\4
     annotated true
 end match
+match /tags/kdepim/(\d+).(\d+).(\d+)/${MODULE}/
+    branch /refs/tags/v\1.\2.\3
+    annotated true
+end match
+match /tags/kdepim/kdepim-(\d+).(\d+).(\d+)/${MODULE}/
+    branch /refs/tags/v\1.\2.\3
+    annotated true
+end match
+match /tags/kdepim/kdepim-(\d+).(\d+).(\d+)beta(\d+)/${MODULE}/
+    branch /refs/tags/v\1.\2.\3beta\4
+    annotated true
+end match
