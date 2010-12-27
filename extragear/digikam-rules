@@ -118,12 +118,6 @@ end match
 #   action recurse
 #end match
 
-match /branches/extragear/graphics/gpssync2/
-    repository kipi-plugins
-    prefix gpssync2/
-    branch 2.0
-end match
-
 match /branches/extragear/graphics/digikam/3rdparty/kipi-plugins/
     repository kipi-plugins
     branch 2.0
@@ -132,6 +126,17 @@ end match
 match /branches/extragear/graphics/digikam/extra/kipi-plugins/
     repository kipi-plugins
     branch 2.0
+end match
+
+# previous location of gpssync2
+match /branches/extragear/graphics/kipi-plugins/gpssync2/
+    repository kipi-plugins
+    branch gpssync2
+end match
+
+match /branches/extragear/graphics/gpssync2/
+    repository kipi-plugins
+    branch gpssync2/
 end match
 
 
@@ -197,7 +202,6 @@ match /branches/work/libkdcraw-libraw/
    repository libkdcraw
    branch libraw-port
 end match
-
 
 
 
@@ -426,26 +430,23 @@ end match
 # living until 1126684
 match /branches/extragear/graphics/digikam/1.0-databaseext/
     repository digikam
-    branch 1.0-databaseext
-# added: does it live longer? D in 1126685
-    max version 1126684
+    branch 1.3
+    max revision 1126684
 end match
 
 # living from 925855 to 945624
 match /branches/extragear/graphics/digikam/0.11/
     repository digikam
-# added, does it work?
     min revision 925855
-    branch 0.11
+    branch 1.0
 end match
 
 # living for a short time to become 0.11. Some upheaval before, ignored.
 match /branches/extragear/graphics/digikam/digikam/
     repository digikam 
     min revision 925853
-# changed 5 to 4, does it work?
     max revision 925854
-    branch 0.11       
+    branch 1.0
 end match
 
 # living until 675278
@@ -453,7 +454,7 @@ match /branches/work/digikam-dbconsolidation/
     repository digikam
 # added, does it live longer?
     max revision 675276
-    branch db-consolidation
+    branch 0.10
 end match
 
 match /branches/work/digikam-dbconsolidation/libs/database/$
@@ -464,23 +465,34 @@ end match
 
 match /branches/digikam/0.8-experimental/
     repository digikam
-    branch 0.8-experimental
+    branch 0.8
 end match
 
 match /branches/extragear/graphics/digikam/modelviewport/digikam/
     repository digikam
-    branch modelviewport
+    branch 1.2
 end match
 
 match /branches/stable/extragear/graphics/digikam/
     repository digikam
-    branch stable-0.8
+    min revision 642033
+    branch 0.9.x
+end match
+
+# 615173: beginning a series of 0.9.x branches, not much development, unmanageable
+match /branches/stable/extragear/graphics/digikam/
+    repository digikam
+    min revision 482405
+    max revision 615172
+    branch 0.8.x
 end match
 
 match /branches/stable/extragear/graphics/digikamimageplugins/
     repository digikam
-    prefix imageplugins
-    branch stable-0.8
+    prefix imageplugins/
+    min revision 482405
+    max revision 615172
+    branch 0.8.x
 end match
 
 # ---- KDE3 branches ----
@@ -532,6 +544,13 @@ match /tags/digikam/([^/]+)/
   branch refs/tags/v\1
   annotated true
 end match
+
+match /tags/KDE/([^/]+)/(kdegraphics)/(libkipi|libkexiv2|libkdcraw|libksane)/
+  repository \3
+  branch refs/tags/v\1
+  annotated true
+end match
+
 
 
 # ---- Ignore everything else ----
