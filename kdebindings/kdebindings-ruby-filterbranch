@@ -1,6 +1,13 @@
 #!/bin/sh
 
-git filter-branch --tag-name-filter cat --tree-filter '
+tempdir=$(
+    mktemp -u -d --tmpdir=/dev/shm rubyfilterbranch.XXXXX ||
+    mktemp -u -d --tmpdir rubyfilterbranch.XXXXX ||
+    echo ".git-rewrite"
+)
+echo "using $tempdir as temporary directory"
+
+git filter-branch --tag-name-filter cat -d "$tempdir" --tree-filter '
 handle_move() {
 if test -d old/$1; then
     if test -d $1; then
