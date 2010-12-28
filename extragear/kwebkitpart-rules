@@ -1,0 +1,70 @@
+#
+# Created by Johannes Obermayr <johannesobermayr@gmx.de>
+#
+
+#
+# Create the KDE modules
+#
+
+# You should call svn-all-fast-export with '--resume-from 666960'
+
+create repository KDE/kwebkitpart
+end repository
+
+match /trunk/playground/libs/webkitkde/
+  repository KDE/kwebkitpart
+  branch master
+  min revision 666965
+  max revision 1082464
+end match
+
+match /trunk/kdereview/kwebkitpart/
+  repository KDE/kwebkitpart
+  branch master
+  min revision 1082465
+  max revision 1089626
+end match
+
+match /trunk/extragear/base/kwebkitpart/
+  repository KDE/kwebkitpart
+  branch master
+  min revision 1089627
+end match
+
+match /branches/extragear/base/kwebkitpart/0.9/
+  repository KDE/kwebkitpart
+  branch 0.9
+  min revision 1180106
+  max revision 1180128
+end match
+
+match /branches/stable/extragear-kde4/base/kwebkitpart/0.9/
+  repository KDE/kwebkitpart
+  branch 0.9
+  min revision 1180129
+  max revision 1180846
+end match
+
+match /branches/kwebkitpart/kwebkitpart/0.9/
+  repository KDE/kwebkitpart
+  branch 0.9
+  min revision 1180847
+  max revision 1180848
+end match
+
+match /branches/kwebkitpart/0.9/
+  repository KDE/kwebkitpart
+  branch 0.9
+  min revision 1180849
+  max revision 1181409
+end match
+
+match /branches/stable/extragear-kde4/base/kwebkitpart/
+  repository KDE/kwebkitpart
+  branch 0.9
+  min revision 1181410
+end match
+
+match /
+end match
+
