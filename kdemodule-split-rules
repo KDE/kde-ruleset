@@ -31,6 +31,7 @@ end repository
 create repository KDE/kdeartwork
 end repository
 
+#blinken cantor kalgebra kalzium kanagram kbruch kgeography khangman kig kiten klettres kmplot kstars ktouch kturtle kwordquiz marble parley rocs step data libkdeedu
 create repository KDE/kdeedu/blinken
 end repository
 create repository KDE/kdeedu/cantor
