@@ -13,14 +13,9 @@ Python:
    (moved in r646837), and earlier in kexi.
 
 Perl:
- - There seems to be a situation similar to Ruby, where something got copied
-   from A to B, and A was deleted some revisions later, instead of using a
-   proper svn mv. Revisions 1091178, 1091179, 1091180. [FIXED with a
-   filter-branch script]
  - Something is fishy in r1129337. An entire directory got deleted. pumphaus
    doesn't know why, told me to ask burel.
 
 C#:
- - Follow past history from playground/bindings/kimono (moved in 653084).
  - Convert the "modular smoke branch" (merged in r807397).
    -> note there is a backport in r781383
