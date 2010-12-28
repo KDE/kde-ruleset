@@ -12,6 +12,22 @@ match /trunk/(KDE/)?kdebindings/python/
     branch master
 end match
 
+# note the questionmark! this matches both 'lib' and 'libs' (it was renamed)
+match /trunk/koffice/libs?/kross/python/
+    repository KDE/kdebindings-python
+    branch master
+end match
+
+match /trunk/koffice/kexi/scriptingcore/python/
+    repository KDE/kdebindings-python
+    branch master
+end match
+
+match /trunk/koffice/kexi/scripting/python/
+    repository KDE/kdebindings-python
+    branch master
+end match
+
 #
 # recursion
 #
