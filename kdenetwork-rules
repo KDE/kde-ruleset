@@ -135,7 +135,7 @@ end match
 ####
 # krdc match rules
 
-# start at initial krdc import 158792 in a seperate branch
+# start at initial krdc import 158792 in a separate branch
 match /trunk/kdenetwork/krdc/
   min revision 158792
   max revision 407306
