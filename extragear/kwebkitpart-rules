@@ -17,20 +17,27 @@ match /trunk/playground/libs/webkitkde/
   min revision 666965
   max revision 1082464
 end match
+#Note:
+#We do not need to add scripty's two commits (1084028 and 1084649) in 
+#trunk/playground/libs/webkitkde/src/kwebkitpart.desktop since it was removed
+#with commit 1089630 and further development happened in kdereview
 
+#empty move commit is 1082465
 match /trunk/kdereview/kwebkitpart/
   repository KDE/kwebkitpart
   branch master
-  min revision 1082465
+  min revision 1082466
   max revision 1089626
 end match
 
+#empty move commit is 1089627 
 match /trunk/extragear/base/kwebkitpart/
   repository KDE/kwebkitpart
   branch master
-  min revision 1089627
+  min revision 1089628
 end match
 
+#here we need empty commit 1180106 to create the branch
 match /branches/extragear/base/kwebkitpart/0.9/
   repository KDE/kwebkitpart
   branch 0.9
@@ -38,31 +45,35 @@ match /branches/extragear/base/kwebkitpart/0.9/
   max revision 1180128
 end match
 
+#empty move commit is 1180129
 match /branches/stable/extragear-kde4/base/kwebkitpart/0.9/
   repository KDE/kwebkitpart
   branch 0.9
-  min revision 1180129
+  min revision 1180130
   max revision 1180846
 end match
 
+#empty move commit is 1180847
 match /branches/kwebkitpart/kwebkitpart/0.9/
   repository KDE/kwebkitpart
   branch 0.9
-  min revision 1180847
+  min revision 1180848
   max revision 1180848
 end match
 
+#empty move commit is 1180849
 match /branches/kwebkitpart/0.9/
   repository KDE/kwebkitpart
   branch 0.9
-  min revision 1180849
+  min revision 1180850
   max revision 1181409
 end match
 
+#empty move commit is 1181410
 match /branches/stable/extragear-kde4/base/kwebkitpart/
   repository KDE/kwebkitpart
   branch 0.9
-  min revision 1181410
+  min revision 1181411
 end match
 
 match /
