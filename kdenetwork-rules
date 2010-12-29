@@ -140,7 +140,7 @@ match /trunk/kdenetwork/krdc/
   min revision 158792
   max revision 407306
   repository krdc
-  branch master
+  branch origional
 end match
 
 # kde projects moved to KDE sub directory
@@ -148,20 +148,20 @@ match /trunk/KDE/kdenetwork/krdc/
   min revision 410634
   max revision 691226
   repository krdc
-  branch master
+  branch origional
 end match
 
-# google summer of code project is started in a branch by Urs Wolfer
+# google summer of code project is started in a branch by Urs Wolfer, which is the base of the current version
 match /branches/work/soc-krdc/krdc/
   min revision 669104
   max revision 691506
   repository krdc
-  branch soc-krdc
+  branch master
 end match
 
 # is there a way to merge the soc-krdc branch to master with svn2git here?
 
-#FIXME: SoC branch is moved to trunk by deleting the krdc directory (revision 691519) and copying the files to trunk
+#SoC branch is moved to trunk by deleting the krdc directory (revision 691519) and copying the files to trunk
 match /trunk/KDE/kdenetwork/krdc/
   min revision 691520
   repository krdc
