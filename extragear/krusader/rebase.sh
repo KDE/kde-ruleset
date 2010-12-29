@@ -1,4 +1,6 @@
 #!/bin/sh
+# This script merges two Krusader repositories (krusader_sf and krusader_kde) into one.
+
 rm -rf krusader
 rm -rf krusader_temp
 git clone krusader_sf krusader_temp
@@ -10,9 +12,8 @@ git rebase --committer-date-is-author-date --quiet master krusader_kde/master
 git branch -d master
 git checkout -b master
 git remote rm origin
-git gc --aggressive
 echo "Fixing line endings:"
-git filter-branch --tag-name-filter cat --tree-filter 'find . -name "*" -exec dos2unix -q "{}" \;' HEAD
+git filter-branch --tag-name-filter cat --tree-filter 'find . -path "./.git" -prune -o -name "*.jpg" -prune -o -name "*.png" -prune -o -name "*" -exec dos2unix -q "{}" \;' HEAD
 echo "Removing .cvsignore files:"
 git filter-branch -f --tag-name-filter cat --tree-filter 'find . -name ".cvsignore" -exec rm "{}" \;' -- --all
 echo "Removing .gmo files:"
