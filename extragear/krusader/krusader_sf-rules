@@ -1,0 +1,62 @@
+#
+# Created by Andrius Štikonas <stikonas@gmail.com>
+#
+
+# Additional account names from sourceforge svn repository:
+# Codeknight Frank Schoolmeesters <codeknight@users.sourceforge.net>
+# codeknight Frank Schoolmeesters <codeknight@users.sourceforge.net>
+# deschler Dirk Eschler <deschler@users.sourceforge.net>
+# erlich Shie Erlich <erlich@users.sourceforge.net>
+# fboudra Fathi Boudra <fabo@kde.org>
+# yanai Rafi Yanai <yanai@users.sorceforge.net>
+# Jack_Slater Heiner Eichmann <h.eichmann@gmx.de>
+# jack_slater Heiner Eichmann <h.eichmann@gmx.de>
+# janhalasa Jan Halasa <xhalasa@fi.muni.cz>
+# manson Shie Erlich <erlich@users.sourceforge.net>
+
+#
+# Create the krusader repository
+#
+
+create repository krusader_sf
+end repository
+
+match /branches/trunk/krusader_kde3/
+  repository krusader_sf
+  branch kde3
+end match
+
+match /trunk/krusader_kde4/
+  repository krusader_sf
+  branch master
+end match
+
+# Tags
+match /tags/krusader-([^/]+)/krusader_kde4/
+  repository krusader_sf
+  branch refs/tags/v\1
+  annotated true
+end match
+
+match /tags/krusader-2.0.0-beta1/$
+  action recurse
+end match
+
+match /tags/krusader-([^/]+)/
+  repository krusader_sf
+  branch refs/tags/v\1
+  annotated true
+  min revision 6000
+end match
+
+match /tags/krusader-2.0.0-beta2/$
+  action recurse
+end match
+
+match /tags/krusader-2.0.0/$
+  action recurse
+end match
+
+# Ignore everything else
+match /
+end match
