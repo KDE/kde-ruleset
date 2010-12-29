@@ -2,7 +2,7 @@
 # Created by Andrius Štikonas <stikonas@gmail.com>
 #
 
-# Additional account names form sourceforge svn repository:
+# Additional account names from sourceforge svn repository:
 # Codeknight Frank Schoolmeesters <codeknight@users.sourceforge.net>
 # codeknight Frank Schoolmeesters <codeknight@users.sourceforge.net>
 # deschler Dirk Eschler <deschler@users.sourceforge.net>
@@ -20,17 +20,6 @@
 
 create repository krusader_sf
 end repository
-
-# Ignore revision made by cvs2svn
-match /
-  min revision 22
-  max revision 22
-end match
-
-match /trunk/krusader_kde3/
-  min revision 5981
-  max revision 5981
-end match
 
 match /branches/trunk/krusader_kde3/
   repository krusader_sf
