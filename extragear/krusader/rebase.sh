@@ -21,7 +21,7 @@ git filter-branch -f --tag-name-filter cat --tree-filter 'find . -name "*.gmo" -
 echo "Removing .moc.cpp files:"
 git filter-branch -f --tag-name-filter cat --tree-filter 'find . -name "*.moc.cpp" -exec rm "{}" \;' kde3
 echo "Adding additional parent:"
-echo `git rev-list HEAD | tail -1` `git rev-list -n 1--first-parent --before=2007-05-12 kde3`> parentmap
+echo `git rev-list HEAD | tail -1` `git rev-list -n 1 --first-parent --before=2007-05-12 kde3` > parentmap
 git filter-branch -f --tag-name-filter cat --parent-filter "$(../../../bin/add-parents parentmap)" master
 rm parentmap
 cd ..
