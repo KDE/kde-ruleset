@@ -12,27 +12,25 @@ end repository
 match /trunk/kdereview/krusader/
   repository krusader_kde
   branch master
-  min revision 974546
+  min revision 975321
 end match
 
 match /trunk/kdereview/doc/krusader/
   repository krusader_kde
   branch master
   prefix doc/
-  min revision 974546
+  min revision 975321
 end match
 
 match /trunk/extragear/utils/krusader/
   repository krusader_kde
   branch master
-  min revision 974546
 end match
 
 match /trunk/extragear/utils/doc/krusader/
   repository krusader_kde
   branch master
   prefix doc/
-  min revision 974546
 end match
 
 # Tags
