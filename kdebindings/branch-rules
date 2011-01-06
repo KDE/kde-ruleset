@@ -1,0 +1,103 @@
+#
+# Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
+#
+#
+# Requires variables:
+# - repo: set to a repository name, valid to use in a 'repository' clause
+# - dir: set to a path appropriate for /branches/branchname/${dir}
+
+#
+# branches
+#
+
+# svn
+
+match /branches/KDE/([^/]+)A/${dir}
+    repository ${repo}
+    branch KDE/\1a
+end match
+
+match /branches/KDE/([^/]+)/${dir}
+    repository ${repo}
+    branch KDE/\1
+end match
+
+# cvs
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/${dir}
+  repository ${repo}
+  branch KDE/\1.\2
+  # "remove unlabeled branches"
+  # the revs following rename branches and cause a spurious git commits
+  max revision 409202 
+end match
+
+#
+# tags
+#
+
+# cvs time
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/${dir}
+  repository ${repo}
+  branch refs/tags/v\1.\2.0
+  max revision 409202
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/${dir}
+  repository ${repo}
+  branch refs/tags/v\1.\2.0
+  max revision 85028
+  min revision 68154
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/${dir}
+  repository ${repo}
+  branch refs/tags/v\1.\2.\3
+  max revision 409202
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/${dir}
+  repository ${repo}
+  branch refs/tags/v\1.\2.\3a
+  min revision 192719
+  max revision 409202
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/${dir}
+  repository ${repo}
+  branch refs/tags/v\1.\2.\3-beta\4
+  min revision 376088
+  max revision 409202
+  annotated true
+end match
+
+# svn time
+
+match /tags/KDE/3.5.0-alpha1/${dir}
+  repository ${repo}
+  branch refs/tags/v3.4.90
+  annotated true
+end match
+
+match /tags/KDE/3.5.0-beta1/${dir}
+  repository ${repo}
+  branch refs/tags/v3.4.91
+  annotated true
+end match
+
+match /tags/KDE/([^/]+)A/${dir}
+    repository ${repo}
+    branch refs/tags/v\1a
+    annotated true
+end match
+
+match /tags/KDE/([^/]+)/${dir}
+    repository ${repo}
+    branch refs/tags/v\1
+    annotated true
+end match
