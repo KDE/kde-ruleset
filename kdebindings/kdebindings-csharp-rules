@@ -37,6 +37,7 @@ end match
 
 declare repo=KDE/kdebindings-csharp
 declare dir=kdebindings/csharp/
+declare prefix=/
 
 include branch-rules
 

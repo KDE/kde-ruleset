@@ -37,6 +37,7 @@ end match
 
 declare repo=KDE/kdebindings-perl
 declare dir=kdebindings/perl/
+declare prefix=/
 
 include branch-rules
 

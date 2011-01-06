@@ -48,6 +48,7 @@ end match
 
 declare repo=KDE/kdebindings-python
 declare dir=kdebindings/python/
+declare prefix=/
 
 include branch-rules
 

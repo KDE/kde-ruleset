@@ -5,6 +5,10 @@
 # Requires variables:
 # - repo: set to a repository name, valid to use in a 'repository' clause
 # - dir: set to a path appropriate for /branches/branchname/${dir}
+# - prefix: a valid path to use in a 'prefix' clause.
+#
+# Note the prefix is required! Use '/' if you don't need a prefix.
+#
 
 #
 # branches
@@ -15,11 +19,13 @@
 match /branches/KDE/([^/]+)A/${dir}
     repository ${repo}
     branch KDE/\1a
+    prefix ${prefix}
 end match
 
 match /branches/KDE/([^/]+)/${dir}
     repository ${repo}
     branch KDE/\1
+    prefix ${prefix}
 end match
 
 # cvs
@@ -30,6 +36,7 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/${dir}
   # "remove unlabeled branches"
   # the revs following rename branches and cause a spurious git commits
   max revision 409202 
+  prefix ${prefix}
 end match
 
 #
@@ -43,6 +50,7 @@ match /tags/KDE_(\d+)_(\d+)_RELEASE/${dir}
   branch refs/tags/v\1.\2.0
   max revision 409202
   annotated true
+  prefix ${prefix}
 end match
 
 match /tags/KDE_(\d+)_(\d+)_RELEASE/${dir}
@@ -51,6 +59,7 @@ match /tags/KDE_(\d+)_(\d+)_RELEASE/${dir}
   max revision 85028
   min revision 68154
   annotated true
+  prefix ${prefix}
 end match
 
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/${dir}
@@ -58,6 +67,7 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/${dir}
   branch refs/tags/v\1.\2.\3
   max revision 409202
   annotated true
+  prefix ${prefix}
 end match
 
 match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/${dir}
@@ -66,6 +76,7 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/${dir}
   min revision 192719
   max revision 409202
   annotated true
+  prefix ${prefix}
 end match
 
 match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/${dir}
@@ -74,6 +85,7 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/${dir}
   min revision 376088
   max revision 409202
   annotated true
+  prefix ${prefix}
 end match
 
 # svn time
@@ -82,22 +94,26 @@ match /tags/KDE/3.5.0-alpha1/${dir}
   repository ${repo}
   branch refs/tags/v3.4.90
   annotated true
+  prefix ${prefix}
 end match
 
 match /tags/KDE/3.5.0-beta1/${dir}
   repository ${repo}
   branch refs/tags/v3.4.91
   annotated true
+  prefix ${prefix}
 end match
 
 match /tags/KDE/([^/]+)A/${dir}
     repository ${repo}
     branch refs/tags/v\1a
     annotated true
+    prefix ${prefix}
 end match
 
 match /tags/KDE/([^/]+)/${dir}
     repository ${repo}
     branch refs/tags/v\1
     annotated true
+    prefix ${prefix}
 end match
