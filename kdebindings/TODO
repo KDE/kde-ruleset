@@ -1,21 +1,28 @@
-General:
- - It may be possible and a good idea to extract common rules into a single
-   file that gets included from the language-specific rulefiles.
-
 
 Ruby:
+ - Ignore krossruby, will be converted separately.
  - Follow past history of krossruby, when it was in koffice/libs/kross
    (moved in r646836).
  - Convert the "modular smoke branch" (merged in r807397).
 
 Python:
+ - Split pykde3 and pykde4 into separate repositories.
+ - Ignore krosspython, will be converted separately.
  - Follow past history of krosspython, when it was in koffice/libs/kross
    (moved in r646837), and earlier in kexi.
 
 Perl:
  - Something is fishy in r1129337. An entire directory got deleted. pumphaus
    doesn't know why, told me to ask burel.
+   [DONE, discussed with burel and it's fine]
 
 C#:
  - Convert the "modular smoke branch" (merged in r807397).
    -> note there is a backport in r781383
+
+Kross:
+ - Write the darn rules!
+
+Smoke:
+ - Write the darn rules!
+ - Convert the "modular smoke branch" (merged in r807397).
