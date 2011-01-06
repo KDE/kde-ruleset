@@ -129,6 +129,24 @@ end match
 
 # svn time
 
+match /tags/KDE/3.5.0-alpha1/kdebindings/(qtruby|korundum)/
+  repository KDE/kdebindings-ruby
+  branch refs/tags/v3.4.90
+  prefix \1/
+  min revision 443441
+  max revision 445561
+  annotated true
+end match
+
+match /tags/KDE/3.5.0-beta1/kdebindings/(qtruby|korundum)/
+  repository KDE/kdebindings-ruby
+  branch refs/tags/v3.4.91
+  prefix \1/
+  min revision 459298
+  max revision 460260
+  annotated true
+end match
+
 match /tags/KDE/([^/]+)A/kdebindings/ruby/
     repository KDE/kdebindings-ruby
     branch refs/tags/v\1a
@@ -153,24 +171,6 @@ match /tags/KDE/([^/]+)/kdebindings/(qtruby|korundum)/
     branch refs/tags/v\1
     prefix \2/
     annotated true
-end match
-
-match /tags/KDE/3.5.0-alpha1/kdebindings/(qtruby|korundum)/
-  repository KDE/kdebindings-ruby
-  branch refs/tags/v3.4.90
-  prefix \1/
-  min revision 443441
-  max revision 445561
-  annotated true
-end match
-
-match /tags/KDE/3.5.0-beta1/kdebindings/(qtruby|korundum)/
-  repository KDE/kdebindings-ruby
-  branch refs/tags/v3.4.91
-  prefix \1/
-  min revision 459298
-  max revision 460260
-  annotated true
 end match
 
 #
