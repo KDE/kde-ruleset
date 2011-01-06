@@ -49,12 +49,6 @@ end match
 
 # cvs
 
-# this commit is messed up - ignore it
-match /branches/KDE_3_4_BRANCH/kdebindings/
-    min revision 400296
-    max revision 400296
-end match
-
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdebindings/perl/
   repository KDE/kdebindings-perl
   branch KDE/\1.\2
