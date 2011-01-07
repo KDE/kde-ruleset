@@ -1,11 +1,9 @@
 
 Ruby:
- - Ignore krossruby, will be converted separately.
  - Convert the "modular smoke branch" (merged in r807397).
 
 Python:
  - Split pykde3 and pykde4 into separate repositories.
- - Ignore krosspython, will be converted separately.
 
 Perl:
  - Something is fishy in r1129337. An entire directory got deleted. pumphaus

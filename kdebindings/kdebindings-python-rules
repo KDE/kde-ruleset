@@ -7,6 +7,15 @@ end repository
 
 include common-ignores
 
+# ignore krosspython
+
+match /trunk/KDE/kdebindings/python/krosspython/
+end match
+match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/python/krosspython/
+end match
+
+# main rules
+
 match /trunk/(KDE/)?kdebindings/python/
     repository KDE/kdebindings-python
     branch master
