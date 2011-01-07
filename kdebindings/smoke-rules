@@ -1,0 +1,41 @@
+#
+# Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
+#
+
+create repository KDE/kdebindings-smoke
+end repository
+
+include common-ignores
+
+# ignore this large generated file; takes like 60% of the final repo size
+match /trunk/kdebindings/smoke/qt/(xdata|smokedata).cpp
+end match
+match /(branches|tags)/([^/]+)/kdebindings/smoke/qt/(xdata|smokedata).cpp
+end match
+
+# main rules
+match /trunk/(KDE/)?kdebindings/smoke/
+    repository KDE/kdebindings-smoke
+    branch master
+end match
+
+# recursion
+match /(branches|tags)/(KDE/)?([^/]+)/$
+   action recurse
+end match
+
+match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/$
+   action recurse
+end match
+
+# branches and tags
+
+declare repo=KDE/kdebindings-smoke
+
+declare dir=kdebindings/smoke/
+declare prefix=/
+include branch-rules
+
+# ignore everything else
+match /
+end match
