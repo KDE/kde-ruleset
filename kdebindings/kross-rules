@@ -13,13 +13,13 @@ match /trunk/(KDE/)?kdebindings/python/krosspython/
     prefix python/
 end match
 
-match /trunk/(KDE/)?kdebindings/java/
+match /trunk/(KDE/)?kdebindings/java/krossjava/
     repository KDE/kdebindings-kross
     branch master
     prefix java/
 end match
 
-match /trunk/(KDE/)?kdebindings/falcon/
+match /trunk/(KDE/)?kdebindings/falcon/krossfalcon/
     repository KDE/kdebindings-kross
     branch master
     prefix falcon/
