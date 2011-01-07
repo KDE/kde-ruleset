@@ -47,6 +47,24 @@ match /trunk/playground/bindings/krossfalcon/
     prefix falcon/
 end match
 
+# note the questionmark! this matches both 'lib' and 'libs' (it was renamed)
+match /trunk/koffice/libs?/kross/(python|ruby)/
+    repository KDE/kdebindings-kross
+    branch master
+    prefix \1/
+end match
+
+match /trunk/koffice/kexi/scriptingcore/(python|ruby)/
+    repository KDE/kdebindings-kross
+    branch master
+    prefix \1/
+end match
+
+match /trunk/koffice/kexi/scripting/(python|ruby)/
+    repository KDE/kdebindings-kross
+    branch master
+    prefix \1/
+end match
 
 
 #
