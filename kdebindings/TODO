@@ -21,8 +21,6 @@ Kross:
    (moved in r646836).
  - Follow history of krosspython, when it was in koffice/libs/kross
    (moved in r646837), and earlier in kexi.
- - Follow playground history of krossjava. Moved in r802617.
- - Follow playground history of falcon. Moved in r885297.
 
 Smoke:
  - Write the darn rules!

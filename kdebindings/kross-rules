@@ -30,6 +30,24 @@ match /trunk/(KDE/)?kdebindings/ruby/korundum/modules/krossruby/
     branch master
     prefix ruby/
 end match
+match /trunk/(KDE/)?kdebindings/ruby/krossruby/
+    repository KDE/kdebindings-kross
+    branch master
+    prefix ruby/
+end match
+
+match /trunk/playground/bindings/krossjava/
+    repository KDE/kdebindings-kross
+    branch master
+    prefix java/
+end match
+match /trunk/playground/bindings/krossfalcon/
+    repository KDE/kdebindings-kross
+    branch master
+    prefix falcon/
+end match
+
+
 
 #
 # recursion
