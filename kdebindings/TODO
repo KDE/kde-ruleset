@@ -4,6 +4,7 @@ Ruby:
 
 Python:
  - Split pykde3 and pykde4 into separate repositories.
+   [DONE, repo now only has pykde4; pykde3 is not being converted though]
 
 Perl:
  - Something is fishy in r1129337. An entire directory got deleted. pumphaus

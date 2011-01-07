@@ -2,22 +2,15 @@
 # Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
 #
 
-create repository KDE/kdebindings-python
+create repository KDE/kdebindings-pykde4
 end repository
 
 include common-ignores
 
-# ignore krosspython
-
-match /trunk/KDE/kdebindings/python/krosspython/
-end match
-match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/python/krosspython/
-end match
-
 # main rules
 
-match /trunk/(KDE/)?kdebindings/python/
-    repository KDE/kdebindings-python
+match /trunk/(KDE/)?kdebindings/python/pykde4/
+    repository KDE/kdebindings-pykde4
     branch master
 end match
 
@@ -32,12 +25,16 @@ match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/$
     action recurse
 end match
 
+match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/python/$
+    action recurse
+end match
+
 #
 # branches
 #
 
-declare repo=KDE/kdebindings-python
-declare dir=kdebindings/python/
+declare repo=KDE/kdebindings-pykde4
+declare dir=kdebindings/python/pykde4/
 declare prefix=/
 
 include branch-rules
