@@ -1,15 +1,11 @@
 
 Ruby:
  - Ignore krossruby, will be converted separately.
- - Follow past history of krossruby, when it was in koffice/libs/kross
-   (moved in r646836).
  - Convert the "modular smoke branch" (merged in r807397).
 
 Python:
  - Split pykde3 and pykde4 into separate repositories.
  - Ignore krosspython, will be converted separately.
- - Follow past history of krosspython, when it was in koffice/libs/kross
-   (moved in r646837), and earlier in kexi.
 
 Perl:
  - Something is fishy in r1129337. An entire directory got deleted. pumphaus
@@ -21,7 +17,12 @@ C#:
    -> note there is a backport in r781383
 
 Kross:
- - Write the darn rules!
+ - Follow history of krossruby, when it was in koffice/libs/kross
+   (moved in r646836).
+ - Follow history of krosspython, when it was in koffice/libs/kross
+   (moved in r646837), and earlier in kexi.
+ - Follow playground history of krossjava. Moved in r802617.
+ - Follow playground history of falcon. Moved in r885297.
 
 Smoke:
  - Write the darn rules!

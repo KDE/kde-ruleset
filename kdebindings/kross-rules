@@ -1,0 +1,59 @@
+#
+# Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
+#
+
+create repository KDE/kdebindings-kross
+end repository
+
+include common-ignores
+
+match /trunk/(KDE/)?kdebindings/python/krosspython/
+    repository KDE/kdebindings-kross
+    branch master
+    prefix python/
+end match
+
+match /trunk/(KDE/)?kdebindings/java/
+    repository KDE/kdebindings-kross
+    branch master
+    prefix java/
+end match
+
+match /trunk/(KDE/)?kdebindings/falcon/
+    repository KDE/kdebindings-kross
+    branch master
+    prefix falcon/
+end match
+
+match /trunk/(KDE/)?kdebindings/ruby/korundum/modules/krossruby/
+    repository KDE/kdebindings-kross
+    branch master
+    prefix ruby/
+end match
+
+#
+# recursion
+#
+#match /(branches|tags)/(KDE/)?([^/]+)/$
+#    action recurse
+#end match
+#
+#match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/$
+#    action recurse
+#end match
+
+#
+# branches
+#
+
+#declare repo=KDE/kdebindings-kross
+#declare dir=kdebindings/python/
+#declare prefix=/
+#
+#include branch-rules
+
+#
+# ignore everything else
+#
+match /
+end match
