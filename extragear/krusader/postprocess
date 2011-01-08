@@ -8,6 +8,14 @@ cd krusader_temp
 git remote add -f krusader_kde ../krusader_kde
 git branch kde3 origin/kde3
 git checkout -b kde krusader_kde/master
+echo "Removing duplicated commits:"
+git filter-branch --tag-name-filter cat --commit-filter '
+if [ `git rev-list --grep="Original author" HEAD | grep "$(map $GIT_COMMIT)"` ]; then
+    skip_commit "$@";
+else
+    git commit-tree "$@";
+fi
+' HEAD
 echo "Adding additional parent:"
 echo `git rev-list HEAD | tail -1` `git rev-list master | head -1` > parentmap
 git filter-branch -f --tag-name-filter cat --parent-filter "$(../../../bin/add-parents parentmap)" HEAD
