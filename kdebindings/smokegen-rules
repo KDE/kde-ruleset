@@ -1,0 +1,41 @@
+#
+# Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
+#
+
+create repository KDE/kdebindings-smokegen
+end repository
+
+include common-ignores
+
+# main rules
+
+match /trunk/playground/bindings/smokegenerator/
+    repository KDE/kdebindings-smokegen
+    branch master
+end match
+
+match /trunk/(KDE/)?kdebindings/generator/
+    repository KDE/kdebindings-smokegen
+    branch master
+end match
+
+# recursion
+match /(branches|tags)/(KDE/)?([^/]+)/$
+   action recurse
+end match
+
+match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/$
+   action recurse
+end match
+
+# branches and tags
+
+declare repo=KDE/kdebindings-smokegen
+
+declare dir=kdebindings/generator/
+declare prefix=/
+include branch-rules
+
+# ignore everything else
+match /
+end match
