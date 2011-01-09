@@ -3,7 +3,7 @@
 
 rm -rf krusader
 rm -rf krusader_temp
-git clone krusader_sf krusader_temp
+git clone --no-hardlinks krusader_sf krusader_temp
 cd krusader_temp
 git remote add -f krusader_kde ../krusader_kde
 git branch kde3 origin/kde3
@@ -27,7 +27,7 @@ git remote rm krusader_kde
 echo "Fixing line endings:"
 git filter-branch -f --tag-name-filter cat --tree-filter 'find . -path "./.git" -prune -o -name "*.jpg" -prune -o -name "*.png" -prune -o -name "*" -exec dos2unix -q "{}" \;' HEAD
 echo "Removing .cvsignore, .gmo and .moc.cpp files:"
-git filter-branch -f --tag-name-filter cat --tree-filter 'find . \( -name ".cvsignore" -o -name "*.gmo" -o -name "*.moc.cpp" \) -exec rm -f "{}" \;' -- --all
+git filter-branch -f --tag-name-filter cat --tree-filter 'find . \( -name ".cvsignore" -o -name "*.gmo" -o -name "*.moc.cpp" -o -name ".memdump" \) -exec rm -f "{}" \;' -- --all
 echo "Adding additional parent:"
 echo `git rev-list HEAD | tail -1` `git rev-list -n 1 --first-parent --before=2007-05-12 kde3` > parentmap
 git filter-branch -f --tag-name-filter cat --parent-filter "$(../../../bin/add-parents parentmap)" master
@@ -35,7 +35,7 @@ rm parentmap
 echo "Removing empty commits:"
 git filter-branch -f --prune-empty --tag-name-filter cat -- --all
 cd ..
-git clone krusader_temp krusader
+git clone --no-hardlinks krusader_temp krusader
 rm -rf krusader_temp
 cd krusader
 git branch kde3 origin/kde3

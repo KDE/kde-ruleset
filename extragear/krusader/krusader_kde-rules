@@ -9,6 +9,11 @@
 create repository krusader_kde
 end repository
 
+match /trunk/extragear/utils/krusader/doc/
+  min revision 987344
+  max revision 987344
+end match
+
 match /trunk/kdereview/krusader/
   repository krusader_kde
   branch master
