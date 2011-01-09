@@ -10,7 +10,9 @@
 # 
 # Requires translateRevlist.py from kde-ruleset/bin.
 
+if [ -z "$bindir" ]; then
 bindir=../bin
+fi
 
 revision_to_remove=$(echo 1091179 | "$bindir/translateRevlist.py" /dev/stdin)
 

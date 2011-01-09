@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ -z "$bindir" ]; then
+bindir=../bin
+fi
+
 tempdir=$(
     mktemp -u -d --tmpdir=/dev/shm rubyfilterbranch.XXXXX ||
     mktemp -u -d --tmpdir rubyfilterbranch.XXXXX ||
