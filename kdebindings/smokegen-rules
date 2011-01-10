@@ -38,6 +38,9 @@ end match
 match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/$
    action recurse
 end match
+match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/smoke/$
+   action recurse
+end match
 
 # branches and tags
 
@@ -45,6 +48,14 @@ declare repo=KDE/kdebindings-smokegen
 
 declare dir=kdebindings/generator/
 declare prefix=/
+include branch-rules
+
+declare dir=kdebindings/smoke/smokebase/
+declare prefix=/smokebase/
+include branch-rules
+
+declare dir=kdebindings/smoke/smokeapi/
+declare prefix=/smokeapi/
 include branch-rules
 
 # ignore everything else
