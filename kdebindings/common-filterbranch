@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# filter-branch script used for all kdebindings repositories
+#
+# - filters empty commits (--prune-empty)
+# - replaces CRLF with LF via dos2unix
+# - fixes "nobody@localhost" emails in cvs2svn commits
+
+tempdir=$(
+    mktemp -u -d --tmpdir=/dev/shm kdebindings-filter.XXXXX ||
+    mktemp -u -d --tmpdir kdebindings-filter.XXXXX ||
+    echo ".git-rewrite"
+)
+echo "using $tempdir as temporary directory"
+
+git filter-branch --tag-name-filter cat -d "$tempdir" --prune-empty \
+--tree-filter 'find -type f -exec dos2unix -q "{}" "+"' \
+--env-filter '
+if [ "$GIT_COMMITTER_EMAIL" = "nobody@localhost" ]; then
+    export GIT_COMMITTER_EMAIL=cvs2svn@kde.org
+    export GIT_AUTHOR_EMAIL=cvs2svn@kde.org
+    export GIT_COMMITTER_NAME="KDE Sysadmin"
+    export GIT_AUTHOR_NAME="KDE Sysadmin"
+fi
+' -- --all
