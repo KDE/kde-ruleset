@@ -19,6 +19,17 @@ match /trunk/(KDE/)?kdebindings/generator/
     branch master
 end match
 
+match /trunk/(KDE/)?kdebindings/smoke/smokebase/
+    repository KDE/kdebindings-smokegen
+    branch master
+    prefix smokebase/
+end match
+match /trunk/(KDE/)?kdebindings/smoke/smokeapi/
+    repository KDE/kdebindings-smokegen
+    branch master
+    prefix smokeapi/
+end match
+
 # recursion
 match /(branches|tags)/(KDE/)?([^/]+)/$
    action recurse
