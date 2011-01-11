@@ -29,6 +29,11 @@ match /trunk/(KDE/)?kdebindings/smoke/smokeapi/
     branch master
     prefix smokeapi/
 end match
+match /trunk/(KDE/)?kdebindings/smoke/deptool/
+    repository KDE/kdebindings-smokegen
+    branch master
+    prefix deptool/
+end match
 
 # recursion
 match /(branches|tags)/(KDE/)?([^/]+)/$
