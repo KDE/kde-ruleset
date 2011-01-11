@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# filter-branch script for smokegen.
+#
+# In r1013460, the whole smokegen code was moved from playground to trunk,
+# but the 'examples' directory wasn't moved.
+# Normally this would look like a deletion of 'examples' in SVN trunk,
+# and svn2git would convert it properly.
+# However, the move from playground to trunk wasn't done properly
+# and lacks copy information.
+#
+# This script deletes the 'examples' directory
+# from all revisions after SVN r1013460 (inclusive).
+
+set -e
+
+if [ -z "$bindir" ]; then
+bindir=../bin
+fi
+
+first_rev=$(git rev-parse $(echo 1013460 | "$bindir/translateRevlist.py" /dev/stdin)^)
+
+git filter-branch --tag-name-filter cat --index-filter 'git rm -q -r --cached --ignore-unmatch examples' -- --all "^$first_rev"
