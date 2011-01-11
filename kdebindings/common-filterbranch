@@ -16,7 +16,7 @@ echo "using $tempdir as temporary directory"
 git filter-branch --tag-name-filter cat -d "$tempdir" --prune-empty \
 --tree-filter '
 find -type f -exec dos2unix -q "{}" "+"
-find -name "*.orig" -o -name "*.rej" -delete
+find "(" -name "*.orig" -o -name "*.rej" ")" -delete
 ' --env-filter '
 if [ "$GIT_COMMITTER_EMAIL" = "nobody@localhost" ]; then
     export GIT_COMMITTER_EMAIL=cvs2svn@kde.org
