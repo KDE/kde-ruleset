@@ -1,0 +1,963 @@
+declare MODULE=apps
+declare REPO=kdebase-apps
+
+
+create repository ${REPO}
+end repository
+
+#ignore konsole
+match /trunk/(KDE/)?kdebase/apps/konsole/
+end match
+
+include kdebase-branches-tags-rules
+
+# --repo# file:///mnt/tera/kde-svn/kde# --path# /trunk/KDE/kdebase/apps# --module# kdebase-apps# --subdirs# --recurse# 2
+
+#	------< /trunk/KDE/kdebase/apps >------
+#	[ add  HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/cmake >------
+#	[ add cmake HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/cmake/modules >------
+#	[ add cmake/modules HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/doc >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/doc/dolphin @ 706561 <- /trunk/KDE/kdebase/doc/dolphin @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/doc/kappfinder @ 706561 <- /trunk/KDE/kdebase/doc/kappfinder @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/doc/kfind @ 706561 <- /trunk/KDE/kdebase/doc/kfind @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/doc/konqueror @ 706561 <- /trunk/KDE/kdebase/doc/konqueror @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/doc/konsole @ 706561 <- /trunk/KDE/kdebase/doc/konsole @ 706490 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/doc/kwrite @ 706561 <- /trunk/KDE/kdebase/doc/kwrite @ 706490 ]
+#	[ add doc HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/doc/dolphin >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/doc/dolphin @ 706561 <- /trunk/KDE/kdebase/doc/dolphin @ 706490 ]
+#	[ add doc/dolphin HEAD 706490 ]
+
+
+#	[ move trunk/KDE/kdebase/doc/dolphin 706490 0 ]
+
+
+
+match /trunk/(KDE/)?kdebase/apps/
+  repository kdebase-apps
+  branch master
+end match
+
+match /trunk/(KDE/)?kdebase/doc/dolphin/
+    repository kdebase-apps
+    prefix doc/dolphin/
+    branch master
+    max revision 706490
+end match
+
+match /trunk/(KDE/)?kdebase/kate/app/kwritemain(.*)
+    repository kdebase-apps
+    prefix kwrite/kwritemain\2
+    branch master
+end match
+
+#	------< /trunk/KDE/kdebase/apps/doc/kdepasswd >------
+#	[ add doc/kdepasswd HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/doc/kfind >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/doc/kfind @ 706561 <- /trunk/KDE/kdebase/doc/kfind @ 706490 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add doc/kfind HEAD 706490 ]
+
+
+#	[ move trunk/KDE/kdebase/doc/kfind 706490 409202 ]
+match /trunk/(KDE/)?kdebase/doc/kfind/
+    repository kdebase-apps
+    prefix doc/kfind/
+    branch master
+    max revision 706490
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/doc/kfind 409202 0 ]
+match /trunk/kdebase/doc/kfind/
+    repository kdebase-apps
+    prefix doc/kfind/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/doc/konqueror >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/doc/konqueror @ 706561 <- /trunk/KDE/kdebase/doc/konqueror @ 706490 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add doc/konqueror HEAD 706490 ]
+
+
+#	[ move trunk/KDE/kdebase/doc/konqueror 706490 409202 ]
+match /trunk/(KDE/)?kdebase/doc/konqueror/
+    repository kdebase-apps
+    prefix doc/konqueror/
+    branch master
+    max revision 706490
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/doc/konqueror 409202 0 ]
+match /trunk/kdebase/doc/konqueror/
+    repository kdebase-apps
+    prefix doc/konqueror/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/doc/konsole >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/doc/konsole @ 706561 <- /trunk/KDE/kdebase/doc/konsole @ 706490 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ Move/Replace: /trunk/kdebase/doc/konsole @ 17811 <- /trunk/kdebase/konsole/doc/sgml @ 17810 ]
+#	[ add doc/konsole HEAD 706490 ]
+
+
+#	[ move trunk/KDE/kdebase/doc/konsole 706490 409202 ]
+match /trunk/(KDE/)?kdebase/doc/konsole/
+    repository kdebase-apps
+    prefix doc/konsole/
+    branch master
+    max revision 706490
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/doc/konsole 409202 17810 ]
+match /trunk/kdebase/doc/konsole/
+    repository kdebase-apps
+    prefix doc/konsole/
+    branch master
+    max revision 409202
+    min revision 17810
+end match
+
+#	[ move trunk/kdebase/konsole/doc/sgml 17810 0 ]
+match /trunk/kdebase/konsole/doc/sgml/
+    repository kdebase-apps
+    prefix doc/konsole/
+    branch master
+    max revision 17810
+end match
+
+#	------< /trunk/KDE/kdebase/apps/doc/kwrite >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/doc/kwrite @ 706561 <- /trunk/KDE/kdebase/doc/kwrite @ 706490 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ Delayed: /trunk/kdebase/doc/kwrite/Makefile.am @ 62649 <- /trunk/kdeutils/doc/kwrite/Makefile.am @ 62648 ]
+#	[ Delayed: /trunk/kdebase/doc/kwrite/index.docbook @ 62649 <- /trunk/kdeutils/doc/kwrite/index.docbook @ 62648 ]
+#	[ add doc/kwrite HEAD 706490 ]
+
+
+#	[ move trunk/KDE/kdebase/doc/kwrite 706490 409202 ]
+match /trunk/(KDE/)?kdebase/doc/kwrite/
+    repository kdebase-apps
+    prefix doc/kwrite/
+    branch master
+    max revision 706490
+end match
+
+#	------< /trunk/KDE/kdebase/apps/dolphin >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/dolphin @ 633622 <- /trunk/playground/utils/dolphin @ 633611 ]
+#	[ add dolphin HEAD 633611 ]
+
+
+#	[ move trunk/playground/utils/dolphin 633611 0 ]
+match /trunk/playground/utils/dolphin/
+    repository kdebase-apps
+    prefix dolphin/
+    branch master
+    max revision 633611
+end match
+
+#	------< /trunk/KDE/kdebase/apps/dolphin/src >------
+#	[ Parent: /trunk/KDE/kdebase/apps/dolphin @ 633622 <- /trunk/playground/utils/dolphin @ 633611 ]
+#	[ add dolphin/src HEAD 633611 ]
+
+#	------< /trunk/KDE/kdebase/apps/dolphin/src/filterbar >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/filterbar/filterbar.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/filterbar.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/filterbar/filterbar.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/filterbar.h @ 1154132 ]
+#	[ add dolphin/src/filterbar HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/dolphin/src/panels >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/dolphin_folderspanelsettings.kcfg @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_folderspanelsettings.kcfg @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/dolphin_folderspanelsettings.kcfgc @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_folderspanelsettings.kcfgc @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/ktreeview.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/ktreeview.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/ktreeview.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/ktreeview.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/ktreeview_p.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/ktreeview_p.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/sidebartreeview.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/sidebartreeview.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/sidebartreeview.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/sidebartreeview.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/treeviewcontextmenu.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/treeviewcontextmenu.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/treeviewcontextmenu.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/treeviewcontextmenu.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/treeviewsidebarpage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/treeviewsidebarpage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/folders/treeviewsidebarpage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/treeviewsidebarpage.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/commenteditwidget.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/commenteditwidget.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/commenteditwidget.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/commenteditwidget.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/commentwidget.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/commentwidget.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/commentwidget.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/commentwidget.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/infosidebarpage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/infosidebarpage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/infosidebarpage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/infosidebarpage.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/metadatawidget.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/metadatawidget.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/metadatawidget.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/metadatawidget.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/metatextlabel.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/metatextlabel.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/metatextlabel.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/metatextlabel.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/nepomukmassupdatejob.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/nepomukmassupdatejob.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/nepomukmassupdatejob.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/nepomukmassupdatejob.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/newtagdialog.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/tagcloud/newtagdialog.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/newtagdialog.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/tagcloud/newtagdialog.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/newtagdialog.ui @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/tagcloud/newtagdialog.ui @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/resourcetaggingwidget.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/tagcloud/resourcetaggingwidget.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/resourcetaggingwidget.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/tagcloud/resourcetaggingwidget.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/tagcloud.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/tagcloud/tagcloud.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/tagcloud.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/tagcloud/tagcloud.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/taggingpopup.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/tagcloud/taggingpopup.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/information/taggingpopup.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/tagcloud/taggingpopup.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/places/dolphinfileplacesview.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinfileplacesview.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/places/dolphinfileplacesview.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinfileplacesview.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/sidebarpage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/sidebarpage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/sidebarpage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/sidebarpage.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/terminal/terminalsidebarpage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/terminalsidebarpage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/panels/terminal/terminalsidebarpage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/terminalsidebarpage.h @ 910629 ]
+#	[ add dolphin/src/panels HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/dolphin/src/search >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/search/dolphinsearchbox.cpp @ 1036658 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinsearchbox.cpp @ 1036641 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/search/dolphinsearchbox.h @ 1036658 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinsearchbox.h @ 1036641 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/search/dolphinsearchcommands.desktop @ 1036658 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinsearchcommands.desktop @ 1036641 ]
+#	[ add dolphin/src/search HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/dolphin/src/settings >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/additionalinfodialog.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/additionalinfodialog.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/additionalinfodialog.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/additionalinfodialog.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/applyviewpropsjob.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/applyviewpropsjob.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/applyviewpropsjob.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/applyviewpropsjob.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/columnviewsettingspage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/columnviewsettingspage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/columnviewsettingspage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/columnviewsettingspage.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/detailsviewsettingspage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/detailsviewsettingspage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/detailsviewsettingspage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/detailsviewsettingspage.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphin_columnmodesettings.kcfg @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_columnmodesettings.kcfg @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphin_columnmodesettings.kcfgc @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_columnmodesettings.kcfgc @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphin_detailsmodesettings.kcfg @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_detailsmodesettings.kcfg @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphin_detailsmodesettings.kcfgc @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_detailsmodesettings.kcfgc @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphin_directoryviewpropertysettings.kcfg @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_directoryviewpropertysettings.kcfg @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphin_directoryviewpropertysettings.kcfgc @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_directoryviewpropertysettings.kcfgc @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphin_generalsettings.kcfg @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_generalsettings.kcfg @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphin_generalsettings.kcfgc @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_generalsettings.kcfgc @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphin_iconsmodesettings.kcfg @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_iconsmodesettings.kcfg @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphin_iconsmodesettings.kcfgc @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphin_iconsmodesettings.kcfgc @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphinfontrequester.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinfontrequester.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphinfontrequester.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinfontrequester.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphinsettings.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinsettings.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphinsettings.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinsettings.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphinsettingsdialog.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinsettingsdialog.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/dolphinsettingsdialog.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinsettingsdialog.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/generalsettingspage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/generalsettingspage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/generalsettingspage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/generalsettingspage.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/generalviewsettingspage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/generalviewsettingspage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/generalviewsettingspage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/generalviewsettingspage.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/iconsizegroupbox.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/iconsizegroupbox.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/iconsizegroupbox.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/iconsizegroupbox.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/iconsviewsettingspage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/iconsviewsettingspage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/iconsviewsettingspage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/iconsviewsettingspage.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/settingspagebase.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/settingspagebase.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/settingspagebase.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/settingspagebase.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/startupsettingspage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/startupsettingspage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/startupsettingspage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/startupsettingspage.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/viewpropertiesdialog.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/viewpropertiesdialog.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/viewpropertiesdialog.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/viewpropertiesdialog.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/viewpropsprogressinfo.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/viewpropsprogressinfo.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/viewpropsprogressinfo.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/viewpropsprogressinfo.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/viewsettingspage.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/viewsettingspage.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/viewsettingspage.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/viewsettingspage.h @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/viewsettingspagebase.cpp @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/viewsettingspagebase.cpp @ 910629 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/settings/viewsettingspagebase.h @ 911065 <- /trunk/KDE/kdebase/apps/dolphin/src/viewsettingspagebase.h @ 910629 ]
+#	[ add dolphin/src/settings HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/dolphin/src/statusbar >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/statusbar/dolphinstatusbar.cpp @ 1005704 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinstatusbar.cpp @ 1005693 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/statusbar/dolphinstatusbar.h @ 1005704 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinstatusbar.h @ 1005225 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/statusbar/statusbarmessagelabel.cpp @ 1005704 <- /trunk/KDE/kdebase/apps/dolphin/src/statusbarmessagelabel.cpp @ 1005225 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/statusbar/statusbarmessagelabel.h @ 1005704 <- /trunk/KDE/kdebase/apps/dolphin/src/statusbarmessagelabel.h @ 1005225 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/statusbar/statusbarspaceinfo.cpp @ 1005704 <- /trunk/KDE/kdebase/apps/dolphin/src/statusbarspaceinfo.cpp @ 1005225 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/statusbar/statusbarspaceinfo.h @ 1005704 <- /trunk/KDE/kdebase/apps/dolphin/src/statusbarspaceinfo.h @ 1005225 ]
+#	[ add dolphin/src/statusbar HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/dolphin/src/tests >------
+#	[ add dolphin/src/tests HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/dolphin/src/views >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphincategorydrawer.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphincategorydrawer.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphincategorydrawer.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphincategorydrawer.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphincolumnview.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphincolumnview.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphincolumnview.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphincolumnview.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphincolumnviewcontainer.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphincolumnviewcontainer.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphincolumnviewcontainer.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphincolumnviewcontainer.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphindetailsview.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphindetailsview.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphindetailsview.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphindetailsview.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphindetailsviewexpander.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphindetailsviewexpander.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphindetailsviewexpander.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphindetailsviewexpander.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphinfileitemdelegate.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinfileitemdelegate.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphinfileitemdelegate.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinfileitemdelegate.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphiniconsview.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphiniconsview.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphiniconsview.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphiniconsview.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphinview.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinview.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphinview.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinview.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphinviewautoscroller.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinviewautoscroller.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphinviewautoscroller.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinviewautoscroller.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphinviewcontroller.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinviewcontroller.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/dolphinviewcontroller.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/dolphinviewcontroller.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/selectionmanager.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/selectionmanager.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/selectionmanager.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/selectionmanager.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/selectiontoggle.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/selectiontoggle.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/selectiontoggle.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/selectiontoggle.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/viewextensionsfactory.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/viewextensionsfactory.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/viewextensionsfactory.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/viewextensionsfactory.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/viewmodecontroller.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/viewmodecontroller.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/viewmodecontroller.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/viewmodecontroller.h @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/zoomlevelinfo.cpp @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/zoomlevelinfo.cpp @ 1154132 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/dolphin/src/views/zoomlevelinfo.h @ 1154146 <- /trunk/KDE/kdebase/apps/dolphin/src/zoomlevelinfo.h @ 1154132 ]
+#	[ add dolphin/src/views HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/kdepasswd >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/kdepasswd @ 660954 <- /trunk/KDE/kdebase/kdepasswd @ 660949 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ Move/Replace: /trunk/kdebase/kdepasswd @ 292370 <- /trunk/kdeutils/kdepasswd @ 292369 ]
+#	[ add kdepasswd HEAD 660949 ]
+
+
+#	[ move trunk/KDE/kdebase/kdepasswd 660949 409202 ]
+match /trunk/(KDE/)?kdebase/kdepasswd/
+    repository kdebase-apps
+    prefix kdepasswd/
+    branch master
+    max revision 660949
+    min revision 292369
+end match
+
+#	[ move trunk/kdeutils/kdepasswd 292369 0 ]
+match /trunk/kdeutils/kdepasswd/
+    repository kdebase-apps
+    prefix kdepasswd/
+    branch master
+    max revision 292369
+end match
+
+#	------< /trunk/KDE/kdebase/apps/kdepasswd/kcm >------
+#	[ Parent: /trunk/KDE/kdebase/apps/kdepasswd @ 660954 <- /trunk/KDE/kdebase/kdepasswd @ 660949 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add kdepasswd/kcm HEAD 660949 ]
+
+
+
+#	------< /trunk/KDE/kdebase/apps/kdepasswd/kcm/pics >------
+#	[ Parent: /trunk/KDE/kdebase/apps/kdepasswd @ 660954 <- /trunk/KDE/kdebase/kdepasswd @ 660949 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add kdepasswd/kcm/pics HEAD 660949 ]
+
+
+#	------< /trunk/KDE/kdebase/apps/kdialog >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/kdialog @ 462198 <- /trunk/KDE/kdebase/kdialog @ 462172 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add kdialog HEAD 462172 ]
+
+
+#	[ move trunk/KDE/kdebase/kdialog 462172 409202 ]
+match /trunk/(KDE/)?kdebase/kdialog/
+    repository kdebase-apps
+    prefix kdialog/
+    branch master
+    max revision 462172
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/kdialog 409202 0 ]
+match /trunk/kdebase/kdialog/
+    repository kdebase-apps
+    prefix kdialog/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/keditbookmarks >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/keditbookmarks @ 474044 <- /trunk/KDE/kdebase/konqueror/keditbookmarks @ 474043 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add keditbookmarks HEAD 474043 ]
+
+
+#	[ move trunk/KDE/kdebase/konqueror/keditbookmarks 474043 409202 ]
+match /trunk/(KDE/)?kdebase/konqueror/keditbookmarks/
+    repository kdebase-apps
+    prefix keditbookmarks/
+    branch master
+    max revision 474043
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/konqueror/keditbookmarks 409202 0 ]
+match /trunk/kdebase/konqueror/keditbookmarks/
+    repository kdebase-apps
+    prefix keditbookmarks/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/keditbookmarks/kbookmarkmodel >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/keditbookmarks/kbookmarkmodel/tests @ 1118280 <- /trunk/KDE/kdebase/apps/keditbookmarks/tests @ 1115715 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/keditbookmarks/kbookmarkmodel/treeitem.cpp @ 1118280 <- /trunk/KDE/kdebase/apps/keditbookmarks/treeitem.cpp @ 1115715 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/keditbookmarks/kbookmarkmodel/treeitem_p.h @ 1118280 <- /trunk/KDE/kdebase/apps/keditbookmarks/treeitem_p.h @ 1115715 ]
+#	[ add keditbookmarks/kbookmarkmodel HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/keditbookmarks/kbookmarkmodel/tests >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/keditbookmarks/kbookmarkmodel/tests @ 1118280 <- /trunk/KDE/kdebase/apps/keditbookmarks/tests @ 1115715 ]
+#	[ add keditbookmarks/kbookmarkmodel/tests HEAD 1115715 ]
+
+
+#	[ move trunk/KDE/kdebase/apps/keditbookmarks/tests 1115715 0 ]
+
+
+#	------< /trunk/KDE/kdebase/apps/kfind >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/kfind @ 541545 <- /trunk/KDE/kdebase/kfind @ 541524 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add kfind HEAD 541524 ]
+
+
+#	[ move trunk/KDE/kdebase/kfind 541524 409202 ]
+match /trunk/(KDE/)?kdebase/kfind/
+    repository kdebase-apps
+    prefix kfind/
+    branch master
+    max revision 541524
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/kfind 409202 0 ]
+match /trunk/kdebase/kfind/
+    repository kdebase-apps
+    prefix kfind/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add konqueror HEAD 659438 ]
+
+
+#	[ move trunk/KDE/kdebase/konqueror 659438 409202 ]
+match /trunk/(KDE/)?kdebase/konqueror/
+    repository kdebase-apps
+    prefix konqueror/
+    branch master
+    max revision 659438
+end match
+
+#	[ move trunk/KDE/kdebase/workspace/kcontrol/kio 457315 455864 ]
+match /trunk/(KDE/)?kdebase/workspace/kcontrol/kio/
+    repository kdebase-apps
+    prefix konqueror/settings/kio/
+    branch master
+    max revision 457315
+    min revision 455864
+end match
+
+#	[ parent trunk/KDE/kdebase/kcontrol/kio 455864 409202 ]
+match /trunk/(KDE/)?kdebase/kcontrol/kio/
+    repository kdebase-apps
+    prefix konqueror/settings/kio/
+    branch master
+    max revision 455864
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/kcontrol/kio 409202 0 ]
+match /trunk/kdebase/kcontrol/kio/
+    repository kdebase-apps
+    prefix konqueror/settings/kio/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror/settings/konq >------
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Parent: /trunk/KDE/kdebase/konqueror/settings @ 457262 <- /trunk/KDE/kdebase/konqueror/kcontrol @ 457243 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/konqueror/kcontrol/konq @ 456703 <- /trunk/KDE/kdebase/workspace/kcontrol/konq @ 456607 ]
+#	[ Parent: /trunk/KDE/kdebase/workspace/kcontrol @ 455942 <- /trunk/KDE/kdebase/kcontrol @ 455864 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add konqueror/settings/konq HEAD 659438 ]
+
+
+#	[ parent trunk/KDE/kdebase/konqueror/settings/konq 659438 457243 ]
+match /trunk/(KDE/)?kdebase/konqueror/settings/konq/
+    repository kdebase-apps
+    prefix konqueror/settings/konq/
+    branch master
+    max revision 659438
+    min revision 457243
+end match
+
+#	[ parent trunk/KDE/kdebase/konqueror/kcontrol/konq 457243 456607 ]
+match /trunk/(KDE/)?kdebase/konqueror/kcontrol/konq/
+    repository kdebase-apps
+    prefix konqueror/settings/konq/
+    branch master
+    max revision 457243
+    min revision 456607
+end match
+
+#	[ move trunk/KDE/kdebase/workspace/kcontrol/konq 456607 455864 ]
+match /trunk/(KDE/)?kdebase/workspace/kcontrol/konq/
+    repository kdebase-apps
+    prefix konqueror/settings/konq/
+    branch master
+    max revision 456607
+    min revision 455864
+end match
+
+#	[ parent trunk/KDE/kdebase/kcontrol/konq 455864 409202 ]
+match /trunk/(KDE/)?kdebase/kcontrol/konq/
+    repository kdebase-apps
+    prefix konqueror/settings/konq/
+    branch master
+    max revision 455864
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/kcontrol/konq 409202 0 ]
+match /trunk/kdebase/kcontrol/konq/
+    repository kdebase-apps
+    prefix konqueror/settings/konq/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror/settings/konqhtml >------
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Parent: /trunk/KDE/kdebase/konqueror/settings @ 457262 <- /trunk/KDE/kdebase/konqueror/kcontrol @ 457243 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/konqueror/kcontrol/konqhtml @ 456703 <- /trunk/KDE/kdebase/workspace/kcontrol/konqhtml @ 456607 ]
+#	[ Parent: /trunk/KDE/kdebase/workspace/kcontrol @ 455942 <- /trunk/KDE/kdebase/kcontrol @ 455864 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add konqueror/settings/konqhtml HEAD 659438 ]
+
+
+#	[ parent trunk/KDE/kdebase/konqueror/settings/konqhtml 659438 457243 ]
+match /trunk/(KDE/)?kdebase/konqueror/settings/konqhtml/
+    repository kdebase-apps
+    prefix konqueror/settings/konqhtml/
+    branch master
+    max revision 659438
+    min revision 457243
+end match
+
+#	[ parent trunk/KDE/kdebase/konqueror/kcontrol/konqhtml 457243 456607 ]
+match /trunk/(KDE/)?kdebase/konqueror/kcontrol/konqhtml/
+    repository kdebase-apps
+    prefix konqueror/settings/konqhtml/
+    branch master
+    max revision 457243
+    min revision 456607
+end match
+
+#	[ move trunk/KDE/kdebase/workspace/kcontrol/konqhtml 456607 455864 ]
+match /trunk/(KDE/)?kdebase/workspace/kcontrol/konqhtml/
+    repository kdebase-apps
+    prefix konqueror/settings/konqhtml/
+    branch master
+    max revision 456607
+    min revision 455864
+end match
+
+#	[ parent trunk/KDE/kdebase/kcontrol/konqhtml 455864 409202 ]
+match /trunk/(KDE/)?kdebase/kcontrol/konqhtml/
+    repository kdebase-apps
+    prefix konqueror/settings/konqhtml/
+    branch master
+    max revision 455864
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/kcontrol/konqhtml 409202 0 ]
+match /trunk/kdebase/kcontrol/konqhtml/
+    repository kdebase-apps
+    prefix konqueror/settings/konqhtml/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror/settings/performance >------
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Parent: /trunk/KDE/kdebase/konqueror/settings @ 457262 <- /trunk/KDE/kdebase/konqueror/kcontrol @ 457243 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/konqueror/kcontrol/performance @ 456703 <- /trunk/KDE/kdebase/workspace/kcontrol/performance @ 456607 ]
+#	[ Parent: /trunk/KDE/kdebase/workspace/kcontrol @ 455942 <- /trunk/KDE/kdebase/kcontrol @ 455864 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add konqueror/settings/performance HEAD 659438 ]
+
+
+#	[ parent trunk/KDE/kdebase/konqueror/settings/performance 659438 457243 ]
+match /trunk/(KDE/)?kdebase/konqueror/settings/performance/
+    repository kdebase-apps
+    prefix konqueror/settings/performance/
+    branch master
+    max revision 659438
+    min revision 457243
+end match
+
+#	[ parent trunk/KDE/kdebase/konqueror/kcontrol/performance 457243 456607 ]
+match /trunk/(KDE/)?kdebase/konqueror/kcontrol/performance/
+    repository kdebase-apps
+    prefix konqueror/settings/performance/
+    branch master
+    max revision 457243
+    min revision 456607
+end match
+
+#	[ move trunk/KDE/kdebase/workspace/kcontrol/performance 456607 455864 ]
+match /trunk/(KDE/)?kdebase/workspace/kcontrol/performance/
+    repository kdebase-apps
+    prefix konqueror/settings/performance/
+    branch master
+    max revision 456607
+    min revision 455864
+end match
+
+#	[ parent trunk/KDE/kdebase/kcontrol/performance 455864 409202 ]
+match /trunk/(KDE/)?kdebase/kcontrol/performance/
+    repository kdebase-apps
+    prefix konqueror/settings/performance/
+    branch master
+    max revision 455864
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/kcontrol/performance 409202 0 ]
+match /trunk/kdebase/kcontrol/performance/
+    repository kdebase-apps
+    prefix konqueror/settings/performance/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror/shellcmdplugin >------
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add konqueror/shellcmdplugin HEAD 659438 ]
+
+
+#	[ parent trunk/KDE/kdebase/konqueror/shellcmdplugin 659438 409202 ]
+match /trunk/(KDE/)?kdebase/konqueror/shellcmdplugin/
+    repository kdebase-apps
+    prefix konqueror/shellcmdplugin/
+    branch master
+    max revision 659438
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/konqueror/shellcmdplugin 409202 0 ]
+match /trunk/kdebase/konqueror/shellcmdplugin/
+    repository kdebase-apps
+    prefix konqueror/shellcmdplugin/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror/sidebar >------
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add konqueror/sidebar HEAD 659438 ]
+
+
+#	[ parent trunk/KDE/kdebase/konqueror/sidebar 659438 409202 ]
+match /trunk/(KDE/)?kdebase/konqueror/sidebar/
+    repository kdebase-apps
+    prefix konqueror/sidebar/
+    branch master
+    max revision 659438
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/konqueror/sidebar 409202 0 ]
+match /trunk/kdebase/konqueror/sidebar/
+    repository kdebase-apps
+    prefix konqueror/sidebar/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror/sidebar/default_entries >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/sidebar/default_entries/bookmarks.desktop @ 1042654 <- /trunk/KDE/kdebase/apps/konqueror/sidebar/trees/init/bookmarks.desktop @ 1042512 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/sidebar/default_entries/history.desktop @ 1042654 <- /trunk/KDE/kdebase/apps/konqueror/sidebar/trees/init/history.desktop @ 1042512 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/sidebar/default_entries/home.desktop @ 1042654 <- /trunk/KDE/kdebase/apps/konqueror/sidebar/trees/init/home.desktop @ 1042512 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/sidebar/default_entries/remote.desktop @ 1042654 <- /trunk/KDE/kdebase/apps/konqueror/sidebar/trees/init/remote.desktop @ 1042512 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/sidebar/default_entries/root.desktop @ 1042654 <- /trunk/KDE/kdebase/apps/konqueror/sidebar/trees/init/root.desktop @ 1042512 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/sidebar/default_entries/services.desktop @ 1042654 <- /trunk/KDE/kdebase/apps/konqueror/sidebar/trees/init/services.desktop @ 1042512 ]
+#	[ add konqueror/sidebar/default_entries HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/konqueror/sidebar/history_module >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/konqueror/sidebar/history_module @ 1042654 <- /trunk/KDE/kdebase/apps/konqueror/sidebar/trees/history_module @ 1042512 ]
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add konqueror/sidebar/history_module HEAD 1042512 ]
+
+
+#	[ move trunk/KDE/kdebase/apps/konqueror/sidebar/trees/history_module 1042512 659438 ]
+
+
+#	[ parent trunk/KDE/kdebase/konqueror/sidebar/trees/history_module 659438 409202 ]
+match /trunk/(KDE/)?kdebase/konqueror/sidebar/trees/history_module/
+    repository kdebase-apps
+    prefix konqueror/sidebar/history_module/
+    branch master
+    max revision 659438
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/konqueror/sidebar/trees/history_module 409202 0 ]
+match /trunk/kdebase/konqueror/sidebar/trees/history_module/
+    repository kdebase-apps
+    prefix konqueror/sidebar/history_module/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror/sidebar/places_module >------
+#	[ add konqueror/sidebar/places_module HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/konqueror/sidebar/test >------
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add konqueror/sidebar/test HEAD 659438 ]
+
+
+#	[ parent trunk/KDE/kdebase/konqueror/sidebar/test 659438 409202 ]
+match /trunk/(KDE/)?kdebase/konqueror/sidebar/test/
+    repository kdebase-apps
+    prefix konqueror/sidebar/test/
+    branch master
+    max revision 659438
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/konqueror/sidebar/test 409202 0 ]
+match /trunk/kdebase/konqueror/sidebar/test/
+    repository kdebase-apps
+    prefix konqueror/sidebar/test/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror/sidebar/trees >------
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add konqueror/sidebar/trees HEAD 659438 ]
+
+
+#	[ parent trunk/KDE/kdebase/konqueror/sidebar/trees 659438 409202 ]
+match /trunk/(KDE/)?kdebase/konqueror/sidebar/trees/
+    repository kdebase-apps
+    prefix konqueror/sidebar/trees/
+    branch master
+    max revision 659438
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/konqueror/sidebar/trees 409202 0 ]
+match /trunk/kdebase/konqueror/sidebar/trees/
+    repository kdebase-apps
+    prefix konqueror/sidebar/trees/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror/sidebar/web_module >------
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add konqueror/sidebar/web_module HEAD 659438 ]
+
+
+#	[ parent trunk/KDE/kdebase/konqueror/sidebar/web_module 659438 409202 ]
+match /trunk/(KDE/)?kdebase/konqueror/sidebar/web_module/
+    repository kdebase-apps
+    prefix konqueror/sidebar/web_module/
+    branch master
+    max revision 659438
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/konqueror/sidebar/web_module 409202 0 ]
+match /trunk/kdebase/konqueror/sidebar/web_module/
+    repository kdebase-apps
+    prefix konqueror/sidebar/web_module/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/konqueror/src >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/CMakeLists.txt @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/CMakeLists.txt @ 677969 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/KonqMainWindowAdaptor.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/KonqMainWindowAdaptor.cpp @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/KonqMainWindowAdaptor.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/KonqMainWindowAdaptor.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/KonqViewAdaptor.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/KonqViewAdaptor.cpp @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/KonqViewAdaptor.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/KonqViewAdaptor.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/KonquerorAdaptor.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/KonquerorAdaptor.cpp @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/KonquerorAdaptor.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/KonquerorAdaptor.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/config-konqueror.h.cmake @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/config-konqueror.h.cmake @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/delayedinitializer.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/delayedinitializer.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/delayedinitializer.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/delayedinitializer.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konq-simplebrowser.rc @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq-simplebrowser.rc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqactions.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_actions.cc @ 677969 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqactions.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_actions.h @ 677969 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqapplication.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_application.cpp @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqapplication.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_application.h @ 677969 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqbrowseriface.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_browseriface.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqbrowseriface.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_browseriface.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqcombo.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_combo.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqcombo.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_combo.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqextendedbookmarkowner.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_mainwindow_p.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqextensionmanager.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_extensionmanager.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqextensionmanager.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_extensionmanager.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqfactory.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_factory.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqfactory.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_factory.h @ 677969 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqframe.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_frame.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqframe.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_frame.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqframecontainer.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_framecontainer.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqframecontainer.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_framecontainer.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqframevisitor.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_framevisitor.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqguiclients.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_guiclients.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqguiclients.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_guiclients.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqmain.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_main.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqmainwindow.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_mainwindow.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqmainwindow.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_mainwindow.h @ 677969 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqmisc.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_misc.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqmisc.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_misc.h @ 677969 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqopenurlrequest.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_openurlrequest.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqprivate_export.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konqprivate_export.h @ 677969 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqprofiledlg.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_profiledlg.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqprofiledlg.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_profiledlg.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqrun.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_run.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqrun.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_run.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqsettingsxt.kcfgc @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_settingsxt.kcfgc @ 677969 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqtabs.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_tabs.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqtabs.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_tabs.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqueror.kcfg @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konqueror.kcfg @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqueror.rc @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konqueror.rc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqview.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_view.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqview.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_view.h @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqviewmanager.cpp @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_viewmgr.cc @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/konqviewmanager.h @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/konq_viewmgr.h @ 677969 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/org.kde.Konqueror.Main.xml @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/org.kde.Konqueror.Main.xml @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/org.kde.Konqueror.MainWindow.xml @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/org.kde.Konqueror.MainWindow.xml @ 677968 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/konqueror/src/tests @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/tests @ 677968 ]
+#	[ add konqueror/src HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/konqueror/src/tests >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/konqueror/src/tests @ 678019 <- /trunk/KDE/kdebase/apps/konqueror/tests @ 677968 ]
+#	[ Parent: /trunk/KDE/kdebase/apps/konqueror @ 659583 <- /trunk/KDE/kdebase/konqueror @ 659438 ]
+#	[ add konqueror/src/tests HEAD 677968 ]
+
+
+#	[ move trunk/KDE/kdebase/apps/konqueror/tests 677968 659438 ]
+
+
+#	[ parent trunk/KDE/kdebase/konqueror/tests 659438 0 ]
+match /trunk/(KDE/)?kdebase/konqueror/tests/
+    repository kdebase-apps
+    prefix konqueror/src/tests/
+    branch master
+    max revision 659438
+end match
+
+
+#	------< /trunk/KDE/kdebase/apps/kwrite >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/kwrite/Makefile.am @ 455829 <- /trunk/KDE/kdebase/kate/app/Makefile.am @ 455360 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/kwrite/kwrite.desktop @ 455829 <- /trunk/KDE/kdebase/kate/data/kwrite.desktop @ 455360 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/kwrite/kwritemain.cpp @ 455829 <- /trunk/KDE/kdebase/kate/app/kwritemain.cpp @ 455360 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/kwrite/kwritemain.h @ 455829 <- /trunk/KDE/kdebase/kate/app/kwritemain.h @ 455360 ]
+#	[ Delayed: /trunk/KDE/kdebase/apps/kwrite/kwriteui.rc @ 455829 <- /trunk/KDE/kdebase/kate/data/kwriteui.rc @ 455360 ]
+#	[ add kwrite HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/lib >------
+#	[ Delayed: /trunk/KDE/kdebase/apps/lib/konq @ 680304 <- /trunk/KDE/kdebase/libkonq @ 680188 ]
+#	[ add lib HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/lib/konq >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/lib/konq @ 680304 <- /trunk/KDE/kdebase/libkonq @ 680188 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add lib/konq HEAD 680188 ]
+
+
+#	[ move trunk/KDE/kdebase/libkonq 680188 409202 ]
+match /trunk/(KDE/)?kdebase/libkonq/
+    repository kdebase-apps
+    prefix lib/konq/
+    branch master
+    max revision 680188
+end match
+
+#	------< /trunk/KDE/kdebase/apps/lib/konq/Templates >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/lib/konq/Templates @ 731116 <- /trunk/playground/base/kdesktop/init/Templates @ 731114 ]
+#	[ Parent: /trunk/playground/base/kdesktop @ 693054 <- /trunk/KDE/kdebase/workspace/kdesktop @ 692949 ]
+#	[ Parent: /trunk/KDE/kdebase/workspace/kdesktop @ 478092 <- /trunk/KDE/kdebase/kdesktop @ 478089 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add lib/konq/Templates HEAD 731114 ]
+
+
+#	[ move trunk/playground/base/kdesktop/init/Templates 731114 692949 ]
+match /trunk/playground/base/kdesktop/init/Templates/
+    repository kdebase-apps
+    prefix lib/konq/Templates/
+    branch master
+    max revision 731114
+    min revision 692949
+end match
+
+#	[ parent trunk/KDE/kdebase/workspace/kdesktop/init/Templates 692949 478089 ]
+match /trunk/(KDE/)?kdebase/workspace/kdesktop/init/Templates/
+    repository kdebase-apps
+    prefix lib/konq/Templates/
+    branch master
+    max revision 692949
+    min revision 478089
+end match
+
+#	[ parent trunk/KDE/kdebase/kdesktop/init/Templates 478089 409202 ]
+match /trunk/(KDE/)?kdebase/kdesktop/init/Templates/
+    repository kdebase-apps
+    prefix lib/konq/Templates/
+    branch master
+    max revision 478089
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/kdesktop/init/Templates 409202 0 ]
+match /trunk/kdebase/kdesktop/init/Templates/
+    repository kdebase-apps
+    prefix lib/konq/Templates/
+    branch master
+    max revision 409202
+end match
+
+#	------< /trunk/KDE/kdebase/apps/nsplugins >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/nsplugins @ 664635 <- /trunk/KDE/kdebase/nsplugins @ 664607 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add nsplugins HEAD 664607 ]
+
+
+#	[ move trunk/KDE/kdebase/nsplugins 664607 409202 ]
+match /trunk/(KDE/)?kdebase/nsplugins/
+    repository kdebase-apps
+    prefix nsplugins/
+    branch master
+    max revision 664607
+end match
+
+
+#	------< /trunk/KDE/kdebase/apps/plasma >------
+#	[ add plasma HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/plasma/applets >------
+#	[ add plasma/applets HEAD 0 ]
+#	------< /trunk/KDE/kdebase/apps/plasma/applets/folderview >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/plasma/applets/folderview @ 818603 <- /trunk/KDE/kdebase/workspace/plasma/containments/folderview @ 818602 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/workspace/plasma/containments/folderview @ 809546 <- /trunk/playground/base/plasma/applets/folderview @ 809545 ]
+#	[ add plasma/applets/folderview HEAD 818602 ]
+
+
+#	[ move trunk/KDE/kdebase/workspace/plasma/containments/folderview 818602 809545 ]
+match /trunk/(KDE/)?kdebase/workspace/plasma/containments/folderview/
+    repository kdebase-apps
+    prefix plasma/applets/folderview/
+    branch master
+    max revision 818602
+    min revision 809545
+end match
+
+#	[ move trunk/playground/base/plasma/applets/folderview 809545 0 ]
+match /trunk/playground/base/plasma/applets/folderview/
+    repository kdebase-apps
+    prefix plasma/applets/folderview/
+    branch master
+    max revision 809545
+end match
+
+match /
+end match
+#First revision used: 11815
