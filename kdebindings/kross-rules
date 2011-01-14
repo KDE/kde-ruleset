@@ -80,6 +80,9 @@ end match
 match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/(python|ruby|java|falcon)/$
    action recurse
 end match
+match /(branches|tags)/(KDE/)?([^/]+)/kdebindings/ruby/(korundum/(modules/)?)?$
+   action recurse
+end match
 
 #
 # branches
@@ -92,6 +95,10 @@ declare prefix=python/
 include branch-rules
 
 declare dir=kdebindings/ruby/krossruby/
+declare prefix=ruby/
+include branch-rules
+
+declare dir=kdebindings/ruby/korundum/modules/krossruby/
 declare prefix=ruby/
 include branch-rules
 
