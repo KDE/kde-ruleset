@@ -16,6 +16,8 @@ match /trunk/KDE/kdevelop/(debuggers|plugins|parts)/valgrind/
     branch master
 end match
 
+# fortunately there were no commits to valgrind stuff between the
+# kdevelop4-merge branch being created and being merged.
 
 match /branches/work/kdevelop4-merge/parts/valgrind/
     repository kdev-valgrind
@@ -25,8 +27,11 @@ match /branches/work/kdevelop4-merge/parts/valgrind/
     min revision 446110
 end match
 
-# fortunately there were no commits to valgrind stuff between the
-# kdevelop4-merge branch being created and being merged.
+# pre-"trunk/KDE" era
+match /trunk/kdevelop/parts/valgrind/
+    repository kdev-valgrind
+    branch master
+end match
 
 # Ignore the rest
 match /
