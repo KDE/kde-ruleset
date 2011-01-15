@@ -1,0 +1,21 @@
+#
+# Created by mathieu lornac <mathieu.lornac@gmail.com>
+#
+
+# kdevelop valgrin plugin's history starts with r1049564
+# so svn2git can be run with --resume-from option
+
+#Create the kdev-valgrind repository
+create repository kdev-valgrind
+end repository
+
+match /trunk/playground/devtools/kdevelop4-extra-plugins/valgrind/
+      repository kdev-valgrind
+      branch master
+      min revision 1049564
+      max revision 1205736
+end match
+
+#Ignore the rest
+match /
+end match
