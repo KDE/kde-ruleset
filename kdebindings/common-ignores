@@ -21,4 +21,33 @@ match /
     max revision 411963
 end match
 
+# Tags done incorrectly, deleted and retagged;
+# we ignore the bad tagging and the deletion, let the correct retag through
+
+
+match /tags/KDE/4.4.1/
+    min revision 1096373 # mistagged 4.4.1
+    max revision 1096480 # deleted mistagged 4.4.1
+end match
+
+match /tags/KDE/4.4.92/
+    min revision 1147034 # mistagged 4.5 RC2
+    max revision 1147226 # deleted mistagged 4.5 RC2
+end match
+
+match /tags/KDE/4.5.0/
+    min revision 1156561 # mistagged 4.5.0
+    max revision 1159211 # deleted mistagged 4.5.0
+end match
+
+match /tags/KDE/4.5.3-test/
+    min revision 1192394 # tagged 4.5.3-test
+    max revision 1192408 # deleted third mistagging of 4.5.3-test
+end match
+
+match /tags/KDE/4.5.4/
+    min revision 1200900 # mistagged 4.5.4
+    max revision 1202153 # deleted mistagged 4.5.4
+end match
+
 # kate: hl svn2git rules;
