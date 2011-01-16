@@ -6,6 +6,8 @@
 create repository kdev-valgrind
 end repository
 
+include common-ignores
+
 match /trunk/playground/devtools/kdevelop4-extra-plugins/valgrind/
     repository kdev-valgrind
     branch master
@@ -32,6 +34,25 @@ match /trunk/kdevelop/parts/valgrind/
     repository kdev-valgrind
     branch master
 end match
+
+# version branches (from when kdev-valgrind was in trunk with kdevelop,
+# not in playground)
+
+match /(branches|tags)/(KDE/)?([^/]+)/$
+    action recurse
+end match
+match /(branches|tags)/(KDE/)?([^/]+)/kdevelop/$
+    action recurse
+end match
+match /(branches|tags)/(KDE/)?([^/]+)/kdevelop/parts/$
+    action recurse
+end match
+
+declare repo=kdev-valgrind
+declare dir=kdevelop/parts/valgrind/
+declare prefix=/
+
+include branch-rules
 
 # Ignore the rest
 match /
