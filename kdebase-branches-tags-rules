@@ -27,3 +27,15 @@ match /branches/KDE/([^/]+)/kdebase/${MODULE}/
   branch KDE/\1
   min revision 409209
 end match
+
+match /branches/kdepim/enterprise4/kdebase-4\.0\.83/${MODULE}/
+    repository ${REPO}
+    branch kdepim/enterprise-4.0.83
+end match
+
+match /branches/kdepim/enterprise4/kdebase-4\.(\d)-branch/${MODULE}/
+    repository ${REPO}
+    branch kdepim/enterprise-4.\1
+end match
+
+

@@ -1,0 +1,58 @@
+# --repo# file:///mnt/tera/kde-svn/kde# --path# /trunk/KDE/kdebase/apps/konsole# --module# konsole
+create repository konsole
+end repository
+
+#	------< /trunk/KDE/kdebase/apps/konsole >------
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/konsole @ 661589 <- /branches/work/konsole-split-view @ 661588 ]
+#	[ Move/Replace: /branches/work/konsole-split-view @ 598428 <- /trunk/KDE/kdebase/apps/konsole @ 598427 ]
+#	[ Move/Replace: /trunk/KDE/kdebase/apps/konsole @ 535132 <- /trunk/KDE/kdebase/konsole @ 535105 ]
+#	[ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
+#	[ add  HEAD 661588 ]
+match /trunk/KDE/kdebase/apps/konsole/
+    repository konsole
+    branch master
+    min revision 661588
+end match
+
+match /trunk/KDE/kdebase/apps/konsole/
+    repository konsole
+    branch KDE/trunk_oct06may07
+    max revision 661588
+    min revision 598427
+end match
+
+
+#	[ move branches/work/konsole-split-view 661588 598427 ]
+match /branches/work/konsole-split-view/
+    repository konsole
+    branch master
+    max revision 661588
+    min revision 598427
+end match
+
+#	[ move trunk/KDE/kdebase/apps/konsole 598427 535105 ]
+match /trunk/KDE/kdebase/apps/konsole/
+    repository konsole
+    branch master
+    max revision 598427
+    min revision 535105
+end match
+
+#	[ move trunk/KDE/kdebase/konsole 535105 409202 ]
+match /trunk/KDE/kdebase/konsole/
+    repository konsole
+    branch master
+    max revision 535105
+    min revision 409202
+end match
+
+#	[ parent trunk/kdebase/konsole 409202 0 ]
+match /trunk/kdebase/konsole/
+    repository konsole
+    branch master
+    max revision 409202
+end match
+
+match /
+end match
+#First revision used: 11815
