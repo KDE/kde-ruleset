@@ -280,42 +280,42 @@ end match
 #	[ Delayed: /branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests/racetest.h @ 985090 <- /branches/kdepim/soc/kdepimlibs/outboxinterface/tests/racetest.h @ 979405 ]
 #	[ add akonadi/kmime/tests HEAD 986737 ]
 #	[ move branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests 986737 985090 ]
-match /branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests/
-    repository ${REPO}
-    prefix akonadi/kmime/tests/
-    branch master
-    max revision 986737
-    min revision 985090
-end match
+#match /branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests/
+#    repository ${REPO}
+#    prefix akonadi/kmime/tests/
+#    branch master
+#    max revision 986737
+#    min revision 985090
+#end match
 
 #	[ move branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests 985090 0 ]
-match /branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests/
-    repository ${REPO}
-    prefix akonadi/kmime/tests/
-    branch master
-    max revision 985090
-end match
+#match /branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests/
+#    repository ${REPO}
+#    prefix akonadi/kmime/tests/
+#    branch master
+#    max revision 985090
+#end match
 
 #	------< /trunk/KDE/kdepimlibs/akonadi/kmime/tests/unittestenv >------
 #	[ Parent: /trunk/KDE/kdepimlibs/akonadi/kmime/tests @ 1010056 <- /branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests @ 986737 ]
 #	[ Parent: /branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests @ 986728 <- /branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests @ 985090 ]
 #	[ add akonadi/kmime/tests/unittestenv HEAD 986737 ]
 #	[ parent branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests/unittestenv 986737 985090 ]
-match /branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests/unittestenv/
-    repository ${REPO}
-    prefix akonadi/kmime/tests/unittestenv/
-    branch master
-    max revision 986737
-    min revision 985090
-end match
+#match /branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests/unittestenv/
+#    repository ${REPO}
+#    prefix akonadi/kmime/tests/unittestenv/
+#    branch master
+#    max revision 986737
+#    min revision 985090
+#end match
 
 #	[ parent branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests/unittestenv 985090 0 ]
-match /branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests/unittestenv/
-    repository ${REPO}
-    prefix akonadi/kmime/tests/unittestenv/
-    branch master
-    max revision 985090
-end match
+#match /branches/kdepim/soc/kdepimlibs/akonadi/kmime/tests/unittestenv/
+#    repository ${REPO}
+#    prefix akonadi/kmime/tests/unittestenv/
+#    branch master
+#    max revision 985090
+#end match
 
 #	------< /trunk/KDE/kdepimlibs/akonadi/kmime/tests/unittestenv/kdehome >------
 #	[ Parent: /trunk/KDE/kdepimlibs/akonadi/kmime/tests @ 1010056 <- /branches/work/akonadi-ports/kdepimlibs/akonadi/kmime/tests @ 986737 ]
@@ -2276,22 +2276,22 @@ end match
 #	[ add mailtransport/tests/unittestenv HEAD 994693 ]
 #	[ move branches/work/akonadi-ports/kdepimlibs/mailtransport/tests/unittestenv 994693 993748 ]
 #	[ move branches/work/akonadi-ports/kdepimlibs/outboxinterface/tests/unittestenv 993748 977512 ]
-match /branches/work/akonadi-ports/kdepimlibs/outboxinterface/tests/unittestenv/
-    repository ${REPO}
-    prefix mailtransport/tests/unittestenv/
-    branch master
-    max revision 993748
-    min revision 977512
-end match
+#match /branches/work/akonadi-ports/kdepimlibs/outboxinterface/tests/unittestenv/
+#    repository ${REPO}
+#    prefix mailtransport/tests/unittestenv/
+#    branch master
+#    max revision 993748
+#    min revision 977512
+#end match
 
 #	[ parent branches/kdepim/soc/kdepimlibs/outboxinterface/tests/unittestenv 977512 977493 ]
-match /branches/kdepim/soc/kdepimlibs/outboxinterface/tests/unittestenv/
-    repository ${REPO}
-    prefix mailtransport/tests/unittestenv/
-    branch master
-    max revision 977512
-    min revision 977493
-end match
+#match /branches/kdepim/soc/kdepimlibs/outboxinterface/tests/unittestenv/
+#    repository ${REPO}
+#    prefix mailtransport/tests/unittestenv/
+#    branch master
+#    max revision 977512
+#    min revision 977493
+#end match
 
 #	[ parent trunk/playground/pim/outboxinterface/tests/unittestenv 977493 0 ]
 match /trunk/playground/pim/outboxinterface/tests/unittestenv/
@@ -2308,21 +2308,21 @@ end match
 #	[ Parent: /branches/kdepim/soc/kdepimlibs/outboxinterface @ 977512 <- /trunk/playground/pim/outboxinterface @ 977493 ]
 #	[ add mailtransport/tests/unittestenv/kdehome HEAD 994693 ]
 #	[ parent branches/work/akonadi-ports/kdepimlibs/mailtransport/tests/unittestenv/kdehome 994693 993748 ]
-match /branches/work/akonadi-ports/kdepimlibs/mailtransport/tests/unittestenv/kdehome/
-    repository ${REPO}
-    prefix mailtransport/tests/unittestenv/kdehome/
-    branch master
-    max revision 994693
-    min revision 993748
-end match
+#match /branches/work/akonadi-ports/kdepimlibs/mailtransport/tests/unittestenv/kdehome/
+#    repository ${REPO}
+#    prefix mailtransport/tests/unittestenv/kdehome/
+#    branch master
+#    max revision 994693
+#    min revision 993748
+#end match
 
 #	[ parent branches/work/akonadi-ports/kdepimlibs/outboxinterface/tests/unittestenv/kdehome 993748 0 ]
-match /branches/work/akonadi-ports/kdepimlibs/outboxinterface/tests/unittestenv/kdehome/
-    repository ${REPO}
-    prefix mailtransport/tests/unittestenv/kdehome/
-    branch master
-    max revision 993748
-end match
+#match /branches/work/akonadi-ports/kdepimlibs/outboxinterface/tests/unittestenv/kdehome/
+#    repository ${REPO}
+#    prefix mailtransport/tests/unittestenv/kdehome/
+#    branch master
+#    max revision 993748
+#end match
 
 #	------< /trunk/KDE/kdepimlibs/mailtransport/tests/unittestenv/kdehome/share >------
 #	[ Parent: /trunk/KDE/kdepimlibs/mailtransport/tests/unittestenv @ 1010056 <- /branches/work/akonadi-ports/kdepimlibs/mailtransport/tests/unittestenv @ 994693 ]
