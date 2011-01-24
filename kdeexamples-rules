@@ -31,20 +31,12 @@ end match
     
 # plasma
 
-match /trunk/KDE/kdebase/workspace/plasma/generic/scriptengines/python/examples/
-    repository KDE/kdeexamples
-    branch plasmapython
-end match
-match /trunk/KDE/kdebase/workspace/plasma/scriptengines/python/examples/
+match /trunk/KDE/kdebase/workspace/plasma/(generic/)?scriptengines/python/examples/
     repository KDE/kdeexamples
     branch plasmapython
 end match
 
-match /trunk/KDE/kdebase/workspace/plasma/generic/scriptengines/ruby/examples/
-    repository KDE/kdeexamples
-    branch plasmaruby
-end match
-match /trunk/KDE/kdebase/workspace/plasma/scriptengines/ruby/examples/
+match /trunk/KDE/kdebase/workspace/plasma/(generic/)?scriptengines/ruby/examples/
     repository KDE/kdeexamples
     branch plasmaruby
 end match
