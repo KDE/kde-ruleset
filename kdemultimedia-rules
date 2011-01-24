@@ -1,140 +1,27 @@
-create repository KDE/kdemultimedia
+create repository kmix
 end repository
 
-# Juk 1.0
-match /branches/JUK_1_BRANCH/kdemultimedia/
-  min revision 207649
-  max revision 250000
-  repository KDE/kdemultimedia
-  branch juk/1.0
-end match
-match /tags/JUK_1_RELEASE/kdemultimedia/
-  min revision 207650
-  max revision 207650
-  repository KDE/kdemultimedia
-  branch juk/1.0.0
+match /trunk/KDE/kdemultimedia$
+    action recurse
 end match
 
-match /trunk/playground/multimedia/videoplayer/
-  repository KDE/kdemultimedia
-  branch master
-  prefix dragonplayer/
-  min revision 635017
-  max revision 758333
+match /trunk/(KDE/)?kdemultimedia/kmix/
+    repository kmix
+    branch oldkmix1
+    max revision 50715 # data got deleted in 50716
 end match
 
-match /trunk/kdereview/dragonplayer/
-  repository KDE/kdemultimedia
-  branch master
-  prefix dragonplayer/
-  min revision 758334
-  max revision 764028
+match /trunk/(KDE/)?kdemultimedia/kmix/
+    repository kmix
+    branch master
+    min revision 52199
 end match
 
-match /trunk/playground/multimedia/mplayerthumbs/
-  repository KDE/kdemultimedia
-  branch master
-  prefix dragonplayer/
-  min revision 822509
-  max revision 924884
+match /trunk/(KDE/)?kdemultimedia/kmix2/
+    repository kmix
+    branch kmix2
+    max revision 52201 # dir got deleted in 52202
 end match
-
-match /trunk/kdereview/mplayerthumbs/
-  repository KDE/kdemultimedia
-  branch master
-  prefix mplayerthumbs/
-  min revision 924886
-  max revision 963747
-end match
-
-match /trunk/kdebase/kioslave/audiocd/
-  repository KDE/kdemultimedia
-  branch master
-  prefix kioslave/audiocd
-  min revision 71925
-  max revision 157422
-end match
-
-#
-# Main KDE modules
-#
-match /trunk/(kdemultimedia)/
-  repository KDE/\1
-  branch master
-  max revision 409202
-end match
-
-match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdemultimedia)/
-  repository KDE/\3
-  branch KDE/\1.\2
-  max revision 409202
-end match
-
-match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdemultimedia)/
-  repository KDE/\3
-  branch KDE/\1.\2.0
-  max revision 409202
-end match
-
-match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdemultimedia)/
-  repository KDE/\3
-  branch KDE/\1.\2.0
-  max revision 85028
-  min revision 68154
-end match
-
-match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdemultimedia)/
-  repository KDE/\4
-  branch KDE/\1.\2.\3
-  max revision 409202
-end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdemultimedia)/
-  repository KDE/\4
-  branch KDE/\1.\2.\3a
-  min revision 192719
-  max revision 409202
-end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdemultimedia)/
-  repository KDE/\5
-  branch KDE/\1.\2.\3-beta\4
-  min revision 376088
-  max revision 409202
-end match
-
-match /trunk/KDE/(kdemultimedia)/
-  repository KDE/\1
-  branch master
-  min revision 409209
-end match
-match /tags/KDE/3.5.0-alpha1/(kdemultimedia)/
-  repository KDE/\1
-  branch KDE/3.4.90
-  min revision 443441
-  max revision 445561
-end match
-match /tags/KDE/3.5.0-beta1/(kdemultimedia)/
-  repository KDE/\1
-  branch KDE/3.4.91
-  min revision 459298
-  max revision 460260
-end match
-match /(branches|tags)/KDE/([^/]+)A/([^/]+)/kdemultimedia/
-  repository KDE/kdemultimedia
-  branch KDE/\2a
-  min revision 409209
-end match
-match /(branches|tags)/KDE/([^/]+)/([^/]+)/kdemultimedia/
-  repository KDE/kdemultimedia
-  branch KDE/\2
-  min revision 409209
-end match
-
-#match /(branches|tags)/KDE/
-#  action recurse
-#  min revision 757126
-#end match
-
-# Ignore all other tags and branches
 
 match /
 end match
