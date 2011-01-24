@@ -7,6 +7,13 @@ end repository
 
 include common-ignores
 
+# ignore all revisions after kdebindings was deleted from SVN
+match /
+    min revision 1213896
+end match
+
+# main rules
+
 match /trunk/(KDE/)?kdebindings/python/krosspython/
     repository KDE/kdebindings-kross
     branch master
