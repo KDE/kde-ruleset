@@ -1,11 +1,150 @@
 create repository KDE/kdeexamples
 end repository
 
+# main conversion rule
 match /trunk/KDE/kdeexamples/
     repository KDE/kdeexamples
     branch master
 end match
 
+# solid
+
+match /trunk/KDE/kdelibs/solid/examples/
+    repository KDE/kdeexamples
+    branch solid
+end match
+
+# phonon
+
+match /trunk/kdesupport/phonon/phonon/examples/
+    repository KDE/kdeexamples
+    branch phonon
+end match
+match /trunk/KDE/kdelibs/phonon/examples/
+    repository KDE/kdeexamples
+    branch phonon
+end match
+match /branches/work/kdelibs-phonon/phonon/examples/
+    repository KDE/kdeexamples
+    branch phonon
+end match
+    
+# plasma
+
+match /trunk/KDE/kdebase/workspace/plasma/generic/scriptengines/python/examples/
+    repository KDE/kdeexamples
+    branch plasmapython
+end match
+match /trunk/KDE/kdebase/workspace/plasma/scriptengines/python/examples/
+    repository KDE/kdeexamples
+    branch plasmapython
+end match
+
+match /trunk/KDE/kdebase/workspace/plasma/generic/scriptengines/ruby/examples/
+    repository KDE/kdeexamples
+    branch plasmaruby
+end match
+match /trunk/KDE/kdebase/workspace/plasma/scriptengines/ruby/examples/
+    repository KDE/kdeexamples
+    branch plasmaruby
+end match
+
+# plasma JS is being really problematic
+#match /trunk/KDE/kdebase/runtime/plasma/scriptengines/javascript/tests/
+#    repository KDE/kdeexamples
+#    branch plasmajs
+#end match
+#match /trunk/KDE/kdebase/workspace/plasma/scriptengines/javascript/tests/
+#    repository KDE/kdeexamples
+#    branch plasmajs
+#end match
+
+# plasma kpart
+match /trunk/KDE/kdebase/runtime/plasma/kpart/shell/
+    repository KDE/kdeexamples
+    branch plasmakpart
+end match
+match /trunk/kdereview/plasma-kpart/shell/
+    repository KDE/kdeexamples
+    branch plasmakpart
+end match
+match /trunk/playground/base/plasma/shells/kpart/shell/
+    repository KDE/kdeexamples
+    branch plasmakpart
+end match
+
+# auth
+
+match /trunk/KDE/kdelibs/kdecore/auth/example/
+    repository KDE/kdeexamples
+    branch auth
+end match
+match /branches/work/kdelibs-libkauth/kdecore/k?auth/example/
+    repository KDE/kdeexamples
+    branch auth
+end match
+match /trunk/kdereview/libkauth/example/
+    repository KDE/kdeexamples
+    branch auth
+end match
+match /trunk/playground/base/libkauth/example/
+    repository KDE/kdeexamples
+    branch auth
+end match
+
+
+# kconfigxt
+
+match /trunk/KDE/kdelibs/kdecore/kconfig_compiler/example/
+    repository KDE/kdeexamples
+    branch kconfigxt
+end match
+
+# kidletime
+
+match /trunk/KDE/kdelibs/kutils/kidletime/example/
+    repository KDE/kdeexamples
+    branch kidletime
+end match
+match /trunk/KDE/kdelibs/kutils/kidle/example/
+    repository KDE/kdeexamples
+    branch kidletime
+end match
+match /trunk/kdereview/kidle/example/
+    repository KDE/kdeexamples
+    branch kidletime
+end match
+match /trunk/playground/libs/kidle/example/
+    repository KDE/kdeexamples
+    branch kidletime
+end match
+
+# kdegames libpala
+match /trunk/KDE/kdegames/palapeli/libpala-example/
+    repository KDE/kdeexamples
+    branch libpala
+end match
+match /trunk/kdereview/palapeli/libpala-example/
+    repository KDE/kdeexamples
+    branch libpala
+end match
+match /trunk/playground/games/palapeli/libpala-example/
+    repository KDE/kdeexamples
+    branch libpala
+end match
+
+# attica (warning: messy rules)
+match /branches/work/attica/ocs/example/
+    repository KDE/kdeexamples
+    branch attica
+    prefix example/
+end match
+match /branches/work/attica/(kcm|ocs|plasma)
+end match
+match /branches/work/attica/
+    repository KDE/kdeexamples
+    branch attica
+end match
 
 # ignore the rest
 
