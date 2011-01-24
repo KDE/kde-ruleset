@@ -42,14 +42,14 @@ match /trunk/KDE/kdebase/workspace/plasma/(generic/)?scriptengines/ruby/examples
 end match
 
 # plasma JS is being really problematic
-#match /trunk/KDE/kdebase/runtime/plasma/scriptengines/javascript/tests/
-#    repository KDE/kdeexamples
-#    branch plasmajs
-#end match
-#match /trunk/KDE/kdebase/workspace/plasma/scriptengines/javascript/tests/
-#    repository KDE/kdeexamples
-#    branch plasmajs
-#end match
+match /trunk/KDE/kdebase/runtime/plasma/scriptengines/javascript/tests/
+    repository KDE/kdeexamples
+    branch refs/wedontcareifwelosethisref/plasmajs
+end match
+match /trunk/KDE/kdebase/workspace/plasma/scriptengines/javascript/tests/
+    repository KDE/kdeexamples
+    branch refs/wedontcareifwelosethisref/plasmajs
+end match
 
 # plasma kpart
 match /trunk/KDE/kdebase/runtime/plasma/kpart/shell/
