@@ -1,8 +1,13 @@
-#===================================
-# Directory rules (skeleton)...
+create repository KDE/kdeexamples
+end repository
 
-match trunk/KDE/kdeexamples/
+match /trunk/KDE/kdeexamples/
     repository KDE/kdeexamples
     branch master
 end match
 
+
+# ignore the rest
+
+match /
+end match
