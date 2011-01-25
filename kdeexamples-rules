@@ -50,6 +50,10 @@ match /trunk/KDE/kdebase/workspace/plasma/scriptengines/javascript/tests/
     repository KDE/kdeexamples
     branch refs/wedontcareifwelosethisref/plasmajs
 end match
+match /trunk/KDE/kdebase/workspace/plasma/scriptengines/qtscript/tests/
+    repository KDE/kdeexamples
+    branch refs/wedontcareifwelosethisref/plasmajs
+end match
 
 # plasma kpart
 match /trunk/KDE/kdebase/runtime/plasma/kpart/shell/
@@ -83,6 +87,8 @@ match /trunk/playground/base/libkauth/example/
     repository KDE/kdeexamples
     branch auth
 end match
+# it's too much trouble to migrate the kauth example history
+# from before it was moved to an "example" subdirectory
 
 
 # kconfigxt
@@ -91,6 +97,9 @@ match /trunk/KDE/kdelibs/kdecore/kconfig_compiler/example/
     repository KDE/kdeexamples
     branch kconfigxt
 end match
+# it's too much trouble to migrate the kconfig_compiler example history
+# from before it was moved to an "example" subdirectory
+
 
 # kidletime
 
@@ -129,7 +138,7 @@ end match
 match /branches/work/attica/ocs/example/
     repository KDE/kdeexamples
     branch attica
-    prefix example/
+    prefix ocs/example/
 end match
 match /branches/work/attica/(kcm|ocs|plasma)
 end match
