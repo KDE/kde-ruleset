@@ -36,7 +36,36 @@ match /
     max revision 411973
 end match
 
+# ---- recursion ----
 
+match /(branches|tags)/KDE/[^/]+/$
+  action recurse
+  min revision 757126
+end match
+match /trunk/kdereview/$
+  action recurse
+end match
+match /trunk/playground/$
+  action recurse
+end match
+match /trunk/playground/[^/]/$
+  action recurse
+end match
+match /trunk/kdeplayground-[^/]/$
+  action recurse
+end match
+
+match /trunk/(KDE/)?(kdegraphics(/libs)?)/$
+  action recurse
+end match
+
+match /branches/work/kde4/(kdegraphics(/libs)?)/$
+  action recurse
+end match
+
+match /(branches(/work)?|tags)/(KDE/)?[^/]+/(kdegraphics(/libs)?)/$
+  action recurse
+end match
 
 # ---- libkipi ----
 
@@ -63,12 +92,12 @@ end match
 
 match /branches/extragear/graphics/libkipi/
     repository libkipi
-    branch 1.2
+    branch development/1.2
 end match
 
 match /branches/extragear/graphics/libkipi-gsoc-2010/
     repository libkipi
-    branch 1.2
+    branch development/1.2
 end match
 
 # 670712: branched off
@@ -109,7 +138,7 @@ end match
 # 1144580: created branch
 match /branches/extragear/graphics/kipi-plugins/
     repository kipi-plugins
-    branch 2.0
+    branch development/2.0
 end match
 
 #match /branches/extragear/graphics/kipi-plugins/$
@@ -120,23 +149,26 @@ end match
 
 match /branches/extragear/graphics/digikam/3rdparty/kipi-plugins/
     repository kipi-plugins
-    branch 2.0
+    branch development/2.0
 end match
 
 match /branches/extragear/graphics/digikam/extra/kipi-plugins/
     repository kipi-plugins
-    branch 2.0
+    branch development/2.0
 end match
 
 # previous location of gpssync2
 match /branches/extragear/graphics/kipi-plugins/gpssync2/
     repository kipi-plugins
-    branch gpssync2
+    max revision 1144518
+    branch development/2.0-gpssync2
 end match
 
 match /branches/extragear/graphics/gpssync2/
     repository kipi-plugins
-    branch gpssync2/
+    prefix gpssync2/
+    max revision 1144580
+    branch development/2.0-gpssync2
 end match
 
 
@@ -161,17 +193,17 @@ end match
 
 match /branches/extragear/graphics/libkdcraw/
     repository libkdcraw
-    branch 2.0
+    branch development/2.0
 end match
 
 match /branches/extragear/graphics/digikam/3rdparty/libkdcraw/
     repository libkdcraw
-    branch 2.0
+    branch development/2.0
 end match  
 
 match /branches/extragear/graphics/digikam/extra/libkdcraw/
     repository libkdcraw
-    branch 2.0
+    branch development/2.0
 end match
 
 # -- KDE 3 --
@@ -184,23 +216,27 @@ end match
 
 # -- Older branches -- 
 
-# until 986245
+# until 986246
 match /branches/work/~cgilles/libkdcraw/
    repository libkdcraw
-   branch gilles-work
-end match
-
-# 859897/9: Copied from libraw port
-match /trunk/KDE/kdegraphics/libs/libkdcraw-libraw/
-   repository libkdcraw
-   branch libraw-port
+   branch development/1.0
+   max revision 986246
 end match
 
 # 856922: created branch
-# 859698: to libkdcraw-libraw
+# 859897: deleted old master
+# 859899: /branches/work/libkdcraw-libraw -> /trunk/KDE/kdegraphics/libs/libkdcraw-libraw
+# 859900: /trunk/KDE/kdegraphics/libs/libkdcraw-libraw -> /trunk/KDE/kdegraphics/libs/libkdcraw (master)
+match /trunk/KDE/kdegraphics/libs/libkdcraw-libraw/
+   repository libkdcraw
+   branch development/libraw
+   max revision 859899
+end match
+
 match /branches/work/libkdcraw-libraw/
    repository libkdcraw
-   branch libraw-port
+   branch development/libraw
+   max revision 859898
 end match
 
 
@@ -236,22 +272,22 @@ end match
 # 1144513: copied from digikam/libkexiv2
 match /branches/extragear/graphics/libkexiv2/
     repository libkexiv2
-    branch 1.2
+    branch development/1.2
 end match
 
 match /branches/extragear/graphics/digikam/libkexiv2/
     repository libkexiv2
-    branch 1.2
+    branch development/1.2
 end match
 
 match /branches/extragear/graphics/digikam/3rdparty/libkexiv2/
     repository libkexiv2
-    branch 2.0
+    branch development/2.0
 end match  
 
 match /branches/extragear/graphics/digikam/extra/libkexiv2/
     repository libkexiv2
-    branch 2.0
+    branch development/2.0
 end match  
 
 # -- KDE 3 --
@@ -391,13 +427,13 @@ end match
 # intermediate location at 1144517
 #match /branches/extragear/graphics/digikam-gosc2010/gsoc-2010/
 #    repository digikam
-#    branch 2.0
+#    branch development/2.0
 #end match
 
 # 1126687: branch created
 match /branches/extragear/graphics/digikam/gsoc-2010/
     repository digikam
-    branch 2.0
+    branch development/2.0
 end match
 
 # ignore renaming
@@ -409,7 +445,7 @@ end match
 # branch at digikam: 1144518 - 1205530
 match /branches/extragear/graphics/digikam/
     repository digikam
-    branch 2.0
+    branch development/2.0
     min revision 1144520
     max revision 1205529
 end match
@@ -417,7 +453,7 @@ end match
 # digikam in core/
 match /branches/extragear/graphics/digikam/core/
     repository digikam
-    branch 2.0
+    branch development/2.0
     # ignore 30-33
     min revision 1205533
 end match
@@ -430,15 +466,17 @@ end match
 # living until 1126684
 match /branches/extragear/graphics/digikam/1.0-databaseext/
     repository digikam
-    branch 1.3
+    branch development/1.3
     max revision 1126684
 end match
 
-# living from 925855 to 945624
+# living from 925855 to 945625
 match /branches/extragear/graphics/digikam/0.11/
     repository digikam
-    min revision 925855
-    branch 1.0
+# changed 55 to 56, omitting copy. Does it work?
+    min revision 925856
+    max revision 945625
+    branch development/1.0
 end match
 
 # living for a short time to become 0.11. Some upheaval before, ignored.
@@ -446,15 +484,14 @@ match /branches/extragear/graphics/digikam/digikam/
     repository digikam 
     min revision 925853
     max revision 925854
-    branch 1.0
+    branch development/1.0
 end match
 
 # living until 675278
 match /branches/work/digikam-dbconsolidation/
     repository digikam
-# added, does it live longer?
     max revision 675276
-    branch 0.10
+    branch development/0.10
 end match
 
 match /branches/work/digikam-dbconsolidation/libs/database/$
@@ -465,18 +502,19 @@ end match
 
 match /branches/digikam/0.8-experimental/
     repository digikam
-    branch 0.8
+    max revision 433105
+    branch development/0.8
 end match
 
 match /branches/extragear/graphics/digikam/modelviewport/digikam/
     repository digikam
-    branch 1.2
+    branch development/1.2
 end match
 
 match /branches/stable/extragear/graphics/digikam/
     repository digikam
     min revision 642033
-    branch 0.9.x
+    branch development/0.9.x
 end match
 
 # 615173: beginning a series of 0.9.x branches, not much development, unmanageable
@@ -484,7 +522,7 @@ match /branches/stable/extragear/graphics/digikam/
     repository digikam
     min revision 482405
     max revision 615172
-    branch 0.8.x
+    branch development/0.8.x
 end match
 
 match /branches/stable/extragear/graphics/digikamimageplugins/
@@ -492,7 +530,7 @@ match /branches/stable/extragear/graphics/digikamimageplugins/
     prefix imageplugins/
     min revision 482405
     max revision 615172
-    branch 0.8.x
+    branch development/0.8.x
 end match
 
 # ---- KDE3 branches ----
@@ -523,6 +561,12 @@ match /
    max revision 439252
 end match
 
+# this tag, digikam_0_7_3-1_stable, somehow result in an invalid commit in git. Ignore.
+match /
+   min revision 432516
+   max revision 432516
+end match
+
 match /tags/digikam/digikam_([^/]+)/
   repository digikam
   branch refs/tags/v\1
@@ -545,13 +589,20 @@ match /tags/digikam/([^/]+)/
   annotated true
 end match
 
-match /tags/KDE/([^/]+)/(kdegraphics)/(libkipi|libkexiv2|libkdcraw|libksane)/
+# --- kdegraphics/libs release branches and tags ---
+
+match /branches/KDE/([^/]+)/(kdegraphics)/libs/(libkipi|libkexiv2|libkdcraw)/
+  repository \3
+  branch KDE/\1
+end match
+
+match /tags/KDE/([^/]+)/(kdegraphics)/libs/(libkipi|libkexiv2|libkdcraw)/
   repository \3
   branch refs/tags/v\1
   annotated true
 end match
 
-
+#include okular-split-rules
 
 # ---- Ignore everything else ----
 
