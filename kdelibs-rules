@@ -54,8 +54,6 @@ match /file$
   max revision 409232
 end match
 
-match /tags/
-
 #
 # Main KDE modules
 #
