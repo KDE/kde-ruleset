@@ -54,6 +54,7 @@ match /file$
   max revision 409232
 end match
 
+match /tags/
 
 #
 # Main KDE modules
@@ -65,6 +66,10 @@ match /trunk/kdelibs/
 end match
 
 match /(branches|tags)/[^/]+/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE/[^/]+/$
   action recurse
 end match
 
@@ -103,6 +108,8 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdelibs/
   max revision 409202
   annotated true
 end match
+
+
 
 match /trunk/KDE/kdelibs/
   repository KDE/kdelibs
