@@ -13,6 +13,10 @@ match /
   min revision 409202
   max revision 409209
 end match
+match /
+  min revision 411963
+  max revision 411963
+end match
 
 # These three commits add svn:externals to old tags.
 # They cause annoying history graphs; so let's remove them.
