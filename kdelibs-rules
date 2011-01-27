@@ -74,36 +74,28 @@ end match
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdelibs/
   repository KDE/kdelibs
   branch refs/tags/v\1.\2.0
-  max revision 409202
   annotated true
 end match
 
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdelibs/
   repository KDE/kdelibs
   branch refs/tags/v\1.\2.0
-  max revision 85028
-  min revision 68154
   annotated true
 end match
 
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdelibs/
   repository KDE/kdelibs
   branch refs/tags/v\1.\2.\3
-  max revision 409202
   annotated true
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdelibs/
   repository KDE/kdelibs
   branch refs/tags/v\1.\2.\3a
-  min revision 192719
-  max revision 409202
   annotated true
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdelibs/
   repository KDE/kdelibs
   branch refs/tags/v\1.\2.\3-beta\4
-  min revision 376088
-  max revision 409202
   annotated true
 end match
 
@@ -117,27 +109,21 @@ end match
 match /tags/KDE/3.5.0-alpha1/kdelibs/
   repository KDE/kdelibs
   branch refs/tags/v3.4.90
-  min revision 443441
-  max revision 445561
   annotated true
 end match
 match /tags/KDE/3.5.0-beta1/kdelibs/
   repository KDE/kdelibs
   branch refs/tags/v3.4.91
-  min revision 459298
-  max revision 460260
   annotated true
 end match
 match /tags/KDE/([^/]+)A/kdelibs/
   repository KDE/kdelibs
   branch refs/tags/v\1a
-  min revision 409209
   annotated true
 end match
 match /tags/KDE/([^/]+)/kdelibs/
   repository KDE/kdelibs
   branch refs/tags/v\1
-  min revision 409209
   annotated true
 end match
 
