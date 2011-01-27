@@ -1,3 +1,10 @@
+match /(branches|tags)/([^/]+)/
+  action recurse
+end match
+match /(branches|tags)/KDE/([^/]+)/
+  action recurse
+end match
+
 match /tags/KDE/([^/]+)A/kdebase/${MODULE}/
   repository ${REPO}
   branch refs/tags/v\1a
