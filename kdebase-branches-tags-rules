@@ -1,7 +1,7 @@
-match /(branches|tags)/([^/]+)/
+match /(branches|tags)/([^/]+)/$
   action recurse
 end match
-match /(branches|tags)/KDE/([^/]+)/
+match /(branches|tags)/KDE/([^/]+)/$
   action recurse
 end match
 
