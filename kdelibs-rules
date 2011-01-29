@@ -62,6 +62,8 @@ end match
 # They don't belong here (already moved to kdesupport).
 match /trunk/(KDE/)?kdelibs/pics/
 end match
+match /(branches|tags)/KDE/[^/]+/kdelibs/pics/
+end match
 
 #
 # Main KDE modules

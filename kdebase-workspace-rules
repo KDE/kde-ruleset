@@ -5,11 +5,13 @@ declare REPO=kdebase-workspace
 create repository ${REPO}
 end repository
 
-include kdebase-branches-tags-rules
-
 # ignore wallpapers
 match /trunk/KDE/kdebase/workspace/wallpapers/
 end match
+match /(branches|tags)/KDE/[^/]+/kdebase/workspace/wallpapers/
+end match
+
+include kdebase-branches-tags-rules
 
 match /trunk/KDE/kdebase/${MODULE}/
     repository ${REPO}
