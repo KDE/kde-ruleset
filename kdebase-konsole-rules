@@ -40,74 +40,69 @@ match /(branches|tags)/KDE/kdebase/[^/]+/$
 end match
 
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch refs/tags/v\1.\2.0
   annotated true
 end match
 
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch refs/tags/v\1.\2.0
   annotated true
 end match
 
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch refs/tags/v\1.\2.\3
   annotated true
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch refs/tags/v\1.\2.\3a
   annotated true
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch refs/tags/v\1.\2.\3-beta\4
   annotated true
 end match
 
 
 
-match /trunk/KDE/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
-  branch master
-  min revision 409209
-end match
 match /tags/KDE/3.5.0-alpha1/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch refs/tags/v3.4.90
   annotated true
 end match
 match /tags/KDE/3.5.0-beta1/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch refs/tags/v3.4.91
   annotated true
 end match
 match /tags/KDE/([^/]+)A/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch refs/tags/v\1a
   annotated true
 end match
 match /tags/KDE/([^/]+)/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch refs/tags/v\1
   annotated true
 end match
 
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch KDE/\1.\2
   max revision 409202
 end match
 
 match /branches/KDE/([^/]+)A/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch KDE/\1a
   min revision 409209
 end match
 match /branches/KDE/([^/]+)/kdebase/(apps/)?konsole/
-  repository KDE/kdelibs
+  repository konsole
   branch KDE/\1
   min revision 409209
 end match
