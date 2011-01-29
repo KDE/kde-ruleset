@@ -39,6 +39,10 @@ match /(branches|tags)/KDE/kdebase/[^/]+/$
   action recurse
 end match
 
+match /(branches|tags)/KDE/kdebase/apps/[^/]+/$
+  action recurse
+end match
+
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdebase/(apps/)?konsole/
   repository konsole
   branch refs/tags/v\1.\2.0
