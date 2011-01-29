@@ -8,6 +8,31 @@
 create repository konsole
 end repository
 
+match /
+  min revision 409202
+  max revision 409209
+end match
+match /
+  min revision 411963
+  max revision 411963
+end match
+
+# These three commits add svn:externals to old tags.
+# They cause annoying history graphs; so let's remove them.
+match /
+    min revision 416386
+    max revision 416386
+end match
+match /
+    min revision 416394
+    max revision 416394
+end match
+match /
+    min revision 416398
+    max revision 416398
+end match
+
+
 # Ignore branches and tags that start with a non-uppercase letter
 match /(branches|tags)/[^A-Z]
   max revision 409202
