@@ -8,6 +8,8 @@ end repository
 
 include kdebase-branches-tags-rules
 
+# main rules
+
 match /trunk/KDE/kdebase/runtime/
     repository kdebase-runtime
     branch master
@@ -59,11 +61,6 @@ end match
 
 #	[ move trunk/KDE/kdebase/workspace/plasma/desktoptheme 897726 670531 ]
 match /trunk/KDE/kdebase/workspace/plasma/desktoptheme/
-    repository kdebase-runtime
-    prefix desktoptheme/
-    branch master
-    max revision 897726
-    min revision 670531
 end match
 
 #	[ move trunk/KDE/kdebase/workspace/plasma/images 670531 0 ]
