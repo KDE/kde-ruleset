@@ -14,6 +14,15 @@ match /trunk/KDE/kdebase/${MODULE}/
     min revision 455350
 end match
 
+# skip sreich's fuckup trying to create a branch
+match /
+    min revision 977352
+    max revision 977352
+end match
+match /
+    min revision 977377
+    max revision 977377
+end match
 
 ##
 # DEEP HISTORY
