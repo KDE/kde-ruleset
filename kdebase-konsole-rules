@@ -27,7 +27,7 @@ match /(branches|tags)/[^/]+/$
   action recurse
 end match
 
-match /(branches|tags)/kdebase/[^/]+/$
+match /(branches|tags)/[^/]+/kdebase/$
   action recurse
 end match
 
@@ -35,11 +35,11 @@ match /(branches|tags)/KDE/[^/]+/$
   action recurse
 end match
 
-match /(branches|tags)/KDE/kdebase/[^/]+/$
+match /(branches|tags)/KDE/[^/]+/kdebase/$
   action recurse
 end match
 
-match /(branches|tags)/KDE/kdebase/apps/[^/]+/$
+match /(branches|tags)/KDE/[^/]+/kdebase/apps/$
   action recurse
 end match
 
