@@ -7,6 +7,9 @@ end repository
 
 include kdebase-branches-tags-rules
 
+# ignore wallpapers
+match /trunk/KDE/kdebase/workspace/wallpapers/
+end match
 
 match /trunk/KDE/kdebase/${MODULE}/
     repository ${REPO}
@@ -1153,13 +1156,6 @@ match /trunk/kdereview/kcontrol4/src/icons/
     prefix systemsettings/icons/
     branch master
     max revision 959821
-end match
-
-match /trunk/(KDE/)?kdebase/pics/wallpapers/
-    repository kdebase-workspace
-    prefix wallpapers/
-    branch master
-    max revision 474131
 end match
 
 match /
