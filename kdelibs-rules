@@ -58,6 +58,11 @@ match /file$
   max revision 409232
 end match
 
+# Ignore icons in kdelibs (oxygen, crystalsvg, hicolor, etc).
+# They don't belong here (already moved to kdesupport).
+match /trunk/(KDE/)?kdelibs/pics/
+end match
+
 #
 # Main KDE modules
 #
