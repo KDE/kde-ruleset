@@ -144,10 +144,21 @@ end match
 #   [ Move/Replace: /trunk/KDE/kdebase/apps/konsole @ 535132 <- /trunk/KDE/kdebase/konsole @ 535105 ]
 #   [ Parent: /trunk/KDE/kdebase @ 409203 <- /trunk/kdebase @ 409202 ]
 #   [ add  HEAD 661588 ]
+
+# /trunk/KDE/kdebase/apps/konsole 535132 - NOW
 match /trunk/KDE/kdebase/apps/konsole/
     repository konsole
     branch master
     min revision 661589
+end match
+
+# /trunk/KDE/kdebase/konsole @  409203 - 535131
+
+match /trunk/KDE/kdebase/konsole/
+    repository konsole
+    branch master
+    min revision 409203
+    max revision 535131
 end match
 
 #   [ move branches/work/konsole-split-view 661588 598427 ]
