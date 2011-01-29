@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# I really need to move this to a shared function
+tempdir=$(
+    mktemp -u -d --tmpdir=/dev/shm filterbranch.XXXXX ||
+    mktemp -u -d --tmpdir filterbranch.XXXXX ||
+    echo ".git-rewrite"
+)
+echo "using $tempdir as temporary directory"
+
+delete=$1
+
+git filter-branch  -d "$tempdir" \
+--index-filter 'git rm -q --cached --ignore-unmatch -r '"$delete"';' \
+--msg-filter '
+cat
+if git diff-tree --name-only -r $(map $GIT_COMMIT) | grep -q "^'$delete'/"; then
+    echo
+    echo "The following changes were in SVN, but were removed from git:"
+    git diff-tree --format=format: --name-status -r $(map $GIT_COMMIT) -- '"$delete"';
+fi
+' --tag-name-filter cat -- --all
