@@ -748,14 +748,6 @@ end match
 #     min revision 699614
 # end match
 
-#	[ move trunk/KDE/kdelibs/pics 699614 0 ]
-match /trunk/KDE/kdelibs/pics/
-    repository kdebase-runtime
-    prefix pics/
-    branch master
-    max revision 699614
-end match
-
 #	------< /trunk/KDE/kdebase/runtime/plasma >------
 #	[ Delayed: /trunk/KDE/kdebase/runtime/plasma/scriptengines/javascript @ 966840 <- /trunk/KDE/kdebase/workspace/plasma/scriptengines/javascript @ 966838 ]
 
