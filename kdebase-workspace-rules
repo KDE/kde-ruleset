@@ -11,22 +11,18 @@ end match
 match /(branches|tags)/KDE/[^/]+/kdebase/workspace/wallpapers/
 end match
 
+# skip sreich's fuckup trying to create a branch
+match /trunk/KDE/kdebase/workspace/sok-progress-in-icons/
+end match
+
+# main rules
+
 include kdebase-branches-tags-rules
 
 match /trunk/KDE/kdebase/${MODULE}/
     repository ${REPO}
     branch master
     min revision 455350
-end match
-
-# skip sreich's fuckup trying to create a branch
-match /
-    min revision 977352
-    max revision 977352
-end match
-match /
-    min revision 977377
-    max revision 977377
 end match
 
 ##
