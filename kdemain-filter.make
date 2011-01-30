@@ -9,7 +9,7 @@ fb-workspace: kdebase-workspace
 	touch $@
 
 fb-runtime: kdebase-runtime
-	cd $< && $(DELETER) desktoptheme
+	cd $< && $(DELETER) pics # desktoptheme
 	touch $@
 
 fb-kdelibs: KDE/kdelibs
