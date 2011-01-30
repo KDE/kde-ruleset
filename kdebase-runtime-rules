@@ -6,6 +6,10 @@ declare REPO=kdebase-runtime
 create repository ${REPO}
 end repository
 
+match /trunk/
+    min revision 1217973 # this rev deleted all kdebase from SVN
+end match
+
 include kdebase-branches-tags-rules
 
 match /trunk/KDE/kdebase/runtime/
