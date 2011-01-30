@@ -829,7 +829,7 @@ end match
 
 match /trunk/(KDE/)?kdebase/workspace/solid/solidshell/solid-hardware(.*)
     repository kdebase-runtime
-    prefix solid-hardware/\2
+    prefix solid-hardware/solid-hardware\2
     branch master
     max revision 787152
 end match
