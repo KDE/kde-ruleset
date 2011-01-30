@@ -827,7 +827,7 @@ end match
 #	[ Delayed: /trunk/KDE/kdebase/runtime/solid-hardware/solid-hardware.h @ 787151 <- /trunk/KDE/kdebase/workspace/solid/solidshell/solid-hardware.h @ 787024 ]
 #	[ add solid-hardware HEAD 0 ]
 
-match /trunk/(KDE/)?kdebase/workspace/solid/solid-hardware(.*)
+match /trunk/(KDE/)?kdebase/workspace/solid/solidshell/solid-hardware(.*)
     repository kdebase-runtime
     prefix solid-hardware/\2
     branch master
