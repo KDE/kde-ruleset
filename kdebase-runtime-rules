@@ -831,6 +831,7 @@ match /trunk/(KDE/)?kdebase/workspace/solid/solidshell/
     repository kdebase-runtime
     prefix solid-hardware/
     branch master
+    max revision 787152
 end match
 
 
