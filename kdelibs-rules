@@ -4,6 +4,11 @@
 create repository KDE/kdelibs
 end repository
 
+
+match /trunk/
+    min revision 1217975 # this rev deleted all kdelibs from SVN
+end match
+
 #
 # Ignore rules
 #
@@ -1182,6 +1187,42 @@ match /trunk/kdenonbeta/threadweaver/
     max revision 615258
 end match
 
+declare MODULE=kdelibs
+declare REPO=KDE/kdelibs
+
+match /branches/(work)/~([^/]+)/([^/]*${MODULE}[^/]*)/
+    repository ${REPO}
+    branch \1/personal/\2
+end match
+match /branches/(work)/~([^/]+)/([^/]+)/([^/]*${MODULE}[^/]*)/
+    repository ${REPO}
+    branch \1/personal/\2/\3
+end match
+match /branches/kdepim/([^~][^/]+)/${MODULE}/
+    repository ${REPO}
+    branch \1
+end match
+
+match /branches/work/(akonadi-ports)/(${MODULE})/
+    repository ${REPO}
+    branch work/\1
+end match
+match /branches/kdepim/(enterprise|enterprise4)/(${MODULE})/
+    repository ${REPO}
+    branch enterprise/\1
+end match
+match /branches/work/(komo)/(${MODULE})/
+    repository ${REPO}
+    branch work/\1
+end match
+match /branches/work/(kdab-post-4.0)/(${MODULE})/
+    repository ${REPO}
+    branch work/\1
+end match
+match /branches/(work)/(soc-pim)/${MODULE}/
+    repository ${REPO}
+    branch \1/\2
+end match
 
 # Ignore all other tags and branches
 match /
