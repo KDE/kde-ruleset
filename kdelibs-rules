@@ -1207,10 +1207,22 @@ match /branches/work/(akonadi-ports)/(${MODULE})/
     repository ${REPO}
     branch work/\1
 end match
-match /branches/kdepim/(enterprise|enterprise4)/(${MODULE})/
-    repository ${REPO}
-    branch enterprise/\1
+
+match /branches/kdepim/enterprise/(${MODULE})/
+     repository ${REPO}
+     branch enterprise-3
 end match
+
+match /branches/kdepim/enterprise4/kdelibs-4\.0\.83/
+    repository ${REPO}
+    branch enterprise-4.0.83
+end match
+
+match /branches/kdepim/enterprise4/kdelibs-4\.(\d)-branch/
+    repository ${REPO}
+    branch enterprise-4.\1
+end match
+
 match /branches/work/(komo)/(${MODULE})/
     repository ${REPO}
     branch work/\1
