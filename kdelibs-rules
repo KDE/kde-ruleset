@@ -1190,23 +1190,23 @@ end match
 declare MODULE=kdelibs
 declare REPO=KDE/kdelibs
 
-match /branches/(work)/~([^/]+)/([^/]*${MODULE}[^/]*)/
-    repository ${REPO}
-    branch \1/personal/\2
-end match
-match /branches/(work)/~([^/]+)/([^/]+)/([^/]*${MODULE}[^/]*)/
-    repository ${REPO}
-    branch \1/personal/\2/\3
-end match
-match /branches/kdepim/([^~][^/]+)/${MODULE}/
-    repository ${REPO}
-    branch \1
-end match
-
-match /branches/work/(akonadi-ports)/(${MODULE})/
-    repository ${REPO}
-    branch work/\1
-end match
+# match /branches/(work)/~([^/]+)/([^/]*${MODULE}[^/]*)/
+#     repository ${REPO}
+#     branch \1/personal/\2
+# end match
+# match /branches/(work)/~([^/]+)/([^/]+)/([^/]*${MODULE}[^/]*)/
+#     repository ${REPO}
+#     branch \1/personal/\2/\3
+# end match
+# match /branches/kdepim/([^~][^/]+)/${MODULE}/
+#     repository ${REPO}
+#     branch \1
+# end match
+# 
+# match /branches/work/(akonadi-ports)/(${MODULE})/
+#     repository ${REPO}
+#     branch work/\1
+# end match
 
 match /branches/kdepim/enterprise/(${MODULE})/
      repository ${REPO}
@@ -1223,18 +1223,18 @@ match /branches/kdepim/enterprise4/kdelibs-4\.(\d)-branch/
     branch enterprise-4.\1
 end match
 
-match /branches/work/(komo)/(${MODULE})/
-    repository ${REPO}
-    branch work/\1
-end match
-match /branches/work/(kdab-post-4.0)/(${MODULE})/
-    repository ${REPO}
-    branch work/\1
-end match
-match /branches/(work)/(soc-pim)/${MODULE}/
-    repository ${REPO}
-    branch \1/\2
-end match
+# match /branches/work/(komo)/(${MODULE})/
+#     repository ${REPO}
+#     branch work/\1
+# end match
+# match /branches/work/(kdab-post-4.0)/(${MODULE})/
+#     repository ${REPO}
+#     branch work/\1
+# end match
+# match /branches/(work)/(soc-pim)/${MODULE}/
+#     repository ${REPO}
+#     branch \1/\2
+# end match
 
 # Ignore all other tags and branches
 match /
