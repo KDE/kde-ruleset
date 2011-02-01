@@ -14,7 +14,14 @@ end repository
 match /trunk/extragear/plasma/
   repository kdeplasma-addons
   min revision 710834
-  max revision 813309
+  max revision 813310
+  branch master
+end match
+
+match /trunk/KDE/kdeplasmoids/
+  repository kdeplasma-addons
+  min revision 813310
+  max revision 830060
   branch master
 end match
 
@@ -23,7 +30,7 @@ end match
 ##
 match /trunk/KDE/kdeplasma-addons/
   repository kdeplasma-addons
-  min revision 813309 
+  min revision 830060
   branch master
 end match
 
@@ -211,6 +218,13 @@ end match
 #
 # branches
 #
+match /branches/KDE/4.1/kdeplasmoids/
+  repository kdeplasma-addons
+  min revision 829867
+  max revision 830064
+  branch 4.1
+end match
+
 match /branches/KDE/([^/]+)/kdeplasma-addons/
   repository kdeplasma-addons
   min revision 710835
