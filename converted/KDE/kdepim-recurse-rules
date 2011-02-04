@@ -39,7 +39,7 @@ match /tags/KDE/[^/]+/[^/]+/$
     action recurse
 end match
 
-match /tags/kdepim/[^/]+/${MODULE}/
+match /tags/kdepim/[^/]+/${MODULE}/$
     action recurse
 end match
 
