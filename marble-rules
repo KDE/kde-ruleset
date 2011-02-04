@@ -59,6 +59,14 @@ match /branches/marble/0.4/marble/
   branch marble-0.4
 end match
 
+match /branches/marble/marble-1.1$
+  action recurse
+end match
+match /branches/marble/marble-1.1/
+  repository marble
+  branch marble-1.1
+end match
+
 # marble-gsoc-2009 branch
 match /branches/marble/marble-gsoc-2009$
   action recurse
