@@ -2,8 +2,18 @@
 create repository kturtle
 end repository
 
+declare MODULE=kturtle
+declare REPO=${MODULE}
+include ../common-kde-branches-rules
+
 #	------< trunk/KDE/kdeedu/kturtle >------
 #	[ add  HEAD 0 ]
+
+match /trunk/KDE/kdeedu/kturtle/
+  branch master
+  repository ${REPO}
+end match
+
 match /
 end match
 #First revision used: 587357

@@ -2,6 +2,10 @@
 create repository kbruch
 end repository
 
+declare MODULE=kbruch
+declare REPO=kbruch
+include ../common-kde-branches-rules
+
 #	------< trunk/KDE/kdeedu/kbruch >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
 #	[ add  HEAD 409202 ]

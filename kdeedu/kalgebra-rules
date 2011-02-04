@@ -2,6 +2,10 @@
 create repository kalgebra
 end repository
 
+declare MODULE=kalgebra
+declare REPO=kalgebra
+include ../common-kde-branches-rules
+
 #	------< trunk/KDE/kdeedu/kalgebra >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/kalgebra @ 670400 <- /trunk/kdereview/kalgebra @ 670393 ]
 #	[ Move/Replace: /trunk/kdereview/kalgebra @ 662611 <- /trunk/playground/edu/kalgebra @ 662610 ]

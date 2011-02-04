@@ -2,6 +2,11 @@
 create repository cantor
 end repository
 
+declare MODULE=cantor
+declare REPO=${MODULE}
+include ../common-kde-branches-rules
+
+
 #	------< trunk/KDE/kdeedu/cantor >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/cantor @ 1031961 <- /trunk/kdereview/cantor @ 1031960 ]
 #	[ Move/Replace: /trunk/kdereview/cantor @ 1027774 <- /trunk/kdereview/mathematik @ 1027773 ]

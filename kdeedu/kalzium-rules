@@ -2,6 +2,10 @@
 create repository kalzium
 end repository
 
+declare MODULE=kalzium
+declare REPO=kalzium
+include ../common-kde-branches-rules
+
 #	------< trunk/KDE/kdeedu/kalzium >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
 #	[ add  HEAD 409202 ]

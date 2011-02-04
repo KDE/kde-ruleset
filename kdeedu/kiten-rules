@@ -2,6 +2,10 @@
 create repository kiten
 end repository
 
+declare MODULE=kiten
+declare REPO=${MODULE}
+include ../common-kde-branches-rules
+
 #	------< trunk/KDE/kdeedu/kiten >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
 #	[ add  HEAD 409202 ]

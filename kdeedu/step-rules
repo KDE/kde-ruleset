@@ -2,6 +2,10 @@
 create repository step
 end repository
 
+declare MODULE=step
+declare REPO=${MODULE}
+include ../common-kde-branches-rules
+
 #	------< trunk/KDE/kdeedu/step >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/step @ 793794 <- /trunk/kdereview/step @ 793793 ]
 #	[ Move/Replace: /trunk/kdereview/step @ 786022 <- /trunk/playground/edu/step @ 786020 ]

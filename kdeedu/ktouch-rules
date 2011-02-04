@@ -2,6 +2,10 @@
 create repository ktouch
 end repository
 
+declare MODULE=ktouch
+declare REPO=${MODULE}
+include ../common-kde-branches-rules
+
 #	------< trunk/KDE/kdeedu/ktouch >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
 #	[ add  HEAD 409202 ]

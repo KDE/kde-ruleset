@@ -2,6 +2,10 @@
 create repository khangman
 end repository
 
+declare MODULE=khangman
+declare REPO=${MODULE}
+include ../common-kde-branches-rules
+
 #	------< trunk/KDE/kdeedu/khangman >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
 #	[ add  HEAD 409202 ]

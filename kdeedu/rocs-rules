@@ -2,6 +2,10 @@
 create repository rocs
 end repository
 
+declare MODULE=rocs
+declare REPO=${MODULE}
+include ../common-kde-branches-rules
+
 #	------< trunk/KDE/kdeedu/rocs >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/rocs @ 1048286 <- /trunk/kdereview/rocs @ 1048284 ]
 #	[ Move/Replace: /trunk/kdereview/rocs @ 1044345 <- /trunk/playground/edu/Rocs/tags/version1 @ 1044344 ]

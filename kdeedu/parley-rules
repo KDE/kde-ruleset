@@ -2,6 +2,10 @@
 create repository parley
 end repository
 
+declare MODULE=parley
+declare REPO=${MODULE}
+include ../common-kde-branches-rules
+
 #	------< trunk/KDE/kdeedu/parley >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/parley @ 710186 <- /trunk/KDE/kdeedu/kvoctrain @ 710173 ]
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
