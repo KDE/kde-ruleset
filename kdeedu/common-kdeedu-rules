@@ -1,0 +1,7 @@
+# these are needed to match rules in eg. kdebase/apps
+match /(branches|tags)/[^/]+/kdeedu/$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/kdeedu/$
+  action recurse
+end match
