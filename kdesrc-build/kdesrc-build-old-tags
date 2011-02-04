@@ -1,0 +1,93 @@
+#!/usr/bin/env perl
+#
+# Adds missing kdesrc-build tags from the svn->git conversion.
+# By Michael Pyne <mpyne@kde.org>
+# You may use this however you like.
+
+use 5.012;
+
+my @revs = (
+    [qw(v0.61)     , "314252", "2004-05-24 19:37:26", ], 
+    [qw(v0.62)     , "314527", "2004-05-25 16:37:05", ], 
+    [qw(v0.63)     , "314864", "2004-05-26 18:34:39", ], 
+    [qw(v0.64)     , "317283", "2004-06-03 06:14:51", ], 
+    [qw(v0.65)     , "317451", "2004-06-03 19:53:00", ], 
+    [qw(v0.66)     , "318899", "2004-06-09 01:52:16", ], 
+    [qw(v0.70)     , "320053", "2004-06-12 19:39:23", ], 
+    [qw(v0.71)     , "320136", "2004-06-13 00:44:17", ], 
+    [qw(v0.72)     , "320187", "2004-06-13 07:12:36", ], 
+    [qw(v0.73-pre1), "320828", "2004-06-15 06:40:00", ], 
+    [qw(v0.73)     , "321598", "2004-06-18 02:50:46", ], 
+    [qw(v0.74)     , "322579", "2004-06-21 19:00:55", ], 
+    [qw(v0.75)     , "325271", "2004-07-02 07:24:29", ], 
+    [qw(v0.76)     , "328049", "2004-07-11 19:12:59", ], 
+    [qw(v0.77)     , "328118", "2004-07-11 22:51:31", ], 
+    [qw(v0.80)     , "332753", "2004-07-25 23:14:53", ], 
+    [qw(v0.81)     , "335823", "2004-08-04 01:28:11", ], 
+    [qw(v0.82)     , "337677", "2004-08-13 02:47:38", ], 
+    [qw(v0.83)     , "342363", "2004-08-29 05:31:29", ], 
+
+    # This one had its history improperly converted from CVS to SVN
+    [qw(v0.84)     , "347237", "2004-09-17 13:00:00", ], 
+
+    [qw(v0.85)     , "347757", "2004-09-20 04:59:05", ], 
+    [qw(v0.86)     , "354075", "2004-10-03 01:34:19", ], 
+    [qw(v0.87)     , "370047", "2004-12-12 10:41:39", ], 
+
+    # The following tags were simply missing entirely from svn.
+    [qw(v0.90)     , "409924", "2005-05-06 00:07:19", ], 
+    [qw(v0.91)     , "409958", "2005-05-06 05:08:44", ], 
+    [qw(v0.92)     , "409963", "2005-05-06 05:57:51", ], 
+    [qw(v0.93)     , "410256", "2005-05-07 06:12:28", ], 
+    [qw(v0.94)     , "412567", "2005-05-11 22:19:30", ], 
+
+    # The tarball is not exactly the same as any version in svn :(
+    # Perhaps I'd worked on it in a CVS branch instead of trunk?
+#    [qw(v0.95)    , "413666" , "2005-05-17 00:27:31" , ] ,
+
+    [qw(v0.96)     , "418272", "2005-05-26 00:14:10", ], 
+    [qw(v0.97)     , "431712", "2005-07-04 22:27:55", ], 
+
+    [qw(v0.97.1)   , "439057", "2005-07-26 20:11:40", ], 
+    [qw(v0.97.2)   , "439383", "2005-07-27 20:32:14", ], 
+    [qw(v0.97.3)   , "443713", "2005-08-06 21:14:11", ], 
+    [qw(v0.98)     , "445789", "2005-08-11 20:45:52", ], 
+);
+
+foreach my $rev (@revs) {
+    my ($tag, $rev, $date) = @$rev;
+    my $branch = 'master';
+    $branch = 'origin/kde-3.5' if $tag =~ /^v0\.97\..*/;
+    my $name = 'kdecvs-build';
+
+    # No need to check for kdesrc-build as those tags translated across ok.
+    $name = 'kdesvn-build' if ($rev gt '371030');
+
+    say "Tagging $tag at revision $rev on time $date";
+
+    # Find the actual git commit
+    my @git_output = `git log -F --pretty=oneline --grep="$rev" $branch`;
+    die "$tag" unless scalar @git_output == 1;
+
+    my $git_line = @git_output[0];
+    if(!($git_line =~ s/^([[:xdigit:]]{40}) .*$/\1/)) {
+        die "$tag $git_line";
+    }
+
+    chomp $git_line;
+    say "\tTag $tag seems to correspond to commit $git_line";
+
+    my $msg = "Manually tagging kdecvs-build $tag, from SVN r$rev.";
+
+    if ($tag eq 'v0.84') {
+        $msg = $msg . "\nNote the original CVS tag appears to have been converted improperly to SVN.";
+    }
+    elsif ($rev lt '446000' && $rev gt '400000') {
+        $msg = $msg . "\nNote the original CVS tag was not carried over to Subversion for some reason.\n" .
+        "The revision should be accurate, but the tagging time is merely a good guess based on tarball timestamps.\n";
+    }
+
+    $ENV{'GIT_AUTHOR_DATE'} = $date;
+    $ENV{'GIT_COMMITTER_DATE'} = $date;
+    system('git', 'tag', '-f', '-a', '-m', $msg, $tag, $git_line);
+}
