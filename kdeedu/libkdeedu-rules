@@ -3,7 +3,7 @@ create repository libkdeedu
 end repository
 
 declare MODULE=kdeedu/libkdeedu
-declare REPO=${MODULE}
+declare REPO=libkdeedu
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 

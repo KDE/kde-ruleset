@@ -3,7 +3,7 @@ create repository parley
 end repository
 
 declare MODULE=kdeedu/parley
-declare REPO=${MODULE}
+declare REPO=parley
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 

@@ -3,7 +3,7 @@ create repository kanagram
 end repository
 
 declare MODULE=kdeedu/kanagram
-declare REPO=${MODULE}
+declare REPO=kanagram
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 

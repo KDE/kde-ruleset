@@ -3,7 +3,7 @@ create repository khangman
 end repository
 
 declare MODULE=kdeedu/khangman
-declare REPO=${MODULE}
+declare REPO=khangman
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 

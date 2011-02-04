@@ -3,7 +3,7 @@ create repository rocs
 end repository
 
 declare MODULE=kdeedu/rocs
-declare REPO=${MODULE}
+declare REPO=rocs
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 

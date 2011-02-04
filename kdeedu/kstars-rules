@@ -3,7 +3,7 @@ create repository kstars
 end repository
 
 declare MODULE=kdeedu/kstars
-declare REPO=${MODULE}
+declare REPO=kstars
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 

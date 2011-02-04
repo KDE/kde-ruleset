@@ -3,7 +3,7 @@ create repository kturtle
 end repository
 
 declare MODULE=kdeedu/kturtle
-declare REPO=${MODULE}
+declare REPO=kturtle
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 
