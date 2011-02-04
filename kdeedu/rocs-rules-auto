@@ -1,0 +1,32 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/rocs# --module# rocs
+create repository rocs
+end repository
+
+#	------< trunk/KDE/kdeedu/rocs >------
+#	[ Move/Replace: /trunk/KDE/kdeedu/rocs @ 1048286 <- /trunk/kdereview/rocs @ 1048284 ]
+#	[ Move/Replace: /trunk/kdereview/rocs @ 1044345 <- /trunk/playground/edu/Rocs/tags/version1 @ 1044344 ]
+#	[ add  HEAD 1048284 ]
+match /trunk/KDE/kdeedu/rocs/
+    repository rocs
+    branch master
+    min revision 1048284
+end match
+
+#	[ move trunk/kdereview/rocs 1048284 1044344 ]
+match /trunk/kdereview/rocs/
+    repository rocs
+    branch master
+    max revision 1048284
+    min revision 1044344
+end match
+
+#	[ move trunk/playground/edu/Rocs/tags/version1 1044344 0 ]
+match /trunk/playground/edu/Rocs/tags/version1/
+    repository rocs
+    branch master
+    max revision 1044344
+end match
+
+match /
+end match
+#First revision used: 1022303

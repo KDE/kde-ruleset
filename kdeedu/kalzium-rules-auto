@@ -1,0 +1,23 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/kalzium# --module# kalzium
+create repository kalzium
+end repository
+
+#	------< trunk/KDE/kdeedu/kalzium >------
+#	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
+#	[ add  HEAD 409202 ]
+match /trunk/KDE/kdeedu/kalzium/
+    repository kalzium
+    branch master
+    min revision 409202
+end match
+
+#	[ parent trunk/kdeedu/kalzium 409202 0 ]
+match /trunk/kdeedu/kalzium/
+    repository kalzium
+    branch master
+    max revision 409202
+end match
+
+match /
+end match
+#First revision used: 147727

@@ -1,0 +1,9 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/kturtle# --module# kturtle
+create repository kturtle
+end repository
+
+#	------< trunk/KDE/kdeedu/kturtle >------
+#	[ add  HEAD 0 ]
+match /
+end match
+#First revision used: 587357

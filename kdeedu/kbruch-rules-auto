@@ -1,0 +1,23 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/kbruch# --module# kbruch
+create repository kbruch
+end repository
+
+#	------< trunk/KDE/kdeedu/kbruch >------
+#	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
+#	[ add  HEAD 409202 ]
+match /trunk/KDE/kdeedu/kbruch/
+    repository kbruch
+    branch master
+    min revision 409202
+end match
+
+#	[ parent trunk/kdeedu/kbruch 409202 0 ]
+match /trunk/kdeedu/kbruch/
+    repository kbruch
+    branch master
+    max revision 409202
+end match
+
+match /
+end match
+#First revision used: 222522

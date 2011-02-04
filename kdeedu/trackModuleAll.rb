@@ -1,0 +1,23 @@
+["blinken",
+"cantor",
+"kalgebra",
+"kalzium",
+"kanagram",
+"kbruch",
+"kgeography",
+"khangman",
+"kig",
+"kiten",
+"klettres",
+"kmplot",
+"kstars",
+"ktouch",
+"kturtle",
+"kwordquiz",
+"libkdeedu",
+"marble",
+"parley",
+"rocs",
+"step"].each { |project|
+  `../bin/trackModule.pl --repo file:///mnt/tera/kde-svn/kde/ --path trunk/KDE/kdeedu/#{project} --module #{project}`
+}

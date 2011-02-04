@@ -1,0 +1,32 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/kalgebra# --module# kalgebra
+create repository kalgebra
+end repository
+
+#	------< trunk/KDE/kdeedu/kalgebra >------
+#	[ Move/Replace: /trunk/KDE/kdeedu/kalgebra @ 670400 <- /trunk/kdereview/kalgebra @ 670393 ]
+#	[ Move/Replace: /trunk/kdereview/kalgebra @ 662611 <- /trunk/playground/edu/kalgebra @ 662610 ]
+#	[ add  HEAD 670393 ]
+match /trunk/KDE/kdeedu/kalgebra/
+    repository kalgebra
+    branch master
+    min revision 670393
+end match
+
+#	[ move trunk/kdereview/kalgebra 670393 662610 ]
+match /trunk/kdereview/kalgebra/
+    repository kalgebra
+    branch master
+    max revision 670393
+    min revision 662610
+end match
+
+#	[ move trunk/playground/edu/kalgebra 662610 0 ]
+match /trunk/playground/edu/kalgebra/
+    repository kalgebra
+    branch master
+    max revision 662610
+end match
+
+match /
+end match
+#First revision used: 635430

@@ -1,0 +1,41 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/kanagram# --module# kanagram
+create repository kanagram
+end repository
+
+#	------< trunk/KDE/kdeedu/kanagram >------
+#	[ Move/Replace: /trunk/KDE/kdeedu/kanagram @ 457829 <- /branches/KDE/3.5/kdeedu/kanagram @ 457828 ]
+#	[ Move/Replace: /branches/KDE/3.5/kdeedu/kanagram @ 457197 <- /trunk/kdereview/kanagram @ 457196 ]
+#	[ Move/Replace: /trunk/kdereview/kanagram @ 452055 <- /trunk/playground/edu/kanagram @ 452054 ]
+#	[ add  HEAD 457828 ]
+match /trunk/KDE/kdeedu/kanagram/
+    repository kanagram
+    branch master
+    min revision 457828
+end match
+
+#	[ move branches/KDE/3.5/kdeedu/kanagram 457828 457196 ]
+match /branches/KDE/3.5/kdeedu/kanagram/
+    repository kanagram
+    branch master
+    max revision 457828
+    min revision 457196
+end match
+
+#	[ move trunk/kdereview/kanagram 457196 452054 ]
+match /trunk/kdereview/kanagram/
+    repository kanagram
+    branch master
+    max revision 457196
+    min revision 452054
+end match
+
+#	[ move trunk/playground/edu/kanagram 452054 0 ]
+match /trunk/playground/edu/kanagram/
+    repository kanagram
+    branch master
+    max revision 452054
+end match
+
+match /
+end match
+#First revision used: 429002

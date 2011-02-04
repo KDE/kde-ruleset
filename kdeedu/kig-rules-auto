@@ -1,0 +1,23 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/kig# --module# kig
+create repository kig
+end repository
+
+#	------< trunk/KDE/kdeedu/kig >------
+#	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
+#	[ add  HEAD 409202 ]
+match /trunk/KDE/kdeedu/kig/
+    repository kig
+    branch master
+    min revision 409202
+end match
+
+#	[ parent trunk/kdeedu/kig 409202 0 ]
+match /trunk/kdeedu/kig/
+    repository kig
+    branch master
+    max revision 409202
+end match
+
+match /
+end match
+#First revision used: 149629

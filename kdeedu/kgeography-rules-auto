@@ -1,0 +1,41 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/kgeography# --module# kgeography
+create repository kgeography
+end repository
+
+#	------< trunk/KDE/kdeedu/kgeography >------
+#	[ Move/Replace: /trunk/KDE/kdeedu/kgeography @ 436037 <- /trunk/kdereview/kgeography @ 436036 ]
+#	[ Move/Replace: /trunk/kdereview/kgeography @ 430979 <- /trunk/playground/edu/kgeography @ 430978 ]
+#	[ Move/Replace: /trunk/playground/edu/kgeography @ 409335 <- /trunk/kdenonbeta/kgeography @ 409334 ]
+#	[ add  HEAD 436036 ]
+match /trunk/KDE/kdeedu/kgeography/
+    repository kgeography
+    branch master
+    min revision 436036
+end match
+
+#	[ move trunk/kdereview/kgeography 436036 430978 ]
+match /trunk/kdereview/kgeography/
+    repository kgeography
+    branch master
+    max revision 436036
+    min revision 430978
+end match
+
+#	[ move trunk/playground/edu/kgeography 430978 409334 ]
+match /trunk/playground/edu/kgeography/
+    repository kgeography
+    branch master
+    max revision 430978
+    min revision 409334
+end match
+
+#	[ move trunk/kdenonbeta/kgeography 409334 0 ]
+match /trunk/kdenonbeta/kgeography/
+    repository kgeography
+    branch master
+    max revision 409334
+end match
+
+match /
+end match
+#First revision used: 294234

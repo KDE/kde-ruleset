@@ -1,0 +1,23 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/kwordquiz# --module# kwordquiz
+create repository kwordquiz
+end repository
+
+#	------< trunk/KDE/kdeedu/kwordquiz >------
+#	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
+#	[ add  HEAD 409202 ]
+match /trunk/KDE/kdeedu/kwordquiz/
+    repository kwordquiz
+    branch master
+    min revision 409202
+end match
+
+#	[ parent trunk/kdeedu/kwordquiz 409202 0 ]
+match /trunk/kdeedu/kwordquiz/
+    repository kwordquiz
+    branch master
+    max revision 409202
+end match
+
+match /
+end match
+#First revision used: 287802

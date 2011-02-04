@@ -1,0 +1,32 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/parley# --module# parley
+create repository parley
+end repository
+
+#	------< trunk/KDE/kdeedu/parley >------
+#	[ Move/Replace: /trunk/KDE/kdeedu/parley @ 710186 <- /trunk/KDE/kdeedu/kvoctrain @ 710173 ]
+#	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
+#	[ add  HEAD 710173 ]
+match /trunk/KDE/kdeedu/parley/
+    repository parley
+    branch master
+    min revision 710173
+end match
+
+#	[ move trunk/KDE/kdeedu/kvoctrain 710173 409202 ]
+match /trunk/KDE/kdeedu/kvoctrain/
+    repository parley
+    branch master
+    max revision 710173
+    min revision 409202
+end match
+
+#	[ parent trunk/kdeedu/kvoctrain 409202 0 ]
+match /trunk/kdeedu/kvoctrain/
+    repository parley
+    branch master
+    max revision 409202
+end match
+
+match /
+end match
+#First revision used: 116608

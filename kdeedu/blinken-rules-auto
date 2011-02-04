@@ -1,0 +1,59 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/blinken# --module# blinken
+create repository blinken
+end repository
+
+#	------< trunk/KDE/kdeedu/blinken >------
+#	[ Move/Replace: /trunk/KDE/kdeedu/blinken @ 450941 <- /branches/KDE/3.5/kdeedu/blinken @ 450940 ]
+#	[ Move/Replace: /branches/KDE/3.5/kdeedu/blinken @ 450725 <- /trunk/kdereview/blinken @ 450724 ]
+#	[ Move/Replace: /trunk/kdereview/blinken @ 442742 <- /trunk/kdereview/ksimon @ 442738 ]
+#	[ Move/Replace: /trunk/kdereview/ksimon @ 438302 <- /trunk/playground/edu/ksimon @ 438301 ]
+#	[ Parent: /trunk/playground/edu @ 409207 <- /trunk/kdeplayground-edu @ 409206 ]
+#	[ add  HEAD 450940 ]
+match /trunk/KDE/kdeedu/blinken/
+    repository blinken
+    branch master
+    min revision 450940
+end match
+
+#	[ move branches/KDE/3.5/kdeedu/blinken 450940 450724 ]
+match /branches/KDE/3.5/kdeedu/blinken/
+    repository blinken
+    branch master
+    max revision 450940
+    min revision 450724
+end match
+
+#	[ move trunk/kdereview/blinken 450724 442738 ]
+match /trunk/kdereview/blinken/
+    repository blinken
+    branch master
+    max revision 450724
+    min revision 442738
+end match
+
+#	[ move trunk/kdereview/ksimon 442738 438301 ]
+match /trunk/kdereview/ksimon/
+    repository blinken
+    branch master
+    max revision 442738
+    min revision 438301
+end match
+
+#	[ move trunk/playground/edu/ksimon 438301 409206 ]
+match /trunk/playground/edu/ksimon/
+    repository blinken
+    branch master
+    max revision 438301
+    min revision 409206
+end match
+
+#	[ parent trunk/kdeplayground-edu/ksimon 409206 0 ]
+match /trunk/kdeplayground-edu/ksimon/
+    repository blinken
+    branch master
+    max revision 409206
+end match
+
+match /
+end match
+#First revision used: 389983

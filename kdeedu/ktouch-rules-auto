@@ -1,0 +1,23 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/ktouch# --module# ktouch
+create repository ktouch
+end repository
+
+#	------< trunk/KDE/kdeedu/ktouch >------
+#	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
+#	[ add  HEAD 409202 ]
+match /trunk/KDE/kdeedu/ktouch/
+    repository ktouch
+    branch master
+    min revision 409202
+end match
+
+#	[ parent trunk/kdeedu/ktouch 409202 0 ]
+match /trunk/kdeedu/ktouch/
+    repository ktouch
+    branch master
+    max revision 409202
+end match
+
+match /
+end match
+#First revision used: 96319

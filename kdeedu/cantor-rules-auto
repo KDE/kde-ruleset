@@ -1,0 +1,41 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/cantor# --module# cantor
+create repository cantor
+end repository
+
+#	------< trunk/KDE/kdeedu/cantor >------
+#	[ Move/Replace: /trunk/KDE/kdeedu/cantor @ 1031961 <- /trunk/kdereview/cantor @ 1031960 ]
+#	[ Move/Replace: /trunk/kdereview/cantor @ 1027774 <- /trunk/kdereview/mathematik @ 1027773 ]
+#	[ Move/Replace: /trunk/kdereview/mathematik @ 1026437 <- /trunk/playground/edu/mathematik @ 1026420 ]
+#	[ add  HEAD 1031960 ]
+match /trunk/KDE/kdeedu/cantor/
+    repository cantor
+    branch master
+    min revision 1031960
+end match
+
+#	[ move trunk/kdereview/cantor 1031960 1027773 ]
+match /trunk/kdereview/cantor/
+    repository cantor
+    branch master
+    max revision 1031960
+    min revision 1027773
+end match
+
+#	[ move trunk/kdereview/mathematik 1027773 1026420 ]
+match /trunk/kdereview/mathematik/
+    repository cantor
+    branch master
+    max revision 1027773
+    min revision 1026420
+end match
+
+#	[ move trunk/playground/edu/mathematik 1026420 0 ]
+match /trunk/playground/edu/mathematik/
+    repository cantor
+    branch master
+    max revision 1026420
+end match
+
+match /
+end match
+#First revision used: 962979

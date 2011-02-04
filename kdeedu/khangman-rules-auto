@@ -1,0 +1,23 @@
+# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/khangman# --module# khangman
+create repository khangman
+end repository
+
+#	------< trunk/KDE/kdeedu/khangman >------
+#	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
+#	[ add  HEAD 409202 ]
+match /trunk/KDE/kdeedu/khangman/
+    repository khangman
+    branch master
+    min revision 409202
+end match
+
+#	[ parent trunk/kdeedu/khangman 409202 0 ]
+match /trunk/kdeedu/khangman/
+    repository khangman
+    branch master
+    max revision 409202
+end match
+
+match /
+end match
+#First revision used: 107378
