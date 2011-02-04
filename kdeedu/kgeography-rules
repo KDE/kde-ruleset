@@ -2,7 +2,7 @@
 create repository kgeography
 end repository
 
-declare MODULE=kgeography
+declare MODULE=kdeedu/kgeography
 declare REPO=${MODULE}
 include common-kdeedu-rules
 include ../common-kde-branches-rules

@@ -2,7 +2,7 @@
 create repository blinken
 end repository
 
-declare MODULE=blinken
+declare MODULE=kdeedu/blinken
 declare REPO=blinken
 include common-kdeedu-rules
 include ../common-kde-branches-rules

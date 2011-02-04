@@ -2,7 +2,7 @@
 create repository kiten
 end repository
 
-declare MODULE=kiten
+declare MODULE=kdeedu/kiten
 declare REPO=${MODULE}
 include common-kdeedu-rules
 include ../common-kde-branches-rules

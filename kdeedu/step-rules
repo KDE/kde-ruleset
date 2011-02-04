@@ -2,7 +2,7 @@
 create repository step
 end repository
 
-declare MODULE=step
+declare MODULE=kdeedu/step
 declare REPO=${MODULE}
 include common-kdeedu-rules
 include ../common-kde-branches-rules

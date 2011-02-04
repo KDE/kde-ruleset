@@ -2,7 +2,7 @@
 create repository kig
 end repository
 
-declare MODULE=kig
+declare MODULE=kdeedu/kig
 declare REPO=${MODULE}
 include common-kdeedu-rules
 include ../common-kde-branches-rules
