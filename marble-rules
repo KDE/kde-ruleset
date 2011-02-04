@@ -41,7 +41,7 @@ end match
 # regular KDE tags
 match /tags/KDE/([^/]+)/kdeedu/marble/
   repository marble
-  branch refs/tags/kde-v\1
+  branch refs/tags/v\1
   annotated true
 end match
 
