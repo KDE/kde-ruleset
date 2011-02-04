@@ -4,6 +4,7 @@ end repository
 
 declare MODULE=klettres
 declare REPO=${MODULE}
+include common-kdeedu-rules
 include ../common-kde-branches-rules
 
 #	------< trunk/KDE/kdeedu/klettres >------

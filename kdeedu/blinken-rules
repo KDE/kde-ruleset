@@ -4,6 +4,7 @@ end repository
 
 declare MODULE=blinken
 declare REPO=blinken
+include common-kdeedu-rules
 include ../common-kde-branches-rules
 
 #	------< trunk/KDE/kdeedu/blinken >------

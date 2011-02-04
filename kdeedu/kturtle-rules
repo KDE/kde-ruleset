@@ -4,7 +4,9 @@ end repository
 
 declare MODULE=kturtle
 declare REPO=${MODULE}
+include common-kdeedu-rules
 include ../common-kde-branches-rules
+
 
 #	------< trunk/KDE/kdeedu/kturtle >------
 #	[ add  HEAD 0 ]

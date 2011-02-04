@@ -2,6 +2,13 @@
 
 include common-kde-ignores
 
+match /(branches|tags)/[^/]+/$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/$
+  action recurse
+end match
+
 match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/${MODULE}/
     repository ${REPO}
     branch \1.\2

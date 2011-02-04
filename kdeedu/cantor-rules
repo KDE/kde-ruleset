@@ -2,8 +2,9 @@
 create repository cantor
 end repository
 
-declare MODULE=cantor
+declare MODULE=kdeedu/cantor
 declare REPO=${MODULE}
+include common-kdeedu-rules
 include ../common-kde-branches-rules
 
 
