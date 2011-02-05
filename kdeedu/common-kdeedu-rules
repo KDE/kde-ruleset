@@ -1,8 +1,7 @@
 # these are needed to match rules in eg. kdebase/apps
 
-match /
-    max revision 1135915
-    min revision 1135915
+match /tags/KDE/4.4.85/
+   min revision 1135916
 end match
 
 match /(branches|tags)/[^/]+/kdeedu/$
@@ -10,4 +9,10 @@ match /(branches|tags)/[^/]+/kdeedu/$
 end match
 match /(branches|tags)/KDE/[^/]+/kdeedu/$
   action recurse
+end match
+
+match /trunk/(KDE/)?kdeedu/doc/${MODULE}/
+  repository ${REPO}
+  prefix doc/
+  branch master
 end match
