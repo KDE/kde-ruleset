@@ -11,7 +11,7 @@ match /(branches|tags)/KDE/[^/]+/kdeedu/$
   action recurse
 end match
 
-match /trunk/(KDE/)?kdeedu/doc/${MODULE}/
+match /trunk/(KDE/)?kdeedu/doc/${REPO}/
   repository ${REPO}
   prefix doc/
   branch master
