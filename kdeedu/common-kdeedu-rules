@@ -1,4 +1,10 @@
 # these are needed to match rules in eg. kdebase/apps
+
+match /
+    max revision 1135915
+    min revision 1135915
+end match
+
 match /(branches|tags)/[^/]+/kdeedu/$
   action recurse
 end match
