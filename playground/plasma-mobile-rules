@@ -1,0 +1,13 @@
+create repository plasma-mobile
+end repository
+
+match /trunk/playground/base/plasma/shells/mobile/
+  repository plasma-mobile
+  min revision 1040947
+  branch master
+end match
+
+# Ignore everything else
+match /
+end match
+
