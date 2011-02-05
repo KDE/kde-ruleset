@@ -1,7 +1,22 @@
-# these are needed to match rules in eg. kdebase/apps
+#to ignore bad tag:
+match /
+   min revision 1135915
+   max revision 1135915
+end match
 
-match /tags/KDE/4.4.85/
-   min revision 1135916
+match /
+   min revision 1135881
+   max revision 1135881
+end match
+
+match /
+  min revision 1135500
+  max revision 1135500
+end match
+
+match /
+    min revision 1135217
+    max revision 1135217
 end match
 
 match /(branches|tags)/[^/]+/kdeedu/$
