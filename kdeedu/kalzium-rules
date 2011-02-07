@@ -23,6 +23,14 @@ match /trunk/kdeedu/kalzium/
     max revision 409202
 end match
 
+#from kalzium-rules
+match /trunk/KDE/kdeedu/libkdeedu/libscience/
+  repository KDE/kdeedu/kalzium
+  branch master
+  prefix libscience/
+  max revision 1208978
+end match
+
 match /
 end match
 #First revision used: 147727

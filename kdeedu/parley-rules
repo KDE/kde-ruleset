@@ -4,6 +4,12 @@ end repository
 
 declare MODULE=kdeedu/parley
 declare REPO=parley
+
+match /branches/work/(parley-practice|soc-parley)/
+  repository ${REPO}
+  branch \1
+end match
+
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 

@@ -4,6 +4,15 @@ end repository
 
 declare MODULE=kdeedu/kiten
 declare REPO=kiten
+
+match /tags/KITEN_0_5_RELEASE/kdeedu/kiten/
+  min revision 121771
+  max revision 121771
+  repository ${REPO}
+  branch refs/tags/v0.5.0
+  annotated true
+end match
+
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 
