@@ -24,6 +24,13 @@ match /trunk/KDE/kdeedu/marble/
   branch master
 end match
 
+# Marble doc
+match /trunk/KDE/kdeedu/doc/marble/
+  repository marble
+  prefix doc/
+  branch master
+end match
+
 
 match /(branches|tags)/KDE/([^/]+)/$
   action recurse
