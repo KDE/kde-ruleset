@@ -1,0 +1,10 @@
+create repository kde-workspace
+end repository
+
+match /branches/work/kdm-plasma/
+    repository kde-workspace
+    branch kdm-plasma
+end match
+
+match /
+end match

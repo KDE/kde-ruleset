@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# filter-branch script for sreich's kdm-plasma branch of kde-workspace.
+#
+# Deletes wallpapers, merges the branch history into master's history,
+# and synthesizes intermediate merge commits.
+#
+# This script should be run after the branch is fetched into the
+# main repository. It should only rewrite commits in the new branch,
+# but it needs the rest of the commits to exist in the same repo.
+
+revlist="1070177 1070168
+1076923 1076908
+1079200 1079065
+1081200 1081188
+1088027 1088001
+1093400 1093390
+1100929 1100903
+1110670 1110592
+1130673 1130648
+1143520 1143478";
+
+git filter-branch --parent-filter "$(
+    echo "$revlist" |
+    $bindir/translateRevlist.py /dev/stdin |
+    $bindir/add-parents /dev/stdin
+)" --index-filter "git rm --cached --ignore-unmatch -r wallpapers"
