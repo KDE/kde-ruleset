@@ -11,7 +11,7 @@ include ../common-kde-branches-rules
 #	------< trunk/KDE/kdeedu/kturtle >------
 #	[ add  HEAD 0 ]
 
-match /trunk/KDE/kdeedu/kturtle/
+match /trunk/(KDE/)?kdeedu/kturtle/
   branch master
   repository ${REPO}
 end match
