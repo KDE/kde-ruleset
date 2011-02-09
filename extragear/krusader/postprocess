@@ -17,7 +17,7 @@ else
 fi
 ' HEAD
 echo "Adding additional parent:"
-echo `git rev-list HEAD | tail -1` `git rev-list master | head -1` > parentmap
+echo `git rev-list master | head -1` `git rev-list HEAD | tail -1` > parentmap
 git filter-branch -f --tag-name-filter cat --parent-filter "$(../../../bin/add-parents parentmap)" HEAD
 git branch -d master
 git checkout -b master
@@ -29,7 +29,7 @@ git filter-branch -f --tag-name-filter cat --tree-filter 'find . -path "./.git" 
 echo "Removing .cvsignore, .gmo and .moc.cpp files:"
 git filter-branch -f --tag-name-filter cat --tree-filter 'find . \( -name ".cvsignore" -o -name "*.gmo" -o -name "*.moc.cpp" -o -name ".memdump" \) -exec rm -f "{}" \;' -- --all
 echo "Adding additional parent:"
-echo `git rev-list HEAD | tail -1` `git rev-list -n 1 --first-parent --before=2007-05-12 kde3` > parentmap
+echo `git rev-list -n 1 --first-parent --before=2007-05-12 kde3` `git rev-list HEAD | tail -1` > parentmap
 git filter-branch -f --tag-name-filter cat --parent-filter "$(../../../bin/add-parents parentmap)" master
 rm parentmap
 echo "Removing empty commits:"
