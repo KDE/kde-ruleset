@@ -7,6 +7,11 @@ declare REPO=kturtle
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 
+match /trunk/KDE/kdeedu/kturtle/$
+    min revision 475469
+    max revision 475469
+    action recurse
+end match
 
 #	------< trunk/KDE/kdeedu/kturtle >------
 #	[ add  HEAD 0 ]

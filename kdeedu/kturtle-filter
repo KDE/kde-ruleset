@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+if test -z "$bindir"; then
+    echo "set \$bindir to the path to kde-ruleset's bin directory" >&2;
+    exit 1
+fi
+
+read deletion_rev readd_rev < <(echo "475469 587357" | "$bindir/translateRevlist.py" /dev/stdin)
+
+# A..B returns commits from A to B, excluding A and including B.
+# We want to include A, so we have to start from from A's parent.
+# And we want to exclude B, so we have to end at B's parent too.
+range="$deletion_rev^..$readd_rev^"
+
+# this is disgusting
+git filter-branch --tree-filter '
+if git rev-list '"$range"' | grep -q $GIT_COMMIT; then
+    find \( -path "./doc" -prune \) -o -exec rm -f "{}" \;
+fi
+' --tag-name-filter cat -- --all;
