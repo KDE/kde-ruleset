@@ -7,6 +7,10 @@ declare REPO=kturtle
 include common-kdeedu-rules
 include ../common-kde-branches-rules
 
+# Ensure the deletion in r475469 is converted as a deletion of all contents,
+# rather than a deletion of the branch ref.
+# *This doesn't actually work fully*; it leaves files in the root.
+# Use kturtle-filter to get rid of those.
 match /trunk/KDE/kdeedu/kturtle/$
     min revision 475469
     max revision 475469
