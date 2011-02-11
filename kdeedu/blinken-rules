@@ -17,7 +17,6 @@ include ../common-kde-branches-rules
 match /trunk/KDE/kdeedu/blinken/
     repository blinken
     branch master
-    min revision 450940
 end match
 
 #	[ move branches/KDE/3.5/kdeedu/blinken 450940 450724 ]
@@ -32,31 +31,24 @@ end match
 match /trunk/kdereview/blinken/
     repository blinken
     branch master
-    max revision 450724
-    min revision 442738
 end match
 
 #	[ move trunk/kdereview/ksimon 442738 438301 ]
 match /trunk/kdereview/ksimon/
     repository blinken
     branch master
-    max revision 442738
-    min revision 438301
 end match
 
 #	[ move trunk/playground/edu/ksimon 438301 409206 ]
 match /trunk/playground/edu/ksimon/
     repository blinken
     branch master
-    max revision 438301
-    min revision 409206
 end match
 
 #	[ parent trunk/kdeplayground-edu/ksimon 409206 0 ]
 match /trunk/kdeplayground-edu/ksimon/
     repository blinken
     branch master
-    max revision 409206
 end match
 
 match /
