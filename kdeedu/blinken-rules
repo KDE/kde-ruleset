@@ -19,14 +19,6 @@ match /trunk/KDE/kdeedu/blinken/
     branch master
 end match
 
-#	[ move branches/KDE/3.5/kdeedu/blinken 450940 450724 ]
-match /branches/KDE/3.5/kdeedu/blinken/
-    repository blinken
-    branch master
-    max revision 450940
-    min revision 450724
-end match
-
 #	[ move trunk/kdereview/blinken 450724 442738 ]
 match /trunk/kdereview/blinken/
     repository blinken
