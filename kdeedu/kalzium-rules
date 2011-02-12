@@ -24,7 +24,7 @@ end match
 
 #from kalzium-rules
 match /trunk/KDE/kdeedu/libkdeedu/libscience/
-  repository KDE/kdeedu/kalzium
+  repository kalzium
   branch master
   prefix libscience/
   max revision 1208978
