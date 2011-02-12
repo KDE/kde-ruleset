@@ -42,6 +42,7 @@ match /trunk/(KDE/)?kdeedu/doc/${REPO}/
 end match
 
 #do get the application branches
+declare PREFIX=/
 include ../common-kde-branches-rules
 #and then the doc prefix for branches
 declare MODULE=kdeedu/doc/${REPO}
