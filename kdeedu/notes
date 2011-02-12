@@ -13,3 +13,11 @@ kalgebra:
 rocs:
 - missing docs from playground and kdereview history
 - 4.6 branching has docs in root, deletes all other files
+
+kstars:
+- there were some deletions and re-additions of the entire trunk,
+  should handle sanely in git.
+- synth merge of make_kdeedu_cool to trunk (190438 -> 191485)
+
+parley:
+- everything seems fine :)
