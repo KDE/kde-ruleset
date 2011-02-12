@@ -17,6 +17,7 @@ match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/${MODULE}/
 end match
 match /branches/KDE/(\d+)\.(\d+)/${MODULE}/
     repository ${REPO}
+    prefix ${PREFIX}
     branch \1.\2
 end match
 match /branches/(work)/~([^/]+)/([^/]*${MODULE}[^/]*)/
