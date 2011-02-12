@@ -19,22 +19,18 @@ include common-kdeedu-rules
 match /trunk/KDE/kdeedu/parley/
     repository parley
     branch master
-    min revision 710173
 end match
 
 #	[ move trunk/KDE/kdeedu/kvoctrain 710173 409202 ]
 match /trunk/KDE/kdeedu/kvoctrain/
     repository parley
     branch master
-    max revision 710173
-    min revision 409202
 end match
 
 #	[ parent trunk/kdeedu/kvoctrain 409202 0 ]
 match /trunk/kdeedu/kvoctrain/
     repository parley
     branch master
-    max revision 409202
 end match
 
 match /
