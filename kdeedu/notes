@@ -6,3 +6,6 @@ marble:
 
 blinken:
 - docs are missing in history of version branches
+
+kalgebra:
+- missing docs from playground and kdereview history
