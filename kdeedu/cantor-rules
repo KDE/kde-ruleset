@@ -5,8 +5,6 @@ end repository
 declare MODULE=kdeedu/cantor
 declare REPO=cantor
 include common-kdeedu-rules
-include ../common-kde-branches-rules
-
 
 #	------< trunk/KDE/kdeedu/cantor >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/cantor @ 1031961 <- /trunk/kdereview/cantor @ 1031960 ]

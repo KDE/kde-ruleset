@@ -5,7 +5,6 @@ end repository
 declare MODULE=kdeedu/kbruch
 declare REPO=kbruch
 include common-kdeedu-rules
-include ../common-kde-branches-rules
 
 #	------< trunk/KDE/kdeedu/kbruch >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]

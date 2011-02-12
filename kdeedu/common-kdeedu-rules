@@ -22,7 +22,16 @@ end match
 match /(branches|tags)/[^/]+/kdeedu/$
   action recurse
 end match
+
+match /(branches|tags)/[^/]+/kdeedu/doc/$
+  action recurse
+end match
+
 match /(branches|tags)/KDE/[^/]+/kdeedu/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE/[^/]+/kdeedu/doc/$
   action recurse
 end match
 
@@ -31,3 +40,10 @@ match /trunk/(KDE/)?kdeedu/doc/${REPO}/
   prefix doc/
   branch master
 end match
+
+#do get the application branches
+include ../common-kde-branches-rules
+#and then the doc prefix for branches
+declare MODULE=kdeedu/doc/${REPO}
+declare PREFIX=doc/
+include ../common-kde-branches-rules

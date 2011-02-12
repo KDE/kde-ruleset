@@ -5,7 +5,6 @@ end repository
 declare MODULE=kdeedu/kgeography
 declare REPO=kgeography
 include common-kdeedu-rules
-include ../common-kde-branches-rules
 
 #	------< trunk/KDE/kdeedu/kgeography >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/kgeography @ 436037 <- /trunk/kdereview/kgeography @ 436036 ]

@@ -5,7 +5,6 @@ end repository
 declare MODULE=kdeedu/rocs
 declare REPO=rocs
 include common-kdeedu-rules
-include ../common-kde-branches-rules
 
 #	------< trunk/KDE/kdeedu/rocs >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/rocs @ 1048286 <- /trunk/kdereview/rocs @ 1048284 ]

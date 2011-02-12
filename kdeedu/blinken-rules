@@ -4,8 +4,8 @@ end repository
 
 declare MODULE=kdeedu/blinken
 declare REPO=blinken
+declare PREFIX=/
 include common-kdeedu-rules
-include ../common-kde-branches-rules
 
 #	------< trunk/KDE/kdeedu/blinken >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/blinken @ 450941 <- /branches/KDE/3.5/kdeedu/blinken @ 450940 ]
