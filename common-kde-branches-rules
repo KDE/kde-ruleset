@@ -17,6 +17,7 @@ match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/${MODULE}/
 end match
 match /branches/KDE/(\d+)\.(\d+)/${MODULE}/
     repository ${REPO}
+    prefix ${PREFIX}
     branch \1.\2
 end match
 match /branches/(work)/~([^/]+)/([^/]*${MODULE}[^/]*)/
@@ -83,12 +84,14 @@ end match
 
 match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/(${MODULE})/
     repository ${REPO}
+    prefix ${PREFIX}
     branch refs/tags/v\1.\2.\3
     annotated true
     max revision 409202
 end match
 match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(${MODULE})/
     repository ${REPO}
+    prefix ${PREFIX}
     branch refs/tags/v\1.\2.\3-beta\4
     annotated true
     min revision 376088
@@ -96,12 +99,14 @@ match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(${MODULE})/
 end match
 match /tags/(?:__)?KDE_(\d+)_(\d+)_RELEASE/(${MODULE})/
     repository ${REPO}
+    prefix ${PREFIX}
     branch refs/tags/v\1.\2.0
     annotated true
     max revision 409202
 end match
 match /tags/KDE/3.5.0-alpha1/(${MODULE})/
     repository ${REPO}
+    prefix ${PREFIX}
     branch refs/tags/v3.4.90
     annotated true
     min revision 443441
@@ -109,6 +114,7 @@ match /tags/KDE/3.5.0-alpha1/(${MODULE})/
 end match
 match /tags/KDE/3.5.0-beta1/(${MODULE})/
     repository ${REPO}
+    prefix ${PREFIX}
     branch refs/tags/v3.4.91
     annotated true
     min revision 459298
@@ -116,11 +122,13 @@ match /tags/KDE/3.5.0-beta1/(${MODULE})/
 end match
 match /tags/KDE/(\d+)\.(\d+)/(${MODULE})/
     repository ${REPO}
+    prefix ${PREFIX}
     branch refs/tags/v\1.\2.0
     annotated true
 end match
 match /tags/KDE/(\d+)\.(\d+)\.(\d+)/(${MODULE})/
     repository ${REPO}
+    prefix ${PREFIX}
     branch refs/tags/v\1.\2.\3
     annotated true
 end match
