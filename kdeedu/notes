@@ -23,13 +23,17 @@ parley:
 - everything seems fine :)
 
 libkdeedu:
-- the 3.4, 4.3, 4.4 branches have a single commit; check in SVN if
-  this is correct
 - weird stuff in 757794, it's a giant commit, apparently a feature
   branch merge, but I don't know which branch
 
 cantor:
 - docs missing from playground and kdereview history, under both the
   "kantor" and "mathematik" names
-- there may be a "soc branch" that isn't being converted (see r1130956
-  for a possible backport from it)
+- soc-cantor branch isn't being converted (r1130956 is a backport from
+  it into trunk)
+
+kalzium:
+- synth merge of make_kdeedu_cool to trunk (309143 -> {309149, 309154,
+  309156})
+- synth merge of kalziumkde4 to trunk (395799 -> 395803)
+- tags 3.4.90 and 3.4.91 lack docs
