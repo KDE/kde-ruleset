@@ -9,3 +9,7 @@ blinken:
 
 kalgebra:
 - missing docs from playground and kdereview history
+
+rocs:
+- missing docs from playground and kdereview history
+- 4.6 branching has docs in root, deletes all other files
