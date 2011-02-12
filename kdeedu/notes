@@ -1,0 +1,8 @@
+kig:
+- should synth merge of make_kdeedu_cool to trunk (217425 -> 217432)
+
+marble:
+- synth merge of marble-geodata-nt to trunk (946595 -> 946666)
+
+blinken:
+- docs are missing in history of version branches
