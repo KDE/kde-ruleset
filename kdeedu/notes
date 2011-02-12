@@ -21,3 +21,15 @@ kstars:
 
 parley:
 - everything seems fine :)
+
+libkdeedu:
+- the 3.4, 4.3, 4.4 branches have a single commit; check in SVN if
+  this is correct
+- weird stuff in 757794, it's a giant commit, apparently a feature
+  branch merge, but I don't know which branch
+
+cantor:
+- docs missing from playground and kdereview history, under both the
+  "kantor" and "mathematik" names
+- there may be a "soc branch" that isn't being converted (see r1130956
+  for a possible backport from it)
