@@ -18,11 +18,21 @@ match /trunk/KDE/kdeedu/blinken/
     repository blinken
     branch master
 end match
+match /trunk/KDE/kdeedu/doc/blinken/
+    repository blinken
+    branch master
+    prefix doc/
+end match
 
 #	[ move trunk/kdereview/blinken 450724 442738 ]
 match /trunk/kdereview/blinken/
     repository blinken
     branch master
+end match
+match /trunk/kdereview/doc/blinken/
+    repository blinken
+    branch master
+    prefix doc/
 end match
 
 #	[ move trunk/kdereview/ksimon 442738 438301 ]
@@ -30,11 +40,21 @@ match /trunk/kdereview/ksimon/
     repository blinken
     branch master
 end match
+match /trunk/kdereview/doc/ksimon/
+    repository blinken
+    branch master
+    prefix doc/
+end match
 
 #	[ move trunk/playground/edu/ksimon 438301 409206 ]
 match /trunk/playground/edu/ksimon/
     repository blinken
     branch master
+end match
+match /trunk/playground/edu/doc/ksimon/
+    repository blinken
+    branch master
+    prefix doc/
 end match
 
 #	[ parent trunk/kdeplayground-edu/ksimon 409206 0 ]
