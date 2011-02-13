@@ -50,4 +50,16 @@ match /tags/KDE/4.5.4/
     max revision 1202153 # deleted mistagged 4.5.4
 end match
 
+# "sync of tag and tarball", basically renaming tags to match the tarball name.
+# We already have rules to convert the "bad" tag name into the right thing in
+# git, so this just causes problems (usually an empty commit in the tag).
+match /tags/
+    min revision 462490
+    max revision 462490
+end match
+match /tags/
+    min revision 462492
+    max revision 462492
+end match
+
 # kate: hl svn2git rules;
