@@ -53,6 +53,9 @@ ktouch:
 kmplot:
 - perfect
 
+kanagram:
+- docs missing from playground and kdereview history
+
 all: check for merges of kaction-cleanup-branch in 610651
 all: check for merges of kconfiggroup_port in 635473
 all: check for merges of kinstance-redesign in 628316
