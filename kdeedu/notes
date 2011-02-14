@@ -36,4 +36,23 @@ kalzium:
 - synth merge of make_kdeedu_cool to trunk (309143 -> {309149, 309154,
   309156})
 - synth merge of kalziumkde4 to trunk (395799 -> 395803)
-- tags 3.4.90 and 3.4.91 lack docs
+- tags 3.4.90 and 3.4.91 lack docs [recheck]
+
+kbruch:
+- tags 3.4.90 and 3.4.91 lack docs [recheck]
+
+klettres:
+- tags 3.4.90 and 3.4.91 lack docs [recheck]
+
+kiten:
+- tags 3.4.90 and 3.4.91 lack docs [recheck]
+
+ktouch:
+- tags 3.4.90 and 3.4.91 lack docs [recheck]
+
+kmplot:
+- perfect
+
+all: check for merges of kaction-cleanup-branch in 610651
+all: check for merges of kconfiggroup_port in 635473
+all: check for merges of kinstance-redesign in 628316
