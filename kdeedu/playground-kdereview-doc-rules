@@ -8,4 +8,4 @@ match /trunk/playground/edu/doc/${REPO}/
   repository ${REPO}
   prefix doc/
   branch master
-end master
+end match
