@@ -27,10 +27,7 @@ parley:
 libkdeedu:
 - figure out 757794 mess
 
-cantor: [last checked Feb 15 02:22]
-- repository absolutely fucked up; it only has 6 revisions!
-- docs missing from playground and kdereview history, under both the
-  "kantor" and "mathematik" names [recheck]
+cantor: [last checked Feb 15 02:33]
 - soc-cantor branch isn't being converted (r1130956 is a backport from
   it into trunk)
 

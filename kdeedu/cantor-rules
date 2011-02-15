@@ -32,17 +32,23 @@ match /trunk/kdereview/mathematik/
     max revision 1027773
     min revision 1026420
 end match
+match /trunk/kdereview/doc/mathematik/
+  repository cantor
+  prefix doc/
+  branch master
+end match
 
 #	[ move trunk/playground/edu/mathematik 1026420 0 ]
 match /trunk/playground/edu/mathematik/
     repository cantor
     branch master
-    max revision 1026420
 end match
 
-
-declare REPO=mathematik
-include playground-kdereview-doc-rules
+match /trunk/playground/edu/doc/mathematik/
+  repository cantor
+  prefix doc/
+  branch master
+end match
 
 match /
 end match
