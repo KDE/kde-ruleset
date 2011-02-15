@@ -38,8 +38,8 @@ kalzium:
 - synth merge of kalziumkde4 to trunk (395799 -> 395803)
 - tags 3.4.90 and 3.4.91 lack docs [recheck]
 
-kbruch:
-- tags 3.4.90 and 3.4.91 lack docs [recheck]
+kbruch: [last checked Feb 15 00:13]
+- looks good to me
 
 klettres:
 - tags 3.4.90 and 3.4.91 lack docs [recheck]
@@ -51,11 +51,14 @@ ktouch:
 - tags 3.4.90 and 3.4.91 lack docs [recheck]
 
 kmplot:
-- perfect
+- looks good to me
 
-kanagram:
+kanagram: [last checked Feb 15 00:12]
 - docs missing from playground and kdereview history
 
-all: check for merges of kaction-cleanup-branch in 610651
+kturtle: [last checked Feb 15 01:01]
+- looks good to me
+
+all: check for merges of kaction-cleanup-branch in 610651/621518
 all: check for merges of kconfiggroup_port in 635473
 all: check for merges of kinstance-redesign in 628316
