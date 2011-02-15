@@ -22,15 +22,14 @@ match /trunk/KDE/kdeedu/parley/
 end match
 
 #	[ move trunk/KDE/kdeedu/kvoctrain 710173 409202 ]
-match /trunk/KDE/kdeedu/kvoctrain/
+match /trunk/(KDE/)?kdeedu/kvoctrain/
     repository parley
     branch master
 end match
-
-#	[ parent trunk/kdeedu/kvoctrain 409202 0 ]
-match /trunk/kdeedu/kvoctrain/
+match /trunk/(KDE/)?kdeedu/doc/kvoctrain/
     repository parley
     branch master
+    prefix doc/
 end match
 
 match /

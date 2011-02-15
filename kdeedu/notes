@@ -22,7 +22,6 @@ kstars:
 - synth merge of make_kdeedu_cool to trunk (190438 -> 191485)
 
 parley: [last checked Feb 15 03:05]
-- kvoctrain docs are missing
 - figure out 757794 mess
 - synth a few merges from soc-parley:
   - 840900 -> 840901
