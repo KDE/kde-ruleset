@@ -58,6 +58,21 @@ kanagram: [last checked Feb 15 00:12]
 kturtle: [last checked Feb 15 01:01]
 - looks good to me
 
+step: [last checked Feb 15 01:35]
+- docs missing from playground and kdereview history
+- unconverted feature branch "xml_translations"
+
+khangman: [last checked Feb 15 01:20]
+- synth merge of make_kdeedu_cool to trunk (305053 -> 305055)
+- figure out 757794 mess
+
+kwordquiz: [last checked Feb 15 01:26]
+- figure out 757794 mess
+- unconverted feature branch under branches/work/kwordquiz
+
+kgeography: [last checked Feb 15 01:44]
+- docs missing from playground and kdereview history
+
 so-called "757794 mess":
 - It's a giant commit, apparently a feature branch merge, but I don't
   know which branch. If it's a feature branch, we have to convert it
