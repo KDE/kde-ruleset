@@ -23,8 +23,7 @@ parley:
 - everything seems fine :)
 
 libkdeedu:
-- weird stuff in 757794, it's a giant commit, apparently a feature
-  branch merge, but I don't know which branch
+- figure out 757794 mess
 
 cantor:
 - docs missing from playground and kdereview history, under both the
@@ -58,6 +57,11 @@ kanagram: [last checked Feb 15 00:12]
 
 kturtle: [last checked Feb 15 01:01]
 - looks good to me
+
+so-called "757794 mess":
+- It's a giant commit, apparently a feature branch merge, but I don't
+  know which branch. If it's a feature branch, we have to convert it
+  and synth the merges...
 
 all: check for merges of kaction-cleanup-branch in 610651/621518
 all: check for merges of kconfiggroup_port in 635473
