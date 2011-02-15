@@ -21,8 +21,12 @@ kstars:
   should handle sanely in git.
 - synth merge of make_kdeedu_cool to trunk (190438 -> 191485)
 
-parley:
-- everything seems fine :)
+parley: [last checked Feb 15 03:05]
+- kvoctrain docs are missing
+- figure out 757794 mess
+- synth a few merges from soc-parley:
+  - 840900 -> 840901
+  - 835565 -> 835588
 
 libkdeedu:
 - figure out 757794 mess
@@ -53,8 +57,8 @@ ktouch:
 kmplot:
 - looks good to me
 
-kanagram: [last checked Feb 15 00:12]
-- docs missing from playground and kdereview history
+kanagram: [last checked Feb 15 02:46]
+- figure out 757794 mess
 
 kturtle: [last checked Feb 15 01:01]
 - looks good to me
