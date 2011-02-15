@@ -1,0 +1,11 @@
+match /trunk/kdereview/doc/${REPO}/
+  repository ${REPO}
+  prefix doc/
+  branch master
+end match
+
+match /trunk/playground/edu/doc/${REPO}/
+  repository ${REPO}
+  prefix doc/
+  branch master
+end master

@@ -5,13 +5,13 @@ marble:
 - synth merge of marble-geodata-nt to trunk (946595 -> 946666)
 
 blinken:
-- docs are missing in history of version branches
+- docs are missing in history of version branches [recheck]
 
 kalgebra:
-- missing docs from playground and kdereview history
+- missing docs from playground and kdereview history [recheck]
 
 rocs:
-- missing docs from playground and kdereview history
+- missing docs from playground and kdereview history [recheck]
 - 4.6 branching has docs in root, deletes all other files
 
 kstars:
@@ -28,7 +28,7 @@ libkdeedu:
 
 cantor:
 - docs missing from playground and kdereview history, under both the
-  "kantor" and "mathematik" names
+  "kantor" and "mathematik" names [recheck]
 - soc-cantor branch isn't being converted (r1130956 is a backport from
   it into trunk)
 

@@ -41,6 +41,9 @@ match /trunk/(KDE/)?kdeedu/doc/${REPO}/
   branch master
 end match
 
+include playground-kdereview-doc-rules
+
+
 #get the application branches
 declare PREFIX=/
 include ../common-kde-branches-rules

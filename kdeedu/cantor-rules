@@ -40,6 +40,10 @@ match /trunk/playground/edu/mathematik/
     max revision 1026420
 end match
 
+
+declare REPO=mathematik
+include playground-kdereview-doc-rules
+
 match /
 end match
 #First revision used: 962979
