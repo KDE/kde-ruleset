@@ -34,11 +34,12 @@ cantor: [last checked Feb 15 02:22]
 - soc-cantor branch isn't being converted (r1130956 is a backport from
   it into trunk)
 
-kalzium:
+kalzium: [last checked Feb 15 02:31]
 - synth merge of make_kdeedu_cool to trunk (309143 -> {309149, 309154,
   309156})
+- another make_kdeedu_cool branch? called make_it_cool in commit
+  messages, merged in 191127 -> 191142
 - synth merge of kalziumkde4 to trunk (395799 -> 395803)
-- tags 3.4.90 and 3.4.91 lack docs [recheck]
 
 kbruch: [last checked Feb 15 00:13]
 - looks good to me
