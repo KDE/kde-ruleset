@@ -75,8 +75,8 @@ kwordquiz: [last checked Feb 15 01:26]
 - figure out 757794 mess
 - unconverted feature branch under branches/work/kwordquiz
 
-kgeography: [last checked Feb 15 01:44]
-- docs missing from playground and kdereview history
+kgeography: [last checked Feb 15 03:22]
+- looks good to me
 
 so-called "757794 mess":
 - It's a giant commit, apparently a feature branch merge, but I don't
