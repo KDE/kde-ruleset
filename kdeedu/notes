@@ -4,15 +4,17 @@ kig:
 marble:
 - synth merge of marble-geodata-nt to trunk (946595 -> 946666)
 
-blinken:
-- docs are missing in history of version branches [recheck]
+blinken: [last checked Feb 15 02:02]
+- looks OK
 
-kalgebra:
-- missing docs from playground and kdereview history [recheck]
+kalgebra: [last checked Feb 15 02:08]
+- missing docs from playground and kdereview history [fixed]
+- r670406 needs to be ignored to avoid doc deletion
 
-rocs:
-- missing docs from playground and kdereview history [recheck]
-- 4.6 branching has docs in root, deletes all other files
+rocs: [last checked Feb 15 02:13]
+- missing docs from playground and kdereview history [fixed]
+- docs get deleted in r1048724 and readded in 1048733; ignore the
+  former?
 
 kstars:
 - there were some deletions and re-additions of the entire trunk,
@@ -25,7 +27,8 @@ parley:
 libkdeedu:
 - figure out 757794 mess
 
-cantor:
+cantor: [last checked Feb 15 02:22]
+- repository absolutely fucked up; it only has 6 revisions!
 - docs missing from playground and kdereview history, under both the
   "kantor" and "mathematik" names [recheck]
 - soc-cantor branch isn't being converted (r1130956 is a backport from
@@ -57,6 +60,7 @@ kanagram: [last checked Feb 15 00:12]
 
 kturtle: [last checked Feb 15 01:01]
 - looks good to me
+- don't forget to run the filter!
 
 step: [last checked Feb 15 01:35]
 - docs missing from playground and kdereview history
@@ -81,3 +85,4 @@ so-called "757794 mess":
 all: check for merges of kaction-cleanup-branch in 610651/621518
 all: check for merges of kconfiggroup_port in 635473
 all: check for merges of kinstance-redesign in 628316
+kconfig branch? 721704/721712
