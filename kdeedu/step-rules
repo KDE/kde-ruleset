@@ -13,22 +13,18 @@ include common-kdeedu-rules
 match /trunk/KDE/kdeedu/step/
     repository step
     branch master
-    min revision 793793
 end match
 
 #	[ move trunk/kdereview/step 793793 786020 ]
 match /trunk/kdereview/step/
     repository step
     branch master
-    max revision 793793
-    min revision 786020
 end match
 
 #	[ move trunk/playground/edu/step 786020 0 ]
 match /trunk/playground/edu/step/
     repository step
     branch master
-    max revision 786020
 end match
 
 match /
