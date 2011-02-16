@@ -1,32 +1,21 @@
-# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/playground/devtools/kdevelop4-extra-plugins/mercurial# --module# kdev-mercurial
 create repository kdev-mercurial
 end repository
 
-declare MODULE=kdeedu/cantor
-declare REPO=kdevplatform/plugins/mercurial
-declare PREFIX=/
-include ../common-kde-branches-rules
-include ../common-kde-tags-rules
+# in 939889 a new mercurial plugin was added in trunk, but the old code still
+# existed in playground (it was only deleted in 939900), so we have to use
+# different min-revisions to ignore the old version
 
-
-#	------< trunk/playground/devtools/kdevelop4-extra-plugins/mercurial >------
-#	[ Move/Replace: /trunk/playground/devtools/kdevelop4-extra-plugins/mercurial @ 1049563 <- /trunk/KDE/kdevplatform/plugins/mercurial @ 1049556 ]
-#	[ Delayed: /trunk/KDE/kdevplatform/plugins/mercurial/tests/CMakeLists.txt @ 939889 <- /trunk/KDE/kdevplatform/plugins/git/tests/CMakeLists.txt @ 939888 ]
-#	[ Delayed: /trunk/KDE/kdevplatform/plugins/mercurial/tests/initTest.h @ 939889 <- /trunk/KDE/kdevplatform/plugins/git/tests/initTest.h @ 939888 ]
-#	[ add  HEAD 1049556 ]
 match /trunk/playground/devtools/kdevelop4-extra-plugins/mercurial/
     repository kdev-mercurial
     branch master
-    min revision 1049556
+    min revision 939901
 end match
 
-#	[ move trunk/KDE/kdevplatform/plugins/mercurial 1049556 0 ]
 match /trunk/KDE/kdevplatform/plugins/mercurial/
     repository kdev-mercurial
     branch master
-    max revision 1049556
+    min revision 939889
 end match
 
 match /
 end match
-#First revision used: 939889
