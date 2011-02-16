@@ -8,11 +8,9 @@ blinken: [last checked Feb 15 02:02]
 - looks OK
 
 kalgebra: [last checked Feb 15 02:08]
-- missing docs from playground and kdereview history [fixed]
 - r670406 needs to be ignored to avoid doc deletion
 
 rocs: [last checked Feb 15 02:13]
-- missing docs from playground and kdereview history [fixed]
 - docs get deleted in r1048724 and readded in 1048733; ignore the
   former?
 
