@@ -61,8 +61,9 @@ kturtle: [last checked Feb 15 01:01]
 - looks good to me
 - don't forget to run the filter!
 
-step: [last checked Feb 16 02:55]
-- unconverted feature branch "xml_translations"
+step: [last checked Feb 17 20:50]
+- unconverted SoC 2008 branches; but not sure if they're worth
+  converting
 
 khangman: [last checked Feb 15 01:20]
 - synth merge of make_kdeedu_cool to trunk (305053 -> 305055)
