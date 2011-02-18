@@ -246,7 +246,6 @@ match /trunk/playground/graphics/okular/mobipocket/
   repository KDE/kdegraphics/okular
   branch mobipocket
   prefix generators/mobipocket/
-  min revision 917030
   max revision 917049
 end match 
 # neither has been in kdereview! Do not enable this rule, it will break history at 809228
@@ -424,6 +423,7 @@ match /trunk/(KDE/)?kdegraphics/doc/kpdf/
   repository KDE/kdegraphics/okular
   prefix doc/
   branch kpdf
+  max revision 674185 # ignore 674186. Then history ends.
 end match
 
 # --- gwenview ---
