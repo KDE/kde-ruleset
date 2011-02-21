@@ -4,6 +4,12 @@ end repository
 
 declare MODULE=kdeedu/rocs
 declare REPO=rocs
+
+match /
+    min revision 1048724
+    max revision 1048724
+end match
+
 include common-kdeedu-rules
 
 #	------< trunk/KDE/kdeedu/rocs >------

@@ -22,6 +22,11 @@ match /trunk/kdeedu/kwordquiz/
     max revision 409202
 end match
 
+match /branches/work/kwordquiz/
+    respository kwordquiz
+    branch work
+end match
+
 match /
 end match
 #First revision used: 287802

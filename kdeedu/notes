@@ -20,7 +20,7 @@ kstars:
 - synth merge of make_kdeedu_cool to trunk (190438 -> 191485)
 
 parley: [last checked Feb 15 03:05]
-- figure out 757794 mess
+- figure out 757794 mess [added parley feature branch]
 - synth a few merges from soc-parley:
   - 840900 -> 840901
   - 835565 -> 835588
@@ -30,7 +30,7 @@ libkdeedu:
 
 cantor: [last checked Feb 15 02:33]
 - soc-cantor branch isn't being converted (r1130956 is a backport from
-  it into trunk)
+  it into trunk) [done]
 
 kalzium: [last checked Feb 15 02:31]
 - synth merge of make_kdeedu_cool to trunk (309143 -> {309149, 309154,
@@ -63,7 +63,7 @@ kturtle: [last checked Feb 15 01:01]
 
 step: [last checked Feb 17 20:50]
 - unconverted SoC 2008 branches; but not sure if they're worth
-  converting
+  converting [converted]
 
 khangman: [last checked Feb 15 01:20]
 - synth merge of make_kdeedu_cool to trunk (305053 -> 305055)
@@ -71,7 +71,7 @@ khangman: [last checked Feb 15 01:20]
 
 kwordquiz: [last checked Feb 15 01:26]
 - figure out 757794 mess
-- unconverted feature branch under branches/work/kwordquiz
+- unconverted feature branch under branches/work/kwordquiz [converted]
 
 kgeography: [last checked Feb 15 03:22]
 - looks good to me

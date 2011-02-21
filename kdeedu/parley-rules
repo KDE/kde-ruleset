@@ -5,7 +5,7 @@ end repository
 declare MODULE=kdeedu/parley
 declare REPO=parley
 
-match /branches/work/(parley-practice|soc-parley)/parley/
+match /branches/work/(kdeedu_parley|parley-practice|soc-parley)/parley/
   repository ${REPO}
   branch \1
 end match

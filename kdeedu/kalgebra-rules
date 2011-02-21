@@ -2,6 +2,11 @@
 create repository kalgebra
 end repository
 
+match /trunk/kdereview/doc/kalgebra/
+    min revision 670406
+    max revision 670406
+end match
+
 declare MODULE=kdeedu/kalgebra
 declare REPO=kalgebra
 include common-kdeedu-rules

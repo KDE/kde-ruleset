@@ -50,6 +50,11 @@ match /trunk/playground/edu/doc/mathematik/
   branch master
 end match
 
+match /branches/work/soc-cantor/
+ repository cantor
+ branch soc-cantor
+end match
+
 match /
 end match
 #First revision used: 962979

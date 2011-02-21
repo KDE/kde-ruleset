@@ -27,6 +27,11 @@ match /trunk/playground/edu/step/
     branch master
 end match
 
+match /branches/work/(soc-step*)/
+    repository step
+    branch \1
+end match
+
 match /
 end match
 #First revision used: 629575
