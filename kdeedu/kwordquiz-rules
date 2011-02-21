@@ -23,7 +23,7 @@ match /trunk/kdeedu/kwordquiz/
 end match
 
 match /branches/work/kwordquiz/
-    respository kwordquiz
+    repository kwordquiz
     branch work
 end match
 
