@@ -7,12 +7,11 @@ marble:
 blinken: [last checked Feb 15 02:02]
 - looks OK
 
-kalgebra: [last checked Feb 15 02:08]
-- r670406 needs to be ignored to avoid doc deletion
+kalgebra: [last checked Feb 22 23:33]
+- no known problems
 
-rocs: [last checked Feb 15 02:13]
-- docs get deleted in r1048724 and readded in 1048733; ignore the
-  former?
+rocs: [last checked Feb 22 23:49]
+- no known problems
 
 kstars:
 - there were some deletions and re-additions of the entire trunk,
@@ -28,9 +27,8 @@ parley: [last checked Feb 15 03:05]
 libkdeedu:
 - figure out 757794 mess
 
-cantor: [last checked Feb 15 02:33]
-- soc-cantor branch isn't being converted (r1130956 is a backport from
-  it into trunk) [done]
+cantor: [last checked Feb 22 22:44]
+- maybe synth backport from 1130928 to 1130956 (soc-cantor branch)
 
 kalzium: [last checked Feb 15 02:31]
 - synth merge of make_kdeedu_cool to trunk (309143 -> {309149, 309154,
@@ -69,9 +67,10 @@ khangman: [last checked Feb 15 01:20]
 - synth merge of make_kdeedu_cool to trunk (305053 -> 305055)
 - figure out 757794 mess
 
-kwordquiz: [last checked Feb 15 01:26]
+kwordquiz: [last checked Feb 22 23:42]
 - figure out 757794 mess
-- unconverted feature branch under branches/work/kwordquiz [converted]
+- work branch gets merged 471217->471272, but more stuff got merged in
+  471273; is this worth synthing?
 
 kgeography: [last checked Feb 15 03:22]
 - looks good to me
