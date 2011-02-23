@@ -33,7 +33,12 @@ parley: [last checked Feb 15 03:05]
   currently it has four parents.
 
 libkdeedu:
-- convert kdeedu_parley branch
+- convert kdeedu_parley branch [done]
+- synth merges in kdeedu_parley branch:
+  - 730519 -> 730770
+  - 735440 -> 742176
+  - 742066 -> 742235
+  - 757622 -> 757794 (instead of 747571 -> 757794)
 
 cantor: [last checked Feb 22 22:44]
 - maybe synth backport from 1130928 to 1130956 (soc-cantor branch)

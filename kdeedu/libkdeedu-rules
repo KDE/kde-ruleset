@@ -22,6 +22,11 @@ match /trunk/kdeedu/libkdeedu/
     max revision 409202
 end match
 
+match /branches/work/kdeedu_parley/libkdeedu/
+    repository libkdeedu
+    branch parley_work
+end match
+
 match /
 end match
 #First revision used: 158533
