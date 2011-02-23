@@ -41,6 +41,7 @@ libkdeedu:
   - 757622 -> 757794 (instead of 747571 -> 757794)
 - libkdeedu is mostly stuff extracted from other kdeedu apps; we
   should convert the past history from when it was in the app too.
+   - I have for keduvocdocument and qtmmlwidget - Ian
 
 cantor: [last checked Feb 22 22:44]
 - maybe synth backport from 1130928 to 1130956 (soc-cantor branch)

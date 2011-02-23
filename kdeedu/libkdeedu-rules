@@ -60,6 +60,47 @@ match /branches/work/kdeedu_parley/libkdeedu/
     branch parley_work
 end match
 
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocdocument.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocdocument.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocexpression.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocexpression.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocgrammar.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocgrammar.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvockvtmlreader.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvockvtmlreader.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvockvtmlwriter.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvockvtmlwriter.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocmultiplechoice.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocmultiplechoice.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocwqlreader.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocwqlreader.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocwqlwriter.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocwqlwriter.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnerbox.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnerbox.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnersystem.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnersystem.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnersystemview.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnersystemview.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/prefleitner.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/prefleitner.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/prefleitnerbase.ui
+
+
+declare VOCFILES=(keduvocdocument|keduvocexpression|keduvocgrammar|keduvockvtmlreader|keduvockvtmlwriter|keduvocmultiplechoice|keduvocwqlreader|keduvocwqlwriter|leitnerbox|leitnersystem|leitnersystemview|prefleitner|prefleitnerbase).(cpp|h|ui)
+
+match /trunk/(KDE/)?kdeedu/kwordquiz/src/${VOCFILES}
+    repository libkdeedu
+    branch master
+    prefix kdeeducore/\2.\3
+end match
+
+match /branches/work/kwordquiz/src/${VOCFILES}
+    repository libkdeedu
+    branch master
+    prefix kdeeducore/\1.\2
+    max revision 471271
+end match
 
 #	------< trunk/KDE/kdeedu/libkdeedu/widgets >------
 #	[ add widgets HEAD 0 ]
