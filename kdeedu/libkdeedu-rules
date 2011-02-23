@@ -1,4 +1,4 @@
-# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/libkdeedu# --module# libkdeedu
+# --repo# file:///home/eean/svn/# --subdirs# --path# trunk/KDE/kdeedu/libkdeedu# --module# libkdeedu
 create repository libkdeedu
 end repository
 
@@ -22,11 +22,47 @@ match /trunk/kdeedu/libkdeedu/
     max revision 409202
 end match
 
+#	------< trunk/KDE/kdeedu/libkdeedu/icons >------
+#	[ Move/Replace: /trunk/KDE/kdeedu/libkdeedu/icons @ 1175896 <- /trunk/KDE/kdeedu/kmplot/icons/actions @ 1175878 ]
+#	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
+#	[ add icons HEAD 1175878 ]
+
+#lets not get better binary file history...
+#	[ move trunk/KDE/kdeedu/kmplot/icons/actions 1175878 409202 ]
+#match /trunk/KDE/kdeedu/kmplot/icons/actions/
+#    repository libkdeedu
+#    prefix icons/
+#    branch master
+#    max revision 1175878
+#    min revision 409202
+#end match
+
+#	[ parent trunk/kdeedu/kmplot/icons/actions 409202 0 ]
+#match /trunk/kdeedu/kmplot/icons/actions/
+#    repository libkdeedu
+#    prefix icons/
+#    branch master
+#    max revision 409202
+#end match
+
+
+#	[ move trunk/KDE/kdeedu/kalgebra/src/qtmmlwidget 1163283 0 ]
+match /trunk/KDE/kdeedu/kalgebra/src/qtmmlwidget/
+    repository libkdeedu
+    prefix qtmmlwidget/
+    branch master
+    max revision 1163283
+end match
+
+
 match /branches/work/kdeedu_parley/libkdeedu/
     repository libkdeedu
     branch parley_work
 end match
 
+
+#	------< trunk/KDE/kdeedu/libkdeedu/widgets >------
+#	[ add widgets HEAD 0 ]
 match /
 end match
 #First revision used: 158533
