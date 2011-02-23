@@ -23,6 +23,14 @@ parley: [last checked Feb 15 03:05]
 - synth a few merges from soc-parley:
   - 840900 -> 840901
   - 835565 -> 835588
+- synth a few merges to soc-parley:
+  - 802581 -> 802584
+- synth some more merges in kdeedu_parley branch:
+  - 730705 -> 730770
+  - 742062 -> 742235
+  - 756506 -> 756652
+- fix 757794 merge so that its parents are only 757121 and 757595.
+  currently it has four parents.
 
 libkdeedu:
 - figure out 757794 mess
