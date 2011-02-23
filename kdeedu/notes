@@ -19,7 +19,7 @@ kstars:
 - synth merge of make_kdeedu_cool to trunk (190438 -> 191485)
 
 parley: [last checked Feb 15 03:05]
-- figure out 757794 mess [added parley feature branch]
+- convert kdeedu_parley branch [done]
 - synth a few merges from soc-parley:
   - 840900 -> 840901
   - 835565 -> 835588
@@ -33,7 +33,7 @@ parley: [last checked Feb 15 03:05]
   currently it has four parents.
 
 libkdeedu:
-- figure out 757794 mess
+- convert kdeedu_parley branch
 
 cantor: [last checked Feb 22 22:44]
 - maybe synth backport from 1130928 to 1130956 (soc-cantor branch)
@@ -61,7 +61,7 @@ kmplot:
 - looks good to me
 
 kanagram: [last checked Feb 15 02:46]
-- figure out 757794 mess
+- convert kdeedu_parley branch
 
 kturtle: [last checked Feb 15 01:01]
 - looks good to me
@@ -76,17 +76,12 @@ khangman: [last checked Feb 15 01:20]
 - figure out 757794 mess
 
 kwordquiz: [last checked Feb 22 23:42]
-- figure out 757794 mess
+- convert kdeedu_parley branch
 - work branch gets merged 471217->471272, but more stuff got merged in
   471273; is this worth synthing?
 
 kgeography: [last checked Feb 15 03:22]
 - looks good to me
-
-so-called "757794 mess":
-- It's a giant commit, apparently a feature branch merge, but I don't
-  know which branch. If it's a feature branch, we have to convert it
-  and synth the merges...
 
 all: check for merges of kaction-cleanup-branch in 610651/621518
 all: check for merges of kconfiggroup_port in 635473
