@@ -1,0 +1,321 @@
+##########################################################################
+##									##
+##  Rules file used for the SVN->GIT conversion of Kooka and libkscan	##
+##									##
+##########################################################################
+
+
+#  Create the KDE module
+declare REPO=kooka
+create repository ${REPO}
+end repository
+
+#####  Ignore rules  #####
+
+#  Ignore the SVN-adjusting commits.
+#  Copied from the standard KDE rules files.
+match /
+  min revision 409202
+  max revision 409209
+end match
+
+#  This revision has the comment "sort out KDE tags - sorry Stephan".
+#  It appears to simply duplicate tags which are matched elsewhere.
+match /
+  min revision 411963
+  max revision 411963
+end match
+
+#  591372 tagging KDE 3.5.5:  after that, these next two say
+#  "no, I want to do this again" (deleting everything) then
+#  "redo it consistently" (bringing everything back again).
+#  The repeat does not affect any files in our area of interest.
+match /
+  min revision 591395
+  max revision 591395
+end match
+match /
+  min revision 591452
+  max revision 591452
+end match
+
+#  Same for 519755 these tagging KDE 3.5.2:  first "I'm getting old"
+#  then "tagging second time"
+match /
+  min revision 519761
+  max revision 519761
+end match
+match /
+  min revision 519807
+  max revision 519807
+end match
+
+#  Same for 467549 tagging KDE 3.4.3, "tagged 3.4.3" then "just a test :)"
+match /
+  min revision 467472
+  max revision 467472
+end match
+match /
+  min revision 467490
+  max revision 467490
+end match
+
+#  459298 tagging 3.5.0-beta1, duplicated
+match /
+  min revision 462492
+  max revision 462492
+end match
+
+#  443441 tagging 3.5.0-alpha1, duplicated
+match /
+  min revision 462490
+  max revision 462490
+end match
+
+#  764470/764772 was done as a copy/delete rather than an SVN move,
+#  so the latter deletes everything again.  Ignore that commit, as
+#  advised by nalvarez.
+match /
+  min revision 764472
+  max revision 764472
+end match
+
+#  Commits to the Kooka KDE3 development branch that Git won't accept
+match /
+  min revision 1222326
+  max revision 1222327
+end match
+
+#####  Current development branches  #####
+
+#  for KDE4
+match /branches/work/kooka-kde4/
+  min revision 764798
+  repository ${REPO}
+  branch master
+end match
+
+#  for KDE3, before KDE4 branch point
+match /branches/work/kooka-kde3/
+  min revision 764798
+  max revision 1037128
+  repository ${REPO}
+  branch master
+end match
+
+#  for KDE3, after KDE4 branch point
+match /branches/work/kooka-kde3/
+  min revision 1037129
+  repository ${REPO}
+  branch master-kde3
+end match
+
+#####  Development in KDE SVN  #####
+
+match /trunk/KDE/kdegraphics/(kooka|libkscan)/
+  repository ${REPO}
+  branch trunk
+  prefix \1/
+end match
+
+match /trunk/KDE/kdegraphics/doc/kooka/
+  repository ${REPO}
+  branch trunk
+  prefix doc/
+end match
+
+#####  Development in KDE CVS  #####
+
+match /trunk/kdegraphics/(kooka|libkscan)/
+  repository ${REPO}
+  branch trunk
+  prefix \1/
+end match
+
+match /trunk/kdegraphics/doc/kooka/
+  repository ${REPO}
+  branch trunk
+  prefix doc/
+end match
+
+#####  After final removal from trunk  #####
+
+#  Kooka and documentation removed at 674164, libkscan at 807805.
+#
+#  Documentation was copied inside of Kooka by 709924, so match
+#  that first and move it to the right place.
+match /trunk/playground/graphics/doc/kooka/
+  repository ${REPO}
+  branch deadend
+  prefix doc/
+end match
+
+match /trunk/playground/graphics/(kooka|libkscan)/
+  repository ${REPO}
+  branch deadend
+  prefix \1/
+end match
+
+match /tags/unmaintained/4/kooka/doc/
+  repository ${REPO}
+  branch deadend
+  prefix doc/
+end match
+
+match /tags/unmaintained/4/(kooka|libkscan)/
+  repository ${REPO}
+  branch deadend
+  prefix \1/
+end match
+
+#####  Recursion for branches/tags  #####
+
+match /(branches|tags)/KDE/([^/]+)/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE/([^/]+)/kdegraphics/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE/([^/]+)/kdegraphics/doc/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE_[^/]+_(BRANCH|RELEASE)/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE_[^/]+_(BRANCH|RELEASE)/kdegraphics/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE_[^/]+_(BRANCH|RELEASE)/kdegraphics/doc/$
+  action recurse
+end match
+
+match /tags/(kooka|KOOKA)_(\d+)_(\d+)/$
+  action recurse
+end match
+
+match /tags/(kooka|KOOKA)_(\d+)_(\d+)/kdegraphics/$
+  action recurse
+end match
+
+#####  SVN branches  #####
+
+match /branches/KDE/([^/]+)/kdegraphics/(kooka|libkscan)/
+  repository ${REPO}
+  branch \1
+  prefix \2/
+end match
+
+match /branches/KDE/([^/]+)/kdegraphics/doc/kooka/
+  repository ${REPO}
+  branch \1
+  prefix doc/
+end match
+
+#####  CVS branches  #####
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegraphics/(kooka|libkscan)/
+  repository ${REPO}
+  branch \1.\2
+  prefix \3/
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegraphics/doc/kooka/
+  repository ${REPO}
+  branch \1.\2
+  prefix doc/
+end match
+
+#####  SVN tags  #####
+
+match /tags/KDE/([^/]+)/kdegraphics/(kooka|libkscan)/
+  repository ${REPO}
+  branch refs/tags/v\1
+  annotated true
+  prefix \2/
+end match
+
+match /tags/KDE/([^/]+)/kdegraphics/(doc)/kooka/
+  repository ${REPO}
+  branch refs/tags/v\1
+  annotated true
+  prefix \2/
+end match
+
+#####  CVS tags  #####
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdegraphics/(kooka|libkscan)/
+  repository ${REPO}
+  branch refs/tags/v\1.\2.0
+  annotated true
+  prefix \3/
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdegraphics/(doc)/kooka/
+  repository ${REPO}
+  branch refs/tags/v\1.\2.0
+  annotated true
+  prefix \3/
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdegraphics/(kooka|libkscan)/
+  repository ${REPO}
+  branch refs/tags/v\1.\2.\3
+  annotated true
+  prefix \4/
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdegraphics/(doc)/kooka/
+  repository ${REPO}
+  branch refs/tags/v\1.\2.\3
+  annotated true
+  prefix \4/
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdegraphics/(kooka|libkscan)/
+  repository ${REPO}
+  branch refs/tags/v\1.\2.\3-beta\4
+  annotated true
+  prefix \5/
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdegraphics/(doc)/kooka/
+  repository ${REPO}
+  branch refs/tags/v\1.\2.\3-beta\4
+  annotated true
+  prefix \5/
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdegraphics/(kooka|libkscan)/
+  repository ${REPO}
+  branch refs/tags/v\1.\2.\3a
+  annotated true
+  prefix \4/
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdegraphics/(doc)/kooka/
+  repository ${REPO}
+  branch refs/tags/v\1.\2.\3a
+  annotated true
+  prefix \4/
+end match
+
+#  171704 and 190186.  Later tags in /tags/kooka/ at 437074
+#  simply duplicate these.
+
+match /tags/(kooka|KOOKA)_(\d+)_(\d+)/kdegraphics/(kooka|libkscan)/
+  max revision 190186
+  repository ${REPO}
+  branch refs/tags/kooka-\2.\3
+  prefix \4/
+  annotated true
+end match
+
+#####  Ignore everything else  #####
+
+match /
+end match
