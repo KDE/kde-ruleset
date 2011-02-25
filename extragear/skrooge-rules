@@ -1,0 +1,21 @@
+#
+# Created by Artur Duque de Souza <asouza@kde.org>
+# Shamelessly applied to Skrooge by Guillaume de Bure <guillaume.debure@gmail.com>
+
+#
+# Create the skrooge repository
+#
+create repository skrooge
+end repository
+
+##
+# New place - main rule
+##
+match /trunk/extragear/office/skrooge/
+  repository skrooge
+  branch master
+end match
+
+
+match /
+end match
