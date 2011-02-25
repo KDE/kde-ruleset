@@ -8,14 +8,26 @@
 create repository skrooge
 end repository
 
-##
-# New place - main rule
-##
+# Start in playground. Initial import in revision r961823
+match /trunk/playground/office/skrooge/
+  repository skrooge
+  branch master
+  max revision 978123
+end match
+
+# move to kdereview in r978124
+match /trunk/kdereview/skrooge/
+  repository skrooge
+  branch master
+  max revision 989294
+end match
+
+# move to extragear in r989295, until present
 match /trunk/extragear/office/skrooge/
   repository skrooge
   branch master
 end match
 
-
+# ignore everything else
 match /
 end match
