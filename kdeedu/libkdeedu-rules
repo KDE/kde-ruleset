@@ -49,9 +49,8 @@ end match
 #	[ move trunk/KDE/kdeedu/kalgebra/src/qtmmlwidget 1163283 0 ]
 match /trunk/KDE/kdeedu/kalgebra/src/qtmmlwidget/
     repository libkdeedu
-    prefix qtmmlwidget/
-    branch master
-    max revision 1163283
+    prefix kalgebra/qtmmlwidget/
+    branch refs/fromotherapp/qtmmlwidget
 end match
 
 
@@ -89,17 +88,16 @@ end match
 
 declare VOCFILES=(keduvocdocument|keduvocexpression|keduvocgrammar|keduvockvtmlreader|keduvockvtmlwriter|keduvocmultiplechoice|keduvocwqlreader|keduvocwqlwriter|leitnerbox|leitnersystem|leitnersystemview|prefleitner|prefleitnerbase|grammarmanager|multiplechoice).(cpp|h|ui)
 
-match /trunk/(KDE/)?kdeedu/kwordquiz/src/${VOCFILES}
+match /trunk/(?:KDE/)?kdeedu/kwordquiz/src/${VOCFILES}
     repository libkdeedu
-    branch master
-    prefix kdeeducore/\2.\3
+    branch refs/fromotherapp/keduvoc
+    prefix kwordquiz/\1.\2
 end match
 
 match /branches/work/kwordquiz/src/${VOCFILES}
     repository libkdeedu
-    branch master
-    prefix kdeeducore/\1.\2
-    max revision 471271
+    branch refs/fromotherapp/keduvoc
+    prefix kwordquiz/\1.\2
 end match
 
 #	------< trunk/KDE/kdeedu/libkdeedu/widgets >------
