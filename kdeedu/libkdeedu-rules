@@ -87,7 +87,7 @@ end match
 #   D /trunk/KDE/kdeedu/kwordquiz/src/prefleitnerbase.ui
 
 
-declare VOCFILES=(keduvocdocument|keduvocexpression|keduvocgrammar|keduvockvtmlreader|keduvockvtmlwriter|keduvocmultiplechoice|keduvocwqlreader|keduvocwqlwriter|leitnerbox|leitnersystem|leitnersystemview|prefleitner|prefleitnerbase).(cpp|h|ui)
+declare VOCFILES=(keduvocdocument|keduvocexpression|keduvocgrammar|keduvockvtmlreader|keduvockvtmlwriter|keduvocmultiplechoice|keduvocwqlreader|keduvocwqlwriter|leitnerbox|leitnersystem|leitnersystemview|prefleitner|prefleitnerbase|grammarmanager|multiplechoice).(cpp|h|ui)
 
 match /trunk/(KDE/)?kdeedu/kwordquiz/src/${VOCFILES}
     repository libkdeedu
