@@ -32,7 +32,7 @@ parley: [last checked Feb 15 03:05]
 - fix 757794 merge so that its parents are only 757121 and 757595.
   currently it has four parents.
 
-libkdeedu:
+libkdeedu: [last checked Feb 26 03:07]
 - convert kdeedu_parley branch [done]
 - synth merges in kdeedu_parley branch:
   - 730519 -> 730770
@@ -42,6 +42,8 @@ libkdeedu:
 - libkdeedu is mostly stuff extracted from other kdeedu apps; we
   should convert the past history from when it was in the app too.
    - I have for keduvocdocument and qtmmlwidget - Ian
+   - added libphysics/libscience (from kalzium) - Nicolas
+     - needs to synth merge 468561 -> 470232
 
 cantor: [last checked Feb 22 22:44]
 - maybe synth backport from 1130928 to 1130956 (soc-cantor branch)
@@ -52,6 +54,8 @@ kalzium: [last checked Feb 15 02:31]
 - another make_kdeedu_cool branch? called make_it_cool in commit
   messages, merged in 191127 -> 191142
 - synth merge of kalziumkde4 to trunk (395799 -> 395803)
+- some code was moved to libkdeedu in 470232/470255, but was then
+  moved back into kalzium in 1208940. needs conversion of history.
 
 kbruch: [last checked Feb 15 00:13]
 - looks good to me
