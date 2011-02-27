@@ -1,0 +1,52 @@
+#
+# Created by Friedrich Pülz (fkpulz) <fpuelz@gmx.de>
+#
+# PublicTransport was developed in KDE SVN playground from beginning (2009)
+# It was never branched or tagged, but consists of multiple
+# components like data engines, a runner and an applet
+
+declare REPO=publictransport
+
+# Create the PublicTransport repository
+create repository ${REPO}
+end repository
+
+# PublicTransport helper library from applet subdir in SVN playground
+# Match before the applet, to not include it in the applets dir
+match /trunk/playground/base/plasma/applets/publictransport/publictransporthelper
+    repository ${REPO}
+    prefix libpublictransporthelper/
+    branch master
+end match
+
+# PublicTransport applet from SVN playground
+match /trunk/playground/base/plasma/applets/publictransport/
+    repository ${REPO}
+    prefix plasma-applet-publictransport/
+    branch master
+end match
+
+# PublicTransport runner from SVN playground
+match /trunk/playground/base/plasma/runners/publictransport/
+    repository ${REPO}
+    prefix plasma-runner-publictransport/
+    branch master
+end match
+
+# PublicTransport data engine from SVN playground
+match /trunk/playground/base/plasma/dataengines/publictransport/
+    repository ${REPO}
+    prefix plasma-engine-publictransport/
+    branch master
+end match
+
+# OpenStreetMap data engine from SVN playground
+match /trunk/playground/base/plasma/dataengines/openstreetmap/
+    repository ${REPO}
+    prefix plasma-engine-openstreetmap/
+    branch master
+end match
+
+# Ignore the rest
+match /
+end match
