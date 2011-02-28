@@ -1,0 +1,34 @@
+#
+# Adapted from many examples by Robby Stephenson <robby@periapsis.org>
+
+#
+# Create the tellico repository
+#
+create repository tellico
+end repository
+
+# Start in playground
+match /trunk/playground/office/tellico/
+  repository tellico
+  branch master
+  max revision 965371
+end match
+
+# move to kdereview
+match /trunk/kdereview/tellico/
+  repository tellico
+  branch master
+  min revision 965370
+  max revision 973890
+end match
+
+# move to extragear
+match /trunk/extragear/office/tellico/
+  repository tellico
+  branch master
+  min revision 973890
+end match
+
+# ignore everything else
+match /
+end match
