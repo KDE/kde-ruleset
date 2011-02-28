@@ -22,28 +22,28 @@ end match
 # PublicTransport applet from SVN playground
 match /trunk/playground/base/plasma/applets/publictransport/
     repository ${REPO}
-    prefix plasma-applet-publictransport/
+    prefix applet/
     branch master
 end match
 
 # PublicTransport runner from SVN playground
 match /trunk/playground/base/plasma/runners/publictransport/
     repository ${REPO}
-    prefix plasma-runner-publictransport/
+    prefix runner/
     branch master
 end match
 
 # PublicTransport data engine from SVN playground
 match /trunk/playground/base/plasma/dataengines/publictransport/
     repository ${REPO}
-    prefix plasma-engine-publictransport/
+    prefix engine/
     branch master
 end match
 
 # OpenStreetMap data engine from SVN playground
 match /trunk/playground/base/plasma/dataengines/openstreetmap/
     repository ${REPO}
-    prefix plasma-engine-openstreetmap/
+    prefix engine-openstreetmap/
     branch master
 end match
 
