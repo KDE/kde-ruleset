@@ -13,7 +13,7 @@ end repository
 
 # PublicTransport helper library from applet subdir in SVN playground
 # Match before the applet, to not include it in the applets dir
-match /trunk/playground/base/plasma/applets/publictransport/publictransporthelper
+match /trunk/playground/base/plasma/applets/publictransport/publictransporthelper/
     repository ${REPO}
     prefix libpublictransporthelper/
     branch master
