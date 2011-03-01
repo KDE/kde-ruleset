@@ -1,8 +1,9 @@
-kig:
-- should synth merge of make_kdeedu_cool to trunk (217425 -> 217432)
+kig: [last checked Mar 1 20:00]
+- for the record: r196843 adds documentation saying "moving documentation", but it doesn't actually exist anywhere else in SVN (it's not a move), so it's fine. I guess this is missing CVS history.
+- should synth merge of make_kdeedu_cool to trunk (217425 -> 217432) [done-ish]
 
-marble:
-- synth merge of marble-geodata-nt to trunk (946595 -> 946666)
+marble: [last checked Mar 1 23:28]
+- synth merge of marble-geodata-nt to trunk (946595 -> 946666) [done-ish]
 
 blinken: [last checked Feb 15 02:02]
 - looks OK
