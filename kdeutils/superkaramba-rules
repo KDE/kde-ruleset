@@ -1,0 +1,30 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=superkaramba
+declare REPOSITORY=KDE/kdeutils/superkaramba
+
+create repository ${REPOSITORY}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+
+match /trunk/(KDE/)?kdeutils/superkaramba/
+  repository ${REPOSITORY}
+  branch master
+end match
+
+### SuperKaramba in kdereview
+match /trunk/kdereview/superkaramba/
+  repository ${REPOSITORY}
+  branch master
+  min revision 417080
+  max revision 450000
+end match
+
+##### Ignore everything else #####
+match /
+end match

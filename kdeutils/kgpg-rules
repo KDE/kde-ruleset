@@ -1,0 +1,29 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=kgpg
+declare REPOSITORY=KDE/kdeutils/kgpg
+
+create repository ${REPOSITORY}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+
+match /trunk/(KDE/)?kdeutils/kgpg/
+  repository ${REPOSITORY}
+  branch master
+end match
+
+match /branches/work/kgpg2/
+  repository ${REPOSITORY}
+  branch master
+  # min revision 738904
+  # max revision 766859
+end match
+
+##### Ignore everything else #####
+match /
+end match

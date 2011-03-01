@@ -1,0 +1,29 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=ark
+declare REPOSITORY=KDE/kdeutils/ark
+
+create repository ${REPOSITORY}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+
+match /trunk/(KDE/)?kdeutils/ark/
+  repository ${REPOSITORY}
+  branch master
+end match
+
+match /branches/work/libarchive-based-ark/ark/
+  repository ${REPOSITORY}
+  branch master
+  min revision 672750
+  max revision 694571
+end match
+
+##### Ignore everything else #####
+match /
+end match

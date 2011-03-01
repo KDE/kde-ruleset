@@ -1,0 +1,22 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=kcharselect
+declare REPOSITORY=KDE/kdeutils/kcharselect
+
+create repository ${REPOSITORY}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+
+match /trunk/(KDE/)?kdeutils/kcharselect/
+  repository ${REPOSITORY}
+  branch master
+end match
+
+##### Ignore everything else #####
+match /
+end match

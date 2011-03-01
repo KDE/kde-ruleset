@@ -1,0 +1,88 @@
+# CVS branches
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+# SVN branches
+match /branches/KDE/([^/]+)/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch KDE/\1
+  min revision 409209
+end match
+
+match /branches/KDE/([^/]+)A/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch KDE/\1a
+end match
+
+# Tags
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch refs/tags/v\1.\2.0
+  annotated true
+  max revision 409202
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch refs/tags/v\1.\2.0
+  annotated true
+  min revision 68154
+  max revision 85028
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch refs/tags/v\1.\2.\3
+  annotated true
+  max revision 409202
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch refs/tags/v\1.\2.\3a
+  annotated true
+  min revision 192719
+  max revision 409202
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch refs/tags/v\1.\2.\3-beta\4
+  annotated true
+  min revision 376088
+  max revision 409202
+end match
+
+# 3.5.0-alpha1
+match /tags/KDE/3.5.0-alpha1/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch refs/tags/v3.4.90
+  min revision 443441
+  max revision 445561
+  annotated true
+end match
+
+# 3.5.0-beta1
+match /tags/KDE/3.5.0-beta1/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch refs/tags/v3.4.91
+  min revision 459298
+  max revision 460260
+  annotated true
+end match
+
+# New-style tags
+match /tags/KDE/([^/]+)A/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch refs/tags/v\1a
+  annotated true
+end match
+
+match /tags/KDE/([^/]+)/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch refs/tags/v\1
+  annotated true
+end match

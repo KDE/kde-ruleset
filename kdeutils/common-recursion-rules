@@ -1,0 +1,15 @@
+match /(branches|tags)/[^/]+/$
+  action recurse
+end match
+
+match /(branches|tags)/[^/]+/kdeutils/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE/[^/]+/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE/[^/]+/kdeutils/$
+  action recurse
+end match

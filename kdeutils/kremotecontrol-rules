@@ -1,0 +1,38 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=kremotecontrol
+declare REPOSITORY=KDE/kdeutils/kremotecontrol
+
+create repository ${REPOSITORY}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+
+match /trunk/(KDE/)?kdeutils/kremotecontrol/
+  repository ${REPOSITORY}
+  branch master
+end match
+
+### KRemoteControl in branches/work/kdelirc
+match /branches/work/kdelirc/
+  repository ${REPOSITORY}
+  branch master
+  # min revision 1075787
+  # max revision 1102496
+end match
+
+### KRemoteControl in kdereview
+match /trunk/kdereview/kremotecontrol/
+  repository ${REPOSITORY}
+  branch master
+  # min revision 1102497
+  # max revision 1109703
+end match
+
+##### Ignore everything else #####
+match /
+end match
