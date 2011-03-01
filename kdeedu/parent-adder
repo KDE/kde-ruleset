@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+if test -z "$bindir"; then
+    echo "set \$bindir to the path to kde-ruleset's bin directory" >&2;
+    exit 1
+fi
+
+git filter-branch \
+    --parent-filter "$($bindir/add-parents <($bindir/translateRevlist.py "$1"))" \
+    -- --all
+
