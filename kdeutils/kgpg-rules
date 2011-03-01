@@ -20,8 +20,8 @@ end match
 match /branches/work/kgpg2/
   repository ${REPOSITORY}
   branch master
-  # min revision 738904
-  # max revision 766859
+  min revision 738904
+  max revision 766859
 end match
 
 ##### Ignore everything else #####
