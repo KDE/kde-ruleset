@@ -8,5 +8,6 @@ fi
 
 git filter-branch \
     --parent-filter "$($bindir/add-parents <($bindir/translateRevlist.py "$1"))" \
+    --tag-name-filter cat \
     -- --all
 
