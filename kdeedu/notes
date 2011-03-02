@@ -46,8 +46,8 @@ libkdeedu: [last checked Feb 26 03:07]
    - added libphysics/libscience (from kalzium) - Nicolas
      - needs to synth merge 468561 -> 470232
 
-cantor: [last checked Feb 22 22:44]
-- maybe synth backport from 1130928 to 1130956 (soc-cantor branch)
+cantor: [last checked Mar 2 20:05]
+- no known problems
 
 kalzium: [last checked Feb 15 02:31]
 - synth merge of make_kdeedu_cool to trunk (309143 -> {309149, 309154,
