@@ -11,12 +11,18 @@ end repository
 include common-ignores
 include common-branch-rules
 include common-recursion-rules
+include common-doc-rules
 
 match /trunk/(KDE/)?kdeutils/filelight/
   repository ${REPOSITORY}
   branch master
 end match
 
+match /trunk/playground/utils/doc/filelight/
+    repository ${REPOSITORY}
+    branch master
+    prefix doc/
+end match
 match /trunk/playground/utils/filelight/
   repository ${REPOSITORY}
   branch master
@@ -24,6 +30,11 @@ match /trunk/playground/utils/filelight/
   # max revision 1174508
 end match
 
+match /trunk/kdereview/doc/filelight/
+    repository ${REPOSITORY}
+    branch master
+    prefix doc/
+end match
 match /trunk/kdereview/filelight/
   repository ${REPOSITORY}
   branch master
