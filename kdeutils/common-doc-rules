@@ -1,3 +1,9 @@
+match /trunk/kdeutils/${APPLICATION}/doc/
+  repository ${REPOSITORY}
+  prefix doc/
+  branch master
+end match
+
 match /trunk/(KDE/)?kdeutils/doc/${APPLICATION}/
   repository ${REPOSITORY}
   prefix doc/

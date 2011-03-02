@@ -13,13 +13,6 @@ include common-branch-rules
 include common-recursion-rules
 include common-doc-rules
 
-match /trunk/kdeutils/ark/doc/
-  repository ${REPOSITORY}
-  branch master
-  prefix doc/
-  # max revision 18257
-end match
-
 match /trunk/(KDE/)?kdeutils/ark/
   repository ${REPOSITORY}
   branch master
