@@ -22,7 +22,7 @@ match /trunk/kdereview/superkaramba/
   repository ${REPOSITORY}
   branch master
   min revision 417080
-  max revision 450000
+  max revision 445395
 end match
 
 ##### Ignore everything else #####
