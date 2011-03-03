@@ -2,6 +2,12 @@
 # Created by Raphael Kubo da Costa <kubito@gmail.com>
 #
 
+# IMPORTANT:
+#   SVN commit 946132 had some encoding problems in its commit message
+#   that prevents a correct push to KDE's git servers.
+#   The `filelight-filter' shell script must be run to change the
+#   message and fix the problem.
+
 declare APPLICATION=filelight
 declare REPOSITORY=KDE/kdeutils/filelight
 
