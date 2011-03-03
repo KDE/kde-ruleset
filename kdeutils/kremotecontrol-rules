@@ -12,6 +12,8 @@ include common-ignores
 include common-branch-rules
 include common-recursion-rules
 
+include kremotecontrol-doc-rules
+
 match /trunk/(KDE/)?kdeutils/kremotecontrol/
   repository ${REPOSITORY}
   branch master

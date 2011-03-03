@@ -1,0 +1,51 @@
+### KRemoteControl's documentation history is more complex than the average due
+### to the fact that it lies in kdeutils/doc/kcontrol/kremotecontrol instead of
+### kdeutils/doc/kremotecontrol.
+
+#       ------< trunk/KDE/kdeutils/doc/kcontrol/kremotecontrol >------
+#       [ Move/Replace: /trunk/KDE/kdeutils/doc/kcontrol/kremotecontrol @ 1116576 <- /trunk/KDE/kdeutils/doc/kremotecontrol @ 1116522 ]
+#       [ Move/Replace: /trunk/KDE/kdeutils/doc/kremotecontrol @ 1109706 <- /trunk/kdereview/doc/kremotecontrol @ 1109705 ]
+#       [ Move/Replace: /trunk/kdereview/doc/kremotecontrol @ 1102503 <- /trunk/kdereview/kremotecontrol/doc/kremotecontrol @ 1102497 ]
+#       [ Parent: /trunk/kdereview/kremotecontrol @ 1102497 <- /branches/work/kdelirc @ 1102496 ]
+#       [ add  HEAD 1116522 ]
+match /trunk/KDE/kdeutils/doc/kcontrol/kremotecontrol/
+    repository ${REPOSITORY}
+    branch master
+    prefix doc/kcontrol/
+    min revision 1116522
+end match
+
+#       [ move trunk/KDE/kdeutils/doc/kremotecontrol 1116522 1109705 ]
+match /trunk/KDE/kdeutils/doc/kremotecontrol/
+    repository ${REPOSITORY}
+    branch master
+    prefix doc/kcontrol/
+    max revision 1116522
+    min revision 1109705
+end match
+
+#       [ move trunk/kdereview/doc/kremotecontrol 1109705 1102497 ]
+match /trunk/kdereview/doc/kremotecontrol/
+    repository ${REPOSITORY}
+    branch master
+    prefix doc/kcontrol/
+    max revision 1109705
+    min revision 1102497
+end match
+
+#       [ move trunk/kdereview/kremotecontrol/doc/kremotecontrol 1102497 1102496 ]
+match /trunk/kdereview/kremotecontrol/doc/kremotecontrol/
+    repository ${REPOSITORY}
+    branch master
+    prefix doc/kcontrol/
+    max revision 1102497
+    min revision 1102496
+end match
+
+#       [ parent branches/work/kdelirc/doc/kremotecontrol 1102496 0 ]
+match /branches/work/kdelirc/doc/kremotecontrol/
+    repository ${REPOSITORY}
+    branch master
+    prefix doc/kcontrol/
+    max revision 1102496
+end match
