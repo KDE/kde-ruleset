@@ -12,6 +12,17 @@ include common-ignores
 include common-branch-rules
 include common-recursion-rules
 
+# Included for historic purposes:
+# Commit 1154058 removed the obsolete documentation.
+include common-doc-rules
+match /branches/KDE/3.5/kdeutils/doc/superkaramba/
+  repository ${REPOSITORY}
+  branch KDE/3.5
+  prefix doc/
+  max revision 476295
+  min revision 443085
+end match
+
 match /trunk/(KDE/)?kdeutils/superkaramba/
   repository ${REPOSITORY}
   branch master

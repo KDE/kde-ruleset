@@ -11,6 +11,7 @@ end repository
 include common-ignores
 include common-branch-rules
 include common-recursion-rules
+include common-doc-rules
 
 match /trunk/(KDE/)?kdeutils/kwallet/
   repository ${REPOSITORY}
