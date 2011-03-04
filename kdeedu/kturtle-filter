@@ -6,12 +6,13 @@ if test -z "$bindir"; then
     exit 1
 fi
 
-read deletion_rev readd_rev < <(echo "475469 587357" | "$bindir/translateRevlist.py" /dev/stdin)
+deletion_rev=475469;
+readd_rev=587357;
 
 # A..B returns commits from A to B, excluding A and including B.
 # We want to include A, so we have to start from from A's parent.
 # And we want to exclude B, so we have to end at B's parent too.
-range="$deletion_rev^..$readd_rev^"
+range=$(echo "$deletion_rev^..$readd_rev^" | "$bindir/translateRevlist.py")
 
 # this is disgusting
 git filter-branch --tree-filter '
