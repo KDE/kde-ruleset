@@ -42,7 +42,7 @@ else
     cat;
 fi'
 code="$codebefore"
-while read newparent child; do
+while read newparent child x; do
     code="$code    $child) merge_gitrev=$newparent;;
 "
 done < "$parentmap"
