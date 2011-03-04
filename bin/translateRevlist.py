@@ -46,12 +46,19 @@ def process_integers(line, func):
     result += line[last_idx:] # finally, append text after the last match (maybe only the final newline)
     return result
 
+if len(sys.argv) < 2:
+    input_file = sys.stdin
+elif len(sys.argv) == 2:
+    input_file = file(sys.argv[1])
+else:
+    print >> sys.stderr, "usage: translateRevlist.py [filename]"
+    sys.exit(1)
+
 print >> sys.stderr, "getting git log..."
 log_messages = get_log_messages()
 print >> sys.stderr, "done"
 svnmap = create_svn_map(log_messages)
 
-input_file = file(sys.argv[1])
 
 for line in input_file:
     new_line = process_integers(line, lambda svnrev: svnmap[svnrev])
