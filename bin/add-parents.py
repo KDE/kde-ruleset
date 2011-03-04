@@ -41,23 +41,37 @@ else:
     sys.exit(1)
 
 code_template="""
-merge_gitrev=;
+parents=;
 case $GIT_COMMIT in
 %s
 esac;
-if [ -n "$merge_gitrev" ]; then
-    echo "$(cat) -p $(map $merge_gitrev)";
+if [ -n "$parents" ]; then
+    cat;
+    for parent in $parents; do
+        echo " -p $(map $parent)";
+    done;
 else
     cat;
 fi
 """
 
-case_lines=[]
+# given mappings[A] = [B,C]: B and C will be added as new parents of A
+mappings={}
 
 for line in parentmap:
     match = re.match(r'([0-9a-fA-F]{40})\s+([0-9a-fA-F]{40})\b', line)
     if match:
         # add $1 as a parent of $2 = if commit is $2, add $1 as its parent
-        case_lines.append("    %s) merge_gitrev=%s;;" % (match.group(2), match.group(1)))
+        newparent = match.group(1)
+        child = match.group(2)
+
+        if child not in mappings:
+            mappings[child] = []
+
+        mappings[child].append(newparent)
+
+case_lines=[]
+for child, parents in mappings.iteritems():
+    case_lines.append("    %s) parents='%s';;" % (child, ' '.join(parents)))
 
 print code_template % '\n'.join(case_lines)
