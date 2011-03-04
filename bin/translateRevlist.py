@@ -9,8 +9,12 @@ import sys
 Converts a list of SVN revisions into the corresponding git revisions in the
 current repository.
 
-The input file should contain numerical SVN revisions, one or more per line,
-separated by whitespace. Any other non-numeric text will be ignored.
+The input file should contain any number of SVN revisions per line, as decimal
+numbers. If there's multiple revisions per line, they're usually separated by
+whitespace, but any non-word character will work too.
+
+Non-numeric text will be passed unmodified. The decimal numbers in the file
+will be converted, and everything else will stay untouched.
 '''
 
 def get_log_messages():
@@ -32,20 +36,23 @@ def create_svn_map(msg_map):
 
     return svnmap
 
-def load_input(f):
-    for line in f:
-        line_revs = []
-        for line_piece in re.split('\s+', line):
-            try:
-                line_revs.append(int(line_piece))
-            except ValueError:
-                pass
-        yield line_revs
+def process_integers(line, func):
+    result = ''
+    last_idx = 0
+    for match in re.finditer('\\b\d+\\b', line):
+        result += line[last_idx:match.start()] # append text before this match
+        result += func(int(match.group(0))) # and append the processed integer we matched
+        last_idx = match.end()
+    result += line[last_idx:] # finally, append text after the last match (maybe only the final newline)
+    return result
 
+print >> sys.stderr, "getting git log..."
 log_messages = get_log_messages()
+print >> sys.stderr, "done"
 svnmap = create_svn_map(log_messages)
 
 input_file = file(sys.argv[1])
 
-for revs_in_line in load_input(input_file):
-    print ' '.join([svnmap[rev] for rev in revs_in_line])
+for line in input_file:
+    new_line = process_integers(line, lambda svnrev: svnmap[svnrev])
+    sys.stdout.write(new_line)
