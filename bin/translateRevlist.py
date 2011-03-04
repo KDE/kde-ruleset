@@ -49,7 +49,7 @@ def process_integers(line, func):
 if len(sys.argv) < 2:
     input_file = sys.stdin
 elif len(sys.argv) == 2:
-    input_file = file(sys.argv[1])
+    input_file = file(sys.argv[1], 'r')
 else:
     print >> sys.stderr, "usage: translateRevlist.py [filename]"
     sys.exit(1)
