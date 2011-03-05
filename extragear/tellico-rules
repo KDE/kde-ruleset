@@ -11,22 +11,53 @@ end repository
 match /trunk/playground/office/tellico/
   repository tellico
   branch master
-  max revision 965371
+  min revision 927058
+  max revision 965369
+end match
+
+match /trunk/playground/office/doc/tellico/
+  repository tellico
+  branch master
+  prefix doc/
+  min revision 927058
+  max revision 965369
 end match
 
 # move to kdereview
 match /trunk/kdereview/tellico/
   repository tellico
   branch master
-  min revision 965370
-  max revision 973890
+  min revision 965369
+  max revision 973887
+end match
+
+match /trunk/kdereview/doc/tellico/
+  repository tellico
+  branch master
+  prefix doc/
+  min revision 965369
+  max revision 973887
 end match
 
 # move to extragear
 match /trunk/extragear/office/tellico/
   repository tellico
   branch master
-  min revision 973890
+  min revision 973887
+end match
+
+match /trunk/extragear/office/doc/tellico/
+  repository tellico
+  branch master
+  prefix doc/
+  min revision 973887
+end match
+
+# Tags
+match /tags/tellico/([^/]+)/
+  repository tellico
+  branch refs/tags/v\1
+  annotated true
 end match
 
 # ignore everything else
