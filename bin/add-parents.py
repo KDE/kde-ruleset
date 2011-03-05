@@ -42,11 +42,14 @@ else:
 
 code_template="""
 parents=;
+clear=no
 case $GIT_COMMIT in
 %s
 esac;
 if [ -n "$parents" ]; then
-    cat;
+    if [ "x$clear" = "xno" ]; then
+        cat;
+    fi
     for parent in $parents; do
         echo " -p $(map $parent)";
     done;
@@ -57,21 +60,29 @@ fi
 
 # given mappings[A] = [B,C]: B and C will be added as new parents of A
 mappings={}
+to_clear={}
 
 for line in parentmap:
-    match = re.match(r'([0-9a-fA-F]{40})\s+([0-9a-fA-F]{40})\b', line)
+    match = re.match(r'(clear|[0-9a-fA-F]{40})\s+([0-9a-fA-F]{40})\b', line)
     if match:
         # add $1 as a parent of $2 = if commit is $2, add $1 as its parent
         newparent = match.group(1)
         child = match.group(2)
+        
+        if newparent == 'clear':
+            to_clear[child] = 1
+        else:
+            if child not in mappings:
+                mappings[child] = []
 
-        if child not in mappings:
-            mappings[child] = []
-
-        mappings[child].append(newparent)
+            mappings[child].append(newparent)
 
 case_lines=[]
 for child, parents in mappings.iteritems():
-    case_lines.append("    %s) parents='%s';;" % (child, ' '.join(parents)))
+    line = "    %s)" % child
+    if child in to_clear:
+        line += " clear=yes;"
+    line += " parents='%s';;" % (' '.join(parents))
+    case_lines.append(line)
 
 print code_template % '\n'.join(case_lines)
