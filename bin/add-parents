@@ -43,6 +43,10 @@ else
 fi'
 code="$codebefore"
 while read newparent child x; do
+    if [[ ${#newparent} -ne 40 ]]; then
+        echo "error: invalid commit ID: '${newparent}'" >&2
+        exit 1
+    fi
     code="$code    $child) merge_gitrev=$newparent;;
 "
 done < "$parentmap"
