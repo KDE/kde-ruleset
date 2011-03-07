@@ -108,6 +108,13 @@ match /trunk/(?:KDE/)?kdeedu/kalzium/${PHYSICSFILES}
     prefix kalzium/\1
 end match
 
+declare COMPOUNDVIEWERFILES=((?:openbabel2wrapper|kalziumglhelperclasses|kalziumglpart|kalziumglwidget)\.(?:cpp|h)|kalziumgl_part.desktop|widgets/CMakeLists.txt|widgets/kalziumui.widgets)
+match /trunk/(?:KDE/)?kdeedu/kalzium/src/${COMPOUNDVIEWERFILES}
+    repository libkdeedu
+    branch refs/fromotherapp/compoundviewer
+    prefix kalzium/\1
+end match
+
 #	------< trunk/KDE/kdeedu/libkdeedu/widgets >------
 #	[ add widgets HEAD 0 ]
 match /
