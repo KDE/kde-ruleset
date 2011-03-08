@@ -115,6 +115,19 @@ match /trunk/(?:KDE/)?kdeedu/kalzium/src/${COMPOUNDVIEWERFILES}
     prefix kalzium/\1
 end match
 
+match /trunk/KDE/kdeedu/(kvoctrain|parley)/src/docs/
+    repository libkdeedu
+    branch refs/fromotherapp/parleydocs
+    prefix parley/src/docs/
+    max revision 710219 # one before deletion
+end match
+
+match /trunk/KDE/kdeedu/(kvoctrain|parley)/src/kvoctrain.dtd
+    repository libkdeedu
+    branch refs/fromotherapp/parleydocs
+    prefix parley/src/kvoctrain.dtd
+end match
+
 #	------< trunk/KDE/kdeedu/libkdeedu/widgets >------
 #	[ add widgets HEAD 0 ]
 match /

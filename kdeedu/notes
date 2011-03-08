@@ -26,8 +26,10 @@ libkdeedu: [last checked Feb 26 03:07]
 - convert kdeedu_parley branch [done]
 - libkdeedu is mostly stuff extracted from other kdeedu apps; we
   should convert the past history from when it was in the app too.
-   - I have for keduvocdocument and qtmmlwidget - Ian
-   - added libphysics/libscience (from kalzium) - Nicolas
+   - /trunk/KDE/kdeedu/parley/src/kvoctrain.dtd
+   - /trunk/KDE/kdeedu/kanagram/src/fontutils
+   - /branches/work/soc-parley/libkdeedu/keduvocdocument/keduvocleitnerbox
+   - /trunk/KDE/kdeedu/kmplot/icons/actions
 
 cantor: [last checked Mar 2 20:05]
 - no known problems
