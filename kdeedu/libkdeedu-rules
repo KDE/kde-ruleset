@@ -115,21 +115,30 @@ match /trunk/(?:KDE/)?kdeedu/kalzium/src/${COMPOUNDVIEWERFILES}
     prefix kalzium/\1
 end match
 
-match /trunk/KDE/kdeedu/(kvoctrain|parley)/src/docs/
+# handle move in 710186
+match /trunk/KDE/kdeedu/(kvoctrain|parley)/$ 
+    action recurse
+end match
+# handle move in 710174
+match /trunk/KDE/kdeedu/(kvoctrain|parley)/(src|kvoctrain)/$
+    action recurse
+end match
+
+# seems I need yet more recursion to catch the trunk -> trunk/KDE move
+
+match /trunk/(?:KDE/)?kdeedu/(kvoctrain|parley)/(src|kvoctrain)/docs/
     repository libkdeedu
     branch refs/fromotherapp/parleydocs
-    prefix parley/src/docs/
+    prefix parley/\2/docs/
     max revision 710219 # one before deletion
 end match
 
-match /trunk/KDE/kdeedu/(kvoctrain|parley)/src/kvoctrain.dtd
+match /trunk/(?:KDE/)?kdeedu/(kvoctrain|parley)/(src|kvoctrain)/kvoctrain.dtd
     repository libkdeedu
     branch refs/fromotherapp/parleydocs
-    prefix parley/src/kvoctrain.dtd
+    prefix parley/\2/kvoctrain.dtd
 end match
 
-#	------< trunk/KDE/kdeedu/libkdeedu/widgets >------
-#	[ add widgets HEAD 0 ]
 match /
 end match
 #First revision used: 158533
