@@ -64,6 +64,11 @@ match /branches/work/soc-parley/libkdeedu/
     branch soc-parley
 end match
 
+match /branches/work/parley-practice/libkdeedu/
+    repository libkdeedu
+    branch parley-practice
+end match
+
 #   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocdocument.cpp
 #   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocdocument.h
 #   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocexpression.cpp
