@@ -22,11 +22,10 @@ kstars:
 parley: [last checked Mar 16 01:16]
 - check for other cases where parent-synthing is necessary
 
-libkdeedu: [last checked Feb 26 03:07]
+libkdeedu: [last checked Mar 10 02:45]
 - convert kdeedu_parley branch [done]
 - libkdeedu is mostly stuff extracted from other kdeedu apps; we
   should convert the past history from when it was in the app too.
-   - /trunk/KDE/kdeedu/parley/src/kvoctrain.dtd
    - /trunk/KDE/kdeedu/kanagram/src/fontutils
    - /branches/work/soc-parley/libkdeedu/keduvocdocument/keduvocleitnerbox
    - /trunk/KDE/kdeedu/kmplot/icons/actions
