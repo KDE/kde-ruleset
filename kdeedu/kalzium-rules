@@ -21,10 +21,10 @@ match /trunk/kdeedu/kalzium/
 end match
 
 #from kalzium-rules
-match /trunk/KDE/kdeedu/libkdeedu/libscience/
+match /trunk/KDE/kdeedu/libkdeedu/(libscience|libphysics)/
   repository kalzium
-  branch master
-  prefix libscience/
+  branch libkdeedu
+  prefix \1/
   max revision 1208978 # one before libkdeedu deletion
 end match
 
