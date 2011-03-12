@@ -33,14 +33,7 @@ libkdeedu: [last checked Mar 10 03:12]
 cantor: [last checked Mar 2 20:05]
 - no known problems
 
-kalzium: [last checked Feb 15 02:31]
-- synth merge of make_kdeedu_cool to trunk (309143 -> {309149, 309154,
-  309156})
-- another make_kdeedu_cool branch? called make_it_cool in commit
-  messages, merged in 191127 -> 191142
-- synth merge of kalziumkde4 to trunk (395799 -> 395803)
-- some code was moved to libkdeedu in 470232/470255, but was then
-  moved back into kalzium in 1208940. needs conversion of history.
+kalzium: [last checked Mar 12 23:19]
 
 kbruch: [last checked Feb 15 00:13]
 - looks good to me
