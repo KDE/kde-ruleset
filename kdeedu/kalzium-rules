@@ -28,6 +28,11 @@ match /trunk/KDE/kdeedu/libkdeedu/(libscience|libphysics)/
   max revision 1208978 # one before libkdeedu deletion
 end match
 
+match /trunk/(kdeplayground-edu|playground/edu)/eqchem/src/
+    repository kalzium
+    branch refs/playground/eqchem
+end match
+
 match /
 end match
 #First revision used: 147727
