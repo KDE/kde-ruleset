@@ -20,17 +20,23 @@ match /trunk/kdeedu/kalzium/
     branch master
 end match
 
-#from kalzium-rules
 match /trunk/KDE/kdeedu/libkdeedu/(libscience|libphysics)/
   repository kalzium
-  branch libkdeedu
+  branch refs/other/libkdeedu
   prefix \1/
-  max revision 1208978 # one before libkdeedu deletion
+  max revision 1208939 # one before the libscience move
+end match
+
+match /trunk/KDE/kdeedu/libkdeedu/kdeeduui/(kdeeduglossary.*)
+  repository kalzium
+  branch refs/other/libkdeedu
+  prefix kdeeduui/\1
+  max revision 1208917 # one before the kdeeduglossary move
 end match
 
 match /trunk/(kdeplayground-edu|playground/edu)/eqchem/src/
     repository kalzium
-    branch refs/playground/eqchem
+    branch refs/other/eqchem
 end match
 
 match /
