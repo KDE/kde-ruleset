@@ -20,6 +20,15 @@ match /trunk/kdeedu/kalzium/
     branch master
 end match
 
+# branches: make_kdeedu_cool, kalziumkde4, maybe gsoc2009, kalzium-new-features, kalzium-molecule-kpart
+
+match /branches/kalzium/gsoc2009/kalzium/
+    repository kalzium
+    branch gsoc2009
+end match
+
+# code from elsewhere
+
 match /trunk/KDE/kdeedu/libkdeedu/(libscience|libphysics)/
   repository kalzium
   branch refs/other/libkdeedu
