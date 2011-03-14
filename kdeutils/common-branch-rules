@@ -60,8 +60,6 @@ end match
 match /tags/KDE/3.5.0-alpha1/kdeutils/${APPLICATION}/
   repository ${REPOSITORY}
   branch refs/tags/v3.4.90
-  min revision 443441
-  max revision 445561
   annotated true
 end match
 
@@ -69,8 +67,6 @@ end match
 match /tags/KDE/3.5.0-beta1/kdeutils/${APPLICATION}/
   repository ${REPOSITORY}
   branch refs/tags/v3.4.91
-  min revision 459298
-  max revision 460260
   annotated true
 end match
 
