@@ -1,0 +1,19 @@
+create repository plasmate
+end repository
+
+match /trunk/playground/base/plasma/plasmate/
+  repository plasmate
+  branch master
+end match
+
+match /tags/plasmate/([^/]+)/
+  repository plasmate
+  branch refs/tags/\1
+  annotated true
+end match
+
+
+# Ignore everything else
+match /
+end match
+

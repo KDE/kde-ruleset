@@ -1,0 +1,22 @@
+create repository lionmail
+end repository
+
+match /trunk/playground/base/plasma/applets/lionmail/
+  repository lionmail
+  branch master
+end match
+
+match /trunk/KDE/kdepim/akonadi/clients/plasma/plasmobiff/
+  repository lionmail
+  branch master
+end match
+
+match /trunk/playground/base/plasma/applets/plasmobiff/
+  repository lionmail
+  branch master
+end match
+
+# Ignore everything else
+match /
+end match
+
