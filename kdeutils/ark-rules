@@ -19,7 +19,7 @@ include common-doc-rules
 # into a separate branch.
 match /trunk/(KDE/)?kdeutils/ark/
   repository ${REPOSITORY}
-  branch deadend1
+  branch dead-trunk-1
   max revision 461557 # one before deletion
 end match
 
