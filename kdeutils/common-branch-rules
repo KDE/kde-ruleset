@@ -1,3 +1,11 @@
+# /work/kde4/kdeutils branch
+match /branches/work/kde4/kdeutils/${APPLICATION}/
+  repository ${REPOSITORY}
+  branch work/kde4
+  min revision 427402
+  max revision 438189
+end match
+
 # CVS branches
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/${APPLICATION}/
   repository ${REPOSITORY}
