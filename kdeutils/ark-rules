@@ -13,6 +13,10 @@ include common-branch-rules
 include common-recursion-rules
 include common-doc-rules
 
+# /trunk/KDE/kdeutils/ark/ was svn rm'ed from trunk in r461558, and
+# /branches/KDE/3.5/kdeutils/ark/ was svn cp'ed into trunk in r461559.
+# This rule keeps some commits which would normally be thrown away
+# into a separate branch.
 match /trunk/(KDE/)?kdeutils/ark/
   repository ${REPOSITORY}
   branch deadend1
