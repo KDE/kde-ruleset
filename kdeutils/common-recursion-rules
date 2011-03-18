@@ -13,3 +13,7 @@ end match
 match /(branches|tags)/KDE/[^/]+/kdeutils/$
   action recurse
 end match
+
+match /branches/work/kde4/kdeutils/$
+  action recurse
+end match
