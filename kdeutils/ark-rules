@@ -23,6 +23,16 @@ match /trunk/(KDE/)?kdeutils/ark/
   max revision 461557 # one before deletion
 end match
 
+# /trunk/KDE/kdeutils/ark/ was svn rm'ed from trunk in r692401, and
+# /branches/work/libarchive-based-ark/ark/ was svn cp'ed into trunk in
+# r694732.  This rule keeps some commits which would normally be
+# thrown away into a separate branch.
+match /trunk/(KDE/)?kdeutils/ark/
+  repository ${REPOSITORY}
+  branch dead-trunk-2
+  max revision 692400 # one before deletion
+end match
+
 match /trunk/(KDE/)?kdeutils/ark/
   repository ${REPOSITORY}
   branch master
