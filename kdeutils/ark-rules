@@ -20,7 +20,7 @@ end match
 
 match /branches/work/libarchive-based-ark/ark/
   repository ${REPOSITORY}
-  branch master
+  branch work/libarchive-based-ark
   min revision 672750
   max revision 694571
 end match
