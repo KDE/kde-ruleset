@@ -1,10 +1,22 @@
 #!/bin/sh
 
+set -e
+
+if [ -z "${RULESETDIR}" ]; then
+    echo "RULESETDIR must be exported first."
+    exit 1
+fi
+
+BINDIR=${RULESETDIR}/bin
+
+FAULTY_SVN_REV=946132
+FAULTY_GIT_REV=$(echo "${FAULTY_SVN_REV}" | ${BINDIR}/translateRevlist.py)
+
 git filter-branch \
     --tag-name-filter cat \
-    --msg-filter 'if [ $GIT_COMMIT = 5798f5cc07bbe6a443b8b928a0efe66903d102c4 ]; then
-                      echo "Fix doc build, update screenshots\n\nSysadmin notice: this commit has been modified vs. the one found\nin SVN due to technical problems with the latter.\nPlease refer to SVN for the original.\n\nsvn path=/trunk/playground/utils/doc/filelight/; revision=946132";
+    --msg-filter "if [ \$GIT_COMMIT = ${FAULTY_GIT_REV} ]; then
+                      echo -e 'Fix doc build, update screenshots\n\nSysadmin notice: this commit has been modified vs. the one found\nin SVN due to technical problems with the latter.\nPlease refer to SVN for the original.\n\nsvn path=/trunk/playground/utils/doc/filelight/; revision=946132';
                   else
                       cat;
-                  fi' \
+                  fi" \
     -- --all
