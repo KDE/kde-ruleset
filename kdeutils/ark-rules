@@ -15,6 +15,12 @@ include common-doc-rules
 
 match /trunk/(KDE/)?kdeutils/ark/
   repository ${REPOSITORY}
+  branch deadend1
+  max revision 461557 # one before deletion
+end match
+
+match /trunk/(KDE/)?kdeutils/ark/
+  repository ${REPOSITORY}
   branch master
 end match
 
