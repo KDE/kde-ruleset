@@ -13,6 +13,12 @@ include common-branch-rules
 include common-recursion-rules
 include common-doc-rules
 
+match /trunk/KDE/kdeutils/doc/kcontrol/blockdevices/
+  repository ${REPOSITORY}
+  branch master
+  prefix doc/kcontrol/blockdevices/
+end match
+
 match /trunk/(KDE/)?kdeutils/kdf/
   repository ${REPOSITORY}
   branch master
