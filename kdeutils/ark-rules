@@ -13,8 +13,10 @@ include common-branch-rules
 include common-recursion-rules
 include common-doc-rules
 
+# r672751 was exported to git as deleting everything, although only
+# some files are deleted in SVN.
 match /branches/work/libarchive-based-ark/$
-    action recurse
+  action recurse
 end match
 
 # /trunk/KDE/kdeutils/ark/ was svn rm'ed from trunk in r461558, and
