@@ -21,5 +21,4 @@ PARENTMAP=${RULESETDIR}/kdeutils/ark-parentmap
 git filter-branch \
     --parent-filter "$(${BINDIR}/translateRevlist.py ${PARENTMAP} | ${BINDIR}/add-parents.py)" \
     --tag-name-filter cat \
-    --index-filter 'git rm --cached -r -q --ignore-unmatch old/' \
     -- --all --date-order
