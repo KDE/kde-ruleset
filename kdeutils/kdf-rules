@@ -16,7 +16,7 @@ include common-doc-rules
 match /trunk/KDE/kdeutils/doc/kcontrol/blockdevices/
   repository ${REPOSITORY}
   branch master
-  prefix doc/kcontrol/blockdevices/
+  prefix doc/kcontrol/
 end match
 
 match /trunk/(KDE/)?kdeutils/kdf/
