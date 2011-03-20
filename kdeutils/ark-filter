@@ -13,11 +13,9 @@ fi
 BINDIR=${RULESETDIR}/bin
 PARENTMAP=${RULESETDIR}/kdeutils/ark-parentmap
 
-# This filter-branch call does the following two things:
+# This filter-branch call does the following:
 # 1. Adjust the parents as specified in $PARENTMAP
 #    Currently, this means adjusting the parents of r694732.
-# 2. Remove the directory old/
-#    This is created erroneously in r694732 and needs to be removed.
 git filter-branch \
     --parent-filter "$(${BINDIR}/translateRevlist.py ${PARENTMAP} | ${BINDIR}/add-parents.py)" \
     --tag-name-filter cat \
