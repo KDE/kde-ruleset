@@ -80,6 +80,9 @@ def get_match(svnrev, path=None):
         return svnmap[svnrev][path]
 
 for line in input_file:
+    if line.startswith('#'):
+        continue
+
     new_line = process_integers(line, get_match)
     sys.stdout.write(new_line)
 
