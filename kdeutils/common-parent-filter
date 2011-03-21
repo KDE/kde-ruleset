@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Originally from kdeedu/parent-adder, revision f36db9f.
+# Written by Nicolás Alvarez, <nicolas.alvarez@gmail.com>
+
+# This script will get a list of revisions whose parents to clear and a mapping
+# of new parents, which will be processed by translateRevlist.py and
+# add-parents.py.
+
+set -e
+
+if [ -z "${RULESETDIR}" ]; then
+    echo "RULESETDIR must be exported first."
+    exit 1
+fi
+
+if [ $# -ne 1 ]; then
+    echo "usage: $0 <application name>"
+    echo ""
+    echo "example:"
+    echo "  $0 ark"
+    echo "will run the script with ark-parentmap as the parent map"
+    exit 2
+fi
+
+BINDIR=${RULESETDIR}/bin
+PARENTMAP=${RULESETDIR}/kdeutils/$1-parentmap
+
+if [ ! -f ${PARENTMAP} ]; then
+    echo "error: ${PARENTMAP} does not exist"
+    exit 1
+fi
+
+git filter-branch \
+    --parent-filter "$(${BINDIR}/translateRevlist.py ${PARENTMAP} | ${BINDIR}/add-parents.py)" \
+    --tag-name-filter cat \
+    -- --all --date-order

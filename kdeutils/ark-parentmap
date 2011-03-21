@@ -1,3 +1,5 @@
+# Adjust the parents of r694732:
+# By default, it erroneously has a large number of parents.
 clear 694732
 694571 694732
 672657 694732
