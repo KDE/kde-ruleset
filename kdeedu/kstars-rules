@@ -27,6 +27,16 @@ match /trunk/kdeedu/kstars/
     max revision 409202
 end match
 
+match /branches/kstars/(hdevalence|carbonix)/kstars/
+    repository kstars
+    branch gsoc2010-\1
+end match
+match /branches/kstars/(hdevalence|carbonix)/doc/kstars/
+    repository kstars
+    branch gsoc2010-\1
+    prefix doc/
+end match
+
 match /
 end match
 #First revision used: 145875
