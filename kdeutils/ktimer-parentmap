@@ -1,0 +1,3 @@
+# r439732 is coolo's "merged kde4 into trunk" commit.
+# This mapping makes the tip of the `work/kde4' branch a parent of it.
+428305 439732

@@ -1,12 +1,10 @@
-# Adjust the parents of r694732:
-# By default, it erroneously has a large number of parents.
-clear 694732
-694571 694732
-672657 694732
+# r428182 is "merged 427401:428172"
+# This mapping makes r427458 a parent of it.
+427485 428182
 
-# r432141 is "merge 430621:432064".
-# This mapping makes r431814 a parent of it.
-431823 432141
+# r435290 is "merge 434125:435261"
+# This mapping makes r434875 a parent of it.
+434875 435290
 
 # r438189 is "merge 437128:438057"
 # This mapping makes r437932 a parent of it.
