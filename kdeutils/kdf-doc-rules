@@ -1,0 +1,20 @@
+# kdf documentation is in two separate places:
+# - kdeutils/doc/kdf/ (kdf manual)
+# - kdeutils/doc/kcontrol/blockdevices/ (kcontrol module)
+#
+# After discussing with the documentation team, the following layout has been
+# decided upon:
+# - kdeutils/doc/kdf/ -> kdf/doc/manual/
+# - kdeutils/doc/kcontrol/blockdevices/ -> kdf/doc/kcontrol
+
+match /trunk/(KDE/)?kdeutils/doc/kdf/
+  repository ${REPOSITORY}
+  prefix doc/manual/
+  branch master
+end match
+
+match /trunk/KDE/kdeutils/doc/kcontrol/blockdevices/
+  repository ${REPOSITORY}
+  prefix doc/kcontrol/
+  branch master
+end match

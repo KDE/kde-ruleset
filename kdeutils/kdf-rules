@@ -11,13 +11,8 @@ end repository
 include common-ignores
 include common-branch-rules
 include common-recursion-rules
-include common-doc-rules
 
-match /trunk/KDE/kdeutils/doc/kcontrol/blockdevices/
-  repository ${REPOSITORY}
-  branch master
-  prefix doc/kcontrol/
-end match
+include kdf-doc-rules
 
 match /trunk/(KDE/)?kdeutils/kdf/
   repository ${REPOSITORY}

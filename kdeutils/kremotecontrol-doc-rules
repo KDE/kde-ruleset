@@ -12,7 +12,7 @@
 match /trunk/KDE/kdeutils/doc/kcontrol/kremotecontrol/
     repository ${REPOSITORY}
     branch master
-    prefix doc/kcontrol/
+    prefix doc/
     min revision 1116522
 end match
 
@@ -20,7 +20,7 @@ end match
 match /trunk/KDE/kdeutils/doc/kremotecontrol/
     repository ${REPOSITORY}
     branch master
-    prefix doc/kcontrol/
+    prefix doc/
     max revision 1116522
     min revision 1109705
 end match
@@ -29,7 +29,7 @@ end match
 match /trunk/kdereview/doc/kremotecontrol/
     repository ${REPOSITORY}
     branch master
-    prefix doc/kcontrol/
+    prefix doc/
     max revision 1109705
     min revision 1102497
 end match
@@ -38,7 +38,7 @@ end match
 match /trunk/kdereview/kremotecontrol/doc/kremotecontrol/
     repository ${REPOSITORY}
     branch master
-    prefix doc/kcontrol/
+    prefix doc/
     max revision 1102497
     min revision 1102496
 end match
@@ -47,7 +47,7 @@ end match
 match /branches/work/kdelirc/doc/kremotecontrol/
     repository ${REPOSITORY}
     branch master
-    prefix doc/kcontrol/
+    prefix doc/
     max revision 1102496
 end match
 
