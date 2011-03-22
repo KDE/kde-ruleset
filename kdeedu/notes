@@ -77,3 +77,4 @@ all: check for merges of kaction-cleanup-branch in 610651/621518
 all: check for merges of kconfiggroup_port in 635473
 all: check for merges of kinstance-redesign in 628316
 kconfig branch? 721704/721712
+merge of systemtray stuff in 565761 (maybe kde4-systray-rewrite-tng)
