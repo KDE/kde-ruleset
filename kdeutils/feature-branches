@@ -1,0 +1,31 @@
+match /branches/work/kaction-cleanup-branch/(KDE/)?${MODULE_RECURSE}$
+    action recurse
+end match
+
+match /branches/work/kaction-cleanup-branch/${MODULE}
+    repository ${REPOSITORY}
+    branch kde-kaction-cleanup1
+    max revision 610651 # 1 before its deletion
+end match
+match /branches/work/kaction-cleanup-branch/KDE/${MODULE}
+    repository ${REPOSITORY}
+    branch kde-kaction-cleanup2
+    min revision 610825 # re-creation of branch
+    max revision 617205 # 1 before its deletion
+end match
+match /branches/work/kaction-cleanup-branch/KDE/${MODULE}
+    repository ${REPOSITORY}
+    branch kde-kaction-cleanup3
+    min revision 617207 # re-creation of branch
+    max revision 623046 # 1 before its deletion
+end match
+#match /branches/work/kinstance-redesign/${MODULE}
+#    repository ${REPOSITORY}
+#    branch kde-kinstance-redesign
+#end match
+#match /branches/work/kconfiggroup_port/${MODULE}
+#    repository ${REPOSITORY}
+#    branch kde-kconfiggroup_port
+#end match
+
+# kate: hl svn2git rules; indent-mode svn2git;
