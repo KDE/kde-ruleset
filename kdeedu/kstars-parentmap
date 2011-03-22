@@ -4,3 +4,10 @@
 1144329 1144376
 1153695 1153699
 1186561 1186596
+
+# revision 699589 is a merge from kstars_htm but it's converted as a merge
+# from r699151 instead of r699409, so we have to fix it. r699453 is the
+# "normal", non-merge parent (the preceding commit in trunk).
+clear 699589
+699453 699589
+699409 699589

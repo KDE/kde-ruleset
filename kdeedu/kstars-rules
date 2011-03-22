@@ -37,6 +37,20 @@ match /branches/kstars/(hdevalence|carbonix)/doc/kstars/
     prefix doc/
 end match
 
+match /branches/work/kdeedu_kstars_htm/$
+    action recurse
+end match
+
+match /branches/work/kdeedu_kstars_htm/kstars/
+    repository kstars
+    branch kstars_htm
+end match
+match /branches/work/kdeedu_kstars_htm/doc/kstars/
+    repository kstars
+    branch kstars_htm
+    prefix doc/
+end match
+
 match /
 end match
 #First revision used: 145875
