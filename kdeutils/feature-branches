@@ -5,19 +5,19 @@ end match
 match /branches/work/kaction-cleanup-branch/${MODULE}
     repository ${REPOSITORY}
     branch kde-kaction-cleanup1
-    max revision 610651 # 1 before its deletion
+    max revision 610651 # one before branch deletion
 end match
 match /branches/work/kaction-cleanup-branch/KDE/${MODULE}
     repository ${REPOSITORY}
     branch kde-kaction-cleanup2
     min revision 610825 # re-creation of branch
-    max revision 617205 # 1 before its deletion
+    max revision 617205 # one before branch deletion
 end match
 match /branches/work/kaction-cleanup-branch/KDE/${MODULE}
     repository ${REPOSITORY}
     branch kde-kaction-cleanup3
     min revision 617207 # re-creation of branch
-    max revision 623046 # 1 before its deletion
+    max revision 623046 # one before branch deletion
 end match
 #match /branches/work/kinstance-redesign/${MODULE}
 #    repository ${REPOSITORY}
