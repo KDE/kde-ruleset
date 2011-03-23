@@ -35,11 +35,6 @@ match /trunk/kdereview/superkaramba/
   max revision 445394 # one before deletion from kdereview
 end match
 
-match /branches/work/sk4/superkaramba/
-  repository ${REPOSITORY}
-  branch sk4
-end match
-
 match /branches/work/sk4/porting/superkaramba/$
   action recurse
 end match
