@@ -1,3 +1,6 @@
+# Give the sk4 branch an initial parent
+455661 456496
+
 # Adjust the parents of r456512:
 # It is only at this revision that trunk is created, so we artificially make
 # r456502 (in branches/KDE/3.5) a parent of trunk.
@@ -8,3 +11,6 @@ clear 456512
 # It should have only one parent, which is the previous commit in the tree.
 clear 457717
 457710 457717
+
+# Merge of sk4 into trunk
+593129 632640
