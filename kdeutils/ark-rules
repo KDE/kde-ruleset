@@ -51,6 +51,11 @@ match /branches/work/libarchive-based-ark/ark/
   max revision 694571
 end match
 
+match /branches/work/~rakuco/ark-kerfuffle-rework/
+  repository ${REPOSITORY}
+  branch work/kerfuffle-rework
+end match
+
 ##### Ignore everything else #####
 match /
 end match

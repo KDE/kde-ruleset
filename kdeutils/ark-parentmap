@@ -15,3 +15,8 @@ clear 694732
 # r439732 is coolo's "merged kde4 into trunk" commit.
 # This mapping makes the tip of the `work/kde4' branch a parent of it.
 438189 439732
+
+# merges of ark-kerfuffle-rework branch into trunk
+1093993 1114210
+1094064 1114211
+1094625 1114571
