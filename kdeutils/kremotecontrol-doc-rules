@@ -60,7 +60,7 @@ end match
 #	[ add  1110589 963358 ]
 match /trunk/KDE/kdeutils/doc/kdelirc/
     repository ${REPOSITORY}
-    branch dead-trunk-1
+    branch kdelirc-old
     prefix doc/kdelirc/
     max revision 1110589
     min revision 963358
