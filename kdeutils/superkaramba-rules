@@ -40,6 +40,15 @@ match /branches/work/sk4/superkaramba/
   branch sk4
 end match
 
+match /branches/work/sk4/porting/superkaramba/$
+  action recurse
+end match
+
+match /branches/work/sk4/porting/superkaramba/
+  repository ${REPOSITORY}
+  branch sk4-porting
+end match
+
 ##### Ignore everything else #####
 match /
 end match
