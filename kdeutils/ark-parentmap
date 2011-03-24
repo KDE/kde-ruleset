@@ -1,3 +1,8 @@
+# Ark used to be called KZip in the beginning.
+# r12097 simply added ark/ instead of renaming kzip/ into ark/ in kdeutils.
+# This mapping makes the last commit in kzip/ a parent of r12097.
+11923 12097
+
 # Adjust the parents of r694732:
 # By default, it erroneously has a large number of parents.
 clear 694732
