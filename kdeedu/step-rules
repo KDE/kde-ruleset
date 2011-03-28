@@ -27,7 +27,7 @@ match /trunk/playground/edu/step/
     branch master
 end match
 
-match /branches/work/(soc-step*)/
+match /branches/work/(soc-step[^/]*)/step/
     repository step
     branch \1
 end match
