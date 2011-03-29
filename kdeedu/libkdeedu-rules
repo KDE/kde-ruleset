@@ -3,8 +3,10 @@ create repository libkdeedu
 end repository
 
 declare MODULE=kdeedu/libkdeedu
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=libkdeedu
 include common-kdeedu-rules
+include feature-branches
 
 #	------< trunk/KDE/kdeedu/libkdeedu >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]

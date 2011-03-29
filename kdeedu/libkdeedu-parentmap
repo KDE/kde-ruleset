@@ -23,3 +23,9 @@ clear 757794
 1106376 1114447
 987047 988289
 989557 990122
+
+# intermediate merge from trunk into kde-kinstance-redesign branch
+628260 628271
+
+# merge kde-kinstance-redesign back to trunk
+628271 628316
