@@ -57,9 +57,10 @@ kturtle: [last checked Feb 15 01:01]
 - looks good to me
 - don't forget to run the filter!
 
-step: [last checked Feb 17 20:50]
-- unconverted SoC 2008 branches; but not sure if they're worth
-  converting [converted]
+step: [last checked Mar 29 00:55]
+- no known issues
+- the SoC branches aren't merged into trunk; this seems accurate with SVN
+  history, though
 
 khangman: [last checked Feb 15 01:20]
 - synth merge of make_kdeedu_cool to trunk (305053 -> 305055)
