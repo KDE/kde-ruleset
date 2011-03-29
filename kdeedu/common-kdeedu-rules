@@ -49,6 +49,8 @@ declare PREFIX=/
 include ../common-kde-branches-rules
 include ../common-kde-tags-rules
 #and then the doc prefix for branches
+declare MODULE_SAVE=${MODULE}
 declare MODULE=kdeedu/doc/${REPO}
 declare PREFIX=doc/
 include ../common-kde-branches-rules
+declare MODULE=${MODULE_SAVE}
