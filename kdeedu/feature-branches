@@ -44,4 +44,16 @@ match /branches/work/kconfiggroup_port/${MODULE}/
     max revision 635534 # branch got deleted in r635535
 end match
 
+match /branches/work/kconfig_new_take3/$
+    action recurse
+end match
+match /branches/work/kconfig_new_take3/KDE/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kconfig_new_take3/KDE/${MODULE}/
+    repository ${REPO}
+    branch kconfig_new
+    max revision 730730 # branch deleted in r730731
+end match
+
 # kate: hl svn2git rules; indent-mode svn2git;
