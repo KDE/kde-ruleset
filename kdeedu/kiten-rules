@@ -3,6 +3,7 @@ create repository kiten
 end repository
 
 declare MODULE=kdeedu/kiten
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kiten
 
 match /tags/KITEN_0_5_RELEASE/kdeedu/kiten/
@@ -14,6 +15,7 @@ match /tags/KITEN_0_5_RELEASE/kdeedu/kiten/
 end match
 
 include common-kdeedu-rules
+include feature-branches
 
 #	------< trunk/KDE/kdeedu/kiten >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
