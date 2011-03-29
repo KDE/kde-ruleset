@@ -3,8 +3,12 @@ create repository kalzium
 end repository
 
 declare MODULE=kdeedu/kalzium
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kalzium
 include common-kdeedu-rules
+
+include feature-branches
+# libkdeedu global branches are still pending
 
 #	------< trunk/KDE/kdeedu/kalzium >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
