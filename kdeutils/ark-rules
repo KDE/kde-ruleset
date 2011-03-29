@@ -39,6 +39,13 @@ match /trunk/(KDE/)?kdeutils/ark/
   max revision 692400 # one before deletion
 end match
 
+# Ark starts its life as KZip
+match /trunk/kdeutils/kzip/
+  repository ${REPOSITORY}
+  branch kzip
+  max revision 12097 # one before deletion
+end match
+
 match /trunk/(KDE/)?kdeutils/ark/
   repository ${REPOSITORY}
   branch master

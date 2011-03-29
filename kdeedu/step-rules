@@ -27,9 +27,23 @@ match /trunk/playground/edu/step/
     branch master
 end match
 
-match /branches/work/(soc-step*)/
+match /branches/work/(soc-step[^/]*)/step/
     repository step
     branch \1
+end match
+
+# Step3D branch
+match /trunk/playground/step3D/
+    repository step
+    branch step3D
+end match
+match /trunk/playground/edu/step3D/
+    repository step
+    branch step3D
+end match
+match /branches/work/step3D/
+    repository step
+    branch step3D
 end match
 
 match /

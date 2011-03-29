@@ -51,7 +51,7 @@ end match
 # There are some translation updates after branches/work/kdelirc is created.
 match /trunk/KDE/kdeutils/kdelirc/
   repository ${REPOSITORY}
-  branch dead-trunk-1
+  branch kdelirc-old
   max revision 1109703 # Some revisions before moving to unmaintained/
   min revision 963347
 end match

@@ -419,6 +419,12 @@ match /trunk/(KDE/)?kdegraphics/doc/okular/
   prefix doc/
   branch master
 end match
+match /trunk/playground/graphics/doc/okular/
+  repository KDE/kdegraphics/okular
+  prefix doc/
+  branch master
+  max revision 650477 # moved away at 78, deleted at 79
+end match
 match /trunk/(KDE/)?kdegraphics/doc/kpdf/
   repository KDE/kdegraphics/okular
   prefix doc/

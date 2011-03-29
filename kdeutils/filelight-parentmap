@@ -1,0 +1,3 @@
+# r920321 introduces the kde4 version of filelight.  We artifically set r797908
+# (the last commit to the KDE3 version) as its parent.
+797908 920321
