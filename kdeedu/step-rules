@@ -32,6 +32,20 @@ match /branches/work/(soc-step[^/]*)/step/
     branch \1
 end match
 
+# Step3D branch
+match /trunk/playground/step3D/
+    repository step
+    branch step3D
+end match
+match /trunk/playground/edu/step3D/
+    repository step
+    branch step3D
+end match
+match /branches/work/step3D/
+    repository step
+    branch step3D
+end match
+
 match /
 end match
 #First revision used: 629575
