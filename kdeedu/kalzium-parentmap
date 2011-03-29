@@ -1,8 +1,17 @@
+# merge of make_kdeedu_cool branch into trunk
 191127 191142
+
+# merge of the second make_kdeedu_cool branch into trunk
 309143 309149
 309143 309154
 309143 309156
+
+# merge of kalziumkde4 into trunk
 395799 395803
 395799 395804
+
+# backport of commit into 3.5.0 tag
 480823 481509
+
+# merge of gsoc2009 branch into trunk
 990056 990059
