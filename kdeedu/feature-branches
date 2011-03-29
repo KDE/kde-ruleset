@@ -34,9 +34,14 @@ match /branches/work/kinstance-redesign/${MODULE}/
 
     max revision 628815 # one before branch deletion
 end match
-#match /branches/work/kconfiggroup_port/${MODULE}/
-#    repository ${REPO}
-#    branch kde-kconfiggroup_port
-#end match
+
+match /branches/work/kconfiggroup_port/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kconfiggroup_port/${MODULE}/
+    repository ${REPO}
+    branch kde-kconfiggroup_port
+    max revision 635534 # branch got deleted in r635535
+end match
 
 # kate: hl svn2git rules; indent-mode svn2git;
