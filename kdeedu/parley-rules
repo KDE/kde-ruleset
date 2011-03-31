@@ -12,7 +12,6 @@ match /branches/work/(kdeedu_parley|parley-practice|soc-parley)/parley/
 end match
 
 include common-kdeedu-rules
-include feature-branches
 
 #	------< trunk/KDE/kdeedu/parley >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/parley @ 710186 <- /trunk/KDE/kdeedu/kvoctrain @ 710173 ]
@@ -33,6 +32,11 @@ match /trunk/(KDE/)?kdeedu/doc/kvoctrain/
     branch master
     prefix doc/
 end match
+
+declare MODULE=kdeedu/kvoctrain
+include feature-branches
+declare MODULE=kdeedu/parley
+include feature-branches
 
 match /
 end match
