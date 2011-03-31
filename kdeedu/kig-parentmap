@@ -1,1 +1,24 @@
+# merge make_kdeedu_cool into trunk
 217425 217432
+
+# merge kde-kaction-cleanup1 branch into trunk
+610257 610651
+
+# intermediate merges from trunk to kde-kaction-cleanup3
+619414 620435
+
+# merge kde-kaction-cleanup3 branch into trunk
+621470 621518
+
+# there is a merge from trunk into kinstance-redesign
+# but it's kinda confusing, so I'll leave it out
+
+# merge kinstance-redesign branch into trunk
+628271 628316
+
+# merge kconfiggroup_port branch into trunk
+634447 635473
+
+# merge kconfig_new_take3 into trunk
+728440 728852
+
