@@ -62,8 +62,7 @@ step: [last checked Mar 29 00:55]
 - the SoC branches aren't merged into trunk; this seems accurate with SVN
   history, though
 
-khangman: [last checked Feb 15 01:20]
-- synth merge of make_kdeedu_cool to trunk (305053 -> 305055)
+khangman: [last checked Mar 31 20:25]
 - figure out 757794 mess
 
 kwordquiz: [last checked Feb 22 23:42]
