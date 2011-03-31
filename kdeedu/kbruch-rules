@@ -3,8 +3,11 @@ create repository kbruch
 end repository
 
 declare MODULE=kdeedu/kbruch
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kbruch
 include common-kdeedu-rules
+
+include feature-branches
 
 #	------< trunk/KDE/kdeedu/kbruch >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
