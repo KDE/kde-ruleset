@@ -3,6 +3,7 @@ create repository parley
 end repository
 
 declare MODULE=kdeedu/parley
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=parley
 
 match /branches/work/(kdeedu_parley|parley-practice|soc-parley)/parley/
@@ -11,6 +12,7 @@ match /branches/work/(kdeedu_parley|parley-practice|soc-parley)/parley/
 end match
 
 include common-kdeedu-rules
+include feature-branches
 
 #	------< trunk/KDE/kdeedu/parley >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/parley @ 710186 <- /trunk/KDE/kdeedu/kvoctrain @ 710173 ]
