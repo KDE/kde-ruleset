@@ -3,8 +3,11 @@ create repository khangman
 end repository
 
 declare MODULE=kdeedu/khangman
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=khangman
 include common-kdeedu-rules
+
+include feature-branches
 
 #	------< trunk/KDE/kdeedu/khangman >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
