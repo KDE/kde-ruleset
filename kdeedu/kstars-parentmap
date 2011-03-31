@@ -11,3 +11,28 @@
 clear 699589
 699453 699589
 699409 699589
+
+# merge of qdbus-api-changes into trunk
+575413 575653
+
+# merge kde-kaction-cleanup1 branch into trunk
+610257 610651
+
+# intermediate merges from trunk to kde-kaction-cleanup3
+617811 618565
+619189 620435
+620757 620908
+
+# merge kde-kaction-cleanup3 branch into trunk
+# XXX I think kstars was independently ported to the new kaction API,
+# so the branch wasn't merged.
+# 621487 621549
+
+# intermediate merge from trunk into kde-kinstance-redesign branch
+627961 628271
+
+# merge kinstance-redesign branch into trunk
+628271 628316
+
+# merge kconfiggroup_port branch into trunk
+633602 635473

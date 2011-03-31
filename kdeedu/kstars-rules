@@ -3,8 +3,10 @@ create repository kstars
 end repository
 
 declare MODULE=kdeedu/kstars
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kstars
 include common-kdeedu-rules
+include feature-branches
 
 # ignore big-ass file that should have never been in the repo
 match /trunk/KDE/kdeedu/kstars/kstars/data/deepstars.dat
