@@ -1,0 +1,24 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+# KPicross was imported to the KDE SVN with r309898
+# so svn2git can be run with --resume-from option
+
+# KPicross was never branched or tagged, so this is
+# straight-forward.
+
+# Create the kpicross repository
+create repository kpicross
+end repository
+
+# Kannasaver from playground
+match /trunk/playground/games/kpicross/
+  repository kpicross
+  branch master
+end match
+
+# Ignore the rest
+match /
+end match
+
