@@ -56,4 +56,13 @@ match /branches/work/kconfig_new_take3/KDE/${MODULE}/
     max revision 730730 # branch deleted in r730731
 end match
 
+match /branches/work/kde4-qdbus-api-changes/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kde4-qdbus-api-changes/${MODULE}/
+    repository ${REPO}
+    branch qdbus-api-changes
+    max revision 575850 # branch deleted in r575851
+end match
+
 # kate: hl svn2git rules; indent-mode svn2git;
