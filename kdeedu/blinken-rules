@@ -3,8 +3,10 @@ create repository blinken
 end repository
 
 declare MODULE=kdeedu/blinken
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=blinken
 include common-kdeedu-rules
+include feature-branches
 
 #	------< trunk/KDE/kdeedu/blinken >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/blinken @ 450941 <- /branches/KDE/3.5/kdeedu/blinken @ 450940 ]
