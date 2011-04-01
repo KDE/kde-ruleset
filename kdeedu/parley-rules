@@ -33,6 +33,12 @@ match /trunk/(KDE/)?kdeedu/doc/kvoctrain/
     prefix doc/
 end match
 
+match /branches/work/doc/parley/
+    repository parley
+    branch doc-from-userbase
+    max revision 1152476 # deleted in r1152477
+end match
+
 declare MODULE=kdeedu/kvoctrain
 include feature-branches
 declare MODULE=kdeedu/parley
