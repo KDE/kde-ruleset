@@ -58,3 +58,16 @@ clear 699589
 # but there were some extra files merged in a later revision,
 # so we do that one manually here
 831846 831977
+
+# Merges in unfrozen1 are tricky. They happened out of order; eg. first
+# merged r12 and r14, then merged r13, and finally r15.
+#
+# We *try* to solve it by clearing the svn2git-automerged one...
+clear 830315
+# (this is the "normal" parent)
+830301 830315
+
+# ...and synthing a merge onto the *last* svnmerged commit.
+829464 830459
+
+# I give up with backports from trunk to unfrozen1, though.

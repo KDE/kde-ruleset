@@ -60,6 +60,16 @@ match /branches/kstars/summer/kdeedu/kstars/
     max revision 962936 # before deletion at r962937 "Removing the old summer branch"
 end match
 
+match /branches/kstars/unfrozen/$
+    action recurse
+end match
+match /branches/kstars/unfrozen/kstars/
+    repository kstars
+    branch unfrozen1 # 2008?
+    min revision 822093 # branch creation
+    max revision 962937 # before deletion at 962938 "Deleting old unfrozen branch"
+end match
+
 match /
 end match
 #First revision used: 145875
