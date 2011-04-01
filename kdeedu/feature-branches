@@ -74,4 +74,15 @@ match /branches/work/kde4_jobflags/KDE/${MODULE}/
     max revision 721454 # branch deleted in r721455
 end match
 
+match /branches/work/kde4_kconfig/kconfig/port_trunk/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kde4_kconfig/kconfig/port_trunk/${MODULE}/
+    repository ${REPO}
+    branch kde4_kconfig
+    # branch still didn't get deleted; but for future-proofing,
+    # limit it at an arbitrary current revision
+    max revision 1226682
+end match
+
 # kate: hl svn2git rules; indent-mode svn2git;
