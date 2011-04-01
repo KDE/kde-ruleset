@@ -45,3 +45,16 @@ clear 699589
 
 # merge kde4_kconfig into trunk
 720895 721712
+
+# intermediate merges from trunk to summer1
+814596 814648
+820008 820105
+821179 821190
+822426 823271
+826203 826207
+831523 831846
+
+# merge of summer1 into trunk is handled by svn2git automatically,
+# but there were some extra files merged in a later revision,
+# so we do that one manually here
+831846 831977

@@ -53,6 +53,13 @@ match /branches/work/kdeedu_kstars_htm/doc/kstars/
     prefix doc/
 end match
 
+match /branches/kstars/summer/kdeedu/kstars/
+    repository kstars
+    branch summer1 # 2008?
+    min revision 812417 # branch creation
+    max revision 962936 # before deletion at r962937 "Removing the old summer branch"
+end match
+
 match /
 end match
 #First revision used: 145875
