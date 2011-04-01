@@ -65,4 +65,13 @@ match /branches/work/kde4-qdbus-api-changes/${MODULE}/
     max revision 575850 # branch deleted in r575851
 end match
 
+match /branches/work/kde4_jobflags/KDE/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kde4_jobflags/KDE/${MODULE}/
+    repository ${REPO}
+    branch kde4_jobflags
+    max revision 721454 # branch deleted in r721455
+end match
+
 # kate: hl svn2git rules; indent-mode svn2git;
