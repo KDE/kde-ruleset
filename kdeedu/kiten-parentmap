@@ -19,3 +19,6 @@
 
 # merge kconfig_new_take3 into trunk
 728208 728852
+
+# merge kparts_urlargs_split into trunk
+698701 699514

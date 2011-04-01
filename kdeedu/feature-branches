@@ -85,4 +85,13 @@ match /branches/work/kde4_kconfig/kconfig/port_trunk/${MODULE}/
     max revision 1226682
 end match
 
+match /branches/work/kparts_urlargs_split/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kparts_urlargs_split/${MODULE}/
+    repository ${REPO}
+    branch kparts_urlargs_split
+    max revision 699528 # branch deleted in r699529
+end match
+
 # kate: hl svn2git rules; indent-mode svn2git;
