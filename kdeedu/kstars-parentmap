@@ -104,3 +104,12 @@ clear 830315
 
 # merge of summer2 into trunk
 1010963 1010979
+
+# interm. merge from trunk to unfrozen2
+1058442 1058621
+1059455 1059461
+1059608 1059610
+1063530 1063538
+
+# merge unfrozen2 into trunk
+1065627 1082918

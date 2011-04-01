@@ -77,6 +77,16 @@ match /branches/kstars/summer/kstars/
     max revision 1121178 # before deletion at r1121179 "Removing old summer branch"
 end match
 
+match /branches/kstars/unfrozen/$
+    action recurse
+end match
+match /branches/kstars/unfrozen/kstars/
+    repository kstars
+    branch unfrozen2 # 2009?
+    min revision 962963 # branch creation
+    max revision 1121178 # branch still exists, but let's stop somewhere :)
+end match
+
 match /
 end match
 #First revision used: 145875
