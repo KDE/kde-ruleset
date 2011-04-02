@@ -8,11 +8,6 @@ declare REPO=kstars
 include common-kdeedu-rules
 include feature-branches
 
-# ignore big-ass file that should have never been in the repo
-match /trunk/KDE/kdeedu/kstars/kstars/data/deepstars.dat
-    action ignore
-end match
-
 #	------< trunk/KDE/kdeedu/kstars >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
 #	[ add  HEAD 409202 ]
