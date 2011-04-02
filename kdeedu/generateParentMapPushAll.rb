@@ -39,6 +39,7 @@ repos.each { |project|
     if File.exists?("#{project}-parentmap") then
         Dir.chdir("repos/#{project}")
         `../../parent-adder ../../#{project}-parentmap`
+	`rm -rf refs/backup`
         puts "Added parents for #{project}"
         Dir.chdir(rulesDir)
     end
