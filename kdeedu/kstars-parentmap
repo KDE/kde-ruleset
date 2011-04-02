@@ -1,9 +1,14 @@
+# creation of GSoC 2010 branches
 1120772 1121256@/branches/kstars/carbonix/kstars/
 1120772 1121256@/branches/kstars/hdevalence/kstars/
+
+# merges from trunk into hdevalence gsoc
 1139625 1139734
-1144329 1144376
 1153695 1153699
 1186561 1186596
+
+# merges from trunk into carbonix gsoc
+1144329 1144376
 
 # revision 699589 is a merge from kstars_htm but it's converted as a merge
 # from r699151 instead of r699409, so we have to fix it. r699453 is the
