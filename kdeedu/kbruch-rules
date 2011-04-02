@@ -25,6 +25,12 @@ match /trunk/kdeedu/kbruch/
     max revision 409202
 end match
 
+match /trunk/kdeextragear-1/kbruch/
+    repository kbruch
+    branch extragear-1
+    max revision 177232 # 1 before delete
+end match
+
 match /
 end match
 #First revision used: 222522

@@ -1,3 +1,7 @@
+# connect initial extragear-1 history to the main history in trunk
+# a lot of changes happened in the middle, but that's not in KDE SVN...
+176964 222522
+
 # merge kde-kaction-cleanup1 branch into trunk
 610257 610651
 
