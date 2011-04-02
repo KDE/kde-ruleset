@@ -1,0 +1,3 @@
+#!/bin/sh
+~/convrun/build/makerevlist $1 > ../logs/$2-revlist
+LANG=en_US.utf8 svn2git --identity-map ../kde-ruleset/account-map --add-metadata --revisions-file ../logs/$2-revlist  --rules $1 --stats --debug-rules ~/svn > ../logs/$2-svn2git-output 2>&1
