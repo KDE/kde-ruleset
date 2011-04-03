@@ -3,9 +3,9 @@
 #
 
 declare APPLICATION=superkaramba
-declare REPOSITORY=KDE/kdeutils/superkaramba
+declare REPO=KDE/kdeutils/superkaramba
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -16,7 +16,7 @@ include common-recursion-rules
 # Commit 1154058 removed the obsolete documentation.
 include common-doc-rules
 match /branches/KDE/3.5/kdeutils/doc/superkaramba/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch KDE/3.5
   prefix doc/
   max revision 476295
@@ -24,13 +24,13 @@ match /branches/KDE/3.5/kdeutils/doc/superkaramba/
 end match
 
 match /trunk/(KDE/)?kdeutils/superkaramba/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
 end match
 
 ### SuperKaramba in kdereview
 match /trunk/kdereview/superkaramba/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch kdereview
   max revision 445394 # one before deletion from kdereview
 end match
@@ -40,7 +40,7 @@ match /branches/work/sk4/porting/superkaramba/$
 end match
 
 match /branches/work/sk4/porting/superkaramba/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch sk4-porting
 end match
 

@@ -3,18 +3,18 @@ match /branches/work/kaction-cleanup-branch/(KDE/)?${MODULE_RECURSE}$
 end match
 
 match /branches/work/kaction-cleanup-branch/${MODULE}
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch kde-kaction-cleanup1
     max revision 610651 # one before branch deletion
 end match
 match /branches/work/kaction-cleanup-branch/KDE/${MODULE}
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch kde-kaction-cleanup2
     min revision 610825 # re-creation of branch
     max revision 617205 # one before branch deletion
 end match
 match /branches/work/kaction-cleanup-branch/KDE/${MODULE}
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch kde-kaction-cleanup3
     min revision 617207 # re-creation of branch
     max revision 623046 # one before branch deletion
@@ -25,7 +25,7 @@ match /branches/work/kinstance-redesign/${MODULE_RECURSE}$
 end match
 
 match /branches/work/kinstance-redesign/${MODULE}
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch kde-kinstance-redesign
 
     # 625211 created branch, 626924 wiped it again;
@@ -35,7 +35,7 @@ match /branches/work/kinstance-redesign/${MODULE}
     max revision 628815 # one before branch deletion
 end match
 #match /branches/work/kconfiggroup_port/${MODULE}
-#    repository ${REPOSITORY}
+#    repository ${REPO}
 #    branch kde-kconfiggroup_port
 #end match
 

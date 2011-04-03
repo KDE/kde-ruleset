@@ -3,9 +3,9 @@
 #
 
 declare APPLICATION=kgpg
-declare REPOSITORY=KDE/kdeutils/kgpg
+declare REPO=KDE/kdeutils/kgpg
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -14,12 +14,12 @@ include common-recursion-rules
 include common-doc-rules
 
 match /trunk/(KDE/)?kdeutils/kgpg/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
 end match
 
 match /branches/work/kgpg2/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch work/kgpg2
   min revision 738904
   max revision 766859

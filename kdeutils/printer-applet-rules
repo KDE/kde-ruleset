@@ -3,9 +3,9 @@
 #
 
 declare APPLICATION=printer-applet
-declare REPOSITORY=KDE/kdeutils/printer-applet
+declare REPO=KDE/kdeutils/printer-applet
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -14,13 +14,13 @@ include common-recursion-rules
 include common-doc-rules
 
 match /trunk/(KDE/)?kdeutils/printer-applet/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
 end match
 
 ### printer-applet in kdereview
 match /trunk/kdereview/printer-applet/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   # min revision 789361
   # max revision 798592
@@ -28,7 +28,7 @@ end match
 
 ### printer-applet in kdebase-workspace
 match /trunk/KDE/kdebase/workspace/printer-applet/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   # min revision 798615
   # max revision 802901

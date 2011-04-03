@@ -3,9 +3,9 @@
 #
 
 declare APPLICATION=ktimer
-declare REPOSITORY=KDE/kdeutils/ktimer
+declare REPO=KDE/kdeutils/ktimer
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -14,7 +14,7 @@ include common-recursion-rules
 include common-doc-rules
 
 match /trunk/(KDE/)?kdeutils/ktimer/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
 end match
 

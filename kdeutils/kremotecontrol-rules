@@ -10,9 +10,9 @@
 #
 
 declare APPLICATION=kremotecontrol
-declare REPOSITORY=KDE/kdeutils/kremotecontrol
+declare REPO=KDE/kdeutils/kremotecontrol
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -28,20 +28,20 @@ include common-recursion-rules
 include kremotecontrol-doc-rules
 
 match /trunk/KDE/kdeutils/kremotecontrol/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   min revision 1109703
 end match
 
 match /trunk/kdereview/kremotecontrol/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   max revision 1109703
   min revision 1102496
 end match
 
 match /branches/work/kdelirc/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   max revision 1102496
   min revision 1075786
@@ -50,42 +50,42 @@ end match
 # kdelirc is moved from trunk to tags/unmaintained/4 in r1109710.
 # There are some translation updates after branches/work/kdelirc is created.
 match /trunk/KDE/kdeutils/kdelirc/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch kdelirc-old
   max revision 1109703 # Some revisions before moving to unmaintained/
   min revision 963347
 end match
 
 match /trunk/kdereview/kdelirc/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   max revision 963347
   min revision 956547
 end match
 
 match /trunk/kdereview/utils/kdelirc/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   max revision 956547
   min revision 956537
 end match
 
 match /trunk/playground/utils/kdelirc/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   max revision 956537
   min revision 807314
 end match
 
 match /trunk/KDE/kdeutils/kdelirc/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   max revision 807314
   min revision 409202
 end match
 
 match /trunk/kdeutils/kdelirc/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   max revision 409202
 end match

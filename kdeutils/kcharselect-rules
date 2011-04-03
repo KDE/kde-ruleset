@@ -3,9 +3,9 @@
 #
 
 declare APPLICATION=kcharselect
-declare REPOSITORY=KDE/kdeutils/kcharselect
+declare REPO=KDE/kdeutils/kcharselect
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -14,7 +14,7 @@ include common-recursion-rules
 include common-doc-rules
 
 match /trunk/(KDE/)?kdeutils/kcharselect/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
 end match
 

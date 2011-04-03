@@ -3,9 +3,9 @@
 #
 
 declare APPLICATION=sweeper
-declare REPOSITORY=KDE/kdeutils/sweeper
+declare REPO=KDE/kdeutils/sweeper
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -14,25 +14,25 @@ include common-recursion-rules
 include common-doc-rules
 
 match /trunk/(KDE/)?kdeutils/sweeper/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
 end match
 
 ### Sweeper in kdebase
 match /trunk/kdebase/kcontrol/privacy/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   # min revision 203673
   # max revision 409202
 end match
 match /trunk/KDE/kdebase/kcontrol/privacy/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   # min revision 409203
   # max revision 455941
 end match
 match /trunk/KDE/kdebase/workspace/kcontrol/privacy/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   # min revision 455942
   # max revision 464766
@@ -40,7 +40,7 @@ end match
 
 ### Sweeper as kdeutils/privacy
 match /trunk/KDE/kdeutils/privacy/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   # min revision 464767
   # max revision 468677

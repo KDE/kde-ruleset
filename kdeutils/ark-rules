@@ -3,9 +3,9 @@
 #
 
 declare APPLICATION=ark
-declare REPOSITORY=KDE/kdeutils/ark
+declare REPO=KDE/kdeutils/ark
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -24,7 +24,7 @@ end match
 # This rule keeps some commits which would normally be thrown away
 # into a separate branch.
 match /trunk/(KDE/)?kdeutils/ark/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch dead-trunk-1
   max revision 461557 # one before deletion
 end match
@@ -34,25 +34,25 @@ end match
 # r694732.  This rule keeps some commits which would normally be
 # thrown away into a separate branch.
 match /trunk/(KDE/)?kdeutils/ark/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch dead-trunk-2
   max revision 692400 # one before deletion
 end match
 
 # Ark starts its life as KZip
 match /trunk/kdeutils/kzip/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch kzip
   max revision 12097 # one before deletion
 end match
 
 match /trunk/(KDE/)?kdeutils/ark/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
 end match
 
 match /branches/work/libarchive-based-ark/ark/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch work/libarchive-based-ark
   min revision 672750
   max revision 694571

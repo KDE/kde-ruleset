@@ -1,5 +1,5 @@
 match /trunk/(KDE/)?kdeutils/doc/${APPLICATION}/
-  repository ${REPOSITORY}
+  repository ${REPO}
   prefix doc/
   branch master
   # min revision 18257

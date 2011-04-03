@@ -1,12 +1,12 @@
 match /branches/extragear/kde3/utils/doc/filelight/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch filelight-kde3
   min revision 670724
   prefix doc/
 end match
 
 match /trunk/extragear/utils/doc/filelight/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch filelight-kde3
   max revision 670724
   min revision 409208
@@ -14,20 +14,20 @@ match /trunk/extragear/utils/doc/filelight/
 end match
 
 match /trunk/kdeextragear-3/doc/filelight/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch filelight-kde3
   max revision 409208
   prefix doc/
 end match
 
 match /trunk/playground/utils/doc/filelight/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   prefix doc/
 end match
 
 match /trunk/kdereview/doc/filelight/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
   prefix doc/
 end match

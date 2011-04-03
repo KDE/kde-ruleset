@@ -3,9 +3,9 @@
 #
 
 declare APPLICATION=kwallet
-declare REPOSITORY=KDE/kdeutils/kwallet
+declare REPO=KDE/kdeutils/kwallet
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -18,7 +18,7 @@ declare MODULE_RECURSE=(kdeutils/)?
 include feature-branches
 
 match /trunk/(KDE/)?kdeutils/kwallet/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
 end match
 

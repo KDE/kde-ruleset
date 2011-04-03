@@ -3,9 +3,9 @@
 #
 
 declare APPLICATION=kfloppy
-declare REPOSITORY=KDE/kdeutils/kfloppy
+declare REPO=KDE/kdeutils/kfloppy
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -14,7 +14,7 @@ include common-recursion-rules
 include common-doc-rules
 
 match /trunk/(KDE/)?kdeutils/kfloppy/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
 end match
 

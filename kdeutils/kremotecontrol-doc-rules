@@ -10,7 +10,7 @@
 #       [ Parent: /trunk/kdereview/kremotecontrol @ 1102497 <- /branches/work/kdelirc @ 1102496 ]
 #       [ add  HEAD 1116522 ]
 match /trunk/KDE/kdeutils/doc/kcontrol/kremotecontrol/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch master
     prefix doc/
     min revision 1116522
@@ -18,7 +18,7 @@ end match
 
 #       [ move trunk/KDE/kdeutils/doc/kremotecontrol 1116522 1109705 ]
 match /trunk/KDE/kdeutils/doc/kremotecontrol/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch master
     prefix doc/
     max revision 1116522
@@ -27,7 +27,7 @@ end match
 
 #       [ move trunk/kdereview/doc/kremotecontrol 1109705 1102497 ]
 match /trunk/kdereview/doc/kremotecontrol/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch master
     prefix doc/
     max revision 1109705
@@ -36,7 +36,7 @@ end match
 
 #       [ move trunk/kdereview/kremotecontrol/doc/kremotecontrol 1102497 1102496 ]
 match /trunk/kdereview/kremotecontrol/doc/kremotecontrol/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch master
     prefix doc/
     max revision 1102497
@@ -45,7 +45,7 @@ end match
 
 #       [ parent branches/work/kdelirc/doc/kremotecontrol 1102496 0 ]
 match /branches/work/kdelirc/doc/kremotecontrol/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch master
     prefix doc/
     max revision 1102496
@@ -59,7 +59,7 @@ end match
 #	[ Parent: /trunk/KDE/kdeutils @ 409203 <- /trunk/kdeutils @ 409202 ]
 #	[ add  1110589 963358 ]
 match /trunk/KDE/kdeutils/doc/kdelirc/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch kdelirc-old
     prefix doc/kdelirc/
     max revision 1110589
@@ -68,7 +68,7 @@ end match
 
 #	[ move trunk/kdereview/doc/kdelirc 963358 956547 ]
 match /trunk/kdereview/doc/kdelirc/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch master
     prefix doc/kdelirc/
     max revision 963358
@@ -77,7 +77,7 @@ end match
 
 #	[ move trunk/kdereview/doc/utils/kdelirc 956547 956541 ]
 match /trunk/kdereview/doc/utils/kdelirc/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch master
     prefix doc/kdelirc/
     max revision 956547
@@ -86,7 +86,7 @@ end match
 
 #	[ move trunk/playground/utils/doc/kdelirc 956541 807316 ]
 match /trunk/playground/utils/doc/kdelirc/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch master
     prefix doc/kdelirc/
     max revision 956541
@@ -95,7 +95,7 @@ end match
 
 #	[ move trunk/KDE/kdeutils/doc/kdelirc 807316 409202 ]
 match /trunk/KDE/kdeutils/doc/kdelirc/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch master
     prefix doc/kdelirc/
     max revision 807316
@@ -104,7 +104,7 @@ end match
 
 #	[ parent trunk/kdeutils/doc/kdelirc 409202 0 ]
 match /trunk/kdeutils/doc/kdelirc/
-    repository ${REPOSITORY}
+    repository ${REPO}
     branch master
     prefix doc/kdelirc/
     max revision 409202

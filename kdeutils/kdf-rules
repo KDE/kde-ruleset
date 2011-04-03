@@ -3,9 +3,9 @@
 #
 
 declare APPLICATION=kdf
-declare REPOSITORY=KDE/kdeutils/kdf
+declare REPO=KDE/kdeutils/kdf
 
-create repository ${REPOSITORY}
+create repository ${REPO}
 end repository
 
 include common-ignores
@@ -15,7 +15,7 @@ include common-recursion-rules
 include kdf-doc-rules
 
 match /trunk/(KDE/)?kdeutils/kdf/
-  repository ${REPOSITORY}
+  repository ${REPO}
   branch master
 end match
 
