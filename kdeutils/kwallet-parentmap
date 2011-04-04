@@ -22,3 +22,9 @@
 
 # merge kconfiggroup_port into trunk
 635284 635501
+
+# merge systray-rewrite into systray-rewrite-tng
+562434 564547
+
+# merge systray-rewrite-tng into trunk
+565384 565761

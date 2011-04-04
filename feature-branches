@@ -94,4 +94,22 @@ match /branches/work/kparts_urlargs_split/${MODULE}/
     max revision 699528 # branch deleted in r699529
 end match
 
+match /branches/work/kde4-systray-rewrite/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kde4-systray-rewrite/${MODULE}/
+    repository ${REPO}
+    branch systray-rewrite
+    max revision 564547 # branch deleted in r564548
+end match
+
+match /branches/work/kde4-systray-rewrite-tng/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kde4-systray-rewrite-tng/${MODULE}/
+    repository ${REPO}
+    branch systray-rewrite-tng
+    max revision 565761 # branch deleted in r565762
+end match
+
 # kate: hl svn2git rules; indent-mode svn2git;
