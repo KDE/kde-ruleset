@@ -7,7 +7,7 @@ declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kturtle
 include common-kdeedu-rules
 
-include feature-branches
+include ../feature-branches
 
 # Ensure the deletion in r475469 is converted as a deletion of all contents,
 # rather than a deletion of the branch ref.

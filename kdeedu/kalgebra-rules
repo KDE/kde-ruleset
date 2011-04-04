@@ -11,7 +11,7 @@ declare MODULE=kdeedu/kalgebra
 declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kalgebra
 include common-kdeedu-rules
-include feature-branches
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/kalgebra >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/kalgebra @ 670400 <- /trunk/kdereview/kalgebra @ 670393 ]

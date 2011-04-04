@@ -7,7 +7,7 @@ declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kalzium
 include common-kdeedu-rules
 
-include feature-branches
+include ../feature-branches
 # libkdeedu global branches are still pending
 
 #	------< trunk/KDE/kdeedu/kalzium >------
