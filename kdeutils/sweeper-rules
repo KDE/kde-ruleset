@@ -38,6 +38,16 @@ match /trunk/KDE/kdebase/workspace/kcontrol/privacy/
   # max revision 464766
 end match
 
+match /branches/work/kde4/kdebase/(kcontrol/)?$
+  action recurse
+end match
+
+match /branches/work/kde4/kdebase/kcontrol/privacy/
+  repository ${REPO}
+  branch kde4
+  max revision 439634 # r439635 deletes all of kdebase from kde4 branch
+end match
+
 ### Sweeper as kdeutils/privacy
 match /trunk/KDE/kdeutils/privacy/
   repository ${REPO}
