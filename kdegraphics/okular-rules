@@ -1,4 +1,4 @@
-create repository KDE/kdegraphics/okular
+create repository okular
 end repository
 
 # ignore the SVN-adjusting commits
@@ -134,34 +134,34 @@ end match
 
 # kdereview locations, in order
 match /trunk/kdereview/okular/epub/
-  repository KDE/kdegraphics/okular
+  repository okular
   min revision 785913
   max revision 793008 # moved in 9
   prefix generators/epub/
   branch epub
 end match
 match /trunk/playground/graphics/okular/epub/
-  repository KDE/kdegraphics/okular
+  repository okular
   min revision 774631
   max revision 785912 # moved to kdereview
   prefix generators/epub/
   branch epub
 end match
 match /trunk/kdereview/mobipocket/okular/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch mobipocket
   prefix generators/mobipocket/
   min revision 917050
 end match
 match /trunk/playground/graphics/okular/mobipocket/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch mobipocket
   prefix generators/mobipocket/
   max revision 917049
 end match 
 # neither has been in kdereview! Do not enable this rule, it will break history at 809228
 #match /trunk/kdereview/(okular|kpdf)/
- # repository KDE/kdegraphics/okular
+ # repository okular
  # branch master
 #end match
 
@@ -175,7 +175,7 @@ end match
 
 # 388767: Created annotations branch from trunk, using (beep) cvs2svn
 match /branches/kpdf_annotations/kdegraphics/kpdf/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch master
   min revision 388767
   max revision 409204
@@ -192,33 +192,33 @@ match /branches/kpdf_annotations/$
 end match
 # 409205: renamed branches
 match /branches/kpdf/annotations/kdegraphics/kpdf/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch master
   max revision 431968
 end match
 # 431968: Importing kpdf_annotations to playground
 match /trunk/playground/graphics/oKular/kpdf/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch master
   min revision 431968
   max revision 520781
 end match
 # KDE 3 branch
 match /trunk/playground/graphics/oKular/
- # repository KDE/kdegraphics/okular
+ # repository okular
  # branch kde3
   min revision 520782 # moved at 82
   max revision 552283
 end match
 # KDE 4 development
 match /branches/work/kde4/playground/graphics/okular/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch master
   min revision 520782
   max revision 551163
 end match
 match /trunk/playground/graphics/okular/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch master
   min revision 551164 # moved at 64
   max revision 650476 # moved away at 77
@@ -226,7 +226,7 @@ end match
 
 # copy from kviewshell: r556303
 match /trunk/KDE/kdegraphics/kviewshell/plugins/dvi/
-  repository KDE/kdegraphics/okular
+  repository okular
   prefix generators/dvi/
   branch dvi
   min revision 469947
@@ -234,7 +234,7 @@ match /trunk/KDE/kdegraphics/kviewshell/plugins/dvi/
 end match
 
 match /trunk/KDE/kdegraphics/kdvi/
-  repository KDE/kdegraphics/okular
+  repository okular
   prefix generators/dvi/
   branch dvi
   max revision 469945
@@ -242,7 +242,7 @@ match /trunk/KDE/kdegraphics/kdvi/
 end match
 
 match /trunk/kdegraphics/kdvi/
-  repository KDE/kdegraphics/okular
+  repository okular
   prefix generators/dvi/
   branch dvi
   max revision 409202
@@ -250,13 +250,13 @@ end match
 
 #okular-specific cmake files
 match /trunk/KDE/kdegraphics/cmake/modules/
-  repository KDE/kdegraphics/okular
+  repository okular
   prefix cmake/modules/
   branch master
 end match
 
 match /trunk/playground/graphics/cmake/modules/
-  repository KDE/kdegraphics/okular
+  repository okular
   prefix cmake/modules/
   branch master
   max revision 650482 # copied at 83
@@ -264,7 +264,7 @@ match /trunk/playground/graphics/cmake/modules/
 end match
 
 match /branches/work/kde4/playground/graphics/cmake/
-  repository KDE/kdegraphics/okular
+  repository okular
   prefix cmake/modules/
   branch master
   max revision 551164
@@ -273,18 +273,18 @@ end match
 
 
 match /trunk/(KDE/)?kdegraphics/doc/okular/
-  repository KDE/kdegraphics/okular
+  repository okular
   prefix doc/
   branch master
 end match
 match /trunk/playground/graphics/doc/okular/
-  repository KDE/kdegraphics/okular
+  repository okular
   prefix doc/
   branch master
   max revision 650477 # moved away at 78, deleted at 79
 end match
 match /trunk/(KDE/)?kdegraphics/doc/kpdf/
-  repository KDE/kdegraphics/okular
+  repository okular
   prefix doc/
   branch kpdf
   max revision 674185 # ignore 674186. Then history ends.
@@ -319,7 +319,7 @@ end match
 
 # kpdf mainline, after okular fork
 match /trunk/KDE/(kdegraphics)/kpdf/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch kpdf
   min revision 409209
 # 540832: kpdf deleted
@@ -327,17 +327,17 @@ match /trunk/KDE/(kdegraphics)/kpdf/
 end match
 
 match /trunk/KDE/kdegraphics/okular/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch master
   min revision 650477 # moved here at 77
 end match
 match /trunk/kdegraphics/kpdf/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch kpdf
   max revision 409202
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch KDE/\1.\2
   max revision 409202
 end match
@@ -352,26 +352,26 @@ end match
 
 #cvs tags
 match /tags/KDE_(\d+)_(\d+)_RELEASE/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch refs/tags/v\1.\2.0
   annotated true
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch refs/tags/v\1.\2.\3
   annotated true
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch refs/tags/v\1.\2.\3a
   annotated true
   min revision 192719
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch refs/tags/v\1.\2.\3-beta\4
   annotated true
   min revision 376088
@@ -379,37 +379,37 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/(kdegraphics)/(okular|kpdf)/
 end match
 
 match /tags/KDE/3.5.0-alpha1/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch refs/tags/v3.4.90
   annotated true
   min revision 443441
   max revision 445561
 end match
 match /tags/KDE/3.5.0-beta1/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch refs/tags/v3.4.91 	
   annotated true
   min revision 459298
   max revision 460260
 end match
 match /branches/KDE/([^/]+)A/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch KDE/\1a
   min revision 409209
 end match
 match /(tags)/KDE/([^/]+)A/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch refs/tags/v\1a
   annotated true
   min revision 409209
 end match
 match /branches/KDE/([^/]+)/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch KDE/\1
   min revision 409209
 end match
 match /tags/KDE/([^/]+)/(kdegraphics)/(okular|kpdf)/
-  repository KDE/kdegraphics/okular
+  repository okular
   branch refs/tags/v\1
   annotated true
   min revision 409209
