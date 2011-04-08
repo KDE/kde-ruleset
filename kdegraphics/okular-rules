@@ -205,20 +205,6 @@ match /trunk/(kdereview)/mobipocket/$
   action recurse
 end match
 
-# skip branching of docs and cmake
-match /(tags|branches)/(KDE_[^/]+|KDE/[^/]+)/kdegraphics/doc/
-end match
-match /(tags|branches)/(KDE_[^/]+|KDE/[^/]+)/kdegraphics(/libs)?/cmake/
-end match
-
-#skip files directly in module in branches and tags
-match /((branches|tags)/(KDE/)?[^/]+)/(kdegraphics(/libs)?)/[^/]+$
-end match
-
-#skip this one, not sure if it will be needed
-match /(trunk(/KDE)?|(branches(/work)?|tags)(/KDE)?/[^/]+)/(kdegraphics(/libs)?)/(debian|admin|po|bsd-port)/
-end match
-
 # --- Trunk and KDE/ ---
 
 # okular / kpdf main
@@ -243,10 +229,6 @@ match /trunk/kdegraphics/kpdf/
   max revision 409202
 end match
 
-
-#skip toplevel files in libs
-match /trunk/(KDE/)?kdegraphics/libs/([^/]+)$
-end match
 
 #adapted from common-kde-branches-rules
 match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/(kpdf|kdvi)/
