@@ -250,7 +250,7 @@ match /branches/KDE/(\d+)\.(\d+)/kdegraphics/okular/
     branch \1.\2
 end match
 
-declare MODULE=kdegraphics/okular
+declare MODULE=kdegraphics/(?:okular|kpdf)
 declare REPO=okular
 include ../common-kde-tags-rules
 
