@@ -137,26 +137,22 @@ match /trunk/kdereview/okular/epub/
   repository okular
   min revision 785913
   max revision 793008 # moved in 9
-  prefix generators/epub/
   branch epub
 end match
 match /trunk/playground/graphics/okular/epub/
   repository okular
   min revision 774631
   max revision 785912 # moved to kdereview
-  prefix generators/epub/
   branch epub
 end match
 match /trunk/kdereview/mobipocket/okular/
   repository okular
   branch mobipocket
-  prefix generators/mobipocket/
   max revision 928630 # deleted in 928631
 end match
 match /trunk/playground/graphics/okular/mobipocket/
   repository okular
   branch mobipocket
-  prefix generators/mobipocket/
   max revision 917049
 end match 
 # neither has been in kdereview! Do not enable this rule, it will break history at 809228
@@ -227,7 +223,6 @@ end match
 # copy from kviewshell: r556303
 match /trunk/KDE/kdegraphics/kviewshell/plugins/dvi/
   repository okular
-  prefix generators/dvi/
   branch dvi
   min revision 469947
   max revision 556303
@@ -235,7 +230,6 @@ end match
 
 match /trunk/KDE/kdegraphics/kdvi/
   repository okular
-  prefix generators/dvi/
   branch dvi
   max revision 469945
   min revision 409203
@@ -243,7 +237,6 @@ end match
 
 match /trunk/kdegraphics/kdvi/
   repository okular
-  prefix generators/dvi/
   branch dvi
   max revision 409202
 end match
