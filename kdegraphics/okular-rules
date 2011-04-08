@@ -151,7 +151,7 @@ match /trunk/kdereview/mobipocket/okular/
   repository okular
   branch mobipocket
   prefix generators/mobipocket/
-  min revision 917050
+  max revision 928630 # deleted in 928631
 end match
 match /trunk/playground/graphics/okular/mobipocket/
   repository okular
