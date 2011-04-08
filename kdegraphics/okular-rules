@@ -329,17 +329,31 @@ match /trunk/kdegraphics/kpdf/
   branch kpdf
   max revision 409202
 end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdegraphics)/(okular|kpdf)/
-  repository okular
-  branch KDE/\1.\2
-  max revision 409202
-end match
 
 
 #skip toplevel files in libs
 match /trunk/(KDE/)?kdegraphics/libs/([^/]+)$
 end match
 
+#adapted from common-kde-branches-rules
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/(kpdf|kdvi)/
+    repository okular
+    branch \3-\1.\2
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/(kpdf|kdvi)/
+    repository okular
+    branch \3-\1.\2
+end match
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/okular/
+    repository okular
+    branch \1.\2
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/okular/
+    repository okular
+    branch \1.\2
+end match
 
 # Okular and kpdf tags first (merged in one repo)
 
@@ -385,20 +399,10 @@ match /tags/KDE/3.5.0-beta1/(kdegraphics)/(okular|kpdf)/
   min revision 459298
   max revision 460260
 end match
-match /branches/KDE/([^/]+)A/(kdegraphics)/(okular|kpdf)/
-  repository okular
-  branch KDE/\1a
-  min revision 409209
-end match
 match /(tags)/KDE/([^/]+)A/(kdegraphics)/(okular|kpdf)/
   repository okular
   branch refs/tags/v\1a
   annotated true
-  min revision 409209
-end match
-match /branches/KDE/([^/]+)/(kdegraphics)/(okular|kpdf)/
-  repository okular
-  branch KDE/\1
   min revision 409209
 end match
 match /tags/KDE/([^/]+)/(kdegraphics)/(okular|kpdf)/
