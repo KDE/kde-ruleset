@@ -90,6 +90,17 @@ match /trunk/playground/graphics/oKular/kpdf/
   min revision 431968
   max revision 520781
 end match
+
+match /branches/kpdf_experiments/(kdegraphics/)?$
+    action recurse
+end match
+match /branches/kpdf_experiments/kdegraphics/kpdf/
+    repository okular
+    branch kpdf-experiments
+    # in 409205, the branch is renamed; but no activity happened under the new name
+    max revision 409204
+end match
+
 # KDE 3 branch
 match /trunk/playground/graphics/oKular/
  # repository okular
