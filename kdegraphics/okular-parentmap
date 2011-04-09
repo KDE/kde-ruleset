@@ -1,0 +1,5 @@
+# 431968 is the root commit in playground/graphics/oKular/kpdf
+# "importing current version of annotations branch of kpdf".
+# We add what was the current revision in kpdf_annotations at that time
+# (r431884) as its one and only parent.
+431884 431968
