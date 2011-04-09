@@ -70,25 +70,18 @@ end match
 # 388767: Created annotations branch from trunk, using (beep) cvs2svn
 match /branches/kpdf_annotations/kdegraphics/kpdf/
   repository okular
-  branch master
-  min revision 388767
-  max revision 409204
+  branch kpdf-annotations
 end match
 match /branches/kpdf_annotations/kdegraphics/$
-  min revision 388767
-  max revision 388767
   action recurse
 end match
 match /branches/kpdf_annotations/$
-  min revision 388767
-  max revision 388767
   action recurse
 end match
 # 409205: renamed branches
 match /branches/kpdf/annotations/kdegraphics/kpdf/
   repository okular
-  branch master
-  max revision 431968
+  branch kpdf-annotations
 end match
 # 431968: Importing kpdf_annotations to playground
 match /trunk/playground/graphics/oKular/kpdf/
