@@ -15,18 +15,6 @@ end match
 match /(branches|tags)/KDE/[^/]+/kdegraphics/$
   action recurse
 end match
-match /trunk/kdereview/$
-  action recurse
-end match
-match /trunk/playground/$
-  action recurse
-end match
-match /trunk/playground/[^/]/$
-  action recurse
-end match
-match /trunk/kdeplayground-[^/]/$
-  action recurse
-end match
 
 match /trunk/(KDE/)?(kdegraphics(/libs)?)/$
   action recurse
