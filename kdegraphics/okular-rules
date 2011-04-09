@@ -11,7 +11,9 @@ end match
 
 match /(branches|tags)/KDE/[^/]+/$
   action recurse
-  min revision 757126
+end match
+match /(branches|tags)/KDE/[^/]+/kdegraphics/$
+  action recurse
 end match
 match /trunk/kdereview/$
   action recurse
@@ -34,12 +36,11 @@ match /branches/work/kde4/(kdegraphics(/libs)?)/$
   action recurse
 end match
 
-match /(branches(/work)?|tags)/(KDE/)?[^/]+/(kdegraphics(/libs)?)/$
+match /tags/(KDE/)?[^/]+/(kdegraphics/)?$
   action recurse
 end match
 
-
-match /branches/KDE_\d_\d_BRANCH/(kdegraphics/)?$
+match /branches/(?:__)?KDE_\d_\d_BRANCH/(kdegraphics/)?$
   action recurse
 end match
 
