@@ -1,11 +1,7 @@
 create repository okular
 end repository
 
-# ignore the SVN-adjusting commits
-match /
-  min revision 409202
-  max revision 409209
-end match
+include ../common-kde-ignores
 
 # ---- recursion ----
 
