@@ -3,3 +3,6 @@
 # We add what was the current revision in kpdf_annotations at that time
 # (r431884) as its one and only parent.
 431884 431968
+
+# merge kpdf_experiments into kpdf trunk
+374909 374920
