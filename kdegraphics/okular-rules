@@ -86,9 +86,8 @@ end match
 # 431968: Importing kpdf_annotations to playground
 match /trunk/playground/graphics/oKular/kpdf/
   repository okular
-  branch master
-  min revision 431968
-  max revision 520781
+  branch okular3-playground
+  max revision 552283 # r552284 is "remove oKular for KDE3"
 end match
 
 match /branches/kpdf_experiments/(kdegraphics/)?$
@@ -101,25 +100,22 @@ match /branches/kpdf_experiments/kdegraphics/kpdf/
     max revision 409204
 end match
 
-# KDE 3 branch
-match /trunk/playground/graphics/oKular/
- # repository okular
- # branch kde3
-  min revision 520782 # moved at 82
-  max revision 552283
-end match
 # KDE 4 development
 match /branches/work/kde4/playground/graphics/okular/
   repository okular
   branch master
-  min revision 520782
-  max revision 551163
 end match
 match /trunk/playground/graphics/okular/
   repository okular
   branch master
-  min revision 551164 # moved at 64
-  max revision 650476 # moved away at 77
+  # copied to trunk in 650477, deleted from playground in 650479;
+  # later revisions at this path are okular-related playground subprojects,
+  # so they must not be converted
+  max revision 650478
+end match
+match /trunk/KDE/kdegraphics/okular/
+  repository okular
+  branch master
 end match
 
 # copy from kviewshell: r556303
@@ -207,17 +203,11 @@ match /trunk/KDE/(kdegraphics)/kpdf/
   max revision 540831
 end match
 
-match /trunk/KDE/kdegraphics/okular/
-  repository okular
-  branch master
-  min revision 650477 # moved here at 77
-end match
 match /trunk/kdegraphics/kpdf/
   repository okular
   branch kpdf
   max revision 409202
 end match
-
 
 #adapted from common-kde-branches-rules
 match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/(kpdf|kdvi)/
