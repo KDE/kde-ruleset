@@ -7,7 +7,7 @@ declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kanagram
 include common-kdeedu-rules
 
-include feature-branches
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/kanagram >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/kanagram @ 457829 <- /branches/KDE/3.5/kdeedu/kanagram @ 457828 ]
