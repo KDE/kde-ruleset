@@ -138,6 +138,11 @@ match /trunk/kdegraphics/kdvi/
   branch dvi
   max revision 409202
 end match
+match /branches/work/kde4/kdegraphics/kdvi/
+  repository okular
+  branch kdvi/kde4
+  max revision 439695 # r439696 deletes all kdegraphics from kde4
+end match
 
 #okular-specific cmake files
 match /trunk/KDE/kdegraphics/cmake/modules/

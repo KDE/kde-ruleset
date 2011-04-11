@@ -29,3 +29,19 @@
 
 # merge kpdf kde4 into kpdf trunk
 439565@/branches/work/kde4/kdegraphics/kpdf/ 439692@/trunk/KDE/kdegraphics/kpdf/
+
+
+# forward-ports from kdvi trunk to kdvi kde4
+# 421139 -> 422788 already noticed by svn2git
+425063@/trunk/KDE/kdegraphics/kdvi/ 427342@/branches/work/kde4/kdegraphics/kdvi/
+# 428113 -> 428206 already noticed by svn2git
+429176@/trunk/KDE/kdegraphics/kdvi/ 429298@/branches/work/kde4/kdegraphics/kdvi/
+430503@/trunk/KDE/kdegraphics/kdvi/ 430639@/branches/work/kde4/kdegraphics/kdvi/
+431615@/trunk/KDE/kdegraphics/kdvi/ 432128@/branches/work/kde4/kdegraphics/kdvi/
+433256@/trunk/KDE/kdegraphics/kdvi/ 434140@/branches/work/kde4/kdegraphics/kdvi/
+434470@/trunk/KDE/kdegraphics/kdvi/ 435284@/branches/work/kde4/kdegraphics/kdvi/
+435653@/trunk/KDE/kdegraphics/kdvi/ 436105@/branches/work/kde4/kdegraphics/kdvi/
+437918@/trunk/KDE/kdegraphics/kdvi/ 438183@/branches/work/kde4/kdegraphics/kdvi/
+
+# merge kdvi kde4 into kdvi trunk
+438183@/branches/work/kde4/kdegraphics/kdvi/ 439692@/trunk/KDE/kdegraphics/kdvi/
