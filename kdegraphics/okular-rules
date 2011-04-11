@@ -208,6 +208,11 @@ match /trunk/kdegraphics/kpdf/
   branch kpdf
   max revision 409202
 end match
+match /branches/work/kde4/kdegraphics/kpdf/
+  repository okular
+  branch kpdf/kde4
+  max revision 439695 # r439696 deletes all kdegraphics from kde4
+end match
 
 #adapted from common-kde-branches-rules
 match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/(kpdf|kdvi)/

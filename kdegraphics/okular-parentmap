@@ -6,3 +6,26 @@
 
 # merge kpdf_experiments into kpdf trunk
 374909 374920
+
+# forward-ports from kpdf trunk to kpdf kde4
+421280@/trunk/KDE/kdegraphics/kpdf/ 421283
+421295@/trunk/KDE/kdegraphics/kpdf/ 421296
+421308@/trunk/KDE/kdegraphics/kpdf/ 421309
+421335@/trunk/KDE/kdegraphics/kpdf/ 421337
+421672@/trunk/KDE/kdegraphics/kpdf/ 421675
+422024@/trunk/KDE/kdegraphics/kpdf/ 422032
+422092@/trunk/KDE/kdegraphics/kpdf/ 422788
+422907@/trunk/KDE/kdegraphics/kpdf/ 422910
+428099@/trunk/KDE/kdegraphics/kpdf/ 428206
+428428@/trunk/KDE/kdegraphics/kpdf/ 429298
+429506@/trunk/KDE/kdegraphics/kpdf/ 430639
+431662@/trunk/KDE/kdegraphics/kpdf/ 432128
+432887@/trunk/KDE/kdegraphics/kpdf/ 433213
+433429@/trunk/KDE/kdegraphics/kpdf/ 434140
+434498@/trunk/KDE/kdegraphics/kpdf/ 435284
+436026@/trunk/KDE/kdegraphics/kpdf/ 436105
+436424@/trunk/KDE/kdegraphics/kpdf/ 437150
+437918@/trunk/KDE/kdegraphics/kpdf/ 438183
+
+# merge kpdf kde4 into kpdf trunk
+439565 439692@/trunk/KDE/kdegraphics/kpdf/
