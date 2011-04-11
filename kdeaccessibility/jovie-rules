@@ -25,6 +25,12 @@
 create repository KDE/kdeaccessibility/jovie
 end repository
 
+match /trunk/kdeaccessibility/doc/(kttsd|jovie)/
+  repository KDE/kdeaccessibility/jovie
+  branch master
+  prefix doc/
+end match
+
 # during this time(rev 92214 - 409202), kdeaccessibility was directly under trunk
 match /trunk/kdeaccessibility/(kttsd|jovie|kitty)/
   repository KDE/kdeaccessibility/jovie
@@ -46,19 +52,26 @@ end match
 
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeaccessibility/(kttsd|jovie|kitty)/
   repository KDE/kdeaccessibility/jovie
-  branch KDE/\1.\2
+  branch \1.\2
+  max revision 409202
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeaccessibility/doc/(kttsd|jovie|kitty)/
+  repository KDE/kdeaccessibility/jovie
+  branch \1.\2
+  prefix doc/
   max revision 409202
 end match
 
 match /tags/KDE/([^/]+)A/kdeaccessibility/(kttsd|jovie|kitty)/
   repository KDE/kdeaccessibility/jovie
-  branch KDE/\1a
+  branch \1a
   annotated true
   min revision 409209
 end match
 match /tags/KDE/([^/]+)/kdeaccessibility/(kttsd|jovie|kitty)/
   repository KDE/kdeaccessibility/jovie
-  branch KDE/\1
+  branch \1
   annotated true
   min revision 409209
 end match
@@ -120,12 +133,24 @@ match /tags/KDE/3.5.0-beta1/kdeaccessibility/(kttsd|jovie|kitty)/
 end match
 match /branches/KDE/([^/]+)A/kdeaccessibility/(kttsd|jovie|kitty)/
   repository KDE/kdeaccessibility/jovie
-  branch KDE/\1a
+  branch \1a
   min revision 409209
 end match
 match /branches/KDE/([^/]+)/kdeaccessibility/(kttsd|jovie|kitty)/
   repository KDE/kdeaccessibility/jovie
-  branch KDE/\1
+  branch \1
+  min revision 409209
+end match
+match /branches/KDE/([^/]+)A/kdeaccessibility/doc/(kttsd|jovie|kitty)/
+  repository KDE/kdeaccessibility/jovie
+  branch \1a
+  prefix doc/
+  min revision 409209
+end match
+match /branches/KDE/([^/]+)/kdeaccessibility/doc/(kttsd|jovie|kitty)/
+  repository KDE/kdeaccessibility/jovie
+  branch \1
+  prefix doc/
   min revision 409209
 end match
 

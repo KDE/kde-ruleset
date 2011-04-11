@@ -46,19 +46,19 @@ end match
 
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeaccessibility/kmag/
   repository KDE/kdeaccessibility/kmag
-  branch KDE/\1.\2
+  branch \1.\2
   max revision 409202
 end match
 
 match /tags/KDE/([^/]+)A/kdeaccessibility/kmag/
   repository KDE/kdeaccessibility/kmag
-  branch KDE/\1a
+  branch \1a
   annotated true
   min revision 409209
 end match
 match /tags/KDE/([^/]+)/kdeaccessibility/kmag/
   repository KDE/kdeaccessibility/kmag
-  branch KDE/\1
+  branch \1
   annotated true
   min revision 409209
 end match
@@ -120,12 +120,12 @@ match /tags/KDE/3.5.0-beta1/kdeaccessibility/kmag/
 end match
 match /branches/KDE/([^/]+)A/kdeaccessibility/kmag/
   repository KDE/kdeaccessibility/kmag
-  branch KDE/\1a
+  branch \1a
   min revision 409209
 end match
 match /branches/KDE/([^/]+)/kdeaccessibility/kmag/
   repository KDE/kdeaccessibility/kmag
-  branch KDE/\1
+  branch \1
   min revision 409209
 end match
 
