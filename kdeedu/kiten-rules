@@ -15,7 +15,7 @@ match /tags/KITEN_0_5_RELEASE/kdeedu/kiten/
 end match
 
 include common-kdeedu-rules
-include feature-branches
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/kiten >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
