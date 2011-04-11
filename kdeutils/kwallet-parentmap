@@ -1,26 +1,30 @@
-# r428182 is "merged 427401:428172"
-# This mapping makes r427458 a parent of it.
+# merges from trunk into kde4
 427485 428182
-
-# r435290 is "merge 434125:435261"
-# This mapping makes r434875 a parent of it.
 434875 435290
-
-# r438189 is "merge 437128:438057"
-# This mapping makes r437932 a parent of it.
 437932 438189
 
-# r439732 is coolo's "merged kde4 into trunk" commit.
-# This mapping makes the tip of the `work/kde4' branch a parent of it.
+# merge kde4 into trunk
 438189 439732
 
-# merges in kde-kaction-cleanup3 branch
+# merge qdbus-api-changes into trunk
+575611 575664
+
+# merges from trunk into kde-kaction-cleanup3
 617284 618565
 619360 620435
 # final merge into trunk
 621309 621518
 
-# merges in kinstance-redesign branch
+# merges from trunk into kinstance-redesign
 627804 627805
 # final merge into trunk
 627816 628305
+
+# merge kconfiggroup_port into trunk
+635284 635501
+
+# merge systray-rewrite into systray-rewrite-tng
+562434 564547
+
+# merge systray-rewrite-tng into trunk
+565384 565761

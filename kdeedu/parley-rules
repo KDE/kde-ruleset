@@ -40,9 +40,9 @@ match /branches/work/doc/parley/
 end match
 
 declare MODULE=kdeedu/kvoctrain
-include feature-branches
+include ../feature-branches
 declare MODULE=kdeedu/parley
-include feature-branches
+include ../feature-branches
 
 match /
 end match

@@ -7,7 +7,7 @@ declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kgeography
 include common-kdeedu-rules
 
-include feature-branches
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/kgeography >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/kgeography @ 436037 <- /trunk/kdereview/kgeography @ 436036 ]

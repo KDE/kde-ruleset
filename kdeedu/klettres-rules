@@ -7,7 +7,7 @@ declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=klettres
 include common-kdeedu-rules
 
-include feature-branches
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/klettres >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
