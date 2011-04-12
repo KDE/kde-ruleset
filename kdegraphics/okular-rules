@@ -102,15 +102,6 @@ end match
 
 # END kpdf
 
-# note: capital K!
-match /trunk/playground/graphics/oKular/[^/]+$
-  #ignore files
-end match
-match /trunk/playground/graphics/oKular/doc/
-  #ignore
-end match
-
-
 # 431968: Importing kpdf_annotations to playground
 match /trunk/playground/graphics/oKular/kpdf/
   repository okular
@@ -188,7 +179,6 @@ match /branches/work/kde4/playground/graphics/cmake/
 end match
 
 
-
 match /trunk/(KDE/)?kdegraphics/doc/okular/
   repository okular
   prefix doc/
@@ -205,15 +195,6 @@ match /trunk/(KDE/)?kdegraphics/doc/kpdf/
   prefix doc/
   branch kpdf
   max revision 674185 # ignore 674186. Then history ends.
-end match
-
-# --- kdegraphics special branches ---
-
-match /trunk/(kdereview)/mobipocket/[^/]+
-  #ignore files
-end match
-match /trunk/(kdereview)/mobipocket/$
-  action recurse
 end match
 
 # BEGIN version branches
