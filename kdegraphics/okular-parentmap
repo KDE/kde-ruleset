@@ -45,3 +45,20 @@
 
 # merge kdvi kde4 into kdvi trunk
 438183@/branches/work/kde4/kdegraphics/kdvi/ 439692@/trunk/KDE/kdegraphics/kdvi/
+
+# merge kparts_urlargs_split into okular trunk
+698689 699514
+
+# merge kde4_kconfig into okular trunk
+720917 721735
+
+# merges from okular trunk into kde4_jobflags
+720951 721065
+721061 721075
+721277 721435
+
+# merge kde4_jobflags into okular trunk
+721435 721447
+
+# merge kconfig_new into okular trunk
+728208 728852
