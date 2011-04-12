@@ -51,9 +51,15 @@ match /trunk/kdereview/mobipocket/okular/
 end match
 match /trunk/playground/graphics/okular/mobipocket/
   repository okular
+  branch refs/tmp/mobipocket # don't ask me why this works... it just does
+  max revision 917030 # in 917031, code gets split into directories
+end match
+match /trunk/playground/graphics/okular/mobipocket/okular/
+  repository okular
   branch mobipocket
-  max revision 917049
-end match 
+  min revision 917031
+  max revision 917050 # 917051 deletes it from playground
+end match
 # END mobipocket
 
 # BEGIN kpdf
