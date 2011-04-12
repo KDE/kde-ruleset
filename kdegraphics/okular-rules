@@ -158,6 +158,23 @@ match /trunk/KDE/kdegraphics/okular/
   branch master
 end match
 
+match /branches/work/okular-newpageview/
+  repository okular
+  branch okular-newpageview
+end match
+match /branches/work/okular-record-presentation/
+  repository okular
+  branch okular-record-presentation
+  # r926333 created branch incorrectly, r926334 deleted it,
+  # r926335 did it again correctly.
+  min revision 926335
+end match
+match /branches/work/okular-tiff-improvements/
+  repository okular
+  branch okular-tiff-improvements
+  prefix generators/tiff/
+end match
+
 # END okular
 
 #okular-specific cmake files
