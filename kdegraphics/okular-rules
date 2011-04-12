@@ -102,32 +102,6 @@ end match
 
 # END kpdf
 
-# 431968: Importing kpdf_annotations to playground
-match /trunk/playground/graphics/oKular/kpdf/
-  repository okular
-  branch okular3-playground
-  max revision 552283 # r552284 is "remove oKular for KDE3"
-end match
-
-
-# KDE 4 development
-match /branches/work/kde4/playground/graphics/okular/
-  repository okular
-  branch master
-end match
-match /trunk/playground/graphics/okular/
-  repository okular
-  branch master
-  # copied to trunk in 650477, deleted from playground in 650479;
-  # later revisions at this path are okular-related playground subprojects,
-  # so they must not be converted
-  max revision 650478
-end match
-match /trunk/KDE/kdegraphics/okular/
-  repository okular
-  branch master
-end match
-
 # BEGIN kdvi
 # copy from kviewshell: r556303
 match /trunk/KDE/kdegraphics/kviewshell/plugins/dvi/
@@ -155,6 +129,36 @@ match /branches/work/kde4/kdegraphics/kdvi/
   max revision 439695 # r439696 deletes all kdegraphics from kde4
 end match
 # END kdvi
+
+# BEGIN okular
+
+# 431968: Importing kpdf_annotations to playground
+match /trunk/playground/graphics/oKular/kpdf/
+  repository okular
+  branch okular3-playground
+  max revision 552283 # r552284 is "remove oKular for KDE3"
+end match
+
+
+# KDE 4 development
+match /branches/work/kde4/playground/graphics/okular/
+  repository okular
+  branch master
+end match
+match /trunk/playground/graphics/okular/
+  repository okular
+  branch master
+  # copied to trunk in 650477, deleted from playground in 650479;
+  # later revisions at this path are okular-related playground subprojects,
+  # so they must not be converted
+  max revision 650478
+end match
+match /trunk/KDE/kdegraphics/okular/
+  repository okular
+  branch master
+end match
+
+# END okular
 
 #okular-specific cmake files
 match /trunk/KDE/kdegraphics/cmake/modules/
