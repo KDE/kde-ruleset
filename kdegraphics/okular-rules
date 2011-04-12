@@ -44,6 +44,9 @@ end match
 # END
 
 # BEGIN mobipocket
+match /trunk/kdereview/mobipocket/$
+  action recurse
+end match
 match /trunk/kdereview/mobipocket/okular/
   repository okular
   branch mobipocket
