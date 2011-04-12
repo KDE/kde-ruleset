@@ -140,7 +140,7 @@ match /trunk/kdegraphics/kdvi/
 end match
 match /branches/work/kde4/kdegraphics/kdvi/
   repository okular
-  branch kdvi/kde4
+  branch kdvi-kde4
   max revision 439695 # r439696 deletes all kdegraphics from kde4
 end match
 
@@ -215,7 +215,7 @@ match /trunk/kdegraphics/kpdf/
 end match
 match /branches/work/kde4/kdegraphics/kpdf/
   repository okular
-  branch kpdf/kde4
+  branch kpdf-kde4
   max revision 439695 # r439696 deletes all kdegraphics from kde4
 end match
 
