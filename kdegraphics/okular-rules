@@ -28,9 +28,7 @@ match /branches/(?:__)?KDE_\d_\d_BRANCH/(kdegraphics/)?$
   action recurse
 end match
 
-# ---- okular ----
-
-# kdereview locations, in order
+# BEGIN epub
 match /trunk/kdereview/okular/epub/
   repository okular
   min revision 785913
@@ -43,6 +41,9 @@ match /trunk/playground/graphics/okular/epub/
   max revision 785912 # moved to kdereview
   branch epub
 end match
+# END
+
+# BEGIN mobipocket
 match /trunk/kdereview/mobipocket/okular/
   repository okular
   branch mobipocket
@@ -53,41 +54,40 @@ match /trunk/playground/graphics/okular/mobipocket/
   branch mobipocket
   max revision 917049
 end match 
-# neither has been in kdereview! Do not enable this rule, it will break history at 809228
-#match /trunk/kdereview/(okular|kpdf)/
- # repository okular
- # branch master
-#end match
+# END mobipocket
 
-# note: capital K!
-match /trunk/playground/graphics/oKular/[^/]+$
-  #ignore files
-end match
-match /trunk/playground/graphics/oKular/doc/
-  #ignore
+# BEGIN kpdf
+match /trunk/KDE/(kdegraphics)/kpdf/
+  repository okular
+  branch kpdf
+  min revision 409209
+# 540832: kpdf deleted
+  max revision 540831
 end match
 
+match /trunk/kdegraphics/kpdf/
+  repository okular
+  branch kpdf
+  max revision 409202
+end match
+match /branches/work/kde4/kdegraphics/kpdf/
+  repository okular
+  branch kpdf-kde4
+  max revision 439695 # r439696 deletes all kdegraphics from kde4
+end match
+
+match /branches/kpdf_annotations/(kdegraphics/)?$
+  action recurse
+end match
 # 388767: Created annotations branch from trunk, using (beep) cvs2svn
 match /branches/kpdf_annotations/kdegraphics/kpdf/
   repository okular
   branch kpdf-annotations
 end match
-match /branches/kpdf_annotations/kdegraphics/$
-  action recurse
-end match
-match /branches/kpdf_annotations/$
-  action recurse
-end match
 # 409205: renamed branches
 match /branches/kpdf/annotations/kdegraphics/kpdf/
   repository okular
   branch kpdf-annotations
-end match
-# 431968: Importing kpdf_annotations to playground
-match /trunk/playground/graphics/oKular/kpdf/
-  repository okular
-  branch okular3-playground
-  max revision 552283 # r552284 is "remove oKular for KDE3"
 end match
 
 match /branches/kpdf_experiments/(kdegraphics/)?$
@@ -99,6 +99,25 @@ match /branches/kpdf_experiments/kdegraphics/kpdf/
     # in 409205, the branch is renamed; but no activity happened under the new name
     max revision 409204
 end match
+
+# END kpdf
+
+# note: capital K!
+match /trunk/playground/graphics/oKular/[^/]+$
+  #ignore files
+end match
+match /trunk/playground/graphics/oKular/doc/
+  #ignore
+end match
+
+
+# 431968: Importing kpdf_annotations to playground
+match /trunk/playground/graphics/oKular/kpdf/
+  repository okular
+  branch okular3-playground
+  max revision 552283 # r552284 is "remove oKular for KDE3"
+end match
+
 
 # KDE 4 development
 match /branches/work/kde4/playground/graphics/okular/
@@ -118,6 +137,7 @@ match /trunk/KDE/kdegraphics/okular/
   branch master
 end match
 
+# BEGIN kdvi
 # copy from kviewshell: r556303
 match /trunk/KDE/kdegraphics/kviewshell/plugins/dvi/
   repository okular
@@ -129,8 +149,8 @@ end match
 match /trunk/KDE/kdegraphics/kdvi/
   repository okular
   branch dvi
-  max revision 469945
   min revision 409203
+  max revision 469945
 end match
 
 match /trunk/kdegraphics/kdvi/
@@ -143,6 +163,7 @@ match /branches/work/kde4/kdegraphics/kdvi/
   branch kdvi-kde4
   max revision 439695 # r439696 deletes all kdegraphics from kde4
 end match
+# END kdvi
 
 #okular-specific cmake files
 match /trunk/KDE/kdegraphics/cmake/modules/
@@ -195,30 +216,7 @@ match /trunk/(kdereview)/mobipocket/$
   action recurse
 end match
 
-# --- Trunk and KDE/ ---
-
-# okular / kpdf main
-
-# kpdf mainline, after okular fork
-match /trunk/KDE/(kdegraphics)/kpdf/
-  repository okular
-  branch kpdf
-  min revision 409209
-# 540832: kpdf deleted
-  max revision 540831
-end match
-
-match /trunk/kdegraphics/kpdf/
-  repository okular
-  branch kpdf
-  max revision 409202
-end match
-match /branches/work/kde4/kdegraphics/kpdf/
-  repository okular
-  branch kpdf-kde4
-  max revision 439695 # r439696 deletes all kdegraphics from kde4
-end match
-
+# BEGIN version branches
 #adapted from common-kde-branches-rules
 match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/(kpdf|kdvi)/
     repository okular
@@ -238,6 +236,7 @@ match /branches/KDE/(\d+)\.(\d+)/kdegraphics/okular/
     repository okular
     branch \1.\2
 end match
+# END
 
 declare REPO=okular
 
