@@ -4,18 +4,18 @@ end match
 
 match /branches/work/kaction-cleanup-branch/${MODULE}/
     repository ${REPO}
-    branch kde-kaction-cleanup1
+    branch refs/workbranch/kaction-cleanup1
     max revision 610651 # one before branch deletion
 end match
 match /branches/work/kaction-cleanup-branch/KDE/${MODULE}/
     repository ${REPO}
-    branch kde-kaction-cleanup2
+    branch refs/workbranch/kaction-cleanup2
     min revision 610825 # re-creation of branch
     max revision 617205 # one before branch deletion
 end match
 match /branches/work/kaction-cleanup-branch/KDE/${MODULE}/
     repository ${REPO}
-    branch kde-kaction-cleanup3
+    branch refs/workbranch/kaction-cleanup3
     min revision 617207 # re-creation of branch
     max revision 623046 # one before branch deletion
 end match
@@ -26,7 +26,7 @@ end match
 
 match /branches/work/kinstance-redesign/${MODULE}/
     repository ${REPO}
-    branch kde-kinstance-redesign
+    branch refs/workbranch/kinstance-redesign
 
     # 625211 created branch, 626924 wiped it again;
     # so start from the first revision after wipe
@@ -40,7 +40,7 @@ match /branches/work/kconfiggroup_port/${MODULE_RECURSE}$
 end match
 match /branches/work/kconfiggroup_port/${MODULE}/
     repository ${REPO}
-    branch kde-kconfiggroup_port
+    branch refs/workbranch/kconfiggroup_port
     max revision 635534 # branch got deleted in r635535
 end match
 
@@ -52,7 +52,7 @@ match /branches/work/kconfig_new_take3/KDE/${MODULE_RECURSE}$
 end match
 match /branches/work/kconfig_new_take3/KDE/${MODULE}/
     repository ${REPO}
-    branch kconfig_new
+    branch refs/workbranch/kconfig_new
     max revision 730730 # branch deleted in r730731
 end match
 
@@ -61,7 +61,7 @@ match /branches/work/kde4-qdbus-api-changes/${MODULE_RECURSE}$
 end match
 match /branches/work/kde4-qdbus-api-changes/${MODULE}/
     repository ${REPO}
-    branch qdbus-api-changes
+    branch refs/workbranch/qdbus-api-changes
     max revision 575850 # branch deleted in r575851
 end match
 
@@ -70,7 +70,7 @@ match /branches/work/kde4_jobflags/KDE/${MODULE_RECURSE}$
 end match
 match /branches/work/kde4_jobflags/KDE/${MODULE}/
     repository ${REPO}
-    branch kde4_jobflags
+    branch refs/workbranch/kde4_jobflags
     max revision 721454 # branch deleted in r721455
 end match
 
@@ -79,7 +79,7 @@ match /branches/work/kde4_kconfig/kconfig/port_trunk/${MODULE_RECURSE}$
 end match
 match /branches/work/kde4_kconfig/kconfig/port_trunk/${MODULE}/
     repository ${REPO}
-    branch kde4_kconfig
+    branch refs/workbranch/kde4_kconfig
     # branch still didn't get deleted; but for future-proofing,
     # limit it at an arbitrary current revision
     max revision 1226682
@@ -90,7 +90,7 @@ match /branches/work/kparts_urlargs_split/${MODULE_RECURSE}$
 end match
 match /branches/work/kparts_urlargs_split/${MODULE}/
     repository ${REPO}
-    branch kparts_urlargs_split
+    branch refs/workbranch/kparts_urlargs_split
     max revision 699528 # branch deleted in r699529
 end match
 
@@ -99,7 +99,7 @@ match /branches/work/kde4-systray-rewrite/${MODULE_RECURSE}$
 end match
 match /branches/work/kde4-systray-rewrite/${MODULE}/
     repository ${REPO}
-    branch systray-rewrite
+    branch refs/workbranch/systray-rewrite
     max revision 564547 # branch deleted in r564548
 end match
 
@@ -108,7 +108,7 @@ match /branches/work/kde4-systray-rewrite-tng/${MODULE_RECURSE}$
 end match
 match /branches/work/kde4-systray-rewrite-tng/${MODULE}/
     repository ${REPO}
-    branch systray-rewrite-tng
+    branch refs/workbranch/systray-rewrite-tng
     max revision 565761 # branch deleted in r565762
 end match
 
