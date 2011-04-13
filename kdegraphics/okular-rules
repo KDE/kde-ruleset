@@ -134,6 +134,13 @@ match /branches/work/kde4/kdegraphics/kdvi/
   branch kdvi-kde4
   max revision 439695 # r439696 deletes all kdegraphics from kde4
 end match
+
+match /branches/work/kviewshell-0.7/kviewshell/plugins/k?dvi/
+  repository okular
+  branch kdvi-kviewshell-0.7
+  max revision 603799 # moved elsewhere in 603800
+end match
+
 # END kdvi
 
 # BEGIN okular
