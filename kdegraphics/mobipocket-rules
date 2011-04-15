@@ -14,5 +14,32 @@ match /trunk/kdereview/mobipocket/
     max revision 928630 # 928631 deletes it from kdereview (moved to trunk earlier)
 end match
 
+# r917031 split the code into several subdirectories,
+# but we want them all anyway, so rules aren't affected
+
+# the different subdirectories of mobipocket got each moved
+# to a different kdegraphics directory, in r928589
+
+match /trunk/KDE/kdegraphics/libs/mobipocket/
+    repository mobipocket
+    branch master
+    prefix lib/
+end match
+match /trunk/KDE/kdegraphics/okular/generators/mobipocket/
+    repository mobipocket
+    branch master
+    prefix okular/
+end match
+match /trunk/KDE/kdegraphics/strigi-analyzer/mobi/
+    repository mobipocket
+    branch master
+    prefix strigi/
+end match
+match /trunk/KDE/kdegraphics/thumbnailers/mobi/
+    repository mobipocket
+    branch master
+    prefix thumbnailers/
+end match
+
 match /
 end match
