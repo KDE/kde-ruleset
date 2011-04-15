@@ -1,0 +1,18 @@
+create repository mobipocket
+end repository
+
+
+match /trunk/playground/graphics/okular/mobipocket/
+    repository mobipocket
+    branch master
+    max revision 917050 # 917051 deletes it from playground
+end match
+
+match /trunk/kdereview/mobipocket/
+    repository mobipocket
+    branch master
+    max revision 928630 # 928631 deletes it from kdereview (moved to trunk earlier)
+end match
+
+match /
+end match
