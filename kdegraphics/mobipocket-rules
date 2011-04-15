@@ -41,5 +41,41 @@ match /trunk/KDE/kdegraphics/thumbnailers/mobi/
     prefix thumbnailers/
 end match
 
+# now for some branches
+
+match /branches/KDE/(\d\.\d)/(kdegraphics/)?$
+    action recurse
+end match
+match /branches/KDE/(\d\.\d)/kdegraphics/okular/$
+    action recurse
+end match
+match /branches/KDE/(\d\.\d)/kdegraphics/okular/generators/$
+    action recurse
+end match
+match /branches/KDE/(\d\.\d)/kdegraphics/(libs|strigi-analyzer|thumbnailers)/$
+    action recurse
+end match
+
+match /branches/KDE/(\d\.\d)/kdegraphics/okular/generators/mobipocket/
+    repository mobipocket
+    branch \1
+    prefix okular/
+end match
+match /branches/KDE/(\d\.\d)/kdegraphics/libs/mobipocket/
+    repository mobipocket
+    branch \1
+    prefix lib/
+end match
+match /branches/KDE/(\d\.\d)/kdegraphics/strigi-analyzer/mobi/
+    repository mobipocket
+    branch \1
+    prefix strigi/
+end match
+match /branches/KDE/(\d\.\d)/kdegraphics/thumbnailers/mobi/
+    repository mobipocket
+    branch \1
+    prefix thumbnailers/
+end match
+
 match /
 end match
