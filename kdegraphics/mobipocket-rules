@@ -1,6 +1,7 @@
 create repository mobipocket
 end repository
 
+include ../common-kde-ignores
 
 match /trunk/playground/graphics/okular/mobipocket/
     repository mobipocket
@@ -41,7 +42,7 @@ match /trunk/KDE/kdegraphics/thumbnailers/mobi/
     prefix thumbnailers/
 end match
 
-# now for some branches
+# recursion rules for tags and branches
 
 match /branches/KDE/(\d+\.\d+)/(kdegraphics/)?$
     action recurse
@@ -50,6 +51,15 @@ match /branches/KDE/(\d+\.\d+)/kdegraphics/okular/(generators/)?$
     action recurse
 end match
 match /branches/KDE/(\d+\.\d+)/kdegraphics/(libs|strigi-analyzer|thumbnailers)/$
+    action recurse
+end match
+match /tags/KDE/(\d+\.\d+\.\d+)/(kdegraphics/)?$
+    action recurse
+end match
+match /tags/KDE/(\d+\.\d+\.\d+)/kdegraphics/okular/(generators/)?$
+    action recurse
+end match
+match /tags/KDE/(\d+\.\d+\.\d+)/kdegraphics/(libs|strigi-analyzer|thumbnailers)/$
     action recurse
 end match
 
@@ -77,6 +87,35 @@ match /branches/KDE/(\d+\.\d+)/kdegraphics/thumbnailers/mobi/
 end match
 
 # END branches
+
+# BEGIN tags
+
+match /tags/KDE/(\d+\.\d+\.\d+)/kdegraphics/okular/generators/mobipocket/
+    repository mobipocket
+    branch refs/tags/v\1
+    prefix okular/
+    annotated true
+end match
+match /tags/KDE/(\d+\.\d+\.\d+)/kdegraphics/libs/mobipocket/
+    repository mobipocket
+    branch refs/tags/v\1
+    prefix lib/
+    annotated true
+end match
+match /tags/KDE/(\d+\.\d+\.\d+)/kdegraphics/strigi-analyzer/mobi/
+    repository mobipocket
+    branch refs/tags/v\1
+    prefix strigi/
+    annotated true
+end match
+match /tags/KDE/(\d+\.\d+\.\d+)/kdegraphics/thumbnailers/mobi/
+    repository mobipocket
+    branch refs/tags/v\1
+    prefix thumbnailers/
+    annotated true
+end match
+
+# END tags
 
 match /
 end match
