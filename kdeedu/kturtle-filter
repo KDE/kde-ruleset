@@ -12,6 +12,8 @@ readd_rev=587357;
 # A..B returns commits from A to B, excluding A and including B.
 # We want to include A, so we have to start from from A's parent.
 # And we want to exclude B, so we have to end at B's parent too.
+#
+# In other words, A..B is (A,B], and A^..B^ is [A,B).
 range=$(echo "$deletion_rev^..$readd_rev^" | "$bindir/translateRevlist.py")
 
 # this is disgusting
