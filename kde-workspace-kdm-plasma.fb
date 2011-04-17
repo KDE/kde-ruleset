@@ -9,6 +9,8 @@
 # main repository. It should only rewrite commits in the new branch,
 # but it needs the rest of the commits to exist in the same repo.
 
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+
 revlist="1070168 1070177
 1076908 1076923
 1079065 1079200
@@ -22,6 +24,6 @@ revlist="1070168 1070177
 
 git filter-branch --parent-filter "$(
     echo "$revlist" |
-    $bindir/translateRevlist.py /dev/stdin |
-    $bindir/add-parents /dev/stdin
+    "$bindir"/translateRevlist.py /dev/stdin |
+    "$bindir"/add-parents /dev/stdin
 )" --index-filter "git rm --cached --ignore-unmatch -r wallpapers"

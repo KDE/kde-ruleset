@@ -1,10 +1,7 @@
 #!/bin/bash
 
 set -e
-if test -z "$bindir"; then
-    echo "set \$bindir to the path to kde-ruleset's bin directory" >&2;
-    exit 1
-fi
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 
 deletion_rev=475469;
 readd_rev=587357;

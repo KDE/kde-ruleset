@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # A bunch of files were moved in very early perlqt history. However, this
 # was done by copying in one commit (r1091179) and deleting in another
@@ -10,9 +10,7 @@
 # 
 # Requires translateRevlist.py from kde-ruleset/bin.
 
-if [ -z "$bindir" ]; then
-bindir=../bin
-fi
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 
 revision_to_remove=$(echo 1091179 | "$bindir/translateRevlist.py" /dev/stdin)
 

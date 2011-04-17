@@ -1,8 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-if [ -z "$bindir" ]; then
-bindir=../bin
-fi
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 
 tempdir=$(
     mktemp -u -d --tmpdir=/dev/shm rubyfilterbranch.XXXXX ||
