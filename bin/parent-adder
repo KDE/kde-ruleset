@@ -3,8 +3,11 @@
 set -e
 
 bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+source "$bindir/filter-goodies"
 
-git filter-branch \
+tempdir="$(calc_tempdir parent-adder-fb)"
+
+git filter-branch -d "$tempdir" \
     --parent-filter "$($bindir/translateRevlist.py "$1" | $bindir/add-parents.py)" \
     --tag-name-filter cat \
     -- --all --date-order
