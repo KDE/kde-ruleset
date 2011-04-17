@@ -2,12 +2,9 @@
 
 bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 
-tempdir=$(
-    mktemp -u -d --tmpdir=/dev/shm rubyfilterbranch.XXXXX ||
-    mktemp -u -d --tmpdir rubyfilterbranch.XXXXX ||
-    echo ".git-rewrite"
-)
-echo "using $tempdir as temporary directory"
+source "$bindir/filter-goodies"
+
+tempdir="$(calc_tempdir rubyfilterbranch)"
 
 git filter-branch --tag-name-filter cat -d "$tempdir" --tree-filter '
 handle_move() {

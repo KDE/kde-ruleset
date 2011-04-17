@@ -1,0 +1,9 @@
+#!/bin/bash
+
+calc_tempdir() {
+    mktemp -u -d --tmpdir=/dev/shm "$1".XXXXX ||
+    mktemp -u -d --tmpdir "$1".XXXXX ||
+    echo ".git-rewrite"
+
+    echo "using $tempdir as temporary directory" >&2
+}
