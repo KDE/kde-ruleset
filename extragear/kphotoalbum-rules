@@ -18,7 +18,7 @@ match /branches/extragear/kde3/graphics/kphotoalbum/
     branch master
 end match
 
-match /trunk/extragear/graphics/KimDaBa/
+match /trunk/extragear/graphics/kimdaba/
     repository kphotoalbum
     branch master
 end match
