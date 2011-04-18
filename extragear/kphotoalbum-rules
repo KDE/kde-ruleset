@@ -30,7 +30,7 @@ end match
 
 match /branches/extragear/kde3/graphics/kphotoalbum/
     repository kphotoalbum
-    branch master
+    branch kde3
 end match
 
 match /branches/kphotoalbum/devel/
