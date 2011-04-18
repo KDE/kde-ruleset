@@ -23,6 +23,11 @@ match /trunk/extragear/graphics/kphotoalbum/
     branch master
 end match
 
+match /branches/kphotoalbum/2.2.x/
+    repository kphotoalbum
+    branch 2.2
+end match
+
 match /branches/kphotoalbum/3.0.x/
     repository kphotoalbum
     branch 3.0
@@ -53,6 +58,23 @@ match /branches/work/kphotoalbum-iptc/
     repository kphotoalbum
     branch iptc
     max revision 717623 # 717624 deletes branch
+end match
+
+match /branches/kphotoalbum/geolocationbrowser/
+    repository kphotoalbum
+    branch geolocationbrowser
+end match
+
+match /branches/kphotoalbum/update-to-kexi-1.6.1/
+    repository kphotoalbum
+    branch update-to-kexi-1.6.1
+    max revision 626633 # 626634 deletes branch
+end match
+
+match /branches/kphotoalbum/with-kexidb/
+    repository kphotoalbum
+    branch with-kexidb
+    max revision 617975 # 617976 deletes branch
 end match
 
 # Tags
