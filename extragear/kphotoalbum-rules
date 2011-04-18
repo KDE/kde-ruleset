@@ -1,0 +1,45 @@
+#
+# Created by Jesper Pedersen <blackie@kde.org>
+#
+
+#
+# Create the kile repository
+#
+create repository kphotoalbum
+end repository
+
+match /trunk/extragear/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch master
+end match
+
+match /branches/extragear/kde3/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch master
+end match
+
+match /trunk/extragear/graphics/KimDaBa/
+    repository kphotoalbum
+    branch master
+end match
+
+match /trunk/kdeextragear-2/kimdaba/
+    repository kphotoalbum
+    branch master
+end match
+
+match /branches/kphotoalbum/devel/
+  repository kphotoalbum
+  branch devel
+end match
+
+match /branches/kphotoalbum/browser-rework/
+  repository kphotoalbum
+  branch browser-rework
+end match
+
+
+
+# Ignore everything else
+match /
+end match
