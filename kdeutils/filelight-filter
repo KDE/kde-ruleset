@@ -19,4 +19,4 @@ git filter-branch \
                   else
                       cat;
                   fi" \
-    -- --all
+    -- --all --not $FAULTY_GIT_REV^
