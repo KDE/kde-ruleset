@@ -1,0 +1,40 @@
+#!/bin/bash
+
+set -e
+
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+source "$bindir/filter-goodies"
+
+# usual parent-adding
+$bindir/parent-adder $RULESETDIR/kdegraphics/mobipocket-parentmap
+
+# clear the backup refs, otherwise translateRevlist
+# will give the wrong commits in the following filter-branches.
+delete_fb_backups;
+
+# r928589 moves all the subdirectories of mobipocket
+# into different kdegraphics projects.
+# In the process, CMakeLists.txt and Messages.sh are lost.
+# However, svn2git doesn't notice the deletion
+# (despite my attempts tweaking rules).
+# We fix it here by deleting those two files in all branches,
+# in all commits since r928589 (inclusive).
+
+tempdir="$(calc_tempdir mobipocket-filter)"
+
+rev="$(echo "928589^" | $bindir/translateRevlist.py)"
+
+git filter-branch -f -d "$tempdir" \
+--tag-name-filter cat --tree-filter "rm -f CMakeLists.txt Messages.sh" -- --all ^$rev
+
+# Another thing that happens after r928589
+# is that every directory is created by a prefixing rule,
+# and nothing goes directly to the root.
+# This triggers a bug in svn2git. I worked around it with a patch,
+# but it makes all tags diverge with an empty commit.
+# So here we delete all empty commits in tags.
+
+git filter-branch -f -d "$tempdir" \
+--tag-name-filter cat --prune-empty -- --tags --not --branches
+
+delete_fb_backups;

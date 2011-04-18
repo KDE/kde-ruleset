@@ -10,3 +10,8 @@ calc_tempdir() {
     echo "using $tempdir as temporary directory" >&2
     echo "$tempdir"
 }
+# delete git-filter-branch backup refs.
+delete_fb_backups() {
+    git for-each-ref --format="%(refname)" ${1:-refs/original/} | \
+    xargs --no-run-if-empty -n 1 git update-ref -d
+}
