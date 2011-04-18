@@ -43,6 +43,12 @@ match /branches/kphotoalbum/browser-rework/
   branch browser-rework
 end match
 
+match /branches/kphotoalbum/soc/
+    repository kphotoalbum
+    branch soc
+    max revision 617975 # 617976 deletes branch
+end match
+
 # Tags
 match /tags/kphotoalbum/(\d[^/]+)/
     repository kphotoalbum
