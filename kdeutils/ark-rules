@@ -58,6 +58,12 @@ match /branches/work/libarchive-based-ark/ark/
   max revision 694571
 end match
 
+match /branches/ark_rework/kdeutils/ark/
+    repository ${REPO}
+    branch work/ark_rework
+    max revision 409204 # 409205 deletes branch
+end match
+
 ##### Ignore everything else #####
 match /
 end match
