@@ -20,3 +20,19 @@ clear 694732
 # r439732 is coolo's "merged kde4 into trunk" commit.
 # This mapping makes the tip of the `work/kde4' branch a parent of it.
 438189 439732
+
+# intermediate merges from trunk to kaction-cleanup2
+611523 614117
+616861 617061
+
+# merge of kaction-cleanup3 into trunk
+621166 621518
+
+# merge kinstance-redesign into turnk
+627816 628305
+
+# merge kconfiggroup_port into trunk
+634090 635618
+
+# merge kde4_kconfig into turnk
+720910 721930

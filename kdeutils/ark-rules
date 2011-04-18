@@ -64,6 +64,10 @@ match /branches/ark_rework/kdeutils/ark/
     max revision 409204 # 409205 deletes branch
 end match
 
+declare MODULE=kdeutils/ark
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
 ##### Ignore everything else #####
 match /
 end match
