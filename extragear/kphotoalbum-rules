@@ -3,7 +3,7 @@
 #
 
 #
-# Create the kile repository
+# Create the kphotoalbum repository
 #
 create repository kphotoalbum
 end repository
@@ -38,7 +38,12 @@ match /branches/kphotoalbum/browser-rework/
   branch browser-rework
 end match
 
-
+# Tags
+match /tags/kphotoalbum/([^/]+)/kphotoalbum/
+    repository kphotoalbum
+    branch refs/tags/v\1
+    annotated true
+end match
 
 # Ignore everything else
 match /
