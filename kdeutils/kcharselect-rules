@@ -18,6 +18,10 @@ match /trunk/(KDE/)?kdeutils/kcharselect/
   branch master
 end match
 
+declare MODULE=kdeutils/kcharselect
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
 ##### Ignore everything else #####
 match /
 end match
