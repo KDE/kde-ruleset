@@ -49,6 +49,12 @@ match /branches/kphotoalbum/soc/
     max revision 617975 # 617976 deletes branch
 end match
 
+match /branches/work/kphotoalbum-iptc/
+    repository kphotoalbum
+    branch iptc
+    max revision 717623 # 717624 deletes branch
+end match
+
 # Tags
 match /tags/kphotoalbum/(\d[^/]+)/
     repository kphotoalbum
