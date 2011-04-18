@@ -39,7 +39,7 @@ match /branches/kphotoalbum/browser-rework/
 end match
 
 # Tags
-match /tags/kphotoalbum/([^/]+)/kphotoalbum/
+match /tags/kphotoalbum/([^/]+)/
     repository kphotoalbum
     branch refs/tags/v\1
     annotated true
