@@ -23,6 +23,11 @@ match /trunk/extragear/graphics/kphotoalbum/
     branch master
 end match
 
+match /branches/kphotoalbum/3.0.x/
+    repository kphotoalbum
+    branch 3.0
+end match
+
 match /branches/extragear/kde3/graphics/kphotoalbum/
     repository kphotoalbum
     branch master
