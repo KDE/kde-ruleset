@@ -1,0 +1,12 @@
+filelight
+=========
+
+It's as complete as it can be.
+Due to how late it went into KDE trunk,
+it doesn't have any "global work branch".
+
+The only missing thing is a 1.1 branch
+under /branches/filelight/1.1,
+which only has 1 commit that didn't get merged.
+Probably a dead-end experiment.
+
