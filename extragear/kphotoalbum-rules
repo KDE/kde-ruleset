@@ -45,6 +45,12 @@ match /tags/kphotoalbum/([^/]+)/kphotoalbum/
     annotated true
 end match
 
+match /trunk/extragear/graphics/doc/kphotoalbum/
+    repository kphotoalbum
+    prefix doc/
+    branch master
+end match
+
 # Ignore everything else
 match /
 end match
