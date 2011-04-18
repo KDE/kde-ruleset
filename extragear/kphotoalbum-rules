@@ -8,12 +8,7 @@
 create repository kphotoalbum
 end repository
 
-match /trunk/extragear/graphics/kphotoalbum/
-    repository kphotoalbum
-    branch master
-end match
-
-match /branches/extragear/kde3/graphics/kphotoalbum/
+match /trunk/kdeextragear-2/kimdaba/
     repository kphotoalbum
     branch master
 end match
@@ -23,7 +18,12 @@ match /trunk/extragear/graphics/kimdaba/
     branch master
 end match
 
-match /trunk/kdeextragear-2/kimdaba/
+match /trunk/extragear/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch master
+end match
+
+match /branches/extragear/kde3/graphics/kphotoalbum/
     repository kphotoalbum
     branch master
 end match
