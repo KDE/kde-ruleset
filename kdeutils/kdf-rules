@@ -19,6 +19,10 @@ match /trunk/(KDE/)?kdeutils/kdf/
   branch master
 end match
 
+declare MODULE=kdeutils/kdf
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
 ##### Ignore everything else #####
 match /
 end match
