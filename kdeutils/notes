@@ -52,3 +52,12 @@ printer-applet
 
 There's nothing here outside trunk and version branches,
 so even feature-branches is unnecessary.
+
+kdf
+===
+
+Some doc history was missing, fixed now.
+Note the fix requires a newer svn2git.
+
+Work branches exported.
+Comprehensive check didn't show anything else missing.
