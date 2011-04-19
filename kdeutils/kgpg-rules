@@ -25,6 +25,10 @@ match /branches/work/kgpg2/
   max revision 766859
 end match
 
+declare MODULE=kdeutils/kgpg
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
 ##### Ignore everything else #####
 match /
 end match

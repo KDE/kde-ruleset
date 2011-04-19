@@ -39,3 +39,10 @@ Comprehensively checked.
 
 Missing some $branch/kdebase/kcontrol/privacy/ history,
 including suse_kickoff and suse_kickoff_qstyle work branches.
+
+kgpg
+====
+
+Comprehensively checked, only thing missing was bleedingedge branch.
+
+Merges synthed.
