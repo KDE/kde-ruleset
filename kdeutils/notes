@@ -31,3 +31,11 @@ kwallet
 =======
 
 Comprehensively checked; there's nothing missing.
+
+sweeper
+=======
+
+Comprehensively checked.
+
+Missing some $branch/kdebase/kcontrol/privacy/ history,
+including suse_kickoff and suse_kickoff_qstyle work branches.

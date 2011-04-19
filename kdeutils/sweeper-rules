@@ -56,6 +56,10 @@ match /trunk/KDE/kdeutils/privacy/
   # max revision 468677
 end match
 
+declare MODULE=kdeutils/sweeper
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
 ##### Ignore everything else #####
 match /
 end match
