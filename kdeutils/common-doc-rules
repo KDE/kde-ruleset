@@ -1,6 +1,6 @@
 match /trunk/(KDE/)?kdeutils/doc/${APPLICATION}/
   repository ${REPO}
-  prefix doc/
+  prefix ${DOCPREFIX|doc/}
   branch master
   # min revision 18257
 end match
@@ -8,7 +8,7 @@ end match
 # /work/kde4/kdeutils branch
 match /branches/work/kde4/kdeutils/doc/${APPLICATION}/
   repository ${REPO}
-  prefix doc/
+  prefix ${DOCPREFIX|doc/}
   branch work/kde4
   min revision 427402
   max revision 438189
@@ -17,7 +17,7 @@ end match
 # CVS branches
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/doc/${APPLICATION}/
   repository ${REPO}
-  prefix doc/
+  prefix ${DOCPREFIX|doc/}
   branch \1.\2
   max revision 409202
 end match
@@ -25,7 +25,7 @@ end match
 # SVN branches
 match /branches/KDE/([^/]+)/kdeutils/doc/${APPLICATION}/
   repository ${REPO}
-  prefix doc/
+  prefix ${DOCPREFIX|doc/}
   branch \1
   min revision 409209
 end match

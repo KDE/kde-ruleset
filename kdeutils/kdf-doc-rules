@@ -7,14 +7,15 @@
 # - kdeutils/doc/kdf/ -> kdf/doc/manual/
 # - kdeutils/doc/kcontrol/blockdevices/ -> kdf/doc/kcontrol
 
-match /trunk/(KDE/)?kdeutils/doc/kdf/
-  repository ${REPO}
-  prefix doc/manual/
-  branch master
-end match
+# save and restore the value
+declare APP_OLD=${APPLICATION}
 
-match /trunk/KDE/kdeutils/doc/kcontrol/blockdevices/
-  repository ${REPO}
-  prefix doc/kcontrol/
-  branch master
-end match
+declare APPLICATION=kdf
+declare DOCPREFIX=doc/manual/
+include common-doc-rules
+
+declare APPLICATION=kcontrol/blockdevices
+declare DOCPREFIX=doc/kcontrol/
+include common-doc-rules
+
+declare APPLICATION=${APP_OLD}
