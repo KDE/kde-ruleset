@@ -18,6 +18,10 @@ match /trunk/(KDE/)?kdeutils/ktimer/
   branch master
 end match
 
+declare MODULE=kdeutils/ktimer
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
 ##### Ignore everything else #####
 match /
 end match

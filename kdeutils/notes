@@ -61,3 +61,9 @@ Note the fix requires a newer svn2git.
 
 Work branches exported.
 Comprehensive check didn't show anything else missing.
+
+ktimer
+======
+
+Work branches added, merges synth'd,
+but I didn't do a complete search for missing history yet.
