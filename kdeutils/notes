@@ -46,3 +46,9 @@ kgpg
 Comprehensively checked, only thing missing was bleedingedge branch.
 
 Merges synthed.
+
+printer-applet
+==============
+
+There's nothing here outside trunk and version branches,
+so even feature-branches is unnecessary.
