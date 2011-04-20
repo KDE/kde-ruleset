@@ -8,87 +8,112 @@
 create repository kphotoalbum
 end repository
 
+# 198778-409209
 match /trunk/kdeextragear-2/kimdaba/
     repository kphotoalbum
-    branch master
+    branch h1
 end match
 
+# 409209-498149
 match /trunk/extragear/graphics/kimdaba/
     repository kphotoalbum
-    branch master
+    branch h1
 end match
 
+# 498149-648351
 match /trunk/extragear/graphics/kphotoalbum/
     repository kphotoalbum
-    branch master
+    branch h1
+    max revision 648351
 end match
 
-match /branches/kphotoalbum/2.2.x/
-    repository kphotoalbum
-    branch 2.2
-end match
+# match /branches/kphotoalbum/2.2.x/
+#     repository kphotoalbum
+#     branch 2.2
+# end match
 
 match /branches/kphotoalbum/3.0.x/
     repository kphotoalbum
     branch 3.0
 end match
 
+# 617978-648353
+match /branches/kphotoalbum/devel/
+  repository kphotoalbum
+  branch devel1
+  max revision 648353
+end match
+
+# 648353-670776
+match /trunk/extragear/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch h2
+    min revision 648353
+    max revision 670776
+end match
+
+# 670776-today (last change 946538)
 match /branches/extragear/kde3/graphics/kphotoalbum/
     repository kphotoalbum
     branch kde3
 end match
 
-match /branches/kphotoalbum/devel/
-  repository kphotoalbum
-  branch devel
-end match
-
-match /branches/kphotoalbum/browser-rework/
-  repository kphotoalbum
-  branch browser-rework
-end match
-
-match /branches/kphotoalbum/soc/
+# 681253-1023637
+match /trunk/extragear/graphics/kphotoalbum/
     repository kphotoalbum
-    branch soc
-    max revision 617975 # 617976 deletes branch
+    branch h3
+    min revision 681253
+    max revision 1023637
 end match
 
-match /branches/work/kphotoalbum-iptc/
-    repository kphotoalbum
-    branch iptc
-    max revision 717623 # 717624 deletes branch
-end match
+# 
+# match /branches/kphotoalbum/browser-rework/
+#   repository kphotoalbum
+#   branch browser-rework
+# end match
+# 
+# match /branches/kphotoalbum/soc/
+#     repository kphotoalbum
+#     branch soc
+#     max revision 617975 # 617976 deletes branch
+# end match
+# 
+# match /branches/work/kphotoalbum-iptc/
+#     repository kphotoalbum
+#     branch iptc
+#     max revision 717623 # 717624 deletes branch
+# end match
+# 
+# match /branches/kphotoalbum/geolocationbrowser/
+#     repository kphotoalbum
+#     branch geolocationbrowser
+# end match
+# 
+# match /branches/kphotoalbum/update-to-kexi-1.6.1/
+#     repository kphotoalbum
+#     branch update-to-kexi-1.6.1
+#     max revision 626633 # 626634 deletes branch
+# end match
+# 
+# match /branches/kphotoalbum/with-kexidb/
+#     repository kphotoalbum
+#     branch with-kexidb
+#     max revision 617975 # 617976 deletes branch
+# end match
+# 
+# # Tags
+# match /tags/kphotoalbum/(\d[^/]+)/
+#     repository kphotoalbum
+#     branch refs/tags/v\1
+#     annotated true
+# end match
+# 
+# match /trunk/extragear/graphics/doc/kphotoalbum/
+#     repository kphotoalbum
+#     prefix doc/
+#     branch master
+# end match
 
-match /branches/kphotoalbum/geolocationbrowser/
-    repository kphotoalbum
-    branch geolocationbrowser
-end match
-
-match /branches/kphotoalbum/update-to-kexi-1.6.1/
-    repository kphotoalbum
-    branch update-to-kexi-1.6.1
-    max revision 626633 # 626634 deletes branch
-end match
-
-match /branches/kphotoalbum/with-kexidb/
-    repository kphotoalbum
-    branch with-kexidb
-    max revision 617975 # 617976 deletes branch
-end match
-
-# Tags
-match /tags/kphotoalbum/(\d[^/]+)/
-    repository kphotoalbum
-    branch refs/tags/v\1
-    annotated true
-end match
-
-match /trunk/extragear/graphics/doc/kphotoalbum/
-    repository kphotoalbum
-    prefix doc/
-    branch master
-end match
 
 # Ignore everything else
 match /
