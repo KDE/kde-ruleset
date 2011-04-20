@@ -1,7 +1,7 @@
 digraph {
     edge [style="dotted"]
     //rankdir="LR"
-    size="10,15"
+    size="10,20"
     subgraph cluster_cvs {
         label="trunk/kdeextragear-2/kimdaba";
         cvs198778 [label="198778"]
@@ -42,12 +42,15 @@ digraph {
         xtra_kpa971099 [label="971099"]
         xtra_kpa1023636 [label="1023636"]
         xtra_kpa1023638 [label="1023638"]
+        xtra_kpa1040081 [label="1040081"]
+        xtra_kpa1213128 [label="1213128"]
         xtra_kpa498149 -> xtra_kpa530915 -> xtra_kpa541819 -> xtra_kpa568863 -> xtra_kpa572628 -> xtra_kpa572802 -> xtra_kpa617977 -> xtra_kpa648349
         xtra_kpa648349 -> xtra_kpa648353 [style="invis" minlen=2]
         xtra_kpa648353 -> xtra_kpa670775
         xtra_kpa670775 -> xtra_kpa681253 [style="invis" minlen=3]
         xtra_kpa681253 -> xtra_kpa971099 -> xtra_kpa1023636
         xtra_kpa1023636 -> xtra_kpa1023638 [style="invis"]
+        xtra_kpa1023638 -> xtra_kpa1040081 -> xtra_kpa1213128
     }
     subgraph cluster_daba_dev {
         label="branches/kimdaba/development"
@@ -114,9 +117,15 @@ digraph {
         browser981499 [label="981499"]
         browser971129 -> browser981499
     }
+    subgraph cluster_stable {
+        label="branches/stable/extragear-kde4/graphics/kphotoalbum";
+        stable1040082 [label="1040082"]
+        stable1090864 [label="1090864\n[del]"]
+        stable1040082 -> stable1090864
+    }
 
     subgraph edges {
-        edge [style=solid]
+        edge [style=solid decorate]
         cvs269909 -> daba10_269911 [label="branch"]
         cvs287910 -> daba11_287910 [label="branch"]
         cvs409209 -> xtra_daba409209 [label="move"]
@@ -147,5 +156,7 @@ digraph {
 
         xtra_kpa1023636 -> "tag4.0.2" [label="move"]
         devel1023637 -> xtra_kpa1023638 [label="move"]
+
+        xtra_kpa1040081 -> stable1040082 [label="branch"]
     }
 }
