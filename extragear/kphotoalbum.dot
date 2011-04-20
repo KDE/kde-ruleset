@@ -1,0 +1,76 @@
+digraph {
+    edge [style="dotted"]
+    //rankdir="LR"
+    size="8,9"
+    subgraph cluster_cvs {
+        label="trunk/kdeextragear-2/kimdaba";
+        cvs198778 [label="198778"]
+        cvs269909 [label="269909"]
+        cvs287910 [label="287910"]
+        cvs409209 [label="409209"]
+        cvs198778->cvs269909->cvs287910->cvs409209
+    }
+    subgraph cluster_1_0 {
+        label="branches/kimdaba_1_0_x/kdeextragear-2/kimdaba";
+        daba10_269911 [label="269911"]
+    }
+    subgraph cluster_1_1 {
+        label="branches/kimdaba_1_1_x/kdeextragear-2/kimdaba";
+        daba11_287910 [label="287910"]
+    }
+    subgraph cluster_xtra_daba {
+        label="trunk/extragear/graphics/kimdaba"
+        xtra_daba409209 [label="409209"]
+        xtra_daba409758 [label="409758"]
+        xtra_daba436396 [label="436396"]
+        xtra_daba498149 [label="498149"]
+        xtra_daba409209 -> xtra_daba409758 -> xtra_daba436396 -> xtra_daba498149
+    }
+    subgraph cluster_xtra_kpa {
+        label="trunk/extragear/graphics/kphotoalbum"
+        xtra_kpa498149 [label="498149"]
+        xtra_kpa530915 [label="530915"]
+        xtra_kpa541819 [label="541819"]
+        xtra_kpa568863 [label="568863"]
+        xtra_kpa572628 [label="572628"]
+        xtra_kpa572802 [label="572802"]
+        xtra_kpa498149 -> xtra_kpa530915 -> xtra_kpa541819 -> xtra_kpa568863 -> xtra_kpa572628 -> xtra_kpa572802
+    }
+    subgraph cluster_daba_dev {
+        label="branches/kimdaba/development"
+        daba_dev409758 [label="409758"]
+        daba_dev436389 [label="436389"]
+        daba_dev436401 [label="436401\n[del]"]
+        daba_dev409758 -> daba_dev436389 -> daba_dev436401
+    }
+    subgraph cluster_2_2 {
+        label="branches/kphotoalbum/2.2.x"
+        kpa22_531669 [label="531669"]
+    }
+    subgraph cluster_soc {
+        label="branches/kphotoalbum/soc"
+        soc541820 [label="541820"]
+        soc568847 [label="568847"]
+        soc541820 -> soc568847
+    }
+    subgraph cluster_kexi {
+        label="branches/kphotoalbum/with-kexidb"
+        kexidb572629 [label="572629"]
+        kexidb572800 [label="572800"]
+        kexidb572629 -> kexidb572800
+    }
+    subgraph edges {
+        edge [style=solid]
+        cvs269909 -> daba10_269911
+        cvs287910 -> daba11_287910
+        cvs409209 -> xtra_daba409209
+        xtra_daba409758 -> daba_dev409758
+        daba_dev436389 -> xtra_daba436396 [label="merge"]
+        xtra_daba498149 -> xtra_kpa498149 [label="rename"]
+        xtra_kpa530915 -> kpa22_531669 [label="branch for 2.2.x"]
+        xtra_kpa541819 -> soc541820
+        soc568847 -> xtra_kpa568863 [label="merge, KexiDB"]
+        xtra_kpa572628 -> kexidb572629
+        kexidb572800 -> xtra_kpa572802
+    }
+}
