@@ -42,9 +42,9 @@ digraph {
         xtra_kpa681253 [label="681253" fillcolor="green"]
         xtra_kpa971099 [label="971099" fillcolor="green"]
         xtra_kpa1023637 [label="1023637" fillcolor="green"]
-        xtra_kpa1023638 [label="1023638"]
-        xtra_kpa1040081 [label="1040081"]
-        xtra_kpa1213128 [label="1213128"]
+        xtra_kpa1023638 [label="1023638" fillcolor="green"]
+        xtra_kpa1040081 [label="1040081" fillcolor="green"]
+        xtra_kpa1213128 [label="1213128" fillcolor="green"]
         xtra_kpa498149 -> xtra_kpa530915 -> xtra_kpa541819 -> xtra_kpa568863 -> xtra_kpa572628 -> xtra_kpa572802 -> xtra_kpa617977 -> xtra_kpa648349
         xtra_kpa648349 -> xtra_kpa648353 [style="invis" minlen=2]
         xtra_kpa648353 -> xtra_kpa670775
@@ -88,8 +88,8 @@ digraph {
         devel626600 [label="626600" fillcolor=green]
         devel626627 [label="626627" fillcolor=green]
         devel648352 [label="648352" fillcolor=green] // end
-        devel981503 [label="981503"]
-        devel1023637 [label="1023637"]
+        devel981503 [label="981503" fillcolor=green]
+        devel1023637 [label="1023637" fillcolor=green]
         devel617978 -> devel626600 -> devel626627 -> devel648352
         devel648352 -> devel981503 [style="invis" minlen=6]
         devel981503 -> devel1023637
@@ -114,14 +114,14 @@ digraph {
     }
     subgraph cluster_browser {
         label="branches/kphotoalbum/browser-rework"
-        browser971129 [label="971129"]
-        browser981499 [label="981499"]
+        browser971129 [label="971129" fillcolor=green]
+        browser981499 [label="981499" fillcolor=green]
         browser971129 -> browser981499
     }
     subgraph cluster_stable {
         label="branches/stable/extragear-kde4/graphics/kphotoalbum";
-        stable1040082 [label="1040082"]
-        stable1090864 [label="1090864\n[del]"]
+        stable1040082 [label="1040082" fillcolor=green]
+        stable1090864 [label="1090864\n[del]" fillcolor=green]
         stable1040082 -> stable1090864
     }
 

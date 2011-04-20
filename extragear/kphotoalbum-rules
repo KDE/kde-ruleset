@@ -66,12 +66,33 @@ match /trunk/extragear/graphics/kphotoalbum/
     max revision 1023637
 end match
 
-# 
-# match /branches/kphotoalbum/browser-rework/
-#   repository kphotoalbum
-#   branch browser-rework
-# end match
-# 
+# 971129-981503
+match /branches/kphotoalbum/browser-rework/
+  repository kphotoalbum
+  branch browser-rework
+end match
+
+# 981503-1023638
+match /branches/kphotoalbum/devel/
+  repository kphotoalbum
+  branch devel2
+  min revision 981503
+  max revision 1023638
+end match
+
+# 1023638-now
+match /trunk/extragear/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch h4
+    min revision 1023638
+end match
+
+match /branches/stable/extragear-kde4/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch stable
+    max revision 1090863 # 1 before deletion
+end match
+
 # match /branches/kphotoalbum/soc/
 #     repository kphotoalbum
 #     branch soc
