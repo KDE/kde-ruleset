@@ -62,7 +62,7 @@ digraph {
     }
     subgraph cluster_2_2 {
         label="branches/kphotoalbum/2.2.x"
-        kpa22_531669 [label="531669"]
+        kpa22_531669 [label="531669" fillcolor=green]
     }
     subgraph cluster_soc {
         label="branches/kphotoalbum/soc"
