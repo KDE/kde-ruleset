@@ -78,8 +78,8 @@ digraph {
     }
     subgraph cluster_kexiup {
         label="branches/kphotoalbum/update-to-kexi-1.6.1";
-        kexiup626601 [label="626601"]
-        kexiup626625 [label="626625"]
+        kexiup626601 [label="626601" fillcolor=green]
+        kexiup626625 [label="626625" fillcolor=green]
         kexiup626601 -> kexiup626625
     }
     subgraph cluster_devel {
@@ -108,8 +108,8 @@ digraph {
     }
     subgraph cluster_iptc {
         label="branches/work/kphotoalbum-iptc"
-        iptc_677778 [label="677778"]
-        iptc_717608 [label="717608"]
+        iptc_677778 [label="677778" fillcolor=green]
+        iptc_717608 [label="717608" fillcolor=green]
         iptc_677778 -> iptc_717608
     }
     subgraph cluster_browser {

@@ -126,22 +126,25 @@ match /branches/kphotoalbum/with-kexidb/
     max revision 617975 # 617976 deletes branch
 end match
 
-# match /branches/work/kphotoalbum-iptc/
-#     repository kphotoalbum
-#     branch iptc
-#     max revision 717623 # 717624 deletes branch
-# end match
-# 
+# 626601-626625
+match /branches/kphotoalbum/update-to-kexi-1.6.1/
+    repository kphotoalbum
+    branch update-to-kexi-1.6.1
+    max revision 626633 # 626634 deletes branch
+end match
+
+# 677778-717608
+match /branches/work/kphotoalbum-iptc/
+    repository kphotoalbum
+    branch iptc
+    max revision 717623 # 717624 deletes branch
+end match
+
 # match /branches/kphotoalbum/geolocationbrowser/
 #     repository kphotoalbum
 #     branch geolocationbrowser
 # end match
 # 
-# match /branches/kphotoalbum/update-to-kexi-1.6.1/
-#     repository kphotoalbum
-#     branch update-to-kexi-1.6.1
-#     max revision 626633 # 626634 deletes branch
-# end match
 # 
 # 
 # # Tags
