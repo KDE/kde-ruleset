@@ -66,8 +66,8 @@ digraph {
     }
     subgraph cluster_soc {
         label="branches/kphotoalbum/soc"
-        soc541820 [label="541820"]
-        soc568847 [label="568847"]
+        soc541820 [label="541820" fillcolor=green]
+        soc568847 [label="568847" fillcolor=green]
         soc541820 -> soc568847
     }
     subgraph cluster_kexi {

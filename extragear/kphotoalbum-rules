@@ -112,12 +112,13 @@ match /branches/kimdaba/development/
     max revision 436400 # 436401 deletes it
 end match
 
-# match /branches/kphotoalbum/soc/
-#     repository kphotoalbum
-#     branch soc
-#     max revision 617975 # 617976 deletes branch
-# end match
-# 
+# 541820-568843, deletion in 617976
+match /branches/kphotoalbum/soc/
+    repository kphotoalbum
+    branch soc
+    max revision 617975 # 617976 deletes branch
+end match
+
 # match /branches/work/kphotoalbum-iptc/
 #     repository kphotoalbum
 #     branch iptc
