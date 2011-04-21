@@ -13,11 +13,11 @@ digraph {
     }
     subgraph cluster_1_0 {
         label="branches/kimdaba_1_0_x/kdeextragear-2/kimdaba";
-        daba10_269911 [label="269911"]
+        daba10_269911 [label="269911" fillcolor=green]
     }
     subgraph cluster_1_1 {
         label="branches/kimdaba_1_1_x/kdeextragear-2/kimdaba";
-        daba11_287910 [label="287910"]
+        daba11_287910 [label="287910" fillcolor=green]
     }
     subgraph cluster_xtra_daba {
         label="trunk/extragear/graphics/kimdaba"

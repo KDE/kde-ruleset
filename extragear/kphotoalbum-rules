@@ -87,10 +87,22 @@ match /trunk/extragear/graphics/kphotoalbum/
     min revision 1023638
 end match
 
+# 1040081-1090864
 match /branches/stable/extragear-kde4/graphics/kphotoalbum/
     repository kphotoalbum
     branch stable
     max revision 1090863 # 1 before deletion
+end match
+
+# version branches
+match /branches/kimdaba_1_\d_x/(kdeextragear-2/)?$
+    action recurse
+end match
+match /branches/kimdaba_1_(\d)_x/kdeextragear-2/kimdaba/
+    repository kphotoalbum
+    branch 1.\1
+    # 409205 renames branches, and there were no commits after rename
+    max revision 409204
 end match
 
 # match /branches/kphotoalbum/soc/
