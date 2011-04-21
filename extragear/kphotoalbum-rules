@@ -119,6 +119,13 @@ match /branches/kphotoalbum/soc/
     max revision 617975 # 617976 deletes branch
 end match
 
+# 572629-572800, deletion in 617976
+match /branches/kphotoalbum/with-kexidb/
+    repository kphotoalbum
+    branch with-kexidb
+    max revision 617975 # 617976 deletes branch
+end match
+
 # match /branches/work/kphotoalbum-iptc/
 #     repository kphotoalbum
 #     branch iptc
@@ -136,11 +143,6 @@ end match
 #     max revision 626633 # 626634 deletes branch
 # end match
 # 
-# match /branches/kphotoalbum/with-kexidb/
-#     repository kphotoalbum
-#     branch with-kexidb
-#     max revision 617975 # 617976 deletes branch
-# end match
 # 
 # # Tags
 # match /tags/kphotoalbum/(\d[^/]+)/

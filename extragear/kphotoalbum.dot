@@ -72,8 +72,8 @@ digraph {
     }
     subgraph cluster_kexi {
         label="branches/kphotoalbum/with-kexidb"
-        kexidb572629 [label="572629"]
-        kexidb572800 [label="572800"]
+        kexidb572629 [label="572629" fillcolor=green]
+        kexidb572800 [label="572800" fillcolor=green]
         kexidb572629 -> kexidb572800
     }
     subgraph cluster_kexiup {
