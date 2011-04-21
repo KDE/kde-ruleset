@@ -105,6 +105,13 @@ match /branches/kimdaba_1_(\d)_x/kdeextragear-2/kimdaba/
     max revision 409204
 end match
 
+# 409758-436389
+match /branches/kimdaba/development/
+    repository kphotoalbum
+    branch development
+    max revision 436400 # 436401 deletes it
+end match
+
 # match /branches/kphotoalbum/soc/
 #     repository kphotoalbum
 #     branch soc

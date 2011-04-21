@@ -55,9 +55,9 @@ digraph {
     }
     subgraph cluster_daba_dev {
         label="branches/kimdaba/development"
-        daba_dev409758 [label="409758"]
-        daba_dev436389 [label="436389"]
-        daba_dev436401 [label="436401\n[del]"]
+        daba_dev409758 [label="409758" fillcolor=green]
+        daba_dev436389 [label="436389" fillcolor=green]
+        daba_dev436401 [label="436401\n[del]" fillcolor=green]
         daba_dev409758 -> daba_dev436389 -> daba_dev436401
     }
     subgraph cluster_2_2 {
