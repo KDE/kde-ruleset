@@ -177,13 +177,11 @@ match /branches/work/kphotoalbum-iptc/
     max revision 717623 # 717624 deletes branch
 end match
 
-# match /branches/kphotoalbum/geolocationbrowser/
-#     repository kphotoalbum
-#     branch geolocationbrowser
-# end match
-# 
-# 
-# 
+match /branches/kphotoalbum/geolocationbrowser/
+    repository kphotoalbum
+    branch geolocationbrowser
+end match
+
 # Tags
 match /tags/kimdaba[^/]+/(kdeextragear-2/)?$
     action recurse
