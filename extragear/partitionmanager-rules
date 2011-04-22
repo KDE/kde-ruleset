@@ -8,17 +8,23 @@
 create repository partitionmanager
 end repository
 
-match /trunk/extragear/sysadmin/partitionmanager/
+match /trunk/playground/sysadmin/partitionmanager/
   repository partitionmanager
-  min revision 885422
+  max revision 877020
   branch master
 end match
 
-match /trunk/extragear/sysadmin/doc/partitionmanager/
+match /trunk/playground/sysadmin/doc/partitionmanager/
   repository partitionmanager
   prefix doc/
-  min revision 885422
+  max revision 877020
   branch master
+end match
+
+match /branches/work/partitionmanager/kpartstuff/
+  repository partitionmanager
+  max revision 1056208
+  branch kpartstuff
 end match
 
 match /trunk/kdereview/partitionmanager/
@@ -36,21 +42,20 @@ match /trunk/kdereview/doc/partitionmanager/
   branch master
 end match
 
-match /trunk/playground/sysadmin/partitionmanager/
+match /trunk/extragear/sysadmin/partitionmanager/
   repository partitionmanager
-  max revision 877020
+  min revision 885422
   branch master
 end match
 
-match /trunk/playground/sysadmin/doc/partitionmanager/
+match /trunk/extragear/sysadmin/doc/partitionmanager/
   repository partitionmanager
   prefix doc/
-  max revision 877020
+  min revision 885422
   branch master
 end match
 
 # Branches
-
 match /branches/partitionmanager/1.0/partitionmanager/
   repository partitionmanager
   branch 1.0
@@ -63,7 +68,6 @@ match /branches/partitionmanager/1.0/doc/en_US/
 end match
 
 # Tags
-
 match /tags/partitionmanager/([^/]+)/partitionmanager/
     repository partitionmanager
     branch refs/tags/v\1

@@ -1,3 +1,10 @@
 #!/bin/bash
+bindir="../bin"
+source $bindir/filter-goodies
 echo `git rev-list v1.0.0 | head -1` `git rev-list 1.0 | tail -1` > parentmap
-git filter-branch --tag-name-filter cat --parent-filter "$(../bin/add-parents parentmap)" 1.0
+git filter-branch --tag-name-filter cat --parent-filter "$($bindir/add-parents.py parentmap)" 1.0
+delete_fb_backups
+echo `git rev-list kpartstuff | head -1` `git rev-list --grep="Merge the kpart" master` > parentmap
+git filter-branch --tag-name-filter cat --parent-filter "$($bindir/add-parents.py parentmap)" -- --all
+rm parentmap
+delete_fb_backups
