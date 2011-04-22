@@ -113,12 +113,12 @@ end match
 # 1023638-now
 match /trunk/extragear/graphics/kphotoalbum/
     repository kphotoalbum
-    branch h4
+    branch master
     min revision 1023638
 end match
 match /trunk/extragear/graphics/doc/kphotoalbum/
     repository kphotoalbum
-    branch h4
+    branch master
     prefix doc/
     min revision 1023638
 end match
