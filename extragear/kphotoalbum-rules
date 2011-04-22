@@ -13,11 +13,21 @@ match /trunk/kdeextragear-2/kimdaba/
     repository kphotoalbum
     branch h1
 end match
+match /trunk/kdeextragear-2/doc/kimdaba/
+    repository kphotoalbum
+    branch h1
+    prefix doc/
+end match
 
 # 409209-498149
 match /trunk/extragear/graphics/kimdaba/
     repository kphotoalbum
     branch h1
+end match
+match /trunk/extragear/graphics/doc/kimdaba/
+    repository kphotoalbum
+    branch h1
+    prefix doc/
 end match
 
 # 498149-648351
@@ -26,6 +36,13 @@ match /trunk/extragear/graphics/kphotoalbum/
     branch h1
     max revision 648351
 end match
+match /trunk/extragear/graphics/doc/kphotoalbum/
+    repository kphotoalbum
+    branch h1
+    prefix doc/
+    max revision 648351
+end match
+
 
 match /branches/kphotoalbum/2.2.x/
     repository kphotoalbum
@@ -51,17 +68,30 @@ match /trunk/extragear/graphics/kphotoalbum/
     min revision 648353
     max revision 670776
 end match
+# no doc changes in (632425,670766]
 
 # 670776-today (last change 946538)
 match /branches/extragear/kde3/graphics/kphotoalbum/
     repository kphotoalbum
     branch kde3
 end match
+match /branches/extragear/kde3/graphics/doc/kphotoalbum/
+    repository kphotoalbum
+    branch kde3
+    prefix doc/
+end match
 
 # 681253-1023637
 match /trunk/extragear/graphics/kphotoalbum/
     repository kphotoalbum
     branch h3
+    min revision 681253
+    max revision 1023637
+end match
+match /trunk/extragear/graphics/doc/kphotoalbum/
+    repository kphotoalbum
+    branch h3
+    prefix doc/
     min revision 681253
     max revision 1023637
 end match
@@ -86,6 +116,12 @@ match /trunk/extragear/graphics/kphotoalbum/
     branch h4
     min revision 1023638
 end match
+match /trunk/extragear/graphics/doc/kphotoalbum/
+    repository kphotoalbum
+    branch h4
+    prefix doc/
+    min revision 1023638
+end match
 
 # 1040081-1090864
 match /branches/stable/extragear-kde4/graphics/kphotoalbum/
@@ -93,6 +129,7 @@ match /branches/stable/extragear-kde4/graphics/kphotoalbum/
     branch stable
     max revision 1090863 # 1 before deletion
 end match
+# no docs in branch
 
 # version branches
 match /branches/kimdaba_1_\d_x/(kdeextragear-2/)?$
