@@ -182,6 +182,14 @@ match /branches/kphotoalbum/geolocationbrowser/
     branch geolocationbrowser
 end match
 
+match /branches/work/kde4_jobflags/extragear/(graphics/)?$
+    action recurse
+end match
+match /branches/work/kde4_jobflags/extragear/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch kde4_jobflags
+end match
+
 # Tags
 match /tags/kimdaba[^/]+/(kdeextragear-2/)?$
     action recurse
