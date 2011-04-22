@@ -184,18 +184,27 @@ end match
 # 
 # 
 # 
-# # Tags
-# match /tags/kphotoalbum/(\d[^/]+)/
-#     repository kphotoalbum
-#     branch refs/tags/v\1
-#     annotated true
-# end match
-# 
-# match /trunk/extragear/graphics/doc/kphotoalbum/
-#     repository kphotoalbum
-#     prefix doc/
-#     branch master
-# end match
+# Tags
+match /tags/kimdaba[^/]+/(kdeextragear-2/)?$
+    action recurse
+end match
+match /tags/kimdaba_(\d)_(\d)/kdeextragear-2/kimdaba/
+    repository kphotoalbum
+    branch refs/tags/v\1.\2
+    annotated true
+    max revision 437071 # r437072 moves tags around
+end match
+match /tags/kimdaba_(\d)_(\d)_(\d)/kdeextragear-2/kimdaba/
+    repository kphotoalbum
+    branch refs/tags/v\1.\2.\3
+    annotated true
+    max revision 437071 # r437072 moves tags around
+end match
+match /tags/kphotoalbum/(\d[^/]+)/
+    repository kphotoalbum
+    branch refs/tags/v\1
+    annotated true
+end match
 
 
 # Ignore everything else
