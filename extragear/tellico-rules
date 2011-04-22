@@ -44,6 +44,7 @@ match /trunk/extragear/office/tellico/
   repository tellico
   branch master
   min revision 973887
+  max revision 1227610
 end match
 
 match /trunk/extragear/office/doc/tellico/
@@ -51,6 +52,7 @@ match /trunk/extragear/office/doc/tellico/
   branch master
   prefix doc/
   min revision 973887
+  max revision 1197135
 end match
 
 # Tags
