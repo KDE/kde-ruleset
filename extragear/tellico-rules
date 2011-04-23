@@ -7,6 +7,12 @@
 create repository tellico
 end repository
 
+# Tellico didn't show up until 927058
+match /
+    min revision 1
+    max revision 927057
+end match
+
 # Start in playground
 match /trunk/playground/office/tellico/
   repository tellico
@@ -36,10 +42,18 @@ match /trunk/kdereview/doc/tellico/
   branch master
   prefix doc/
   min revision 965369
-  max revision 973887
+  max revision 973885
 end match
 
 # move to extragear
+
+# the doc/ directory got moved a lot, out of order
+# so ignore some of those commits
+match /trunk/extragear/office/tellico/
+  min revision 1003001
+  max revision 1003001
+end match
+
 match /trunk/extragear/office/tellico/
   repository tellico
   branch master
@@ -51,7 +65,7 @@ match /trunk/extragear/office/doc/tellico/
   repository tellico
   branch master
   prefix doc/
-  min revision 973887
+  min revision 973885
   max revision 1197135
 end match
 
