@@ -18,6 +18,10 @@ match /trunk/(KDE/)?kdeutils/kfloppy/
   branch master
 end match
 
+declare MODULE=kdeutils/kfloppy
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
 ##### Ignore everything else #####
 match /
 end match
