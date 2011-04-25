@@ -8,3 +8,18 @@ clear 456512
 # It should have only one parent, which is the previous commit in the tree.
 clear 457717
 457710 457717
+
+# merge from trunk to kaction-cleanup2
+614809 617061
+
+# merge kinstance-redesign into trunk
+627816 628305
+
+# merge kde4_jobflags into trunk
+720851 721447
+
+# merge kde4_kconfig into trunk
+720910 721930
+
+# merge kconfig_new_take3 into trunk
+728440 728852

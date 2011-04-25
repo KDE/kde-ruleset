@@ -44,6 +44,10 @@ match /branches/work/sk4/porting/superkaramba/
   branch sk4-porting
 end match
 
+declare MODULE=kdeutils/superkaramba
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
 ##### Ignore everything else #####
 match /
 end match
