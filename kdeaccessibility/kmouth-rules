@@ -3,23 +3,6 @@
 #
 
 #
-# The following two additions were made to the account map file
-# originally generated from KDE SVN's kde-common/accounts, as it
-# didn't cover these authors:
-#
-#   eisfuchs Dario Abatianni <eisfuchs@tigress.com>
-#   gismore Matthias Gierlings <gismore@users.sourceforge.net>
-#
-# With those additions, there are no more unaccounted for commit
-# authors in the generated repo.
-#
-# The affected commits were likely from the CVS era, and the
-# accounts got renamed in the CVS-to-SVN migration. Dario Aba-
-# tianni's (still existing) SVN account name is "abatianni" for
-# example.
-#
-
-#
 # Create the KDE modules
 #
 create repository KDE/kdeaccessibility/kmouth
