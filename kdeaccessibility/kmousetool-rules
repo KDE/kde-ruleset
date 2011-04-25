@@ -22,7 +22,7 @@
 #
 # Create the KDE modules
 #
-create repository KDE/kdeaccessibility/kmousetool/kmousetool
+create repository KDE/kdeaccessibility/kmousetool
 end repository
 
 # during this time(rev 92214 - 409202), kdeaccessibility was directly under trunk
