@@ -12,6 +12,14 @@ include common-ignores
 include common-branch-rules
 include common-recursion-rules
 
+# ignore deletion of empty doc dir in the code directory;
+# in git it's not empty because we export into it via 'prefix'
+match /trunk/KDE/kdeutils/superkaramba/doc/
+    action ignore
+    min revision 513922
+    max revision 513922
+end match
+
 # Included for historic purposes:
 # Commit 1154058 removed the obsolete documentation.
 include common-doc-rules
@@ -21,6 +29,12 @@ match /branches/KDE/3.5/kdeutils/doc/superkaramba/
   prefix doc/
   max revision 476295
   min revision 443085
+end match
+# properly handle the move of docs from 3.5 to trunk
+match /trunk/KDE/kdeutils/doc/superkaramba/$
+    action recurse
+    min revision 493489
+    max revision 493489
 end match
 
 match /trunk/(KDE/)?kdeutils/superkaramba/
