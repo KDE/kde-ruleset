@@ -8,54 +8,12 @@
 #
 # Create the kaccessible repo 
 #
-create repository KDE/kdeaccessibility/kaccessible
+create repository kdeaccessibility/kaccessible
 end repository
 
-# Ignore some upheaval in KDE's SVN history.
-match /
-  min revision 409202
-  max revision 409210
-end match
-match /
-  min revision 411973
-  max revision 411973
-end match
-
-
-match /tags/KDE/([^/]+)A/kdeaccessibility/kaccessible/
-  repository KDE/kdeaccessibility/kaccessible
-  branch \1a
-  annotated true
-  min revision 1152354
-end match
-match /tags/KDE/([^/]+)/kdeaccessibility/kaccessible/
-  repository KDE/kdeaccessibility/kaccessible
-  branch \1
-  annotated true
-  min revision 1152354
-end match
-
-match /trunk/KDE/kdeaccessibility/kaccessible/
-  repository KDE/kdeaccessibility/kaccessible
-  branch master
-  min revision 1152354
-end match
-match /branches/KDE/([^/]+)A/kdeaccessibility/kaccessible/
-  repository KDE/kdeaccessibility/kaccessible
-  branch \1a
-  min revision 1152354
-end match
-match /branches/KDE/([^/]+)/kdeaccessibility/kaccessible/
-  repository KDE/kdeaccessibility/kaccessible
-  branch \1
-  min revision 1152354
-end match
-
-# create branches in each sub-repository
-match /branches/KDE/([^/]+)/$
-  action recurse
-  min revision 1152354
-end match
+declare NAMES=kaccessible
+declare REPO=kaccessible
+include common-kdeaccessibility-rules
 
 # Ignore everything else
 match /

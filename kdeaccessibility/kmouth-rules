@@ -2,121 +2,12 @@
 # Created by Jeremy Whiting <jpwhiting@kde.org>
 #
 
-#
-# Create the KDE modules
-#
-create repository KDE/kdeaccessibility/kmouth
+create repository kdeaccessibility/kmouth
 end repository
 
-# during this time(rev 92214 - 409202), kdeaccessibility was directly under trunk
-match /trunk/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch master
-  min revision 92214
-  max revision 409202
-end match
-
-# Ignore some upheaval in KDE's SVN history.
-match /
-  min revision 409202
-  max revision 409210
-end match
-match /
-  min revision 411973
-  max revision 411973
-end match
-
-
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch \1.\2
-  max revision 409202
-end match
-
-match /tags/KDE/([^/]+)A/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch \1a
-  annotated true
-  min revision 409209
-end match
-match /tags/KDE/([^/]+)/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch \1
-  annotated true
-  min revision 409209
-end match
-
-match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch refs/tags/KDE/\1.\2.0
-  annotated true
-  max revision 409202
-end match
-
-match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch refs/tags/KDE/\1.\2.0
-  annotated true
-  max revision 85028
-  min revision 68154
-end match
-
-match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch refs/tags/KDE/\1.\2.\3
-  annotated true
-  max revision 409202
-end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch refs/tags/KDE/\1.\2.\3a
-  annotated true
-  min revision 192719
-  max revision 409202
-end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch refs/tags/KDE/\1.\2.\3-beta\4
-  annotated true
-  min revision 376088
-  max revision 409202
-end match
-
-match /trunk/KDE/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch master
-  min revision 409209
-end match
-match /tags/KDE/3.5.0-alpha1/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch refs/tags/KDE/3.4.90
-  annotated true
-  min revision 443441
-  max revision 445561
-end match
-match /tags/KDE/3.5.0-beta1/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch refs/tags/KDE/3.4.91
-  annotated true
-  min revision 459298
-  max revision 460260
-end match
-match /branches/KDE/([^/]+)A/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch \1a
-  min revision 409209
-end match
-match /branches/KDE/([^/]+)/kdeaccessibility/kmouth/
-  repository KDE/kdeaccessibility/kmouth
-  branch \1
-  min revision 409209
-end match
-
-# create branches in each sub-repository
-match /branches/KDE/([^/]+)/$
-  action recurse
-  min revision 757128
-end match
+declare NAMES=kmouth
+declare REPO=kmouth
+include common-kdeaccessibility-rules
 
 # Ignore everything else
 match /
