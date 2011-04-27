@@ -121,7 +121,7 @@ match /branches/KDE/([^/]+)/kdeaccessibility/${NAMES}/
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/([^/]+)/$
+match /branches/KDE/([^/]+)/(kdeaccessibility/)?$
   action recurse
   min revision 757128
 end match
