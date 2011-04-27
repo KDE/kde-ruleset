@@ -127,6 +127,6 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdeaccessibility/)?$
 end match
 match /branches/KDE/([^/]+)/(kdeaccessibility/)?$
   action recurse
-  min revision 757128
+  min revision 409202
 end match
 
