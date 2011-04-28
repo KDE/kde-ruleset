@@ -2,6 +2,7 @@
 match /branches/work/kde4/kdeutils/${APPLICATION}/
   repository ${REPO}
   branch work/kde4
+  prefix ${PREFIX|/}
   min revision 427402
   max revision 438189
 end match
@@ -10,6 +11,7 @@ end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/${APPLICATION}/
   repository ${REPO}
   branch \1.\2
+  prefix ${PREFIX|/}
   max revision 409202
 end match
 
@@ -17,12 +19,14 @@ end match
 match /branches/KDE/([^/]+)/kdeutils/${APPLICATION}/
   repository ${REPO}
   branch \1
+  prefix ${PREFIX|/}
   min revision 409209
 end match
 
 match /branches/KDE/([^/]+)A/kdeutils/${APPLICATION}/
   repository ${REPO}
   branch \1a
+  prefix ${PREFIX|/}
 end match
 
 # Tags
@@ -31,6 +35,7 @@ match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/${APPLICATION}/
   branch refs/tags/v\1.\2.0
   annotated true
   max revision 409202
+  prefix ${PREFIX|/}
 end match
 
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/${APPLICATION}/
@@ -39,6 +44,7 @@ match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/${APPLICATION}/
   annotated true
   min revision 68154
   max revision 85028
+  prefix ${PREFIX|/}
 end match
 
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdeutils/${APPLICATION}/
@@ -46,6 +52,7 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdeutils/${APPLICATION}/
   branch refs/tags/v\1.\2.\3
   annotated true
   max revision 409202
+  prefix ${PREFIX|/}
 end match
 
 match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdeutils/${APPLICATION}/
@@ -54,6 +61,7 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdeutils/${APPLICATION}/
   annotated true
   min revision 192719
   max revision 409202
+  prefix ${PREFIX|/}
 end match
 
 match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdeutils/${APPLICATION}/
@@ -62,6 +70,7 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdeutils/${APPLICATION}/
   annotated true
   min revision 376088
   max revision 409202
+  prefix ${PREFIX|/}
 end match
 
 # 3.5.0-alpha1
@@ -69,12 +78,14 @@ match /tags/KDE/3.5.0-alpha1/kdeutils/${APPLICATION}/
   repository ${REPO}
   branch refs/tags/v3.4.90
   annotated true
+  prefix ${PREFIX|/}
 end match
 
 # 3.5.0-beta1
 match /tags/KDE/3.5.0-beta1/kdeutils/${APPLICATION}/
   repository ${REPO}
   branch refs/tags/v3.4.91
+  prefix ${PREFIX|/}
   annotated true
 end match
 
@@ -82,11 +93,13 @@ end match
 match /tags/KDE/([^/]+)A/kdeutils/${APPLICATION}/
   repository ${REPO}
   branch refs/tags/v\1a
+  prefix ${PREFIX|/}
   annotated true
 end match
 
 match /tags/KDE/([^/]+)/kdeutils/${APPLICATION}/
   repository ${REPO}
   branch refs/tags/v\1
+  prefix ${PREFIX|/}
   annotated true
 end match

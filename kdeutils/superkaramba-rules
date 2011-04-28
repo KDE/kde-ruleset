@@ -4,21 +4,20 @@
 
 declare APPLICATION=superkaramba
 declare REPO=KDE/kdeutils/superkaramba
+declare DOCDIR=the-OTHER-doc/ # change this to something more serious
 
 create repository ${REPO}
 end repository
 
 include common-ignores
-include common-branch-rules
 include common-recursion-rules
 
-# ignore deletion of empty doc dir in the code directory;
-# in git it's not empty because we export into it via 'prefix'
-match /trunk/KDE/kdeutils/superkaramba/doc/
-    action ignore
-    min revision 513922
-    max revision 513922
-end match
+declare APPLICATION=superkaramba/doc
+declare PREFIX=${DOCDIR}
+include common-branch-rules
+declare APPLICATION=superkaramba
+declare PREFIX=/
+include common-branch-rules
 
 # Included for historic purposes:
 # Commit 1154058 removed the obsolete documentation.
@@ -37,12 +36,23 @@ match /trunk/KDE/kdeutils/doc/superkaramba/$
     max revision 493489
 end match
 
+match /trunk/(KDE/)?kdeutils/superkaramba/doc/
+  repository ${REPO}
+  branch master
+  prefix ${DOCDIR}
+end match
 match /trunk/(KDE/)?kdeutils/superkaramba/
   repository ${REPO}
   branch master
 end match
 
 ### SuperKaramba in kdereview
+match /trunk/kdereview/superkaramba/doc/
+  repository ${REPO}
+  branch kdereview
+  prefix ${DOCDIR}
+  max revision 445394 # one before deletion from kdereview
+end match
 match /trunk/kdereview/superkaramba/
   repository ${REPO}
   branch kdereview
@@ -53,6 +63,11 @@ match /branches/work/sk4/porting/superkaramba/$
   action recurse
 end match
 
+match /branches/work/sk4/porting/superkaramba/doc/
+  repository ${REPO}
+  branch sk4-porting
+  prefix ${DOCDIR}
+end match
 match /branches/work/sk4/porting/superkaramba/
   repository ${REPO}
   branch sk4-porting
