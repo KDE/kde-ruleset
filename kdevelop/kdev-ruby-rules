@@ -1,0 +1,14 @@
+# svn2git rules for KDevelop Ruby plugin
+# Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
+
+
+create repository kdev-ruby
+end repository
+
+match /trunk/playground/devtools/kdevelop4-extra-plugins/ruby/
+    repository kdev-ruby
+    branch master
+end match
+
+match /
+end match
