@@ -40,32 +40,41 @@ match /trunk/KDE/kdeaccessibility/doc/${NAMES}/
   min revision 409209
 end match
 
+# rules to match branches
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeaccessibility/${NAMES}/
   repository kdeaccessibility/${REPO}
   branch \1.\2
   max revision 409202
 end match
+match /branches/KDE/([^/]+)A/kdeaccessibility/${NAMES}/
+  repository kdeaccessibility/${REPO}
+  branch \1a
+  min revision 409209
+end match
+match /branches/KDE/([^/]+)/kdeaccessibility/${NAMES}/
+  repository kdeaccessibility/${REPO}
+  branch \1
+  min revision 409209
+end match
 
 match /tags/KDE/([^/]+)A/kdeaccessibility/${NAMES}/
   repository kdeaccessibility/${REPO}
-  branch \1a
+  branch refs/tags/\1a
   annotated true
   min revision 409209
 end match
 match /tags/KDE/([^/]+)/kdeaccessibility/${NAMES}/
-  repository KDE/kdeaccessibility/${REPO}
-  branch \1
+  repository kdeaccessibility/${REPO}
+  branch refs/tags/\1
   annotated true
   min revision 409209
 end match
-
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeaccessibility/${NAMES}/
   repository kdeaccessibility/${REPO}
   branch refs/tags/\1.\2.0
   annotated true
   max revision 409202
 end match
-
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeaccessibility/${NAMES}/
   repository kdeaccessibility/${REPO}
   branch refs/tags/\1.\2.0
@@ -73,7 +82,6 @@ match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeaccessibility/${NAMES}/
   max revision 85028
   min revision 68154
 end match
-
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdeaccessibility/${NAMES}/
   repository kdeaccessibility/${REPO}
   branch refs/tags/\1.\2.\3
@@ -94,7 +102,6 @@ match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdeaccessibility/${NAMES}/
   min revision 376088
   max revision 409202
 end match
-
 match /tags/KDE/3.5.0-alpha1/kdeaccessibility/${NAMES}/
   repository kdeaccessibility/${REPO}
   branch refs/tags/3.4.90
@@ -109,15 +116,13 @@ match /tags/KDE/3.5.0-beta1/kdeaccessibility/${NAMES}/
   min revision 459298
   max revision 460260
 end match
-match /branches/KDE/([^/]+)A/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
-  branch \1a
-  min revision 409209
+
+# create tags in each sub-repository
+match /tags/KDE/([^/]+)/(kdeaccessibility/)?$
+  action recurse
 end match
-match /branches/KDE/([^/]+)/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
-  branch \1
-  min revision 409209
+match /tags/KDE([^/]+)/(kdeaccessibility/)?$
+  action recurse
 end match
 
 # create branches in each sub-repository

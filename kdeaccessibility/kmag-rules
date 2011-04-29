@@ -10,6 +10,10 @@ declare REPO=kmag
 include common-kdeaccessibility-rules
 
 # KMag releases
+match /tags/KMAG_([^/]+)/(kdeaccessibility/)?$
+  action recurse
+end match
+
 match /tags/kmag/0.2.0/
   min revision 437072
   max revision 437072
