@@ -76,16 +76,13 @@ Work branches added. Nothing else is missing (checked w/ residual).
 superkaramba
 ============
 
-Work branches added, some doc problems fixed.
+Work branches added, doc problems fixed.
 
-We still have problems with docs.
-In the sk4/porting branch,
-there were API docs in the 'doc' directory.
-But at the same time there was
-trunk/kdeutils/doc/superkaramba containing user docs,
-which we remap into 'doc/' via a prefix rule.
-When sk4 gets merged into trunk in r632640,
-the user docs get deleted.
+User docs now appear in 'userdoc',
+and the existing 'doc' directory
+(containing API docs) is left in 'doc'.
+A filter-branch script could rename both, though.
 
-To solve this we need to use a separate directory name
-for one of them.
+History was checked with residual repo,
+only thing missing is the branches/work/sk4/superkaramba branch,
+which is irrelevant (no useful changes, not merged back to trunk).
