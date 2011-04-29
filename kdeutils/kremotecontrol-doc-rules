@@ -16,6 +16,13 @@ match /trunk/KDE/kdeutils/doc/kcontrol/kremotecontrol/
     min revision 1116522
 end match
 
+match /branches/KDE/([^/]+)/kdeutils/doc/kcontrol/kremotecontrol/
+    repository ${REPO}
+    branch \1
+    prefix doc/
+    min revision 1116522
+end match
+
 #       [ move trunk/KDE/kdeutils/doc/kremotecontrol 1116522 1109705 ]
 match /trunk/KDE/kdeutils/doc/kremotecontrol/
     repository ${REPO}
@@ -65,6 +72,15 @@ match /trunk/KDE/kdeutils/doc/kdelirc/
     max revision 1110589
     min revision 963358
 end match
+
+match /branches/KDE/([^/]+)/kdeutils/doc/kdelirc/
+  repository ${REPO}
+  branch \1
+  prefix doc/kdelirc/
+  max revision 1110589
+  min revision 963358
+end match
+
 
 #	[ move trunk/kdereview/doc/kdelirc 963358 956547 ]
 match /trunk/kdereview/doc/kdelirc/

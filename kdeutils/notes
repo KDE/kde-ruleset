@@ -100,5 +100,4 @@ Now that 'doc' directory has stuff mixed from both places.
 To fix it, I added a filter-branch script that deletes the docs
 from the correct commit range.
 
-Conversion is still missing
-some doc history in version branches.
+No history seems to be missing.
