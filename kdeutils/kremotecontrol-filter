@@ -14,8 +14,9 @@ git rev-list "$revrange" > "$revlist_file"
 
 git filter-branch -d "$(calc_tempdir)" --tag-name-filter cat \
 --index-filter '
-if grep $GIT_COMMIT '$revlist_file'; then
-    git rm --cached --ignore-unmatch -r doc/kdelirc;
+if grep -q $GIT_COMMIT '$revlist_file'; then
+    warn " deleting";
+    git rm --cached --ignore-unmatch -r -q doc/kdelirc;
 fi' \
 -- --all ^v4.3.90
 # v4.3.90 is simply a known commit before the doc mess;
