@@ -38,6 +38,25 @@ match /trunk/KDE/kdebase/workspace/kcontrol/privacy/
   # max revision 464766
 end match
 
+# version branches (rules based on root common-kde-branches-rules)
+
+match /(branches|tags)/[^/]+/kdebase/(kcontrol/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/kdebase/(kcontrol/)?$
+  action recurse
+end match
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdebase/kcontrol/privacy/
+    repository ${REPO}
+    branch \1.\2
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdebase/kcontrol/privacy/
+    repository ${REPO}
+    branch \1.\2
+end match
+
+
 match /branches/work/kde4/kdebase/(kcontrol/)?$
   action recurse
 end match

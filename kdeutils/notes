@@ -35,10 +35,13 @@ Comprehensively checked; there's nothing missing.
 sweeper
 =======
 
-Comprehensively checked.
+All history of 3.x branches was missing; added it.
 
-Missing some $branch/kdebase/kcontrol/privacy/ history,
-including suse_kickoff and suse_kickoff_qstyle work branches.
+The suse_kickoff and suse_kickoff_qstyle work branches
+only have merges from trunk or from each other,
+and no useful code changes, so I'll ignore them.
+
+Nothing else seems missing, checked w/ residual repo.
 
 kgpg
 ====
@@ -66,7 +69,7 @@ ktimer
 ======
 
 Work branches added, merges synth'd,
-but I didn't do a complete search for missing history yet.
+Nothing else is missing (checked w/ residual).
 
 kfloppy
 =======
