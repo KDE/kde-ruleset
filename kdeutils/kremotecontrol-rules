@@ -90,6 +90,12 @@ match /trunk/kdeutils/kdelirc/
   max revision 409202
 end match
 
+declare MODULE_RECURSE=(kdeutils/)?
+declare MODULE=kdeutils/kdelirc
+include ../feature-branches
+declare MODULE=kdeutils/kremotecontrol
+include ../feature-branches
+
 ##### Ignore everything else #####
 match /
 end match
