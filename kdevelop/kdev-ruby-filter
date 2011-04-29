@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+
+git remote add fork git://gitorious.org/kdevelop-ruby/ruby-fork.git
+git fetch fork
+
+# this hash is the initial commit in the gitorious repo
+echo "f461beba4b09e76441d4702cf102516bda65cc7e $(git rev-parse master)" > info/grafts
+$bindir/parent-adder $RULESETDIR/kdevelop/kdev-ruby-parentmap
+
+git update-ref refs/heads/master $(git rev-parse remotes/fork/master)
+git remote rm fork
