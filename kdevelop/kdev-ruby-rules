@@ -21,5 +21,10 @@ match /trunk/KDE/kdevelop/languages/ruby/
     branch master
 end match
 
+declare MODULE=kdevelop/languages/ruby
+declare MODULE_RECURSE=kdevelop/(languages/(ruby/)?)?
+declare REPO=kdev-ruby
+include ../feature-branches
+
 match /
 end match
