@@ -22,7 +22,7 @@ match /trunk/KDE/kdevelop/languages/ruby/
 end match
 
 declare MODULE=kdevelop/languages/ruby
-declare MODULE_RECURSE=kdevelop/(languages/(ruby/)?)?
+declare MODULE_RECURSE=kdevelop/(languages/)?
 declare REPO=kdev-ruby
 include ../feature-branches
 
