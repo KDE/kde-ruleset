@@ -17,6 +17,8 @@ git filter-branch -d "$(calc_tempdir)" --tag-name-filter cat \
 if grep $GIT_COMMIT '$revlist_file'; then
     git rm --cached --ignore-unmatch -r doc/kdelirc;
 fi' \
--- --all
+-- --all ^v4.3.90
+# v4.3.90 is simply a known commit before the doc mess;
+# we ignore everything reachable from it just to speed up the filter.
 
 rm -f "$revlist_file"
