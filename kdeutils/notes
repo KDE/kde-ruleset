@@ -86,3 +86,19 @@ A filter-branch script could rename both, though.
 History was checked with residual repo,
 only thing missing is the branches/work/sk4/superkaramba branch,
 which is irrelevant (no useful changes, not merged back to trunk).
+
+kremotecontrol
+==============
+
+Documentation messy here too.
+In r1075787, trunk kdelirc branches into work/kdelirc;
+this is converted to git including the 'doc' directory
+which is in a separate place in SVN.
+In r1100454, a 'doc' directory was added to the work branch.
+Now that 'doc' directory has stuff mixed from both places.
+
+To fix it, I added a filter-branch script that deletes the docs
+from the correct commit range.
+
+Conversion is still missing work branches
+and doc history in version branches.
