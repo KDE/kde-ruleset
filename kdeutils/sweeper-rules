@@ -56,6 +56,9 @@ match /branches/KDE/(\d+)\.(\d+)/kdebase/kcontrol/privacy/
     branch \1.\2
 end match
 
+declare MODULE=kdebase/kcontrol/privacy
+include ../common-kde-tags-rules
+
 
 match /branches/work/kde4/kdebase/(kcontrol/)?$
   action recurse
