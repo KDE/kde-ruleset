@@ -19,6 +19,17 @@ match /
     max revision 1135217
 end match
 
+# ignore the post-migration deletions
+match /trunk/KDE/kdeedu/
+    min revision 1226982
+    action ignore
+end match
+match /branches/KDE/4.6/kdeedu/
+    min revision 1227327
+    action ignore
+end match
+
+# general recursion rules
 match /(branches|tags)/[^/]+/kdeedu/$
   action recurse
 end match
