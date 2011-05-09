@@ -8,7 +8,7 @@ match /tags/KDE/3.5.2/(${MODULE})/
     max revision 519806
 end match
 match /tags/KDE/3.4.3/(${MODULE})/
-    max revision 467549
+    max revision 467548
 end match
 
 match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/(${MODULE})/
