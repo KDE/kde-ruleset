@@ -2,10 +2,10 @@
 
 include common-kde-ignores
 
-match /(branches|tags)/[^/]+/$
+match /(branches|tags)/[^/]+/${MODULE_RECURSE|}$
   action recurse
 end match
-match /(branches|tags)/KDE/[^/]+/$
+match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE|}$
   action recurse
 end match
 
