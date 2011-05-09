@@ -9,6 +9,12 @@
 create repository kdesdk-scripts
 end repository
 
+declare MODULE=kdesdk/scripts
+declare MODULE_RECURSE=(kdesdk/)?
+declare REPO=kdesdk-scripts
+include common-kde-branches-rules
+include common-kde-tags-rules
+
 match /trunk/(KDE/)?kdesdk/scripts/
     repository kdesdk-scripts
     branch master
