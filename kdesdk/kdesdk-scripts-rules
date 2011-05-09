@@ -26,5 +26,13 @@ match /trunk/(KDE/)?kdesdk/doc/scripts/
     prefix doc/
 end match
 
+match /branches/work/kde4/kdesdk/$
+    action recurse
+end match
+match /branches/work/kde4/kdesdk/scripts/
+    repository kdesdk-scripts
+    branch kde4
+end match
+
 match /
 end match
