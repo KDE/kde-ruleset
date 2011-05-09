@@ -10,6 +10,7 @@ include ../common-kde-branches-rules
 declare MODULE=kdemultimedia/kaudiocreator
 declare PREFIX=/
 include ../common-kde-branches-rules
+include ../common-kde-tags-rules
 
 match /trunk/(KDE/)?kdemultimedia/kaudiocreator/
     repository kaudiocreator
