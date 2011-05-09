@@ -1,6 +1,16 @@
 create repository kaudiocreator
 end repository
 
+declare REPO=kaudiocreator
+declare MODULE_RECURSE=(kdemultimedia/)?
+
+declare MODULE=kdemultimedia/doc/kaudiocreator
+declare PREFIX=doc/
+include ../common-kde-branches-rules
+declare MODULE=kdemultimedia/kaudiocreator
+declare PREFIX=/
+include ../common-kde-branches-rules
+
 match /trunk/(KDE/)?kdemultimedia/kaudiocreator/
     repository kaudiocreator
     branch master
