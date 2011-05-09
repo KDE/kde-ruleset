@@ -12,6 +12,8 @@ declare PREFIX=/
 include ../common-kde-branches-rules
 include ../common-kde-tags-rules
 
+include ../feature-branches
+
 match /trunk/(KDE/)?kdemultimedia/kaudiocreator/
     repository kaudiocreator
     branch master
