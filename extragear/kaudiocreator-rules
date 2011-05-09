@@ -1,11 +1,20 @@
 create repository kaudiocreator
 end repository
 
+match /trunk/(KDE/)?kdemultimedia/kaudiocreator/
+    repository kaudiocreator
+    branch master
+end match
+match /trunk/(KDE/)?kdemultimedia/doc/kaudiocreator/
+    repository kaudiocreator
+    branch master
+    prefix doc/
+end match
+
 match /trunk/extragear/multimedia/kaudiocreator/
     repository kaudiocreator
     branch master
 end match
-
 match /trunk/extragear/multimedia/doc/kaudiocreator/
     repository kaudiocreator
     branch master
