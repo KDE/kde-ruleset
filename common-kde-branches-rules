@@ -12,57 +12,57 @@ end match
 match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/${MODULE}/
     repository ${REPO}
     branch \1.\2
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     max revision 409201
 end match
 match /branches/KDE/(\d+)\.(\d+)/${MODULE}/
     repository ${REPO}
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     branch \1.\2
 end match
 match /branches/work/~([^/]+)/([^/]*${MODULE}[^/]*)/
     repository ${REPO}
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     branch work/personal/\1
 end match
 match /branches/work/~([^/]+)/([^/]+)/([^/]*${MODULE}[^/]*)/
     repository ${REPO}
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     branch work/personal/\1/\2
 end match
 match /branches/kdepim/([^~][^/]+)/${MODULE}/
     repository ${REPO}
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     branch \1
 end match
 
 match /branches/work/akonadi-ports/${MODULE}/
     repository ${REPO}
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     branch work/akonadi-ports
 end match
 match /branches/kdepim/(enterprise|enterprise4)/(${MODULE})/
     repository ${REPO}
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     branch \1
 end match
 match /branches/work/komo/${MODULE}/
     repository ${REPO}
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     branch komo
 end match
 match /branches/work/kdab-post-4.0/${MODULE}/
     repository ${REPO}
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     branch kdab-post-4.0
 end match
 match /branches/work/soc-pim/${MODULE}/
     repository ${REPO}
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     branch work/soc-pim
 end match
 match /branches/([^/]+)/(${MODULE})/
     repository ${REPO}
-    prefix ${PREFIX}
+    prefix ${PREFIX|/}
     branch \1
 end match
