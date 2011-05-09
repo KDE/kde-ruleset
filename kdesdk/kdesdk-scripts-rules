@@ -34,5 +34,7 @@ match /branches/work/kde4/kdesdk/scripts/
     branch kde4
 end match
 
+include ../feature-branches
+
 match /
 end match
