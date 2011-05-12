@@ -56,6 +56,9 @@ match /trunk/extragear/sysadmin/doc/partitionmanager/
 end match
 
 # Branches
+match /branches/partitionmanager/1.0/$
+    action recurse
+end match
 match /branches/partitionmanager/1.0/partitionmanager/
   repository partitionmanager
   branch 1.0
