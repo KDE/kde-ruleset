@@ -6,6 +6,7 @@
 # Create the partitionmanager repository
 #
 create repository partitionmanager
+  description Partition Manager
 end repository
 
 match /trunk/playground/sysadmin/partitionmanager/
@@ -19,12 +20,6 @@ match /trunk/playground/sysadmin/doc/partitionmanager/
   prefix doc/
   max revision 877020
   branch master
-end match
-
-match /branches/work/partitionmanager/kpartstuff/
-  repository partitionmanager
-  max revision 1056208
-  branch kpartstuff
 end match
 
 match /trunk/kdereview/partitionmanager/
