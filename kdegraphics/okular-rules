@@ -251,6 +251,17 @@ match /branches/KDE/(\d+)\.(\d+)/kdegraphics/okular/
     repository okular
     branch \1.\2
 end match
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/doc/okular/
+    repository okular
+    branch \1.\2
+    prefix doc/
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/doc/okular/
+    repository okular
+    branch \1.\2
+    prefix doc/
+end match
 # END
 
 declare REPO=okular
