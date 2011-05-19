@@ -129,6 +129,12 @@ match /trunk/kdegraphics/kdvi/
   branch kdvi
   max revision 409202
 end match
+match /trunk/kdegraphics/doc/kdvi/
+  repository okular
+  branch kdvi
+  prefix doc/
+  max revision 409202
+end match
 match /branches/work/kde4/kdegraphics/kdvi/
   repository okular
   branch kdvi-kde4
