@@ -246,6 +246,18 @@ match /branches/KDE/(\d+)\.(\d+)/kdegraphics/(kpdf|kdvi)/
     repository okular
     branch \3-\1.\2
 end match
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/doc/(kpdf|kdvi)/
+    repository okular
+    branch \3-\1.\2
+    prefix doc/
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/doc/(kpdf|kdvi)/
+    repository okular
+    branch \3-\1.\2
+    prefix doc/
+end match
+
 match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/okular/
     repository okular
     branch \1.\2
