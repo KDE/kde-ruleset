@@ -63,12 +63,11 @@ end match
 # END mobipocket
 
 # BEGIN kpdf
-match /trunk/KDE/(kdegraphics)/kpdf/
+match /trunk/KDE/kdegraphics/kpdf/
   repository okular
   branch kpdf
   min revision 409209
-# 540832: kpdf deleted
-  max revision 540831
+  max revision 540831 # 540832: kpdf deleted
 end match
 
 match /trunk/kdegraphics/kpdf/
@@ -196,7 +195,7 @@ end match
 
 # END okular
 
-#okular-specific cmake files
+# BEGIN okular-specific cmake files
 match /trunk/KDE/kdegraphics/cmake/modules/
   repository okular
   prefix cmake/modules/
@@ -217,6 +216,7 @@ match /branches/work/kde4/playground/graphics/cmake/
   branch master
   max revision 551164
 end match
+# END
 
 
 match /trunk/(KDE/)?kdegraphics/doc/okular/
