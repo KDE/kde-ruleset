@@ -107,7 +107,7 @@ end match
 
 # BEGIN kdvi
 # copy from kviewshell: r556303
-match /trunk/KDE/kdegraphics/kviewshell/plugins/dvi/
+match /trunk/KDE/kdegraphics/kviewshell/plugins/k?dvi/
   repository okular
   branch kdvi
   max revision 556303
