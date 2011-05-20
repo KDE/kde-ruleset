@@ -66,14 +66,12 @@ end match
 match /trunk/KDE/kdegraphics/kpdf/
   repository okular
   branch kpdf
-  min revision 409209
   max revision 540831 # 540832: kpdf deleted
 end match
 
 match /trunk/kdegraphics/kpdf/
   repository okular
   branch kpdf
-  max revision 409202
 end match
 match /branches/work/kde4/kdegraphics/kpdf/
   repository okular
