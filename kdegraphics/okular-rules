@@ -123,7 +123,7 @@ match /trunk/kdegraphics/kdvi/
   repository okular
   branch kdvi
 end match
-match /trunk/kdegraphics/doc/kdvi/
+match /trunk/(KDE/)?kdegraphics/doc/kdvi/
   repository okular
   branch kdvi
   prefix doc/
