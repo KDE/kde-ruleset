@@ -110,27 +110,23 @@ end match
 match /trunk/KDE/kdegraphics/kviewshell/plugins/dvi/
   repository okular
   branch kdvi
-  min revision 469947
   max revision 556303
 end match
 
 match /trunk/KDE/kdegraphics/kdvi/
   repository okular
   branch kdvi
-  min revision 409203
   max revision 469945
 end match
 
 match /trunk/kdegraphics/kdvi/
   repository okular
   branch kdvi
-  max revision 409202
 end match
 match /trunk/kdegraphics/doc/kdvi/
   repository okular
   branch kdvi
   prefix doc/
-  max revision 409202
 end match
 match /branches/work/kde4/kdegraphics/kdvi/
   repository okular
