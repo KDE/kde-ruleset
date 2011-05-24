@@ -14,6 +14,10 @@ include ../common-kde-tags-rules
 
 include ../feature-branches
 
+declare X_MODULE_RECURSE=(multimedia/)?
+declare X_MODULE=multimedia/kaudiocreator
+include ../extragear-feature-branches
+
 match /trunk/(KDE/)?kdemultimedia/kaudiocreator/
     repository kaudiocreator
     branch master
