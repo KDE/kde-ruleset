@@ -9,6 +9,8 @@
 create repository kphotoalbum
 end repository
 
+declare REPO=kphotoalbum
+
 # 198778-409209
 match /trunk/kdeextragear-2/kimdaba/
     repository kphotoalbum
@@ -183,13 +185,9 @@ match /branches/kphotoalbum/geolocationbrowser/
     branch geolocationbrowser
 end match
 
-match /branches/work/kde4_jobflags/extragear/(graphics/)?$
-    action recurse
-end match
-match /branches/work/kde4_jobflags/extragear/graphics/kphotoalbum/
-    repository kphotoalbum
-    branch kde4_jobflags
-end match
+declare X_MODULE_RECURSE=(graphics/)?
+declare X_MODULE=graphics/kphotoalbum
+include ../extragear-feature-branches
 
 # Tags
 match /tags/kimdaba[^/]+/(kdeextragear-2/)?$
