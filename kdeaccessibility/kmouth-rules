@@ -5,8 +5,11 @@
 create repository kdeaccessibility/kmouth
 end repository
 
+declare MODULE=kdeaccessibility/kmouth
+declare MODULE_RECURSE=(kdeaccessibility/)?
+
 declare NAMES=kmouth
-declare REPO=kmouth
+declare REPO=kdeaccessibility/kmouth
 include common-kdeaccessibility-rules
 
 # Ignore everything else

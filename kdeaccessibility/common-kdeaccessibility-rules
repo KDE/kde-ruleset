@@ -2,25 +2,26 @@
 # Created by Jeremy Whiting <jpwhiting@kde.org>
 #
 
-# Ignore some upheaval in KDE's SVN history.
-match /
-  min revision 409202
-  max revision 409210
-end match
-match /
-  min revision 411973
-  max revision 411973
-end match
+#get the application branches
+declare PREFIX=/
+include ../common-kde-branches-rules
+include ../common-kde-tags-rules
+#and then the doc prefix for branches
+declare MODULE_SAVE=${MODULE}
+declare MODULE=kdeaccessibility/doc/${REPO}
+declare PREFIX=doc/
+include ../common-kde-branches-rules
+declare MODULE=${MODULE_SAVE}
 
 # during this time(rev 92214 - 409202), kdeaccessibility was directly under trunk
 match /trunk/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch master
   min revision 92214
   max revision 409202
 end match
 match /trunk/kdeaccessibility/doc/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch master
   prefix doc/
   min revision 92214
@@ -29,12 +30,12 @@ end match
 
 # the rest of the time kdeaccessibility was under trunk/KDE
 match /trunk/KDE/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch master
   min revision 409209
 end match
 match /trunk/KDE/kdeaccessibility/doc/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch master
   prefix doc/
   min revision 409209
@@ -42,61 +43,61 @@ end match
 
 # rules to match branches
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch \1.\2
   max revision 409202
 end match
 match /branches/KDE/([^/]+)A/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch \1a
   min revision 409209
 end match
 match /branches/KDE/([^/]+)/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch \1
   min revision 409209
 end match
 
 match /tags/KDE/([^/]+)A/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch refs/tags/\1a
   annotated true
   min revision 409209
 end match
 match /tags/KDE/([^/]+)/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch refs/tags/\1
   annotated true
   min revision 409209
 end match
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch refs/tags/\1.\2.0
   annotated true
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch refs/tags/\1.\2.0
   annotated true
   max revision 85028
   min revision 68154
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch refs/tags/\1.\2.\3
   annotated true
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch refs/tags/\1.\2.\3a
   annotated true
   min revision 192719
   max revision 409202
 end match
 match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch refs/tags/\1.\2.\3-beta\4
   annotated true
   min revision 376088
@@ -110,7 +111,7 @@ match /tags/KDE/3.5.0-alpha1/kdeaccessibility/${NAMES}/
   max revision 445561
 end match
 match /tags/KDE/3.5.0-beta1/kdeaccessibility/${NAMES}/
-  repository kdeaccessibility/${REPO}
+  repository ${REPO}
   branch refs/tags/3.4.91
   annotated true
   min revision 459298

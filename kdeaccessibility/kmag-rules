@@ -5,13 +5,24 @@
 create repository kdeaccessibility/kmag
 end repository
 
+declare MODULE=kdeaccessibility/kmag
+declare MODULE_RECURSE=(kdeaccessibility/)?
+
 declare NAMES=kmag
-declare REPO=kmag
+declare REPO=kdeaccessibility/kmag
 include common-kdeaccessibility-rules
 
 # KMag releases
 match /tags/KMAG_([^/]+)/(kdeaccessibility/)?$
   action recurse
+end match
+
+match /tags/kmag-(\d)_(\d)_(\d)/
+  min revision 74896
+  max revision 437071
+  repository kdeaccessibility/kmag
+  branch refs/tags/kmag/\1.\2.\3
+  annotated true
 end match
 
 match /tags/kmag/0.2.0/

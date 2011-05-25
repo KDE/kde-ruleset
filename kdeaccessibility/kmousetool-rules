@@ -5,8 +5,11 @@
 create repository kdeaccessibility/kmousetool
 end repository
 
+declare MODULE=kdeaccessibility/kmousetool
+declare MODULE_RECURSE=(kdeaccessibility/)?
+
 declare NAMES=kmousetool
-declare REPO=kmousetool
+declare REPO=kdeaccessibility/kmousetool
 include common-kdeaccessibility-rules
 
 # Ignore everything else

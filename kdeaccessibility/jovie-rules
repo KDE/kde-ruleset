@@ -5,8 +5,11 @@
 create repository kdeaccessibility/jovie
 end repository
 
+declare MODULE=kdeaccessibility/jovie
+declare MODULE_RECURSE=(kdeaccessibility/)?
+
 declare NAMES=(kttsd|jovie|kitty)
-declare REPO=jovie
+declare REPO=kdeaccessibility/jovie
 include common-kdeaccessibility-rules
 
 # Ignore everything else
