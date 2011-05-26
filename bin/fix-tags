@@ -1,0 +1,11 @@
+#!/bin/bash
+
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+source "$bindir/filter-goodies"
+
+tempdir="$(calc_tempdir fix-tags.XXXXX)"
+
+git filter-branch -d "$tempdir" \
+--prune-empty \
+--parent-filter "$bindir/fix-tags-impl" \
+--tag-name-filter cat -- --tags --not --branches
