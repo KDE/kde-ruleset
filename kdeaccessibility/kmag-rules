@@ -17,11 +17,11 @@ match /tags/KMAG_([^/]+)/(kdeaccessibility/)?$
   action recurse
 end match
 
-match /tags/kmag-(\d)_(\d)_(\d)/
+match /tags/(kmag-|KMAG_)(\d)_(\d)_(\d)(_RELEASE)?/
   min revision 74896
   max revision 437071
   repository kdeaccessibility/kmag
-  branch refs/tags/kmag/\1.\2.\3
+  branch refs/tags/kmag/\2.\3.\4
   annotated true
 end match
 
