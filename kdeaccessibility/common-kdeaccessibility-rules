@@ -8,7 +8,7 @@ include ../common-kde-branches-rules
 include ../common-kde-tags-rules
 #and then the doc prefix for branches
 declare MODULE_SAVE=${MODULE}
-declare MODULE=kdeaccessibility/doc/${REPO}
+declare MODULE=kdeaccessibility/doc/${NAMES}
 declare PREFIX=doc/
 include ../common-kde-branches-rules
 declare MODULE=${MODULE_SAVE}
