@@ -12,6 +12,12 @@ declare NAMES=(kttsd|jovie|kitty)
 declare REPO=kdeaccessibility/jovie
 include common-kdeaccessibility-rules
 
+match /trunk/kdenonbeta/doc/kttsd/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
+
 include ../feature-branches
 
 # Ignore everything else
