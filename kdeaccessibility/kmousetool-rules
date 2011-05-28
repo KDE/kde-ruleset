@@ -12,6 +12,8 @@ declare NAMES=kmousetool
 declare REPO=kdeaccessibility/kmousetool
 include common-kdeaccessibility-rules
 
+include ../feature-branches
+
 # Ignore everything else
 match /
 end match
