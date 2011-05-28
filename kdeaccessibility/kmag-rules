@@ -12,6 +12,8 @@ declare NAMES=kmag
 declare REPO=kdeaccessibility/kmag
 include common-kdeaccessibility-rules
 
+include ../common-kde-ignores
+
 # KMag releases
 match /tags/KMAG_([^/]+)/(kdeaccessibility/)?$
   action recurse
@@ -22,49 +24,6 @@ match /tags/(kmag-|KMAG_)(\d)_(\d)_(\d)(_RELEASE)?/
   max revision 437071
   repository kdeaccessibility/kmag
   branch refs/tags/kmag/\2.\3.\4
-  annotated true
-end match
-
-match /tags/kmag/0.2.0/
-  min revision 437072
-  max revision 437072
-  repository kdeaccessibility/kmag
-  branch refs/tags/kmag/0.2.0
-  annotated true
-end match
-match /tags/kmag/0.4.0/
-  min revision 437072
-  max revision 437072
-  repository kdeaccessibility/kmag
-  branch refs/tags/kmag/0.4.0
-  annotated true
-end match
-match /tags/kmag/0.5.0/
-  min revision 437072
-  max revision 437072
-  repository kdeaccessibility/kmag
-  branch refs/tags/kmag/0.5.0
-  annotated true
-end match
-match /tags/kmag/0.6.0/
-  min revision 437072
-  max revision 437072
-  repository kdeaccessibility/kmag
-  branch refs/tags/kmag/0.6.0
-  annotated true
-end match
-match /tags/kmag/0.7.0/
-  min revision 437072
-  max revision 437072
-  repository kdeaccessibility/kmag
-  branch refs/tags/kmag/0.7.0
-  annotated true
-end match
-match /tags/kmag/0.8.0/
-  min revision 437072
-  max revision 437072
-  repository kdeaccessibility/kmag
-  branch refs/tags/kmag/0.8.0
   annotated true
 end match
 

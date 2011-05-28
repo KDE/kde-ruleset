@@ -20,6 +20,11 @@ match /
     min revision 411963
     max revision 411963
 end match
+# "more tag cleanups"
+match /tags/
+    min revision 437072
+    max revision 437072
+end match
 
 # Tags done incorrectly, deleted and retagged;
 # we ignore the bad tagging and the deletion, let the correct retag through
