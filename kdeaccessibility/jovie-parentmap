@@ -1,0 +1,20 @@
+# merge systray-rewrite xinto systray-rewrite-tng
+562454 564547
+
+# merge systray-rewrite-tng into trunk
+565384 565761
+
+# merge qdbus-api-changes into trunk
+575539 575651
+
+# merge kinstance-redesign into trunk
+627924 628287
+
+# merge kconfiggroup_port into trunk
+635302 635492
+
+# merge kde4_kconfig into trunk
+720884 722004
+
+# merge kconfig_new into trunk
+728440 728852

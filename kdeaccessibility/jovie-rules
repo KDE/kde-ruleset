@@ -12,6 +12,8 @@ declare NAMES=(kttsd|jovie|kitty)
 declare REPO=kdeaccessibility/jovie
 include common-kdeaccessibility-rules
 
+include ../feature-branches
+
 # Ignore everything else
 match /
 end match
