@@ -31,6 +31,8 @@ match /tags/(kmag-|KMAG_)(\d)_(\d)_(\d)(_RELEASE)?/kdeaccessibility/kmag/
   annotated true
 end match
 
+include ../feature-branches
+
 # Ignore everything else
 match /
 end match
