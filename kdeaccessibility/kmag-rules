@@ -23,7 +23,7 @@ match /tags/kmag-0_2_0/
   action ignore
 end match
 
-match /tags/(kmag-|KMAG_)(\d)_(\d)_(\d)(_RELEASE)?/
+match /tags/(kmag-|KMAG_)(\d)_(\d)_(\d)(_RELEASE)?/kdeaccessibility/kmag/
   min revision 74896
   max revision 437071
   repository kdeaccessibility/kmag
