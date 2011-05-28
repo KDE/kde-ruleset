@@ -12,6 +12,8 @@ declare NAMES=kmouth
 declare REPO=kdeaccessibility/kmouth
 include common-kdeaccessibility-rules
 
+include ../feature-branches
+
 # Ignore everything else
 match /
 end match
