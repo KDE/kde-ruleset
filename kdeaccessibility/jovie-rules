@@ -5,7 +5,7 @@
 create repository kdeaccessibility/jovie
 end repository
 
-declare MODULE=kdeaccessibility/jovie
+declare MODULE=kdeaccessibility/(?:kttsd|jovie|kitty)
 declare MODULE_RECURSE=(kdeaccessibility/)?
 
 declare NAMES=(kttsd|jovie|kitty)
