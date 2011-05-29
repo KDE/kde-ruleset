@@ -7,6 +7,16 @@ match /branches/work/kde4/kdeutils/${APPLICATION}/
   max revision 438189
 end match
 
+match /branches/work/kdeutils-build-standalone/$
+  action recurse
+end match
+
+match /branches/work/kdeutils-build-standalone/${APPLICATION}/
+  repository ${REPO}
+  branch work/build-standalone
+  prefix ${PREFIX|/}
+end match
+
 # CVS branches
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/${APPLICATION}/
   repository ${REPO}
