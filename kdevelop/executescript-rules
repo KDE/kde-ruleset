@@ -1,0 +1,13 @@
+create repository kdev-executescript
+end repository
+
+match /trunk/playground/devtools/kdevelop4-extra-plugins/executescript/
+  repository kdev-executescript
+  branch master
+  max revision 1137548 # 1137549 deletes all after move to quanta.git
+end match
+
+match /
+end match
+
+# vim: set ft=conf ts=2 sw=2 et:
