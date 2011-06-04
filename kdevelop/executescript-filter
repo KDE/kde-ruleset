@@ -10,8 +10,7 @@ trap 'rm -rf "$tempdir"' EXIT
 # clone local repo into a temp dir, because rebase needs a working copy
 git clone . "$tempdir"
 
-(
-cd "$tempdir"
+pushd "$tempdir"
 
 git remote add quanta git://anongit.kde.org/quanta
 git fetch quanta
@@ -21,4 +20,3 @@ git filter-branch --subdirectory-filter plugins/executescript newmaster
 git rebase --onto master --root
 
 git push -f origin newmaster:master
-) || exit $?
