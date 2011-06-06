@@ -33,6 +33,15 @@ match /branches/work/emerge/intevation-merge/
     max revision 1158606 # deleted in 1158607
 end match
 
+match /branches/work/emerge/refactoring-2010/
+    repository ${REPO}
+    branch refactoring-2010
+end match
+
+match /branches/work/komo/emerge/
+    repository ${REPO}
+    branch komo
+end match
 
 ##### Tags #####
 match /tags/emerge/([^/]+)/
