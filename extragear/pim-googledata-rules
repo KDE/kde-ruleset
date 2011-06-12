@@ -1,0 +1,23 @@
+create repository googledata
+end repository
+
+match /trunk/extragear/pim/googledata/
+    repository googledata
+    branch master
+end match
+
+match /trunk/kdereview/googledata/
+    repository googledata
+    branch master
+    max revision 958799 # removed in 958800, copied in 958801
+end match
+
+match /trunk/playground/pim/googledata/
+    repository googledata
+    branch master
+    max revision 954208 # copied in 954208, removed in 954209
+end match
+
+# final catch-all
+match /
+end match
