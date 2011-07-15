@@ -20,3 +20,6 @@
 
 # merge kaction-cleanup2 into trunk
 621267 621518
+
+# forward-port from 4.7 to master
+1240129 1240130

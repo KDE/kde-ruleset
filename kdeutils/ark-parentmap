@@ -36,3 +36,6 @@ clear 694732
 
 # merge kde4_kconfig into turnk
 720910 721930
+
+# forward-port from 4.7 to master
+1240907 1240917
