@@ -64,3 +64,6 @@ clear 766903
 
 # merge kconfig_new into trunk
 728440 728852
+
+# version number change, merged from trunk to v3.93 tag
+706300 706302
