@@ -82,6 +82,19 @@ match /branches/kstars/unfrozen/kstars/
     max revision 1121178 # branch still exists, but let's stop somewhere :)
 end match
 
+match /branches/kstars/code-in/$
+    action recurse
+end match
+match /branches/kstars/code-in/kstars/
+    repository kstars
+    branch code-in
+end match
+match /branches/kstars/code-in/doc/kstars/
+    repository kstars
+    branch code-in
+    prefix doc/
+end match
+
 match /
 end match
 #First revision used: 145875
