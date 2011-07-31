@@ -34,7 +34,12 @@ git filter-branch -f -d "$tempdir" \
 # but it makes all tags diverge with an empty commit.
 # So here we delete all empty commits in tags.
 
-git filter-branch -f -d "$tempdir" \
---tag-name-filter cat --prune-empty -- --tags --not --branches
+#git filter-branch -f -d "$tempdir" \
+#--tag-name-filter cat --prune-empty -- --tags --not --branches
+
+# use the cvs2svn fix-tags instead,
+# which deletes empty commits as a side effect
 
 delete_fb_backups;
+
+$bindir/fix-tags

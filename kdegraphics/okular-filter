@@ -20,6 +20,5 @@ git filter-branch -f -d "$tempdir" \
     master..old/work/tiff-improvements
 
 
-# fix-tags is a secret for later ;)
-
-#git filter-branch -f --parent-filter "$(cat ~/src/conversion/fix-tags)" --tag-name-filter cat --prune-empty -- --tags --not --branches
+delete_fb_backups
+$bindir/fix-tags
