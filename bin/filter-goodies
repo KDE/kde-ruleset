@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 calc_tempdir() {
     prefix="${1:-filter-branch}"
