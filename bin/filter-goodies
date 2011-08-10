@@ -3,8 +3,8 @@
 calc_tempdir() {
     prefix="${1:-filter-branch}"
     tempdir=$(
-        mktemp -u -d --tmpdir=/dev/shm "$prefix".XXXXX ||
-        mktemp -u -d --tmpdir "$prefix".XXXXX ||
+        # mktemp -u -d --tmpdir=/dev/shm "$prefix".XXXXX ||
+        mktemp -u -d /tmp/"$prefix".XXXXX ||
         echo ".git-rewrite"
     )
 

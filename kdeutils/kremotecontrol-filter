@@ -8,7 +8,7 @@ bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 # This filter deletes doc/kdelirc from the revision range kdelirc-old..1102503.
 
 revrange="kdelirc-old..$(echo 1102503 | $bindir/translateRevlist.py)"
-revlist_file="$(mktemp)"
+revlist_file="$(mktemp /tmp/tmp.XXXXXXXXXX)"
 
 git rev-list "$revrange" > "$revlist_file"
 
