@@ -31,3 +31,7 @@
 
 # forward-port from 4.6 to master
 1210421 1210423
+
+# revert of accidental documentation revert due to merge
+1244995 1246000@/trunk/KDE/kdeutils/kwallet/
+1244857 1246755@/branches/KDE/4.7/kdeutils/kwallet/

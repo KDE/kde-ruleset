@@ -67,3 +67,7 @@ clear 766903
 
 # version number change, merged from trunk to v3.93 tag
 706300 706302
+
+# revert of accidental documentation revert due to merge
+1244740 1246769@/trunk/KDE/kdeutils/kgpg/
+1244733 1246769@/branches/KDE/4.7/kdeutils/kgpg/
