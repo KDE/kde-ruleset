@@ -75,7 +75,10 @@ svnmap = create_svn_map(log_messages)
 
 def get_match(svnrev, path=None):
     if path is None:
-        if len(svnmap[svnrev]) != 1:
+        if len(svnmap[svnrev]) == 0:
+            sys.stderr.write("error: r%d not found in log\n" % svnrev)
+            sys.exit(1)
+        elif len(svnmap[svnrev]) > 1:
             sys.stderr.write("warning: %d has more than one match:\n" % svnrev)
             for path,gitrev in svnmap[svnrev].items():
                 sys.stderr.write("  %d@%s %s\n" % (svnrev,path,gitrev))
