@@ -3,7 +3,7 @@
 bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 source "$bindir/filter-goodies"
 
-tempdir="$(calc_tempdir fix-tags.XXXXX)"
+tempdir="$(calc_tempdir fix-tags)"
 
 git filter-branch -d "$tempdir" \
 --prune-empty \
