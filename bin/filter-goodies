@@ -4,9 +4,11 @@ calc_tempdir() {
     prefix="${1:-filter-branch}"
     tempdir=$(
         # mktemp -u -d --tmpdir=/dev/shm "$prefix".XXXXX ||
-        mktemp -u -d /tmp/"$prefix".XXXXX ||
+        mktemp -d /tmp/"$prefix".XXXXX ||
         echo ".git-rewrite"
     )
+
+    rm -rf "$tempdir"
 
     echo "using $tempdir as temporary directory" >&2
     echo "$tempdir"
