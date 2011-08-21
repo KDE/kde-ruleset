@@ -1,0 +1,10 @@
+create repository konsole-kde-org
+end repository
+
+match /trunk/www/apps/konsole/
+    repository konsole-kde-org
+    branch master
+end match
+
+match /
+end match
