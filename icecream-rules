@@ -32,7 +32,10 @@ match /branches/work/icecream-make-it-cool/
   branch work/icecream-make-it-cool
 end match
 
-# ignore following, since it breaks history
+# icecream-non-linux-porting doesn't need conversion.
+# It is an import of an icecream fork from KDAB,
+# and there's only 3 commits to it in KDE SVN,
+# none merged back to trunk; so it's irrelevant.
 #match /branches/work/icecream-non-linux-porting/icecream/
 #  repository icecream
 #  branch work/icecream-non-linux-porting
