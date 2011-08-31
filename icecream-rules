@@ -18,9 +18,15 @@ end match
 match /trunk/kdenonbeta/icecream/icecream/mon/
 end match
 
-match /trunk/kdenonbeta/icecream/
+match /trunk/kdenonbeta/icecream/icecream/
   max revision 519553
   repository icecream
+  branch master
+end match
+
+match /trunk/icecream/icecream/
+  max revision 519553
+  repository icemon
   branch master
 end match
 
