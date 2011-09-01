@@ -1,0 +1,33 @@
+declare MODULE=amor
+declare REPO=amor
+
+create repository ${REPO}
+end repository
+
+include kdetoys-branches-tags-rules
+
+match /trunk/KDE/kdetoys/amor/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/KDE/kdetoys/doc/amor/
+  repository ${REPO}
+  prefix doc/
+  branch master
+end match
+
+match /trunk/kdetoys/amor/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/kdetoys/doc/amor/
+  repository ${REPO}
+  prefix doc/
+  branch master
+end match
+
+#Igonre everything else
+match /
+end match
