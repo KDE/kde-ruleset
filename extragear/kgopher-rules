@@ -16,5 +16,15 @@ match /trunk/kdenonbeta/gopher_kioslave/
   repository kio_gopher
   branch master
 end match
+match /trunk/extragear/network/doc/kioslave/gopher/
+  repository kio_gopher
+  branch master
+  prefix doc/
+end match
+match /trunk/kdebase/doc/kioslave/gopher.docbook
+  repository kio_gopher
+  branch master
+  prefix doc/gopher.docbook
+end match
 match /
 end match
