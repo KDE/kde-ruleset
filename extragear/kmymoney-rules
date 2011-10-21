@@ -13,6 +13,12 @@ match /trunk/playground/office/kmymoney/
   branch master
   max revision 1129864
 end match
+match /trunk/playground/office/kmymoney/doc/(en/)?
+  repository kmymoney
+  branch master
+  max revision 1129864
+  prefix doc/
+end match
 
 # move to kdereview in r1129865
 match /trunk/kdereview/kmymoney/
@@ -20,10 +26,21 @@ match /trunk/kdereview/kmymoney/
   branch master
   max revision 1136020
 end match
+match /trunk/kdereview/doc/kmymoney/
+  repository kmymoney
+  branch master
+  max revision 1136020
+  prefix doc/
+end match
 
 # move to extragear in r1136020, until present
 match /trunk/extragear/office/kmymoney/
   repository kmymoney
+  branch master
+end match
+match /trunk/extragear/office/doc/kmymoney/
+  repository kmymoney
+  prefix doc/
   branch master
 end match
 
