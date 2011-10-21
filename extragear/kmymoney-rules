@@ -27,6 +27,30 @@ match /trunk/extragear/office/kmymoney/
   branch master
 end match
 
+match /branches/kmymoney/4.5/
+  repository kmymoney
+  branch 4.5
+end match
+
+match /branches/stable/extragear-kde4/office/kmymoney/
+  repository kmymoney
+  branch 4.6
+end match
+
+# Release tags
+# Change 4.5 tag to 4.5.0 to match other tags
+match /tags/kmymoney/4.5/
+  repository kmymoney
+  branch refs/tags/4.5.0
+  annotated true
+end match
+
+match /tags/kmymoney/([^/]+)/
+  repository kmymoney
+  branch refs/tags/\1
+  annotated true
+end match
+
 # ignore everything else
 match /
 end match
