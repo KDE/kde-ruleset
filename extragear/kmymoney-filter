@@ -3,6 +3,8 @@
 set -e
 bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 
+. "$bindir/filter-goodies"
+
 # Move all files in doc2/ into doc/.
 # This would look much simpler with a tree-filter,
 # but index-filter is significantly faster.
