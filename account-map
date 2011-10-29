@@ -22,6 +22,7 @@ abrondz Anton Brondz <dinolinux@gmail.com>
 abryant Anthony Bryant <antjbryant@gmail.com>
 abu Abou-Zeid Gerdi <abu@gerdi.net>
 abustany Adrien Bustany <madcat@mymadcat.com>
+acelankao AceLan Kao <acelan@acelan.idv.tw>
 ach Achim Bohnet <ach@mpe.mpg.de>
 aclemens Andi Clemens <andi.clemens@gmx.net>
 aclu Amilcar do Carmo Lucas <amilcar@kdevelop.org>
@@ -76,6 +77,7 @@ alexmerry Alex Merry <kde@randomguy3.me.uk>
 alexpod Alex Podolsky <alexpod@users.sf.net>
 alexraymond Alex Raymond <raymond.alex@gmail.com>
 alionakuz Aliona Kuznetsova <aliona.kuz@gmail.com>
+alisauskas Liudas Ališauskas <liudas.alisauskas@gmail.com>
 aliu Alex Liu <aliu@telostech.com>
 allananderson Allan Anderson <agander93@gmail.com>
 allanic Alexia Allanic <alexia_allanic@yahoo.fr>
@@ -100,6 +102,7 @@ amth Arto Hytönen <amthpublic@gmail.com>
 amu Andreas Mueller <amu@tr.debian.net>
 anacmartins Ana Cecília Martins <anaceciliamb@gmail.com>
 anagl Ana Beatriz Guerrero López <ana@ekaia.org>
+anand Chirag Anand <anand.chirag@gmail.com>
 anandhan Hari krishna Anandhan <harikrishna.anandhan@gmail.com>
 ananth Anantharaman Subramanian <writetoananth@gmail.com>
 anaselli Angelo Naselli <anaselli@linux.it>
@@ -145,7 +148,6 @@ ariya Ariya Hidayat <ariya@kde.org>
 arjunl Arjun Asthana <arjun.kde@iiitd.com>
 arnarl Arnar Lundesgaard <listarn@online.no>
 arnebab Arne Babenhauserheide <arne_bab@web.de>
-arnold Ewald Arnold <ewald@ewald-arnold.de>
 arnorehn Arno Rehn <arno@arnorehn.de>
 aronxu Aron Xu <aronmalache@163.com>
 arpadbiro Arpad Biro <biro.arpad@gmail.com>
@@ -216,6 +218,8 @@ bcappello Brian Cappello <cappellokde@gmail.com>
 bcooksley Ben Cooksley <bcooksley@kde.org>
 beatwolf Beat Wolf <asraniel@fryx.ch>
 beaulen Tim Beaulen <tbscope@gmail.com>
+becerraelcinto Javier Becerra Elcinto <javier@auva.es>
+bednar Martin Bednar <serafean@gmail.com>
 beelzebub Christian Lohr <christian.lohr@web.de>
 begert Bill Egert <begert@gmail.com>
 behrmann Kai-Uwe Behrmann <ku.b@gmx.de>
@@ -268,10 +272,9 @@ bobibobi Bozidar Proevski <bobibobi@freemail.com.mk>
 bochi Stefan Bogner <bochi@online.ms>
 bock Harry Bock <hbock@providence.edu>
 boczkowski Tomasz Boczkowski <tboczkowski@onet.pl>
-boemann Casper Boemann <cbr@boemann.dk>
+boemann C. Boemann <cbr@boemann.dk>
 boiko Gustavo P. Boiko <gustavo.boiko@kdemail.net>
 bonne Bonne Eggleston <b.eggleston@gmail.com>
-borchardt Jan-Christoph Borchardt <jancborchardt@fsfe.org>
 borgese Cédric Borgese <cedric.borgese@gmail.com>
 borzenkov Andrey Borzenkov <arvidjaar@gmail.com>
 bosselut Bosselut Cyril <bosselut@b1project.com>
@@ -311,7 +314,7 @@ burchardt Henning Burchardt <hb777@gmx.net>
 burel Chris Burel <chrisburel@gmail.com>
 burghard Carsten Burghardt <burghardt@kde.org>
 burmeister Sven Burmeister <sven.burmeister@gmx.net>
-buschinski Bernd Buschinski <b.buschinski@web.de>
+buschinski Bernd Buschinski <b.buschinski@googlemail.com>
 buttigieg Samuel Buttigieg <sambut1987@gmail.com>
 buyaka Buyant-Orgil Enkhbaatar <buyantorgil@gmail.com>
 buzdugan Laurentiu Buzdugan <lbuz@rolix.org>
@@ -320,9 +323,10 @@ bwadolowski Bart Wadolowski <bartosz.wadolowski@gmail.com>
 bwalter Benoit Walter <b.walter@free.fr>
 bwess Boris Wesslowski <bw@kybs.de>
 bzeller Benjamin Markus Zeller <zeller.benjamin@web.de>
+caiooliveira Caio Oliveira <cmarcelo@gmail.com>
 caitline Caitline Bonnard <caitline.bonnard@gmail.com>
 cakirerk Renan Cakirerk <renan@pardus.org.tr>
-calignano Marco Calignano <marco.calignano@web.de>
+calignano Marco Calignano <marco.calignano@gmail.com>
 callegari Massimo Callegari <massimo_callegari@libero.it>
 campbell Paul Campbell <paul@taniwha.com>
 campomanes Manuel Campomanes <bbseeu@gmail.com>
@@ -388,9 +392,11 @@ cindymckee Cindy McKee <cfmckee@gmail.com>
 cing Christopher Edward Ing <ing.chris@gmail.com>
 ckarai Csaba Karai <cskarai@freemail.hu>
 ckertesz Csaba Kertész <csaba.kertesz@gmail.com>
+clara Lambert CLARA <lambert.clara@yahoo.fr>
 clarke Chris Clarke <chris.clarke@cfourconsulting.com>
 claudiob Claudio Bantaloukas <rockdreamer@gmail.com>
 claudiu Claudiu Costin <claudiuc@kde.org>
+clauschristensen Claus Christensen <claus_chr@webspeed.dk>
 claw Ljubisa Radivojevic <claw@claw.co.yu>
 clee Chris Lee <clee@mg8.org>
 clewis Carl G. Lewis <carll@optushome.com.au>
@@ -450,6 +456,7 @@ dalin Ethan Lin <dalin.lin@gmail.com>
 damien Damien Buhl <damien.buhl@lecbna.org>
 damron Isaiah Damron <xepo@trifault.net>
 danders Dag Andersen <danders@get2net.dk>
+danielsson Holger Danielsson <holger.danielsson@versanet.de>
 danielw Daniel Winter <dw@danielwinter.de>
 danilocesar Danilo Cesar Lemes de Paula <danilo.eu@gmail.com>
 danimo Daniel Molkentin <molkentin@kde.org>
@@ -507,7 +514,7 @@ dheitmueller Devin J. Heitmueller <devin.heitmueller@gmail.com>
 dhoarau Didier Hoarau <did.hoarau@gmail.com>
 dhruvpatel Dhruv Patel <dhruvkumarr.patel51@gmail.com>
 dianat Diana Tiriplica <diana.tiriplica@gmail.com>
-dickson Stuart Dickson <stuart@furkinfantastic.net>
+dickson Stuart Dickson <stuartmd@kogmbh.com>
 diederich Stephan Diederich <stephan.diederich@googlemail.com>
 dietrich Benjamin Dietrich <benni@bennid.de>
 dijkema Hans Dijkema <h.dijkema@hum.org>
@@ -555,7 +562,7 @@ dotancohen Dotan Cohen <kde@dotancohen.com>
 douma Roeland Douma <unix@rullzer.com>
 doutorzero Carlos Azevedo <doutor.zero@gmail.com>
 dpash David Pashley <david@parguild.co.uk>
-drenkhahn Georg Drenkhahn <georg.drenkhahn@gmx.net>
+drenkhahn Georg Drenkhahn <Georg.Drenkhahn@googlemail.com>
 droberts Denny Robertson <drobertson@chartertn.net>
 drowe Dave Rowe <dave@roweware.com>
 dschmidt Dominik Schmidt <kde@dominik-schmidt.de>
@@ -583,7 +590,6 @@ eduardofleury Eduardo Fleury <efleury@gmail.com>
 edulix Eduardo Robles Elvira <edulix@gmail.com>
 efremov Yuri Efremov <yur.arh@gmail.com>
 egonw Egon Willighagen <egon.willighagen@gmail.com>
-ehabkost Eduardo Pereira Habkost <ehabkost@raisama.net>
 ehamberg Erlend Hamberg <ehamberg@gmail.com>
 ehermanns Edgar Hermanns <emax@berlios.de>
 ehrke Georg Ehrke <georg.stefan.germany@googlemail.com>
@@ -627,6 +633,7 @@ esin Andrey Esin <gmlastik@gmail.com>
 esken Christian Esken <esken@kde.org>
 espen Espen Sand <espen@kde.org>
 espie Marc Espie <espie@nerim.net>
+esser Florian Eßer <f.esser@rwth-aachen.de>
 ettrich Matthias Ettrich <ettrich@troll.no>
 euchuma Euclides Lourenço Chuma <euclideschuma@yahoo.com.br>
 eugeniu Eugeniu Plamadeala <eugen.plamadeala@gmail.com>
@@ -836,7 +843,7 @@ gyunaev George Yunaev <kde@ulduzsoft.com>
 gyurco Szombathelyi György <gyurco@freemail.hu>
 haavard Håvard Frøiland <haavard@solveien.net>
 haavardw Håvard Wall <haavardw@ifi.uio.no>
-habacker Ralf Habacker <ralf.habacker@freenet.de>
+habacker Ralf Habacker <ralf.habacker@gmail.com>
 haberkorn Daniel Haberkorn <dhaberkorn@gmx.de>
 habouzit Pierre Habouzit <pierre.habouzit@m4x.org>
 hackenberger Florian Hackenberger <f.hackenberger@chello.at>
@@ -943,7 +950,7 @@ ianwakeling Ian Wakeling <ian.wakeling@ntlworld.com>
 iastrubni Diego Iastrubni <elcuco@kde.org>
 iazzi Mauro Iazzi <mauro.iazzi@gmail.com>
 ibrado Alex Ibrado <alex@kdex.org>
-ibragimov Victor Ibragimov <youth_opportunities@tajikngo.org>
+ibragimov Victor Ibragimov <victor.ibragimov@gmail.com>
 igorto Igor Trindade Oliveira <igor_trindade@yahoo.com.br>
 igungor İbrahim Güngör <ibrahim@pardus.org.tr>
 ihalip Ilie Halip <lupuroshu@gmail.com>
@@ -956,6 +963,7 @@ imalchow Ingo Malchow <imalchow@kde.org>
 infiniti Justin Karneges <justin@affinix.com>
 ingmarvanhassel Ingmar Vanhassel <ingmar@exherbo.org>
 ingwa Inge Wallin <inge@lysator.liu.se>
+intzoglou Theofilos Intzoglou <int.teo@gmail.com>
 isaac Isaac Clerencia <isaac@warp.es>
 isdale Keith Isdale <k_isdale@tpg.com.au>
 iseggev Itai Seggev <is@cs.hmc.edu>
@@ -1052,7 +1060,7 @@ jlugagne Jeremy Florent Lugagne <lugagne.jeremy@gmail.com>
 jlvergara José Luis Vergara <pentalis@gmail.com>
 jmaceachern Jeffery MacEachern <j.maceachern@gmail.com>
 jmarco Joël Marco <crynt@hotmail.com>
-jmhoffmann Jens-Michael Hoffmann <jensmh@gmx.de>
+jmhoffmann Jens-Michael Hoffmann <jmho@jmho.de>
 jminton Jasen Minton <jasen.minton@gmail.com>
 jmthomas Jonathan Michael Thomas <echidnaman@kubuntu.org>
 jmueller Jens Mueller <tschenser@gmx.de>
@@ -1232,6 +1240,7 @@ kostko Jernej Kos <k@jst.sm>
 kouch Hassan Kouch <hkouch@hotmail.com>
 kouikoui Sandrine Beauche <sandrine.beauche@tiscali.fr>
 kourapov Oleg Kourapov <lists@2sheds.ru>
+kozinski Dawid Kozinski <dkozinsk@gmail.com>
 kozminski Michał Koźmiński <michal.kozminski@gmail.com>
 krajaratnam Kovarththanan Rajaratnam <kovarththanan.rajaratnam@gmail.com>
 krake Kevin Krammer <kevin.krammer@gmx.at>
@@ -1243,7 +1252,7 @@ krzywda Stanislas Krzywda <nast01@hotmail.fr>
 ksaurabh kaushik saurabh <roideuniverse@gmail.com>
 ksmanis Konstantinos Smanis <konstantinos.smanis@gmail.com>
 ksvladimir Vladimir Kuznetsov <ks.vladimir@gmail.com>
-kubler François Kubler <francois@kubler.org>
+kubler François Kubler <daitheflu@free.fr>
 kudryashov Yury Georgievich Kudryashov <urkud@ya.ru>
 kuemmel Peter Kümmel <syntheticpp@gmx.net>
 kuester Christian Kuester <c.kuester@tarent.de>
@@ -1269,6 +1278,7 @@ lachner Bernd Lachner <dev@lachner-net.de>
 lade Sam Lade <sam@sentynel.com>
 laidig Daniel Laidig <laidig@kde.org>
 laissus Yoann Laissus <yoann.laissus@gmail.com>
+laitl Matěj Laitl <matej@laitl.cz>
 lakeland Corrin Lakeland <lakeland@cs.otago.ac.nz>
 lalinsky Lukáš Lalinský <lalinsky@gmail.com>
 lamprecht Stephan Lamprecht <stephan@lamprecht.net>
@@ -1279,7 +1289,7 @@ laonux Anousak Souphavanh <anousak@muanglao.com>
 laorenza Carlo Maria Laorenza <carlo@relazioninet.it>
 laout Sebastien Laout <slaout@linux62.org>
 lappelhans Lukas Appelhans <l.appelhans@gmx.de>
-larkang Richard Lärkäng <richard@goteborg.utfors.se>
+larkang Richard Lärkäng <larkang@gmail.com>
 larkw Wang Jian <lark@linux.net.cn>
 lars Lars Doelle <lars.doelle@on-line.de>
 larsson Tobias Larsson <tobias@klaralvdalens-datakonsult.se>
@@ -1314,7 +1324,6 @@ lepagevalleeemmanuel Emmanuel Lepage Vallee <elv1313@gmail.com>
 lespitallier Laurent Espitallier <laurent.espitallier@laposte.net>
 lesser Emmanuel Lesser <elesser@gmail.com>
 lestang Silvère Lestang <silvere.lestang@gmail.com>
-lewis Elfed Lewis <elf@uklinux.net>
 lfboesel Luciano Fernandes Boesel <lfboesel@gmail.com>
 lfranchi Leo Franchi <lfranchi@kde.org>
 lgianinazzi Lukas Floriano Gianinazzi <redict-dot-info@gmx.net>
@@ -1377,7 +1386,7 @@ lukrop Lukas Kropatschek <lukas.krop@gmail.com>
 lunakl Luboš Luňák <l.lunak@kde.org>
 lungu Adrian Lungu <adrian.lungu89@gmail.com>
 lure Luka Renko <lure@kubuntu.org>
-lvsouza Lamarque Souza <lamarque@gmail.com>
+lvsouza Lamarque Souza <lamarque@kde.org>
 lwithers Laurence Withers <lwithers@users.sf.net>
 lxsameer Sameer Rahmani <lxsameer@gmail.com>
 lydia Lydia Pintscher <lydia@kde.org>
@@ -1399,6 +1408,7 @@ malcorps Dennis Malcorps <dennis.malcorps@gmail.com>
 malte Malte Starostik <malte@kde.org>
 mamd Marc-Antoine Miville-Deschenes <mamd@cita.utoronto.ca>
 mamun Mohammad Mahfuzur Rahman Mamun <mamun.nightcrawler@gmail.com>
+mangipudi Kodanda Ram Mangipudi <kodanda@gmail.com>
 manic Mani Chandrasekar <maninc@gmail.com>
 mansona Andrew Manson <g.real.ate@gmail.com>
 manutortosa Manuel Tortosa <manutortosa@gmail.com>
@@ -1440,6 +1450,7 @@ mathieulornac Mathieu Lornac <mathieu.lornac@gmail.com>
 mattea Alberto Mattea <alberto@mattea.info>
 matthewl Matthew James Leach <matthew@theleachfamily.co.uk>
 matthiasf Matthias Füssel <mat.fuessel@gmx.net>
+matthiask Matthias Klumpp <matthias@tenstral.net>
 mattia Mattia Merzi <merzi@itc.it>
 mattler Florence Mattler <florence.mattler@libertysurf.fr>
 mattr Matt Rogers <mattr@kde.org>
@@ -1712,6 +1723,7 @@ ostheimm Michael v.Ostheim <mvostheim@web.de>
 ostroffjh Jack Ostroff <ostroffjh@users.sourceforge.net>
 ostrowski Michal Ostrowski <ostrowski.michal@gmail.com>
 otrichet Olivier Trichet <nive@nivalis.org>
+otten Bart Otten <bartotten@kde.nl>
 owaing Owain Green <owaing@oceanfree.net>
 ozan Ozan Çağlayan <ozan@pardus.org.tr>
 pablo Pablo Saratxaga <pablo@mandriva.com>
@@ -1720,6 +1732,7 @@ padhi Chinmaya Padhi <padhi.chinmaya@gmail.com>
 padmawan Andhika Padmawan <andhika.padmawan@gmail.com>
 page Adrian Page <adrian@pagenet.plus.com>
 pahlibar Renchi Raju <renchi.raju@kdemail.net>
+palani Ananta Palani <anantapalani@gmail.com>
 pali Pali Rohár <pali.rohar@gmail.com>
 pandit Shreya Pandit <shreya.pandit25@gmail.com>
 paneves Pedro António Neves <paneves@ualg.pt>
@@ -1848,6 +1861,7 @@ rahn Torsten Rahn <tackat@kde.org>
 rahuldas Rahul Das <h.rahuldas@gmail.com>
 rajeev Ashwin Rajeev <ashwin_rajeev@hotmail.com>
 rakarg Gregor Rakar <gregor.rakar@kiss.uni-lj.si>
+ralfjung Ralf Jung <ralfjung-e@gmx.de>
 ralsina Roberto Alsina <ralsina@netline.com.ar>
 ramagnus Rolf Magnus <ramagnus@kde.org>
 ramakrishna Ramakrishna R.                 <rkhas108solutions@yahoo.com>
@@ -1897,7 +1911,6 @@ rgruber Robert Gruber <rgruber@users.sourceforge.net>
 rharnau Roland Harnau <truthandprogress@googlemail.com>
 rhburchell Robin Harold Burchell <viroteck@viroteck.net>
 rhoezler Ralf Hoelzer <ralf@well.com>
-riano Rian Orie <rian.orie@gmail.com>
 ribic Samir Ribic <megaribi@epn.ba>
 ricard Vincent Ricard <magic@magicninja.org>
 rich Richard J. Moore <rich@kde.org>
@@ -1937,7 +1950,7 @@ roblalau Rob la Lau <kde@ohreally.nl>
 robntina Robert Wadley <robntina@juno.com>
 rodda Hamish Rodda <rodda@kde.org>
 rodin Alexander Rodin <rodin.alexander@gmail.com>
-rodrigoo Rodrigo Gonçalves de Oliveira <mdkcore@gmail.com>
+rodrigoo Rodrigo Oliveira <rodrigo@thecoreme.org>
 rodriguez Rafael Rodríguez Martín <rafael.rodriguez.tf@gmail.com>
 rodriguezortiz Ernesto Rodriguez Ortiz <eortiz@uci.cu>
 roeder Victor Roeder <victor_roeder@gmx.de>
@@ -1982,10 +1995,10 @@ ruurd Ruurd Pels <ruurd@tiscali.nl>
 rward Robbie Ward <linuxphreak@gmx.co.uk>
 rwilliam Robert Williams <rwilliams@jrc-utah.com>
 rwooninck Raymond Wooninck <tittiatcoke@gmail.com>
-ryanrix Ryan James Rix <ry@n.rix.si>
+ryanrix Ryan Rix <ry@n.rix.si>
 ryrych Wojciech Ryrych <rrh@op.pl>
 rysin Andriy Rysin <arysin@gmail.com>
-rytilahti Teemu Rytilahti <tpr@d5k.net>
+rytilahti Teemu Rytilahti <tpr@iki.fi>
 rzarazua Ramon Zarazua <killerfox512@gmail.com>
 s_dibbern Soenke Dibbern <s_dibbern@web.de>
 sabiq Reşat Sabiq <tilde.birlik@gmail.com>
@@ -2220,7 +2233,7 @@ tbastian Thierry Bastian <thierry.bastian@trolltech.com>
 tbaumgart Thomas Baumgart <thb@net-bembel.de>
 tburdick Tom Burdick <tburdi1@uic.edu>
 tbutler Timothy R. Butler <tbutler@uninetsolutions.com>
-tcanabrava Tomaz Martins dos Santos Canabrava <tcanabrava@kde.org>
+tcanabrava Tomaz Canabrava <tcanabrava@kde.org>
 tcoopman Thomas Coopman <thomas.coopman@gmail.com>
 tdfischer Trever Fischer <tdfischer@fedoraproject.org>
 tdickenson Toby Dickenson <toby@tarind.com>
@@ -2246,7 +2259,7 @@ tgridel Thibaut Gridel <tgridel@free.fr>
 thanngo Than Ngo <than@redhat.de>
 theato Till Theato <root@ttill.de>
 thelin Bip Thelin <bip@xnet.se>
-thelmen Johan Thelmen <jth@linux.nu>
+thelmen Johan Thelmen <johan.thelmen@gmail.com>
 theoc Theo Chatzimichos <tampakrap@gentoo.org>
 thiago Thiago Macieira <thiago@kde.org>
 thiesen Marcus Thiesen <marcus@thiesen.org>
@@ -2404,7 +2417,7 @@ vriezen Koos Vriezen <koos.vriezen@gmail.com>
 vrouet Valentin Rouet <v.rouet@gmail.com>
 vrusu Valentin Rusu <kde@rusu.info>
 vsac Vincent Sac <staworms@hotmail.com>
-vsinitsyn Valentine Sinitsyn <e_val@inbox.ru>
+vsinitsyn Valentine Sinitsyn <valentine.sinitsyn@gmail.com>
 vtokarev Viacheslav Tokarev <tsjoker@gmail.com>
 vtorshyn Vitaly Torshyn <vitaly.torshyn@gmail.com>
 vudentz Luiz Augusto von Dentz <luiz.dentz@gmail.com>
@@ -2522,6 +2535,7 @@ antialias Zeljko Vukman <vukman@b2mail.dk>
 arandir David Johnson <arandir@meer.net>
 arbab Reza Arbab <arbab@austin.ibm.com>
 armen Armen Nakashian <armen@yawara.anime.net>
+arnold Ewald Arnold <ewald@ewald-arnold.de>
 arun Arun Sharma <arun@kde.org>
 asimon Andreas Simon <yuipx@gmx.net>
 assa Hermann Zheboldov <hermann.zheboldov@shq.ru>
@@ -2553,6 +2567,7 @@ blazi Błażej Kotowski <blaziko@gmail.com>
 bminisini Benoit Minisini <gambas@users.sf.net>
 boloni Lotzi Boloni <lboloni@cpe.ucf.edu>
 bombera Christian Bombera <christian.bombera@gmx.de>
+borchardt Jan-Christoph Borchardt <jan@unhosted.org>
 boyan Boyan Georgiev Ivanov <boyan17@bulgaria.com>
 bram Bram Schoenmakers <bramschoenmakers@kde.nl>
 brandybuck David Johnson <david@usermode.org>
@@ -2583,12 +2598,12 @@ claudiuc Claudiuc Costin <null+claudiuc@kde.org>
 comparon Cyril Comparon <cyril.comparon@trolltech.com>
 corey John Corey <john@jcorey.org>
 courtiau Jérémy Courtiau <jeremy.courtiau@gmail.com>
+cschum Cornelius Schumacher <null+cschum@kde.org>
 cthurner Christian Thurner <cthurner@nikocity.de>
 cumming Ryan Cumming <ryan@kde.org>
 cwiegand Chris Wiegand <chris.wiegand@attbi.com>
 damienboissiere Damien Boissière <damien.boissiere@gmail.com>
 dang Clarence Dang <dang@kde.org>
-danielsson Holger Danielsson <holger.danielsson@versanet.de>
 danko Danko Ilik <danko@mindless.com>
 danmarja Daniel Marjamäki <a96danma@dormnet.his.se>
 davec Dave Corrie <kde@davecorrie.com>
@@ -2619,6 +2634,7 @@ dyp Denis Perchine <dyp@perchine.com>
 dzhao Di Zhao <dzhao@primeon.com>
 dziegel Dirk Ziegelmeier <dziegel@gmx.de>
 egomes Emerson Gomes <emerson.gomes@gmx.net>
+ehabkost Eduardo Pereira Habkost <ehabkost@raisama.net>
 ehmke Eggert Ehmke <eggert.ehmke@berlin.de>
 eikelange Eike Lange <eike.lange@kdemail.net>
 eisfuchs Dario Abatianni <eisfuchs@tigress.com>
@@ -2745,6 +2761,7 @@ lehner Burkhard Lehner <burkhard.lehner@gmx.de>
 lengyel Marcell Lengyel <miketkf@yahoo.com>
 leonb Leon Bottou <leon@bottou.org>
 leonhard Percy Leonhardt <percy@eris23.de>
+lewis Elfed Lewis <elf@uklinux.net>
 liesse Nathalie Liesse <nathalie.liesse@gmail.com>
 lilachaze Richard Smith <kde@metafoo.co.uk>
 logixoul Stefan Monov <logixoul@gmail.com>
@@ -2851,6 +2868,7 @@ rekhar Rekha Rawat <rekhar@corel.com>
 rfunken Ralf Funken <funken.ruk@netcologne.de>
 rgecik Radko Gecik <rgecik@mail.pvt.sk>
 rhughes Richard Hughes <hughsient@gmail.com>
+riano Rian Orie <rian.orie@gmail.com>
 ries Albert Ries <ries@biochem.mpg.de>
 rikkus Rik Hemsley <rik@kde.org>
 rjwalsh Robert Walsh <rjwalsh@durables.org>
