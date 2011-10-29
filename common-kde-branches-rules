@@ -11,14 +11,14 @@ end match
 
 match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/${MODULE}/
     repository ${REPO}
-    branch \1.\2
+    branch KDE/\1.\2
     prefix ${PREFIX|/}
     max revision 409201
 end match
 match /branches/KDE/(\d+)\.(\d+)/${MODULE}/
     repository ${REPO}
     prefix ${PREFIX|/}
-    branch \1.\2
+    branch KDE/\1.\2
 end match
 match /branches/work/~([^/]+)/([^/]*${MODULE}[^/]*)/
     repository ${REPO}
