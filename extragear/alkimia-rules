@@ -1,0 +1,24 @@
+#
+# Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
+
+create repository alkimia
+end repository
+
+match /trunk/extragear/office/alkimia/
+  repository alkimia
+  branch master
+end match
+
+match /trunk/kdereview/libalkimia/
+  repository alkimia
+  branch refs/svn2git/pre-extragear-pin
+end match
+
+match /trunk/playground/office/alkimia/libalkimia/
+  repository alkimia
+  branch refs/svn2git/pre-extragear-pin
+end match
+
+# ignore everything else
+match /
+end match
