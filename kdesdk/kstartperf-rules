@@ -1,0 +1,19 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdesdk/kstartperf
+end repository
+
+declare MODULE=kdesdk/kstartperf
+declare MODULE_RECURSE=(kdesdk/)?
+
+declare NAMES=kstartperf
+declare REPO=kdesdk/kstartperf
+include common-kdesdk-rules
+
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match

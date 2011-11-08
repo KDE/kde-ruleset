@@ -1,0 +1,19 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdesdk/kdepalettes
+end repository
+
+declare MODULE=kdesdk/kdepalettes
+declare MODULE_RECURSE=(kdesdk/)?
+
+declare NAMES=kdepalettes
+declare REPO=kdesdk/kdepalettes
+include common-kdesdk-rules
+
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match
