@@ -14,7 +14,7 @@ bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 
 git filter-branch -d "$(calc_tempdir kmymoney-filter)" --index-filter '
 git ls-files -s |
-sed "s-\tdoc2/-\tdoc/-" |
+sed "s,\tdoc2/,\tdoc/," |
 GIT_INDEX_FILE="$GIT_INDEX_FILE.new" git update-index --index-info &&
 mv "$GIT_INDEX_FILE.new" "$GIT_INDEX_FILE";
 ' --tag-name-filter cat -- --all
