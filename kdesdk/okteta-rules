@@ -14,6 +14,21 @@ include common-kdesdk-rules
 
 include ../feature-branches
 
+match /trunk/KDE/kdeutils/okteta/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/kdereview/okteta/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/playground/utils/okteta/
+  repository ${REPO}
+  branch master
+end match
+
 # Ignore everything else
 match /
 end match
