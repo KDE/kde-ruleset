@@ -1,0 +1,32 @@
+create repository kpat
+end repository
+
+declare REPO=kpat
+
+match /trunk/(KDE/)?kdegames/kpat/
+    repository kpat
+    branch master
+end match
+
+match /(branches|tags)/[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/kpat/
+    repository kpat
+    branch \1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/kpat/
+    repository kpat
+    branch \1.\2
+end match
+
+declare MODULE=kdegames/kpat
+declare MODULE_RECURSE=(kdegames/)?
+include ../feature-branches
+
+match /
+end match
