@@ -1,0 +1,12 @@
+create repository ktuberling
+end repository
+
+declare REPO=ktuberling
+
+match /trunk/(KDE/)?kdegames/ktuberling/
+    repository ktuberling
+    branch master
+end match
+
+match /
+end match
