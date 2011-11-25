@@ -37,6 +37,11 @@ match /branches/work/kpat_solvers/
     branch kpat_solvers
 end match
 
+match /branches/work/kpat_65506/
+    repository kpat
+    branch kpat_65506
+end match
+
 declare MODULE=kdegames/kpat
 declare MODULE_RECURSE=(kdegames/)?
 include ../feature-branches
