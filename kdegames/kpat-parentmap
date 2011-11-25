@@ -1,0 +1,44 @@
+# r393399 is a cvs2svn commit creating branch 3.4.
+# It's marked as merge commit, child of a master commit *and* its parent.
+# This changes it to only be a child of the most recent master commit
+# (since that way the diff is empty).
+clear 393399
+392875 393399
+
+# merges from trunk to kde4 branch
+420196 421095
+424010 424808
+429513 430638
+431939 432079
+# merging kde4 into trunk
+437277 439536
+
+# forward port from 3.5 to trunk
+452350 452668
+
+# merge kaction-cleanup1 to trunk
+610217 610651
+
+# merge from trunk to kaction-cleanup2
+# commented out because kaction-cleanup2 isn't merged to trunk anyway
+# 613972 614117
+
+# merge from trunk to kaction-cleanup3
+620130 620435
+# merge kaction-cleanup3 to trunk
+620435 621518
+
+# merge kinstance-redesign to trunk
+627974 628310
+
+# merge kconfiggroup_port to trunk
+634273 635473
+
+# merge kmainwindow-decoupling to trunk
+654675 654728
+
+# merge kde4_kconfig to trunk
+720908 721729
+
+# merge kconfig_new to trunk
+728440 728852
