@@ -8,5 +8,41 @@ match /trunk/(KDE/)?kdegames/ktuberling/
     branch master
 end match
 
+# BEGIN version branches
+match /(branches|tags)/KDE_\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/ktuberling/
+    repository ktuberling
+    branch \1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/ktuberling/
+    repository ktuberling
+    branch \1.\2
+end match
+# END
+
+# BEGIN Documentation
+match /trunk/(KDE/)?kdegames/doc/ktuberling/
+    repository ktuberling
+    branch master
+    prefix doc/
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/ktuberling/
+    repository ktuberling
+    branch \1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/ktuberling/
+    repository ktuberling
+    branch \1.\2
+    prefix doc/
+end match
+# END
+
 match /
 end match
