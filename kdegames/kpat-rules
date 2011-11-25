@@ -24,6 +24,19 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/kpat/
     branch \1.\2
 end match
 
+match /branches/work/kde4/kdegames/$
+    action recurse
+end match
+match /branches/work/kde4/kdegames/kpat/
+    repository kpat
+    branch kde4
+end match
+
+match /branches/work/kpat_solvers/
+    repository kpat
+    branch kpat_solvers
+end match
+
 declare MODULE=kdegames/kpat
 declare MODULE_RECURSE=(kdegames/)?
 include ../feature-branches
