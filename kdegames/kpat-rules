@@ -85,11 +85,11 @@ match /branches/work/kpat_65506/
     repository kpat
     branch kpat_65506
 end match
-# END
 
 declare MODULE=kdegames/kpat
 declare MODULE_RECURSE=(kdegames/)?
 include ../feature-branches
+# END
 
 match /
 end match
