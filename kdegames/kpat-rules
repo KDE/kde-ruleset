@@ -26,6 +26,29 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/kpat/
 end match
 # END
 
+# BEGIN release tags
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdegames/kpat/
+    repository kpat
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdegames/kpat/
+    repository kpat
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)/kdegames/kpat/
+    repository kpat
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kpat/
+    repository kpat
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+# END
+
 # BEGIN work branches
 match /branches/work/kde4/kdegames/$
     action recurse
