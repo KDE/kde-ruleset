@@ -49,6 +49,24 @@ match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kpat/
 end match
 # END
 
+# BEGIN Documentation
+match /trunk/(KDE/)?kdegames/doc/kpat/
+    repository kpat
+    branch master
+    prefix doc/
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/kpat/
+    repository kpat
+    branch \1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kpat/
+    repository kpat
+    branch \1.\2
+    prefix doc/
+end match
+# END
+
 # BEGIN work branches
 match /branches/work/kde4/kdegames/$
     action recurse
@@ -66,24 +84,6 @@ end match
 match /branches/work/kpat_65506/
     repository kpat
     branch kpat_65506
-end match
-# END
-
-# BEGIN Documentation
-match /trunk/(KDE/)?kdegames/doc/kpat/
-    repository kpat
-    branch master
-    prefix doc/
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/kpat/
-    repository kpat
-    branch \1.\2
-    prefix doc/
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kpat/
-    repository kpat
-    branch \1.\2
-    prefix doc/
 end match
 # END
 
