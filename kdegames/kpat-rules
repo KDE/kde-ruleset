@@ -9,10 +9,10 @@ match /trunk/(KDE/)?kdegames/kpat/
 end match
 
 # BEGIN version branches
-match /(branches|tags)/[^/]+/(kdegames/)?$
+match /(branches|tags)/KDE_\d+[^/]+/(kdegames/)?$
   action recurse
 end match
-match /(branches|tags)/KDE/[^/]+/(kdegames/)?$
+match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
   action recurse
 end match
 
