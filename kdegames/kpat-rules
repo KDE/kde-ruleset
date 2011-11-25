@@ -8,6 +8,7 @@ match /trunk/(KDE/)?kdegames/kpat/
     branch master
 end match
 
+# BEGIN version branches
 match /(branches|tags)/[^/]+/(kdegames/)?$
   action recurse
 end match
@@ -23,7 +24,9 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/kpat/
     repository kpat
     branch \1.\2
 end match
+# END
 
+# BEGIN work branches
 match /branches/work/kde4/kdegames/$
     action recurse
 end match
@@ -41,6 +44,7 @@ match /branches/work/kpat_65506/
     repository kpat
     branch kpat_65506
 end match
+# END
 
 declare MODULE=kdegames/kpat
 declare MODULE_RECURSE=(kdegames/)?
