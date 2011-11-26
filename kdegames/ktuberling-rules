@@ -44,5 +44,9 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/ktuberling/
 end match
 # END
 
+declare MODULE=kdegames/ktuberling
+declare MODULE_RECURSE=(kdegames/)?
+include ../feature-branches
+
 match /
 end match
