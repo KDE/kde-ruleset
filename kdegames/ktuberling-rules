@@ -44,9 +44,19 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/ktuberling/
 end match
 # END
 
+# BEGIN work branches
+match /branches/work/kde4/kdegames/$
+    action recurse
+end match
+match /branches/work/kde4/kdegames/ktuberling/
+    repository ktuberling
+    branch kde4
+end match
+
 declare MODULE=kdegames/ktuberling
 declare MODULE_RECURSE=(kdegames/)?
 include ../feature-branches
+# END
 
 match /
 end match
