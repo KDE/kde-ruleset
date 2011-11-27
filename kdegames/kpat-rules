@@ -73,17 +73,17 @@ match /branches/work/kde4/kdegames/$
 end match
 match /branches/work/kde4/kdegames/kpat/
     repository kpat
-    branch kde4
+    branch refs/workbranch/kde4
 end match
 
 match /branches/work/kpat_solvers/
     repository kpat
-    branch kpat_solvers
+    branch refs/workbranch/kpat_solvers
 end match
 
 match /branches/work/kpat_65506/
     repository kpat
-    branch kpat_65506
+    branch refs/workbranch/kpat_65506
 end match
 
 declare MODULE=kdegames/kpat
