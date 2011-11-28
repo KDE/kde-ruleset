@@ -14,6 +14,7 @@
 
 from dulwich.repo import Repo
 from dulwich.walk import Walker
+from dulwich.objects import Commit, Tree
 import re
 import unittest
 
@@ -34,7 +35,9 @@ def getSvnRev(commit):
 
     return svnrev_cache[commit.id]
 
-def isFileInTree(repo, tree, path):
+# a few additions into the dulwich objects
+
+def _isFileInTree(repo, tree, path):
     '''
     Walks a tree, recursively, trying to find a file with the given path.
     '''
@@ -47,6 +50,7 @@ def isFileInTree(repo, tree, path):
             return False
     except KeyError:
         return False
+Repo.file_in_tree = _isFileInTree
 
 class KTuberlingTests(unittest.TestCase):
     def setUp(self):
@@ -60,7 +64,7 @@ class KTuberlingTests(unittest.TestCase):
         root=roots[0]
         self.assertEqual(getSvnRev(root), 20670,
                         "the master branch root isn't what we expected")
-        self.assertTrue(isFileInTree(self.repo, self.repo.tree(root.tree), "doc/en/index.html"))
+        self.assertTrue(self.repo.file_in_tree(self.repo.tree(root.tree), "doc/en/index.html"))
 
     def branch(self, name):
         return self.repo.ref("refs/heads/%s" % name);
