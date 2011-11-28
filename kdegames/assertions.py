@@ -61,7 +61,7 @@ Repo.branch = _shaFromBranch
 class KTuberlingTests(unittest.TestCase):
     def setUp(self):
         self.repo = Repo(repo_path)
-        self.longMessage=True
+        self.longMessage = True
 
     def testMasterRoot(self):
         roots = self.getRoots(include=[self.repo.branch("master")])
