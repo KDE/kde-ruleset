@@ -22,7 +22,9 @@ repo_path="."
 
 svnrev_cache={}
 
-def getSvnRev(commit):
+# a few additions into the dulwich objects
+
+def _getSvnRev(commit):
     '''
     Returns the SVN revision corresponding to the given commit.
     'commit' must be a dulwich.objects.Commit.
@@ -35,7 +37,7 @@ def getSvnRev(commit):
 
     return svnrev_cache[commit.id]
 
-# a few additions into the dulwich objects
+Commit.get_svn_rev = _getSvnRev
 
 def _isFileInTree(repo, tree, path):
     '''
@@ -66,7 +68,7 @@ class KTuberlingTests(unittest.TestCase):
         roots = list(roots)
         self.assertEqual(len(roots), 1, "the master branch should have 1 root")
         root=roots[0]
-        self.assertEqual(getSvnRev(root), 20670,
+        self.assertEqual(root.get_svn_rev(), 20670,
                         "the master branch root isn't what we expected")
         self.assertTrue(self.repo.file_in_tree(self.repo.tree(root.tree), "doc/en/index.html"))
 
