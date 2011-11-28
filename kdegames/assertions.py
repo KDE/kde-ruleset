@@ -81,6 +81,11 @@ class KTuberlingTests(unittest.TestCase):
                         "the master branch root isn't what we expected")
         self.assertTrue(self.repo.file_in_tree(self.repo.tree(root.tree), "doc/en/index.html"))
 
+    def testDocRename(self):
+        renameCommit = self.repo.commit_from_svnrev(20794)
+        self.assertIsNot(renameCommit, None)
+        self.assertEqual(len(renameCommit.parents), 1)
+
     def getRoots(self, include, exclude=[]):
         for entry in self.repo.get_walker(include=include, exclude=exclude):
             if len(entry.commit.parents) == 0:
