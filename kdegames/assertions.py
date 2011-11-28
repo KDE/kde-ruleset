@@ -58,6 +58,15 @@ def _shaFromBranch(repo, branch_name):
     return repo.ref("refs/heads/%s" % branch_name)
 Repo.branch = _shaFromBranch
 
+# this is slow as hell! needs its own cache and stuff
+def _commitFromSvnRev(repo, svnrev):
+    for entry in repo.get_walker():
+        if entry.commit.get_svn_rev() == svnrev:
+            return entry.commit
+    return None
+
+Repo.commit_from_svnrev = _commitFromSvnRev
+
 class KTuberlingTests(unittest.TestCase):
     def setUp(self):
         self.repo = Repo(repo_path)
