@@ -15,6 +15,7 @@
 from dulwich.repo import Repo
 from dulwich.walk import Walker
 from dulwich.objects import Commit, Tree
+from dulwich import diff_tree
 import re
 import unittest
 
@@ -71,6 +72,7 @@ class KTuberlingTests(unittest.TestCase):
     def setUp(self):
         self.repo = Repo(repo_path)
         self.longMessage = True
+        self.renameDetector = diff_tree.RenameDetector(self.repo.object_store)
 
     def testMasterRoot(self):
         roots = self.getRoots(include=[self.repo.branch("master")])
@@ -81,10 +83,23 @@ class KTuberlingTests(unittest.TestCase):
                         "the master branch root isn't what we expected")
         self.assertTrue(self.repo.file_in_tree(self.repo.tree(root.tree), "doc/en/index.html"))
 
+    def getCommitChanges(self, commit):
+        assert commit is not None
+        self.assertEqual(len(commit.parents), 1)
+
+        parentCommit = self.repo.commit(commit.parents[0])
+
+        return diff_tree.tree_changes(self.repo.object_store,
+                parentCommit.tree, commit.tree,
+                False, self.renameDetector)
+
     def testDocRename(self):
         renameCommit = self.repo.commit_from_svnrev(20794)
         self.assertIsNot(renameCommit, None)
         self.assertEqual(len(renameCommit.parents), 1)
+
+        changes = self.getCommitChanges(renameCommit)
+        self.assertTrue(any(change.type == "rename" and change.old.path=="doc/en/index.html" and change.new.path=="doc/index.html" for change in changes))
 
     def getRoots(self, include, exclude=[]):
         for entry in self.repo.get_walker(include=include, exclude=exclude):
