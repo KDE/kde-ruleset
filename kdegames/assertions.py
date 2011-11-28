@@ -101,6 +101,17 @@ class KTuberlingTests(unittest.TestCase):
         changes = self.getCommitChanges(renameCommit)
         self.assertTrue(any(change.type == "rename" and change.old.path=="doc/en/index.html" and change.new.path=="doc/index.html" for change in changes))
 
+    def testDocMakefileChange(self):
+        commitInQuestion = self.repo.commit_from_svnrev(22359)
+        self.assertIsNot(commitInQuestion, None)
+        self.assertEqual(len(commitInQuestion.parents), 1)
+        changes = list(self.getCommitChanges(commitInQuestion))
+        self.assertEqual(len(changes), 1)
+        change=changes[0]
+        self.assertEqual(change.type, "modify")
+        self.assertEqual(change.old.path, "doc/Makefile.am")
+        self.assertEqual(change.new.path, "doc/Makefile.am")
+
     def getRoots(self, include, exclude=[]):
         for entry in self.repo.get_walker(include=include, exclude=exclude):
             if len(entry.commit.parents) == 0:
