@@ -52,22 +52,23 @@ def _isFileInTree(repo, tree, path):
         return False
 Repo.file_in_tree = _isFileInTree
 
+def _shaFromBranch(repo, branch_name):
+    return repo.ref("refs/heads/%s" % branch_name)
+Repo.branch = _shaFromBranch
+
 class KTuberlingTests(unittest.TestCase):
     def setUp(self):
         self.repo = Repo(repo_path)
         self.longMessage=True
 
     def testMasterRoot(self):
-        roots = self.getRoots(include=[self.branch("master")])
+        roots = self.getRoots(include=[self.repo.branch("master")])
         roots = list(roots)
         self.assertEqual(len(roots), 1, "the master branch should have 1 root")
         root=roots[0]
         self.assertEqual(getSvnRev(root), 20670,
                         "the master branch root isn't what we expected")
         self.assertTrue(self.repo.file_in_tree(self.repo.tree(root.tree), "doc/en/index.html"))
-
-    def branch(self, name):
-        return self.repo.ref("refs/heads/%s" % name);
 
     def getRoots(self, include, exclude=[]):
         for entry in self.repo.get_walker(include=include, exclude=exclude):
