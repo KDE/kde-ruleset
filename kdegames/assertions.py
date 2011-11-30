@@ -112,6 +112,15 @@ class KTuberlingTests(unittest.TestCase):
         self.assertEqual(change.old.path, "doc/Makefile.am")
         self.assertEqual(change.new.path, "doc/Makefile.am")
 
+    def test20BranchCommits(self):
+        revsIn20 = list(self.getSvnRevsInRange([self.repo.branch("2.0")], [self.repo.branch("master")]))
+        revsIn20.reverse()
+        self.assertEqual(revsIn20, [69862, 71236])
+
+    def getSvnRevsInRange(self, include, exclude):
+        for entry in self.repo.get_walker(include=include, exclude=exclude):
+            yield entry.commit.get_svn_rev()
+
     def getRoots(self, include, exclude=[]):
         for entry in self.repo.get_walker(include=include, exclude=exclude):
             if len(entry.commit.parents) == 0:
