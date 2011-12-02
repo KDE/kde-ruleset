@@ -123,6 +123,10 @@ class KTuberlingTests(unittest.TestCase):
         revsIn20.reverse()
         self.assertEqual([rev.get_svn_rev() for rev in revsIn20], [69862, 71236])
 
+        lastRevChanges = list(self.getCommitChanges(revsIn20[-1]))
+        self.assertEqual(len(lastRevChanges), 1)
+        self.assertTrue(lastRevChanges[0].isModify("doc/index.docbook"))
+
     def getRevsInRange(self, include, exclude):
         if not isinstance(include,list): include=[include]
         if not isinstance(exclude,list): exclude=[exclude]
