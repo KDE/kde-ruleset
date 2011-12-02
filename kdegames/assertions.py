@@ -70,9 +70,11 @@ Repo.commit_from_svnrev = _commitFromSvnRev
 
 def changeIsModify(change, path):
     return change.type == "modify" and change.old.path == change.new.path == path
+diff_tree.TreeChange.isModify = changeIsModify
 
 def changeIsRename(change, old_path, new_path):
     return change.type == "rename" and change.old.path == old_path and change.new.path == new_path
+diff_tree.TreeChange.isRename = changeIsRename
 
 class KTuberlingTests(unittest.TestCase):
     def setUp(self):
@@ -105,7 +107,7 @@ class KTuberlingTests(unittest.TestCase):
         self.assertEqual(len(renameCommit.parents), 1)
 
         changes = self.getCommitChanges(renameCommit)
-        self.assertTrue(any(changeIsRename(change, "doc/en/index.html", "doc/index.html") for change in changes))
+        self.assertTrue(any(change.isRename("doc/en/index.html", "doc/index.html") for change in changes))
 
     def testDocMakefileChange(self):
         commitInQuestion = self.repo.commit_from_svnrev(22359)
@@ -114,7 +116,7 @@ class KTuberlingTests(unittest.TestCase):
 
         changes = list(self.getCommitChanges(commitInQuestion))
         self.assertEqual(len(changes), 1)
-        self.assertTrue(changeIsModify(changes[0], "doc/Makefile.am"))
+        self.assertTrue(changes[0].isModify("doc/Makefile.am"))
 
     def test20BranchCommits(self):
         revsIn20 = list(self.getRevsInRange(self.repo.branch("2.0"), self.repo.branch("master")))
