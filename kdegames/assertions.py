@@ -85,14 +85,16 @@ class KTuberlingTests(unittest.TestCase):
         roots = self.getRoots(include=[self.repo.branch("master")])
         roots = list(roots)
         self.assertEqual(len(roots), 1, "the master branch should have 1 root")
+
         root=roots[0]
         self.assertEqual(root.get_svn_rev(), 20670,
-                        "the master branch root isn't what we expected")
-        self.assertTrue(self.repo.file_in_tree(self.repo.tree(root.tree), "doc/en/index.html"))
+                        "the master branch root should be %d" % 20670)
+        self.assertTrue(self.repo.file_in_tree(self.repo.tree(root.tree), "doc/en/index.html"),
+                        "the first commit should contain doc/en/index.html")
 
     def getCommitChanges(self, commit):
         assert commit is not None
-        self.assertEqual(len(commit.parents), 1)
+        self.assertEqual(len(commit.parents), 1, "commit should have only one parent")
 
         parentCommit = self.repo.commit(commit.parents[0])
 
@@ -102,29 +104,31 @@ class KTuberlingTests(unittest.TestCase):
 
     def testDocRename(self):
         renameCommit = self.repo.commit_from_svnrev(20794)
-        self.assertIsNot(renameCommit, None)
-        self.assertEqual(len(renameCommit.parents), 1)
+        self.assertIsNot(renameCommit, None, "commit not found")
+        self.assertEqual(len(renameCommit.parents), 1, "commit should have a single parent")
 
         changes = self.getCommitChanges(renameCommit)
-        self.assertTrue(any(change.isRename("doc/en/index.html", "doc/index.html") for change in changes))
+        self.assertTrue(any(change.isRename("doc/en/index.html", "doc/index.html") for change in changes),
+                        "20794 should move documentation files")
 
     def testDocMakefileChange(self):
         commitInQuestion = self.repo.commit_from_svnrev(22359)
-        self.assertIsNot(commitInQuestion, None)
-        self.assertEqual(len(commitInQuestion.parents), 1)
+        self.assertIsNot(commitInQuestion, None, "commit 22359 not found")
+        self.assertEqual(len(commitInQuestion.parents), 1, "commit should have a single parent")
 
         changes = list(self.getCommitChanges(commitInQuestion))
-        self.assertEqual(len(changes), 1)
-        self.assertTrue(changes[0].isModify("doc/Makefile.am"))
+        self.assertEqual(len(changes), 1, "commit should make a single change")
+        self.assertTrue(changes[0].isModify("doc/Makefile.am"), "commit should modify doc/Makefile.am")
 
     def test20BranchCommits(self):
         revsIn20 = list(self.getRevsInRange(self.repo.branch("2.0"), self.repo.branch("master")))
         revsIn20.reverse()
-        self.assertEqual([rev.get_svn_rev() for rev in revsIn20], [69862, 71236])
+        self.assertEqual([rev.get_svn_rev() for rev in revsIn20], [69862, 71236],
+                        "branch 2.0 doesn't have the expected commits")
 
         lastRevChanges = list(self.getCommitChanges(revsIn20[-1]))
-        self.assertEqual(len(lastRevChanges), 1)
-        self.assertTrue(lastRevChanges[0].isModify("doc/index.docbook"))
+        self.assertEqual(len(lastRevChanges), 1, "commit should make a single change")
+        self.assertTrue(lastRevChanges[0].isModify("doc/index.docbook"), "commit should modify index.docbook")
 
     def getRevsInRange(self, include, exclude):
         if not isinstance(include,list): include=[include]
