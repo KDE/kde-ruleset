@@ -228,6 +228,7 @@ behrmann Kai-Uwe Behrmann <ku.b@gmx.de>
 belem Rodrigo Belem <rclbelem@gmail.com>
 bellaperez Antoni Bella Pérez <antonibella5@orange.es>
 bellenger James Bellenger <jbellenger@pristine.gm>
+bellini Riccardo Bellini <ricky88ykcir@gmail.com>
 benadler Ben Adler <benadler@gmx.net>
 benk Ben Klopfenstein <benklop@gmail.com>
 benm Ben Martin <monkeyiq@users.sourceforge.net>
@@ -829,6 +830,7 @@ greeneg Gary L. Greene Jr <greeneg@kde.org>
 greenhalgh James Greenhalgh <jgreenhalgh@opendoorsoftware.com>
 greghaynes Gregory Alexander Haynes <greg@greghaynes.net>
 greglee Greg Lee <lee@hawaii.edu>
+gregort Gregor Tätzner <yellowcake-@gmx.net>
 grimrath Matthias Grimrath <maps4711@gmx.de>
 grobelny Tomasz Grobelny <grotk@poczta.onet.pl>
 grossard Ludovic Grossard <grossard@kde.org>
@@ -1003,13 +1005,13 @@ jansky Ivo Jánský <ivo.jansky@seznam.cz>
 jantille Julien Antille <julien.antille@kdemail.net>
 janwuert Jan Würthner <jan.wuerthner@gmx.de>
 jarmalavicius Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>
-jarmond Jonathan Armond <jon.armond@gmail.com>
 jaroszynski Piotr Jaroszyński <p.jaroszynski@gmail.com>
 jas Simon Josefsson <jas@extundo.com>
 jaseone Jason Bainbridge <jaseone@myrealbox.com>
 jaskiewicz Łukasz Jaśkiewicz <lucas.jaskiewicz@gmail.com>
 jasonyeh Jason Yeh <jasonyeh0908@gmail.com>
 jaudureau Jérôme Audureau <jaudureau@gmail.com>
+javierllorente Javier Llorente <javier@kde.org>
 jb John Birch <jbb@kdevelop.org>
 jbache Jens Bache-Wiig <jbache@trolltech.com>
 jbacon Jono Bacon <jono@kde.org>
@@ -1229,7 +1231,7 @@ knauss Sandro Knauß <mail@sandroknauss.de>
 knechtges Philipp Knechtges <philipp-dev@knechtges.com>
 kniederk Klaus Niederkrüger <kniederk@mi.uni-koeln.de>
 knight Robert Knight <robertknight@gmail.com>
-kniolet Katrina J. Niolet <katrina@niolet.name>
+kniolet Katrina J. Niolet <katrina.niolet@kdab.com>
 knoerr Malte Knoerr <malte@knoerr.escape.de>
 knoll Lars Knoll <knoll@kde.org>
 kobus Jarek Kobus <jarekkobus@yahoo.com>
@@ -1253,6 +1255,7 @@ krajaratnam Kovarththanan Rajaratnam <kovarththanan.rajaratnam@gmail.com>
 krake Kevin Krammer <kevin.krammer@gmx.at>
 krejci Lukáš Krejčí <krejci.l@centrum.cz>
 krienke Rainer Krienke <krienke@uni-koblenz.de>
+krippendorf Christian Krippendorf <coding@christian-krippendorf.de>
 kristofk Kristóf Kiszel <ulysses@kubuntu.org>
 krohlas Sven Krohlas <sven@asbest-online.de>
 krzywda Stanislas Krzywda <nast01@hotmail.fr>
@@ -2192,7 +2195,6 @@ staerk Klaus Staerk <staerk@kde.org>
 staghavi Saied Taghavi <s.taghavi@ece.ut.ac.ir>
 staikos George Staikos <staikos@kde.org>
 stalcup Steve Stalcup <vorian@ubuntu.com>
-stanaland Henry Stanaland <stanaland@gmail.com>
 staniek Jarosław Staniek <staniek@kde.org>
 stdenisa Alain St-Denis <stdenisa@videotron.ca>
 stefan Stefan Taferner <taferner@kde.org>
@@ -2382,7 +2384,7 @@ vasee Thuraiappah Vaseeharan <vasee@ee.umanitoba.ca>
 vasif Vasif Ismailoglu <azerb_linux@yahoo.com>
 vatra BogDan Vatra <bog_dan_ro@yahoo.com>
 vautrin Benoît Vautrin <benoit.vautrin@free.fr>
-vcarbune Victor Carbune <victor.carbune@gmail.com>
+vcarbune Victor Carbune <victor@rosedu.org>
 vdboor Diederik van der Boor <vdboor@codingdomain.com>
 vdhillon Vikram Dhillon <dhillonv10@gmail.com>
 veel78 Venance Mwang'onda <veel78@yahoo.com>
@@ -2724,6 +2726,7 @@ jacobi Jonas Jacobi <jonas.jacobi@web.de>
 janmai Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>
 janpascal Jan-Pascal van Best <janpascal@vanbest.org>
 jansen Geert Jansen <jansen@kde.org>
+jarmond Jonathan Armond <jon.armond@gmail.com>
 jasonste Jason Stephenson <panda@mis.net>
 jblosser Jeremy Blosser <jblosser@firinn.org>
 jens Jens Herden <jens.herden@web.de>
@@ -2917,6 +2920,7 @@ sparre Jacob Sparre Andersen <sparre@nbi.dk>
 spears Derek Spears <derek@concentric.net>
 sprakes Paul Sprakes <kdecvs@sprakes.co.uk>
 sree Sreerenj Balachandran <bsreerenj@gmail.com>
+stanaland Henry Stanaland <stanaland@gmail.com>
 stelling Richard Antonius Stellingwerff <mortallic@multiweb.nl>
 stepin Igor Stepin <igor_for_os@stepin.name>
 stern Gregory Stern <greg@trolltech.com>
