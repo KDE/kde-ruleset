@@ -13,7 +13,6 @@
 # - 419958 has max(rev) in master where rev<419958 as sole parent
 
 from dulwich.repo import Repo
-from dulwich.walk import Walker
 from dulwich.objects import Commit, Tree
 from dulwich import diff_tree
 import re
