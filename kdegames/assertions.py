@@ -5,12 +5,15 @@
 # - first revision in master contains file doc/en/index.html
 # - 20794 renames doc/en/index.html to doc/index.html
 # - 22359 modifies doc/Makefile.am and nothing else
+#
 # - branch 2.0 exists
 # - [69862,71236] are only revisions in 2.0 and not in master
 # - 71236 is last revision of 2.0
 # - 71236 modifies doc/index.docbook
-# - 419958 exists in branch kde4 or a backup tag
-# - 419958 has max(rev) in master where rev<419958 as sole parent
+#
+# - branch kde4 or a backup tag exists
+# - 419958 is the first commit in kde4 branch
+# - 419958 has [max(rev) in master where rev<419958] as sole parent
 
 from dulwich.repo import Repo
 from dulwich.objects import Commit, Tree
