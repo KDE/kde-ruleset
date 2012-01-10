@@ -84,6 +84,9 @@ class KTuberlingTests(unittest.TestCase):
         self.longMessage = True
         self.renameDetector = diff_tree.RenameDetector(self.repo.object_store)
 
+    def assertFileInTree(self, tree, filename, msg=""):
+        return self.assertTrue(self.repo.file_in_tree(tree, filename), msg)
+
     def testMasterRoot(self):
         roots = self.getRoots(include=[self.repo.branch("master")])
         roots = list(roots)
@@ -92,7 +95,7 @@ class KTuberlingTests(unittest.TestCase):
         root=roots[0]
         self.assertEqual(root.get_svn_rev(), 20670,
                         "the master branch root should be %d" % 20670)
-        self.assertTrue(self.repo.file_in_tree(self.repo.tree(root.tree), "doc/en/index.html"),
+        self.assertFileInTree(self.repo.tree(root.tree), "doc/en/index.html",
                         "the first commit should contain doc/en/index.html")
 
     def getCommitChanges(self, commit):
