@@ -151,13 +151,15 @@ class KTuberlingTests(unittest.TestCase):
     def testBranchKde4(self):
         kde4Branch = self.repo.ref("refs/tags/backups/kde4@439537")
         self.assertIsNotNone(kde4Branch, "branch kde4 not found")
-        commitsInKde4 = list(self.getRevsInRange(kde4Branch, self.repo.branch("master")))
 
+        commitsInKde4 = list(self.getRevsInRange(kde4Branch, self.repo.branch("master")))
         firstKde4Commit = commitsInKde4[-1]
         self.assertEqual(firstKde4Commit.get_svn_rev(), 419958)
 
+        # Get the last master commit before kde4's creation
         masterCommits = self.getRevsInRange(self.repo.branch("master"), [])
         commit = next(c for c in masterCommits if c.get_svn_rev() < 419754) # 419754 is when kde4 got branched
+
         self.assertEqual(firstKde4Commit.parents, [commit.id])
 
     def getRevsInRange(self, include, exclude):
