@@ -110,7 +110,7 @@ class KTuberlingTests(unittest.TestCase):
 
     def testDocRename(self):
         renameCommit = self.repo.commit_from_svnrev(20794)
-        self.assertIsNot(renameCommit, None, "commit not found")
+        self.assertIsNotNone(renameCommit, "commit not found")
         self.assertEqual(len(renameCommit.parents), 1, "commit should have a single parent")
 
         parentCommit = self.repo.commit(renameCommit.parents[0])
@@ -131,7 +131,7 @@ class KTuberlingTests(unittest.TestCase):
 
     def testDocMakefileChange(self):
         commitInQuestion = self.repo.commit_from_svnrev(22359)
-        self.assertIsNot(commitInQuestion, None, "commit 22359 not found")
+        self.assertIsNotNone(commitInQuestion, "commit 22359 not found")
         self.assertEqual(len(commitInQuestion.parents), 1, "commit should have a single parent")
 
         changes = list(self.getCommitChanges(commitInQuestion))
