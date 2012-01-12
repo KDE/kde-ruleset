@@ -113,9 +113,21 @@ class KTuberlingTests(unittest.TestCase):
         self.assertIsNot(renameCommit, None, "commit not found")
         self.assertEqual(len(renameCommit.parents), 1, "commit should have a single parent")
 
+        parentCommit = self.repo.commit(renameCommit.parents[0])
+
+        # get the paths in doc/en in the tree before the commit
+        parentTree = self.repo.tree(parentCommit.tree)
+        parentDocEntry = parentTree.lookup_path(self.repo.get_object, "doc/en")
+        parentDocTree = self.repo.tree(parentDocEntry[1])
+
+        filesInParentTree = (entry.path for entry in parentDocTree.items())
+        # Makefile.am is a bit of a special case
+        expectedMoves = set(("doc/en/"+path, "doc/"+path) for path in filesInParentTree if path != "Makefile.am")
+
         changes = self.getCommitChanges(renameCommit)
-        self.assertTrue(any(change.isRename("doc/en/index.html", "doc/index.html") for change in changes),
-                        "20794 should move documentation files")
+        actualMoves = set((change.old.path, change.new.path) for change in changes if change.type == 'rename')
+
+        self.assertEqual(expectedMoves, actualMoves, "20794 should move all documentation files")
 
     def testDocMakefileChange(self):
         commitInQuestion = self.repo.commit_from_svnrev(22359)
