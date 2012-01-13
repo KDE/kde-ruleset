@@ -78,11 +78,15 @@ def changeIsRename(change, old_path, new_path):
     return change.type == "rename" and change.old.path == old_path and change.new.path == new_path
 diff_tree.TreeChange.isRename = changeIsRename
 
-class KTuberlingTests(unittest.TestCase):
-    def setUp(self):
-        self.repo = Repo(repo_path)
+class GitRepoTestCase(unittest.TestCase):
+    def initRepo(self,repo):
+        self.repo = repo
         self.longMessage = True
         self.renameDetector = diff_tree.RenameDetector(self.repo.object_store)
+
+class KTuberlingTests(GitRepoTestCase):
+    def setUp(self):
+        self.initRepo(Repo(repo_path))
 
     def assertFileInTree(self, tree, filename, msg=""):
         return self.assertTrue(self.repo.file_in_tree(tree, filename), msg)
