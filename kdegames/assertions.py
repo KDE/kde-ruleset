@@ -84,12 +84,33 @@ class GitRepoTestCase(unittest.TestCase):
         self.longMessage = True
         self.renameDetector = diff_tree.RenameDetector(self.repo.object_store)
 
+    def assertFileInTree(self, tree, filename, msg=""):
+        return self.assertTrue(self.repo.file_in_tree(tree, filename), msg)
+
+    def getCommitChanges(self, commit):
+        assert commit is not None
+        self.assertEqual(len(commit.parents), 1, "commit should have only one parent")
+
+        parentCommit = self.repo.commit(commit.parents[0])
+
+        return diff_tree.tree_changes(self.repo.object_store,
+                parentCommit.tree, commit.tree,
+                False, self.renameDetector)
+
+    def getRevsInRange(self, include, exclude):
+        if not isinstance(include,list): include=[include]
+        if not isinstance(exclude,list): exclude=[exclude]
+        for entry in self.repo.get_walker(include=include, exclude=exclude):
+            yield entry.commit
+
+    def getRoots(self, include, exclude=[]):
+        for entry in self.repo.get_walker(include=include, exclude=exclude):
+            if len(entry.commit.parents) == 0:
+                yield entry.commit
+
 class KTuberlingTests(GitRepoTestCase):
     def setUp(self):
         self.initRepo(Repo(repo_path))
-
-    def assertFileInTree(self, tree, filename, msg=""):
-        return self.assertTrue(self.repo.file_in_tree(tree, filename), msg)
 
     def testMasterRoot(self):
         roots = self.getRoots(include=[self.repo.branch("master")])
@@ -101,16 +122,6 @@ class KTuberlingTests(GitRepoTestCase):
                         "the master branch root should be %d" % 20670)
         self.assertFileInTree(self.repo.tree(root.tree), "doc/en/index.html",
                         "the first commit should contain doc/en/index.html")
-
-    def getCommitChanges(self, commit):
-        assert commit is not None
-        self.assertEqual(len(commit.parents), 1, "commit should have only one parent")
-
-        parentCommit = self.repo.commit(commit.parents[0])
-
-        return diff_tree.tree_changes(self.repo.object_store,
-                parentCommit.tree, commit.tree,
-                False, self.renameDetector)
 
     def testDocRename(self):
         renameCommit = self.repo.commit_from_svnrev(20794)
@@ -165,17 +176,6 @@ class KTuberlingTests(GitRepoTestCase):
         commit = next(c for c in masterCommits if c.get_svn_rev() < 419754) # 419754 is when kde4 got branched
 
         self.assertEqual(firstKde4Commit.parents, [commit.id])
-
-    def getRevsInRange(self, include, exclude):
-        if not isinstance(include,list): include=[include]
-        if not isinstance(exclude,list): exclude=[exclude]
-        for entry in self.repo.get_walker(include=include, exclude=exclude):
-            yield entry.commit
-
-    def getRoots(self, include, exclude=[]):
-        for entry in self.repo.get_walker(include=include, exclude=exclude):
-            if len(entry.commit.parents) == 0:
-                yield entry.commit
 
 if __name__ == '__main__':
     unittest.main()
