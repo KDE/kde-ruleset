@@ -1,0 +1,35 @@
+create repository dragonplayer
+end repository
+
+match /trunk/KDE/kdemultimedia/dragonplayer/
+	repository dragonplayer
+	branch master
+	min revision 764028
+end match
+
+match /trunk/kdereview/dragonplayer/
+	repository dragonplayer
+	branch master
+	max revision 764028
+	min revision 758334
+end match
+
+match /trunk/playground/multimedia/videoplayer/
+	repository dragonplayer
+	branch master
+	max revision 758333
+	min revision 635017
+end match
+
+match /tags/KDE/(.+)/kdemultimedia/dragonplayer/
+	repository dragonplayer
+	branch refs/tags/\1
+end match
+
+match /branches/KDE/(.+)/kdemultimedia/dragonplayer/
+	repository dragonplayer
+	branch KDE/\1
+end match
+
+match /
+end match
