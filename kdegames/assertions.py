@@ -109,6 +109,11 @@ class GitRepoTestCase(unittest.TestCase):
             if len(commit.parents) == 0:
                 yield commit
 
+    def assertNormalCommit(self, commit, msg="commit should have a single parent"):
+        '''Checks whether the given commit is a normal commit with only one parent,
+        that is, neither a merge nor a "root" commit.'''
+        return self.assertEqual(len(commit.parents), 1, msg)
+
 class KTuberlingTests(GitRepoTestCase):
     def setUp(self):
         self.initRepo(Repo(repo_path))
@@ -126,8 +131,7 @@ class KTuberlingTests(GitRepoTestCase):
 
     def testDocRename(self):
         renameCommit = self.repo.commit_from_svnrev(20794)
-        self.assertIsNotNone(renameCommit, "commit not found")
-        self.assertEqual(len(renameCommit.parents), 1, "commit should have a single parent")
+        self.assertNormalCommit(renameCommit)
 
         parentCommit = self.repo.commit(renameCommit.parents[0])
 
@@ -147,8 +151,7 @@ class KTuberlingTests(GitRepoTestCase):
 
     def testDocMakefileChange(self):
         commitInQuestion = self.repo.commit_from_svnrev(22359)
-        self.assertIsNotNone(commitInQuestion, "commit 22359 not found")
-        self.assertEqual(len(commitInQuestion.parents), 1, "commit should have a single parent")
+        self.assertNormalCommit(commitInQuestion)
 
         changes = list(self.getCommitChanges(commitInQuestion))
         self.assertEqual(len(changes), 1, "commit should make a single change")
