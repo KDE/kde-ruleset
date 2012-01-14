@@ -100,13 +100,14 @@ class GitRepoTestCase(unittest.TestCase):
     def getRevsInRange(self, include, exclude):
         if not isinstance(include,list): include=[include]
         if not isinstance(exclude,list): exclude=[exclude]
-        for entry in self.repo.get_walker(include=include, exclude=exclude):
+        walker = self.repo.get_walker(include=include, exclude=exclude)
+        for entry in walker:
             yield entry.commit
 
     def getRoots(self, include, exclude=[]):
-        for entry in self.repo.get_walker(include=include, exclude=exclude):
-            if len(entry.commit.parents) == 0:
-                yield entry.commit
+        for commit in self.getRevsInRange(include, exclude):
+            if len(commit.parents) == 0:
+                yield commit
 
 class KTuberlingTests(GitRepoTestCase):
     def setUp(self):
