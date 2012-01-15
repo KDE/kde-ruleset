@@ -42,21 +42,6 @@ def _getSvnRev(commit):
 
 Commit.get_svn_rev = _getSvnRev
 
-def _isFileInTree(repo, tree, path):
-    '''
-    Walks a tree, recursively, trying to find a file with the given path.
-    '''
-    # okay, actually I cheat and use lookup_path
-    try:
-        (mode, sha) = tree.lookup_path(repo.get_object, path)
-        if mode & 0100000 != 0:
-            return True
-        else:
-            return False
-    except KeyError:
-        return False
-Repo.file_in_tree = _isFileInTree
-
 def _shaFromBranch(repo, branch_name):
     return repo.ref("refs/heads/%s" % branch_name)
 Repo.branch = _shaFromBranch
@@ -84,8 +69,19 @@ class GitRepoTestCase(unittest.TestCase):
         self.longMessage = True
         self.renameDetector = diff_tree.RenameDetector(self.repo.object_store)
 
-    def assertFileInTree(self, tree, filename, msg=""):
-        return self.assertTrue(self.repo.file_in_tree(tree, filename), msg)
+    def assertFileInTree(self, tree, path, msg=None):
+        '''
+        Checks whether a tree contains a file at the given path.
+
+        This function supports subdirectories,
+        such as assertFileInTree(tree, "dir/subdir/file").
+        '''
+        msg = self._formatMessage(msg, "file {0} not found in tree".format(path))
+        try:
+            (mode, sha) = tree.lookup_path(self.repo.get_object, path)
+            self.assertTrue(mode & 0100000 != 0, msg)
+        except KeyError:
+            self.fail(msg)
 
     def getCommitChanges(self, commit):
         assert commit is not None
