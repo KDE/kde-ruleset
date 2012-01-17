@@ -110,6 +110,21 @@ class GitRepoTestCase(unittest.TestCase):
         that is, neither a merge nor a "root" commit.'''
         return self.assertEqual(len(commit.parents), 1, msg)
 
+    def getRefOrBackup(self, refName):
+        try:
+            sha = self.repo.ref("refs/{0}".format(refName))
+        except KeyError:
+            refs = self.repo.get_refs()
+            regex = r'refs/backups/r\d+/{0}$'.format(refName)
+            results = [sha for ref,sha in refs.items() if re.match(regex, ref)]
+            if len(results) == 1:
+                return results[0]
+            elif len(results) == 0:
+                self.fail("ref not found, and no backup refs found either")
+            else:
+                self.fail("multiple backup refs found")
+
+
 class KTuberlingTests(GitRepoTestCase):
     def setUp(self):
         self.initRepo(Repo(repo_path))
@@ -164,7 +179,7 @@ class KTuberlingTests(GitRepoTestCase):
         self.assertTrue(lastRevChanges[0].isModify("doc/index.docbook"), "commit should modify index.docbook")
 
     def testBranchKde4(self):
-        kde4Branch = self.repo.ref("refs/tags/backups/kde4@439537")
+        kde4Branch = self.getRefOrBackup("workbranch/kde4")
         self.assertIsNotNone(kde4Branch, "branch kde4 not found")
 
         commitsInKde4 = list(self.getRevsInRange(kde4Branch, self.repo.branch("master")))
