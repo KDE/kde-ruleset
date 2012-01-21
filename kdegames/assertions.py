@@ -120,9 +120,9 @@ class GitRepoTestCase(unittest.TestCase):
             if len(results) == 1:
                 return results[0]
             elif len(results) == 0:
-                self.fail("ref not found, and no backup refs found either")
+                self.fail("ref '{0}' not found, and no backup refs found either".format(refName))
             else:
-                self.fail("multiple backup refs found")
+                self.fail("multiple backup refs found for '{0}'".format(refName))
 
 
 class KTuberlingTests(GitRepoTestCase):
