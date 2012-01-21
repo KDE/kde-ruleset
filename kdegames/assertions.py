@@ -111,12 +111,19 @@ class GitRepoTestCase(unittest.TestCase):
         return self.assertEqual(len(commit.parents), 1, msg)
 
     def getRefOrBackup(self, refName):
+        if not refName.startswith("refs/"):
+            refName = "refs/heads/"+refName
         try:
-            sha = self.repo.ref("refs/{0}".format(refName))
+            sha = self.repo.ref(refName)
         except KeyError:
+            if refName.startswith("refs/heads/"):
+                regex = r'refs/tags/backups/{0}@\d+$'.format(refName[len("refs/heads/"):])
+            else:
+                regex = r'refs/backups/r\d+/{0}$'.format(refName[len("refs/"):])
+
             refs = self.repo.get_refs()
-            regex = r'refs/backups/r\d+/{0}$'.format(refName)
             results = [sha for ref,sha in refs.items() if re.match(regex, ref)]
+
             if len(results) == 1:
                 return results[0]
             elif len(results) == 0:
@@ -179,7 +186,7 @@ class KTuberlingTests(GitRepoTestCase):
         self.assertTrue(lastRevChanges[0].isModify("doc/index.docbook"), "commit should modify index.docbook")
 
     def testBranchKde4(self):
-        kde4Branch = self.getRefOrBackup("workbranch/kde4")
+        kde4Branch = self.getRefOrBackup("refs/workbranch/kde4")
         self.assertIsNotNone(kde4Branch, "branch kde4 not found")
 
         commitsInKde4 = list(self.getRevsInRange(kde4Branch, self.repo.branch("master")))
