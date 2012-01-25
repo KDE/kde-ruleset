@@ -1,0 +1,34 @@
+# TODO: document
+
+730705 730770
+742062 742235
+756506 756652
+802581 802584
+835565 835588
+840900 840901
+clear 757794
+757121 757794
+757595 757794
+clear 835561
+830450 835561
+835492 835561
+
+# merge kde-kaction-cleanup1 branch into trunk
+610257 610651
+
+# merge kde-kinstance-redesign branch into trunk
+627918 628316
+
+# merge kconfiggroup_port branch into trunk
+634447 635473
+
+# merge kconfig_new_take3 into trunk
+728440 728852
+
+# merge kde4_kconfig into trunk
+720895 721712
+
+# merges from branches/work/doc/parley into trunk/doc
+1144721 1144723
+1148643 1148645
+1149139 1149140

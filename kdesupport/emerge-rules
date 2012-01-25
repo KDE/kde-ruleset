@@ -1,5 +1,6 @@
 # Rules for kdesupport/emerge
 # Author: Christophe Giboudeaux <cgiboudeaux@gmail.com>
+# Updated by Nicolas Alvarez <nicolas.alvarez@gmail.com>
 
 ##### Create the repository #####
 declare REPO=emerge
@@ -18,6 +19,28 @@ match /trunk/kdesupport/kdewin32/emerge/
     repository ${REPO}
     branch master
     max revision 760454
+end match
+
+##### Branches #####
+match /branches/kdesupport/emerge/wince-cross-compile/
+    repository ${REPO}
+    branch wince-cross-compile
+end match
+
+match /branches/work/emerge/intevation-merge/
+    repository ${REPO}
+    branch intevation-merge
+    max revision 1158606 # deleted in 1158607
+end match
+
+match /branches/work/emerge/refactoring-2010/
+    repository ${REPO}
+    branch refactoring-2010
+end match
+
+match /branches/work/komo/emerge/
+    repository ${REPO}
+    branch komo
 end match
 
 ##### Tags #####

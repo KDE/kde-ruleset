@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+
+tempdir=$(mktemp -d) || exit 1
+
+# delete tempdir on quit, even if quitting due to a failure
+trap 'rm -rf "$tempdir"' EXIT
+
+# clone local repo into a temp dir, because rebase needs a working copy
+git clone . "$tempdir"
+
+pushd "$tempdir"
+
+git remote add quanta git://anongit.kde.org/quanta
+git fetch quanta
+
+git checkout -b newmaster quanta/master
+git filter-branch --subdirectory-filter plugins/executescript newmaster
+git rebase --onto master --root
+
+git filter-branch -f --env-filter '
+    export GIT_COMMITTER_DATE="$GIT_AUTHOR_DATE"
+    export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+    export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+    ' newmaster
+
+git push -f origin newmaster:master

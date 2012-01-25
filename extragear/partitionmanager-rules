@@ -1,0 +1,77 @@
+#
+# Created by Andrius Štikonas <stikonas@gmail.com>
+#
+
+#
+# Create the partitionmanager repository
+#
+create repository partitionmanager
+  description Partition Manager
+end repository
+
+match /trunk/playground/sysadmin/partitionmanager/
+  repository partitionmanager
+  max revision 877020
+  branch master
+end match
+
+match /trunk/playground/sysadmin/doc/partitionmanager/
+  repository partitionmanager
+  prefix doc/
+  max revision 877020
+  branch master
+end match
+
+match /trunk/kdereview/partitionmanager/
+  repository partitionmanager
+  min revision 877022
+  max revision 885420
+  branch master
+end match
+
+match /trunk/kdereview/doc/partitionmanager/
+  repository partitionmanager
+  prefix doc/
+  min revision 877022
+  max revision 885420
+  branch master
+end match
+
+match /trunk/extragear/sysadmin/partitionmanager/
+  repository partitionmanager
+  min revision 885422
+  branch master
+end match
+
+match /trunk/extragear/sysadmin/doc/partitionmanager/
+  repository partitionmanager
+  prefix doc/
+  min revision 885422
+  branch master
+end match
+
+# Branches
+match /branches/partitionmanager/1.0/$
+    action recurse
+end match
+match /branches/partitionmanager/1.0/partitionmanager/
+  repository partitionmanager
+  branch 1.0
+end match
+
+match /branches/partitionmanager/1.0/doc/en_US/
+  repository partitionmanager
+  prefix doc/
+  branch 1.0
+end match
+
+# Tags
+match /tags/partitionmanager/([^/]+)/partitionmanager/
+    repository partitionmanager
+    branch refs/tags/v\1
+    annotated true
+end match
+
+# Ignore everything else
+match /
+end match

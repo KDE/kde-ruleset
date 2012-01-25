@@ -1,0 +1,19 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdesdk/poxml
+end repository
+
+declare MODULE=kdesdk/poxml
+declare MODULE_RECURSE=(kdesdk/)?
+
+declare NAMES=poxml
+declare REPO=kdesdk/poxml
+include common-kdesdk-rules
+
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match

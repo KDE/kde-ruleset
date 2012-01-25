@@ -1,0 +1,34 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdesdk/okteta
+end repository
+
+declare MODULE=kdesdk/okteta
+declare MODULE_RECURSE=(kdesdk/)?
+
+declare NAMES=okteta
+declare REPO=kdesdk/okteta
+include common-kdesdk-rules
+
+include ../feature-branches
+
+match /trunk/KDE/kdeutils/okteta/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/kdereview/okteta/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/playground/utils/okteta/
+  repository ${REPO}
+  branch master
+end match
+
+# Ignore everything else
+match /
+end match

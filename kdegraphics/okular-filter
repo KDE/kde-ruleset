@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+source "$bindir/filter-goodies"
+
+# usual parent-adding
+$bindir/parent-adder $RULESETDIR/kdegraphics/okular-parentmap
+
+tempdir="$(calc_tempdir okular-filter)"
+
+# r884845 creates the okular-tiff-improvements with only code from generators/tiff.
+# This makes the git revision appear as deleting all the rest of the tree.
+# Here we filter all revisions in the branch (all three of them!)
+# to contain the rest of the files, taken from the master revision right before branching.
+
+git filter-branch -f -d "$tempdir" \
+    --tree-filter "git read-tree $(echo 884844 | $bindir/translateRevlist.py)" \
+    master..old/work/tiff-improvements
+
+
+delete_fb_backups
+$bindir/fix-tags

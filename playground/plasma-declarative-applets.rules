@@ -1,0 +1,30 @@
+create repository declarative-applets
+end repository
+
+match /trunk/playground/base/plasma/declarative-applets/replacements/
+    repository declarative-applets
+    branch master
+end match
+
+match /trunk/playground/base/plasma/shells/mobile/applets/knowledgebase/
+    repository declarative-applets
+    branch master
+    prefix knowledgebase/
+end match
+
+match /trunk/playground/base/plasma/shells/mobile/applets/news/
+    repository declarative-applets
+    branch master
+    prefix news/
+end match
+
+match /trunk/playground/base/plasma/shells/mobile/applets/org.kde.analogclock/
+    repository declarative-applets
+    branch master
+    prefix org.kde.analogclock/
+end match
+
+match /
+end match
+
+# kate: hl svn2git rules; indent-mode svn2git;

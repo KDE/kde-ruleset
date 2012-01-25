@@ -20,6 +20,11 @@ match /
     min revision 411963
     max revision 411963
 end match
+# "more tag cleanups"
+match /tags/
+    min revision 437072
+    max revision 437072
+end match
 
 # Tags done incorrectly, deleted and retagged;
 # we ignore the bad tagging and the deletion, let the correct retag through
@@ -48,6 +53,18 @@ end match
 match /tags/KDE/4.5.4/
     min revision 1200900 # mistagged 4.5.4
     max revision 1202153 # deleted mistagged 4.5.4
+end match
+
+# "sync of tag and tarball", basically renaming tags to match the tarball name.
+# We already have rules to convert the "bad" tag name into the right thing in
+# git, so this just causes problems (usually an empty commit in the tag).
+match /tags/
+    min revision 462490
+    max revision 462490
+end match
+match /tags/
+    min revision 462492
+    max revision 462492
 end match
 
 # kate: hl svn2git rules;

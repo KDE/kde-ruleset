@@ -3,9 +3,11 @@ create repository kgeography
 end repository
 
 declare MODULE=kdeedu/kgeography
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kgeography
 include common-kdeedu-rules
-include ../common-kde-branches-rules
+
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/kgeography >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/kgeography @ 436037 <- /trunk/kdereview/kgeography @ 436036 ]

@@ -1,0 +1,23 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+# kaccessible was first in svn in revision 1152354 so its rules are pretty simple.
+#
+
+#
+# Create the kaccessible repo 
+#
+create repository kdeaccessibility/kaccessible
+end repository
+
+declare MODULE=kdeaccessibility/kaccessible
+declare MODULE_RECURSE=(kdeaccessibility/)?
+
+declare NAMES=kaccessible
+declare REPO=kdeaccessibility/kaccessible
+include common-kdeaccessibility-rules
+
+# Ignore everything else
+match /
+end match

@@ -1,0 +1,41 @@
+# merge from trunk to kaction-cleanup3
+617224 618565
+
+# merge kaction-cleanup3 into trunk
+619071 621518
+
+# merge kinstance-redesign into trunk
+627974 628310
+
+# merge kmainwindow-decoupling to trunk
+654675 654728
+
+# merge kde4_kconfig to trunk
+720908 721729
+
+# merge kde4 into trunk
+429318 439536
+
+# merge bleedingedge (phonon port) to trunk
+560113 560614
+
+# Special handling of ktuberlingsvg:
+#
+# In the original repo, trunk is branched into ktuberlingsvg,
+# a single giant commit 661834 is made in ktuberlingsvg,
+# and another giant commit 662662 is made in trunk
+# with all the changes in 661834 and some more.
+#
+# I can't really consider 662662 to be a merge of 661834 into trunk,
+# as I would usually do with other work branches,
+# because it has more changes (gitglossary calls it 'evil merge').
+#
+# I solve this by making 662662 a parent of *only* 661834,
+# (ie. 662662 will not be a merge commit).
+# This will linearize the history:
+# 660861 (unrelated) -> 661834 (from branch) -> 662662 (from trunk).
+#
+# It doesn't match SVN reality so closely, but looks better.
+
+clear 662662
+661834 662662

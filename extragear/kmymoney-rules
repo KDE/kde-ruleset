@@ -1,0 +1,74 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+
+#
+# Create the kmymoney repository
+#
+create repository kmymoney
+end repository
+
+# Start in playground. Initial import in revision r1129864
+match /trunk/playground/office/kmymoney/
+  repository kmymoney
+  branch master
+  max revision 1129864
+end match
+# Documentation, after it was moved out of office/kmymoney/doc.
+match /trunk/playground/office/doc/kmymoney/
+  repository kmymoney
+  branch master
+  max revision 1129864
+  prefix doc2/
+end match
+
+# move to kdereview in r1129865
+match /trunk/kdereview/kmymoney/
+  repository kmymoney
+  branch master
+  max revision 1136020
+end match
+match /trunk/kdereview/doc/kmymoney/
+  repository kmymoney
+  branch master
+  max revision 1136020
+  prefix doc2/
+end match
+
+# move to extragear in r1136020, until present
+match /trunk/extragear/office/kmymoney/
+  repository kmymoney
+  branch master
+end match
+match /trunk/extragear/office/doc/kmymoney/
+  repository kmymoney
+  prefix doc2/
+  branch master
+end match
+
+match /branches/kmymoney/4.5/
+  repository kmymoney
+  branch 4.5
+end match
+
+match /branches/stable/extragear-kde4/office/kmymoney/
+  repository kmymoney
+  branch 4.6
+end match
+
+# Release tags
+# Change 4.5 tag to 4.5.0 to match other tags
+match /tags/kmymoney/4.5/
+  repository kmymoney
+  branch refs/tags/4.5.0
+  annotated true
+end match
+
+match /tags/kmymoney/([^/]+)/
+  repository kmymoney
+  branch refs/tags/\1
+  annotated true
+end match
+
+# ignore everything else
+match /
+end match

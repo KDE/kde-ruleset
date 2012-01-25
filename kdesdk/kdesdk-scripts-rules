@@ -1,0 +1,52 @@
+# Conversion rules for kdesdk-scripts.
+# Copyright (c) 2011 Nicolas Alvarez <nicolas.alvarez@gmail.com>
+#
+# Copying and distribution of this file, with or without modification,
+# are permitted in any medium without royalty provided the copyright
+# notice and this notice are preserved. This file is offered as-is,
+# without any warranty.
+
+create repository kdesdk-scripts
+end repository
+
+declare MODULE=kdesdk/scripts
+declare MODULE_RECURSE=(kdesdk/)?
+declare REPO=kdesdk-scripts
+include ../common-kde-branches-rules
+include ../common-kde-tags-rules
+
+declare PREFIX=doc/
+declare MODULE=kdesdk/doc/scripts
+include ../common-kde-branches-rules
+# restore values
+declare PREFIX=/
+declare MODULE=kdesdk/scripts
+
+match /trunk/(KDE/)?kdesdk/scripts/
+    repository kdesdk-scripts
+    branch master
+end match
+
+match /trunk/(KDE/)?kdesdk/doc/scripts/
+    repository kdesdk-scripts
+    branch master
+    prefix doc/
+end match
+
+match /branches/work/kde4/kdesdk/$
+    action recurse
+end match
+match /branches/work/kde4/kdesdk/scripts/
+    repository kdesdk-scripts
+    branch kde4
+end match
+match /branches/work/kde4/kdesdk/doc/scripts/
+    repository kdesdk-scripts
+    branch kde4
+    prefix doc/
+end match
+
+include ../feature-branches
+
+match /
+end match

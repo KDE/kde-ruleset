@@ -1,0 +1,34 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdeaccessibility/jovie
+end repository
+
+declare MODULE=kdeaccessibility/(?:kttsd|jovie|kitty)
+declare MODULE_RECURSE=(kdeaccessibility/)?
+
+declare NAMES=(kttsd|jovie|kitty)
+declare REPO=kdeaccessibility/jovie
+include common-kdeaccessibility-rules
+
+match /trunk/kdenonbeta/doc/kttsd/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
+
+match /branches/work/kdeaccessibility-kttsd-using-speechd/$
+    action recurse
+end match
+
+match /branches/work/kdeaccessibility-kttsd-using-speechd/kttsd/
+    repository ${REPO}
+    branch kttsd-using-speechd
+end match
+
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match

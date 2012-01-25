@@ -1,0 +1,19 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdeaccessibility/kmouth
+end repository
+
+declare MODULE=kdeaccessibility/kmouth
+declare MODULE_RECURSE=(kdeaccessibility/)?
+
+declare NAMES=kmouth
+declare REPO=kdeaccessibility/kmouth
+include common-kdeaccessibility-rules
+
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match

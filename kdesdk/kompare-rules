@@ -1,0 +1,19 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdesdk/kompare
+end repository
+
+declare MODULE=kdesdk/kompare
+declare MODULE_RECURSE=(kdesdk/)?
+
+declare NAMES=kompare
+declare REPO=kdesdk/kompare
+include common-kdesdk-rules
+
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match

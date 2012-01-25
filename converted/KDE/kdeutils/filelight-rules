@@ -1,0 +1,95 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+# IMPORTANT:
+#   SVN commit 946132 had some encoding problems in its commit message
+#   that prevents a correct push to KDE's git servers.
+#   The `filelight-filter' shell script must be run to change the
+#   message and fix the problem.
+
+declare APPLICATION=filelight
+declare REPO=KDE/kdeutils/filelight
+
+create repository ${REPO}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+include common-doc-rules
+include filelight-doc-rules
+
+#
+# KDE3 version
+#
+match /branches/extragear/kde3/utils/filelight/
+  repository ${REPO}
+  branch filelight-kde3
+  min revision 670724
+end match
+
+match /trunk/extragear/utils/filelight/
+  repository ${REPO}
+  branch filelight-kde3
+  max revision 670724
+  min revision 409208
+end match
+
+match /trunk/kdeextragear-3/filelight/
+  repository ${REPO}
+  branch filelight-kde3
+  max revision 409208
+  min revision 374009
+end match
+
+match /trunk/kdenonbeta/filelight/
+  repository ${REPO}
+  branch filelight-kde3
+  max revision 374009
+end match
+
+match /tags/filelight_0_6_3/$
+  action recurse
+end match
+match /tags/filelight_0_6_3/kdenonbeta/$
+  action recurse
+end match
+match /tags/filelight_0_6_3/kdenonbeta/filelight/
+  repository ${REPO}
+  branch refs/tags/v0.6.3
+  annotated true
+  max revision 437073 # one before deletion
+end match
+
+match /tags/filelight/1.0/
+  repository ${REPO}
+  branch refs/tags/v1.0
+  annotated true
+end match
+
+#
+# KDE4 version
+#
+match /trunk/(KDE/)?kdeutils/filelight/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/playground/utils/filelight/
+  repository ${REPO}
+  branch master
+  # min revision 920168
+  # max revision 1174508
+end match
+
+match /trunk/kdereview/filelight/
+  repository ${REPO}
+  branch master
+  # min revision 1081625
+  # max revision 1181065
+end match
+
+##### Ignore everything else #####
+match /
+end match

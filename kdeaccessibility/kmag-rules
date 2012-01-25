@@ -1,0 +1,38 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdeaccessibility/kmag
+end repository
+
+declare MODULE=kdeaccessibility/kmag
+declare MODULE_RECURSE=(kdeaccessibility/)?
+
+declare NAMES=kmag
+declare REPO=kdeaccessibility/kmag
+include common-kdeaccessibility-rules
+
+include ../common-kde-ignores
+
+# KMag releases
+match /tags/KMAG_([^/]+)/(kdeaccessibility/)?$
+  action recurse
+end match
+
+match /tags/kmag-0_2_0/
+  action ignore
+end match
+
+match /tags/(kmag-|KMAG_)(\d)_(\d)_(\d)(_RELEASE)?/kdeaccessibility/kmag/
+  min revision 74896
+  max revision 437071
+  repository kdeaccessibility/kmag
+  branch refs/tags/kmag/\2.\3.\4
+  annotated true
+end match
+
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match

@@ -1,0 +1,33 @@
+declare MODULE=kteatime
+declare REPO=kteatime
+
+create repository ${REPO}
+end repository
+
+include kdetoys-branches-tags-rules
+
+match /trunk/KDE/kdetoys/kteatime/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/KDE/kdetoys/doc/kteatime/
+  repository ${REPO}
+  prefix doc/
+  branch master
+end match
+
+match /trunk/kdetoys/kteatime/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/kdetoys/doc/kteatime/
+  repository ${REPO}
+  prefix doc/
+  branch master
+end match
+
+#Igonre everything else
+match /
+end match

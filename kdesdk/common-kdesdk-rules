@@ -1,0 +1,40 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+#get the application branches
+declare PREFIX=/
+include ../common-kde-branches-rules
+include ../common-kde-tags-rules
+#and then the doc prefix for branches
+declare MODULE_SAVE=${MODULE}
+declare MODULE=kdesdk/doc/${NAMES}
+declare PREFIX=doc/
+include ../common-kde-branches-rules
+declare MODULE=${MODULE_SAVE}
+
+# during this time(rev 1435 - 409202), kdesdk was directly under trunk
+match /trunk/kdesdk/${NAMES}/
+  repository ${REPO}
+  branch master
+  max revision 409202
+end match
+match /trunk/kdesdk/doc/${NAMES}/
+  repository ${REPO}
+  branch master
+  prefix doc/
+  max revision 409202
+end match
+
+# the rest of the time kdesdk was under trunk/KDE
+match /trunk/KDE/kdesdk/${NAMES}/
+  repository ${REPO}
+  branch master
+  min revision 409203
+end match
+match /trunk/KDE/kdesdk/doc/${NAMES}/
+  repository ${REPO}
+  branch master
+  prefix doc/
+  min revision 409203
+end match

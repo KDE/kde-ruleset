@@ -1,0 +1,120 @@
+# creation of GSoC 2010 branches
+1120772 1121256@/branches/kstars/carbonix/kstars/
+1120772 1121256@/branches/kstars/hdevalence/kstars/
+
+# merges from trunk into hdevalence gsoc
+1139625 1139734
+1153695 1153699
+1186561 1186596
+
+# merges from trunk into carbonix gsoc
+1144329 1144376
+
+# revision 699589 is a merge from kstars_htm but it's converted as a merge
+# from r699151 instead of r699409, so we have to fix it. r699453 is the
+# "normal", non-merge parent (the preceding commit in trunk).
+clear 699589
+699453 699589
+699409 699589
+
+# merge of qdbus-api-changes into trunk
+575413 575653
+
+# merge kde-kaction-cleanup1 branch into trunk
+610257 610651
+
+# intermediate merges from trunk to kde-kaction-cleanup3
+617811 618565
+619189 620435
+620757 620908
+
+# merge kde-kaction-cleanup3 branch into trunk
+# XXX I think kstars was independently ported to the new kaction API,
+# so the branch wasn't merged.
+# 621487 621549
+
+# intermediate merge from trunk into kde-kinstance-redesign branch
+627961 628271
+
+# merge kinstance-redesign branch into trunk
+628271 628316
+
+# merge kconfiggroup_port branch into trunk
+633602 635473
+
+# intermediate merge from trunk to kde4_jobflags
+720993 721065
+
+# merge kde4_jobflags into trunk
+721065 721447
+
+# merge kde4_kconfig into trunk
+720895 721712
+
+# intermediate merges from trunk to summer1
+814596 814648
+820008 820105
+821179 821190
+822426 823271
+826203 826207
+831523 831846
+
+# merge of summer1 into trunk is handled by svn2git automatically,
+# but there were some extra files merged in a later revision,
+# so we do that one manually here
+831846 831977
+
+# Merges in unfrozen1 are tricky. They happened out of order; eg. first
+# merged r12 and r14, then merged r13, and finally r15.
+#
+# We *try* to solve it by clearing the svn2git-automerged one...
+clear 830315
+# (this is the "normal" parent)
+830301 830315
+
+# ...and synthing a merge onto the *last* svnmerged commit.
+829464 830459
+
+# I give up with backports from trunk to unfrozen1, though.
+
+# intermediate merges from trunk to summer2
+965453 965469
+972955 973251
+975410 975690
+976195 976206
+977767 977892
+978508 978541
+# 978834 is figured out by svn2git already
+978818 978850
+978857 978865
+978868 978875
+986295 987721
+991037 992843
+992915 993301
+993350 993356
+993363 993365
+996428 996454
+996779 996858
+998772 999509
+1001269 1001670
+1002276 1002639
+1003825 1003862
+1004257 1004348
+# 1010842 is figured out by svn2git already
+1010887 1010926
+1010888 1010936
+1010889 1010953
+1010890 1010957
+1010891 1010963
+
+# merge of summer2 into trunk
+1010963 1010979
+
+# interm. merge from trunk to unfrozen2
+1058442 1058621
+1059455 1059461
+1059608 1059610
+1063530 1063538
+
+# merge unfrozen2 into trunk
+1065627 1082918

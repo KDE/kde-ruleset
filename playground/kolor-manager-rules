@@ -1,0 +1,10 @@
+create repository kolor-manager
+end repository
+
+match /trunk/playground/graphics/kolor-manager/
+    repository kolor-manager
+    branch master
+end match
+
+match /
+end match

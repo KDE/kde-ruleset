@@ -4,8 +4,13 @@ end repository
 
 declare MODULE=kdeedu/rocs
 declare REPO=rocs
+
+match /
+    min revision 1048724
+    max revision 1048724
+end match
+
 include common-kdeedu-rules
-include ../common-kde-branches-rules
 
 #	------< trunk/KDE/kdeedu/rocs >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/rocs @ 1048286 <- /trunk/kdereview/rocs @ 1048284 ]
@@ -23,6 +28,13 @@ match /trunk/kdereview/rocs/
     branch master
     max revision 1048284
     min revision 1044344
+end match
+
+#from kdemodule-split-rules
+match /trunk/playground/edu/Rocs/
+  max revision 1022303
+  repository rocs
+  branch master
 end match
 
 #	[ move trunk/playground/edu/Rocs/tags/version1 1044344 0 ]

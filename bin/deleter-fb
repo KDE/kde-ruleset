@@ -1,17 +1,14 @@
 #!/bin/bash
 
-# I really need to move this to a shared function
-tempdir=$(
-    mktemp -u -d --tmpdir=/dev/shm filterbranch.XXXXX ||
-    mktemp -u -d --tmpdir filterbranch.XXXXX ||
-    echo ".git-rewrite"
-)
-echo "using $tempdir as temporary directory"
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+source "$bindir/filter-goodies"
+
+tempdir="$(calc_tempdir filterbranch.XXXXX)"
 
 delete_ws="$*"
 delete_regex=$(python -c 'import sys; print "\\|".join(sys.argv[1:])' "$@")
 
-git filter-branch  -d "$tempdir" \
+git filter-branch -d "$tempdir" \
 --index-filter 'git rm -q --cached --ignore-unmatch -r '"$delete_ws"';' \
 --msg-filter '
 cat

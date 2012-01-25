@@ -1,0 +1,39 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=printer-applet
+declare REPO=KDE/kdeutils/printer-applet
+
+create repository ${REPO}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+include common-doc-rules
+
+match /trunk/(KDE/)?kdeutils/printer-applet/
+  repository ${REPO}
+  branch master
+end match
+
+### printer-applet in kdereview
+match /trunk/kdereview/printer-applet/
+  repository ${REPO}
+  branch master
+  # min revision 789361
+  # max revision 798592
+end match
+
+### printer-applet in kdebase-workspace
+match /trunk/KDE/kdebase/workspace/printer-applet/
+  repository ${REPO}
+  branch master
+  # min revision 798615
+  # max revision 802901
+end match
+
+##### Ignore everything else #####
+match /
+end match

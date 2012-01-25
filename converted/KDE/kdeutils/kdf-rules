@@ -1,0 +1,28 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=kdf
+declare REPO=KDE/kdeutils/kdf
+
+create repository ${REPO}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+
+include kdf-doc-rules
+
+match /trunk/(KDE/)?kdeutils/kdf/
+  repository ${REPO}
+  branch master
+end match
+
+declare MODULE=kdeutils/kdf
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
+##### Ignore everything else #####
+match /
+end match

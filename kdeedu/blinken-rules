@@ -3,9 +3,10 @@ create repository blinken
 end repository
 
 declare MODULE=kdeedu/blinken
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=blinken
 include common-kdeedu-rules
-include ../common-kde-branches-rules
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/blinken >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/blinken @ 450941 <- /branches/KDE/3.5/kdeedu/blinken @ 450940 ]
@@ -17,46 +18,50 @@ include ../common-kde-branches-rules
 match /trunk/KDE/kdeedu/blinken/
     repository blinken
     branch master
-    min revision 450940
 end match
-
-#	[ move branches/KDE/3.5/kdeedu/blinken 450940 450724 ]
-match /branches/KDE/3.5/kdeedu/blinken/
+match /trunk/KDE/kdeedu/doc/blinken/
     repository blinken
     branch master
-    max revision 450940
-    min revision 450724
+    prefix doc/
 end match
 
 #	[ move trunk/kdereview/blinken 450724 442738 ]
 match /trunk/kdereview/blinken/
     repository blinken
     branch master
-    max revision 450724
-    min revision 442738
+end match
+match /trunk/kdereview/doc/blinken/
+    repository blinken
+    branch master
+    prefix doc/
 end match
 
 #	[ move trunk/kdereview/ksimon 442738 438301 ]
 match /trunk/kdereview/ksimon/
     repository blinken
     branch master
-    max revision 442738
-    min revision 438301
+end match
+match /trunk/kdereview/doc/ksimon/
+    repository blinken
+    branch master
+    prefix doc/
 end match
 
 #	[ move trunk/playground/edu/ksimon 438301 409206 ]
 match /trunk/playground/edu/ksimon/
     repository blinken
     branch master
-    max revision 438301
-    min revision 409206
+end match
+match /trunk/playground/edu/doc/ksimon/
+    repository blinken
+    branch master
+    prefix doc/
 end match
 
 #	[ parent trunk/kdeplayground-edu/ksimon 409206 0 ]
 match /trunk/kdeplayground-edu/ksimon/
     repository blinken
     branch master
-    max revision 409206
 end match
 
 match /

@@ -1,0 +1,42 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+#get the application branches
+declare PREFIX=/
+include ../common-kde-branches-rules
+include ../common-kde-tags-rules
+#and then the doc prefix for branches
+declare MODULE_SAVE=${MODULE}
+declare MODULE=kdeaccessibility/doc/${NAMES}
+declare PREFIX=doc/
+include ../common-kde-branches-rules
+declare MODULE=${MODULE_SAVE}
+
+# during this time(rev 92214 - 409202), kdeaccessibility was directly under trunk
+match /trunk/kdeaccessibility/${NAMES}/
+  repository ${REPO}
+  branch master
+  min revision 92214
+  max revision 409202
+end match
+match /trunk/kdeaccessibility/doc/${NAMES}/
+  repository ${REPO}
+  branch master
+  prefix doc/
+  min revision 92214
+  max revision 409202
+end match
+
+# the rest of the time kdeaccessibility was under trunk/KDE
+match /trunk/KDE/kdeaccessibility/${NAMES}/
+  repository ${REPO}
+  branch master
+  min revision 409209
+end match
+match /trunk/KDE/kdeaccessibility/doc/${NAMES}/
+  repository ${REPO}
+  branch master
+  prefix doc/
+  min revision 409209
+end match

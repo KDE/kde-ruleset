@@ -1,0 +1,29 @@
+# merge kaction-cleanup1 into trunk
+610260 610651
+
+# merge from trunk to kaction-cleanup2
+611595 614117
+
+# merges from kaction-cleanup2 to trunk
+614165 614347
+614586 614599
+
+# merges from trunk to kaction-cleanup3
+617220 618565
+619732 620435
+620864 620908
+
+# merge kaction-cleanup3 into trunk
+621382 621518
+
+# merge kinstance-redesign into trunk
+627924 628287
+
+# merge kconfiggroup_port into trunk
+634273 635492
+
+# merge kde4_kconfig into trunk (sort of)
+720884 721946
+
+# merge kconfig_new into trunk
+728440 728852

@@ -1,0 +1,33 @@
+declare MODULE=ktux
+declare REPO=ktux
+
+create repository ${REPO}
+end repository
+
+include kdetoys-branches-tags-rules
+
+match /trunk/KDE/kdetoys/ktux/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/KDE/kdetoys/doc/ktux/
+  repository ${REPO}
+  prefix doc/
+  branch master
+end match
+
+match /trunk/kdetoys/ktux/
+  repository ${REPO}
+  branch master
+end match
+
+match /trunk/kdetoys/doc/ktux/
+  repository ${REPO}
+  prefix doc/
+  branch master
+end match
+
+#Igonre everything else
+match /
+end match

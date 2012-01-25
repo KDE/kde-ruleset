@@ -1,0 +1,21 @@
+# svn2git rules for KDevelop Java plugin
+# Created by Nicolas Alvarez <nicolas.alvarez@gmail.com>
+
+
+create repository kdev-java
+end repository
+
+match /trunk/playground/devtools/kdevelop4-extra-plugins/java/
+  repository kdev-java
+  branch master
+end match
+
+match /trunk/KDE/kdevelop/languages/java/
+  repository kdev-java
+  branch master
+  min revision 566151
+end match
+
+match /
+end match
+# vim: set ft=conf ts=2 sw=2 et:

@@ -1,0 +1,163 @@
+digraph {
+    edge [style="dotted"];
+    node [style="filled"];
+    //rankdir="LR"
+    size="10,20"
+    subgraph cluster_cvs {
+        label="trunk/kdeextragear-2/kimdaba";
+        cvs198778 [label="198778" fillcolor=green]
+        cvs269909 [label="269909" fillcolor=green]
+        cvs287910 [label="287910" fillcolor=green]
+        cvs409209 [label="409209" fillcolor=green]
+        cvs198778->cvs269909->cvs287910->cvs409209
+    }
+    subgraph cluster_1_0 {
+        label="branches/kimdaba_1_0_x/kdeextragear-2/kimdaba";
+        daba10_269911 [label="269911" fillcolor=green]
+    }
+    subgraph cluster_1_1 {
+        label="branches/kimdaba_1_1_x/kdeextragear-2/kimdaba";
+        daba11_287910 [label="287910" fillcolor=green]
+    }
+    subgraph cluster_xtra_daba {
+        label="trunk/extragear/graphics/kimdaba"
+        xtra_daba409209 [label="409209" fillcolor=green]
+        xtra_daba409758 [label="409758" fillcolor=green]
+        xtra_daba436396 [label="436396" fillcolor=green]
+        xtra_daba498149 [label="498149" fillcolor=green]
+        xtra_daba409209 -> xtra_daba409758 -> xtra_daba436396 -> xtra_daba498149
+    }
+    subgraph cluster_xtra_kpa {
+        label="trunk/extragear/graphics/kphotoalbum"
+        xtra_kpa498149 [label="498149" fillcolor="green"]
+        xtra_kpa530915 [label="530915" fillcolor="green"]
+        xtra_kpa541819 [label="541819" fillcolor="green"]
+        xtra_kpa568863 [label="568863" fillcolor="green"]
+        xtra_kpa572628 [label="572628" fillcolor="green"]
+        xtra_kpa572802 [label="572802" fillcolor="green"]
+        xtra_kpa617977 [label="617977" fillcolor="green"]
+        xtra_kpa648349 [label="648349" fillcolor="green"]
+        xtra_kpa648353 [label="648353" fillcolor="green"]
+        xtra_kpa670775 [label="670775" fillcolor="green"]
+        xtra_kpa681253 [label="681253" fillcolor="green"]
+        xtra_kpa971099 [label="971099" fillcolor="green"]
+        xtra_kpa1023637 [label="1023637" fillcolor="green"]
+        xtra_kpa1023638 [label="1023638" fillcolor="green"]
+        xtra_kpa1040081 [label="1040081" fillcolor="green"]
+        xtra_kpa1213128 [label="1213128" fillcolor="green"]
+        xtra_kpa498149 -> xtra_kpa530915 -> xtra_kpa541819 -> xtra_kpa568863 -> xtra_kpa572628 -> xtra_kpa572802 -> xtra_kpa617977 -> xtra_kpa648349
+        xtra_kpa648349 -> xtra_kpa648353 [style="invis" minlen=2]
+        xtra_kpa648353 -> xtra_kpa670775
+        xtra_kpa670775 -> xtra_kpa681253 [style="invis" minlen=3]
+        xtra_kpa681253 -> xtra_kpa971099 -> xtra_kpa1023637
+        xtra_kpa1023637 -> xtra_kpa1023638 [style="invis"]
+        xtra_kpa1023638 -> xtra_kpa1040081 -> xtra_kpa1213128
+    }
+    subgraph cluster_daba_dev {
+        label="branches/kimdaba/development"
+        daba_dev409758 [label="409758" fillcolor=green]
+        daba_dev436389 [label="436389" fillcolor=green]
+        daba_dev436401 [label="436401\n[del]" fillcolor=green]
+        daba_dev409758 -> daba_dev436389 -> daba_dev436401
+    }
+    subgraph cluster_2_2 {
+        label="branches/kphotoalbum/2.2.x"
+        kpa22_531669 [label="531669" fillcolor=green]
+    }
+    subgraph cluster_soc {
+        label="branches/kphotoalbum/soc"
+        soc541820 [label="541820" fillcolor=green]
+        soc568847 [label="568847" fillcolor=green]
+        soc541820 -> soc568847
+    }
+    subgraph cluster_kexi {
+        label="branches/kphotoalbum/with-kexidb"
+        kexidb572629 [label="572629" fillcolor=green]
+        kexidb572800 [label="572800" fillcolor=green]
+        kexidb572629 -> kexidb572800
+    }
+    subgraph cluster_kexiup {
+        label="branches/kphotoalbum/update-to-kexi-1.6.1";
+        kexiup626601 [label="626601" fillcolor=green]
+        kexiup626625 [label="626625" fillcolor=green]
+        kexiup626601 -> kexiup626625
+    }
+    subgraph cluster_devel {
+        label="branches/kphotoalbum/devel";
+        devel617978 [label="617978" fillcolor=green]
+        devel626600 [label="626600" fillcolor=green]
+        devel626627 [label="626627" fillcolor=green]
+        devel648352 [label="648352" fillcolor=green] // end
+        devel981503 [label="981503" fillcolor=green]
+        devel1023637 [label="1023637" fillcolor=green]
+        devel617978 -> devel626600 -> devel626627 -> devel648352
+        devel648352 -> devel981503 [style="invis" minlen=6]
+        devel981503 -> devel1023637
+    }
+    subgraph cluster_30 {
+        label="branches/kphotoalbum/3.0.x";
+        kpa30_648351 [label="648351" fillcolor=green]
+    }
+    subgraph cluster_kde3 {
+        label="branches/extragear/kde3/graphics/kphotoalbum";
+        kde3_670776 [label="670776" fillcolor=green]
+        kde3_677777 [label="677777" fillcolor=green]
+        kde3_680936 [label="680936" fillcolor=green]
+        kde3_717622 [label="717622" fillcolor=green]
+        kde3_670776 -> kde3_677777 -> kde3_680936 -> kde3_717622
+    }
+    subgraph cluster_iptc {
+        label="branches/work/kphotoalbum-iptc"
+        iptc_677778 [label="677778" fillcolor=green]
+        iptc_717608 [label="717608" fillcolor=green]
+        iptc_677778 -> iptc_717608
+    }
+    subgraph cluster_browser {
+        label="branches/kphotoalbum/browser-rework"
+        browser971129 [label="971129" fillcolor=green]
+        browser981499 [label="981499" fillcolor=green]
+        browser971129 -> browser981499
+    }
+    subgraph cluster_stable {
+        label="branches/stable/extragear-kde4/graphics/kphotoalbum";
+        stable1040082 [label="1040082" fillcolor=green]
+        stable1090864 [label="1090864\n[del]" fillcolor=green]
+        stable1040082 -> stable1090864
+    }
+
+    subgraph edges {
+        edge [style=solid decorate]
+        cvs269909 -> daba10_269911 [label="branch"]
+        cvs287910 -> daba11_287910 [label="branch"]
+        cvs409209 -> xtra_daba409209 [label="move"]
+        xtra_daba409758 -> daba_dev409758 [label="branch"]
+        daba_dev436389 -> xtra_daba436396 [label="merge"]
+        xtra_daba498149 -> xtra_kpa498149 [label="rename"]
+        xtra_kpa530915 -> kpa22_531669 [label="branch"]
+        xtra_kpa541819 -> soc541820 [label="branch"]
+        soc568847 -> xtra_kpa568863 [label="merge"]
+        xtra_kpa572628 -> kexidb572629 [label="branch"]
+        kexidb572800 -> xtra_kpa572802 [label="merge"]
+
+        xtra_kpa617977 -> devel617978 [label="branch"]
+        devel626600 -> kexiup626601 [label="branch"]
+        kexiup626625 -> devel626627 [label="merge"]
+        xtra_kpa648349 -> kpa30_648351 [label="move"]
+        devel648352 -> xtra_kpa648353  [label="move"]
+
+        xtra_kpa670775 -> kde3_670776 [label="move"]
+        kde3_677777 -> iptc_677778 [label="branch"]
+
+        kde3_680936 -> xtra_kpa681253 [label="branch"]
+
+        iptc_717608 -> kde3_717622 [label="merge"]
+
+        xtra_kpa971099 -> browser971129 [label="branch"]
+        browser981499 -> devel981503 [label="rename"]
+
+        xtra_kpa1023637 -> "tag4.0.2" [label="move"]
+        devel1023637 -> xtra_kpa1023638 [label="move"]
+
+        xtra_kpa1040081 -> stable1040082 [label="branch"]
+    }
+}

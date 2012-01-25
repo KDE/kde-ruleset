@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+. $bindir/filter-goodies
+
+# This filter deletes doc/kdelirc from the revision range kdelirc-old..1102503.
+
+revrange="kdelirc-old..$(echo 1102503 | $bindir/translateRevlist.py)"
+revlist_file="$(mktemp /tmp/tmp.XXXXXXXXXX)"
+
+git rev-list "$revrange" > "$revlist_file"
+
+git filter-branch -d "$(calc_tempdir)" --tag-name-filter cat \
+--index-filter '
+if grep -q $GIT_COMMIT '$revlist_file'; then
+    warn " deleting";
+    git rm --cached --ignore-unmatch -r -q doc/kdelirc;
+fi' \
+-- --all ^v4.3.90
+# v4.3.90 is simply a known commit before the doc mess;
+# we ignore everything reachable from it just to speed up the filter.
+
+rm -f "$revlist_file"

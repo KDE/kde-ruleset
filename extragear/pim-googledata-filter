@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+
+. "$bindir/filter-goodies"
+
+echo "Fetching old history from repo.or.cz..." >&2
+git remote add original git://repo.or.cz/akonadigoogledata.git
+git fetch original
+
+echo "$(echo 920729 | $bindir/translateRevlist.py)" "$(git rev-parse original/master)" > info/grafts
+
+echo "Fixing email address in old history..." >&2
+git filter-branch -d "$(calc_tempdir pim-googledata-filter)" --env-filter '
+if [ "$GIT_AUTHOR_EMAIL" = "adenilson@t60ade.(none)" ]; then
+    export GIT_AUTHOR_EMAIL="cavalcantii@gmail.com";
+fi
+if [ "$GIT_COMMITTER_EMAIL" = "adenilson@t60ade.(none)" ]; then
+    export GIT_COMMITTER_EMAIL="cavalcantii@gmail.com";
+fi
+' -- --all
+
+echo "Cleaning up..." >&2
+git remote rm original
+delete_fb_backups
+rm -f info/grafts

@@ -1,0 +1,80 @@
+kig: [last checked Mar 1 20:00]
+- for the record: r196843 adds documentation saying "moving documentation", but it doesn't actually exist anywhere else in SVN (it's not a move), so it's fine. I guess this is missing CVS history.
+- should synth merge of make_kdeedu_cool to trunk (217425 -> 217432) [done-ish]
+
+marble: [last checked Mar 1 23:28]
+- synth merge of marble-geodata-nt to trunk (946595 -> 946666) [done-ish]
+
+blinken: [last checked Feb 15 02:02]
+- looks OK
+
+kalgebra: [last checked Feb 22 23:33]
+- no known problems
+
+rocs: [last checked Feb 22 23:49]
+- no known problems
+
+kstars:
+- there were some deletions and re-additions of the entire trunk,
+  should handle sanely in git.
+- synth merge of make_kdeedu_cool to trunk (190438 -> 191485)
+
+parley: [last checked Mar 16 01:16]
+- check for other cases where parent-synthing is necessary
+
+libkdeedu: [last checked Mar 10 03:12]
+- convert kdeedu_parley branch [done]
+- libkdeedu is mostly stuff extracted from other kdeedu apps; we
+  should convert the past history from when it was in the app too.
+   - /trunk/KDE/kdeedu/kanagram/src/fontutils
+   - /branches/work/soc-parley/libkdeedu/keduvocdocument/keduvocleitnerbox
+   - /trunk/KDE/kdeedu/kmplot/icons/actions
+
+cantor: [last checked Mar 2 20:05]
+- no known problems
+
+kalzium: [last checked Mar 12 23:19]
+
+kbruch: [last checked Feb 15 00:13]
+- looks good to me
+
+klettres:
+- tags 3.4.90 and 3.4.91 lack docs [recheck]
+
+kiten:
+- tags 3.4.90 and 3.4.91 lack docs [recheck]
+
+ktouch:
+- tags 3.4.90 and 3.4.91 lack docs [recheck]
+
+kmplot:
+- looks good to me
+
+kanagram: [last checked Feb 15 02:46]
+- convert kdeedu_parley branch
+
+kturtle: [last checked Feb 15 01:01]
+- looks good to me
+- don't forget to run the filter!
+
+step: [last checked Mar 29 00:55]
+- no known issues
+- the SoC branches aren't merged into trunk; this seems accurate with SVN
+  history, though
+
+khangman: [last checked Mar 31 20:25]
+- figure out 757794 mess
+
+kwordquiz: [last checked Feb 22 23:42]
+- convert kdeedu_parley branch
+- work branch gets merged 471217->471272, but more stuff got merged in
+  471273; is this worth synthing?
+
+kgeography: [last checked Feb 15 03:22]
+- looks good to me
+
+all: check for merges of kaction-cleanup-branch in 610651/621518
+all: check for merges of kconfiggroup_port in 635473
+all: check for merges of kinstance-redesign in 628316
+kconfig branch? 721704/721712
+merge of systemtray stuff in 565761 (maybe kde4-systray-rewrite-tng)

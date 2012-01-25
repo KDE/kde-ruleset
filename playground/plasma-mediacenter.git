@@ -1,0 +1,21 @@
+create repository plasma-mediacenter
+end repository
+
+match /trunk/playground/base/plasma/MediaCenterComponents/
+  repository plasma-mediacenter
+  min revision 959570
+  branch master
+end match
+
+match /trunk/playground/base/plasma/dataengines/playlist/
+  prefix dataengines/playlist/
+  repository plasma-mediacenter
+  min revision 957070 
+  max revision 959121
+  branch master
+end match
+
+# Ignore everything else
+match /
+end match
+

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import subprocess
@@ -9,8 +9,23 @@ import sys
 Converts a list of SVN revisions into the corresponding git revisions in the
 current repository.
 
-The input file should contain numerical SVN revisions, one or more per line,
-separated by whitespace. Any other non-numeric text will be ignored.
+The input file should contain any number of SVN revisions per line, as decimal
+numbers. If there's multiple revisions per line, they're usually separated by
+whitespace, but any non-word character will work too.
+
+In addition, you can follow the revision number with an @ sign and a path to
+be matched exactly against the SVN path. This is useful when a single SVN
+commit is converted into multiple git commits based on different SVN paths.
+For example, to match a commit containing the following:
+
+svn path=/branches/kstars/hdevalence/kstars/; revision=1121256
+
+...you can use "1121256@/branches/kstars/hdevalence/kstars/". This path must
+match *exactly*. It's not enough to give a prefix.
+
+Any other text will be passed unmodified. Only the decimal numbers in the file
+(possibly followed by @/path) will be converted, and everything else will stay
+untouched.
 '''
 
 def get_log_messages():
@@ -22,30 +37,61 @@ def get_log_messages():
     p.wait()
     return data
 
+import collections
+
 def create_svn_map(msg_map):
-    svnmap = {}
+    svnmap = collections.defaultdict(lambda: {})
     for gitrev, msg in msg_map.items():
         match = re.search(r"^svn path=([^; ]+); revision=(\d+)", msg, re.MULTILINE)
         if match:
             svnrev = int(match.group(2))
-            svnmap[svnrev] = gitrev
+            path = match.group(1)
+            svnmap[svnrev][path] = gitrev
 
     return svnmap
 
-def load_input(f):
-    for line in f:
-        line_revs = []
-        for line_piece in re.split('\s+', line):
-            try:
-                line_revs.append(int(line_piece))
-            except ValueError:
-                pass
-        yield line_revs
+def process_integers(line, func):
+    result = ''
+    last_idx = 0
+    for match in re.finditer('\\b(\d+)(?:@(/[a-zA-Z0-9/_.-]+))?', line):
+        result += line[last_idx:match.start()] # append text before this match
+        result += func(int(match.group(1)), match.group(2)) # and append the processed integer we matched
+        last_idx = match.end()
+    result += line[last_idx:] # finally, append text after the last match (maybe only the final newline)
+    return result
 
+if len(sys.argv) < 2:
+    input_file = sys.stdin
+elif len(sys.argv) == 2:
+    input_file = file(sys.argv[1], 'r')
+else:
+    print >> sys.stderr, "usage: translateRevlist.py [filename]"
+    sys.exit(1)
+
+print >> sys.stderr, "getting git log..."
 log_messages = get_log_messages()
+print >> sys.stderr, "done"
 svnmap = create_svn_map(log_messages)
 
-input_file = file(sys.argv[1])
+def get_match(svnrev, path=None):
+    if path is None:
+        if len(svnmap[svnrev]) == 0:
+            sys.stderr.write("error: r%d not found in log\n" % svnrev)
+            sys.exit(1)
+        elif len(svnmap[svnrev]) > 1:
+            sys.stderr.write("warning: %d has more than one match:\n" % svnrev)
+            for path,gitrev in svnmap[svnrev].items():
+                sys.stderr.write("  %d@%s %s\n" % (svnrev,path,gitrev))
+        #return ','.join(['%d@%s' % (svnrev,path) for path in svnmap[svnrev].keys()])
+        return svnmap[svnrev].values()[0]
+    else:
+        return svnmap[svnrev][path]
 
-for revs_in_line in load_input(input_file):
-    print ' '.join([svnmap[rev] for rev in revs_in_line])
+for line in input_file:
+    if line.startswith('#'):
+        continue
+
+    new_line = process_integers(line, get_match)
+    sys.stdout.write(new_line)
+
+# vim: set ts=4 sw=4 et tw=78:

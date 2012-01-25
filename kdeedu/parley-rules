@@ -3,9 +3,15 @@ create repository parley
 end repository
 
 declare MODULE=kdeedu/parley
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=parley
+
+match /branches/work/(kdeedu_parley|parley-practice|soc-parley)/parley/
+  repository ${REPO}
+  branch \1
+end match
+
 include common-kdeedu-rules
-include ../common-kde-branches-rules
 
 #	------< trunk/KDE/kdeedu/parley >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/parley @ 710186 <- /trunk/KDE/kdeedu/kvoctrain @ 710173 ]
@@ -14,23 +20,29 @@ include ../common-kde-branches-rules
 match /trunk/KDE/kdeedu/parley/
     repository parley
     branch master
-    min revision 710173
 end match
 
 #	[ move trunk/KDE/kdeedu/kvoctrain 710173 409202 ]
-match /trunk/KDE/kdeedu/kvoctrain/
+match /trunk/(KDE/)?kdeedu/kvoctrain/
     repository parley
     branch master
-    max revision 710173
-    min revision 409202
+end match
+match /trunk/(KDE/)?kdeedu/doc/kvoctrain/
+    repository parley
+    branch master
+    prefix doc/
 end match
 
-#	[ parent trunk/kdeedu/kvoctrain 409202 0 ]
-match /trunk/kdeedu/kvoctrain/
+match /branches/work/doc/parley/
     repository parley
-    branch master
-    max revision 409202
+    branch doc-from-userbase
+    max revision 1152476 # deleted in r1152477
 end match
+
+declare MODULE=kdeedu/kvoctrain
+include ../feature-branches
+declare MODULE=kdeedu/parley
+include ../feature-branches
 
 match /
 end match

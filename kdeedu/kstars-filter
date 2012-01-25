@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+
+"${bindir}/deleter-fb" kstars/data/deepstars.dat

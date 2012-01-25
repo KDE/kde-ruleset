@@ -1,0 +1,46 @@
+create repository icecream
+end repository
+
+# ignore icemon
+match /trunk/icecream/mon-qt4/
+end match
+
+# ignore icemon
+match /trunk/icecream/mon/
+end match
+
+match /trunk/icecream/icecream/mon/
+end match
+
+match /trunk/kdenonbeta/icecream/icecream/mon/
+end match
+
+match /trunk/kdenonbeta/icecream/
+  max revision 519553
+  repository icecream
+  branch master
+end match
+
+match /trunk/icecream/
+  min revision 519553
+  repository icecream
+  branch master
+end match
+
+match /branches/work/icecream-make-it-cool/
+  repository icecream
+  branch work/icecream-make-it-cool
+end match
+
+# icecream-non-linux-porting doesn't need conversion.
+# It is an import of an icecream fork from KDAB,
+# and there's only 3 commits to it in KDE SVN,
+# none merged back to trunk; so it's irrelevant.
+#match /branches/work/icecream-non-linux-porting/icecream/
+#  repository icecream
+#  branch work/icecream-non-linux-porting
+#end match
+
+# Ignore everything else
+match /
+end match

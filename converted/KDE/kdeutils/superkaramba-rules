@@ -1,0 +1,57 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=superkaramba
+declare REPO=KDE/kdeutils/superkaramba
+
+create repository ${REPO}
+end repository
+
+include common-ignores
+include common-recursion-rules
+include common-branch-rules
+
+# Included for historic purposes:
+# Commit 1154058 removed the obsolete documentation.
+declare DOCPREFIX=userdoc/
+include common-doc-rules
+match /branches/KDE/3.5/kdeutils/doc/superkaramba/
+  repository ${REPO}
+  branch KDE/3.5
+  prefix ${DOCPREFIX}
+  max revision 476295
+  min revision 443085
+end match
+# properly handle the move of docs from 3.5 to trunk
+match /trunk/KDE/kdeutils/doc/superkaramba/$
+    action recurse
+    min revision 493489
+    max revision 493489
+end match
+
+match /trunk/(KDE/)?kdeutils/superkaramba/
+  repository ${REPO}
+  branch master
+end match
+
+### SuperKaramba in kdereview
+match /trunk/kdereview/superkaramba/
+  repository ${REPO}
+  branch kdereview
+  max revision 445394 # one before deletion from kdereview
+end match
+
+### sk4 branch
+match /branches/work/sk4/porting/superkaramba/
+  repository ${REPO}
+  branch sk4-porting
+end match
+
+declare MODULE=kdeutils/superkaramba
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
+##### Ignore everything else #####
+match /
+end match

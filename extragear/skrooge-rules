@@ -1,0 +1,33 @@
+#
+# Created by Artur Duque de Souza <asouza@kde.org>
+# Shamelessly applied to Skrooge by Guillaume de Bure <guillaume.debure@gmail.com>
+
+#
+# Create the skrooge repository
+#
+create repository skrooge
+end repository
+
+# Start in playground. Initial import in revision r961823
+match /trunk/playground/office/skrooge/
+  repository skrooge
+  branch master
+  max revision 978123
+end match
+
+# move to kdereview in r978124
+match /trunk/kdereview/skrooge/
+  repository skrooge
+  branch master
+  max revision 989294
+end match
+
+# move to extragear in r989295, until present
+match /trunk/extragear/office/skrooge/
+  repository skrooge
+  branch master
+end match
+
+# ignore everything else
+match /
+end match

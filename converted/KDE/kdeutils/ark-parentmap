@@ -1,0 +1,41 @@
+# Ark used to be called KZip in the beginning.
+# r12097 simply added ark/ instead of renaming kzip/ into ark/ in kdeutils.
+# This mapping makes the last commit in kzip/ a parent of r12097.
+11923 12097
+
+# Adjust the parents of r694732:
+# By default, it erroneously has a large number of parents.
+clear 694732
+694571 694732
+672657 694732
+
+# r432141 is "merge 430621:432064".
+# This mapping makes r431814 a parent of it.
+431823 432141
+
+# r438189 is "merge 437128:438057"
+# This mapping makes r437932 a parent of it.
+437932 438189
+
+# r439732 is coolo's "merged kde4 into trunk" commit.
+# This mapping makes the tip of the `work/kde4' branch a parent of it.
+438189 439732
+
+# intermediate merges from trunk to kaction-cleanup2
+611523 614117
+616861 617061
+
+# merge of kaction-cleanup3 into trunk
+621166 621518
+
+# merge kinstance-redesign into turnk
+627816 628305
+
+# merge kconfiggroup_port into trunk
+634090 635618
+
+# merge kde4_kconfig into turnk
+720910 721930
+
+# forward-port from 4.7 to master
+1240907 1240917

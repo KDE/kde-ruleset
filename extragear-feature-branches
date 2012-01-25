@@ -1,0 +1,10 @@
+match /branches/work/kde4_jobflags/extragear/${X_MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kde4_jobflags/extragear/${X_MODULE}/
+    repository ${REPO}
+    branch refs/workbranch/kde4_jobflags_extragear
+    max revision 721454 # branch deleted in r721455
+end match
+
+# kate: hl svn2git rules; indent-mode svn2git;

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+
+deletion_rev=475469;
+readd_rev=587357;
+
+# A..B returns commits from A to B, excluding A and including B.
+# We want to include A, so we have to start from from A's parent.
+# And we want to exclude B, so we have to end at B's parent too.
+#
+# In other words, A..B is (A,B], and A^..B^ is [A,B).
+range=$(echo "$deletion_rev^..$readd_rev^" | "$bindir/translateRevlist.py")
+
+# this is disgusting
+git filter-branch --tree-filter '
+if git rev-list '"$range"' | grep -q $GIT_COMMIT; then
+    find \( -path "./doc" -prune \) -o -exec rm -f "{}" \;
+fi
+' --tag-name-filter cat -- --all;

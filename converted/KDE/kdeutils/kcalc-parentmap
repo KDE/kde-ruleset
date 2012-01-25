@@ -1,0 +1,25 @@
+# r428182 is "merged 427401:428172"
+# This mapping makes r427535 a parent of it.
+427535 428182
+
+# r438189 is "merge 437128:438057"
+# This mapping makes r437908 a parent of it.
+437908 438189
+
+# r439732 is coolo's "merged kde4 into trunk" commit.
+# This mapping makes the tip of the `work/kde4' branch a parent of it.
+438189 439732
+
+# intermediate merges from trunk to kaction-cleanup1
+611013 614117
+614809 617061
+
+# intermediate merges from trunk to kaction-cleanup2
+617279 618565
+620031 620435
+
+# merge kaction-cleanup2 into trunk
+621267 621518
+
+# forward-port from 4.7 to master
+1240129 1240130

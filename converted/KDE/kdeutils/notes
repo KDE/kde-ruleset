@@ -1,0 +1,106 @@
+filelight
+=========
+
+It's as complete as it can be.
+Due to how late it went into KDE trunk,
+it doesn't have any "global work branch".
+
+The only missing thing is a 1.1 branch
+under /branches/filelight/1.1,
+which only has 1 commit that didn't get merged.
+Probably a dead-end experiment.
+
+ark
+===
+
+Looks pretty complete.
+I didn't do an exhausive search for work branches yet
+('ark' is a terrible search term).
+
+kcalc
+=====
+
+Comprehensively checked; there's nothing missing.
+
+kcharselect
+===========
+
+Comprehensively checked; there's nothing missing.
+
+kwallet
+=======
+
+Comprehensively checked; there's nothing missing.
+
+sweeper
+=======
+
+All history of 3.x branches was missing; added it.
+
+The suse_kickoff and suse_kickoff_qstyle work branches
+only have merges from trunk or from each other,
+and no useful code changes, so I'll ignore them.
+
+Nothing else seems missing, checked w/ residual repo.
+
+kgpg
+====
+
+Comprehensively checked, only thing missing was bleedingedge branch.
+
+Merges synthed.
+
+printer-applet
+==============
+
+There's nothing here outside trunk and version branches,
+so even feature-branches is unnecessary.
+
+kdf
+===
+
+Some doc history was missing, fixed now.
+Note the fix requires a newer svn2git.
+
+Work branches exported.
+Comprehensive check didn't show anything else missing.
+
+ktimer
+======
+
+Work branches added, merges synth'd,
+Nothing else is missing (checked w/ residual).
+
+kfloppy
+=======
+
+Work branches added. Nothing else is missing (checked w/ residual).
+
+superkaramba
+============
+
+Work branches added, doc problems fixed.
+
+User docs now appear in 'userdoc',
+and the existing 'doc' directory
+(containing API docs) is left in 'doc'.
+A filter-branch script could rename both, though.
+
+History was checked with residual repo,
+only thing missing is the branches/work/sk4/superkaramba branch,
+which is irrelevant (no useful changes, not merged back to trunk).
+
+kremotecontrol
+==============
+
+Documentation messy here too.
+In r1075787, trunk kdelirc branches into work/kdelirc;
+this is converted to git including the 'doc' directory
+which is in a separate place in SVN.
+In r1100454, a 'doc' directory was added to the work branch.
+Now that 'doc' directory has stuff mixed from both places.
+
+To fix it, I added a filter-branch script that deletes the docs
+from the correct commit range.
+
+No history seems to be missing.

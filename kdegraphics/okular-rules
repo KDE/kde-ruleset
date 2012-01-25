@@ -1,0 +1,294 @@
+create repository okular
+end repository
+
+include ../common-kde-ignores
+
+# ---- recursion ----
+
+match /(branches|tags)/KDE/[^/]+/$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/kdegraphics/$
+  action recurse
+end match
+
+match /trunk/(KDE/)?(kdegraphics(/libs)?)/$
+  action recurse
+end match
+
+match /branches/work/kde4/(kdegraphics(/libs)?)/$
+  action recurse
+end match
+
+match /tags/(KDE/)?[^/]+/(kdegraphics/)?$
+  action recurse
+end match
+
+match /branches/(?:__)?KDE_\d_\d_BRANCH/(kdegraphics/)?$
+  action recurse
+end match
+
+# BEGIN epub
+match /trunk/kdereview/okular/epub/
+  repository okular
+  min revision 785913
+  max revision 793008 # moved in 9
+  branch epub
+end match
+match /trunk/playground/graphics/okular/epub/
+  repository okular
+  min revision 774631
+  max revision 785912 # moved to kdereview
+  branch epub
+end match
+# END
+
+# BEGIN mobipocket
+match /trunk/kdereview/mobipocket/okular/
+  repository okular
+  branch mobipocket
+  max revision 928630 # deleted in 928631
+end match
+match /trunk/playground/graphics/okular/mobipocket/
+  repository okular
+  branch refs/tmp/mobipocket # don't ask me why this works... it just does
+  max revision 917030 # in 917031, code gets split into directories
+end match
+match /trunk/playground/graphics/okular/mobipocket/okular/
+  repository okular
+  branch mobipocket
+  min revision 917031
+  max revision 917050 # 917051 deletes it from playground
+end match
+# END mobipocket
+
+# BEGIN kpdf
+match /trunk/KDE/kdegraphics/kpdf/
+  repository okular
+  branch kpdf
+  max revision 540831 # 540832: kpdf deleted
+end match
+
+match /trunk/kdegraphics/kpdf/
+  repository okular
+  branch kpdf
+end match
+match /branches/work/kde4/kdegraphics/kpdf/
+  repository okular
+  branch kpdf-kde4
+  max revision 439695 # r439696 deletes all kdegraphics from kde4
+end match
+
+match /branches/kpdf_annotations/(kdegraphics/)?$
+  action recurse
+end match
+# 388767: Created annotations branch from trunk, using (beep) cvs2svn
+match /branches/kpdf_annotations/kdegraphics/kpdf/
+  repository okular
+  branch kpdf-annotations
+end match
+# 409205: renamed branches
+match /branches/kpdf/annotations/kdegraphics/kpdf/
+  repository okular
+  branch kpdf-annotations
+end match
+
+match /branches/kpdf_experiments/(kdegraphics/)?$
+    action recurse
+end match
+match /branches/kpdf_experiments/kdegraphics/kpdf/
+    repository okular
+    branch kpdf-experiments
+    # in 409205, the branch is renamed; but no activity happened under the new name
+    max revision 409204
+end match
+
+# END kpdf
+
+# BEGIN kdvi
+# copy from kviewshell: r556303
+match /trunk/KDE/kdegraphics/kviewshell/plugins/k?dvi/
+  repository okular
+  branch kdvi
+  max revision 556303
+end match
+
+match /trunk/KDE/kdegraphics/kdvi/
+  repository okular
+  branch kdvi
+  max revision 469945
+end match
+
+match /trunk/kdegraphics/kdvi/
+  repository okular
+  branch kdvi
+end match
+match /trunk/(KDE/)?kdegraphics/doc/kdvi/
+  repository okular
+  branch kdvi
+  prefix doc/
+end match
+match /branches/work/kde4/kdegraphics/kdvi/
+  repository okular
+  branch kdvi-kde4
+  max revision 439695 # r439696 deletes all kdegraphics from kde4
+end match
+
+match /branches/work/kviewshell-0.7/kviewshell/plugins/k?dvi/
+  repository okular
+  branch kdvi-kviewshell-0.7
+  max revision 603799 # moved elsewhere in 603800
+end match
+
+# END kdvi
+
+# BEGIN okular
+
+# 431968: Importing kpdf_annotations to playground
+match /trunk/playground/graphics/oKular/kpdf/
+  repository okular
+  branch okular3-playground
+  max revision 552283 # r552284 is "remove oKular for KDE3"
+end match
+
+
+# KDE 4 development
+match /branches/work/kde4/playground/graphics/okular/
+  repository okular
+  branch master
+end match
+match /trunk/playground/graphics/okular/
+  repository okular
+  branch master
+  # copied to trunk in 650477, deleted from playground in 650479;
+  # later revisions at this path are okular-related playground subprojects,
+  # so they must not be converted
+  max revision 650478
+end match
+match /trunk/KDE/kdegraphics/okular/
+  repository okular
+  branch master
+end match
+
+match /branches/work/okular-newpageview/
+  repository okular
+  branch old/work/newpageview
+end match
+match /branches/work/okular-record-presentation/
+  repository okular
+  branch old/work/record-presentation
+  # r926333 created branch incorrectly, r926334 deleted it,
+  # r926335 did it again correctly.
+  min revision 926335
+end match
+match /branches/work/okular-tiff-improvements/
+  repository okular
+  branch old/work/tiff-improvements
+  prefix generators/tiff/
+end match
+
+# END okular
+
+# BEGIN okular-specific cmake files
+match /trunk/KDE/kdegraphics/cmake/modules/
+  repository okular
+  prefix cmake/modules/
+  branch master
+end match
+
+match /trunk/playground/graphics/cmake/modules/
+  repository okular
+  prefix cmake/modules/
+  branch master
+  max revision 650482 # copied at 83
+  min revision 551165
+end match
+
+match /branches/work/kde4/playground/graphics/cmake/
+  repository okular
+  prefix cmake/modules/
+  branch master
+  max revision 551164
+end match
+# END
+
+
+match /trunk/(KDE/)?kdegraphics/doc/okular/
+  repository okular
+  prefix doc/
+  branch master
+end match
+match /trunk/playground/graphics/doc/okular/
+  repository okular
+  prefix doc/
+  branch master
+  max revision 650477 # moved away at 78, deleted at 79
+end match
+match /trunk/(KDE/)?kdegraphics/doc/kpdf/
+  repository okular
+  prefix doc/
+  branch kpdf
+  max revision 674185 # ignore 674186. Then history ends.
+end match
+
+# BEGIN version branches
+#adapted from common-kde-branches-rules
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/(kpdf|kdvi)/
+    repository okular
+    branch \3-\1.\2
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/(kpdf|kdvi)/
+    repository okular
+    branch \3-\1.\2
+end match
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/doc/(kpdf|kdvi)/
+    repository okular
+    branch \3-\1.\2
+    prefix doc/
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/doc/(kpdf|kdvi)/
+    repository okular
+    branch \3-\1.\2
+    prefix doc/
+end match
+
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/okular/
+    repository okular
+    branch \1.\2
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/okular/
+    repository okular
+    branch \1.\2
+end match
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdegraphics/doc/okular/
+    repository okular
+    branch \1.\2
+    prefix doc/
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/doc/okular/
+    repository okular
+    branch \1.\2
+    prefix doc/
+end match
+# END
+
+declare REPO=okular
+
+declare MODULE=kdegraphics/(?:okular|kpdf)
+include ../common-kde-tags-rules
+
+declare MODULE_RECURSE=(kdegraphics/)?
+
+declare MODULE=kdegraphics/okular
+include ../feature-branches
+
+#
+# Final rules
+#
+
+match /
+end match

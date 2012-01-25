@@ -1,0 +1,27 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=kwallet
+declare REPO=KDE/kdeutils/kwallet
+
+create repository ${REPO}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+include common-doc-rules
+
+declare MODULE=kdeutils/kwallet
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
+match /trunk/(KDE/)?kdeutils/kwallet/
+  repository ${REPO}
+  branch master
+end match
+
+##### Ignore everything else #####
+match /
+end match

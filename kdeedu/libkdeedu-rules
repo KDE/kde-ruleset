@@ -1,11 +1,12 @@
-# --repo# file:///mnt/tera/kde-svn/kde/# --path# trunk/KDE/kdeedu/libkdeedu# --module# libkdeedu
+# --repo# file:///home/eean/svn/# --subdirs# --path# trunk/KDE/kdeedu/libkdeedu# --module# libkdeedu
 create repository libkdeedu
 end repository
 
 declare MODULE=kdeedu/libkdeedu
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=libkdeedu
 include common-kdeedu-rules
-include ../common-kde-branches-rules
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/libkdeedu >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
@@ -21,6 +22,139 @@ match /trunk/kdeedu/libkdeedu/
     repository libkdeedu
     branch master
     max revision 409202
+end match
+
+#	------< trunk/KDE/kdeedu/libkdeedu/icons >------
+#	[ Move/Replace: /trunk/KDE/kdeedu/libkdeedu/icons @ 1175896 <- /trunk/KDE/kdeedu/kmplot/icons/actions @ 1175878 ]
+#	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
+#	[ add icons HEAD 1175878 ]
+
+#lets not get better binary file history...
+#	[ move trunk/KDE/kdeedu/kmplot/icons/actions 1175878 409202 ]
+#match /trunk/KDE/kdeedu/kmplot/icons/actions/
+#    repository libkdeedu
+#    prefix icons/
+#    branch master
+#    max revision 1175878
+#    min revision 409202
+#end match
+
+#	[ parent trunk/kdeedu/kmplot/icons/actions 409202 0 ]
+#match /trunk/kdeedu/kmplot/icons/actions/
+#    repository libkdeedu
+#    prefix icons/
+#    branch master
+#    max revision 409202
+#end match
+
+
+#	[ move trunk/KDE/kdeedu/kalgebra/src/qtmmlwidget 1163283 0 ]
+match /trunk/KDE/kdeedu/kalgebra/src/qtmmlwidget/
+    repository libkdeedu
+    prefix kalgebra/qtmmlwidget/
+    branch refs/fromotherapp/qtmmlwidget
+end match
+
+
+match /branches/work/kdeedu_parley/libkdeedu/
+    repository libkdeedu
+    branch parley_work
+end match
+
+match /branches/work/soc-parley/libkdeedu/
+    repository libkdeedu
+    branch soc-parley
+end match
+
+match /branches/work/parley-practice/libkdeedu/
+    repository libkdeedu
+    branch parley-practice
+end match
+
+match /branches/kalzium/gsoc2009/kalzium/libscience/
+    repository libkdeedu
+    branch gsoc2009
+    prefix libscience/
+end match
+
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocdocument.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocdocument.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocexpression.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocexpression.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocgrammar.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocgrammar.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvockvtmlreader.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvockvtmlreader.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvockvtmlwriter.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvockvtmlwriter.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocmultiplechoice.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocmultiplechoice.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocwqlreader.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocwqlreader.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocwqlwriter.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/keduvocwqlwriter.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnerbox.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnerbox.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnersystem.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnersystem.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnersystemview.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/leitnersystemview.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/prefleitner.cpp
+#   D /trunk/KDE/kdeedu/kwordquiz/src/prefleitner.h
+#   D /trunk/KDE/kdeedu/kwordquiz/src/prefleitnerbase.ui
+
+
+declare VOCFILES=(keduvocdocument|keduvocexpression|keduvocgrammar|keduvockvtmlreader|keduvockvtmlwriter|keduvocmultiplechoice|keduvocwqlreader|keduvocwqlwriter|leitnerbox|leitnersystem|leitnersystemview|prefleitner|prefleitnerbase|grammarmanager|[Mm]ultiple[Cc]hoice).(cpp|h|ui)
+
+match /trunk/(?:KDE/)?kdeedu/kwordquiz/src/${VOCFILES}
+    repository libkdeedu
+    branch refs/fromotherapp/keduvoc
+    prefix kwordquiz/\1.\2
+end match
+
+match /branches/work/kwordquiz/src/${VOCFILES}
+    repository libkdeedu
+    branch refs/fromotherapp/keduvoc
+    prefix kwordquiz/\1.\2
+end match
+
+declare PHYSICSFILES=(src/(?:element|isotope|spectrum|tempunit|spectrummanager/spectrumparser)\.(?:cpp|h)|data/spectra.xml)
+
+match /trunk/(?:KDE/)?kdeedu/kalzium/${PHYSICSFILES}
+    repository libkdeedu
+    branch refs/fromotherapp/libphysics
+    prefix kalzium/\1
+end match
+
+declare COMPOUNDVIEWERFILES=((?:openbabel2wrapper|kalziumglhelperclasses|kalziumglpart|kalziumglwidget)\.(?:cpp|h)|kalziumgl_part.desktop|widgets/(?:CMakeLists.txt|kalzium.widgets|kalziumui.widgets))
+match /trunk/(?:KDE/)?kdeedu/kalzium/src/${COMPOUNDVIEWERFILES}
+    repository libkdeedu
+    branch refs/fromotherapp/compoundviewer
+    prefix kalzium/\1
+end match
+
+# handle move in 710186
+match /trunk/KDE/kdeedu/(kvoctrain|parley)/$ 
+    action recurse
+end match
+# handle move in 710174
+match /trunk/KDE/kdeedu/(kvoctrain|parley)/(src|kvoctrain)/$
+    action recurse
+end match
+
+# seems I need yet more recursion to catch the trunk -> trunk/KDE move
+
+match /trunk/(?:KDE/)?kdeedu/(kvoctrain|parley)/(src|kvoctrain)/docs/
+    repository libkdeedu
+    branch refs/fromotherapp/parleydocs
+    prefix parley/\2/docs/
+    max revision 710219 # one before deletion
+end match
+
+match /trunk/(?:KDE/)?kdeedu/(kvoctrain|parley)/(src|kvoctrain)/kvoctrain.dtd
+    repository libkdeedu
+    branch refs/fromotherapp/parleydocs
+    prefix parley/\2/kvoctrain.dtd
 end match
 
 match /

@@ -2,10 +2,16 @@
 create repository kalgebra
 end repository
 
+match /trunk/kdereview/doc/kalgebra/
+    min revision 670406
+    max revision 670406
+end match
+
 declare MODULE=kdeedu/kalgebra
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kalgebra
 include common-kdeedu-rules
-include ../common-kde-branches-rules
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/kalgebra >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/kalgebra @ 670400 <- /trunk/kdereview/kalgebra @ 670393 ]

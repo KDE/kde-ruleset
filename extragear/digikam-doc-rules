@@ -1,0 +1,158 @@
+#
+# Created by Marcel Wiesweg <marcel.wiesweg@gmx.de>
+#
+
+#
+# Create the digikam repository
+#
+create repository digikam-doc
+end repository
+
+create repository kipi-plugins-doc
+end repository
+
+# Ignore some upheaval in KDE's SVN history.
+match /
+    min revision 409202
+    max revision 409210
+end match
+match /
+    min revision 411973
+    max revision 411973
+end match
+
+# Ignore deletion after first migration step
+match /
+    min revision 1219149
+    max revision 1219153
+end match
+
+# ---- recursion ----
+
+match /(branches|tags)/KDE/[^/]+/$
+  action recurse
+  min revision 757126
+end match
+match /trunk/kdereview/$
+  action recurse
+end match
+match /trunk/playground/$
+  action recurse
+end match
+match /trunk/playground/[^/]/$
+  action recurse
+end match
+match /trunk/kdeplayground-[^/]/$
+  action recurse
+end match
+
+match /trunk/(KDE/)?(kdegraphics(/libs)?)/$
+  action recurse
+end match
+
+match /branches/work/kde4/(kdegraphics(/libs)?)/$
+  action recurse
+end match
+
+match /(branches(/work)?|tags)/(KDE/)?[^/]+/(kdegraphics(/libs)?)/$
+  action recurse
+end match
+
+
+# ---- Kipiplugins ----
+
+match /trunk/extragear/graphics/doc/kipi-plugins/
+    repository kipi-plugins-doc
+    branch master
+    min revision 951384
+end match
+
+match /branches/extragear/kde3/libs/doc/kipi-plugins/
+    repository kipi-plugins-doc
+    branch master
+    min revision 670712
+    max revision 951383
+end match
+
+match /trunk/extragear/libs/doc/kipi-plugins/
+    repository kipi-plugins-doc
+    branch master
+    min revision 409209
+    max revision 670711
+end match
+
+match /trunk/kdeextragear-libs-1/doc/kipi-plugins/
+    repository kipi-plugins-doc
+    branch master
+    max revision 409208
+end match
+
+
+# ---- Digikam -----
+
+match /trunk/extragear/graphics/doc/digikam/
+    repository digikam-doc
+    branch master
+    prefix digikam/
+    min revision 902776
+end match
+
+match /branches/extragear/kde3/graphics/doc/digikam/
+    repository digikam-doc
+    branch master
+    prefix digikam/
+    max revision 902775
+end match
+
+match /trunk/extragear/graphics/doc/digikam/
+    repository digikam-doc
+    branch master
+    min revision 409209
+    max revision 670766
+    prefix digikam/
+end match
+
+# path until 409208
+match /trunk/kdeextragear-3/doc/digikam/
+    repository digikam-doc
+    branch master
+    max revision 409208
+    prefix digikam/
+end match
+
+# showfoto
+
+match /trunk/extragear/graphics/doc/showfoto/
+    repository digikam-doc
+    branch master
+    min revision 902777
+    prefix showfoto/
+end match
+
+match /branches/extragear/kde3/graphics/doc/showfoto/
+    repository digikam-doc
+    branch master
+    max revision 902776
+    prefix showfoto/
+end match
+
+match /trunk/extragear/graphics/doc/showfoto/
+    repository digikam-doc
+    branch master
+    min revision 409209
+    max revision 670766
+    prefix showfoto/
+end match
+
+# path until 409208
+match /trunk/kdeextragear-3/doc/showfoto/
+    repository digikam-doc
+    branch master
+    max revision 409208
+    prefix showfoto/
+end match
+
+
+match /
+end match
+

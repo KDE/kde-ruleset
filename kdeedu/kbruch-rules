@@ -3,9 +3,11 @@ create repository kbruch
 end repository
 
 declare MODULE=kdeedu/kbruch
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kbruch
 include common-kdeedu-rules
-include ../common-kde-branches-rules
+
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/kbruch >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
@@ -21,6 +23,12 @@ match /trunk/kdeedu/kbruch/
     repository kbruch
     branch master
     max revision 409202
+end match
+
+match /trunk/kdeextragear-1/kbruch/
+    repository kbruch
+    branch extragear-1
+    max revision 177232 # 1 before delete
 end match
 
 match /

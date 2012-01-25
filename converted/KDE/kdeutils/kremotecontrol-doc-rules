@@ -1,0 +1,127 @@
+### KRemoteControl's documentation history is more complex than the average due
+### to the fact that it lies in kdeutils/doc/kcontrol/kremotecontrol instead of
+### kdeutils/doc/kremotecontrol.
+### We also need to take KDELirc's documentation into account.
+
+#       ------< trunk/KDE/kdeutils/doc/kcontrol/kremotecontrol >------
+#       [ Move/Replace: /trunk/KDE/kdeutils/doc/kcontrol/kremotecontrol @ 1116576 <- /trunk/KDE/kdeutils/doc/kremotecontrol @ 1116522 ]
+#       [ Move/Replace: /trunk/KDE/kdeutils/doc/kremotecontrol @ 1109706 <- /trunk/kdereview/doc/kremotecontrol @ 1109705 ]
+#       [ Move/Replace: /trunk/kdereview/doc/kremotecontrol @ 1102503 <- /trunk/kdereview/kremotecontrol/doc/kremotecontrol @ 1102497 ]
+#       [ Parent: /trunk/kdereview/kremotecontrol @ 1102497 <- /branches/work/kdelirc @ 1102496 ]
+#       [ add  HEAD 1116522 ]
+match /trunk/KDE/kdeutils/doc/kcontrol/kremotecontrol/
+    repository ${REPO}
+    branch master
+    prefix doc/
+    min revision 1116522
+end match
+
+match /branches/KDE/([^/]+)/kdeutils/doc/kcontrol/kremotecontrol/
+    repository ${REPO}
+    branch \1
+    prefix doc/
+    min revision 1116522
+end match
+
+#       [ move trunk/KDE/kdeutils/doc/kremotecontrol 1116522 1109705 ]
+match /trunk/KDE/kdeutils/doc/kremotecontrol/
+    repository ${REPO}
+    branch master
+    prefix doc/
+    max revision 1116522
+    min revision 1109705
+end match
+
+#       [ move trunk/kdereview/doc/kremotecontrol 1109705 1102497 ]
+match /trunk/kdereview/doc/kremotecontrol/
+    repository ${REPO}
+    branch master
+    prefix doc/
+    max revision 1109705
+    min revision 1102497
+end match
+
+#       [ move trunk/kdereview/kremotecontrol/doc/kremotecontrol 1102497 1102496 ]
+match /trunk/kdereview/kremotecontrol/doc/kremotecontrol/
+    repository ${REPO}
+    branch master
+    prefix doc/
+    max revision 1102497
+    min revision 1102496
+end match
+
+#       [ parent branches/work/kdelirc/doc/kremotecontrol 1102496 0 ]
+match /branches/work/kdelirc/doc/kremotecontrol/
+    repository ${REPO}
+    branch master
+    prefix doc/
+    max revision 1102496
+end match
+
+#	------< trunk/KDE/kdeutils/doc/kdelirc >------
+#	[ Move/Replace: /trunk/KDE/kdeutils/doc/kdelirc @ 963360 <- /trunk/kdereview/doc/kdelirc @ 963358 ]
+#	[ Move/Replace: /trunk/kdereview/doc/kdelirc @ 956548 <- /trunk/kdereview/doc/utils/kdelirc @ 956547 ]
+#	[ Move/Replace: /trunk/kdereview/doc/utils/kdelirc @ 956542 <- /trunk/playground/utils/doc/kdelirc @ 956541 ]
+#	[ Move/Replace: /trunk/playground/utils/doc/kdelirc @ 807317 <- /trunk/KDE/kdeutils/doc/kdelirc @ 807316 ]
+#	[ Parent: /trunk/KDE/kdeutils @ 409203 <- /trunk/kdeutils @ 409202 ]
+#	[ add  1110589 963358 ]
+match /trunk/KDE/kdeutils/doc/kdelirc/
+    repository ${REPO}
+    branch kdelirc-old
+    prefix doc/kdelirc/
+    max revision 1110589
+    min revision 963358
+end match
+
+match /branches/KDE/([^/]+)/kdeutils/doc/kdelirc/
+  repository ${REPO}
+  branch \1
+  prefix doc/kdelirc/
+  max revision 1110589
+  min revision 963358
+end match
+
+
+#	[ move trunk/kdereview/doc/kdelirc 963358 956547 ]
+match /trunk/kdereview/doc/kdelirc/
+    repository ${REPO}
+    branch master
+    prefix doc/kdelirc/
+    max revision 963358
+    min revision 956547
+end match
+
+#	[ move trunk/kdereview/doc/utils/kdelirc 956547 956541 ]
+match /trunk/kdereview/doc/utils/kdelirc/
+    repository ${REPO}
+    branch master
+    prefix doc/kdelirc/
+    max revision 956547
+    min revision 956541
+end match
+
+#	[ move trunk/playground/utils/doc/kdelirc 956541 807316 ]
+match /trunk/playground/utils/doc/kdelirc/
+    repository ${REPO}
+    branch master
+    prefix doc/kdelirc/
+    max revision 956541
+    min revision 807316
+end match
+
+#	[ move trunk/KDE/kdeutils/doc/kdelirc 807316 409202 ]
+match /trunk/KDE/kdeutils/doc/kdelirc/
+    repository ${REPO}
+    branch master
+    prefix doc/kdelirc/
+    max revision 807316
+    min revision 409202
+end match
+
+#	[ parent trunk/kdeutils/doc/kdelirc 409202 0 ]
+match /trunk/kdeutils/doc/kdelirc/
+    repository ${REPO}
+    branch master
+    prefix doc/kdelirc/
+    max revision 409202
+end match

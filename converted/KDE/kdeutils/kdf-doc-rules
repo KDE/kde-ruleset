@@ -1,0 +1,21 @@
+# kdf documentation is in two separate places:
+# - kdeutils/doc/kdf/ (kdf manual)
+# - kdeutils/doc/kcontrol/blockdevices/ (kcontrol module)
+#
+# After discussing with the documentation team, the following layout has been
+# decided upon:
+# - kdeutils/doc/kdf/ -> kdf/doc/manual/
+# - kdeutils/doc/kcontrol/blockdevices/ -> kdf/doc/kcontrol
+
+# save and restore the value
+declare APP_OLD=${APPLICATION}
+
+declare APPLICATION=kdf
+declare DOCPREFIX=doc/manual/
+include common-doc-rules
+
+declare APPLICATION=kcontrol/blockdevices
+declare DOCPREFIX=doc/kcontrol/
+include common-doc-rules
+
+declare APPLICATION=${APP_OLD}

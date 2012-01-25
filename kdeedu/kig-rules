@@ -3,9 +3,24 @@ create repository kig
 end repository
 
 declare MODULE=kdeedu/kig
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kig
+
+match /branches/kig/(post-kde-3\.5)/(kig)/
+  repository ${REPO}
+  branch \1
+end match
+
+match /tags/KIG_0_1/kdeedu/kig/
+  min revision 175053
+  max revision 175053
+  repository ${REPO}
+  branch refs/tags/v0.1.0
+  annotated true
+end match
+
 include common-kdeedu-rules
-include ../common-kde-branches-rules
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/kig >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]

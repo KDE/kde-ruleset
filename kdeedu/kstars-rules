@@ -3,9 +3,10 @@ create repository kstars
 end repository
 
 declare MODULE=kdeedu/kstars
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kstars
 include common-kdeedu-rules
-include ../common-kde-branches-rules
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/kstars >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
@@ -21,6 +22,77 @@ match /trunk/kdeedu/kstars/
     repository kstars
     branch master
     max revision 409202
+end match
+
+match /branches/kstars/(hdevalence|carbonix)/kstars/
+    repository kstars
+    branch gsoc2010-\1
+end match
+match /branches/kstars/(hdevalence|carbonix)/doc/kstars/
+    repository kstars
+    branch gsoc2010-\1
+    prefix doc/
+end match
+
+match /branches/work/kdeedu_kstars_htm/$
+    action recurse
+end match
+
+match /branches/work/kdeedu_kstars_htm/kstars/
+    repository kstars
+    branch kstars_htm
+end match
+match /branches/work/kdeedu_kstars_htm/doc/kstars/
+    repository kstars
+    branch kstars_htm
+    prefix doc/
+end match
+
+match /branches/kstars/summer/kdeedu/kstars/
+    repository kstars
+    branch summer1 # 2008?
+    min revision 812417 # branch creation
+    max revision 962936 # before deletion at r962937 "Removing the old summer branch"
+end match
+
+match /branches/kstars/unfrozen/$
+    action recurse
+end match
+match /branches/kstars/unfrozen/kstars/
+    repository kstars
+    branch unfrozen1 # 2008?
+    min revision 822093 # branch creation
+    max revision 962937 # before deletion at 962938 "Deleting old unfrozen branch"
+end match
+
+match /branches/kstars/summer/kstars/
+    repository kstars
+    branch summer2 # 2009?
+    min revision 962962 # branch creation
+    max revision 1121178 # before deletion at r1121179 "Removing old summer branch"
+end match
+
+match /branches/kstars/unfrozen/$
+    action recurse
+end match
+match /branches/kstars/unfrozen/kstars/
+    repository kstars
+    branch unfrozen2 # 2009?
+    min revision 962963 # branch creation
+    max revision 1121178 # branch still exists, but let's stop somewhere :)
+end match
+
+match /branches/kstars/code-in/$
+    action recurse
+end match
+match /branches/kstars/code-in/kstars/
+    repository kstars
+    branch code-in
+end match
+match /branches/kstars/code-in/doc/kstars/
+    repository kstars
+    branch code-in
+    prefix doc/
 end match
 
 match /

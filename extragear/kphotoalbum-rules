@@ -1,0 +1,217 @@
+#
+# Originally created by Jesper Pedersen <blackie@kde.org>
+# Modified beyond recognition by Nicolás Alvarez <nicolas.alvarez@gmail.com>
+#
+
+#
+# Create the kphotoalbum repository
+#
+create repository kphotoalbum
+end repository
+
+declare REPO=kphotoalbum
+
+# 198778-409209
+match /trunk/kdeextragear-2/kimdaba/
+    repository kphotoalbum
+    branch h1
+end match
+match /trunk/kdeextragear-2/doc/kimdaba/
+    repository kphotoalbum
+    branch h1
+    prefix doc/
+end match
+
+# 409209-498149
+match /trunk/extragear/graphics/kimdaba/
+    repository kphotoalbum
+    branch h1
+end match
+match /trunk/extragear/graphics/doc/kimdaba/
+    repository kphotoalbum
+    branch h1
+    prefix doc/
+end match
+
+# 498149-648351
+match /trunk/extragear/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch h1
+    max revision 648351
+end match
+match /trunk/extragear/graphics/doc/kphotoalbum/
+    repository kphotoalbum
+    branch h1
+    prefix doc/
+    max revision 648351
+end match
+
+
+match /branches/kphotoalbum/2.2.x/
+    repository kphotoalbum
+    branch 2.2
+end match
+
+match /branches/kphotoalbum/3.0.x/
+    repository kphotoalbum
+    branch 3.0
+end match
+
+# 617978-648353
+match /branches/kphotoalbum/devel/
+  repository kphotoalbum
+  branch devel1
+  max revision 648353
+end match
+
+# 648353-670776
+match /trunk/extragear/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch h2
+    min revision 648353
+    max revision 670776
+end match
+# no doc changes in (632425,670766]
+
+# 670776-today (last change 946538)
+match /branches/extragear/kde3/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch kde3
+end match
+match /branches/extragear/kde3/graphics/doc/kphotoalbum/
+    repository kphotoalbum
+    branch kde3
+    prefix doc/
+end match
+
+# 681253-1023637
+match /trunk/extragear/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch h3
+    min revision 681253
+    max revision 1023637
+end match
+match /trunk/extragear/graphics/doc/kphotoalbum/
+    repository kphotoalbum
+    branch h3
+    prefix doc/
+    min revision 681253
+    max revision 1023637
+end match
+
+# 971129-981503
+match /branches/kphotoalbum/browser-rework/
+  repository kphotoalbum
+  branch browser-rework
+end match
+
+# 981503-1023638
+match /branches/kphotoalbum/devel/
+  repository kphotoalbum
+  branch devel2
+  min revision 981503
+  max revision 1023638
+end match
+
+# 1023638-now
+match /trunk/extragear/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch master
+    min revision 1023638
+end match
+match /trunk/extragear/graphics/doc/kphotoalbum/
+    repository kphotoalbum
+    branch master
+    prefix doc/
+    min revision 1023638
+end match
+
+# 1040081-1090864
+match /branches/stable/extragear-kde4/graphics/kphotoalbum/
+    repository kphotoalbum
+    branch stable
+    max revision 1090863 # 1 before deletion
+end match
+# no docs in branch
+
+# version branches
+match /branches/kimdaba_1_\d_x/(kdeextragear-2/)?$
+    action recurse
+end match
+match /branches/kimdaba_1_(\d)_x/kdeextragear-2/kimdaba/
+    repository kphotoalbum
+    branch 1.\1
+    # 409205 renames branches, and there were no commits after rename
+    max revision 409204
+end match
+
+# 409758-436389
+match /branches/kimdaba/development/
+    repository kphotoalbum
+    branch development
+    max revision 436400 # 436401 deletes it
+end match
+
+# 541820-568843, deletion in 617976
+match /branches/kphotoalbum/soc/
+    repository kphotoalbum
+    branch soc
+    max revision 617975 # 617976 deletes branch
+end match
+
+# 572629-572800, deletion in 617976
+match /branches/kphotoalbum/with-kexidb/
+    repository kphotoalbum
+    branch with-kexidb
+    max revision 617975 # 617976 deletes branch
+end match
+
+# 626601-626625
+match /branches/kphotoalbum/update-to-kexi-1.6.1/
+    repository kphotoalbum
+    branch update-to-kexi-1.6.1
+    max revision 626633 # 626634 deletes branch
+end match
+
+# 677778-717608
+match /branches/work/kphotoalbum-iptc/
+    repository kphotoalbum
+    branch iptc
+    max revision 717623 # 717624 deletes branch
+end match
+
+match /branches/kphotoalbum/geolocationbrowser/
+    repository kphotoalbum
+    branch geolocationbrowser
+end match
+
+declare X_MODULE_RECURSE=(graphics/)?
+declare X_MODULE=graphics/kphotoalbum
+include ../extragear-feature-branches
+
+# Tags
+match /tags/kimdaba[^/]+/(kdeextragear-2/)?$
+    action recurse
+end match
+match /tags/kimdaba_(\d)_(\d)/kdeextragear-2/kimdaba/
+    repository kphotoalbum
+    branch refs/tags/v\1.\2
+    annotated true
+    max revision 437071 # r437072 moves tags around
+end match
+match /tags/kimdaba_(\d)_(\d)_(\d)/kdeextragear-2/kimdaba/
+    repository kphotoalbum
+    branch refs/tags/v\1.\2.\3
+    annotated true
+    max revision 437071 # r437072 moves tags around
+end match
+match /tags/kphotoalbum/(\d[^/]+)/
+    repository kphotoalbum
+    branch refs/tags/v\1
+    annotated true
+end match
+
+
+# Ignore everything else
+match /
+end match

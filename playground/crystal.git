@@ -1,0 +1,12 @@
+create repository crystal
+end repository
+
+match /trunk/playground/base/plasma/applets/crystal/
+  repository crystal
+  branch master
+end match
+
+# Ignore everything else
+match /
+end match
+

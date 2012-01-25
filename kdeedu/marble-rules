@@ -18,9 +18,23 @@ match /trunk/kdereview/marble/
   branch master
 end match
 
+# docs from when it was in kdereview
+match /trunk/kdereview/doc/marble/
+  repository marble
+  branch master
+  prefix doc/
+end match
+
 # Marble was moved from kdereview to kdeedu in revision 669496
 match /trunk/KDE/kdeedu/marble/
   repository marble
+  branch master
+end match
+
+# Marble doc
+match /trunk/KDE/kdeedu/doc/marble/
+  repository marble
+  prefix doc/
   branch master
 end match
 

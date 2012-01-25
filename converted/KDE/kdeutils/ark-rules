@@ -1,0 +1,73 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=ark
+declare REPO=KDE/kdeutils/ark
+
+create repository ${REPO}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+include common-doc-rules
+
+# r672751 was exported to git as deleting everything, although only
+# some files are deleted in SVN.
+match /branches/work/libarchive-based-ark/$
+  action recurse
+end match
+
+# /trunk/KDE/kdeutils/ark/ was svn rm'ed from trunk in r461558, and
+# /branches/KDE/3.5/kdeutils/ark/ was svn cp'ed into trunk in r461559.
+# This rule keeps some commits which would normally be thrown away
+# into a separate branch.
+match /trunk/(KDE/)?kdeutils/ark/
+  repository ${REPO}
+  branch dead-trunk-1
+  max revision 461557 # one before deletion
+end match
+
+# /trunk/KDE/kdeutils/ark/ was svn rm'ed from trunk in r692401, and
+# /branches/work/libarchive-based-ark/ark/ was svn cp'ed into trunk in
+# r694732.  This rule keeps some commits which would normally be
+# thrown away into a separate branch.
+match /trunk/(KDE/)?kdeutils/ark/
+  repository ${REPO}
+  branch dead-trunk-2
+  max revision 692400 # one before deletion
+end match
+
+# Ark starts its life as KZip
+match /trunk/kdeutils/kzip/
+  repository ${REPO}
+  branch kzip
+  max revision 12097 # one before deletion
+end match
+
+match /trunk/(KDE/)?kdeutils/ark/
+  repository ${REPO}
+  branch master
+end match
+
+match /branches/work/libarchive-based-ark/ark/
+  repository ${REPO}
+  branch work/libarchive-based-ark
+  min revision 672750
+  max revision 694571
+end match
+
+match /branches/ark_rework/kdeutils/ark/
+    repository ${REPO}
+    branch work/ark_rework
+    max revision 409204 # 409205 deletes branch
+end match
+
+declare MODULE=kdeutils/ark
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
+##### Ignore everything else #####
+match /
+end match

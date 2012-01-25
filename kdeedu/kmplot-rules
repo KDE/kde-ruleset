@@ -3,10 +3,11 @@ create repository kmplot
 end repository
 
 declare MODULE=kdeedu/kmplot
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kmplot
 include common-kdeedu-rules
-include ../common-kde-branches-rules
 
+include ../feature-branches
 
 #	------< trunk/KDE/kdeedu/kmplot >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]

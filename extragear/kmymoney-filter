@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+
+. "$bindir/filter-goodies"
+
+# Move all files in doc2/ into doc/.
+# This would look much simpler with a tree-filter,
+# but index-filter is significantly faster.
+#
+# ls-files | sed | update-index technique taken from
+# the git-filter-branch manpage.
+
+git filter-branch -d "$(calc_tempdir kmymoney-filter)" --index-filter '
+git ls-files -s |
+sed "s,\tdoc2/,\tdoc/," |
+GIT_INDEX_FILE="$GIT_INDEX_FILE.new" git update-index --index-info &&
+mv "$GIT_INDEX_FILE.new" "$GIT_INDEX_FILE";
+' --tag-name-filter cat -- --all

@@ -5,8 +5,6 @@ end repository
 declare MODULE=kdeedu/cantor
 declare REPO=cantor
 include common-kdeedu-rules
-include ../common-kde-branches-rules
-
 
 #	------< trunk/KDE/kdeedu/cantor >------
 #	[ Move/Replace: /trunk/KDE/kdeedu/cantor @ 1031961 <- /trunk/kdereview/cantor @ 1031960 ]
@@ -34,12 +32,27 @@ match /trunk/kdereview/mathematik/
     max revision 1027773
     min revision 1026420
 end match
+match /trunk/kdereview/doc/mathematik/
+  repository cantor
+  prefix doc/
+  branch master
+end match
 
 #	[ move trunk/playground/edu/mathematik 1026420 0 ]
 match /trunk/playground/edu/mathematik/
     repository cantor
     branch master
-    max revision 1026420
+end match
+
+match /trunk/playground/edu/doc/mathematik/
+  repository cantor
+  prefix doc/
+  branch master
+end match
+
+match /branches/work/soc-cantor/
+ repository cantor
+ branch soc-cantor
 end match
 
 match /

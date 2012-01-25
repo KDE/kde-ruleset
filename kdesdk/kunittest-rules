@@ -1,0 +1,19 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdesdk/kunittest
+end repository
+
+declare MODULE=kdesdk/kunittest
+declare MODULE_RECURSE=(kdesdk/)?
+
+declare NAMES=kunittest
+declare REPO=kdesdk/kunittest
+include common-kdesdk-rules
+
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match

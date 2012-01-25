@@ -1,0 +1,19 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdesdk/kcachegrind
+end repository
+
+declare MODULE=kdesdk/kcachegrind
+declare MODULE_RECURSE=(kdesdk/)?
+
+declare NAMES=kcachegrind
+declare REPO=kdesdk/kcachegrind
+include common-kdesdk-rules
+
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match

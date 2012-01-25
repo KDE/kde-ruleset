@@ -1,0 +1,87 @@
+#
+# Created by Raphael Kubo da Costa <kubito@gmail.com>
+#
+
+declare APPLICATION=sweeper
+declare REPO=KDE/kdeutils/sweeper
+
+create repository ${REPO}
+end repository
+
+include common-ignores
+include common-branch-rules
+include common-recursion-rules
+include common-doc-rules
+
+match /trunk/(KDE/)?kdeutils/sweeper/
+  repository ${REPO}
+  branch master
+end match
+
+### Sweeper in kdebase
+match /trunk/kdebase/kcontrol/privacy/
+  repository ${REPO}
+  branch master
+  # min revision 203673
+  # max revision 409202
+end match
+match /trunk/KDE/kdebase/kcontrol/privacy/
+  repository ${REPO}
+  branch master
+  # min revision 409203
+  # max revision 455941
+end match
+match /trunk/KDE/kdebase/workspace/kcontrol/privacy/
+  repository ${REPO}
+  branch master
+  # min revision 455942
+  # max revision 464766
+end match
+
+# version branches (rules based on root common-kde-branches-rules)
+
+match /(branches|tags)/[^/]+/kdebase/(kcontrol/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/kdebase/(kcontrol/)?$
+  action recurse
+end match
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdebase/kcontrol/privacy/
+    repository ${REPO}
+    branch \1.\2
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdebase/kcontrol/privacy/
+    repository ${REPO}
+    branch \1.\2
+end match
+
+declare MODULE=kdebase/kcontrol/privacy
+include ../common-kde-tags-rules
+
+
+match /branches/work/kde4/kdebase/(kcontrol/)?$
+  action recurse
+end match
+
+match /branches/work/kde4/kdebase/kcontrol/privacy/
+  repository ${REPO}
+  branch kde4
+  max revision 439634 # r439635 deletes all of kdebase from kde4 branch
+end match
+
+### Sweeper as kdeutils/privacy
+match /trunk/KDE/kdeutils/privacy/
+  repository ${REPO}
+  branch master
+  # min revision 464767
+  # max revision 468677
+end match
+
+declare MODULE=kdeutils/sweeper
+declare MODULE_RECURSE=(kdeutils/)?
+include ../feature-branches
+
+##### Ignore everything else #####
+match /
+end match

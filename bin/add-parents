@@ -10,13 +10,18 @@
 # f3ca1dab5c862581690a988ab41ac59a292095f8 1ddbe3918159275dd514aea734839583bfd24c59
 # fceef269d3a1c3e9321f5dd376f6b305176854d6 da3e27ee47f6016cff637045f29a74f90a4cdab2
 # 
-# For each line in the parentmap, the returned script will add the second
-# revision as a new parent for the first revision, via filter-branch. The
-# revisions must not be abbreviated. Only full SHA-1 IDs are supported, not
-# general refspecs.
+# For each line in the parentmap, the returned script will add the first
+# revision as a new parent for the second revision. In other words, it adds
+# a new first->second connection between revisions. Most probably, the first
+# revision will predate the second.
+# Only full SHA-1 IDs are supported, not general revision parameters,
+# like abbreviated hashes or tag names.
 #
-# It seems to work better if you use --date-order in filter-branch, though
-# I'm not 100% sure of why.
+# It seems to work better if you use --date-order in filter-branch, because
+# the date order usually matches the SVN revision order.
+#
+# You can use bin/translateRevlist.py to convert a list of SVN revision
+# number pairs into git revision pairs usable in this script.
 
 set -e
 
@@ -37,8 +42,12 @@ else
     cat;
 fi'
 code="$codebefore"
-while read srcrev newparent; do
-    code="$code    $srcrev) merge_gitrev=$newparent;;
+while read newparent child x; do
+    if [[ ${#newparent} -ne 40 ]]; then
+        echo "error: invalid commit ID: '${newparent}'" >&2
+        exit 1
+    fi
+    code="$code    $child) merge_gitrev=$newparent;;
 "
 done < "$parentmap"
 code="$code$codeafter"

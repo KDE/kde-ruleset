@@ -1,0 +1,15 @@
+# r439732 is coolo's "merged kde4 into trunk" commit.
+# This mapping makes the tip of the `work/kde4' branch a parent of it.
+428305 439732
+
+# merge systray-rewrite into systray-rewrite-tng
+562766 564547
+
+# merge systray-rewrite-tng into trunk
+565384 565761
+
+# merge kinstance-redesign into trunk
+627816 628305
+
+# merge kconfig_new into trunk
+728208 728852

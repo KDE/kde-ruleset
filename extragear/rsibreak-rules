@@ -7,14 +7,17 @@ end repository
 match /trunk/playground/utils/rsibreak/
   repository rsibreak
   branch master
-  max revision 553032
 end match
 
 # move to kdereview in r553033
 match /trunk/kdereview/rsibreak/
   repository rsibreak
   branch master
-  max revision 554825
+end match
+match /trunk/kdereview/doc/rsibreak/
+  repository rsibreak
+  branch master
+  prefix doc/
 end match
 
 # move to keg in r554826
@@ -23,11 +26,24 @@ match /trunk/extragear/utils/rsibreak/
   repository rsibreak
   branch master
 end match
+match /trunk/extragear/utils/doc/rsibreak/
+  max revision 690342
+  repository rsibreak
+  branch master
+  prefix doc/
+end match
 
 # move to branch when trunk/extragear needed to be kde4, moved in r670725
 match /branches/extragear/kde3/utils/rsibreak/
   repository rsibreak
   branch master
+  max revision 694683 # 694684 deletes it
+end match
+match /branches/extragear/kde3/utils/doc/rsibreak/
+  repository rsibreak
+  branch master
+  max revision 694683 # 694684 deletes it
+  prefix doc/
 end match
 
 # KDE 4 porting starts in revision r690343 up to present.
@@ -35,6 +51,12 @@ match /trunk/extragear/utils/rsibreak/
   min revision 690343
   repository rsibreak
   branch master
+end match
+match /trunk/extragear/utils/doc/rsibreak/
+  min revision 690343
+  repository rsibreak
+  branch master
+  prefix doc/
 end match
 
 # Ignore everything else

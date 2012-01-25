@@ -1,0 +1,11 @@
+create repository kdisksutilities
+end repository
+
+match /trunk/playground/sysadmin/(kformat|libkdiskmanager|disksdaemon|kdiskmanager)/
+    repository kdisksutilities
+    branch master
+    prefix \1/
+end match
+
+match /
+end match

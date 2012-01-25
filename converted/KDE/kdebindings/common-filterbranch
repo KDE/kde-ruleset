@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # filter-branch script used for all kdebindings repositories
 #
@@ -6,14 +6,16 @@
 # - replaces CRLF with LF via dos2unix
 # - fixes "nobody@localhost" emails in cvs2svn commits
 
-tempdir=$(
-    mktemp -u -d --tmpdir=/dev/shm kdebindings-filter.XXXXX ||
-    mktemp -u -d --tmpdir kdebindings-filter.XXXXX ||
-    echo ".git-rewrite"
-)
-echo "using $tempdir as temporary directory"
+set -e
 
-git filter-branch --tag-name-filter cat -d "$tempdir" --prune-empty \
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+
+source "$bindir/filter-goodies"
+
+tempdir="$(calc_tempdir kdebindings-filter)"
+
+git filter-branch -d "$tempdir" \
+--tag-name-filter cat --prune-empty \
 --tree-filter '
 find -type f -exec dos2unix -q "{}" "+"
 find "(" -name "*.orig" -o -name "*.rej" ")" -delete

@@ -3,9 +3,12 @@ create repository kalzium
 end repository
 
 declare MODULE=kdeedu/kalzium
+declare MODULE_RECURSE=(kdeedu/)?
 declare REPO=kalzium
 include common-kdeedu-rules
-include ../common-kde-branches-rules
+
+include ../feature-branches
+# libkdeedu global branches are still pending
 
 #	------< trunk/KDE/kdeedu/kalzium >------
 #	[ Parent: /trunk/KDE/kdeedu @ 409203 <- /trunk/kdeedu @ 409202 ]
@@ -13,14 +16,40 @@ include ../common-kde-branches-rules
 match /trunk/KDE/kdeedu/kalzium/
     repository kalzium
     branch master
-    min revision 409202
 end match
 
 #	[ parent trunk/kdeedu/kalzium 409202 0 ]
 match /trunk/kdeedu/kalzium/
     repository kalzium
     branch master
-    max revision 409202
+end match
+
+# branches: make_kdeedu_cool, kalziumkde4, maybe gsoc2009, kalzium-new-features, kalzium-molecule-kpart
+
+match /branches/kalzium/gsoc2009/kalzium/
+    repository kalzium
+    branch gsoc2009
+end match
+
+# code from elsewhere
+
+match /trunk/KDE/kdeedu/libkdeedu/(libscience|libphysics)/
+  repository kalzium
+  branch refs/other/libkdeedu
+  prefix \1/
+  max revision 1208939 # one before the libscience move
+end match
+
+match /trunk/KDE/kdeedu/libkdeedu/kdeeduui/(kdeeduglossary.*)
+  repository kalzium
+  branch refs/other/libkdeedu
+  prefix kdeeduui/\1
+  max revision 1208917 # one before the kdeeduglossary move
+end match
+
+match /trunk/(kdeplayground-edu|playground/edu)/eqchem/src/
+    repository kalzium
+    branch refs/other/eqchem
 end match
 
 match /

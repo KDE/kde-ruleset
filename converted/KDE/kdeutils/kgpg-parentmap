@@ -1,0 +1,73 @@
+# r428182 is "merged 427401:428172"
+# This mapping makes r427581 a parent of it.
+427581 428182
+
+# r430644 is "merged 429295:430621"
+# This mapping makes r429846 a parent of it.
+429846 430644
+
+# r432141 is "merge 430621:432064"
+# This mapping makes r431046 a parent of it.
+431046 432141
+
+# r433217 is "merge 432064:433191"
+# This mapping makes r432357 a parent of it.
+432357 433217
+
+# r438189 is "merge 437128:438057"
+# This mapping makes r437932 a parent of it.
+437932 438189
+
+# r439732 is coolo's "merged kde4 into trunk" commit.
+# This mapping makes the tip of the `work/kde4' branch a parent of it.
+438189 439732
+
+# Adjust the parents of r766903, integrating the `work/kgpg2' branch.
+clear 766903
+765970 766903
+766859 766903
+
+# merge systray-rewrite into systray-rewrite-tng
+562436 564547
+
+# merge systray-rewrite-tng into trunk
+565384 565761
+
+# merge qdbus-api-changes into trunk
+575407 575664
+
+# merge kaction-cleanup1 into trunk
+610231 610651
+
+# merges from trunk to kaction-cleanup2
+613843 614117
+616861 617061
+
+# merges from trunk to kaction-cleanup3
+619360 620435
+
+# merge kaction-cleanup3 into trunk
+621504 621518
+
+# merge kinstance-redesign into trunk
+627816 628305
+
+# merge kconfigroup_port into trunk
+634893 635501
+
+# merges from trunk into kde4_jobflags
+720741 721065
+721248 721435
+
+# merge kde4_jobflags into trunk
+721435 721447
+
+# merge kconfig_new into trunk
+728440 728852
+
+# version number change, merged from trunk to v3.93 tag
+706300 706302
+
+# revert of accidental documentation revert due to merge
+1244740 1246769@/trunk/KDE/kdeutils/kgpg/
+1244733 1246769@/branches/KDE/4.7/kdeutils/kgpg/

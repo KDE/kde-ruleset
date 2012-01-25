@@ -1,0 +1,24 @@
+# merge kde-kaction-cleanup1 branch into trunk
+610257 610651
+
+# intermediate merges from trunk to kde-kaction-cleanup2
+614090 614117
+614295 614338
+
+# intermediate merges from trunk to kde-kaction-cleanup3
+617577 618565
+
+# merge kde-kaction-cleanup3 branch into trunk
+621438 621518
+
+# merge kde-kinstance-redesign branch into trunk
+627918 628316
+
+# merge kconfiggroup_port branch into trunk
+634447 635473
+
+# merge kconfig_new_take3 into trunk
+728208 728852
+
+# merge kparts_urlargs_split into trunk
+698701 699514

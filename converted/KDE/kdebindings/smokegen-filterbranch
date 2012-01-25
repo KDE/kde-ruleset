@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # filter-branch script for smokegen.
 #
@@ -14,9 +14,7 @@
 
 set -e
 
-if [ -z "$bindir" ]; then
-bindir=../bin
-fi
+bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 
 first_rev=$(git rev-parse $(echo 1013460 | "$bindir/translateRevlist.py" /dev/stdin)^)
 
