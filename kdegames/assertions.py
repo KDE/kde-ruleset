@@ -105,6 +105,11 @@ class GitRepoTestCase(unittest.TestCase):
             if len(commit.parents) == 0:
                 yield commit
 
+    def getFirstCommit(self, include, exclude=[]):
+        for commit in self.getRevsInRange(include, exclude):
+            pass
+        return commit
+
     def assertNormalCommit(self, commit, msg="commit should have a single parent"):
         '''Checks whether the given commit is a normal commit with only one parent,
         that is, neither a merge nor a "root" commit.'''
@@ -189,8 +194,7 @@ class KTuberlingTests(GitRepoTestCase):
         kde4Branch = self.getRefOrBackup("refs/workbranch/kde4")
         self.assertIsNotNone(kde4Branch, "branch kde4 not found")
 
-        commitsInKde4 = list(self.getRevsInRange(kde4Branch, self.repo.branch("master")))
-        firstKde4Commit = commitsInKde4[-1]
+        firstKde4Commit = self.getFirstCommit(kde4Branch, self.repo.branch("master"))
         self.assertEqual(firstKde4Commit.get_svn_rev(), 419958)
 
         # Get the last master commit before kde4's creation
