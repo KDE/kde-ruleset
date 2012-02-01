@@ -1,0 +1,48 @@
+create repository kajongg
+end repository
+
+declare REPO=kajongg
+
+match /trunk/playground/games/kmj/
+    repository kajongg
+    branch master
+end match
+match /trunk/playground/games/kajongg/
+    repository kajongg
+    branch master
+end match
+match /trunk/kdereview/kajongg/
+    repository kajongg
+    branch master
+end match
+match /trunk/KDE/kdegames/kajongg/
+    repository kajongg
+    branch master
+end match
+
+# BEGIN version branches
+match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+match /branches/KDE/(\d+)\.(\d+)/kdegames/kajongg/
+    repository kajongg
+    branch \1.\2
+end match
+# END
+
+# BEGIN Documentation
+match /trunk/(KDE/)?kdegames/doc/kajongg/
+    repository kajongg
+    branch master
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kajongg/
+    repository kajongg
+    branch \1.\2
+    prefix doc/
+end match
+# END
+
+match /
+end match
