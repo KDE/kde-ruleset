@@ -1,6 +1,8 @@
 create repository kajongg
 end repository
 
+include ../common-kde-ignores
+
 declare REPO=kajongg
 
 match /trunk/playground/games/kmj/
@@ -27,7 +29,7 @@ end match
 
 match /branches/KDE/(\d+)\.(\d+)/kdegames/kajongg/
     repository kajongg
-    branch \1.\2
+    branch KDE/\1.\2
 end match
 # END
 
@@ -39,10 +41,14 @@ match /trunk/(KDE/)?kdegames/doc/kajongg/
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kajongg/
     repository kajongg
-    branch \1.\2
+    branch KDE/\1.\2
     prefix doc/
 end match
 # END
+
+
+declare MODULE=kdegames/kajongg
+include ../common-kde-tags-rules
 
 match /
 end match
