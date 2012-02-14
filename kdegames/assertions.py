@@ -120,6 +120,7 @@ class GitRepoTestCase(unittest.TestCase):
             refName = "refs/heads/"+refName
         try:
             sha = self.repo.ref(refName)
+            return sha
         except KeyError:
             if refName.startswith("refs/heads/"):
                 regex = r'refs/tags/backups/{0}@\d+$'.format(refName[len("refs/heads/"):])
