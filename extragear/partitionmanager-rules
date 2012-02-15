@@ -6,7 +6,6 @@
 # Create the partitionmanager repository
 #
 create repository partitionmanager
-  description Partition Manager
 end repository
 
 match /trunk/playground/sysadmin/partitionmanager/
