@@ -1,0 +1,6 @@
+# Code was created in branch 1.1, then moved to trunk.
+# The move was in CVS history and lacks proper SVN-copy metadata,
+# so we need a manual parent-add to join them. Without this,
+# the pre-move history isn't reachable from master
+# and the repository has two root commits.
+20656 20670

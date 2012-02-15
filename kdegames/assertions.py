@@ -148,8 +148,9 @@ class KTuberlingTests(GitRepoTestCase):
         self.assertEqual(len(roots), 1, "the master branch should have 1 root")
 
         root=roots[0]
-        self.assertEqual(root.get_svn_rev(), 20670,
-                        "the master branch root should be %d" % 20670)
+        rootSVNRev=20616
+        self.assertEqual(root.get_svn_rev(), rootSVNRev,
+                        "the master branch root should be %d" % rootSVNRev)
         self.assertFileInTree(self.repo.tree(root.tree), "doc/en/index.html",
                         "the first commit should contain doc/en/index.html")
 
