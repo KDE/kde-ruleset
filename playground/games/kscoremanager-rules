@@ -1,0 +1,19 @@
+# Created by Parker Coates <parker.coates@kdemail.net>
+#
+# KScoreManager has a short history, so run svn2git with the following options:
+#     --resume-from=802604 --max-rev=1115195
+
+# Create the kscoremanager repository
+create repository kscoremanager
+end repository
+
+# KScoreManager has no branches or tags, so all relevant commits are in this directory
+match /trunk/playground/games/kscoremanager/
+    repository kscoremanager
+    branch master
+end match
+
+# Ignore everthing else
+match /
+end match
+
