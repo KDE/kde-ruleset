@@ -1,0 +1,187 @@
+create repository kregexpeditor
+end repository
+
+# ignore the SVN-adjusting commits
+match /
+  min revision 409202
+  max revision 409209
+end match
+match /
+  min revision 411963
+  max revision 411963
+end match
+
+
+# These three commits add svn:externals to old tags.
+# They cause annoying history graphs; so let's remove them.
+match /
+    min revision 416386
+    max revision 416386
+end match
+match /
+    min revision 416394
+    max revision 416394
+end match
+match /
+    min revision 416398
+    max revision 416398
+end match
+
+# Ignore branches and tags that start with a non-uppercase letter
+match /(branches|tags)/[^A-Z]
+  max revision 409202
+end match
+
+# Ignore these branches
+match /branches/(KWORD_RICHTEXT|KWORD_WYSIWYG|AEGYPTEN_BRANCH|KFILEMETAINFO_BRANCH|Unstable_Development|kicker)/
+end match
+
+# Ignore these tags too
+match /tags/(RELEASE_0_9_9|KDE_2_1_RELEASET|KDE_2_1|MPG123LIB|OGG_VORBIS|KDAB_.*|KOFFICE_1_1_BRANCHPOINT|KDEVELOP_2_KACTION_START|KDEVELOP_2_MERGE)/
+end match
+
+# Ignore this stupid commit
+match /file$
+  min revision 409232
+  max revision 409232
+end match
+
+#
+# KRegExpEditor
+#
+match /trunk/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch master
+  max revision 409202
+end match
+
+match /(branches|tags)/[^/]+/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE/[^/]+/$
+  action recurse
+end match
+
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch refs/tags/v\1.\2.0
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch refs/tags/v\1.\2.0
+  annotated true
+end match
+
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch refs/tags/v\1.\2.\3
+  annotated true
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch refs/tags/v\1.\2.\3a
+  annotated true
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch refs/tags/v\1.\2.\3-beta\4
+  annotated true
+end match
+
+
+match /trunk/KDE/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch master
+  min revision 409209
+end match
+match /tags/KDE/3.5.0-alpha1/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch refs/tags/v3.4.90
+  annotated true
+end match
+match /tags/KDE/3.5.0-beta1/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch refs/tags/v3.4.91
+  annotated true
+end match
+match /tags/KDE/([^/]+)A/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch refs/tags/v\1a
+  annotated true
+end match
+match /tags/KDE/([^/]+)/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch refs/tags/v\1
+  annotated true
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+match /branches/KDE/([^/]+)A/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch KDE/\1a
+  min revision 409209
+end match
+match /branches/KDE/([^/]+)/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch KDE/\1
+  min revision 409209
+end match
+
+#
+# Final rules
+#
+
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch KDE/\1.\2
+  max revision 409202
+end match
+
+#match /branches/KDE/3.0/kdeutils/kregexpeditor/
+#  repository kregexpeditor
+#  branch KDE/3.0
+#end match
+#match /branches/KDE/3.1/kdeutils/kregexpeditor/
+#  repository kregexpeditor
+#  branch KDE/3.1
+#end match
+#match /branches/KDE/3.2/kdeutils/kregexpeditor/
+#  repository kregexpeditor
+#  branch KDE/3.2
+#end match
+#match /branches/KDE/3.3/kdeutils/kregexpeditor/
+#  repository kregexpeditor
+#  branch KDE/3.3
+#end match
+#match /branches/KDE/3.4/kdeutils/kregexpeditor/
+#  repository kregexpeditor
+#  branch KDE/3.4
+#end match
+#match /branches/KDE/3.4/kdeutils/kregexpeditor/
+#  repository kregexpeditor
+#  branch KDE/3.4
+#end match
+#
+#match /branches/KDE/3.5/kdeutils/kregexpeditor/
+#  repository kregexpeditor
+#  branch KDE/3.5
+#end match
+
+match /trunk/playground/utils/kregexpeditor/
+  repository kregexpeditor
+  max revision 409202
+  branch master
+end match
+
+match /
+end match
