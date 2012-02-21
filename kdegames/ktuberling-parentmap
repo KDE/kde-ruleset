@@ -4,3 +4,6 @@
 # the pre-move history isn't reachable from master
 # and the repository has two root commits.
 20656 20670
+
+# merge kde4 into trunk
+429318 439536

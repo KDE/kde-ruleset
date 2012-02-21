@@ -137,6 +137,11 @@ class GitRepoTestCase(unittest.TestCase):
             else:
                 self.fail("multiple backup refs found for '{0}'".format(refName))
 
+    def svnRevsFromShas(self, shas):
+        '''Converts a sequence of commit hashes into a list of
+        their corresponding SVN revision numbers.'''
+        return [self.repo.commit(sha).get_svn_rev() for sha in shas]
+
 
 class KTuberlingTests(GitRepoTestCase):
     def setUp(self):
@@ -201,6 +206,33 @@ class KTuberlingTests(GitRepoTestCase):
 
         # Check that the branch point is correct
         self.assertEqual(firstKde4Commit.parents, [commit.id])
+
+    def testBranchKde4Merge(self):
+        '''
+        Verifies the merging between trunk and the kde4 work branch.
+
+        Specifically:
+        - Checks that the last commit in the branch is the correct one
+          (the merge from trunk).
+        - Checks the parents of that merge commit.
+        - Checks that kde4 gets merged back into trunk in the correct commit.
+        '''
+        # T2B: trunk-to-branch, a commit in the branch that merges trunk in
+        # B2T: branch-to-trunk, a commit in the trunk that merges the branch in
+        B_SYNC_MERGE  = 429318
+        B_BEFORE_SYNC = 419962
+        T_INTEGRATE_MERGE  = 439536
+        T_BEFORE_INTEGRATE = 428224
+
+        kde4Branch = self.getRefOrBackup("refs/workbranch/kde4")
+        lastKde4Commit = self.repo.commit(kde4Branch)
+        self.assertEqual(lastKde4Commit.get_svn_rev(), B_SYNC_MERGE)
+
+        self.assertEqual(self.svnRevsFromShas(lastKde4Commit.parents), [B_BEFORE_SYNC, T_BEFORE_INTEGRATE])
+
+        mergeCommit = self.repo.commit_from_svnrev(T_INTEGRATE_MERGE)
+        self.assertIsNotNone(mergeCommit, "revision not found")
+        self.assertEqual(self.svnRevsFromShas(mergeCommit.parents), [T_BEFORE_INTEGRATE, B_SYNC_MERGE])
 
 if __name__ == '__main__':
     unittest.main()
