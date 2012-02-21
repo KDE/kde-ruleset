@@ -193,16 +193,13 @@ class KTuberlingTests(GitRepoTestCase):
         self.assertTrue(lastRevChanges[0].isModify("doc/index.docbook"), "commit should modify index.docbook")
 
     def testBranchKde4(self):
-        kde4Branch = self.getRefOrBackup("refs/workbranch/kde4")
-        self.assertIsNotNone(kde4Branch, "branch kde4 not found")
-
-        firstKde4Commit = self.getFirstCommit(kde4Branch, self.repo.branch("master"))
-        self.assertEqual(firstKde4Commit.get_svn_rev(), 419958)
+        firstKde4Commit = self.repo.commit_from_svnrev(419958)
 
         # Get the last master commit before kde4's creation
         masterCommits = self.getRevsInRange(self.repo.branch("master"), [])
         commit = next(c for c in masterCommits if c.get_svn_rev() < 419754) # 419754 is when kde4 got branched
 
+        # Check that the branch point is correct
         self.assertEqual(firstKde4Commit.parents, [commit.id])
 
 if __name__ == '__main__':
