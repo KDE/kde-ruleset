@@ -1,51 +1,51 @@
 # Created by Parker Coates <parker.coates@kdemail.net>
 #
-# Killbots is a relatively new application, so run svn2git with the following option:
-#    --resume-from=783933
+# Bomber is a relatively new application, so run svn2git with the following option:
+#    --resume-from=829201
 #
-# These rules have been copied to create bomber-rules and bovo-rules. If you find a
-# mistake here, please also fix it there.
+# These rules are 100% copied from killbots-rules, so if you find a mistake here,
+# please also fix it there.
 
-# Create the killbots repository
-create repository killbots
+# Create the bomber repository
+create repository bomber
 end repository
 
 # Set the REPO and MODULE variables, used by some included rules
-declare REPO=killbots
-declare MODULE=kdegames/killbots
+declare REPO=bomber
+declare MODULE=kdegames/bomber
 
 # Ignore some things that are known to cause trouble
 include ../common-kde-ignores
 
 # Get sources and docs from playground
-match /trunk/playground/games/killbots/
-    repository killbots
+match /trunk/playground/games/bomber/
+    repository bomber
     branch master
 end match
-match /trunk/playground/games/doc/killbots/
-    repository killbots
+match /trunk/playground/games/doc/bomber/
+    repository bomber
     branch master
     prefix doc/
 end match
 
 # Get sources and docs from kdereview
-match /trunk/kdereview/killbots/
-    repository killbots
+match /trunk/kdereview/bomber/
+    repository bomber
     branch master
 end match
-match /trunk/kdereview/doc/killbots/
-    repository killbots
+match /trunk/kdereview/doc/bomber/
+    repository bomber
     branch master
     prefix doc/
 end match
 
 # Get sources and docs from the kdegames module
-match /trunk/KDE/kdegames/killbots/
-    repository killbots
+match /trunk/KDE/kdegames/bomber/
+    repository bomber
     branch master
 end match
-match /trunk/KDE/kdegames/doc/killbots/
-    repository killbots
+match /trunk/KDE/kdegames/doc/bomber/
+    repository bomber
     branch master
     prefix doc/
 end match
@@ -56,24 +56,24 @@ match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
 end match
 
 # Get sources and docs from branches
-match /branches/KDE/(\d+)\.(\d+)/kdegames/killbots/
-    repository killbots
+match /branches/KDE/(\d+)\.(\d+)/kdegames/bomber/
+    repository bomber
     branch KDE/\1.\2
 end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/killbots/
-    repository killbots
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/bomber/
+    repository bomber
     branch KDE/\1.\2
     prefix doc/
 end match
 
 # Get tags
-match /tags/KDE/(\d+)\.(\d+)/kdegames/killbots/
-    repository killbots
+match /tags/KDE/(\d+)\.(\d+)/kdegames/bomber/
+    repository bomber
     branch refs/tags/v\1.\2.0
     annotated true
 end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/killbots/
-    repository killbots
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/bomber/
+    repository bomber
     branch refs/tags/v\1.\2.\3
     annotated true
 end match
