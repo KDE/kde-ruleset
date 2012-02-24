@@ -1,7 +1,7 @@
 # Created by Mathias Kraus <k.hias@gmx.de>
 #
 # Granatier is a relatively new application, so run svn2git with the following option:
-#    --resume-from=729613
+#    --resume-from=729612
 #
 # These rules are 100% copied from killbots-rules, so if you find a mistake here,
 # please also fix it there.
@@ -20,18 +20,24 @@ include ../common-kde-ignores
 # granatier used kapman as base, so start with kapman
 # Get kapman sources from playground
 match /trunk/playground/games/kapman/
+	min revision 729613
+	max revision 866361
 	repository granatier
 	branch master
 end match
 
 # Get kapman sources from kdereview
 match /trunk/kdereview/kapman/
+	min revision 866359
+	max revision 871972
 	repository granatier
 	branch master
 end match
 
 # Get kapman sources from the kdegames module
 match /trunk/KDE/kdegames/kapman/
+	min revision 871970
+	max revision 903021
 	repository granatier
 	branch master
 end match
@@ -44,7 +50,7 @@ end match
 match /trunk/playground/games/doc/granatier/
 	repository granatier
 	branch master
-	prefix doc
+	prefix doc/
 end match
 
 # Get granatier sources and docs from kdereview
@@ -55,7 +61,7 @@ end match
 match /trunk/kdereview/doc/granatier/
 	repository granatier
 	branch master
-	prefix doc
+	prefix doc/
 end match
 
 # Get granatier sources and docs from the kdegames module
@@ -66,7 +72,7 @@ end match
 match /trunk/KDE/kdegames/doc/granatier/
 	repository granatier
 	branch master
-	prefix doc
+	prefix doc/
 end match
 
 # Recurse into branch and tag changes that may have affected us
@@ -103,4 +109,3 @@ include ../common-kde-tags-rules
 # Ignore everything else
 match /
 end match
-
