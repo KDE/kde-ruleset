@@ -3,8 +3,13 @@
 # Killbots is a relatively new application, so run svn2git with the following option:
 #    --resume-from=783933
 #
-# These rules have been copied to create bomber-rules and bovo-rules. If you find a
-# mistake here, please also fix it there.
+# These rules have been copied to create:
+#    bomber-rules
+#    bovo-rules
+#    kapman-rules
+#    kblocks-rules
+#    kbreakout-rules
+# If you find a mistake here, please also fix it there.
 
 # Create the killbots repository
 create repository killbots
