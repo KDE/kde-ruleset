@@ -1,0 +1,16 @@
+create repository kdequality
+end repository
+
+match trunk/KDE/kdesdk/ebn/
+  repository kdequality
+  branch master 
+  max revision 69821
+end match
+
+match /trunk/quality/
+  repository kdequality
+  branch master
+end match
+
+match /
+end match
