@@ -1,0 +1,86 @@
+# Created by Parker Coates <parker.coates@kdemail.net>
+#
+# Kollision is a new-ish application, so run svn2git with the following option:
+#    --resume-from=653928
+#
+# These rules are 100% copied from killbots-rules, so if you find a mistake here,
+# please also fix it there.
+
+# Create the kollision repository
+create repository kollision
+end repository
+
+# Set the REPO and MODULE variables, used by some included rules
+declare REPO=kollision
+declare MODULE=kdegames/kollision
+
+# Ignore some things that are known to cause trouble
+include ../common-kde-ignores
+
+# Get sources and docs from playground
+match /trunk/playground/games/kollision/
+    repository kollision
+    branch master
+end match
+match /trunk/playground/games/doc/kollision/
+    repository kollision
+    branch master
+    prefix doc/
+end match
+
+# Get sources and docs from kdereview
+match /trunk/kdereview/kollision/
+    repository kollision
+    branch master
+end match
+match /trunk/kdereview/doc/kollision/
+    repository kollision
+    branch master
+    prefix doc/
+end match
+
+# Get sources and docs from the kdegames module
+match /trunk/KDE/kdegames/kollision/
+    repository kollision
+    branch master
+end match
+match /trunk/KDE/kdegames/doc/kollision/
+    repository kollision
+    branch master
+    prefix doc/
+end match
+
+# Recurse into branch and tag changes that may have affected us
+match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+# Get sources and docs from branches
+match /branches/KDE/(\d+)\.(\d+)/kdegames/kollision/
+    repository kollision
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kollision/
+    repository kollision
+    branch KDE/\1.\2
+    prefix doc/
+end match
+
+# Get tags
+match /tags/KDE/(\d+)\.(\d+)/kdegames/kollision/
+    repository kollision
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kollision/
+    repository kollision
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+# Some tag stuff
+include ../common-kde-tags-rules
+
+# Ignore everything else
+match /
+end match
