@@ -3,7 +3,7 @@
 # Kiriki is a new-ish application, so run svn2git with the following option:
 #    --resume-from=457664
 #
-# These rules are 90% copied from killbots-rules, so if you find a mistake here,
+# These rules are 80% copied from killbots-rules, so if you find a mistake here,
 # please also fix it there.
 
 # Create the kiriki repository
@@ -13,6 +13,7 @@ end repository
 # Set the REPO and MODULE variables, used by some included rules
 declare REPO=kiriki
 declare MODULE=kdegames/kiriki
+declare MODULE_RECURSE=(kdegames/)?
 
 # Ignore some things that are known to cause trouble
 include ../common-kde-ignores
@@ -75,6 +76,20 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kiriki/
     repository kiriki
     branch KDE/\1.\2
     prefix doc/
+end match
+
+# Get KDE wide work branches
+include ../feature-branches
+
+# For some reason the Kiriki documentation was touched in the kde4_jobflags branch
+match /branches/work/kde4_jobflags/KDE/(kdegames/(doc/)?)?$
+    action recurse
+end match
+match /branches/work/kde4_jobflags/KDE/kdegames/doc/kiriki/
+    repository ${REPO}
+    branch refs/workbranch/kde4_jobflags
+    prefix doc/
+    max revision 721454 # branch deleted in r721455
 end match
 
 # Get tags
