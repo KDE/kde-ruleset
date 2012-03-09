@@ -1,0 +1,17 @@
+# In 1056605, a massive refactoring of KBlocks
+# was committed into a branch, without any copy information.
+# The refactoring itself was made outside version control.
+#
+# r1043346 is what I *think* was the base revision
+# for the refactoring, based on .desktop changes.
+# It should be accurate enough, since all nearby commits
+# are .desktop changes from scripty.
+1043346 1056605
+
+# Move of KBlocks refactoring back into trunk.
+# I'm still not 100% sure about the 'clear';
+# do I want r1116420 to have the refactoring branch as only parent,
+# or keep its original parent from trunk too,
+# thus turning it into a merge commit?
+clear 1116420
+1114449 1116420

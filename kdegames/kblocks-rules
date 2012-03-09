@@ -28,6 +28,12 @@ match /trunk/playground/games/doc/kblocks/
     prefix doc/
 end match
 
+# Refactoring branch in playground
+match /trunk/playground/games/kblocks-refactoring/
+    repository kblocks
+    branch kblocks-refactoring
+end match
+
 # Get sources and docs from kdereview
 match /trunk/kdereview/kblocks/
     repository kblocks
