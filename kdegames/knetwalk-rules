@@ -1,0 +1,85 @@
+# Created by Parker Coates <parker.coates@kdemail.net>
+#
+# KNetWalk hasn't been around forever, so run svn2git with the following option:
+#    --resume-from=407965
+
+# Create the knetwalk repository
+create repository knetwalk
+end repository
+
+# Set the REPO, MODULE and MODULE_RECURSE variables, used by some included rules
+declare REPO=knetwalk
+declare MODULE=kdegames/knetwalk
+declare MODULE_RECURSE=(kdegames/)?
+
+# Ignore some things that are known to cause trouble
+include ../common-kde-ignores
+
+# Get sources from oldstyle playground
+match /trunk/kdeplayground-games/knetwalk/
+    repository knetwalk
+    branch master
+end match
+
+# Get sources from playground
+match /trunk/playground/games/knetwalk/
+    repository knetwalk
+    branch master
+end match
+
+# KNetWalk didn't go through kdereview
+#match /trunk/kdereview/knetwalk/
+#    repository knetwalk
+#    branch master
+#end match
+
+# Get sources and docs from the kdegames module
+match /trunk/KDE/kdegames/knetwalk/
+    repository knetwalk
+    branch master
+end match
+
+# Docs didn't exist before the kdegames module
+match /trunk/KDE/kdegames/doc/knetwalk/
+    repository knetwalk
+    branch master
+    prefix doc/
+end match
+
+# Recurse into branch and tag changes that may have affected us
+match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+# Get sources and docs from branches
+match /branches/KDE/(\d+)\.(\d+)/kdegames/knetwalk/
+    repository knetwalk
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/knetwalk/
+    repository knetwalk
+    branch KDE/\1.\2
+    prefix doc/
+end match
+
+# Get KDE wide work branches
+include ../feature-branches
+
+# Get tags
+match /tags/KDE/(\d+)\.(\d+)/kdegames/knetwalk/
+    repository knetwalk
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/knetwalk/
+    repository knetwalk
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+# Some tag stuff
+include ../common-kde-tags-rules
+
+# Ignore everything else
+match /
+end match
