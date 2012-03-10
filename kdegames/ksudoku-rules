@@ -17,6 +17,16 @@ declare MODULE=kdegames/ksudoku
 # Ignore some things that are known to cause trouble
 include ../common-kde-ignores
 
+# In r641165, docs are moved from ksudoku/doc to doc/ksudoku,
+# in r641166 the now-empty ksudoku/doc dir is deleted.
+# This deletion makes svn2git delete the doc dir with its contents,
+# so we have to ignore it here.
+match /trunk/playground/games/ksudoku/doc/
+    min revision 641166
+    max revision 641166
+    action ignore
+end match
+
 # Get sources and docs from playground
 match /trunk/playground/games/ksudoku/
     repository ksudoku
