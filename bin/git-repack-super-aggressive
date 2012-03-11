@@ -1,0 +1,4 @@
+#!/bin/sh
+
+git repack -AdF --window=9999 --depth=250
+
