@@ -13,7 +13,7 @@ end repository
 declare REPO=kshisen
 declare MODULE=kdegames/kshisen
 
-include ../kde-ruleset/common-kde-ignores
+include ../common-kde-ignores
 
 
 ### Master ###
@@ -91,7 +91,7 @@ end match
 
 
 # Some tag stuff
-include ../kde-ruleset/common-kde-tags-rules
+include ../common-kde-tags-rules
 
 declare MODULE_RECURSE=(kdegames/)?
 include feature-branches
