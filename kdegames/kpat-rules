@@ -18,11 +18,11 @@ end match
 
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/kpat/
     repository kpat
-    branch \1.\2
+    branch KDE/\1.\2
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdegames/kpat/
     repository kpat
-    branch \1.\2
+    branch KDE/\1.\2
 end match
 # END
 
@@ -57,12 +57,12 @@ match /trunk/(KDE/)?kdegames/doc/kpat/
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/kpat/
     repository kpat
-    branch \1.\2
+    branch KDE/\1.\2
     prefix doc/
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kpat/
     repository kpat
-    branch \1.\2
+    branch KDE/\1.\2
     prefix doc/
 end match
 # END

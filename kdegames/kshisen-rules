@@ -53,26 +53,26 @@ end match
 ### Branches ###
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/kshisen/
     repository kshisen
-    branch \1.\2
+    branch KDE/\1.\2
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdegames/kshisen/
     repository kshisen
-    branch \1.\2
+    branch KDE/\1.\2
 end match
 
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/kshisen/html/
     repository kshisen
-    branch \1.\2
+    branch KDE/\1.\2
     prefix doc/
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/kshisen/
     repository kshisen
-    branch \1.\2
+    branch KDE/\1.\2
     prefix doc/
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kshisen/
     repository kshisen
-    branch \1.\2
+    branch KDE/\1.\2
     prefix doc/
 end match
 

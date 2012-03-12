@@ -18,11 +18,11 @@ end match
 
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/ktuberling/
     repository ktuberling
-    branch \1.\2
+    branch KDE/\1.\2
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdegames/ktuberling/
     repository ktuberling
-    branch \1.\2
+    branch KDE/\1.\2
 end match
 # END
 
@@ -34,12 +34,12 @@ match /trunk/(KDE/)?kdegames/doc/ktuberling/
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/ktuberling/
     repository ktuberling
-    branch \1.\2
+    branch KDE/\1.\2
     prefix doc/
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/ktuberling/
     repository ktuberling
-    branch \1.\2
+    branch KDE/\1.\2
     prefix doc/
 end match
 # END
