@@ -1,0 +1,93 @@
+# Created by Frederik Schwarzer <schwarzer@kde.org>
+#
+# KGoldrunner was imported (started?) at r145984:
+#    --resume-from=145984
+#
+# This file is not complete yet.
+
+
+create repository kgoldrunner
+end repository
+
+declare REPO=kgoldrunner
+declare MODULE=kdegames/kgoldrunner
+
+include ../common-kde-ignores
+
+
+### Master ###
+# KGoldrunner has lived in
+# /trunk/kdegames/kgoldrunner/ (r145984 - r401169)
+# /trunk/KDE/kdegames/kgoldrunner/ (r409203 - today)
+match /trunk/(KDE/)?kdegames/kgoldrunner/
+    repository kgoldrunner
+    branch master
+end match
+
+# Documentation has lived in
+# /trunk/kdegames/doc/kgoldrunner/ (r235550 - r394200)
+# /trunk/KDE/kdegames/doc/kgoldrunner/ (r409203 - today)
+match /trunk/(KDE/)?kdegames/doc/kgoldrunner/
+    repository kgoldrunner
+    branch master
+    prefix doc/
+end match
+
+
+# Recurse into branch and tag changes that may have affected us
+match /(branches|tags)/[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+
+### Branches ###
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/kgoldrunner/
+    repository kgoldrunner
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/kgoldrunner/
+    repository kgoldrunner
+    branch KDE/\1.\2
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/kgoldrunner/
+    repository kgoldrunner
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kgoldrunner/
+    repository kgoldrunner
+    branch KDE/\1.\2
+    prefix doc/
+end match
+
+
+### Tags ###
+match /tags/kgoldrunner/(\d+)\.(\d+)\.(\d+)/
+    repository kgoldrunner
+    branch refs/tags/kgoldrunner-v\1.\2.\3
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)/kdegames/kgoldrunner/
+    repository kgoldrunner
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kgoldrunner/
+    repository kgoldrunner
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+
+# Some tag stuff
+include ../common-kde-tags-rules
+
+declare MODULE_RECURSE=(kdegames/)?
+include ../feature-branches
+
+match /
+end match
