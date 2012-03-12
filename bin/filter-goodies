@@ -18,3 +18,20 @@ delete_fb_backups() {
     git for-each-ref --format="%(refname)" ${1:-refs/original/} | \
     xargs --no-run-if-empty -n 1 git update-ref -d
 }
+# add a tag to every commit, name=svn revision
+# ignores empty tagging commits (those removed by fix-tags)
+# this helps much with visual debugging with gitk --all. Note
+# however that gitk --all might then not show all branches for
+# a commit for whatever reason.
+add_revision_tags() {
+	branches=$(git branch -a | grep -v HEAD | sed 's/ //g' | sed 's/^*//')
+	git log --pretty=%h $branches | sort | uniq | while read commit
+	do
+		revision=r$(git show --pretty='%b' $commit | grep 'svn path=' | sed 's/.*revision=//')
+		# a revision can appear more than once if it changes several branches
+		test -r refs/tags/$revision && revision=${revision}X
+		test -r refs/tags/$revision && revision=${revision}X
+		test -r refs/tags/$revision && revision=${revision}X
+		git tag $revision $commit
+	done
+}
