@@ -13,7 +13,7 @@ declare REPO=kdiamond
 declare MODULE=kdegames/kdiamond
 
 # Ignore some things that are known to cause trouble
-include /home/gitmaster/kde-ruleset/common-kde-ignores
+include ../common-kde-ignores
 
 # Get sources and docs from playground
 match /trunk/playground/games/kdiamond/
@@ -77,7 +77,7 @@ match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kdiamond/
 end match
 
 # Some tag stuff
-include /home/gitmaster/kde-ruleset/common-kde-tags-rules
+include ../common-kde-tags-rules
 
 # Custom code: Work branch
 match /branches/work/kdiamond-4.2/

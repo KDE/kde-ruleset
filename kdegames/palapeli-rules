@@ -13,7 +13,7 @@ declare REPO=palapeli
 declare MODULE=kdegames/palapeli
 
 # Ignore some things that are known to cause trouble
-include /home/gitmaster/kde-ruleset/common-kde-ignores
+include ../common-kde-ignores
 
 # While Palapeli lived in playground, I did at some time drop the current
 # codebase and started a rewrite. I moved the old code from "palapeli" to
@@ -117,7 +117,7 @@ match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/palapeli/
 end match
 
 # Some tag stuff
-include /home/gitmaster/kde-ruleset/common-kde-tags-rules
+include ../common-kde-tags-rules
 
 # Ignore everything else
 match /
