@@ -28,7 +28,7 @@ end match
 # Documentation has lived in
 # /trunk/kdegames/kshisen/html (r1589 - r13105)
 # /trunk/kdegames/doc/kshisen/ (r20794 - r251845)
-# /trunk/KDE/kdegames/doc/kshisen/ (rr409203 - today)
+# /trunk/KDE/kdegames/doc/kshisen/ (r409203 - today)
 match /trunk/kdegames/kshisen/html/
     repository kshisen
     branch master
@@ -79,12 +79,12 @@ end match
 
 ### Tags ###
 match /tags/KDE/(\d+)\.(\d+)/kdegames/kshisen/
-    repository kbreakout
+    repository kshisen
     branch refs/tags/v\1.\2.0
     annotated true
 end match
 match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kshisen/
-    repository kbreakout
+    repository kshisen
     branch refs/tags/v\1.\2.\3
     annotated true
 end match
