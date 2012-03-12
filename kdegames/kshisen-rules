@@ -70,7 +70,7 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/kshisen/
     branch \1.\2
     prefix doc/
 end match
-match /branches/KDE/(\d+)_(\d+)/kdegames/doc/kshisen/
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kshisen/
     repository kshisen
     branch \1.\2
     prefix doc/
