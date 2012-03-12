@@ -18,6 +18,33 @@ delete_fb_backups() {
     git for-each-ref --format="%(refname)" ${1:-refs/original/} | \
     xargs --no-run-if-empty -n 1 git update-ref -d
 }
+
+# some first commits for a branch contain only the changed files in that branch
+# This makes the git revision appear as deleting all the rest of the tree.
+# Here we filter all revisions in the branch
+# to contain the rest of the files, taken from the master revision right before branching.
+# this code initially copied from kdegraphics/okular, but did not work for me.
+# I had to replace master.. by ${prevmaster}..
+
+fill_branch() {
+	branch=$1
+	mastercommit=$2
+	tempdir="$(calc_tempdir $REPO-filter)"
+	prevmaster=$(echo $mastercommit | $bindir/translateRevlist.py)
+	echo fill_branch $branch $mastercomit mit tempdir: $tempdir und prevmaster: $prevmaster
+
+        range="${prevmaster}..${branch}"
+	echo range:$range
+	echo git filter-branch -f -d "$tempdir" \
+		--tree-filter "git read-tree $prevmaster" \
+		--tag-name-filter cat \
+		$range
+	git filter-branch -f -d "$tempdir" \
+		--tree-filter "git read-tree $prevmaster" \
+		--tag-name-filter cat \
+		$range
+}
+
 # add a tag to every commit, name=svn revision
 # ignores empty tagging commits (those removed by fix-tags)
 # this helps much with visual debugging with gitk --all. Note
