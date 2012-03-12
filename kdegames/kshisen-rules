@@ -94,7 +94,7 @@ end match
 include ../common-kde-tags-rules
 
 declare MODULE_RECURSE=(kdegames/)?
-include feature-branches
+include ../feature-branches
 
 match /
 end match
