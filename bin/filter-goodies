@@ -62,3 +62,42 @@ add_revision_tags() {
 		git tag $revision $commit
 	done
 }
+
+#  From kooka-postprocess.sh:
+#  Fix up branch commits created by cvs2svn, originally these have the
+#  author 'nobody@localhost' which is not accepted by git.kde.org.
+#  Replace them with a dummy name/email.
+#
+#  Need to do this on for all branches and with a null filter for tags,
+#  so that the structure is preserved.  See man page for git-filter-branch(1):
+#  "The rewritten history will have different object names for all the
+#  objects and will not converge with the original branch".
+
+# NOTE: it only compares mail address, please check if it also
+# changes other commits which are not from cvs2svn
+
+change_cvs2svn_author() {
+	#  From http://help.github.com/changing-author-info/
+	git filter-branch --env-filter '
+		an="$GIT_AUTHOR_NAME"
+		am="$GIT_AUTHOR_EMAIL"
+		cn="$GIT_COMMITTER_NAME"
+		cm="$GIT_COMMITTER_EMAIL"
+
+		if expr "$GIT_COMMITTER_EMAIL" : "^nobody@" >/dev/null
+		then
+			an="CVS2SVN"
+			am="cvs2svn@kde.org"
+		fi
+		if expr "$GIT_AUTHOR_EMAIL" : "^nobody@" >/dev/null
+		then
+			an="CVS2SVN"
+			am="cvs2svn@kde.org"
+		fi
+
+		export GIT_AUTHOR_NAME="$an"
+		export GIT_AUTHOR_EMAIL="$am"
+		export GIT_COMMITTER_NAME="$cn"
+		export GIT_COMMITTER_EMAIL="$cm"
+		' --tag-name-filter "cat" -- --all
+}
