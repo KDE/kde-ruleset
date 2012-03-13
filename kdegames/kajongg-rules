@@ -23,7 +23,7 @@ match /trunk/KDE/kdegames/kajongg/
 end match
 
 # BEGIN version branches
-match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
+match /branches/KDE/\d+[^/]+/(kdegames/)?$
   action recurse
 end match
 
@@ -32,6 +32,22 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/kajongg/
     branch KDE/\1.\2
 end match
 # END
+
+# BEGIN tags
+match /tags/KDE/\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+match /tags/KDE/(\d+)\.(\d+)/kdegames/kajongg/
+    repository kajongg
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kajongg/
+    repository kajongg
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
 
 # BEGIN Documentation
 match /trunk/(KDE/)?kdegames/doc/kajongg/
