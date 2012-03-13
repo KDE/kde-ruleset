@@ -18,12 +18,12 @@ fi
 
 set -e
 
-svn2git/svn-all-fast-export --resume-from=610847 --debug-rules \
+svn2git/svn-all-fast-export --resume-from=610847 \
 	--identity-map=kde-ruleset/account-map --add-metadata \
 	--rules=kde-ruleset/kdegames/libkmahjongg-rules \
 	kde_svn >svn2gitlog-libkmahjongg 2>&1
 
-# make a copy of the result so we can repeatedly try postprocess.sh on it
+# make a copy of the result so we can repeatedly test libkmahjongg-postprocess.sh on it
 cp -a libkmahjongg libkmahjongg.org
 
 exec kde-ruleset/kdegames/libkmahjongg-postprocess.sh
