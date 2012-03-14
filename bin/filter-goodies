@@ -27,18 +27,12 @@ delete_fb_backups() {
 # I had to replace master.. by ${prevmaster}..
 
 fill_branch() {
+	echo fill_branch $1 from $2
 	branch=$1
 	mastercommit=$2
 	tempdir="$(calc_tempdir $REPO-filter)"
 	prevmaster=$(echo $mastercommit | $bindir/translateRevlist.py)
-	echo fill_branch $branch $mastercomit mit tempdir: $tempdir und prevmaster: $prevmaster
-
         range="${prevmaster}..${branch}"
-	echo range:$range
-	echo git filter-branch -f -d "$tempdir" \
-		--tree-filter "git read-tree $prevmaster" \
-		--tag-name-filter cat \
-		$range
 	git filter-branch -f -d "$tempdir" \
 		--tree-filter "git read-tree $prevmaster" \
 		--tag-name-filter cat \
@@ -56,9 +50,9 @@ add_revision_tags() {
 	do
 		revision=r$(git show --pretty='%b' $commit | grep 'svn path=' | sed 's/.*revision=//')
 		# a revision can appear more than once if it changes several branches
-		test -r refs/tags/$revision && revision=${revision}X
-		test -r refs/tags/$revision && revision=${revision}X
-		test -r refs/tags/$revision && revision=${revision}X
+		test -r refs/tags/$revision && revision=X${revision}
+		test -r refs/tags/$revision && revision=X${revision}
+		test -r refs/tags/$revision && revision=X${revision}
 		git tag $revision $commit
 	done
 }

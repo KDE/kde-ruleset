@@ -68,7 +68,7 @@ else:
     print >> sys.stderr, "usage: translateRevlist.py [filename]"
     sys.exit(1)
 
-print >> sys.stderr, "getting git log..."
+print >> sys.stderr, "translateRevlist getting git log...",
 log_messages = get_log_messages()
 print >> sys.stderr, "done"
 svnmap = create_svn_map(log_messages)
