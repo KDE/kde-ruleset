@@ -1,0 +1,38 @@
+# merge work/kconfig_new_take3 to trunk
+728440 728852
+
+# merge work/kmainwindow-decoupling to trunk
+654675 654728
+
+# merge work/kde4_kconfig to trunk
+720908 721729
+
+# merge work/kinstance-redesign to trunk
+627974 628310
+
+# merge work/kaction-cleanup3 to trunk
+620435 621518
+
+# branch KDE_3_4 from trunk
+387945 395488
+
+# branch KDE_3_3 from trunk
+334652 337339
+
+# branch KDE_3_2 from trunk
+279832 287166
+
+# branch KDE_3_1 from trunk
+189718 199237@/branches/KDE_3_1_BRANCH/kdegames/lskat/
+
+# branch KDE_3_0 from trunk
+144225 152249
+
+# branch KDE_2_2 from trunk
+109165 113211
+
+# branch KDE_2_1 from trunk
+83062 87925
+
+# missing link before porting to Qt4
+473659 473660
