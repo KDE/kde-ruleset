@@ -1,0 +1,100 @@
+create repository kmahjongg
+end repository
+
+include ../common-kde-ignores
+
+declare REPO=kmahjongg
+
+match /trunk/(KDE/)?kdegames/kmahjongg/
+    repository kmahjongg
+    branch master
+end match
+
+# BEGIN Documentation
+match /trunk/(KDE/)?kdegames/doc/kmahjongg/
+    repository kmahjongg
+    branch master
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kmahjongg/
+    repository kmahjongg
+    branch KDE/\1.\2
+    prefix doc/
+end match
+# END
+
+# BEGIN Branches
+match /branches/KDE/\d+\.\d+/(kdegames/)?$
+  action recurse
+end match
+match /branches/__KDE_1_1_1_RELEASE/kdegames/kmahjongg/
+    repository kmahjongg
+    branch master
+end match
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/kmahjongg/
+    repository kmahjongg
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/kmahjongg/
+    repository kmahjongg
+    branch KDE/\1.\2
+end match
+# END
+
+# BEGIN work branches
+declare MODULE_RECURSE=(kdegames/)?
+declare MODULE=kdegames/kmahjongg
+
+#match /branches/work/krippendorf-kdegames/$
+#    action recurse
+#end match
+match /branches/work/krippendorf-kdegames/kmahjongg/
+    repository ${REPO}
+    branch work/krippendorf
+    max revision 1271030
+end match
+
+# ignore the following feature-branches without changes for kmahjongg
+match /branches/work/kaction-cleanup2/
+   # for kmahjongg, this branch contains only merges from trunk but 
+   # no changes. It is identical with r616838 in trunk
+end match
+match /branches/work/kde4_jobflags/
+end match
+match /branches/work/kconfiggroup_port/
+end match
+match /branches/work/kparts_urlargs_split/
+end match
+match /branches/work/kde4-systray-rewrite/
+end match
+match /branches/work/kde4-systray-rewrite-tng/
+end match
+match /branches/work/kde4-qdbus-api-changes/
+end match
+#match /branches/work/kaction-cleanup-branch/
+#end match
+
+# use all other feature branches
+include ../feature-branches
+#END
+
+match /tags/(KDE/)?[^/]+/(kdegames/)?$
+    action recurse
+end match
+# Get tags
+match /tags/KDE/(\d+)\.(\d+)/kdegames/kmahjongg/
+    repository kmahjongg
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kmahjongg/
+    repository kmahjongg
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+			
+			    
+include ../common-kde-tags-rules
+
+match /
+end match
