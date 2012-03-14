@@ -1,0 +1,18 @@
+#
+# Created by Trever Fischer <tdfischer@fedoraproject.org>
+#
+
+create repository kscd
+end repository
+
+match /trunk/(KDE/)?kdemultimedia/kscd/
+    repository kscd
+    branch master
+    min revision 309
+end match
+
+# create branches in each sub-repository
+match /branches/KDE/(.+)/kdemultimedia/kscd/$
+	branch KDE/\1
+	repository kscd
+end match

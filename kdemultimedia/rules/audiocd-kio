@@ -1,0 +1,25 @@
+#
+# Created by Trever Fischer <tdfischer@fedoraproject.org>
+#
+
+create repository audiocd-kio
+end repository
+
+match /trunk/(KDE/)?kdemultimedia/kioslave/audiocd/
+    repository audiocd-kio
+    branch master
+    min revision 157422
+end match
+
+match /trunk/kdebase/kioslave/audiocd/
+	repository audiocd-kio
+	branch master
+	max revision 157421
+	min revision 71925
+end match
+
+# create branches in each sub-repository
+match /branches/KDE/(.+)/kdemultimedia/kioslave/audiocd/$
+	branch KDE/\1
+	repository audiocd-kio
+end match

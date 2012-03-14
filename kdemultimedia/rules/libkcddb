@@ -1,0 +1,18 @@
+#
+# Created by Trever Fischer <tdfischer@fedoraproject.org>
+#
+
+create repository libkcddb
+end repository
+
+match /trunk/(KDE/)?kdemultimedia/libkcddb/
+    repository libkcddb
+    branch master
+    min revision 137020
+end match
+
+# create branches in each sub-repository
+match /branches/KDE/(.+)/kdemultimedia/libkcddb/$
+	branch KDE/\1
+	repository libkcddb
+end match

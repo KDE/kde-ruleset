@@ -1,0 +1,30 @@
+#
+# Created by Trever Fischer <tdfischer@fedoraproject.org>
+#
+
+create repository strigi-analyzers
+end repository
+
+match /trunk/(KDE/)?kdemultimedia/strigi-analyzer/
+    repository strigi-analyzers
+    branch master
+    min revision 677897
+end match
+
+match /trunk/KDE/kdemultimedia/kfile-plugins/
+	repository strigi-analyzers
+	branch master
+	max revision 677877
+	min revision 123278
+end match
+
+# create branches in each sub-repository
+match /branches/KDE/(.+)/kdemultimedia/strigi-analyzer/$
+	branch KDE/\1
+	repository strigi-analyzers
+end match
+
+match /branches/KDE/(.+)/kdemultimedia/kfile-plugins/$
+	branch KDE/\1
+	repository strigi-analyzers
+end match

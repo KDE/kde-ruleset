@@ -1,10 +1,6 @@
 create repository kmix
 end repository
 
-match /trunk/KDE/kdemultimedia$
-    action recurse
-end match
-
 match /trunk/(KDE/)?kdemultimedia/kmix/
     repository kmix
     branch oldkmix1
@@ -23,5 +19,8 @@ match /trunk/(KDE/)?kdemultimedia/kmix2/
     max revision 52201 # dir got deleted in 52202
 end match
 
-match /
+# create branches in each sub-repository
+match /branches/KDE/(.+)/kdemultimedia/kmix/$
+	branch KDE/\1
+	repository kmix
 end match

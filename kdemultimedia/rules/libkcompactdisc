@@ -1,0 +1,18 @@
+#
+# Created by Trever Fischer <tdfischer@fedoraproject.org>
+#
+
+create repository libkcompactdisc
+end repository
+
+match /trunk/(KDE/)?kdemultimedia/libkcompactdisc/
+    repository libkcompactdisc
+    branch master
+    min revision 608874
+end match
+
+# create branches in each sub-repository
+match /branches/KDE/(.+)/kdemultimedia/libkcompactdisc/$
+	branch KDE/\1
+	repository libkcompactdisc
+end match

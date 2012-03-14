@@ -23,13 +23,11 @@ end match
 
 match /tags/KDE/(.+)/kdemultimedia/dragonplayer/
 	repository dragonplayer
-	branch refs/tags/\1
+	branch refs/tags/v\1
+	annotated true
 end match
 
 match /branches/KDE/(.+)/kdemultimedia/dragonplayer/
 	repository dragonplayer
 	branch KDE/\1
-end match
-
-match /
 end match

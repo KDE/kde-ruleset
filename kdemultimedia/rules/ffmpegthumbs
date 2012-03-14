@@ -1,0 +1,18 @@
+#
+# Created by Trever Fischer <tdfischer@fedoraproject.org>
+#
+
+create repository ffmpegthumbs
+end repository
+
+match /trunk/(KDE/)?kdemultimedia/ffmpegthumbs/
+    repository ffmpegthumbs
+    branch master
+    min revision 1125637
+end match
+
+# create branches in each sub-repository
+match /branches/KDE/(.+)/kdemultimedia/ffmpegthumbs/$
+	branch KDE/\1
+	repository ffmpegthumbs
+end match

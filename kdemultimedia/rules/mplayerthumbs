@@ -1,0 +1,32 @@
+#
+# Created by Trever Fischer <tdfischer@fedoraproject.org>
+#
+
+create repository mplayerthumbs
+end repository
+
+match /trunk/(KDE/)?kdemultimedia/mplayerthumbs/
+    repository mplayerthumbs
+    branch master
+    min revision 963747
+end match
+
+match /trunk/kdereview/mplayerthumbs/
+	repository mplayerthumbs
+	branch master
+	max revision 963746
+	min revision 924886
+end match
+
+match /trunk/playground/multimedia/mplayerthumbs/
+	repository mplayerthumbs
+	branch master
+	max revision 924884
+	min revision 822905
+end match
+
+# create branches in each sub-repository
+match /branches/KDE/(.+)/kdemultimedia/mplayerthumbs/$
+	branch KDE/\1
+	repository mplayerthumbs
+end match

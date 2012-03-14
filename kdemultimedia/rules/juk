@@ -1,0 +1,18 @@
+#
+# Created by Trever Fischer <tdfischer@fedoraproject.org>
+#
+
+create repository juk
+end repository
+
+match /trunk/(KDE/)?kdemultimedia/juk/
+    repository juk
+    branch master
+    min revision 309
+end match
+
+# create branches in each sub-repository
+match /branches/KDE/(.+)/kdemultimedia/juk/$
+	branch KDE/\1
+	repository juk
+end match
