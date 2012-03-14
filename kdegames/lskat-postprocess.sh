@@ -33,6 +33,9 @@ git update-ref -d refs/backups/r467490/tags/v3.4.3
 git update-ref -d refs/backups/r519761/tags/v3.5.2
 git update-ref -d refs/backups/r591395/tags/v3.5.5
 
+# unannotated tag cannot be pushed to KDE
+git tag -d backups/master@473660
+
 echo 'parent-adder...'
 $bindir/parent-adder $RULESETDIR/kdegames/$REPO-parentmap
 
