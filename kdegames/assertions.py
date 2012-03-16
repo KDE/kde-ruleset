@@ -197,6 +197,7 @@ class KTuberlingTests(GitRepoTestCase):
         self.assertEqual(len(lastRevChanges), 1, "commit should make a single change")
         self.assertTrue(lastRevChanges[0].isModify("doc/index.docbook"), "commit should modify index.docbook")
 
+    # can be confirmed with "svn log /branches/work/kde4/kdegames/ktuberling@439536"
     KDE4_BRANCH_CREATION=419754
     KDE4_COMMITS=[419958,419960,419962,429318]
     KDE4_MERGE_TRUNK=KDE4_COMMITS[-1]
@@ -206,14 +207,14 @@ class KTuberlingTests(GitRepoTestCase):
     KDE4_BRANCH_DELETION=439537
 
     def testBranchKde4(self):
-        firstKde4Commit = self.repo.commit_from_svnrev(self.KDE4_COMMITS[0])
-
         # Get the last master commit before kde4's creation
         masterCommits = self.getRevsInRange(self.repo.branch("master"), [])
-        commit = next(c for c in masterCommits if c.get_svn_rev() < self.KDE4_BRANCH_CREATION)
+        lastMasterCommit = next(c for c in masterCommits if c.get_svn_rev() < self.KDE4_BRANCH_CREATION)
 
         # Check that the branch point is correct
-        self.assertEqual(firstKde4Commit.parents, [commit.id])
+        firstKde4Commit = self.repo.commit_from_svnrev(self.KDE4_COMMITS[0])
+        self.assertEqual(firstKde4Commit.parents, [lastMasterCommit.id],
+                        "kde4 doesn't branch off the correct commit")
 
     def testBranchKde4Merge(self):
         '''
@@ -226,15 +227,18 @@ class KTuberlingTests(GitRepoTestCase):
         - Checks that kde4 gets merged back into trunk in the correct commit.
         '''
 
-        kde4Branch = self.getRefOrBackup("refs/workbranch/kde4")
-        lastKde4Commit = self.repo.commit(kde4Branch)
-        self.assertEqual(lastKde4Commit.get_svn_rev(), self.KDE4_MERGE_TRUNK)
+        lastKde4Commit = self.repo.commit(self.getRefOrBackup("refs/workbranch/kde4"))
+        self.assertEqual(lastKde4Commit.get_svn_rev(), self.KDE4_MERGE_TRUNK,
+                        "Last kde4 commit not what was expected")
 
-        self.assertEqual(self.svnRevsFromShas(lastKde4Commit.parents), [self.KDE4_BEFORE_TRUNK_MERGE, self.TRUNK_BEFORE_KDE4_MERGE])
+        self.assertEqual(self.svnRevsFromShas(lastKde4Commit.parents),
+                        [self.KDE4_BEFORE_TRUNK_MERGE, self.TRUNK_BEFORE_KDE4_MERGE],
+                        "Wrong parents of last kde4 commit")
 
         mergeCommit = self.repo.commit_from_svnrev(self.TRUNK_MERGE_KDE4)
-        self.assertIsNotNone(mergeCommit, "revision not found")
-        self.assertEqual(self.svnRevsFromShas(mergeCommit.parents), [self.TRUNK_BEFORE_KDE4_MERGE, self.KDE4_COMMITS[-1]])
+        self.assertEqual(self.svnRevsFromShas(mergeCommit.parents),
+                        [self.TRUNK_BEFORE_KDE4_MERGE, self.KDE4_COMMITS[-1]],
+                        "Wrong parents of kde4->trunk merge commit")
 
 if __name__ == '__main__':
     unittest.main()
