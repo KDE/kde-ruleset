@@ -241,5 +241,18 @@ class KTuberlingTests(GitRepoTestCase):
                         [TRUNK_BEFORE_KDE4_MERGE, KDE4_COMMITS[-1]],
                         "Wrong parents of kde4->trunk merge commit")
 
+    def testBleedingEdgeBranch(self):
+        BRANCH_CREATION=560057
+        BRANCH_COMMIT=560113
+        BRANCH_MERGE=560614
+
+        masterCommits = self.getRevsInRange(self.repo.branch("master"), [])
+        lastMasterCommit = next(c for c in masterCommits if c.get_svn_rev() < BRANCH_CREATION)
+
+        branchCommit = self.repo.commit_from_svnrev(BRANCH_COMMIT)
+        self.assertEqual(branchCommit.parents, [lastMasterCommit.id],
+                        "bleedingedge doesn't branch off the correct commit")
+
+
 if __name__ == '__main__':
     unittest.main()

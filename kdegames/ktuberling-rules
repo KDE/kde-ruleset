@@ -52,6 +52,17 @@ match /branches/work/kde4/kdegames/ktuberling/
     repository ktuberling
     branch refs/workbranch/kde4
 end match
+
+match /branches/work/bleedingedge/(kdegames/)?$
+    min revision 560057
+    max revision 560647
+    action recurse
+end match
+match /branches/work/bleedingedge/kdegames/ktuberling/
+    repository ktuberling
+    branch refs/workbranch/bleedingedge
+    max revision 560647
+end match
 # END
 
 match /
