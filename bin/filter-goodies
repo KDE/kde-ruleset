@@ -88,8 +88,8 @@ change_cvs2svn_author() {
 
 		if expr "$GIT_COMMITTER_EMAIL" : "^nobody@" >/dev/null
 		then
-			an="CVS2SVN"
-			am="cvs2svn@kde.org"
+			cn="CVS2SVN"
+			cm="cvs2svn@kde.org"
 		fi
 		if expr "$GIT_AUTHOR_EMAIL" : "^nobody@" >/dev/null
 		then
