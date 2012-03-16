@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # this script is to be started in the parent directory of kde-ruleset, svn2git
-# and kde_svn
+# and svn
 
-if test ! -d kde-ruleset -o ! -d kde_svn
+if test ! -d kde-ruleset -o ! -d svn
 then
-	echo execute this in the directory with subdirectories kde-ruleset and kde_svn
+	echo execute this in the directory with subdirectories kde-ruleset and svn
 	exit 2
 fi
 
@@ -22,7 +22,7 @@ rm -rf lskat
 svn2git/svn-all-fast-export \
 	--identity-map=kde-ruleset/account-map --add-metadata \
 	--rules=kde-ruleset/kdegames/lskat-rules \
-	kde_svn >svn2gitlog-lskat 2>&1
+	svn >svn2gitlog-lskat 2>&1
 
 # make a copy of the result so we can repeatedly test lskat-postprocess.sh on it
 cp -a lskat lskat.org
