@@ -207,6 +207,17 @@ class KTuberlingTests(GitRepoTestCase):
     KDE4_BRANCH_DELETION=439537
 
     def testBranchKde4(self):
+        '''
+        Verifies the topology of the kde4 work branch.
+
+        Specifically:
+        - Checks that kde4 branches off the correct master commit.
+        - Checks that the last commit in the branch is the correct one
+          (the merge from trunk).
+        - Checks the parents of that merge commit.
+        - Checks that kde4 gets merged back into trunk in the correct commit.
+        '''
+
         # Get the last master commit before kde4's creation
         masterCommits = self.getRevsInRange(self.repo.branch("master"), [])
         lastMasterCommit = next(c for c in masterCommits if c.get_svn_rev() < self.KDE4_BRANCH_CREATION)
@@ -215,17 +226,6 @@ class KTuberlingTests(GitRepoTestCase):
         firstKde4Commit = self.repo.commit_from_svnrev(self.KDE4_COMMITS[0])
         self.assertEqual(firstKde4Commit.parents, [lastMasterCommit.id],
                         "kde4 doesn't branch off the correct commit")
-
-    def testBranchKde4Merge(self):
-        '''
-        Verifies the merging between trunk and the kde4 work branch.
-
-        Specifically:
-        - Checks that the last commit in the branch is the correct one
-          (the merge from trunk).
-        - Checks the parents of that merge commit.
-        - Checks that kde4 gets merged back into trunk in the correct commit.
-        '''
 
         lastKde4Commit = self.repo.commit(self.getRefOrBackup("refs/workbranch/kde4"))
         self.assertEqual(lastKde4Commit.get_svn_rev(), self.KDE4_MERGE_TRUNK,
