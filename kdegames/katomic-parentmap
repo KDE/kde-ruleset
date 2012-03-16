@@ -1,0 +1,32 @@
+# merge work/kconfiggroup_port to trunk
+634286 635473
+
+# merge work/kmainwindow-decoupling to trunk
+654675 654728
+
+# merge work/kaction-cleanup3 to trunk
+618655 621518
+
+# branch KDE_3_4 from trunk
+389826 405218
+
+# branch KDE_3_3 from trunk
+334652 340326
+
+# branch KDE_3_2 from trunk
+279832 287166
+
+# branch KDE_3_1 from trunk
+189718 218189
+
+# branch KDE_3_0 from trunk
+144225 158548
+
+# branch KDE_2_2 from trunk
+109165 109679
+
+# branch KDE_2_1 from trunk
+83708 87925
+
+# branch KDE_2_0 from trunk
+68160 69862

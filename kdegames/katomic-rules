@@ -1,0 +1,92 @@
+create repository katomic
+end repository
+
+include ../common-kde-ignores
+
+declare REPO=katomic
+
+match /trunk/(KDE/)?kdegames/katomic/
+    repository katomic
+    branch master
+end match
+
+# BEGIN Documentation
+match /trunk/(KDE/)?kdegames/doc/katomic/
+    repository katomic
+    branch master
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/katomic/
+    repository katomic
+    branch KDE/\1.\2
+    prefix doc/
+end match
+# END
+
+# BEGIN Branches
+match /branches/KDE/\d+\.\d+/(kdegames/)?$
+  action recurse
+end match
+match /branches/__KDE_1_1_1_RELEASE/kdegames/katomic/
+    repository katomic
+    branch master
+end match
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/katomic/
+    repository katomic
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/katomic/
+    repository katomic
+    branch KDE/\1.\2
+end match
+# END
+
+# BEGIN work branches
+declare MODULE_RECURSE=(kdegames/)?
+declare MODULE=kdegames/katomic
+
+match /branches/work/katomic-levelsets/levels/old
+    repository ${REPO}
+    branch refs/workbranch/katomic-levelsets
+    prefix levels
+end match
+match /branches/work/katomic-levelsets/
+    repository ${REPO}
+    branch refs/workbranch/katomic-levelsets
+end match
+# ignore the following feature-branches without changes for katomic
+#match /branches/work/kconfig_new/
+#end match
+#match /branches/work/kde4_kconfig/
+#end match
+#match /branches/work/kaction-cleanup1/
+#end match
+#match /branches/work/kaction-cleanup2/
+#end match
+#match /branches/work/kaction-cleanup3/
+#end match
+
+# use all other feature branches
+include ../feature-branches
+#END
+
+match /tags/(KDE/)?[^/]+/(kdegames/)?$
+    action recurse
+end match
+# Get tags
+match /tags/KDE/(\d+)\.(\d+)/kdegames/katomic/
+    repository katomic
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/katomic/
+    repository katomic
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+			
+			    
+include ../common-kde-tags-rules
+
+match /
+end match
