@@ -188,7 +188,7 @@ class KTuberlingTests(GitRepoTestCase):
         self.assertTrue(changes[0].isModify("doc/Makefile.am"), "commit should modify doc/Makefile.am")
 
     def test20BranchCommits(self):
-        revsIn20 = list(self.getRevsInRange(self.repo.branch("2.0"), self.repo.branch("master")))
+        revsIn20 = list(self.getRevsInRange(self.repo.branch("KDE/2.0"), self.repo.branch("master")))
         revsIn20.reverse()
         self.assertEqual([rev.get_svn_rev() for rev in revsIn20], [69862, 71236],
                         "branch 2.0 doesn't have the expected commits")
