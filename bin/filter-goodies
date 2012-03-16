@@ -19,24 +19,32 @@ delete_fb_backups() {
     xargs --no-run-if-empty -n 1 git update-ref -d
 }
 
-# some first commits for a branch contain only the changed files in that branch
+# some commits for a branch contain only the changed files in that commit
 # This makes the git revision appear as deleting all the rest of the tree.
 # Here we filter all revisions in the branch
 # to contain the rest of the files, taken from the master revision right before branching.
 # this code initially copied from kdegraphics/okular, but did not work for me.
 # I had to replace master.. by ${prevmaster}..
+# If a branch does not exist or does not need to be rewritten, continue.
+# TODO: speed up by doing all fill_from within one git filter-branch
 
-fill_branch() {
-	echo fill_branch $1 from $2
-	branch=$1
-	mastercommit=$2
-	tempdir="$(calc_tempdir $REPO-filter)"
+fill_from() {
+	mastercommit=$1
+	shift
+	echo fill_from $mastercommit into $*
 	prevmaster=$(echo $mastercommit | $bindir/translateRevlist.py)
-        range="${prevmaster}..${branch}"
-	git filter-branch -f -d "$tempdir" \
-		--tree-filter "git read-tree $prevmaster" \
-		--tag-name-filter cat \
-		$range
+	for branch in $*
+	do
+		( git branch -a ; git tag ) | grep -q $branch
+		test $? -eq 0 || continue # branch does not exist
+		tempdir="$(calc_tempdir $REPO-filter)"
+		range="${prevmaster}..${branch}"
+		echo fill_from $mastercommit into $branch
+		git filter-branch -f -d "$tempdir" \
+			--tree-filter "git read-tree $prevmaster" \
+			--tag-name-filter cat \
+			$range || continue
+	done
 }
 
 # add a tag to every commit, name=svn revision
