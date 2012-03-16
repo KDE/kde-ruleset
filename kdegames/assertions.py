@@ -48,7 +48,7 @@ Repo.branch = _shaFromBranch
 
 # this is slow as hell! needs its own cache and stuff
 def _commitFromSvnRev(repo, svnrev):
-    for entry in repo.get_walker():
+    for entry in repo.get_walker(repo.get_refs().values()):
         if entry.commit.get_svn_rev() == svnrev:
             return entry.commit
     return None
