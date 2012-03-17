@@ -1,0 +1,9 @@
+# r882259 has two parents which have common parent 861371.
+# One path holds 863053, 863349, 864905, 865176, 873630
+# the other path goes directly from 861371 to 882259
+# we remove the direkt path
+# NOTE: 863053 "merged from trunk" only cherry picks some revisions
+# jabber starts with 859076
+clear 882259
+873630 882259
+877960 882259
