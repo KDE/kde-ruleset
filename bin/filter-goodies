@@ -56,7 +56,7 @@ add_revision_tags() {
 	branches=$(git branch -a | grep -v HEAD | sed 's/ //g' | sed 's/^*//')
 	git log --pretty=%h $branches | sort | uniq | while read commit
 	do
-		revision=r$(git show --pretty='%b' $commit | grep 'svn path=' | sed 's/.*revision=//')
+		revision=r$(git show --pretty='%s%n%b' $commit | grep 'svn path=' | sed 's/.*revision=//')
 		# a revision can appear more than once if it changes several branches
 		test -r refs/tags/$revision && revision=X${revision}
 		test -r refs/tags/$revision && revision=X${revision}
