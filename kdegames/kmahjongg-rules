@@ -45,12 +45,12 @@ end match
 declare MODULE_RECURSE=(kdegames/)?
 declare MODULE=kdegames/kmahjongg
 
-#match /branches/work/krippendorf-kdegames/$
-#    action recurse
-#end match
+match /branches/work/krippendorf-kdegames/$
+    action recurse
+end match
 match /branches/work/krippendorf-kdegames/kmahjongg/
     repository ${REPO}
-    branch work/krippendorf
+    branch refs/workbranch/krippendorf
     max revision 1271030
 end match
 
