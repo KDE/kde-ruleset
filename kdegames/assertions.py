@@ -253,6 +253,11 @@ class KTuberlingTests(GitRepoTestCase):
         self.assertEqual(branchCommit.parents, [lastMasterCommit.id],
                         "bleedingedge doesn't branch off the correct commit")
 
+        mergeCommit = self.repo.commit_from_svnrev(BRANCH_MERGE)
+        self.assertEqual(self.svnRevsFromShas(mergeCommit.parents),
+                        [lastMasterCommit.get_svn_rev(), BRANCH_COMMIT],
+                        "Wrong parents of bleedingedge->trunk merge commit")
+
 
 if __name__ == '__main__':
     unittest.main()
