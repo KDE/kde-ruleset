@@ -1,0 +1,25 @@
+# merge work/kmainwindow-decoupling to trunk
+654675 654728
+
+# merge work/kinstance-redesign to trunk
+627974 628310
+
+# branch KDE_3_4 from trunk
+387945 393099
+
+# branch KDE_3_3 from trunk
+335035 340326
+
+# branch KDE_3_2 from trunk
+280126 284446
+
+# branch KDE_3_1 from trunk
+190314 218189
+
+# base kolf-ng on something nearby - kolf-ng
+# starts over from scratch. Do we really need
+# to base it on anything?
+885624 887401
+
+# base kolf2 something nearby -- see kolf-ng
+1068487 1088757@/trunk/playground/games/kolf2/

@@ -1,0 +1,105 @@
+create repository kolf
+end repository
+
+include ../common-kde-ignores
+
+declare REPO=kolf
+
+match /trunk/(KDE/)?kdegames/kolf/
+    repository kolf
+    branch master
+end match
+
+# BEGIN Documentation
+match /trunk/(KDE/)?kdegames/doc/kolf/
+    repository kolf
+    branch master
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kolf/
+    repository kolf
+    branch KDE/\1.\2
+    prefix doc/
+end match
+# END
+
+# BEGIN Branches
+match /branches/KDE/\d+\.\d+/(kdegames/)?$
+  action recurse
+end match
+match /branches/__KDE_1_1_1_RELEASE/kdegames/kolf/
+    repository kolf
+    branch master
+end match
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/kolf/
+    repository kolf
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/kolf/
+    repository kolf
+    branch KDE/\1.\2
+end match
+# END
+
+match /trunk/playground/games/kolf2/
+    repository kolf
+    branch playground/kolf2
+end match
+
+match /trunk/playground/games/kolf-ng/
+    repository kolf
+    branch playground/kolf-ng
+end match
+
+# BEGIN work branches
+declare MODULE_RECURSE=(kdegames/)?
+declare MODULE=kdegames/kolf
+
+# ignore the following feature-branches without changes for kolf
+match /branches/work/qdbus-api-changes/
+end match
+match /branches/work/kparts_urlargs_split/
+end match
+match /branches/work/kconfig_new/
+end match
+match /branches/work/kconfiggroup_port/
+end match
+match /branches/work/kde4_jobflags/
+end match
+match /branches/work/kde4_kconfig/
+end match
+match /branches/work/kaction-cleanup1/
+end match
+match /branches/work/kaction-cleanup2/
+end match
+match /branches/work/kaction-cleanup3/
+end match
+match /branches/work/systray-rewrite/
+end match
+match /branches/work/systray-rewrite-tng/
+end match
+
+# use all other feature branches
+include ../feature-branches
+#END
+
+match /tags/(KDE/)?[^/]+/(kdegames/)?$
+    action recurse
+end match
+# Get tags
+match /tags/KDE/(\d+)\.(\d+)/kdegames/kolf/
+    repository kolf
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kolf/
+    repository kolf
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+			
+			    
+include ../common-kde-tags-rules
+
+match /
+end match
