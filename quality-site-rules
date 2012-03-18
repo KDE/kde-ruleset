@@ -28,5 +28,10 @@ match /trunk/quality/
   branch master
 end match
 
+match /trunk/KDE/kdesdk/cmake/nightly-support/
+    repository kdequality
+    branch nightly-support
+end match
+
 match /
 end match
