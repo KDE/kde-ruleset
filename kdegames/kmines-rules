@@ -1,0 +1,141 @@
+# Created by Parker Coates <parker.coates@kdemail.net>
+#
+# kmines has pretty much existed forever, but if you reall wanted to you could
+# run svn2git with the following option:
+#    --resume-from=1181
+
+
+# Create the kmines repository
+create repository kmines
+end repository
+
+
+# Set the REPO and MODULE variables, used by some included rules
+declare REPO=kmines
+declare MODULE=kdegames/kmines
+declare MODULE_RECURSE=(kdegames/)?
+
+
+# Ignore some things that are known to cause trouble
+include ../common-kde-ignores
+
+
+# Get sources and docs from the kdegames module
+match /trunk/(KDE/)?kdegames/kmines/
+    repository kmines
+    branch master
+end match
+match /trunk/(KDE/)?kdegames/doc/kmines/
+    repository kmines
+    branch master
+    prefix doc/
+end match
+
+
+# Recurse into branch and tag changes that may have affected us
+match /(branches|tags)/KDE_\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+
+# Get sources and docs from old style branches
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/kmines/
+    repository kmines
+    branch KDE/\1.\2
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/kmines/
+    repository kmines
+    branch KDE/\1.\2
+    prefix doc/
+end match
+
+# Get sources and docs from new style branches
+match /branches/KDE/(\d+)\.(\d+)/kdegames/kmines/
+    repository kmines
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kmines/
+    repository kmines
+    branch KDE/\1.\2
+    prefix doc/
+end match
+
+
+# Get KDE wide work branches
+include ../feature-branches
+
+# KDEGames work branches
+match /branches/make_atlantik_cool/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/make_atlantik_cool/kdegames/kmines/
+    repository kmines
+    branch refs/workbranch/make_atlantik_cool
+end match
+
+match /branches/make_it_kgame/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/make_it_kgame/kdegames/kmines/
+    repository kmines
+    branch refs/workbranch/make_it_kgame
+end match
+
+match /branches/work/bleedingedge/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/work/bleedingedge/kdegames/kmines/
+    repository kmines
+    branch refs/workbranch/bleedingedge
+end match
+
+match /branches/work/kde4/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/work/kde4/kdegames/kmines/
+    repository kmines
+    branch refs/workbranch/kde4
+end match
+
+match /branches/work/kdegames-scons/v1/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/work/kdegames-scons/v1/kdegames/kmines/
+    repository kmines
+    branch refs/workbranch/kdegames-scons-v1
+end match
+
+
+# Get old style tags
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdegames/kmines/
+    repository kmines
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdegames/kmines/
+    repository kmines
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+# Get new style tags
+match /tags/KDE/(\d+)\.(\d+)/kdegames/kmines/
+    repository kmines
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kmines/
+    repository kmines
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+# Some tag stuff
+include ../common-kde-tags-rules
+
+# Ignore everything else
+match /
+end match
