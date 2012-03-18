@@ -76,6 +76,9 @@ echo 'fix-tags...'
 $bindir/fix-tags
 delete_fb_backups
 
+change_cvs2svn_author
+delete_fb_backups
+
 #echo 'add revision tags for debugging...'
 #add_revision_tags
 
