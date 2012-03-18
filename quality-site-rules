@@ -1,6 +1,23 @@
 create repository kdequality
 end repository
 
+# krazy history should be exported thoroughly, or not exported at all.
+# On request from Allen Winter (bug 294498), I'm taking the second option.
+
+match /trunk/quality/(krazy2?/)
+    action ignore
+end match
+match /trunk/KDE/kdesdk/ebn/(krazy2?/)
+    action ignore
+end match
+
+# cppchecks in 890605-900698 is stuff that got moved into krazy2 later
+match /trunk/quality/cppchecks/
+    min revision 890605
+    max revision 900698
+    action ignore
+end match
+
 match /trunk/KDE/kdesdk/ebn/
   repository kdequality
   branch master
