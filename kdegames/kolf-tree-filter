@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rm -f sounds/.Makefile.am.swp
+
+test -r kolflib_export.h && fromdos kolflib_export.h
+
+exit 0

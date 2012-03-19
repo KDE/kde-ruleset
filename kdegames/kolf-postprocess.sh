@@ -51,9 +51,6 @@ git update-ref -d refs/workbranch/kaction-cleanup3
 git update-ref -d refs/workbranch/systray-rewrite
 git update-ref -d refs/workbranch/systray-rewrite-tng
 
-git filter-branch --index-filter 'git rm --cached --ignore-unmatch sounds/.Makefile.am.swp' \
-	--tree-filter 'fromdos kolflib_export.h 2>/dev/null' HEAD
-delete_fb_backups
 
 echo 'parent-adder...'
 $bindir/parent-adder $RULESETDIR/kdegames/$REPO-parentmap
@@ -76,6 +73,9 @@ delete_fb_backups
 
 echo 'fix-tags...'
 $bindir/fix-tags
+delete_fb_backups
+
+git filter-branch --tree-filter $RULESETDIR/kdegames/kolf-tree-filter --tag-name-filter cat -- --all
 delete_fb_backups
 
 #echo 'add revision tags for debugging...'
