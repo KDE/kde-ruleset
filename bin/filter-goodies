@@ -35,7 +35,7 @@ fill_from() {
 	prevmaster=$(echo $mastercommit | $bindir/translateRevlist.py)
 	for branch in $*
 	do
-		( git branch -a ; git tag ) | grep -q $branch
+		( git branch -a ; git tag ; git log -1 --pretty='%h' ;ls refs/$branch 2>/dev/null;exit 0) | grep -q $branch
 		test $? -eq 0 || continue # branch does not exist
 		tempdir="$(calc_tempdir $REPO-filter)"
 		range="${prevmaster}..${branch}"
