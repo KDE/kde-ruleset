@@ -16,9 +16,9 @@ which fromdos >/dev/null || {
 export RULESETDIR=`pwd`/kde-ruleset
 export REPO=kolf
 
-if test ! -d $REPO
+if test ! -d $REPO -a ! -d $REPO.org
 then
-	echo repository $REPO not found
+	echo repository $REPO or $REPO.org or $REPO.org not found
 	exit 1
 fi
 

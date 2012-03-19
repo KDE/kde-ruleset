@@ -11,9 +11,9 @@ fi
 export RULESETDIR=`pwd`/kde-ruleset
 export REPO=lskat
 
-if test ! -d $REPO
+if test ! -d $REPO -a ! -d $REPO.org
 then
-	echo repository $REPO not found
+	echo repository $REPO or $REPO.org not found
 	exit 1
 fi
 
