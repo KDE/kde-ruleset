@@ -1,0 +1,78 @@
+create repository ksnake
+end repository
+
+include ../common-kde-ignores
+
+declare REPO=ksnake
+
+match /trunk/playground/games/ksnake/
+    repository ksnake
+    branch master
+end match
+
+match /trunk/(KDE/)?kdegames/ksnake/
+    repository ksnake
+    branch master
+end match
+
+# BEGIN Documentation
+match /trunk/(KDE/)?kdegames/doc/ksnake/
+    repository ksnake
+    branch master
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/ksnake/
+    repository ksnake
+    branch KDE/\1.\2
+    prefix doc/
+end match
+# END
+
+match /branches/work/kde4/kdegames/ksnake/
+    repository ksnake
+    branch refs/workbranch/kde4
+end match
+
+match /branches/KDE/\d+\.\d+/(kdegames/)?$
+  action recurse
+end match
+match /branches/__KDE_1_1_1_RELEASE/kdegames/ksnake/
+    repository ksnake
+    branch master
+end match
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/ksnake/
+    repository ksnake
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/ksnake/
+    repository ksnake
+    branch KDE/\1.\2
+end match
+# END
+
+# BEGIN work branches
+declare MODULE_RECURSE=(kdegames/)?
+declare MODULE=kdegames/ksnake
+
+include ../feature-branches
+#END
+
+match /tags/(KDE/)?[^/]+/(kdegames/)?$
+    action recurse
+end match
+# Get tags
+match /tags/KDE/(\d+)\.(\d+)/kdegames/ksnake/
+    repository ksnake
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/ksnake/
+    repository ksnake
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+			    
+include ../common-kde-tags-rules
+
+match /
+end match
