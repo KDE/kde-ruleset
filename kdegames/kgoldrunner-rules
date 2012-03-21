@@ -66,7 +66,7 @@ end match
 
 
 ### Tags ###
-match /tags/kgoldrunner/(\d+)\.(\d+)\.(\d+)/
+match /tags/kgoldrunner/(\d+)\.(\d+)\.(\d+)/kdegames/kgoldrunner/
     repository kgoldrunner
     branch refs/tags/kgoldrunner-v\1.\2.\3
     annotated true
