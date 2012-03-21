@@ -15,11 +15,3 @@
 
 # branch KDE_3_1 from trunk
 190314 218189
-
-# base kolf-ng on something nearby - kolf-ng
-# starts over from scratch. Do we really need
-# to base it on anything?
-885624 887401
-
-# base kolf2 something nearby -- see kolf-ng
-1068487 1088757@/trunk/playground/games/kolf2/

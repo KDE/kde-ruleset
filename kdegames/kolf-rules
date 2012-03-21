@@ -41,16 +41,6 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/kolf/
 end match
 # END
 
-match /trunk/playground/games/kolf2/
-    repository kolf
-    branch playground/kolf2
-end match
-
-match /trunk/playground/games/kolf-ng/
-    repository kolf
-    branch playground/kolf-ng
-end match
-
 # BEGIN work branches
 declare MODULE_RECURSE=(kdegames/)?
 declare MODULE=kdegames/kolf
