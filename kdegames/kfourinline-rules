@@ -1,0 +1,94 @@
+# Created by Frederik Schwarzer <schwarzer@kde.org>
+#
+# KFourinline has a long history. To save a few revisions, you can still
+# run it from r53592:
+#    --resume-from=53592
+#
+# This file might be complete but has to be checked by a second pair of eyes.
+
+
+create repository kfourinline
+end repository
+
+declare REPO=kfourinline
+declare MODULE=kdegames/kfourinline
+
+include ../common-kde-ignores
+
+
+### Master ###
+# KFourinline has lived as KWin4 in
+# /trunk/kdegames/kwin4/ (r53592 - r384484)
+# /trunk/KDE/kdegames/kwin4/ (r409203 - r748209)
+# and as KFourinline in
+# /trunk/KDE/kdegames/kfourinline/ (r748210 - today)
+match /trunk/(KDE/)?kdegames/(kwin4|kfourinline)/
+    repository kfourinline
+    branch master
+end match
+
+# Documentation has lived as KWin4 in
+# /trunk/kdegames/doc/kwin4/ (r74548 - r251411)
+# /trunk/KDE/kdegames/doc/kwin4/ (r409203 - r748209)
+# and as KFourinline in
+# /trunk/KDE/kdegames/doc/kfourinline/ (r748218 - today)
+# TODO: There was a single html file before that inside the source dir. Can we handle that?
+match /trunk/(KDE/)?kdegames/doc/(kwin4|kfourinline)/
+    repository kfourinline
+    branch master
+    prefix doc/
+end match
+
+
+# Recurse into branch and tag changes that may have affected us
+match /(branches|tags)/[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+
+### Branches ###
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/(kwin4|kfourinline)/
+    repository kfourinline
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/(kwin4|kfourinline)/
+    repository kfourinline
+    branch KDE/\1.\2
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/(kwin4|kfourinline)/
+    repository kfourinline
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)_(\d+)/kdegames/doc/(kwin4|kfourinline)/
+    repository kfourinline
+    branch KDE/\1.\2
+    prefix doc/
+end match
+
+
+### Tags ###
+match /tags/KDE/(\d+)\.(\d+)/kdegames/(kwin4|kfourinline)/
+    repository kfourinline
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/(kwin4|kfourinline)/
+    repository kfourinline
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+
+# Some tag stuff
+include ../common-kde-tags-rules
+
+declare MODULE_RECURSE=(kdegames/)?
+include ../feature-branches
+
+match /
+end match
