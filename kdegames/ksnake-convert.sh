@@ -18,13 +18,7 @@ fi
 
 set -e
 
-echo ksnake needs *.xpm files to be treated as binary but git will not 
-echo recognize them as such because their beginning is text. Please
-echo define '*.xpm -diff' in /etc/gitattributes or in any gitattributes
-echo file specified by git config
-echo 
 rm -rf ksnake
-#gdb --args svn2git/svn-all-fast-export \
 svn2git/svn-all-fast-export \
 	--identity-map=kde-ruleset/account-map --add-metadata \
 	--rules=kde-ruleset/kdegames/ksnake-rules \

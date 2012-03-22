@@ -29,8 +29,9 @@ cd $REPO
 bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 source "$bindir/filter-goodies"
 
-#$bindir/remove-git2svn-backup-tags.sh
-#$bindir/remove-workbranch-refs.sh
+echo 'stripping binary parts off *.xpm'...
+git filter-branch --tree-filter $bindir/stripFITS.py --tag-name-filter cat -- --all
+delete_fb_backups
 
 git update-ref -d refs/backups/r467490/tags/v3.4.3
 git update-ref -d refs/backups/r519761/tags/v3.5.2
