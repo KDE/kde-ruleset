@@ -1,0 +1,88 @@
+# Created by Frederik Schwarzer <schwarzer@kde.org>
+#
+# KLines' history starts at r98124. You can run the conversion from there:
+#    --resume-from=98124
+#
+# This file might be complete but has to be checked by a second pair of eyes.
+
+
+create repository klines
+end repository
+
+declare REPO=klines
+declare MODULE=kdegames/klines
+
+include ../common-kde-ignores
+
+
+### Master ###
+# KLines has lived in
+# /trunk/kdegames/klines/ (r98124 - r384484)
+# /trunk/KDE/kdegames/klines/ (r409203 - today)
+match /trunk/(KDE/)?kdegames/klines/
+    repository klines
+    branch master
+end match
+
+# Documentation has lived in
+# /trunk/kdegames/doc/klines/ (r98126 - r289488)
+# /trunk/KDE/kdegames/doc/klines/ (r409203 - today)
+match /trunk/(KDE/)?kdegames/doc/klines/
+    repository klines
+    branch master
+    prefix doc/
+end match
+
+
+# Recurse into branch and tag changes that may have affected us
+match /(branches|tags)/[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+
+### Branches ###
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/klines/
+    repository klines
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/klines/
+    repository klines
+    branch KDE/\1.\2
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/klines/
+    repository klines
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/klines/
+    repository klines
+    branch KDE/\1.\2
+    prefix doc/
+end match
+
+
+### Tags ###
+match /tags/KDE/(\d+)\.(\d+)/kdegames/klines/
+    repository klines
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/klines/
+    repository klines
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+
+# Some tag stuff
+include ../common-kde-tags-rules
+
+declare MODULE_RECURSE=(kdegames/)?
+include ../feature-branches
+
+match /
+end match
