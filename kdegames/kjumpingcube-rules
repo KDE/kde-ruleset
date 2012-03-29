@@ -1,0 +1,101 @@
+# Created by Frederik Schwarzer <schwarzer@kde.org>
+#
+# KJumpingCube's history starts at r23232. You can run svn2git from there:
+#    --resume-from=23232
+#
+# This file might be complete but has to be checked by a second pair of eyes.
+
+
+create repository kjumpingcube
+end repository
+
+declare REPO=kjumpingcube
+declare MODULE=kdegames/kjumpingcube
+
+include ../common-kde-ignores
+
+
+### Master ###
+# KJumpingCube has lived in
+# /trunk/kdegames/kjumpingcube/ (r23232 - r398941)
+# /trunk/KDE/kdegames/kjumpingcube/ (r409203 - r657326)
+# /trunk/playground/games/kjumpingcube/ (r660429 - r669996)
+# /trunk/KDE/kdegames/kjumpingcube/ (r670035 - today)
+match /trunk/(KDE/)?kdegames/kjumpingcube/
+    repository kjumpingcube
+    branch master
+end match
+match /trunk/playground/games/kjumpingcube/
+    repository kjumpingcube
+    branch master
+end match
+
+# Documentation has lived in
+# /trunk/kdegames/doc/kjumpingcube/ (r23233 - r271651)
+# /trunk/KDE/kdegames/doc/kjumpingcube/ (r409203 - r626190)
+# /trunk/playground/games/doc/kjumpingcube/ (r660429 - r670271)
+# /trunk/KDE/kdegames/doc/kjumpingcube/ (r699454 - today)
+match /trunk/(KDE/)?kdegames/doc/kjumpingcube/
+    repository kjumpingcube
+    branch master
+    prefix doc/
+end match
+match /trunk/playground/games/doc/kjumpingcube/
+    repository kjumpingcube
+    branch master
+    prefix doc/
+end match
+
+
+# Recurse into branch and tag changes that may have affected us
+match /(branches|tags)/[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+
+### Branches ###
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/kjumpingcube/
+    repository kjumpingcube
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/kjumpingcube/
+    repository kjumpingcube
+    branch KDE/\1.\2
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/kjumpingcube/
+    repository kjumpingcube
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kjumpingcube/
+    repository kjumpingcube
+    branch KDE/\1.\2
+    prefix doc/
+end match
+
+
+### Tags ###
+match /tags/KDE/(\d+)\.(\d+)/kdegames/kjumpingcube/
+    repository kjumpingcube
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kjumpingcube/
+    repository kjumpingcube
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+
+# Some tag stuff
+include ../common-kde-tags-rules
+
+declare MODULE_RECURSE=(kdegames/)?
+include ../feature-branches
+
+match /
+end match
