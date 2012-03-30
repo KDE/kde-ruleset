@@ -18,7 +18,7 @@ match /trunk/KDE/kdemultimedia/kfile-plugins/
 	min revision 123278
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+\.[0-9]+[aA]?)/kdemultimedia/kfile-plugins/
+match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/kfile-plugins/
 	repository strigi-analyzers
 	branch refs/tags/v\1
 	annotated true
@@ -30,25 +30,25 @@ match /tags/KDE/(4\.5\.3-test)/kdemultimedia/strigi-analyzer/
 	annotated true
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+)/kdemultimedia/strigi-analyzer/
+match /tags/KDE/(\d+\.\d+)/kdemultimedia/strigi-analyzer/
 	repository strigi-analyzers
 	branch refs/tags/v\1
 	annotated true
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+)/kdemultimedia/kfile-plugins/
+match /tags/KDE/(\d+\.\d+)/kdemultimedia/kfile-plugins/
 	repository strigi-analyzers
 	branch refs/tags/v\1
 	annotated true
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/([0-9]\.[0-9])/kdemultimedia/strigi-analyzer/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/strigi-analyzer/$
 	branch KDE/\1
 	repository strigi-analyzers
 end match
 
-match /branches/KDE/([0-9]\.[0-9])/kdemultimedia/kfile-plugins/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/kfile-plugins/$
 	branch KDE/\1
 	repository strigi-analyzers
 end match

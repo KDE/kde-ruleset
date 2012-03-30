@@ -17,7 +17,7 @@ match /trunk/(KDE/)?kdemultimedia/docs?/kscd/
 	prefix doc/
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+\.[0-9]+[aA]?)/kdemultimedia/kscd/
+match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/kscd/
 	repository kscd
 	branch refs/tags/v\1
 	annotated true
@@ -29,14 +29,14 @@ match /tags/KDE/(4\.5\.3-test)/kdemultimedia/kscd/
 	annotated true
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+)/kdemultimedia/kscd/
+match /tags/KDE/(\d+\.\d+)/kdemultimedia/kscd/
 	repository kscd
 	branch refs/tags/v\1
 	annotated true
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/([0-9]\.[0-9])/kdemultimedia/kscd/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/kscd/$
 	branch KDE/\1
 	repository kscd
 end match

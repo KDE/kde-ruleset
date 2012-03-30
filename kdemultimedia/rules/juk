@@ -17,7 +17,7 @@ match /trunk/(KDE/)?kdemultimedia/docs?/juk/
 	prefix doc/
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+\.[0-9]+[aA]?)/kdemultimedia/juk/
+match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/juk/
 	repository juk
 	branch refs/tags/v\1
 	annotated true
@@ -29,14 +29,14 @@ match /tags/KDE/(4\.5\.3-test)/kdemultimedia/juk/
 	annotated true
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+)/kdemultimedia/juk/
+match /tags/KDE/(\d+\.\d+)/kdemultimedia/juk/
 	repository juk
 	branch refs/tags/v\1
 	annotated true
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/([0-9]\.[0-9])/kdemultimedia/juk/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/juk/$
 	branch KDE/\1
 	repository juk
 end match

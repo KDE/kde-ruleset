@@ -25,7 +25,7 @@ match /trunk/(KDE/)?kdemultimedia/docs?/kmix/
 	prefix doc/
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+\.[0-9]+[aA]?)/kdemultimedia/kmix/
+match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/kmix/
 	repository kmix
 	branch refs/tags/v\1
 	annotated true
@@ -37,14 +37,14 @@ match /tags/KDE/(4\.5\.3-test)/kdemultimedia/kmix/
 	annotated true
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+)/kdemultimedia/kmix/
+match /tags/KDE/(\d+\.\d+)/kdemultimedia/kmix/
 	repository kmix
 	branch refs/tags/v\1
 	annotated true
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/([0-9]\.[0-9])/kdemultimedia/kmix/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/kmix/$
 	branch KDE/\1
 	repository kmix
 end match

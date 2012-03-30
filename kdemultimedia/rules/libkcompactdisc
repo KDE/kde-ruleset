@@ -11,7 +11,7 @@ match /trunk/(KDE/)?kdemultimedia/libkcompactdisc/
     min revision 608874
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+\.[0-9]+[aA]?)/kdemultimedia/libkcompactdisc/
+match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/libkcompactdisc/
 	repository libkcompactdisc
 	branch refs/tags/v\1
 	annotated true
@@ -23,14 +23,14 @@ match /tags/KDE/(4\.5\.3-test)/kdemultimedia/libkcompactdisc/
 	annotated true
 end match
 
-match /tags/KDE/([0-9]+\.[0-9]+)/kdemultimedia/libkcompactdisc/
+match /tags/KDE/(\d+\.\d+)/kdemultimedia/libkcompactdisc/
 	repository libkcompactdisc
 	branch refs/tags/v\1
 	annotated true
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/([0-9]\.[0-9])/kdemultimedia/libkcompactdisc/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/libkcompactdisc/$
 	branch KDE/\1
 	repository libkcompactdisc
 end match
