@@ -69,24 +69,6 @@ $bindir/parent-adder $RULESETDIR/kdegames/$REPO-parentmap
 echo 'delete_fb_backups...'
 delete_fb_backups
 
-# those are all cases where svn2git returns a first
-# commit for a new branch which holds only the changed
-# files so git thinks all others have been deleted.
-# the second argument is the master branch from which
-# to merge the missing files.
-fill_from 16462 KDE/1.1 v1.1.1 v1.1.2
-fill_from 67702 KDE/2.0 v2.0.1
-fill_from 83708 KDE/2.1 v2.1.1
-fill_from 109165 KDE/2.2 v2.2.1 v2.2.2
-fill_from 144225 KDE/3.0 v3.0.1 v3.0.2 v3.0.3 v3.0.4 v3.0.5 v3.0.5A
-fill_from 189718 KDE/3.1 v3.1.0 v3.1.1 v3.1.2 v3.1.3 v3.1.4 v3.1.5
-fill_from 279832 KDE/3.2 v3.2.1 v3.2.2 v3.2.3
-fill_from 335035 KDE/3.3 v3.3.0 v3.3.1 v3.3.2
-fill_from 389826 KDE/3.4
-
-echo 'delete_fb_backups...'
-delete_fb_backups
-
 echo 'fix-tags...'
 $bindir/fix-tags
 delete_fb_backups

@@ -36,6 +36,9 @@ end match
 match /branches/KDE/\d+\.\d+/(kdegames/)?$
   action recurse
 end match
+match /branches/KDE_\d+_\d+_BRANCH/(kdegames/)?$
+  action recurse
+end match
 match /branches/__KDE_1_1_1_RELEASE/kdegames/ksnake/
     repository ksnake
     branch master
