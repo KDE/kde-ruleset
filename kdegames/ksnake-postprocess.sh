@@ -58,11 +58,6 @@ git update-ref -d refs/workbranch/systray-rewrite-tng
 git tag -d backups/master@660428
 git tag -d backups/master@713548
 
-# this one must be done before parent-adder because
-# now it still has its own HEAD (not merged to master)
-fill_from 419799 workbranch/kde4
-delete_fb_backups
-
 echo 'parent-adder...'
 $bindir/parent-adder $RULESETDIR/kdegames/$REPO-parentmap
 
