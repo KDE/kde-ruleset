@@ -1,0 +1,100 @@
+# Created by Frederik Schwarzer <schwarzer@kde.org>
+#
+# Konquest has a long history. To save a few revisions, you can still
+# run it from r8957:
+#    --resume-from=8957
+#
+# This file might be complete but has to be checked by a second pair of eyes.
+
+
+create repository konquest
+end repository
+
+declare REPO=konquest
+declare MODULE=kdegames/konquest
+
+include ../common-kde-ignores
+
+
+### Master ###
+# Konquest has lived in
+# /trunk/kdegames/konquest/ (r8957 - r401169)
+# /trunk/KDE/kdegames/konquest/ (r409203 - today)
+match /trunk/(KDE/)?kdegames/konquest/
+    repository konquest
+    branch master
+end match
+
+# Documentation has lived in
+# /trunk/kdegames/konquest/docs (r8957 - 9151)
+# /trunk/kdegames/doc/konquest/ (r20794 - r327991)
+# /trunk/KDE/kdegames/doc/konquest/ (r409203 - today)
+match /trunk/kdegames/konquest/doc/
+    repository konquest
+    branch master
+    prefix doc/
+end match
+match /trunk/(KDE/)?kdegames/doc/konquest/
+    repository konquest
+    branch master
+    prefix doc/
+end match
+
+
+# Recurse into branch and tag changes that may have affected us
+match /(branches|tags)/[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+
+### Branches ###
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/konquest/
+    repository konquest
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/konquest/
+    repository konquest
+    branch KDE/\1.\2
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/konquest/doc/
+    repository konquest
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/konquest/
+    repository konquest
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/konquest/
+    repository konquest
+    branch KDE/\1.\2
+    prefix doc/
+end match
+
+
+### Tags ###
+match /tags/KDE/(\d+)\.(\d+)/kdegames/konquest/
+    repository konquest
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/konquest/
+    repository konquest
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+
+# Some tag stuff
+include ../common-kde-tags-rules
+
+declare MODULE_RECURSE=(kdegames/)?
+include ../feature-branches
+
+match /
+end match
