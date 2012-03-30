@@ -11,6 +11,7 @@ match /trunk/(KDE/)?kdegames/kblackbox/
 end match
 
 # BEGIN Documentation
+# TODO: /branches/KDE_1_1_BRANCH/kdegames/kblackbox/doc/ in early revisions (see r29151)
 match /trunk/(KDE/)?kdegames/doc/kblackbox/
     repository kblackbox
     branch master

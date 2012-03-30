@@ -11,6 +11,7 @@ match /trunk/(KDE/)?kdegames/kreversi/
 end match
 
 # BEGIN Documentation
+# TODO: /branches/KDE_1_1_BRANCH/kdegames/kreversi/html/ in early revisions (see r29151)
 match /trunk/(KDE/)?kdegames/doc/kreversi/
     repository kreversi
     branch master
