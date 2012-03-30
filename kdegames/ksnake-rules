@@ -33,6 +33,9 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/ksnake/
 end match
 # END
 
+match /branches/work/kde4/kdegames/$
+    action recurse
+end match
 match /branches/work/kde4/kdegames/ksnake/
     repository ksnake
     branch refs/workbranch/kde4

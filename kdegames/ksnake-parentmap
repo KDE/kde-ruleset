@@ -1,8 +1,11 @@
 # merge work/kmainwindow-decoupling to trunk
 654675 654728
 
-# branch work/kde4 from trunk
-419799 419971
+# merges from trunk to work/kde4
+419799 420102
+# 428204 429318 is autodetected
+431614 432079
+438001 438182
 
 # merge work/kde4 to trunk
 438182 439536
