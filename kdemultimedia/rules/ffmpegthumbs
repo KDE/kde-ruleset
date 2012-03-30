@@ -11,8 +11,26 @@ match /trunk/(KDE/)?kdemultimedia/ffmpegthumbs/
     min revision 1125637
 end match
 
+match /tags/KDE/([0-9]+\.[0-9]+\.[0-9]+[aA]?)/kdemultimedia/ffmpegthumbs/
+	repository ffmpegthumbs
+	branch refs/tags/v\1
+	annotated true
+end match
+
+match /tags/KDE/(4\.5\.3-test)/kdemultimedia/ffmpegthumbs/
+	repository ffmpegthumbs
+	branch refs/tags/v\1
+	annotated true
+end match
+
+match /tags/KDE/([0-9]+\.[0-9]+)/kdemultimedia/ffmpegthumbs/
+	repository ffmpegthumbs
+	branch refs/tags/v\1
+	annotated true
+end match
+
 # create branches in each sub-repository
-match /branches/KDE/(.+)/kdemultimedia/ffmpegthumbs/$
+match /branches/KDE/([0-9]\.[0-9])/kdemultimedia/ffmpegthumbs/$
 	branch KDE/\1
 	repository ffmpegthumbs
 end match

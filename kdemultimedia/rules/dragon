@@ -21,13 +21,31 @@ match /trunk/playground/multimedia/videoplayer/
 	min revision 635017
 end match
 
-match /tags/KDE/(.+)/kdemultimedia/dragonplayer/
+match /trunk/playground/multimedia/videoplayer/doc/dragonplayer/
+	repository dragonplayer
+	branch master
+	prefix doc/
+end match
+
+match /trunk/playground/multimedia/videoplayer/doc/en/
+	repository dragonplayer
+	branch master
+	prefix doc/
+end match
+
+match /trunk/(KDE/)?kdemultimedia/docs?/dragonplayer/
+	repository dragonplayer
+	branch  master
+	prefix doc/
+end match
+
+match /tags/KDE/([0-9]+\.[0-9]+\.[0-9]+)/kdemultimedia/dragonplayer/
 	repository dragonplayer
 	branch refs/tags/v\1
 	annotated true
 end match
 
-match /branches/KDE/(.+)/kdemultimedia/dragonplayer/
+match /branches/KDE/([0-9]\.[0-9])/kdemultimedia/dragonplayer/
 	repository dragonplayer
 	branch KDE/\1
 end match

@@ -19,8 +19,32 @@ match /trunk/(KDE/)?kdemultimedia/kmix2/
     max revision 52201 # dir got deleted in 52202
 end match
 
+match /trunk/(KDE/)?kdemultimedia/docs?/kmix/
+	repository kmix
+	branch master
+	prefix doc/
+end match
+
+match /tags/KDE/([0-9]+\.[0-9]+\.[0-9]+[aA]?)/kdemultimedia/kmix/
+	repository kmix
+	branch refs/tags/v\1
+	annotated true
+end match
+
+match /tags/KDE/(4\.5\.3-test)/kdemultimedia/kmix/
+	repository kmix
+	branch refs/tags/v\1
+	annotated true
+end match
+
+match /tags/KDE/([0-9]+\.[0-9]+)/kdemultimedia/kmix/
+	repository kmix
+	branch refs/tags/v\1
+	annotated true
+end match
+
 # create branches in each sub-repository
-match /branches/KDE/(.+)/kdemultimedia/kmix/$
+match /branches/KDE/([0-9]\.[0-9])/kdemultimedia/kmix/$
 	branch KDE/\1
 	repository kmix
 end match
