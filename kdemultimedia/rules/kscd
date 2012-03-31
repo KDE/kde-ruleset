@@ -11,8 +11,32 @@ match /trunk/(KDE/)?kdemultimedia/kscd/
     min revision 309
 end match
 
+match /trunk/(KDE/)?kdemultimedia/docs?/kscd/
+	repository kscd
+	branch master
+	prefix doc/
+end match
+
+match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/kscd/
+	repository kscd
+	branch refs/tags/v\1
+	annotated true
+end match
+
+match /tags/KDE/(4\.5\.3-test)/kdemultimedia/kscd/
+	repository kscd
+	branch refs/tags/v\1
+	annotated true
+end match
+
+match /tags/KDE/(\d+\.\d+)/kdemultimedia/kscd/
+	repository kscd
+	branch refs/tags/v\1
+	annotated true
+end match
+
 # create branches in each sub-repository
-match /branches/KDE/(.+)/kdemultimedia/kscd/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/kscd/$
 	branch KDE/\1
 	repository kscd
 end match

@@ -25,8 +25,26 @@ match /trunk/playground/multimedia/mplayerthumbs/
 	min revision 822905
 end match
 
+match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/mplayerthumbs/
+	repository mplayerthumbs
+	branch refs/tags/v\1
+	annotated true
+end match
+
+match /tags/KDE/(4\.5\.3-test)/kdemultimedia/mplayerthumbs/
+	repository mplayerthumbs
+	branch refs/tags/v\1
+	annotated true
+end match
+
+match /tags/KDE/(\d+\.\d+)/kdemultimedia/mplayerthumbs/
+	repository mplayerthumbs
+	branch refs/tags/v\1
+	annotated true
+end match
+
 # create branches in each sub-repository
-match /branches/KDE/(.+)/kdemultimedia/mplayerthumbs/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/mplayerthumbs/$
 	branch KDE/\1
 	repository mplayerthumbs
 end match

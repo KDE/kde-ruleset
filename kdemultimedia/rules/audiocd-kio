@@ -18,8 +18,32 @@ match /trunk/kdebase/kioslave/audiocd/
 	min revision 71925
 end match
 
+match /trunk/(KDE/)?kdemultimedia/docs?/kioslave/audiocd/
+	repository audiocd-kio
+	branch master
+	prefix doc/
+end match
+
+match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/kioslave/audiocd/
+	repository audiocd-kio
+	branch refs/tags/v\1
+	annotated true
+end match
+
+match /tags/KDE/(4\.5\.3-test)/kdemultimedia/kioslave/audiocd/
+	repository audiocd-kio
+	branch refs/tags/v\1
+	annotated true
+end match
+
+match /tags/KDE/(\d+\.\d+)/kdemultimedia/kioslave/audiocd/
+	repository audiocd-kio
+	branch refs/tags/v\1
+	annotated true
+end match
+
 # create branches in each sub-repository
-match /branches/KDE/(.+)/kdemultimedia/kioslave/audiocd/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/kioslave/audiocd/$
 	branch KDE/\1
 	repository audiocd-kio
 end match

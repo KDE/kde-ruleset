@@ -21,6 +21,11 @@ match /trunk/(KDE/)?kdegames/doc/ksnake/
     branch master
     prefix doc/
 end match
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/doc/ksnake/
+    repository ksnake
+    branch KDE/\1.\2
+    prefix doc/
+end match
 match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/ksnake/
     repository ksnake
     branch KDE/\1.\2
@@ -28,12 +33,18 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/ksnake/
 end match
 # END
 
+match /branches/work/kde4/kdegames/$
+    action recurse
+end match
 match /branches/work/kde4/kdegames/ksnake/
     repository ksnake
     branch refs/workbranch/kde4
 end match
 
 match /branches/KDE/\d+\.\d+/(kdegames/)?$
+  action recurse
+end match
+match /branches/KDE_\d+_\d+_BRANCH/(kdegames/)?$
   action recurse
 end match
 match /branches/__KDE_1_1_1_RELEASE/kdegames/ksnake/

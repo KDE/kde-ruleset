@@ -1,0 +1,21 @@
+# merges from trunk to work/kde4
+419799 420102
+# 428204 429318 is autodetected
+431614 432079
+438001 438182
+
+# merge work/kde4 to trunk
+438182 439536
+
+# merge kaction-cleanup1 to trunk
+610217 610651
+
+# kaction-cleanup2 had no changes in ksnake
+
+# merge trunk to kaction-cleanup3
+618606 620435
+# merge kaction-cleanup3 to trunk
+620435 621518
+
+# merge kmainwindow-decoupling to trunk
+654675 654728
