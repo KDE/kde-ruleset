@@ -1,0 +1,112 @@
+# Created by Frederik Schwarzer <schwarzer@kde.org>
+#
+# KSnakeDuel's history starts at r23231:
+#    --resume-from=23231
+#
+# This file might be complete but has to be checked by a second pair of eyes.
+
+
+create repository ksnakeduel
+end repository
+
+declare REPO=ksnakeduel
+declare MODULE=kdegames/ksnakeduel
+
+include ../common-kde-ignores
+
+
+### Master ###
+# KSnakeDuel has lived in
+# /trunk/kdegames/ktron/ (r23231 - r401169)
+# /trunk/KDE/kdegames/ktron/ (r409203 - r654728)
+# /trunk/playground/games/ktron/ (r660429 - r924689)
+# /trunk/kdereview/ktron/ (r924947 - r931525)
+# /trunk/KDE/kdegames/ktron/ (r932002 - today)
+match /trunk/(KDE/)?kdegames/ktron/
+    repository ksnakeduel
+    branch master
+end match
+match /trunk/playground/games/ktron/
+    repository ksnakeduel
+    branch master
+end match
+match /trunk/kdereview/ktron/
+    repository ksnakeduel
+    branch master
+end match
+
+# Documentation has lived in
+# /trunk/kdegames/doc/ktron/ (r23231 - r285300)
+# /trunk/KDE/kdegames/doc/ktron/ (r409203 - r626190)
+# /trunk/playground/games/doc/ktron/ (r660429 - r924715)
+# /trunk/kdereview/doc/ktron/ (r924952 - r928109)
+# /trunk/KDE/kdegames/doc/ktron/ (r932003 - today)
+match /trunk/(KDE/)?kdegames/doc/ktron/
+    repository ksnakeduel
+    branch master
+    prefix doc/
+end match
+match /trunk/playground/games/doc/ktron/
+    repository ksnakeduel
+    branch master
+    prefix doc/
+end match
+match /trunk/kdereview/doc/ktron/
+    repository ksnakeduel
+    branch master
+    prefix doc/
+end match
+
+
+# Recurse into branch and tag changes that may have affected us
+match /(branches|tags)/[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/(kdegames/)?$
+  action recurse
+end match
+
+
+### Branches ###
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/ktron/
+    repository ksnakeduel
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/ktron/
+    repository ksnakeduel
+    branch KDE/\1.\2
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/ktron/
+    repository ksnakeduel
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/ktron/
+    repository ksnakeduel
+    branch KDE/\1.\2
+    prefix doc/
+end match
+
+
+### Tags ###
+match /tags/KDE/(\d+)\.(\d+)/kdegames/ktron/
+    repository ksnakeduel
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/ktron/
+    repository ksnakeduel
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+
+# Some tag stuff
+include ../common-kde-tags-rules
+
+declare MODULE_RECURSE=(kdegames/)?
+include ../feature-branches
+
+match /
+end match
