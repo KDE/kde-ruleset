@@ -36,7 +36,7 @@ match /tags/KDE/(\d+\.\d+)/kdemultimedia/juk/
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/juk/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/juk/
 	branch KDE/\1
 	repository juk
 end match

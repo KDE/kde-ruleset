@@ -30,7 +30,7 @@ match /tags/KDE/(\d+\.\d+)/kdemultimedia/libkcompactdisc/
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/libkcompactdisc/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/libkcompactdisc/
 	branch KDE/\1
 	repository libkcompactdisc
 end match

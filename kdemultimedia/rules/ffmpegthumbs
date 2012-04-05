@@ -30,7 +30,7 @@ match /tags/KDE/(\d+\.\d+)/kdemultimedia/ffmpegthumbs/
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/ffmpegthumbs/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/ffmpegthumbs/
 	branch KDE/\1
 	repository ffmpegthumbs
 end match

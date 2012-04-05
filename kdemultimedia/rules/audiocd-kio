@@ -43,7 +43,7 @@ match /tags/KDE/(\d+\.\d+)/kdemultimedia/kioslave/audiocd/
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/kioslave/audiocd/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/kioslave/audiocd/
 	branch KDE/\1
 	repository audiocd-kio
 end match

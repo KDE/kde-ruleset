@@ -24,6 +24,12 @@ match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/kfile-plugins/
 	annotated true
 end match
 
+match /tags/KDE/([0-9]+\.[0-9]+\.[0-9]+[aA]?)/kdemultimedia/strigi-analyzer/
+	repository strigi-analyzers
+	branch refs/tags/v\1
+	annotated true
+end match
+
 match /tags/KDE/(4\.5\.3-test)/kdemultimedia/strigi-analyzer/
 	repository strigi-analyzers
 	branch refs/tags/v\1
@@ -43,12 +49,12 @@ match /tags/KDE/(\d+\.\d+)/kdemultimedia/kfile-plugins/
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/strigi-analyzer/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/strigi-analyzer/
 	branch KDE/\1
 	repository strigi-analyzers
 end match
 
-match /branches/KDE/(\d\.\d)/kdemultimedia/kfile-plugins/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/kfile-plugins/
 	branch KDE/\1
 	repository strigi-analyzers
 end match

@@ -44,7 +44,7 @@ match /tags/KDE/(\d+\.\d+)/kdemultimedia/mplayerthumbs/
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/mplayerthumbs/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/mplayerthumbs/
 	branch KDE/\1
 	repository mplayerthumbs
 end match

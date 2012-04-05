@@ -36,7 +36,7 @@ match /tags/KDE/(\d+\.\d+)/kdemultimedia/kscd/
 end match
 
 # create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/kscd/$
+match /branches/KDE/(\d\.\d)/kdemultimedia/kscd/
 	branch KDE/\1
 	repository kscd
 end match
