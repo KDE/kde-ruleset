@@ -50,7 +50,9 @@ match /trunk/KDE/kdegames/doc/bovo/
     prefix doc/
 end match
 
-# Recurse into branch and tag changes that may have affected us
+# Recurse into branch and tag changes that may have affected us.
+# Note that bovo doesn't have any branch or tag before the /KDE/ move,
+# so this and other rules don't need to make "KDE/" optional.
 match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
   action recurse
 end match
