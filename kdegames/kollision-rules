@@ -17,6 +17,17 @@ declare MODULE=kdegames/kollision
 # Ignore some things that are known to cause trouble
 include ../common-kde-ignores
 
+# 770542 copied the docs from koll/doc to doc/koll,
+# then 770543 deleted the docs from koll/doc.
+# Our rules export both paths to the same place,
+# so we end up with 770543 deleting the docs.
+# Let's ignore the deletion commit.
+match /trunk/playground/games/kollision/doc/
+    min revision 770543
+    max revision 770543
+    action ignore
+end match
+
 # Get sources and docs from playground
 match /trunk/playground/games/kollision/
     repository kollision
