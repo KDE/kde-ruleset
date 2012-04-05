@@ -13,6 +13,7 @@ end repository
 # Set the REPO and MODULE variables, used by some included rules
 declare REPO=bovo
 declare MODULE=kdegames/bovo
+declare MODULE_RECURSE=(kdegames/)?
 
 # Ignore some things that are known to cause trouble
 include ../common-kde-ignores
@@ -82,6 +83,9 @@ end match
 
 # Some tag stuff
 include ../common-kde-tags-rules
+
+# Global branches
+include ../feature-branches
 
 # Ignore everything else
 match /
