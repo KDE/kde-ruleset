@@ -1,4 +1,5 @@
 # Created by Parker Coates <parker.coates@kdemail.net>
+# Updated by Nicolás Alvarez <nicolas.alvarez@gmail.com>
 #
 # Kollision is a new-ish application, so run svn2git with the following option:
 #    --resume-from=653928
@@ -59,6 +60,13 @@ match /trunk/KDE/kdegames/doc/kollision/
     repository kollision
     branch master
     prefix doc/
+end match
+
+# Export the kollision-qgv work branch.
+# The merge back to trunk is handled automatically by svn2git.
+match /branches/work/kollision-qgv/
+    repository kollision
+    branch killision-qgv
 end match
 
 # Recurse into branch and tag changes that may have affected us
