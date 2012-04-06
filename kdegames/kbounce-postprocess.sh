@@ -33,20 +33,6 @@ $bindir/parent-adder $RULESETDIR/kdegames/kbounce-parentmap
 echo 'delete_fb_backups...'
 delete_fb_backups
 
-# those are all cases where svn2git returns a first
-# commit for a new branch which holds only the changed
-# files so git thinks all others have been deleted.
-# the second argument is the master branch from which
-# to merge the missing files.
-fill_from 144934 KDE/3.0 v3.0.1 v3.0.2 v3.0.3 v3.0.4 v3.0.5 v3.0.5A
-fill_from 189718 KDE/3.1 v3.1.0 v3.1.1 v3.1.2 v3.1.3 v3.1.4 v3.1.5
-fill_from 279832 KDE/3.2 v3.2.1 v3.2.2 v3.2.3
-fill_from 335035 KDE/3.3 v3.3.0 v3.3.1 v3.3.2
-fill_from 391781 KDE/3.4
-
-echo 'delete_fb_backups...'
-delete_fb_backups
-
 echo 'fix-tags...'
 $bindir/fix-tags
 delete_fb_backups
@@ -58,4 +44,4 @@ delete_fb_backups
 #add_revision_tags
 
 git reflog expire --expire=now --all
-git gc
+#git gc

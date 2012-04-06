@@ -10,6 +10,15 @@ match /trunk/(KDE/)?kdegames/kbounce/
     branch master
 end match
 
+# BEGIN branch recurse
+match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdegames/)?$
+  action recurse
+end match
+match /branches/KDE/\d+\.\d+/(kdegames/)?$
+  action recurse
+end match
+# END
+
 # BEGIN Documentation
 match /trunk/(KDE/)?kdegames/doc/kbounce/
     repository kbounce
@@ -24,14 +33,7 @@ end match
 # END
 
 # BEGIN Branches
-match /branches/KDE/\d+\.\d+/(kdegames/)?$
-  action recurse
-end match
-match /branches/__KDE_1_1_1_RELEASE/kdegames/kbounce/
-    repository kbounce
-    branch master
-end match
-match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/kbounce/
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/kbounce/
     repository kbounce
     branch KDE/\1.\2
 end match
