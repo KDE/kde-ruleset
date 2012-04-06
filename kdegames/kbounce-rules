@@ -43,10 +43,10 @@ match /trunk/(KDE/)?kdegames/kbounce/
 end match
 
 # BEGIN branch recurse
-match /branches/KDE_(\d+)_(\d+)_BRANCH/(kdegames/)?$
+match /(branches|tags)/KDE_\d+[^/]+/(kdegames/)?$
   action recurse
 end match
-match /branches/KDE/\d+\.\d+/(kdegames/)?$
+match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
   action recurse
 end match
 # END
@@ -107,22 +107,7 @@ end match
 include ../feature-branches
 #END
 
-match /tags/(KDE/)?[^/]+/(kdegames/)?$
-    action recurse
-end match
 # Get tags
-match /tags/KDE/(\d+)\.(\d+)/kdegames/kbounce/
-    repository kbounce
-    branch refs/tags/v\1.\2.0
-    annotated true
-end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kbounce/
-    repository kbounce
-    branch refs/tags/v\1.\2.\3
-    annotated true
-end match
-
-
 include ../common-kde-tags-rules
 
 match /
