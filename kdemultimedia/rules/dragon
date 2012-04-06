@@ -1,51 +1,37 @@
-create repository dragonplayer
+#
+# Created by Trever Fischer <tdfischer@fedoraproject.org>
+#
+
+declare REPO=dragonplayer
+declare MODULE=dragonplayer
+
+create repository ${REPO}
 end repository
 
-match /trunk/KDE/kdemultimedia/dragonplayer/
-	repository dragonplayer
-	branch master
-	min revision 764028
-end match
+include kdemm-common
 
 match /trunk/kdereview/dragonplayer/
-	repository dragonplayer
+	repository ${REPO}
 	branch master
 	max revision 764028
 	min revision 758334
 end match
 
 match /trunk/playground/multimedia/videoplayer/
-	repository dragonplayer
+	repository ${REPO}
 	branch master
 	max revision 758333
 	min revision 635017
 end match
 
 match /trunk/playground/multimedia/videoplayer/doc/dragonplayer/
-	repository dragonplayer
+	repository ${REPO}
 	branch master
 	prefix doc/
 end match
 
 match /trunk/playground/multimedia/videoplayer/doc/en/
-	repository dragonplayer
+	repository ${REPO}
 	branch master
 	prefix doc/
-end match
-
-match /trunk/(KDE/)?kdemultimedia/docs?/dragonplayer/
-	repository dragonplayer
-	branch  master
-	prefix doc/
-end match
-
-match /tags/KDE/(\d+\.\d+\.\d+)/kdemultimedia/dragonplayer/
-	repository dragonplayer
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /branches/KDE/(\d\.\d)/kdemultimedia/dragonplayer/
-	repository dragonplayer
-	branch KDE/\1
 end match

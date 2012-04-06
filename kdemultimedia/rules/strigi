@@ -2,59 +2,14 @@
 # Created by Trever Fischer <tdfischer@fedoraproject.org>
 #
 
+declare REPO=strigi-analyzers
+declare MODULE=strigi-analyzer
+
 create repository strigi-analyzers
 end repository
 
-match /trunk/(KDE/)?kdemultimedia/strigi-analyzer/
-    repository strigi-analyzers
-    branch master
-    min revision 677897
-end match
+include kdemm-common
 
-match /trunk/KDE/kdemultimedia/kfile-plugins/
-	repository strigi-analyzers
-	branch master
-	max revision 677877
-	min revision 123278
-end match
+declare MODULE=kfile-plugins
+include kdemm-common
 
-match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/kfile-plugins/
-	repository strigi-analyzers
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/([0-9]+\.[0-9]+\.[0-9]+[aA]?)/kdemultimedia/strigi-analyzer/
-	repository strigi-analyzers
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(4\.5\.3-test)/kdemultimedia/strigi-analyzer/
-	repository strigi-analyzers
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(\d+\.\d+)/kdemultimedia/strigi-analyzer/
-	repository strigi-analyzers
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(\d+\.\d+)/kdemultimedia/kfile-plugins/
-	repository strigi-analyzers
-	branch refs/tags/v\1
-	annotated true
-end match
-
-# create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/strigi-analyzer/
-	branch KDE/\1
-	repository strigi-analyzers
-end match
-
-match /branches/KDE/(\d\.\d)/kdemultimedia/kfile-plugins/
-	branch KDE/\1
-	repository strigi-analyzers
-end match

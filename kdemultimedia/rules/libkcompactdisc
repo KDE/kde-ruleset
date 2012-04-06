@@ -2,35 +2,10 @@
 # Created by Trever Fischer <tdfischer@fedoraproject.org>
 #
 
+declare REPO=libkcompactdisc
+declare MODULE=libkcompactdisc
+
 create repository libkcompactdisc
 end repository
 
-match /trunk/(KDE/)?kdemultimedia/libkcompactdisc/
-    repository libkcompactdisc
-    branch master
-    min revision 608874
-end match
-
-match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/libkcompactdisc/
-	repository libkcompactdisc
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(4\.5\.3-test)/kdemultimedia/libkcompactdisc/
-	repository libkcompactdisc
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(\d+\.\d+)/kdemultimedia/libkcompactdisc/
-	repository libkcompactdisc
-	branch refs/tags/v\1
-	annotated true
-end match
-
-# create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/libkcompactdisc/
-	branch KDE/\1
-	repository libkcompactdisc
-end match
+include kdemm-common

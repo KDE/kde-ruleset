@@ -2,35 +2,10 @@
 # Created by Trever Fischer <tdfischer@fedoraproject.org>
 #
 
-create repository ffmpegthumbs
+declare REPO=ffmpegthumbs
+declare MODULE=ffmpegthumbs
+
+create repository ${REPO}
 end repository
 
-match /trunk/(KDE/)?kdemultimedia/ffmpegthumbs/
-    repository ffmpegthumbs
-    branch master
-    min revision 1125637
-end match
-
-match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/ffmpegthumbs/
-	repository ffmpegthumbs
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(4\.5\.3-test)/kdemultimedia/ffmpegthumbs/
-	repository ffmpegthumbs
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(\d+\.\d+)/kdemultimedia/ffmpegthumbs/
-	repository ffmpegthumbs
-	branch refs/tags/v\1
-	annotated true
-end match
-
-# create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/ffmpegthumbs/
-	branch KDE/\1
-	repository ffmpegthumbs
-end match
+include kdemm-common

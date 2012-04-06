@@ -2,48 +2,76 @@
 # Created by Trever Fischer <tdfischer@fedoraproject.org>
 #
 
-create repository audiocd-kio
+declare REPO=audiocd-kio
+declare MODULE=kioslave/audiocd
+
+create repository ${REPO}
 end repository
 
-match /trunk/(KDE/)?kdemultimedia/kioslave/audiocd/
-    repository audiocd-kio
-    branch master
-    min revision 157422
+include kdemm-common
+
+#copied from kdemm-common
+
+match /tags/KDE/4.4.1/kdebase/(${MODULE})/
+    max revision 1096480
+end match
+match /tags/KDE/3.5.5/kdebase/(${MODULE})/
+    max revision 591451
+end match
+match /tags/KDE/3.5.2/kdebase/(${MODULE})/
+    max revision 519806
+end match
+match /tags/KDE/3.4.3/kdebase/(${MODULE})/
+    max revision 467548
+end match
+
+match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/kdebase/(${MODULE})/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.\3
+    annotated true
+    max revision 409202
+end match
+match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdebase/(${MODULE})/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.\3-beta\4
+    annotated true
+    min revision 376088
+    max revision 409202
+end match
+match /tags/(?:__)?KDE_(\d+)_(\d+)_RELEASE/kdebase/(${MODULE})/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.0
+    annotated true
+    max revision 409202
+end match
+match /tags/KDE/3.5.0-alpha1/kdebase/(${MODULE})/
+    repository ${REPO}
+    branch refs/tags/v3.4.90
+    annotated true
+    min revision 443441
+    max revision 445561
+end match
+match /tags/KDE/3.5.0-beta1/kdebase/(${MODULE})/
+    repository ${REPO}
+    branch refs/tags/v3.4.91
+    annotated true
+    min revision 459298
+    max revision 460260
+end match
+match /tags/KDE/(\d+)\.(\d+)/kdebase/(${MODULE})/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdebase/(${MODULE})/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.\3
+    annotated true
 end match
 
 match /trunk/kdebase/kioslave/audiocd/
-	repository audiocd-kio
+	repository ${REPO}
 	branch master
 	max revision 157421
 	min revision 71925
-end match
-
-match /trunk/(KDE/)?kdemultimedia/docs?/kioslave/audiocd/
-	repository audiocd-kio
-	branch master
-	prefix doc/
-end match
-
-match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/kioslave/audiocd/
-	repository audiocd-kio
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(4\.5\.3-test)/kdemultimedia/kioslave/audiocd/
-	repository audiocd-kio
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(\d+\.\d+)/kdemultimedia/kioslave/audiocd/
-	repository audiocd-kio
-	branch refs/tags/v\1
-	annotated true
-end match
-
-# create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/kioslave/audiocd/
-	branch KDE/\1
-	repository audiocd-kio
 end match

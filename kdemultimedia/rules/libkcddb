@@ -2,41 +2,14 @@
 # Created by Trever Fischer <tdfischer@fedoraproject.org>
 #
 
-create repository libkcddb
+declare REPO=libkcddb
+declare MODULE=libkcddb
+
+create repository ${REPO}
 end repository
 
-match /trunk/(KDE/)?kdemultimedia/libkcddb/
-    repository libkcddb
-    branch master
-    min revision 137020
-end match
-
 match /trunk/(KDE/)?kdemultimedia/docs?/kcontrol/cddbretrieval/
-	repository libkcddb
+	repository ${REPO}
 	branch master
 	prefix kcmcddb/doc/
-end match
-
-match /tags/KDE/(\d+\.\d+\.\d+[aA]?)/kdemultimedia/libkcddb/
-	repository libkcddb
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(4\.5\.3-test)/kdemultimedia/libkcddb/
-	repository libkcddb
-	branch refs/tags/v\1
-	annotated true
-end match
-
-match /tags/KDE/(\d+\.\d+)/kdemultimedia/libkcddb/
-	repository libkcddb
-	branch refs/tags/v\1
-	annotated true
-end match
-
-# create branches in each sub-repository
-match /branches/KDE/(\d\.\d)/kdemultimedia/libkcddb/
-	branch KDE/\1
-	repository libkcddb
 end match
