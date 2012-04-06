@@ -5,6 +5,38 @@ include ../common-kde-ignores
 
 declare REPO=kbounce
 
+# 138380 renamed game from kjezz to kjezzball
+# 141794 renamed game from kjezzball to kbounce
+# 141795 renamed docs from kjezz to kbounce
+
+# kbounce used to be called kjezz, and then kjezzball
+# match /trunk/kdegames/kjezz/$
+#     min revision 138380
+#     max revision 138380
+#     action recurse
+# end match
+
+match /trunk/kdegames/kjezz/
+    repository kbounce
+    branch master
+end match
+match /trunk/kdegames/kjezzball/
+    repository kbounce
+    branch master
+end match
+# docs were always under kjezz, though
+match /trunk/kdegames/doc/kjezz/
+    repository kbounce
+    branch master
+    prefix doc/
+end match
+
+# NOTE: kjezz was moved from kdegames to kdenonbeta in r58010,
+# and moved back to kdegames in r70209. All the kjezz history
+# in nonbeta (ie. between 58010 and 70209) is missing from SVN.
+# We'd have to go to the CVS(!) repository if we want to get it.
+
+# main trunk history
 match /trunk/(KDE/)?kdegames/kbounce/
     repository kbounce
     branch master
@@ -89,8 +121,8 @@ match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kbounce/
     branch refs/tags/v\1.\2.\3
     annotated true
 end match
-			
-			    
+
+
 include ../common-kde-tags-rules
 
 match /
