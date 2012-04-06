@@ -73,6 +73,13 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/kbounce/
     repository kbounce
     branch KDE/\1.\2
 end match
+match /branches/work/kde4/kdegames/$
+    action recurse
+end match
+match /branches/work/kde4/kdegames/kbounce/
+    repository kbounce
+    branch kde4
+end match
 # END
 
 # BEGIN work branches
