@@ -1,0 +1,11 @@
+# merge from trunk to kaction-cleanup3
+617367 618565
+
+# merge kaction-cleanup3 into trunk
+619071 621518
+
+# merge kinstance-redesign into trunk
+627974 628310
+
+# merge kmainwindow-decoupling to trunk
+654675 654728
