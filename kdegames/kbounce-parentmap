@@ -9,3 +9,7 @@
 
 # merge kaction-cleanup3 into trunk
 618655 621518
+
+# fix tag v3.5.0
+clear 481496
+480408 481496
