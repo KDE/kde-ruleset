@@ -27,10 +27,6 @@ end match
 match /branches/KDE/\d+\.\d+/(kdegames/)?$
   action recurse
 end match
-match /branches/__KDE_1_1_1_RELEASE/kdegames/katomic/
-    repository katomic
-    branch master
-end match
 match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/katomic/
     repository katomic
     branch KDE/\1.\2

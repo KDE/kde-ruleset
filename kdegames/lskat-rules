@@ -27,10 +27,6 @@ end match
 match /branches/KDE/\d+\.\d+/(kdegames/)?$
   action recurse
 end match
-match /branches/__KDE_1_1_1_RELEASE/kdegames/lskat/
-    repository lskat
-    branch master
-end match
 match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/lskat/
     repository lskat
     branch KDE/\1.\2
