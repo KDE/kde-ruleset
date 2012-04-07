@@ -3,3 +3,10 @@
 
 # merge work/kinstance-redesign to trunk
 627974 628310
+
+# merges from trunk to kde4
+# 428224 429318 autodetected
+431614 432079
+
+# merge kde4 into trunk
+432484 439536

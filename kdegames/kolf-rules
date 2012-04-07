@@ -41,6 +41,13 @@ match /branches/KDE/(\d+)\.(\d+)/kdegames/kolf/
     repository kolf
     branch KDE/\1.\2
 end match
+match /branches/work/kde4/kdegames/$
+    action recurse
+end match
+match /branches/work/kde4/kdegames/kolf/
+    repository kolf
+    branch kde4
+end match
 # END
 
 # BEGIN work branches
