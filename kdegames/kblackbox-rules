@@ -84,8 +84,7 @@ match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kblackbox/
     branch refs/tags/v\1.\2.\3
     annotated true
 end match
-			
-			    
+
 include ../common-kde-tags-rules
 
 match /

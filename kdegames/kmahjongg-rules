@@ -52,7 +52,7 @@ end match
 
 # ignore the following feature-branches without changes for kmahjongg
 match /branches/work/kaction-cleanup2/
-   # for kmahjongg, this branch contains only merges from trunk but 
+   # for kmahjongg, this branch contains only merges from trunk but
    # no changes. It is identical with r616838 in trunk
 end match
 match /branches/work/kde4_jobflags/
@@ -88,8 +88,7 @@ match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kmahjongg/
     branch refs/tags/v\1.\2.\3
     annotated true
 end match
-			
-			    
+
 include ../common-kde-tags-rules
 
 match /
