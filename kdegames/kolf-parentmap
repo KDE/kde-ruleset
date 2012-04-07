@@ -4,6 +4,22 @@
 # merge work/kinstance-redesign to trunk
 627974 628310
 
+# merge trunk into kaction-cleanup3
+618252 618565
+620133 620435
+
+# merge kaction-cleanup3 into trunk
+620435 621518
+
+# merge kconfig_new into trunk
+728440 728852
+
+# merge kconfiggroup_port to trunk
+635319 635473
+
+# merge kde4_kconfig to trunk
+720908 721729
+
 # merges from trunk to kde4
 # 428224 429318 autodetected
 431614 432079

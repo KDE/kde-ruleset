@@ -54,31 +54,6 @@ end match
 declare MODULE_RECURSE=(kdegames/)?
 declare MODULE=kdegames/kolf
 
-# ignore the following feature-branches without changes for kolf
-match /branches/work/qdbus-api-changes/
-end match
-match /branches/work/kparts_urlargs_split/
-end match
-match /branches/work/kconfig_new/
-end match
-match /branches/work/kconfiggroup_port/
-end match
-match /branches/work/kde4_jobflags/
-end match
-match /branches/work/kde4_kconfig/
-end match
-match /branches/work/kaction-cleanup1/
-end match
-match /branches/work/kaction-cleanup2/
-end match
-match /branches/work/kaction-cleanup3/
-end match
-match /branches/work/systray-rewrite/
-end match
-match /branches/work/systray-rewrite-tng/
-end match
-
-# use all other feature branches
 include ../feature-branches
 #END
 
