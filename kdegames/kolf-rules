@@ -10,6 +10,15 @@ match /trunk/(KDE/)?kdegames/kolf/
     branch master
 end match
 
+# BEGIN branch recurse
+match /(branches|tags)/KDE_\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+# END
+
 # BEGIN Documentation
 match /trunk/(KDE/)?kdegames/doc/kolf/
     repository kolf
@@ -24,9 +33,6 @@ end match
 # END
 
 # BEGIN Branches
-match /branches/KDE/\d+\.\d+/(kdegames/)?$
-  action recurse
-end match
 match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/kolf/
     repository kolf
     branch KDE/\1.\2
