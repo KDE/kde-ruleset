@@ -9,7 +9,7 @@ end match
 match /trunk/(KDE/)?kdemultimedia/${MODULE}/
     repository ${REPO}
     branch master
-    min revision 309
+    max revision 1287573
 end match
 
 match /tags/KDE/4.4.1/kdemultimedia/(${MODULE})/
