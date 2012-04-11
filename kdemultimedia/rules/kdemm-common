@@ -25,6 +25,14 @@ match /tags/KDE/3.4.3/kdemultimedia/(${MODULE})/
     max revision 467548
 end match
 
+match /(branches|tags)/[^/]+/${MODULE_RECURSE|}$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE|}$
+  action recurse
+end match
+
+
 match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/kdemultimedia/(${MODULE})/
     repository ${REPO}
     branch refs/tags/v\1.\2.\3
@@ -193,3 +201,32 @@ match /branches/work/kmainwindow-decoupling-branch/${MODULE}/
     branch refs/workbranch/kmainwindow-decoupling
     max revision 655376 # branch deleted in r655377
 end match
+
+
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdemultimedia/${MODULE}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix ${PREFIX|/}
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdemultimedia/${MODULE}/
+    repository ${REPO}
+    prefix ${PREFIX|/}
+    branch KDE/\1.\2
+end match
+match /branches/work/~([^/]+)/kdemultimedia/([^/]*${MODULE}[^/]*)/
+    repository ${REPO}
+    prefix ${PREFIX|/}
+    branch work/personal/\1
+end match
+match /branches/work/~([^/]+)/([^/]+)/kdemultimedia/([^/]*${MODULE}[^/]*)/
+    repository ${REPO}
+    prefix ${PREFIX|/}
+    branch work/personal/\1/\2
+end match
+match /branches/kdepim/([^~][^/]+)/kdemultimedia/${MODULE}/
+    repository ${REPO}
+    prefix ${PREFIX|/}
+    branch \1
+end match
+
