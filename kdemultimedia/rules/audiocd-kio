@@ -75,3 +75,40 @@ match /trunk/kdebase/kioslave/audiocd/
 	max revision 157421
 	min revision 71925
 end match
+
+declare MODULE_RECURSE=(kdebase/)?
+
+match /(branches|tags)/[^/]+/${MODULE_RECURSE|}$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE|}$
+  action recurse
+end match
+
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdebase/${MODULE}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix ${PREFIX|/}
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdebase/${MODULE}/
+    repository ${REPO}
+    prefix ${PREFIX|/}
+    branch KDE/\1.\2
+end match
+match /branches/work/~([^/]+)/kdebase/([^/]*${MODULE}[^/]*)/
+    repository ${REPO}
+    prefix ${PREFIX|/}
+    branch work/personal/\1
+end match
+match /branches/work/~([^/]+)/([^/]+)/kdebase/([^/]*${MODULE}[^/]*)/
+    repository ${REPO}
+    prefix ${PREFIX|/}
+    branch work/personal/\1/\2
+end match
+match /branches/kdepim/([^~][^/]+)/kdebase/${MODULE}/
+    repository ${REPO}
+    prefix ${PREFIX|/}
+    branch \1
+end match
+
