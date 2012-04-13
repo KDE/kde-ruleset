@@ -8,6 +8,8 @@ declare MODULE=libkcddb
 create repository ${REPO}
 end repository
 
+include kdemm-common
+
 match /trunk/(KDE/)?kdemultimedia/docs?/kcontrol/cddbretrieval/
 	repository ${REPO}
 	branch master
