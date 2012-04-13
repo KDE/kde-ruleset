@@ -9,7 +9,7 @@ end match
 match /trunk/(KDE/)?kdemultimedia/${MODULE}/
     repository ${REPO}
     branch master
-    max revision 1287573
+    max revision 1288300 # Removed from SVN
 end match
 
 match /tags/KDE/4.4.1/kdemultimedia/(${MODULE})/
@@ -37,7 +37,7 @@ match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/kdemultimedia/(${MODUL
     repository ${REPO}
     branch refs/tags/v\1.\2.\3
     annotated true
-    max revision 409202
+    max revision 409201
 end match
 match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdemultimedia/(${MODULE})/
     repository ${REPO}
