@@ -21,5 +21,5 @@ match /trunk/playground/multimedia/mplayerthumbs/
 	repository ${REPO}
 	branch master
 	max revision 924884
-	min revision 822905
+	min revision 822509
 end match
