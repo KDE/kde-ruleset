@@ -13,3 +13,5 @@ include kdemm-common
 declare MODULE=kfile-plugins
 include kdemm-common
 
+match /
+end match

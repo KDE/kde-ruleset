@@ -15,3 +15,5 @@ match /trunk/(KDE/)?kdemultimedia/docs?/kcontrol/cddbretrieval/
 	branch master
 	prefix kcmcddb/doc/
 end match
+match /
+end match

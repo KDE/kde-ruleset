@@ -35,3 +35,5 @@ match /trunk/playground/multimedia/videoplayer/doc/en/
 	branch master
 	prefix doc/
 end match
+match /
+end match

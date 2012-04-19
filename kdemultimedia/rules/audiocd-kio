@@ -112,3 +112,5 @@ match /branches/kdepim/([^~][^/]+)/kdebase/${MODULE}/
     branch \1
 end match
 
+match /
+end match

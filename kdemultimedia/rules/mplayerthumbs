@@ -23,3 +23,5 @@ match /trunk/playground/multimedia/mplayerthumbs/
 	max revision 924884
 	min revision 822509
 end match
+match /
+end match

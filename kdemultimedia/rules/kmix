@@ -17,3 +17,5 @@ match /trunk/(KDE/)?kdemultimedia/kmix2/
     branch kmix2
     max revision 52201 # dir got deleted in 52202
 end match
+match /
+end match
