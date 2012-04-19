@@ -1,6 +1,6 @@
 declare MODULE_RECURSE=(kdemultimedia/)?
 
-match /trunk/(KDE/)?kdemultimedia/docs?/${MODULE}/
+match /trunk/(KDE/)?kdemultimedia/doc/${MODULE}/
 	repository ${REPO}
 	branch master
 	prefix doc/
