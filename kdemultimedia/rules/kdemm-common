@@ -1,27 +1,27 @@
 declare MODULE_RECURSE=(kdemultimedia/)?
 
-match /trunk/(KDE/)?kdemultimedia/doc/${MODULE}/
+match /trunk/(KDE/)?kdemultimedia/doc/${APP}/
 	repository ${REPO}
 	branch master
 	prefix doc/
 end match
 
-match /trunk/(KDE/)?kdemultimedia/${MODULE}/
+match /trunk/(KDE/)?kdemultimedia/${APP}/
     repository ${REPO}
     branch master
     max revision 1288300 # Removed from SVN
 end match
 
-match /tags/KDE/4.4.1/kdemultimedia/(${MODULE})/
+match /tags/KDE/4.4.1/kdemultimedia/(${APP})/
     max revision 1096480
 end match
-match /tags/KDE/3.5.5/kdemultimedia/(${MODULE})/
+match /tags/KDE/3.5.5/kdemultimedia/(${APP})/
     max revision 591451
 end match
-match /tags/KDE/3.5.2/kdemultimedia/(${MODULE})/
+match /tags/KDE/3.5.2/kdemultimedia/(${APP})/
     max revision 519806
 end match
-match /tags/KDE/3.4.3/kdemultimedia/(${MODULE})/
+match /tags/KDE/3.4.3/kdemultimedia/(${APP})/
     max revision 467548
 end match
 
@@ -33,45 +33,45 @@ match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE|}$
 end match
 
 
-match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/kdemultimedia/(${MODULE})/
+match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/kdemultimedia/(${APP})/
     repository ${REPO}
     branch refs/tags/v\1.\2.\3
     annotated true
     max revision 409201
 end match
-match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdemultimedia/(${MODULE})/
+match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdemultimedia/(${APP})/
     repository ${REPO}
     branch refs/tags/v\1.\2.\3-beta\4
     annotated true
     min revision 376088
     max revision 409202
 end match
-match /tags/(?:__)?KDE_(\d+)_(\d+)_RELEASE/kdemultimedia/(${MODULE})/
+match /tags/(?:__)?KDE_(\d+)_(\d+)_RELEASE/kdemultimedia/(${APP})/
     repository ${REPO}
     branch refs/tags/v\1.\2.0
     annotated true
     max revision 409202
 end match
-match /tags/KDE/3.5.0-alpha1/kdemultimedia/(${MODULE})/
+match /tags/KDE/3.5.0-alpha1/kdemultimedia/(${APP})/
     repository ${REPO}
     branch refs/tags/v3.4.90
     annotated true
     min revision 443441
     max revision 445561
 end match
-match /tags/KDE/3.5.0-beta1/kdemultimedia/(${MODULE})/
+match /tags/KDE/3.5.0-beta1/kdemultimedia/(${APP})/
     repository ${REPO}
     branch refs/tags/v3.4.91
     annotated true
     min revision 459298
     max revision 460260
 end match
-match /tags/KDE/(\d+)\.(\d+)/kdemultimedia/(${MODULE})/
+match /tags/KDE/(\d+)\.(\d+)/kdemultimedia/(${APP})/
     repository ${REPO}
     branch refs/tags/v\1.\2.0
     annotated true
 end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdemultimedia/(${MODULE})/
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdemultimedia/(${APP})/
     repository ${REPO}
     branch refs/tags/v\1.\2.\3
     annotated true
@@ -83,18 +83,18 @@ match /branches/work/kaction-cleanup-branch/(KDE/)?${MODULE_RECURSE}$
     action recurse
 end match
 
-match /branches/work/kaction-cleanup-branch/kdemultimedia/${MODULE}/
+match /branches/work/kaction-cleanup-branch/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/kaction-cleanup1
     max revision 610651 # one before branch deletion
 end match
-match /branches/work/kaction-cleanup-branch/KDE/kdemultimedia/${MODULE}/
+match /branches/work/kaction-cleanup-branch/KDE/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/kaction-cleanup2
     min revision 610825 # re-creation of branch
     max revision 617205 # one before branch deletion
 end match
-match /branches/work/kaction-cleanup-branch/KDE/kdemultimedia/${MODULE}/
+match /branches/work/kaction-cleanup-branch/KDE/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/kaction-cleanup3
     min revision 617207 # re-creation of branch
@@ -105,7 +105,7 @@ match /branches/work/kinstance-redesign/${MODULE_RECURSE}$
     action recurse
 end match
 
-match /branches/work/kinstance-redesign/kdemultimedia/${MODULE}/
+match /branches/work/kinstance-redesign/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/kinstance-redesign
 
@@ -119,7 +119,7 @@ end match
 match /branches/work/kconfiggroup_port/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kconfiggroup_port/kdemultimedia/${MODULE}/
+match /branches/work/kconfiggroup_port/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/kconfiggroup_port
     max revision 635534 # branch got deleted in r635535
@@ -131,7 +131,7 @@ end match
 match /branches/work/kconfig_new_take3/KDE/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kconfig_new_take3/KDE/kdemultimedia/${MODULE}/
+match /branches/work/kconfig_new_take3/KDE/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/kconfig_new
     max revision 730730 # branch deleted in r730731
@@ -140,7 +140,7 @@ end match
 match /branches/work/kde4-qdbus-api-changes/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kde4-qdbus-api-changes/kdemultimedia/${MODULE}/
+match /branches/work/kde4-qdbus-api-changes/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/qdbus-api-changes
     max revision 575850 # branch deleted in r575851
@@ -149,7 +149,7 @@ end match
 match /branches/work/kde4_jobflags/KDE/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kde4_jobflags/KDE/kdemultimedia/${MODULE}/
+match /branches/work/kde4_jobflags/KDE/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/kde4_jobflags
     max revision 721454 # branch deleted in r721455
@@ -158,7 +158,7 @@ end match
 match /branches/work/kde4_kconfig/kconfig/port_trunk/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kde4_kconfig/kconfig/port_trunk/kdemultimedia/${MODULE}/
+match /branches/work/kde4_kconfig/kconfig/port_trunk/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/kde4_kconfig
     # branch still didn't get deleted; but for future-proofing,
@@ -169,7 +169,7 @@ end match
 match /branches/work/kparts_urlargs_split/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kparts_urlargs_split/kdemultimedia/${MODULE}/
+match /branches/work/kparts_urlargs_split/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/kparts_urlargs_split
     max revision 699528 # branch deleted in r699529
@@ -178,7 +178,7 @@ end match
 match /branches/work/kde4-systray-rewrite/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kde4-systray-rewrite/kdemultimedia/${MODULE}/
+match /branches/work/kde4-systray-rewrite/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/systray-rewrite
     max revision 564547 # branch deleted in r564548
@@ -187,7 +187,7 @@ end match
 match /branches/work/kde4-systray-rewrite-tng/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kde4-systray-rewrite-tng/kdemultimedia/${MODULE}/
+match /branches/work/kde4-systray-rewrite-tng/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/systray-rewrite-tng
     max revision 565761 # branch deleted in r565762
@@ -196,35 +196,35 @@ end match
 match /branches/work/kmainwindow-decoupling-branch/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kmainwindow-decoupling-branch/kdemultimedia/${MODULE}/
+match /branches/work/kmainwindow-decoupling-branch/kdemultimedia/${APP}/
     repository ${REPO}
     branch refs/workbranch/kmainwindow-decoupling
     max revision 655376 # branch deleted in r655377
 end match
 
 
-match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdemultimedia/${MODULE}/
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdemultimedia/${APP}/
     repository ${REPO}
     branch KDE/\1.\2
     prefix ${PREFIX|/}
     max revision 409201
 end match
-match /branches/KDE/(\d+)\.(\d+)/kdemultimedia/${MODULE}/
+match /branches/KDE/(\d+)\.(\d+)/kdemultimedia/${APP}/
     repository ${REPO}
     prefix ${PREFIX|/}
     branch KDE/\1.\2
 end match
-match /branches/work/~([^/]+)/kdemultimedia/([^/]*${MODULE}[^/]*)/
+match /branches/work/~([^/]+)/kdemultimedia/([^/]*${APP}[^/]*)/
     repository ${REPO}
     prefix ${PREFIX|/}
     branch work/personal/\1
 end match
-match /branches/work/~([^/]+)/([^/]+)/kdemultimedia/([^/]*${MODULE}[^/]*)/
+match /branches/work/~([^/]+)/([^/]+)/kdemultimedia/([^/]*${APP}[^/]*)/
     repository ${REPO}
     prefix ${PREFIX|/}
     branch work/personal/\1/\2
 end match
-match /branches/kdepim/([^~][^/]+)/kdemultimedia/${MODULE}/
+match /branches/kdepim/([^~][^/]+)/kdemultimedia/${APP}/
     repository ${REPO}
     prefix ${PREFIX|/}
     branch \1

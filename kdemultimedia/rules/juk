@@ -3,7 +3,7 @@
 #
 
 declare REPO=juk
-declare MODULE=juk
+declare APP=juk
 
 create repository ${REPO}
 end repository

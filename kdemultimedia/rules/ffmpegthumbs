@@ -3,7 +3,7 @@
 #
 
 declare REPO=ffmpegthumbs
-declare MODULE=ffmpegthumbs
+declare APP=ffmpegthumbs
 
 create repository ${REPO}
 end repository

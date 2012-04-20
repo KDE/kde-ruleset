@@ -3,7 +3,7 @@
 #
 
 declare REPO=libkcompactdisc
-declare MODULE=libkcompactdisc
+declare APP=libkcompactdisc
 
 create repository libkcompactdisc
 end repository

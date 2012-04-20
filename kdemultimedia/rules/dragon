@@ -3,7 +3,7 @@
 #
 
 declare REPO=dragonplayer
-declare MODULE=dragonplayer
+declare APP=dragonplayer
 
 create repository ${REPO}
 end repository

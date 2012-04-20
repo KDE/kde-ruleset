@@ -3,7 +3,7 @@
 #
 
 declare REPO=libkcddb
-declare MODULE=libkcddb
+declare APP=libkcddb
 
 create repository ${REPO}
 end repository

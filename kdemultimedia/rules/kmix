@@ -1,12 +1,12 @@
 declare REPO=kmix
-declare MODULE=kmix
+declare APP=kmix
 
 create repository ${REPO}
 end repository
 
 include kdemm-common
 
-match /trunk/(KDE/)?kdemultimedia/${MODULE}/
+match /trunk/(KDE/)?kdemultimedia/${APP}/
     repository ${REPO}
     branch oldkmix1
     max revision 50715 # data got deleted in 50716

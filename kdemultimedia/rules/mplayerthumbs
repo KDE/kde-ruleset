@@ -3,7 +3,7 @@
 #
 
 declare REPO=mplayerthumbs
-declare MODULE=mplayerthumbs
+declare APP=mplayerthumbs
 
 create repository ${REPO}
 end repository
