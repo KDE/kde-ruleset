@@ -33,20 +33,20 @@ match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE|}$
 end match
 
 
-match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/kdemultimedia/(${APP})/
+match /tags/KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/kdemultimedia/(${APP})/
     repository ${REPO}
     branch refs/tags/v\1.\2.\3
     annotated true
     max revision 409201
 end match
-match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdemultimedia/(${APP})/
+match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdemultimedia/(${APP})/
     repository ${REPO}
     branch refs/tags/v\1.\2.\3-beta\4
     annotated true
     min revision 376088
     max revision 409202
 end match
-match /tags/(?:__)?KDE_(\d+)_(\d+)_RELEASE/kdemultimedia/(${APP})/
+match /tags/KDE_(\d+)_(\d+)_RELEASE/kdemultimedia/(${APP})/
     repository ${REPO}
     branch refs/tags/v\1.\2.0
     annotated true
@@ -203,7 +203,7 @@ match /branches/work/kmainwindow-decoupling-branch/kdemultimedia/${APP}/
 end match
 
 
-match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdemultimedia/${APP}/
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdemultimedia/${APP}/
     repository ${REPO}
     branch KDE/\1.\2
     prefix ${PREFIX|/}
