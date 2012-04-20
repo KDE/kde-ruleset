@@ -31,11 +31,20 @@ include ../../feature-branches
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdemultimedia/${APP}/
     repository ${REPO}
     branch KDE/\1.\2
-    prefix ${PREFIX|/}
     max revision 409201
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdemultimedia/${APP}/
     repository ${REPO}
-    prefix ${PREFIX|/}
     branch KDE/\1.\2
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdemultimedia/doc/${APP}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdemultimedia/doc/${APP}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
 end match
