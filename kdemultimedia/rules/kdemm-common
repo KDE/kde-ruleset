@@ -196,7 +196,7 @@ end match
 match /branches/work/kmainwindow-decoupling-branch/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kmainwindow-decoupling-branch/${MODULE}/
+match /branches/work/kmainwindow-decoupling-branch/kdemultimedia/${MODULE}/
     repository ${REPO}
     branch refs/workbranch/kmainwindow-decoupling
     max revision 655376 # branch deleted in r655377
