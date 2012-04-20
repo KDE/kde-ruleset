@@ -214,19 +214,3 @@ match /branches/KDE/(\d+)\.(\d+)/kdemultimedia/${APP}/
     prefix ${PREFIX|/}
     branch KDE/\1.\2
 end match
-match /branches/work/~([^/]+)/kdemultimedia/([^/]*${APP}[^/]*)/
-    repository ${REPO}
-    prefix ${PREFIX|/}
-    branch work/personal/\1
-end match
-match /branches/work/~([^/]+)/([^/]+)/kdemultimedia/([^/]*${APP}[^/]*)/
-    repository ${REPO}
-    prefix ${PREFIX|/}
-    branch work/personal/\1/\2
-end match
-match /branches/kdepim/([^~][^/]+)/kdemultimedia/${APP}/
-    repository ${REPO}
-    prefix ${PREFIX|/}
-    branch \1
-end match
-
