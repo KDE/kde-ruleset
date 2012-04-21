@@ -30,6 +30,18 @@ end match
 # we ignore the bad tagging and the deletion, let the correct retag through
 
 
+match /tags/KDE/3.4.3/
+    min revision 467472 # mistagged 3.4.3
+    max revision 467490 # deleted mistagged 3.4.3
+end match
+match /tags/KDE/3.5.2/
+    min revision 519755 # mistagged 3.5.2
+    max revision 519761 # deleted mistagged 3.5.2
+end match
+match /tags/KDE/3.5.5/
+    min revision 591372 # mistagged 3.5.5
+    max revision 591395 # deleted mistagged 3.5.5
+end match
 match /tags/KDE/4.4.1/
     min revision 1096373 # mistagged 4.4.1
     max revision 1096480 # deleted mistagged 4.4.1
