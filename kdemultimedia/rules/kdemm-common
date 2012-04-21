@@ -1,5 +1,7 @@
 declare MODULE_RECURSE=(kdemultimedia/)?
 
+include ../../common-kde-ignores
+
 match /trunk/(KDE/)?kdemultimedia/doc/${APP}/
 	repository ${REPO}
 	branch master

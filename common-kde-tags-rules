@@ -1,15 +1,7 @@
-match /tags/KDE/4.4.1/${MODULE}/
-    max revision 1096480
-end match
-match /tags/KDE/3.5.5/${MODULE}/
-    max revision 591451
-end match
-match /tags/KDE/3.5.2/${MODULE}/
-    max revision 519806
-end match
-match /tags/KDE/3.4.3/${MODULE}/
-    max revision 467548
-end match
+# General rules for version tags.
+# Note that you probably need common-kde-ignores as well,
+# in order to skip the creation of wrong tags
+# that were later re-created correctly.
 
 match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/${MODULE}/
     repository ${REPO}
