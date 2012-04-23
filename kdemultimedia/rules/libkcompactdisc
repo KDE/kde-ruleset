@@ -9,5 +9,17 @@ create repository libkcompactdisc
 end repository
 
 include kdemm-common
+
+# Missing history from kscd
+
+match /branches/work/phonon-solid-sprint/(kdemultimedia/)?$
+    action recurse
+end match
+match /branches/work/phonon-solid-sprint/kdemultimedia/libkcompactdisc/
+    repository ${REPO}
+    branch refs/workbranch/phonon-solid-sprint
+    max revision 793356 # branch deletion on 793357
+end match
+
 match /
 end match
