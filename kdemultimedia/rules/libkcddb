@@ -10,7 +10,7 @@ end repository
 
 include kdemm-common
 
-match /trunk/(KDE/)?kdemultimedia/doc/kcontrol/cddbretrieval/
+match /trunk/KDE/kdemultimedia/doc/kcontrol/cddbretrieval/
 	repository ${REPO}
 	branch master
 	prefix kcmcddb/doc/
