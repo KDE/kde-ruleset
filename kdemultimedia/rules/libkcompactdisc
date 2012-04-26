@@ -10,7 +10,14 @@ end repository
 
 include kdemm-common
 
-# Missing history from kscd
+# libkcompactdisc used to be libwm within the kscd repository
+
+match /trunk/(KDE/)?kdemultimedia/kscd/libwm/
+    repository ${REPO}
+    branch old-kscd
+end match
+
+# branch only affecting parts of kdemm
 
 match /branches/work/phonon-solid-sprint/(kdemultimedia/)?$
     action recurse
