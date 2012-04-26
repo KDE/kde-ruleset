@@ -9,5 +9,18 @@ create repository ${REPO}
 end repository
 
 include kdemm-common
+
+match /branches/kscd/isi-kscd/(kdemultimedia/)?$
+    action recurse
+    min revision 734379
+    max revision 734379
+end match
+match /branches/kscd/isi-kscd/kdemultimedia/kscd/
+    repository ${REPO}
+    branch isi-kscd
+end match
+
+# commit r560402 from bleedingedge?
+
 match /
 end match
