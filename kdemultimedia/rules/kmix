@@ -6,13 +6,13 @@ end repository
 
 include kdemm-common
 
-match /trunk/(KDE/)?kdemultimedia/${APP}/
+match /trunk/kdemultimedia/${APP}/
     repository ${REPO}
     branch oldkmix1
     max revision 50715 # data got deleted in 50716
 end match
 
-match /trunk/(KDE/)?kdemultimedia/kmix2/
+match /trunk/kdemultimedia/kmix2/
     repository ${REPO}
     branch kmix2
     max revision 52201 # dir got deleted in 52202
