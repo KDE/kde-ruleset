@@ -9,5 +9,42 @@ create repository ${REPO}
 end repository
 
 include kdemm-common
+
+match /branches/JUK_1_BRANCH/kdemultimedia/juk/$
+  action recurse
+end match
+match /branches/JUK_1_BRANCH/kdemultimedia/juk/
+  repository ${REPO}
+  branch juk/1
+end match
+
+match /tags/JUK_1_RELEASE/
+  repository ${REPO}
+  branch refs/tags/juk/1
+end match
+
+match /tags/juk_(\d+)_(\d+)_release/
+  repository ${REPO}
+  branch juk/\1.\2
+end match
+
+match /branches/work/juk/$
+  action recurse
+end match
+
+match /branches/work/juk/
+  repository ${REPO}
+  branch refs/workbranch/juk
+end match
+
+match /branches/work/doc/juk/$
+  action recurse
+end match
+match /branches/work/doc/juk/
+  repository ${REPO}
+  branch refs/workbranch/juk-doc
+  prefix doc/
+end match
+
 match /
 end match
