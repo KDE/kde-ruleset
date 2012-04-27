@@ -18,7 +18,10 @@ match /branches/JUK_1_BRANCH/kdemultimedia/juk/
   branch juk/1
 end match
 
-match /tags/JUK_1_RELEASE/
+match /tags/JUK_1_RELEASE/(kdemultimedia/)?$
+  action recurse
+end match
+match /tags/JUK_1_RELEASE/kdemultimedia/juk/
   repository ${REPO}
   branch refs/tags/juk/1
 end match
