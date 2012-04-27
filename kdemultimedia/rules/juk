@@ -10,7 +10,7 @@ end repository
 
 include kdemm-common
 
-match /branches/JUK_1_BRANCH/kdemultimedia/juk/$
+match /branches/JUK_1_BRANCH/(kdemultimedia/)?$
   action recurse
 end match
 match /branches/JUK_1_BRANCH/kdemultimedia/juk/
