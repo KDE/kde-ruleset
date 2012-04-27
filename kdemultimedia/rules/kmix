@@ -4,8 +4,6 @@ declare APP=kmix
 create repository ${REPO}
 end repository
 
-include kdemm-common
-
 match /trunk/kdemultimedia/${APP}/
     repository ${REPO}
     branch oldkmix1
@@ -17,6 +15,8 @@ match /trunk/kdemultimedia/kmix2/
     branch kmix2
     max revision 52201 # dir got deleted in 52202
 end match
+
+include kdemm-common
 
 match /branches/work/kmix/$
     action recurse
