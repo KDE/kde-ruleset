@@ -1,17 +1,43 @@
 # Merge phonon-Trolltech
-698552 698558
+#698552 698558
 
 # merge phonon-solid-sprint to trunk
-659776 659784
+#659776 659784
 
-# merge kconfiggroup_port
-635495
+# merge systray-rewrite to systray-rewrite-tng
+562448 564547
 
-# merge kinstance-redesign
-628283
-
-# merge kaction-cleanup-branch
-621518
-
-# merge kde4-systray-rewrite-tng
+# merge systray-rewrite-tng into trunk
 565384 565761
+
+# merge qdbus-api-changes into trunk
+575407 575657
+
+# merge from trunk to kaction-cleanup3
+619762 620435
+
+# merge kaction-cleanup3 into trunk
+621500 621518
+
+# merge from trunk to kinstance-redesign
+627822 628277
+
+# merge kinstance-redesign into trunk
+628277 628283
+
+# merge kconfiggroup_port into trunk
+634896 635495
+
+# merge kmainwindow-decoupling-branch into trunk
+654692 654728
+
+# merges from trunk to kde4_jobflags
+720693 721065
+721255 721435
+
+# merge kde4_jobflags into trunk
+721435 721447
+
+# merge kde4_kconfig to trunk
+721132 721733
+
