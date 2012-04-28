@@ -1,0 +1,33 @@
+# merge work/systray-rewrite-tng
+565384 565761
+
+# merge work/kmix
+1166782 1170703
+
+# branch kmix from master
+1128525 1129222
+
+# merge work/systray-rewrite to systray-rewrite-tng
+562550 564547
+
+# merge work/kaction-cleanup1
+610567 614117
+
+# merge work/kaction-cleanup2
+614117 620881
+
+# merge work/kaction-cleanup3
+620881 621518
+
+# merge work/kde4_kconfig
+721132 721733
+
+#merge work/kinstance-redesign
+627732 628283
+
+#merge work/kmainwindow-decoupling
+654692 654728
+
+#merge work/qdbus-api-changes
+575407 575657
+

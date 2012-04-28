@@ -3,7 +3,7 @@
 #
 
 declare REPO=mplayerthumbs
-declare MODULE=mplayerthumbs
+declare APP=mplayerthumbs
 
 create repository ${REPO}
 end repository
@@ -22,4 +22,7 @@ match /trunk/playground/multimedia/mplayerthumbs/
 	branch master
 	max revision 924884
 	min revision 822509
+end match
+
+match /
 end match

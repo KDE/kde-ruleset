@@ -3,9 +3,12 @@
 #
 
 declare REPO=ffmpegthumbs
-declare MODULE=ffmpegthumbs
+declare APP=ffmpegthumbs
 
 create repository ${REPO}
 end repository
 
 include kdemm-common
+
+match /
+end match

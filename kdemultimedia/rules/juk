@@ -3,9 +3,76 @@
 #
 
 declare REPO=juk
-declare MODULE=juk
+declare APP=juk
 
 create repository ${REPO}
 end repository
 
 include kdemm-common
+
+match /branches/JUK_1_BRANCH/(kdemultimedia/)?$
+  action recurse
+end match
+match /branches/JUK_1_BRANCH/kdemultimedia/juk/
+  repository ${REPO}
+  branch juk/1
+end match
+
+match /tags/JUK_1_RELEASE/(kdemultimedia/)?$
+  action recurse
+end match
+match /tags/JUK_1_RELEASE/kdemultimedia/juk/
+  repository ${REPO}
+  branch refs/tags/juk/1
+end match
+
+match /tags/juk_(\d+)_(\d+)_release/(kdemultimedia/)?$
+  action recurse
+end match
+match /tags/juk_(\d+)_(\d+)_release/kdemultimedia/juk/
+  repository ${REPO}
+  branch refs/tags/juk/\1.\2
+end match
+
+match /branches/work/juk/$
+  action recurse
+end match
+
+match /branches/work/juk/
+  repository ${REPO}
+  branch refs/workbranch/juk
+end match
+
+# export relevant part of the bleedingedge branch
+match /branches/work/bleedingedge/(kdemultimedia/)?$
+    action recurse
+    min revision 560057
+    max revision 560647 # deletion on 560648
+end match
+match /branches/work/bleedingedge/kdemultimedia/juk/
+    repository ${REPO}
+    branch refs/workbranch/bleedingedge
+    min revision 560057
+    max revision 560647 # deletion on 560648
+end match
+
+match /branches/work/phonon-solid-sprint/(kdemultimedia/)?$
+    action recurse
+end match
+match /branches/work/phonon-solid-sprint/kdemultimedia/juk/
+    repository ${REPO}
+    branch refs/workbranch/phonon-solid-sprint
+    max revision 793356 # branch deletion on 793357
+end match
+
+match /branches/work/phonon-Trolltech/(kdemultimedia/)?$
+    action recurse
+end match
+match /branches/work/phonon-Trolltech/kdemultimedia/juk/
+    repository ${REPO}
+    branch refs/workbranch/phonon-trolltech
+    max revision 793356 # branch deletion on 793357
+end match
+
+match /
+end match

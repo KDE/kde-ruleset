@@ -3,13 +3,23 @@
 #
 
 declare REPO=strigi-analyzers
-declare MODULE=strigi-analyzer
 
 create repository strigi-analyzers
 end repository
 
+declare APP=strigi-analyzer
 include kdemm-common
 
-declare MODULE=kfile-plugins
+declare APP=kfile-plugins
 include kdemm-common
 
+match /branches/KFILEMETAINFO_BRANCH/(kdemultimedia/)?$
+    action recurse
+end match
+match /branches/KFILEMETAINFO_BRANCH/kdemultimedia/kfile-plugins/
+    repository ${REPO}
+    branch kfilemetainfo
+end match
+
+match /
+end match

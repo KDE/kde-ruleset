@@ -1,0 +1,29 @@
+# merge systray-rewrite to systray-rewrite-tng
+562448 564547
+
+# merge systray-rewrite-tng into trunk
+565384 565761
+
+# merge qdbus-api-changes into trunk
+575407 575657
+
+# merge kaction-cleanup1 into trunk
+610567 610651
+
+# merge from trunk to kaction-cleanup3
+619762 620435
+
+# merge kaction-cleanup3 into trunk
+620881 621518
+
+# merge kinstance-redesign into trunk
+627732 628283
+
+# merge kconfiggroup_port into trunk
+634896 635495
+
+# merge kmainwindow-decoupling-branch into trunk
+654692 654728
+
+# merge isi-kscd into trunk
+845328 845820

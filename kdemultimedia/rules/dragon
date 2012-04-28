@@ -3,7 +3,7 @@
 #
 
 declare REPO=dragonplayer
-declare MODULE=dragonplayer
+declare APP=dragonplayer
 
 create repository ${REPO}
 end repository
@@ -34,4 +34,7 @@ match /trunk/playground/multimedia/videoplayer/doc/en/
 	repository ${REPO}
 	branch master
 	prefix doc/
+end match
+
+match /
 end match

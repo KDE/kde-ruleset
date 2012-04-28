@@ -1,19 +1,30 @@
 declare REPO=kmix
-declare MODULE=kmix
+declare APP=kmix
 
 create repository ${REPO}
 end repository
 
-include kdemm-common
-
-match /trunk/(KDE/)?kdemultimedia/${MODULE}/
+match /trunk/kdemultimedia/kmix/
     repository ${REPO}
     branch oldkmix1
-    max revision 50715 # data got deleted in 50716
+    max revision 50714 # data got deleted in 50715
 end match
 
-match /trunk/(KDE/)?kdemultimedia/kmix2/
+match /trunk/kdemultimedia/kmix2/
     repository ${REPO}
     branch kmix2
     max revision 52201 # dir got deleted in 52202
+end match
+
+include kdemm-common
+
+match /branches/work/kmix/$
+    action recurse
+end match
+match /branches/work/kmix/
+    repository ${REPO}
+    branch refs/workbranch/kmix
+end match
+
+match /
 end match

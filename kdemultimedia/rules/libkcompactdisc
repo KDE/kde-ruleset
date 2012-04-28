@@ -3,9 +3,30 @@
 #
 
 declare REPO=libkcompactdisc
-declare MODULE=libkcompactdisc
+declare APP=libkcompactdisc
 
 create repository libkcompactdisc
 end repository
 
 include kdemm-common
+
+# libkcompactdisc used to be libwm within the kscd repository
+
+match /trunk/(KDE/)?kdemultimedia/kscd/libwm/
+    repository ${REPO}
+    branch old-kscd
+end match
+
+# branch only affecting parts of kdemm
+
+match /branches/work/phonon-solid-sprint/(kdemultimedia/)?$
+    action recurse
+end match
+match /branches/work/phonon-solid-sprint/kdemultimedia/libkcompactdisc/
+    repository ${REPO}
+    branch refs/workbranch/phonon-solid-sprint
+    max revision 793356 # branch deletion on 793357
+end match
+
+match /
+end match
