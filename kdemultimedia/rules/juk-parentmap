@@ -4,6 +4,8 @@
 # merge phonon-solid-sprint to trunk
 #659776 659784
 
+# BEGIN global-ish work branches
+
 # merge bleedingedge to trunk
 560481 560639
 
@@ -44,3 +46,14 @@
 # merge kde4_kconfig to trunk
 721132 721733
 
+# END
+
+# BEGIN stuff specific to juk
+
+# merge phonon-solid-sprint branch
+659728 659784
+
+# merge phonon-trolltech branch
+698293 698558
+
+# END
