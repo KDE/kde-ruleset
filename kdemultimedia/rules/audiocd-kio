@@ -22,7 +22,7 @@ match /trunk/kdebase/kioslave/audiocd/
 	min revision 71925
 end match
 
-declare MODULE_RECURSE=(kdebase/)?
+declare MODULE_RECURSE=(kdebase/(kioslave/)?)?
 
 match /(branches|tags)/[^/]+/${MODULE_RECURSE}$
   action recurse
