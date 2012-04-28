@@ -88,28 +88,11 @@ end match
 match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdebase/${APP}/
     repository ${REPO}
     branch KDE/\1.\2
-    prefix ${PREFIX|/}
     max revision 409201
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdebase/${APP}/
     repository ${REPO}
-    prefix ${PREFIX|/}
     branch KDE/\1.\2
-end match
-match /branches/work/~([^/]+)/kdebase/([^/]*${APP}[^/]*)/
-    repository ${REPO}
-    prefix ${PREFIX|/}
-    branch work/personal/\1
-end match
-match /branches/work/~([^/]+)/([^/]+)/kdebase/([^/]*${APP}[^/]*)/
-    repository ${REPO}
-    prefix ${PREFIX|/}
-    branch work/personal/\1/\2
-end match
-match /branches/kdepim/([^~][^/]+)/kdebase/${APP}/
-    repository ${REPO}
-    prefix ${PREFIX|/}
-    branch \1
 end match
 
 match /
