@@ -26,9 +26,12 @@ match /tags/JUK_1_RELEASE/kdemultimedia/juk/
   branch refs/tags/juk/1
 end match
 
-match /tags/juk_(\d+)_(\d+)_release/
+match /tags/juk_(\d+)_(\d+)_release/(kdemultimedia/)?$
+  action recurse
+end match
+match /tags/juk_(\d+)_(\d+)_release/kdemultimedia/juk/
   repository ${REPO}
-  branch juk/\1.\2
+  branch refs/tags/juk/\1.\2
 end match
 
 match /branches/work/juk/$
