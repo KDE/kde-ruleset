@@ -43,6 +43,18 @@ match /branches/work/juk/
   branch refs/workbranch/juk
 end match
 
+# export relevant part of the bleedingedge branch
+match /branches/work/bleedingedge/(kdemultimedia/)?$
+    action recurse
+    min revision 560057
+    max revision 560647 # deletion on 560648
+end match
+match /branches/work/bleedingedge/kdemultimedia/juk/
+    repository ${REPO}
+    branch refs/workbranch/bleedingedge
+    min revision 560057
+    max revision 560647 # deletion on 560648
+end match
 
 match /
 end match
