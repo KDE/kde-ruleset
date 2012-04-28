@@ -1,7 +1,9 @@
 # General rules for version tags.
-# Note that you probably need common-kde-ignores as well,
-# in order to skip the creation of wrong tags
-# that were later re-created correctly.
+#
+# Note that this file doesn't include the needed recursion rules;
+# that's left for the caller to handle. And you probably need common-kde-ignores
+# as well, in order to skip the creation of wrong tags that were later
+# re-created correctly,
 
 match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/${MODULE}/
     repository ${REPO}
