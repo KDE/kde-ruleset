@@ -34,16 +34,6 @@ match /tags/juk_(\d+)_(\d+)_release/kdemultimedia/juk/
   branch refs/tags/juk/\1.\2
 end match
 
-# /branches/work/juk/ is intentionally not exported.
-# It was never merged into trunk, and mpyne agreed
-# with eliding it from the conversion.
-
-# /branches/work/doc/juk/ is also ignored.
-# It needs some post-processing mess to get right, and it turned out that
-# the final merge of it into trunk alters screenshots too (an "evil merge").
-# Having a merge commit there makes the screenshot history harder to follow.
-# In general this branch is more trouble than it's worth...
-
 # export relevant part of the bleedingedge branch
 match /branches/work/bleedingedge/(kdemultimedia/)?$
     action recurse
@@ -74,6 +64,16 @@ match /branches/work/phonon-Trolltech/kdemultimedia/juk/
     branch refs/workbranch/phonon-trolltech
     max revision 793356 # branch deletion on 793357
 end match
+
+# /branches/work/juk/ is intentionally not exported.
+# It was never merged into trunk, and mpyne agreed
+# with eliding it from the conversion.
+
+# /branches/work/doc/juk/ is also ignored.
+# It needs some post-processing mess to get right, and it turned out that
+# the final merge of it into trunk alters screenshots too (an "evil merge").
+# Having a merge commit there makes the screenshot history harder to follow.
+# In general this branch is more trouble than it's worth...
 
 match /
 end match
