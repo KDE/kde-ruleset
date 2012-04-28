@@ -34,14 +34,9 @@ match /tags/juk_(\d+)_(\d+)_release/kdemultimedia/juk/
   branch refs/tags/juk/\1.\2
 end match
 
-match /branches/work/juk/$
-  action recurse
-end match
-
-match /branches/work/juk/
-  repository ${REPO}
-  branch refs/workbranch/juk
-end match
+# /branches/work/juk/ is intentionally not exported.
+# It was never merged into trunk, and mpyne agreed
+# with eliding it from the conversion.
 
 # export relevant part of the bleedingedge branch
 match /branches/work/bleedingedge/(kdemultimedia/)?$
