@@ -43,14 +43,6 @@ match /branches/work/juk/
   branch refs/workbranch/juk
 end match
 
-match /branches/work/doc/juk/$
-  action recurse
-end match
-match /branches/work/doc/juk/
-  repository ${REPO}
-  branch refs/workbranch/juk-doc
-  prefix doc/
-end match
 
 match /
 end match
