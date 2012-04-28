@@ -10,10 +10,18 @@ end repository
 
 include kdemm-common
 
+# There is more history of these docs in doc/kscd, moved in r1092954.
+# However, the move changed the files so much
+# that git doesn't even recognize it as a copy,
+# so I won't bother with that history.
 match /trunk/KDE/kdemultimedia/doc/kcontrol/cddbretrieval/
 	repository ${REPO}
 	branch master
 	prefix kcmcddb/doc/
 end match
+
+# r757058 touches a libkcddb file, but it seems to be
+# just debugging code, and it was never merged.
+
 match /
 end match
