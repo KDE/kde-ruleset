@@ -14,13 +14,13 @@ match /trunk/(KDE/)?kdemultimedia/${APP}/
     max revision 1288300 # Removed from SVN
 end match
 
-match /branches/KDE_\d+_\d+_BRANCH/${MODULE_RECURSE|}$
+match /branches/KDE_\d+_\d+_BRANCH/${MODULE_RECURSE}$
   action recurse
 end match
-match /tags/KDE_[^/]+/${MODULE_RECURSE|}$
+match /tags/KDE_[^/]+/${MODULE_RECURSE}$
   action recurse
 end match
-match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE|}$
+match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE}$
   action recurse
 end match
 
