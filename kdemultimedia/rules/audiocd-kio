@@ -18,8 +18,6 @@ include ../../common-kde-tags-rules
 match /trunk/kdebase/kioslave/audiocd/
     repository ${REPO}
     branch master
-    max revision 157421
-    min revision 71925
 end match
 
 declare MODULE_RECURSE=(kdebase/(kioslave/)?)?
