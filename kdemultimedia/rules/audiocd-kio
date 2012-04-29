@@ -24,13 +24,16 @@ match /trunk/kdebase/kioslave/audiocd/
     branch master
 end match
 
+# Only apply these recursion rules until the last presence of kio_audiocd in kdebase.
 
 declare MODULE_RECURSE=(kdebase/(kioslave/)?)?
 match /branches/KDE_\d+_\d+_BRANCH/${MODULE_RECURSE}$
   action recurse
+  max revision 195119
 end match
 match /tags/KDE_[^/]+/${MODULE_RECURSE}$
   action recurse
+  max revision 195119
 end match
 
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdebase/${APP}/
@@ -56,14 +59,18 @@ match /trunk/(KDE/)?kdemultimedia/${APP}/
     max revision 1288300 # Removed from SVN
 end match
 
+# Only apply these recursion rules starting on the kdemultimedia move.
 match /branches/KDE_\d+_\d+_BRANCH/${MODULE_RECURSE}$
   action recurse
+  min revision 157422
 end match
 match /tags/KDE_[^/]+/${MODULE_RECURSE}$
   action recurse
+  min revision 157422
 end match
 match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE}$
   action recurse
+  min revision 157422
 end match
 
 declare MODULE=kdemultimedia/${APP}
