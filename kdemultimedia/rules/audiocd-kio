@@ -34,7 +34,6 @@ end match
 match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdebase/${APP}/
     repository ${REPO}
     branch KDE/\1.\2
-    max revision 409201
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdebase/${APP}/
     repository ${REPO}
