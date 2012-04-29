@@ -24,20 +24,16 @@ match /trunk/kdebase/kioslave/audiocd/
     branch master
 end match
 
+
 declare MODULE_RECURSE=(kdebase/(kioslave/)?)?
-
-match /(branches|tags)/[^/]+/${MODULE_RECURSE}$
+match /branches/KDE_\d+_\d+_BRANCH/${MODULE_RECURSE}$
   action recurse
 end match
-match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE}$
+match /tags/KDE_[^/]+/${MODULE_RECURSE}$
   action recurse
 end match
 
-match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdebase/${APP}/
-    repository ${REPO}
-    branch KDE/\1.\2
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdebase/${APP}/
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdebase/${APP}/
     repository ${REPO}
     branch KDE/\1.\2
 end match
