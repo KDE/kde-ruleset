@@ -13,6 +13,14 @@ include ../../common-kde-ignores
 # kio_audiocd started in kdebase in r71925.
 # It moved to kdemultimedia in r157422, although it remained in
 # kdebase version branches until r195119 (v3.0.5a release/tag).
+#
+# Documentation has a more complex history:
+# - r106133: added to trunk/kdebase/doc/kioslave
+# - r346897: moved to trunk/kdemultimedia/doc/kio_audiocd
+# - r409203: moved to trunk/KDE/kdemultimedia/doc/kio_audiocd,
+#            along with everything else in KDE.
+# - r432745: moved to trunk/KDE/kdemultimedia/doc/kioslave
+# - r883369: moved to trunk/KDE/kdemultimedia/doc/kioslave/audiocd
 
 # BEGIN kdebase
 
@@ -22,6 +30,11 @@ include ../../common-kde-tags-rules
 match /trunk/kdebase/kioslave/audiocd/
     repository ${REPO}
     branch master
+end match
+match /trunk/kdebase/doc/kioslave/audiocd.docbook
+    repository ${REPO}
+    branch master
+    prefix doc/audiocd.docbook
 end match
 
 # Only apply these recursion rules until the last presence of kio_audiocd in kdebase.
@@ -47,10 +60,22 @@ end match
 
 declare MODULE_RECURSE=(kdemultimedia/(kioslave/)?)?
 
-match /trunk/(KDE/)?kdemultimedia/doc/${APP}/
+match /trunk/(KDE/)?kdemultimedia/doc/kio_audiocd/
     repository ${REPO}
     branch master
     prefix doc/
+end match
+match /trunk/KDE/kdemultimedia/doc/kioslave/audiocd/
+    repository ${REPO}
+    branch master
+    prefix doc/
+    min revision 883369
+end match
+match /trunk/KDE/kdemultimedia/doc/kioslave/
+    repository ${REPO}
+    branch master
+    prefix doc/
+    max revision 883369
 end match
 
 match /trunk/(KDE/)?kdemultimedia/${APP}/
@@ -86,17 +111,6 @@ end match
 match /branches/KDE/(\d+)\.(\d+)/kdemultimedia/${APP}/
     repository ${REPO}
     branch KDE/\1.\2
-end match
-
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdemultimedia/doc/${APP}/
-    repository ${REPO}
-    branch KDE/\1.\2
-    prefix doc/
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdemultimedia/doc/${APP}/
-    repository ${REPO}
-    branch KDE/\1.\2
-    prefix doc/
 end match
 
 # END kdemultimedia
