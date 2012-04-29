@@ -129,7 +129,7 @@ match /branches/work/coolos_libloader/${MODULE_RECURSE}$
 end match
 match /branches/work/coolos_libloader/${MODULE}/
     repository ${REPO}
-    branch workbranch/coolos_libloader
+    branch refs/workbranch/coolos_libloader
 end match
 
 # END
