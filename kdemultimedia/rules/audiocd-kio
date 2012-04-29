@@ -8,15 +8,48 @@ declare APP=kioslave/audiocd
 create repository ${REPO}
 end repository
 
-#copied from kdemm-common
-declare MODULE_RECURSE=(kdemultimedia/)?
-
 include ../../common-kde-ignores
 
+# BEGIN kdebase
+
+declare MODULE=kdebase/kioslave/audiocd
+include ../../common-kde-tags-rules
+
+match /trunk/kdebase/kioslave/audiocd/
+    repository ${REPO}
+    branch master
+    max revision 157421
+    min revision 71925
+end match
+
+declare MODULE_RECURSE=(kdebase/(kioslave/)?)?
+
+match /(branches|tags)/[^/]+/${MODULE_RECURSE}$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE}$
+  action recurse
+end match
+
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdebase/${APP}/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdebase/${APP}/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+
+# END kdebase
+
+# BEGIN kdemultimedia
+
+declare MODULE_RECURSE=(kdemultimedia/)?
+
 match /trunk/(KDE/)?kdemultimedia/doc/${APP}/
-        repository ${REPO}
-        branch master
-        prefix doc/
+    repository ${REPO}
+    branch master
+    prefix doc/
 end match
 
 match /trunk/(KDE/)?kdemultimedia/${APP}/
@@ -61,33 +94,7 @@ match /branches/KDE/(\d+)\.(\d+)/kdemultimedia/doc/${APP}/
     prefix doc/
 end match
 
-declare MODULE=kdebase/kioslave/audiocd
-include ../../common-kde-tags-rules
-
-match /trunk/kdebase/kioslave/audiocd/
-	repository ${REPO}
-	branch master
-	max revision 157421
-	min revision 71925
-end match
-
-declare MODULE_RECURSE=(kdebase/(kioslave/)?)?
-
-match /(branches|tags)/[^/]+/${MODULE_RECURSE}$
-  action recurse
-end match
-match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE}$
-  action recurse
-end match
-
-match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdebase/${APP}/
-    repository ${REPO}
-    branch KDE/\1.\2
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdebase/${APP}/
-    repository ${REPO}
-    branch KDE/\1.\2
-end match
+# END kdemultimedia
 
 match /
 end match
