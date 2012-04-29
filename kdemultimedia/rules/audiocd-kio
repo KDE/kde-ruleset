@@ -10,6 +10,10 @@ end repository
 
 include ../../common-kde-ignores
 
+# kio_audiocd started in kdebase in r71925.
+# It moved to kdemultimedia in r157422, although it remained in
+# kdebase version branches until r195119 (v3.0.5a release/tag).
+
 # BEGIN kdebase
 
 declare MODULE=kdebase/kioslave/audiocd
