@@ -115,5 +115,24 @@ end match
 
 # END kdemultimedia
 
+# BEGIN audiocd-specific work branches
+
+# same value as above, but just to make sure nothing breaks
+# with future changes...
+declare MODULE_RECURSE=(kdemultimedia/(kioslave/)?)?
+
+# /branches/make_it_clean/ intentionally ignored
+# (It was never merged into trunk)
+
+match /branches/work/coolos_libloader/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/coolos_libloader/${MODULE}/
+    repository ${REPO}
+    branch workbranch/coolos_libloader
+end match
+
+# END
+
 match /
 end match
