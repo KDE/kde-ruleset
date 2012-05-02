@@ -26,6 +26,13 @@ match /branches/work/kmix/
     branch refs/workbranch/kmix
 end match
 
+match /branches/work/doc/kmix/
+    repository ${REPO}
+    branch refs/workbranch/doc
+    prefix doc/
+    max revision 1132930 # deleted on 1132931
+end match
+
 # export relevant part of the bleedingedge branch
 match /branches/work/bleedingedge/(kdemultimedia/)?$
     action recurse
