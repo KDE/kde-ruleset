@@ -1,3 +1,9 @@
+# merge from trunk to bleedingedge
+560210 560402
+
+# merge bleedingedge into trunk
+560520 560639
+
 # merge work/systray-rewrite-tng
 565384 565761
 
@@ -23,6 +29,9 @@
 
 #merge work/kmainwindow-decoupling
 654692 654728
+
+# merge phonon-solid-sprint to trunk
+659757 659784
 
 # merge work/kde4_kconfig
 721132 721733

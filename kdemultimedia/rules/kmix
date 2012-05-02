@@ -26,5 +26,27 @@ match /branches/work/kmix/
     branch refs/workbranch/kmix
 end match
 
+# export relevant part of the bleedingedge branch
+match /branches/work/bleedingedge/(kdemultimedia/)?$
+    action recurse
+    min revision 560057
+    max revision 560647 # deletion on 560648
+end match
+match /branches/work/bleedingedge/kdemultimedia/kmix/
+    repository ${REPO}
+    branch refs/workbranch/bleedingedge
+    min revision 560057
+    max revision 560647 # deletion on 560648
+end match
+
+match /branches/work/phonon-solid-sprint/(kdemultimedia/)?$
+    action recurse
+end match
+match /branches/work/phonon-solid-sprint/kdemultimedia/kmix/
+    repository ${REPO}
+    branch refs/workbranch/phonon-solid-sprint
+    max revision 793356 # branch deletion on 793357
+end match
+
 match /
 end match
