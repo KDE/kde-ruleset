@@ -11,12 +11,11 @@
 562550 564547
 
 # merge work/kaction-cleanup1
-610567 614117
+610567 610651
 
-# merge work/kaction-cleanup2
-614117 620881
-
-# merge work/kaction-cleanup3
+# merge from trunk to kaction-cleanup3
+617657 618565
+# merge work/kaction-cleanup3 to trunk
 620881 621518
 
 # merge work/kde4_kconfig
@@ -24,6 +23,9 @@
 
 #merge work/kinstance-redesign
 627732 628283
+
+# merge kconfiggroup_port
+635299 635495
 
 #merge work/kmainwindow-decoupling
 654692 654728
