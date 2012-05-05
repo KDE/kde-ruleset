@@ -3,6 +3,11 @@
 bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 source "$bindir/filter-goodies"
 
+if test -z "$(git rev-list --tags --not --branches -n1)"; then
+    echo "nothing to do" >&2
+    exit 0
+fi
+
 tempdir="$(calc_tempdir fix-tags)"
 
 git filter-branch -d "$tempdir" \
