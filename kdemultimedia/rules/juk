@@ -24,6 +24,7 @@ end match
 match /tags/JUK_1_RELEASE/kdemultimedia/juk/
   repository ${REPO}
   branch refs/tags/juk/v1
+  annotated true
 end match
 
 match /tags/juk_(\d+)_(\d+)_release/(kdemultimedia/)?$
@@ -32,6 +33,7 @@ end match
 match /tags/juk_(\d+)_(\d+)_release/kdemultimedia/juk/
   repository ${REPO}
   branch refs/tags/juk/v\1.\2
+  annotated true
 end match
 
 # export relevant part of the bleedingedge branch
