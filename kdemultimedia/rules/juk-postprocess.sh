@@ -10,7 +10,7 @@ last_mpris=cfae05592b9c1042aa26050f9c0813482937ba76
 
 git remote add mpris git://anongit.kde.org/clones/juk/mpyne/juk-MPRIS.git
 trap "git remote rm mpris" 0
-git fetch mpris
+git fetch --no-tags mpris
 
 [[ $(git rev-parse mpris/master) == $last_mpris ]]
 
