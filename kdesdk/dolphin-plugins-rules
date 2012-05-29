@@ -1,5 +1,6 @@
 #
 # Created by Jeremy Whiting <jpwhiting@kde.org>
+# Dolphin plugins specifics added by Sebastian Doerner <sebastian@sebastian-doerner.de>
 #
 
 create repository kdesdk/dolphin-plugins
@@ -13,6 +14,103 @@ declare REPO=kdesdk/dolphin-plugins
 include common-kdesdk-rules
 
 include ../feature-branches
+
+#hist-2
+match /trunk/KDE/kdesdk/dolphin/
+  repository ${REPO}
+  branch master
+  max revision 1114329
+  min revision 1113629
+end match
+
+#hist-plug-*
+#there is indeed no separate CMakeLists.txt at this time
+match /trunk/KDE/kdebase/apps/dolphin/src/versioncontrol/fileviewsvnplugin.(h|cpp|desktop)
+  repository ${REPO}
+  branch master
+  prefix svn/fileviewsvnplugin.\1
+  max revision 1107255
+  min revision 1045674
+end match
+
+#hist-plug-*-2
+match /trunk/KDE/kdebase/apps/dolphin/src/fileviewsvnplugin.(h|cpp|desktop)
+  repository ${REPO}
+  branch master
+  prefix svn/fileviewsvnplugin.\1
+  max revision 1045674
+  min revision 1022921
+end match
+
+#hist-plug-*-3
+match /trunk/KDE/kdebase/apps/dolphin/src/kversioncontrolplugin.(h|cpp)
+  repository ${REPO}
+  branch master
+  prefix svn/kversioncontrolplugin.\1
+  max revision 1022921
+  min revision 1011058
+end match
+
+#hist-plug-*-4
+match /trunk/KDE/kdebase/apps/dolphin/src/revisioncontrolplugin.(h|cpp)
+  repository ${REPO}
+  branch master
+  prefix svn/revisioncontrolplugin.\1
+  max revision 1011058
+  min revision 995351
+end match
+
+# -- in the 4.4 branch, the svn plugin was in kdebase --
+
+match /(branches|tags)/KDE/[^/]+/$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/kdebase/$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/kdebase/apps/$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/kdebase/apps/dolphin/$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/kdebase/apps/dolphin/src/$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/kdebase/apps/dolphin/src/versioncontrol/$
+  action recurse
+end match
+
+#4.4.0 tag
+match /tags/KDE/4\.4/kdebase/apps/dolphin/src/versioncontrol/fileviewsvnplugin.(h|cpp|desktop)
+  repository ${REPO}
+  branch refs/tags/v4.4.0
+  annotated true
+  prefix svn/fileviewsvnplugin.\1
+end match
+
+#4.4.* tags
+match /tags/KDE/4\.4\.(\d+)/kdebase/apps/dolphin/src/versioncontrol/fileviewsvnplugin.(h|cpp|desktop)
+  repository ${REPO}
+  branch refs/tags/v4.4.\1
+  annotated true
+  prefix svn/fileviewsvnplugin.\2
+end match
+
+#RCs of 4.4 have 4.3.* tags
+match /tags/KDE/4\.3\.(\d+)/kdebase/apps/dolphin/src/versioncontrol/fileviewsvnplugin.(h|cpp|desktop)
+  repository ${REPO}
+  branch refs/tags/v4.3.\1
+  annotated true
+  prefix svn/fileviewsvnplugin.\2
+end match
+
+#4.4 branch
+match /branches/KDE/4\.4/kdebase/apps/dolphin/src/versioncontrol/fileviewsvnplugin.(h|cpp|desktop)
+  repository ${REPO}
+  branch KDE/4.4
+  prefix svn/fileviewsvnplugin.\1
+end match
 
 # Ignore everything else
 match /
