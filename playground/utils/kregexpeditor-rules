@@ -97,6 +97,7 @@ match /trunk/KDE/kdeutils/kregexpeditor/
   repository kregexpeditor
   branch master
   min revision 409209
+  max revision 753953
 end match
 match /tags/KDE/3.5.0-alpha1/kdeutils/kregexpeditor/
   repository kregexpeditor
@@ -123,17 +124,20 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/kregexpeditor/
   repository kregexpeditor
   branch KDE/\1.\2
   max revision 409202
+  action recurse
 end match
 
 match /branches/KDE/([^/]+)A/kdeutils/kregexpeditor/
   repository kregexpeditor
   branch KDE/\1a
   min revision 409209
+  action recurse
 end match
 match /branches/KDE/([^/]+)/kdeutils/kregexpeditor/
   repository kregexpeditor
   branch KDE/\1
   min revision 409209
+  action recurse
 end match
 
 #
@@ -145,6 +149,31 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/kregexpeditor/
   repository kregexpeditor
   branch KDE/\1.\2
   max revision 409202
+  action recurse
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/doc/KRegExpEditor/
+  repository kregexpeditor
+  branch KDE/\1.\2
+  max revision 409202
+  action recurse
+  prefix doc/
+end match
+
+match /branches/KDE/([^/]+)A/kdeutils/doc/KRegExpEditor/
+  repository kregexpeditor
+  branch KDE/\1a
+  min revision 409209
+  action recurse
+  prefix doc/
+end match
+
+match /branches/KDE/([^/]+)/kdeutils/doc/KRegExpEditor/
+  repository kregexpeditor
+  branch KDE/\1
+  min revision 409209
+  action recurse
+  prefix doc/
 end match
 
 #match /branches/KDE/3.0/kdeutils/kregexpeditor/
@@ -179,8 +208,36 @@ end match
 
 match /trunk/playground/utils/kregexpeditor/
   repository kregexpeditor
+  min revision 753954
+  max revision 1281256
+  branch master
+end match
+
+match /trunk/kdeutils/doc/KRegExpEditor/
+  repository kregexpeditor
+  min revision 119232
   max revision 409202
   branch master
+  action recurse
+  prefix doc/
+end match
+
+match /trunk/KDE/kdeutils/doc/KRegExpEditor/
+  repository kregexpeditor
+  min revision 409203
+  max revision 753953
+  branch master
+  action recurse
+  prefix doc/
+end match
+
+match /trunk/playground/utils/doc/KRegExpEditor/
+  repository kregexpeditor
+  min revision 753956
+  max revision 1160903
+  branch master
+  action recurse
+  prefix doc/
 end match
 
 match /
