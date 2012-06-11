@@ -19,7 +19,7 @@ declare MODULE=kdeutils/kregexpeditor
 include ../../common-kde-tags-rules
 
 
-# general rules for version branches
+# BEGIN version branches
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/kregexpeditor/
   repository kregexpeditor
   branch KDE/\1.\2
@@ -29,17 +29,9 @@ match /branches/KDE/(\d+)\.(\d+)/${MODULE}/
   repository kregexpeditor
   branch KDE/\1.\2
 end match
+# END
 
-# documentation
-# (note: there were no doc changes in KDE_x_y_BRANCH branches)
-
-match /branches/KDE/(\d+)\.(\d+)/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/\1.\2
-  prefix doc/
-end match
-
-# main history
+# BEGIN main history
 
 match /trunk/(KDE/)?kdeutils/kregexpeditor/
   repository kregexpeditor
@@ -52,6 +44,10 @@ match /trunk/playground/utils/kregexpeditor/
   max revision 1281256 # deletion from SVN due to move to git
 end match
 
+# END
+
+# BEGIN documentation
+
 match /trunk/(KDE/)?kdeutils/doc/KRegExpEditor/
   repository kregexpeditor
   branch master
@@ -63,6 +59,15 @@ match /trunk/playground/utils/doc/KRegExpEditor/
   branch master
   prefix doc/
 end match
+
+# (note: there were no doc changes in KDE_x_y_BRANCH branches)
+match /branches/KDE/(\d+)\.(\d+)/kdeutils/doc/KRegExpEditor/
+  repository kregexpeditor
+  branch KDE/\1.\2
+  prefix doc/
+end match
+
+# END
 
 match /
 end match
