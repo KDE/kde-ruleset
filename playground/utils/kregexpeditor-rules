@@ -30,136 +30,22 @@ match /branches/KDE/(\d+)\.(\d+)/${MODULE}/
   branch KDE/\1.\2
 end match
 
-# KDE/3.0 branch
+# documentation
+# (note: there were no doc changes in KDE_x_y_BRANCH branches)
 
-match /branches/KDE/3.0/kdeutils/doc/KRegExpEditor/
+match /branches/KDE/(\d+)\.(\d+)/kdeutils/doc/KRegExpEditor/
   repository kregexpeditor
-  branch KDE/3.0
-  min revision 409209
+  branch KDE/\1.\2
   prefix doc/
 end match
 
-match /branches/KDE_3_0_BRANCH/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/3.0
-  min revision 145201
-  prefix doc/
-end match
-
-# END - KDE/3.0
-
-# KDE/3.1 branch
-
-match /branches/KDE/3.1/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/3.1
-  min revision 409209
-  prefix doc/
-end match
-
-match /branches/KDE_3_1_BRANCH/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/3.1
-  min revision 190607
-  prefix doc/
-end match
-
-# END - KDE/3.1
-
-# KDE/3.2 branch
-
-match /branches/KDE/3.2/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/3.2
-  min revision 409209
-  prefix doc/
-end match
-
-match /branches/KDE_3_2_BRANCH/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/3.2
-  min revision 280544
-  prefix doc/
-end match
-
-# END - KDE/3.2
-
-# KDE/3.3 branch
-
-match /branches/KDE/3.3/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/3.3
-  min revision 409209
-  prefix doc/
-end match
-
-match /branches/KDE_3_3_BRANCH/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/3.3
-  min revision 336334
-  prefix doc/
-end match
-
-# END - KDE/3.3
-
-# KDE/3.4 branch
-
-match /branches/KDE/3.4/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/3.4
-  min revision 409209
-  prefix doc/
-end match
-
-match /branches/KDE_3_4_BRANCH/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/3.4
-  min revision 392847
-  prefix doc/
-end match
-
-# END - KDE/3.4
-
-# KDE/3.5 branch
-
-match /branches/KDE/3.5/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/3.5
-  min revision 438982
-  prefix doc/
-end match
-
-# END - KDE/3.5
+# main history
 
 match /trunk/kdeutils/kregexpeditor/
   repository kregexpeditor
   branch master
   max revision 409202
   action recurse
-end match
-
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/\1.\2
-  max revision 409202
-  action recurse
-  prefix doc/
-end match
-
-match /branches/KDE/([^/]+)A/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/\1a
-  min revision 409209
-  action recurse
-  prefix doc/
-end match
-
-match /branches/KDE/([^/]+)/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  branch KDE/\1
-  min revision 409209
-  action recurse
-  prefix doc/
 end match
 
 match /trunk/KDE/kdeutils/kregexpeditor/
