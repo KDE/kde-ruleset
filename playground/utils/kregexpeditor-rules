@@ -1,52 +1,8 @@
 create repository kregexpeditor
 end repository
 
-# ignore the SVN-adjusting commits
-match /
-  min revision 409202
-  max revision 409209
-end match
-match /
-  min revision 411963
-  max revision 411963
-end match
+include ../../common-kde-ignores
 
-
-# These three commits add svn:externals to old tags.
-# They cause annoying history graphs; so let's remove them.
-match /
-    min revision 416386
-    max revision 416386
-end match
-match /
-    min revision 416394
-    max revision 416394
-end match
-match /
-    min revision 416398
-    max revision 416398
-end match
-
-# Ignore branches and tags that start with a non-uppercase letter
-match /(branches|tags)/[^A-Z]
-  max revision 409202
-end match
-
-# Ignore these branches
-match /branches/(KWORD_RICHTEXT|KWORD_WYSIWYG|AEGYPTEN_BRANCH|KFILEMETAINFO_BRANCH|Unstable_Development|kicker)/
-end match
-
-# Ignore these tags too
-match /tags/(RELEASE_0_9_9|KDE_2_1_RELEASET|KDE_2_1|MPG123LIB|OGG_VORBIS|KDAB_.*|KOFFICE_1_1_BRANCHPOINT|KDEVELOP_2_KACTION_START|KDEVELOP_2_MERGE)/
-end match
-
-# Ignore this stupid commit
-match /file$
-  min revision 409232
-  max revision 409232
-end match
-
-#
 # KRegExpEditor
 #
 
