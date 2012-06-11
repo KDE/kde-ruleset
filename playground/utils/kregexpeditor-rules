@@ -18,20 +18,19 @@ declare REPO=kregexpeditor
 declare MODULE=kdeutils/kregexpeditor
 include ../../common-kde-tags-rules
 
+
+# general rules for version branches
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdeutils/kregexpeditor/
+  repository kregexpeditor
+  branch KDE/\1.\2
+end match
+
+match /branches/KDE/(\d+)\.(\d+)/${MODULE}/
+  repository kregexpeditor
+  branch KDE/\1.\2
+end match
+
 # KDE/3.0 branch
-
-match /branches/KDE_3_0_BRANCH/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.0
-  max revision 409205
-end match
-
-match /branches/KDE/3.0/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.0
-  min revision 409209
-  action recurse
-end match
 
 match /branches/KDE/3.0/kdeutils/doc/KRegExpEditor/
   repository kregexpeditor
@@ -51,18 +50,6 @@ end match
 
 # KDE/3.1 branch
 
-match /branches/KDE_3_1_BRANCH/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.1
-  max revision 409205
-end match
-
-match /branches/KDE/3.1/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.1
-  min revision 409209
-end match
-
 match /branches/KDE/3.1/kdeutils/doc/KRegExpEditor/
   repository kregexpeditor
   branch KDE/3.1
@@ -80,18 +67,6 @@ end match
 # END - KDE/3.1
 
 # KDE/3.2 branch
-
-match /branches/KDE_3_2_BRANCH/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.2
-  max revision 409205
-end match
-
-match /branches/KDE/3.2/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.2
-  min revision 409209
-end match
 
 match /branches/KDE/3.2/kdeutils/doc/KRegExpEditor/
   repository kregexpeditor
@@ -111,18 +86,6 @@ end match
 
 # KDE/3.3 branch
 
-match /branches/KDE_3_3_BRANCH/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.3
-  max revision 409205
-end match
-
-match /branches/KDE/3.3/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.3
-  min revision 409209
-end match
-
 match /branches/KDE/3.3/kdeutils/doc/KRegExpEditor/
   repository kregexpeditor
   branch KDE/3.3
@@ -141,18 +104,6 @@ end match
 
 # KDE/3.4 branch
 
-match /branches/KDE_3_4_BRANCH/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.4
-  max revision 409205
-end match
-
-match /branches/KDE/3.4/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.4
-  min revision 409209
-end match
-
 match /branches/KDE/3.4/kdeutils/doc/KRegExpEditor/
   repository kregexpeditor
   branch KDE/3.4
@@ -170,12 +121,6 @@ end match
 # END - KDE/3.4
 
 # KDE/3.5 branch
-
-match /branches/KDE/3.5/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch KDE/3.5
-  min revision 438982
-end match
 
 match /branches/KDE/3.5/kdeutils/doc/KRegExpEditor/
   repository kregexpeditor
