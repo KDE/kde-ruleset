@@ -10,7 +10,7 @@ match /(branches|tags)/KDE_[^/]+/(kdeutils/)?$
   action recurse
 end match
 
-match /(branches|tags)/KDE/[^/]+/$
+match /(branches|tags)/KDE/[^/]+/(kdeutils/)?$
   action recurse
 end match
 
@@ -47,30 +47,6 @@ match /branches/KDE_3_0_BRANCH/kdeutils/doc/KRegExpEditor/
   prefix doc/
 end match
 
-match /branches/KDE_3_0_BRANCH/kdeutils/$
-  min revision 145201
-  max revision 145201
-  action recurse
-end match
-
-match /branches/KDE_3_0_BRANCH/$
-  min revision 145201
-  max revision 145201
-  action recurse
-end match
-
-match /branches/KDE_3_0_BRANCH/kdeutils/$
-  min revision 409205
-  max revision 409205
-  action recurse
-end match
-
-match /branches/KDE_3_0_BRANCH/$
-  min revision 409205
-  max revision 409205
-  action recurse
-end match
-
 # END - KDE/3.0
 
 # KDE/3.1 branch
@@ -99,30 +75,6 @@ match /branches/KDE_3_1_BRANCH/kdeutils/doc/KRegExpEditor/
   branch KDE/3.1
   min revision 190607
   prefix doc/
-end match
-
-match /branches/KDE_3_1_BRANCH/kdeutils/$
-  min revision 190607
-  max revision 190607
-  action recurse
-end match
-
-match /branches/KDE_3_1_BRANCH/$
-  min revision 190607
-  max revision 190607
-  action recurse
-end match
-
-match /branches/KDE_3_1_BRANCH/kdeutils/$
-  min revision 409205
-  max revision 409205
-  action recurse
-end match
-
-match /branches/KDE_3_1_BRANCH/$
-  min revision 409205
-  max revision 409205
-  action recurse
 end match
 
 # END - KDE/3.1
@@ -155,30 +107,6 @@ match /branches/KDE_3_2_BRANCH/kdeutils/doc/KRegExpEditor/
   prefix doc/
 end match
 
-match /branches/KDE_3_2_BRANCH/kdeutils/$
-  min revision 280544
-  max revision 280544
-  action recurse
-end match
-
-match /branches/KDE_3_2_BRANCH/$
-  min revision 280544
-  max revision 280544
-  action recurse
-end match
-
-match /branches/KDE_3_2_BRANCH/kdeutils/$
-  min revision 409205
-  max revision 409205
-  action recurse
-end match
-
-match /branches/KDE_3_2_BRANCH/$
-  min revision 409205
-  max revision 409205
-  action recurse
-end match
-
 # END - KDE/3.2
 
 # KDE/3.3 branch
@@ -209,30 +137,6 @@ match /branches/KDE_3_3_BRANCH/kdeutils/doc/KRegExpEditor/
   prefix doc/
 end match
 
-match /branches/KDE_3_3_BRANCH/kdeutils/$
-  min revision 336334
-  max revision 336334
-  action recurse
-end match
-
-match /branches/KDE_3_3_BRANCH/$
-  min revision 336334
-  max revision 336334
-  action recurse
-end match
-
-match /branches/KDE_3_3_BRANCH/kdeutils/$
-  min revision 409205
-  max revision 409205
-  action recurse
-end match
-
-match /branches/KDE_3_3_BRANCH/$
-  min revision 409205
-  max revision 409205
-  action recurse
-end match
-
 # END - KDE/3.3
 
 # KDE/3.4 branch
@@ -261,30 +165,6 @@ match /branches/KDE_3_4_BRANCH/kdeutils/doc/KRegExpEditor/
   branch KDE/3.4
   min revision 392847
   prefix doc/
-end match
-
-match /branches/KDE_3_4_BRANCH/kdeutils/$
-  min revision 392847
-  max revision 392847
-  action recurse
-end match
-
-match /branches/KDE_3_4_BRANCH/$
-  min revision 392847
-  max revision 392847
-  action recurse
-end match
-
-match /branches/KDE_3_4_BRANCH/kdeutils/$
-  min revision 409205
-  max revision 409205
-  action recurse
-end match
-
-match /branches/KDE_3_4_BRANCH/$
-  min revision 409205
-  max revision 409205
-  action recurse
 end match
 
 # END - KDE/3.4
