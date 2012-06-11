@@ -50,7 +50,7 @@ end match
 # KRegExpEditor
 #
 
-match /(branches|tags)/[^/]+/$
+match /(branches|tags)/KDE_[^/]+/(kdeutils/)?$
   action recurse
 end match
 
@@ -58,60 +58,9 @@ match /(branches|tags)/KDE/[^/]+/$
   action recurse
 end match
 
-
-match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch refs/tags/v\1.\2.0
-  annotated true
-  action recurse
-end match
-
-match /tags/KDE_(\d+)_(\d+)_RELEASE/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch refs/tags/v\1.\2.0
-  annotated true
-  action recurse
-end match
-
-match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch refs/tags/v\1.\2.\3
-  annotated true
-  action recurse
-end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)[Aa]_RELEASE/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch refs/tags/v\1.\2.\3a
-  annotated true
-  action recurse
-end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch refs/tags/v\1.\2.\3-beta\4
-  annotated true
-  action recurse
-end match
-
-match /tags/KDE/3.5.0-alpha1/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch refs/tags/v3.4.90
-  annotated true
-end match
-match /tags/KDE/3.5.0-beta1/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch refs/tags/v3.4.91
-  annotated true
-end match
-match /tags/KDE/([^/]+)A/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch refs/tags/v\1a
-  annotated true
-end match
-match /tags/KDE/([^/]+)/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch refs/tags/v\1
-  annotated true
-end match
+declare REPO=kregexpeditor
+declare MODULE=kdeutils/kregexpeditor
+include ../../common-kde-tags-rules
 
 # KDE/3.0 branch
 
