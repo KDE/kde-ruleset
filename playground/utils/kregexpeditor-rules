@@ -41,51 +41,26 @@ end match
 
 # main history
 
-match /trunk/kdeutils/kregexpeditor/
+match /trunk/(KDE/)?kdeutils/kregexpeditor/
   repository kregexpeditor
   branch master
-  max revision 409202
-  action recurse
-end match
-
-match /trunk/KDE/kdeutils/kregexpeditor/
-  repository kregexpeditor
-  branch master
-  min revision 409209
-  max revision 753953
 end match
 
 match /trunk/playground/utils/kregexpeditor/
   repository kregexpeditor
-  min revision 753954
-  max revision 1281256
   branch master
+  max revision 1281256 # deletion from SVN due to move to git
 end match
 
-match /trunk/kdeutils/doc/KRegExpEditor/
+match /trunk/(KDE/)?kdeutils/doc/KRegExpEditor/
   repository kregexpeditor
-  min revision 119232
-  max revision 409202
   branch master
-  action recurse
-  prefix doc/
-end match
-
-match /trunk/KDE/kdeutils/doc/KRegExpEditor/
-  repository kregexpeditor
-  min revision 409203
-  max revision 753953
-  branch master
-  action recurse
   prefix doc/
 end match
 
 match /trunk/playground/utils/doc/KRegExpEditor/
   repository kregexpeditor
-  min revision 753956
-  max revision 1160903
   branch master
-  action recurse
   prefix doc/
 end match
 
