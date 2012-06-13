@@ -1,0 +1,14 @@
+create repository avkode
+end repository
+
+match /branches/work/avkode/
+  max revision 649862
+  min revision 573324
+  repository avkode
+  branch master
+end match
+
+# Ignore everything else
+match /
+end match
+

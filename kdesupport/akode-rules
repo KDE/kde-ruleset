@@ -1,0 +1,25 @@
+create repository akode
+end repository
+
+match /trunk/kdesupport/akode/
+  max revision 1010849
+  min revision 434524
+  repository akode
+  branch master
+end match
+
+match /trunk/KDE/kdemultimedia/akode/
+  max revision 434524
+  repository akode
+  branch master
+end match
+
+match /branches/kdesupport/3.5/kdesupport/akode/
+  max revision 738347
+  min revision 504785
+  branch kdesupport/3.5
+end match
+
+# Ignore everything else
+match /
+end match
