@@ -59,6 +59,7 @@ match /trunk/playground/utils/doc/KRegExpEditor/
   repository kregexpeditor
   branch master
   prefix doc/
+  max revision 1299649 # deletion from SVN after move to git
 end match
 
 # (note: there were no doc changes in KDE_x_y_BRANCH branches)
