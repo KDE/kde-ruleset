@@ -16,6 +16,7 @@ end match
 
 declare REPO=kregexpeditor
 declare MODULE=kdeutils/kregexpeditor
+
 include ../../common-kde-tags-rules
 
 
@@ -65,6 +66,18 @@ match /branches/KDE/(\d+)\.(\d+)/kdeutils/doc/KRegExpEditor/
   repository kregexpeditor
   branch KDE/\1.\2
   prefix doc/
+end match
+
+# END
+
+# BEGIN work branches
+
+match /branches/work/kde4/kdeutils/$
+    action recurse
+end match
+match /branches/work/kde4/kdeutils/kregexpeditor/
+    repository kregexpeditor
+    branch kde4
 end match
 
 # END
