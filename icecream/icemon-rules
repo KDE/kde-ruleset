@@ -3,37 +3,31 @@ end repository
 
 match /trunk/kdenonbeta/icecream/icecream/mon/
   repository icemon
-  branch master
+  branch kde3
 end match
 
 match /trunk/icecream/icecream/mon/
-  max revision 519553
   repository icemon
-  branch master
+  branch kde3
 end match
 
 match /trunk/icecream/mon/
-  min revision 519553
-  max revision 548551
   repository icemon
-  branch master
+  branch kde3
 end match
 
 match /trunk/icecream/mon/
-  min revision 548552
   repository icemon
   branch kde3
 end match
 
 match /trunk/icecream/mon-qt4/
-  min revision 548551
-  max revision 548681
   repository icemon
   branch master
+  max revision 548681 # ignore the deletion at 548682
 end match
 
 match /trunk/playground/devtools/icemon/
-  min revision 548681
   repository icemon
   branch master
 end match
