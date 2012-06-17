@@ -30,6 +30,11 @@ match /branches/work/icecream-make-it-cool/
   branch work/icecream-make-it-cool
 end match
 
+match /branches/work/icecream/
+    repository icecream
+    branch work
+end match
+
 # icecream-non-linux-porting doesn't need conversion.
 # It is an import of an icecream fork from KDAB,
 # and there's only 3 commits to it in KDE SVN,
