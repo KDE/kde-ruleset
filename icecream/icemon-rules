@@ -16,11 +16,6 @@ match /trunk/icecream/mon/
   branch kde3
 end match
 
-match /trunk/icecream/mon/
-  repository icemon
-  branch kde3
-end match
-
 match /trunk/icecream/mon-qt4/
   repository icemon
   branch master
