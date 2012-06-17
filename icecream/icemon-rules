@@ -13,12 +13,19 @@ end match
 
 match /trunk/icecream/mon/
   repository icemon
+  branch refs/temp/kde3 # don't ask why this works
+  max revision 548831 # ignore the deletion at 548832
+end match
+
+match /trunk/playground/devtools/icemon-kde3/
+  repository icemon
   branch kde3
+  max revision 657890 # ignore deletion on 657891
 end match
 
 match /trunk/icecream/mon-qt4/
   repository icemon
-  branch master
+  branch refs/temp/master # don't ask why this works
   max revision 548681 # ignore the deletion at 548682
 end match
 
