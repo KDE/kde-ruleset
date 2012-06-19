@@ -1,0 +1,13 @@
+# Akode conversion rules
+# Created by Nicolás Alvarez <nicolas.alvarez@gmail.com>
+
+create repository akode
+end repository
+
+match /trunk/(KDE/)?kdemultimedia/akode/
+    repository akode
+    branch master
+end match
+
+match /
+end match
