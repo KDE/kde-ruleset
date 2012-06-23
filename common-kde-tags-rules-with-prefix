@@ -1,0 +1,57 @@
+# General rules for version tags, but respecting a set PREFIX variable.
+#
+# Note that this file doesn't include the needed recursion rules;
+# that's left for the caller to handle. And you probably need common-kde-ignores
+# as well, in order to skip the creation of wrong tags that were later
+# re-created correctly,
+
+match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/${MODULE}/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.\3
+    prefix ${PREFIX|/}
+    annotated true
+    max revision 409202
+end match
+match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/${MODULE}/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.\3-beta\4
+    prefix ${PREFIX|/}
+    annotated true
+    min revision 376088
+    max revision 409202
+end match
+match /tags/(?:__)?KDE_(\d+)_(\d+)_RELEASE/${MODULE}/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.0
+    prefix ${PREFIX|/}
+    annotated true
+    max revision 409202
+end match
+match /tags/KDE/3.5.0-alpha1/${MODULE}/
+    repository ${REPO}
+    branch refs/tags/v3.4.90
+    prefix ${PREFIX|/}
+    annotated true
+    min revision 443441
+    max revision 445561
+end match
+match /tags/KDE/3.5.0-beta1/${MODULE}/
+    repository ${REPO}
+    branch refs/tags/v3.4.91
+    prefix ${PREFIX|/}
+    annotated true
+    min revision 459298
+    max revision 460260
+end match
+match /tags/KDE/(\d+)\.(\d+)/${MODULE}/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.0
+    prefix ${PREFIX|/}
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/${MODULE}/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.\3
+    prefix ${PREFIX|/}
+    annotated true
+end match
