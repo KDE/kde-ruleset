@@ -96,7 +96,7 @@ end match
 
 match /tags/krecipes/0.9.1/
   # Ignore after revision 485357, further changes are changes
-  # in the repo layout abd they confuse svn-all-fast-export,
+  # in the repo layout and they confuse svn-all-fast-export,
   # producing spurious git commits and even a wrong v0.9.1 tag.
   min revision 485357
 end match
