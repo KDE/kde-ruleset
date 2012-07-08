@@ -20,12 +20,24 @@ end match
 
 match /branches/krecipes/work/krecipes-rating-support/
   repository krecipes
-  branch master
+  branch rating-support
 end match
 
 match /branches/krecipes/work/krecipes-new-layout/
   repository krecipes
-  branch master
+  branch new-layout
+end match
+
+match /branches/krecipes/work/krecipes-kioslave/
+  repository krecipes
+  branch kioslave
+end match
+
+match /branches/krecipes/work/krecipes-kde4/
+  # Ignore this branch, since it just contains never released changes.
+  # The KDE 4 port was done in other place
+  #repository krecipes
+  #branch kde4
 end match
 
 # 1.1 branch
