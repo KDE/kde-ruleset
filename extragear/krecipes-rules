@@ -109,8 +109,14 @@ match /branches/krecipes/0.8beta/
 end match
 
 match /tags/krecipes/krecipes_beta_0_8/
+  max revision 434051
   repository krecipes
-  branch 0.8
+  branch refs/tags/v0.8-beta
+  annotated true
+end match
+
+match /tags/krecipes/0.8beta/
+  # Ignore this tag, it was formerly named krecipes_beta_0_8.
 end match
 
 
