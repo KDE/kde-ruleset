@@ -40,6 +40,7 @@ match /branches/krecipes/work/krecipes-kde4/
   #branch kde4
 end match
 
+
 # 1.1 branch
 match /branches/extragear/kde3/utils/krecipes/
   repository krecipes
@@ -94,29 +95,11 @@ match /branches/krecipes/0.9/
   branch 0.9
 end match
 
-match /tags/krecipes/0.9.1/
-  # Ignore after revision 485357, further changes are changes
-  # in the repo layout and they confuse svn-all-fast-export,
-  # producing spurious git commits and even a wrong v0.9.1 tag.
-  min revision 485357
-end match
-
 
 # 0.8 branch
 match /branches/krecipes/0.8beta/
   repository krecipes
   branch 0.8
-end match
-
-match /tags/krecipes/krecipes_beta_0_8/
-  max revision 434051
-  repository krecipes
-  branch refs/tags/v0.8-beta
-  annotated true
-end match
-
-match /tags/krecipes/0.8beta/
-  # Ignore this tag, it was formerly named krecipes_beta_0_8.
 end match
 
 
@@ -177,12 +160,78 @@ match /branches/alpha_0_4_branch/$
 end match
 
 
+#############################
 # Tags
+#############################
+
 
 # Ignore 1.0-beta2 this tag was deleted because it wasn't done properly.
 match /tags/krecipes/1.0-beta2/
 end match
 
+
+# 0.9.1 tag
+match /tags/krecipes/0.9.1/
+  # Ignore after revision 485357, further changes are changes
+  # in the repo layout and they confuse svn-all-fast-export,
+  # producing spurious git commits and even a wrong v0.9.1 tag.
+  min revision 485357
+end match
+
+
+# 0.8-beta tag
+match /tags/krecipes/krecipes_beta_0_8/
+  max revision 434051
+  repository krecipes
+  branch refs/tags/v0.8-beta
+  annotated true
+end match
+
+match /tags/krecipes/0.8beta/
+  # Ignore this tag, it was formerly named krecipes_beta_0_8.
+end match
+
+
+# Ignore this tag, it was renamed and not ignoring it will make
+# svn-all-fast-export crash.
+match /tags/krecipes/0.7bbeta/
+end match
+
+
+# Various tags, they need manual fixing.
+match /tags/krecipes_([^_]+)_([^/]+)/kdeextragear-3/krecipes/
+  repository krecipes
+  branch refs/tags/v\2-\1-FIXME
+  substitute branch s/_/./
+  annotated true
+end match
+
+match /tags/krecipes_([^_]+)_([^/]+)/kdeextragear-3/$
+  min revision 394735 
+  max revision 394735
+  action recurse 
+end match
+
+match /tags/krecipes_([^_]+)_([^/]+)/$
+  min revision 394735 
+  max revision 394735
+  action recurse 
+end match
+
+
+# Ignore these commits since they rename several tags,
+# this confuses svn-all-export producing broken git tags.
+match /tags/krecipes/([^/]+)/
+  min revision 434052
+  max revision 434052
+end match
+match /tags/krecipes/([^/]+)/
+  min revision 430545
+  max revision 430545
+end match
+
+
+# Remaining tags
 match /tags/krecipes/([^/]+)/
   repository krecipes
   branch refs/tags/v\1
