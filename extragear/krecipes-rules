@@ -5,6 +5,12 @@
 create repository krecipes
 end repository
 
+# Ignore commits previous to 226097, otherwise we may get some spurious commits,
+# this is because Unai (the first krecipes developer) didn't import the
+# repository correcly the first time so he had to remove it and re-add it later.
+match /
+ max revision 226096
+end match
 
 # master branch
 match /trunk/(extragear/utils|kdeextragear-3)/krecipes/
