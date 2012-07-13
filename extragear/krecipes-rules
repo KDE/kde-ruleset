@@ -12,24 +12,13 @@ include ../common-kde-ignores
 # Ignore commits previous to 226097, otherwise we may get some spurious commits,
 # this is because Unai (the first krecipes developer) didn't import the
 # repository correcly the first time so he had to remove it and re-add it later.
-match /trunk/kdeextragear-3/krecipes/
+match /trunk/(extragear/utils|kdeextragear-3)/krecipes/
   repository krecipes
   branch master
   min revision 226097
 end match
 
-match /trunk/extragear/utils/krecipes/
-  repository krecipes
-  branch master
-end match
-
-match /trunk/kdeextragear-3/doc/krecipes/
-  repository krecipes
-  branch master
-  prefix doc/
-end match
-
-match /trunk/extragear/utils/doc/krecipes/
+match /trunk/(extragear/utils|kdeextragear-3)/doc/krecipes/
   repository krecipes
   branch master
   prefix doc/
