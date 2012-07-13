@@ -22,6 +22,12 @@ match /trunk/extragear/utils/krecipes/
   branch master
 end match
 
+match /trunk/kdeextragear-3/doc/krecipes/
+  repository krecipes
+  branch master
+  prefix doc/
+end match
+
 match /trunk/extragear/utils/doc/krecipes/
   repository krecipes
   branch master
