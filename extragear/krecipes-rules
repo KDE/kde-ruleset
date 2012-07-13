@@ -92,12 +92,6 @@ match /branches/krecipes/1.0-betas/utils/krecipes/
   branch 1.0
 end match
 
-match /branches/krecipes/1.0/utils/doc/
-  repository krecipes
-  branch 1.0
-  prefix doc/
-end match
-
 match /branches/krecipes/1.0-betas/(utils/)?$
   min revision 580863
   max revision 580863
