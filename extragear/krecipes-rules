@@ -135,13 +135,7 @@ match /branches/beta_0_7_branch/kdeextragear-3/krecipes/
   branch 0.7
 end match
 
-match /branches/beta_0_7_branch/kdeextragear-3/$
-  min revision 386536
-  max revision 386536
-  action recurse
-end match
-
-match /branches/beta_0_7_branch/$
+match /branches/beta_0_7_branch/(kdeextragear-3/)?$
   min revision 386536
   max revision 386536
   action recurse
@@ -154,13 +148,7 @@ match /branches/beta_0_6_branch/kdeextragear-3/krecipes/
   branch 0.6
 end match
 
-match /branches/beta_0_6_branch/kdeextragear-3/$
-  min revision 349866
-  max revision 349866
-  action recurse
-end match
-
-match /branches/beta_0_6_branch/$
+match /branches/beta_0_6_branch/(kdeextragear-3/)?$
   min revision 349866
   max revision 349866
   action recurse
@@ -173,13 +161,7 @@ match /branches/alpha_0_4_branch/kdeextragear-3/krecipes/
   branch 0.4
 end match
 
-match /branches/alpha_0_4_branch/kdeextragear-3/$
-  min revision 267383
-  max revision 267383
-  action recurse
-end match
-
-match /branches/alpha_0_4_branch/$
+match /branches/alpha_0_4_branch/(kdeextragear-3/)?$
   min revision 267383
   max revision 267383
   action recurse
@@ -225,37 +207,28 @@ end match
 
 
 # Various tags, they need manual fixing.
-match /tags/krecipes_([^_]+)_([^/]+)/kdeextragear-3/krecipes/
+match /tags/krecipes_([^_]+)_(\d+)_(\d+)/kdeextragear-3/krecipes/
   repository krecipes
-  branch refs/tags/v\2-\1-FIXME
-  substitute branch s/_/./
+  branch refs/tags/v\2.\3-\1-FIXME
   annotated true
 end match
 
-match /tags/krecipes_([^_]+)_([^/]+)/kdeextragear-3/$
-  min revision 394735 
-  max revision 394735
-  action recurse 
-end match
-
-match /tags/krecipes_([^_]+)_([^/]+)/$
-  min revision 394735 
-  max revision 394735
-  action recurse 
-end match
 
 
 # Ignore these commits since they rename several tags,
 # this confuses svn-all-export producing broken git tags.
-match /tags/krecipes/([^/]+)/
+match /tags/
   min revision 434052
   max revision 434052
 end match
-match /tags/krecipes/([^/]+)/
+match /tags/
   min revision 430545
   max revision 430545
 end match
 
+match /tags/krecipes_([^_]+)_([^/]+)/(kdeextragear-3/)?$
+  action recurse
+end match
 
 # Remaining tags
 match /tags/krecipes/([^/]+)/
