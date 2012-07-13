@@ -7,6 +7,13 @@ end repository
 
 include ../common-kde-ignores
 
+# Ignore revision 409209, this produces an empty spurious commit.
+match /
+  min revision 409209
+  max revision 409209
+end match
+
+
 # BEGIN master branch
 
 # Ignore commits previous to 226097, otherwise we may get some spurious commits,
