@@ -65,13 +65,15 @@ match /branches/extragear/kde3/utils/krecipes/
   branch 1.1
 end match
 
+# no documentation changes in the kde3 branch,
+# but this rule is needed for the copy in r790308 to work correctly.
 match /branches/extragear/kde3/utils/doc/krecipes/
   repository krecipes
   branch 1.1
   prefix doc/
 end match
 
-match /branches/extragear/kde3/utils
+match /branches/extragear/kde3/utils/$
   min revision 670725
   max revision 670725
   action recurse
