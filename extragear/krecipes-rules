@@ -99,27 +99,20 @@ end match
 
 # END 1.0 branch
 
-# 0.4 branch
-match /branches/alpha_0_4_branch/(kdeextragear-3/)?$
-  action recurse
-end match
-match /branches/alpha_0_4_branch/kdeextragear-3/krecipes/
-  repository krecipes
-  branch 0.4
-end match
-
 
 # BEGIN other version branches
 
-# 0.6 branch
-match /branches/beta_0_6_branch/(kdeextragear-3/)?$
-  action recurse
-end match
-match /branches/beta_0_6_branch/kdeextragear-3/krecipes/
+# 0.9 branch
+match /branches/krecipes/0.9/
   repository krecipes
-  branch 0.6
+  branch 0.9
 end match
 
+# 0.8 branch
+match /branches/krecipes/0.8beta/
+  repository krecipes
+  branch 0.8
+end match
 
 # 0.7 branch
 match /branches/beta_0_7_branch/(kdeextragear-3/)?$
@@ -130,17 +123,22 @@ match /branches/beta_0_7_branch/kdeextragear-3/krecipes/
   branch 0.7
 end match
 
-
-# 0.8 branch
-match /branches/krecipes/0.8beta/
+# 0.6 branch
+match /branches/beta_0_6_branch/(kdeextragear-3/)?$
+  action recurse
+end match
+match /branches/beta_0_6_branch/kdeextragear-3/krecipes/
   repository krecipes
-  branch 0.8
+  branch 0.6
 end match
 
-# 0.9 branch
-match /branches/krecipes/0.9/
+# 0.4 branch
+match /branches/alpha_0_4_branch/(kdeextragear-3/)?$
+  action recurse
+end match
+match /branches/alpha_0_4_branch/kdeextragear-3/krecipes/
   repository krecipes
-  branch 0.9
+  branch 0.4
 end match
 
 # END version branches
