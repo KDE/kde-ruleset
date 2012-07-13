@@ -182,9 +182,10 @@ end match
 
 
 # Various tags, most of them need manual fixing.
-match /tags/krecipes_([^_]+)_(\d+)_(\d+)/kdeextragear-3/krecipes/
+match /tags/krecipes_([^_]+)_([^/]+)/kdeextragear-3/krecipes/
   repository krecipes
-  branch refs/tags/v\2.\3-\1-FIXME
+  branch refs/tags/v\2-\1-FIXME
+  substitute branch s/_/./
   annotated true
 end match
 
