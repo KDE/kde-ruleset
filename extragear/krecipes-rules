@@ -81,6 +81,8 @@ end match
 
 
 # 1.0 branch
+# This is kind of weird: trunk was copied to a tag,
+# and the branch was created from the tag (?!)
 match /branches/krecipes/1.0-betas/utils/krecipes/
   repository krecipes
   branch 1.0
@@ -92,7 +94,7 @@ match /branches/krecipes/1.0/utils/doc/
   prefix doc/
 end match
 
-match /branches/krecipes/1.0-betas
+match /branches/krecipes/1.0-betas/(utils/)?$
   min revision 580863
   max revision 580863
   action recurse
@@ -100,12 +102,11 @@ end match
 
 match /tags/krecipes/1.0-beta1/utils/doc/krecipes/
   # This is a handbook tagging, ignore.
-  # NOTE: the 1.0-beta1 and 1.0-beta2 tags should be created manually.
 end match
-
 match /tags/krecipes/1.0-beta1/utils/krecipes/
   repository krecipes
-  branch 1.0
+  branch refs/tags/1.0-beta1
+  annotated true
 end match
 
 
