@@ -5,12 +5,12 @@
 create repository krecipes
 end repository
 
+
+# BEGIN master branch
+
 # Ignore commits previous to 226097, otherwise we may get some spurious commits,
 # this is because Unai (the first krecipes developer) didn't import the
 # repository correcly the first time so he had to remove it and re-add it later.
-
-
-# master branch
 match /trunk/kdeextragear-3/krecipes/
   repository krecipes
   branch master
@@ -34,7 +34,9 @@ match /trunk/extragear/utils/doc/krecipes/
   prefix doc/
 end match
 
-# work branches
+# END
+
+# BEGIN work branches
 
 match /branches/krecipes/work/krecipes-rating-support/
   repository krecipes
@@ -58,8 +60,9 @@ match /branches/krecipes/work/krecipes-kde4/
   #branch kde4
 end match
 
+# END work branches
 
-# 1.1 branch
+# BEGIN 1.1 branch
 match /branches/extragear/kde3/utils/krecipes/
   repository krecipes
   branch 1.1
@@ -79,8 +82,9 @@ match /branches/extragear/kde3/utils/$
   action recurse
 end match
 
+# END 1.1 branch
 
-# 1.0 branch
+# BEGIN 1.0 branch
 # This is kind of weird: trunk was copied to a tag,
 # and the branch was created from the tag (?!)
 match /branches/krecipes/1.0-betas/utils/krecipes/
@@ -109,6 +113,7 @@ match /tags/krecipes/1.0-beta1/utils/krecipes/
   annotated true
 end match
 
+# END 1.0 branch
 
 # 0.9 branch
 match /branches/krecipes/0.9/
@@ -182,7 +187,7 @@ end match
 
 
 #############################
-# Tags
+# BEGIN Tags
 #############################
 
 
@@ -259,6 +264,7 @@ match /tags/krecipes/([^/]+)/
   annotated true
 end match
 
+# END tags
 
 # Ignore everything else
 match /
