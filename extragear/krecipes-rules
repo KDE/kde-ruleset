@@ -5,6 +5,7 @@
 create repository krecipes
 end repository
 
+include ../common-kde-ignores
 
 # BEGIN master branch
 
@@ -111,24 +112,20 @@ end match
 
 # 0.4 branch
 match /branches/alpha_0_4_branch/(kdeextragear-3/)?$
-  min revision 267383
-  max revision 267383
   action recurse
 end match
-
 match /branches/alpha_0_4_branch/kdeextragear-3/krecipes/
   repository krecipes
   branch 0.4
 end match
 
 
+# BEGIN other version branches
+
 # 0.6 branch
 match /branches/beta_0_6_branch/(kdeextragear-3/)?$
-  min revision 349866
-  max revision 349866
   action recurse
 end match
-
 match /branches/beta_0_6_branch/kdeextragear-3/krecipes/
   repository krecipes
   branch 0.6
@@ -137,11 +134,8 @@ end match
 
 # 0.7 branch
 match /branches/beta_0_7_branch/(kdeextragear-3/)?$
-  min revision 386536
-  max revision 386536
   action recurse
 end match
-
 match /branches/beta_0_7_branch/kdeextragear-3/krecipes/
   repository krecipes
   branch 0.7
@@ -160,6 +154,7 @@ match /branches/krecipes/0.9/
   branch 0.9
 end match
 
+# END version branches
 
 #############################
 # BEGIN Tags
