@@ -181,13 +181,12 @@ match /tags/krecipes/0.7bbeta/
 end match
 
 
-# Various tags, they need manual fixing.
+# Various tags, most of them need manual fixing.
 match /tags/krecipes_([^_]+)_(\d+)_(\d+)/kdeextragear-3/krecipes/
   repository krecipes
   branch refs/tags/v\2.\3-\1-FIXME
   annotated true
 end match
-
 
 
 # Ignore these commits since they rename several tags,
@@ -201,9 +200,12 @@ match /tags/
   max revision 430545
 end match
 
+
+# Various tags which would need manual fixing, see above.
 match /tags/krecipes_([^_]+)_([^/]+)/(kdeextragear-3/)?$
   action recurse
 end match
+
 
 # Remaining tags
 match /tags/krecipes/([^/]+)/
@@ -212,7 +214,11 @@ match /tags/krecipes/([^/]+)/
   annotated true
 end match
 
+
+##########
 # END tags
+##########
+
 
 # Ignore everything else
 match /
