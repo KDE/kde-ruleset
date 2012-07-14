@@ -1,0 +1,26 @@
+#
+# Created by Sebastian Doerner <sebastian@sebastian-doerner.de>
+#
+
+create repository kdesdk/thumbnailers
+end repository
+
+declare MODULE=kdesdk/thumbnailers
+declare MODULE_RECURSE=(kdesdk/)?
+
+declare NAMES=thumbnailers
+declare REPO=kdesdk/thumbnailers
+include common-kdesdk-rules
+
+include ../feature-branches
+
+match /trunk/kdereview/thumbnailers/
+  repository ${REPO}
+  branch master
+  max revision 1293985 #one before the move
+  min revision 1291261 #initial commit
+end match
+
+# Ignore everything else
+match /
+end match
