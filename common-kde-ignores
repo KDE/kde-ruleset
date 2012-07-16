@@ -15,6 +15,11 @@ match /
     min revision 409205
     max revision 409205
 end match
+# moves of playground, tests, extragear
+match /
+    min revision 409207
+    max revision 409209
+end match
 # Same, with tags (tags/KDE_<ver>_RELEASE => tags/KDE/<ver>)
 match /
     min revision 411963
