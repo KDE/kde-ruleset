@@ -93,7 +93,7 @@ match /tags/krecipes/1.0-beta1/utils/doc/krecipes/
 end match
 match /tags/krecipes/1.0-beta1/utils/krecipes/
   repository krecipes
-  branch refs/tags/1.0-beta1
+  branch refs/tags/v1.0-beta1
   annotated true
 end match
 
