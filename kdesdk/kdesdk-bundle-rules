@@ -5,14 +5,14 @@
 #
 
 #get the application branches
-include ../common-kde-branches-rules
+include ../common-kde-branches-rules-match-files
 include ../common-kde-tags-rules-with-prefix
 #and then the doc prefix for branches
 declare MODULE_SAVE=${MODULE}
-declare MODULE=kdesdk/doc/${NAMES}
+declare MODULE=kdesdk/doc/${NAMES}/
 declare PREFIX_SAVE=${PREFIX}
 declare PREFIX=doc/${PREFIX}
-include ../common-kde-branches-rules
+include ../common-kde-branches-rules-match-files
 include ../common-kde-tags-rules-with-prefix
 declare MODULE=${MODULE_SAVE}
 declare PREFIX=${PREFIX_SAVE}
