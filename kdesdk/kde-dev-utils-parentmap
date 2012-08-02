@@ -1,0 +1,14 @@
+# merge kconfiggroup_port into trunk
+634440 635499
+
+# merge kinstance-redesign into trunk
+628052 628298
+
+# merge kaction-cleanup3 into trunk
+620855 621518
+
+# merge trunk into kaction-cleanup2
+612668 614117
+
+# merge trunk into kaction-cleanup2 again
+614808 617061
