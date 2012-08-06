@@ -1,0 +1,10 @@
+declare MODULE=kdegames/${REPO}
+declare DOCMODULE=kdegames/doc/${REPO}
+
+declare MODULE_RECURSE=(kdegames/)?
+
+create repository ${REPO}
+end repository
+
+include ../common-kde-ignores
+

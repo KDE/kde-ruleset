@@ -1,0 +1,153 @@
+
+#match /trunk/(KDE/)?${MODULE}/
+#  action recurse
+#end match
+match /trunk/(KDE/)?${MODULE}/
+    repository ${REPO}
+    branch master
+end match
+
+# Get sources and docs from old-style playground
+match /trunk/playground-games/${REPO}/
+    repository ${REPO}
+    branch master
+end match
+match /trunk/playground-games/doc/${REPO}/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
+
+# Get sources and docs from playground
+match /trunk/playground/games/${REPO}/
+    repository ${REPO}
+    branch master
+end match
+match /trunk/playground/games/doc/${REPO}/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
+
+# Get sources and docs from kdereview
+match /trunk/kdereview/${REPO}/
+    repository ${REPO}
+    branch master
+end match
+match /trunk/kdereview/doc/${REPO}/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
+
+# BEGIN branch recurse
+match /(branches|tags)/KDE_\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
+  action recurse
+end match
+match /branches/work/kde4/kdegames/$
+    action recurse
+end match
+match /tags/(KDE/)?[^/]+/(kdegames/)?$
+    action recurse
+end match
+# END
+
+# BEGIN Documentation
+match /trunk/(KDE/)?${DOCMODULE}/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/${DOCMODULE}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
+end match
+# END
+
+# BEGIN Branches
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/${MODULE}/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/${MODULE}/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+match /branches/work/kde4/${MODULE}/
+    repository ${REPO}
+    branch kde4
+end match
+# END
+
+# KDEGames work branches
+match /branches/make_atlantik_cool/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/make_atlantik_cool/${MODULE}/
+    repository ${REPO}
+    branch refs/workbranch/make_atlantik_cool
+end match
+
+match /branches/make_it_kgame/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/make_it_kgame/${MODULE}/
+    repository ${REPO}
+    branch refs/workbranch/make_it_kgame
+end match
+
+match /branches/work/bleedingedge/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/work/bleedingedge/${MODULE}/
+    repository ${REPO}
+    branch refs/workbranch/bleedingedge
+end match
+
+match /branches/work/kde4/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/work/kde4/${MODULE}/
+    repository ${REPO}
+    branch refs/workbranch/kde4
+end match
+
+# scons was a try to use the scons build system buit
+# abandoned after one commit
+match /branches/work/kdegames-scons/v1/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/work/kdegames-scons/v1/${MODULE}/
+end match
+
+# those branches have no commit for kdegames
+match /branches/work/(systray-rewrite|systray-rewrite-tng|kparts_urlargs_split|qdbus-api-changes)/$MODULE_RECURSE$
+    action recurse
+end match
+match /branches/work/(systray-rewrite|systray-rewrite-tng|kparts_urlargs_split|qdbus-api-changes)/${MODULE}/
+end match
+
+include ../feature-branches
+
+#END
+
+# Get tags
+match /tags/KDE/(\d+)\.(\d+)/${MODULE}/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/${MODULE}/
+    repository ${REPO}
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+include ../common-kde-tags-rules
+
+match /
+end match
