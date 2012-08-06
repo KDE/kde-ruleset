@@ -112,6 +112,17 @@ match /branches/KDE/4\.4/kdebase/apps/dolphin/src/versioncontrol/fileviewsvnplug
   prefix svn/fileviewsvnplugin.\1
 end match
 
+# work branch for gsoc project
+match /branches/work/soc-kdesdk-dolphin-plugins-hg/$
+  action recurse
+end match
+
+match /branches/work/soc-kdesdk-dolphin-plugins-hg/dolphin-plugins/
+  repository ${REPO}
+  branch refs/workbranch/gsoc-dolphin-plugins-hg
+  min revision 1232773
+end match
+
 # Ignore everything else
 match /
 end match

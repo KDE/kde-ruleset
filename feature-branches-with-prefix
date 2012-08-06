@@ -1,21 +1,25 @@
+#this is a version of feature-branches with the following changes:
+#add prefix ${PREFIX} statement
+#remove the trailing slash after ${MODULE}, so we can match files
+
 match /branches/work/kaction-cleanup-branch/(KDE/)?${MODULE_RECURSE}$
     action recurse
 end match
 
-match /branches/work/kaction-cleanup-branch/${MODULE}/
+match /branches/work/kaction-cleanup-branch/${MODULE}
     repository ${REPO}
     branch refs/workbranch/kaction-cleanup1
     max revision 610651 # one before branch deletion
     prefix ${PREFIX}
 end match
-match /branches/work/kaction-cleanup-branch/KDE/${MODULE}/
+match /branches/work/kaction-cleanup-branch/KDE/${MODULE}
     repository ${REPO}
     branch refs/workbranch/kaction-cleanup2
     min revision 610825 # re-creation of branch
     max revision 617205 # one before branch deletion
     prefix ${PREFIX}
 end match
-match /branches/work/kaction-cleanup-branch/KDE/${MODULE}/
+match /branches/work/kaction-cleanup-branch/KDE/${MODULE}
     repository ${REPO}
     branch refs/workbranch/kaction-cleanup3
     min revision 617207 # re-creation of branch
@@ -27,7 +31,7 @@ match /branches/work/kinstance-redesign/${MODULE_RECURSE}$
     action recurse
 end match
 
-match /branches/work/kinstance-redesign/${MODULE}/
+match /branches/work/kinstance-redesign/${MODULE}
     repository ${REPO}
     branch refs/workbranch/kinstance-redesign
 
@@ -42,7 +46,7 @@ end match
 match /branches/work/kconfiggroup_port/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kconfiggroup_port/${MODULE}/
+match /branches/work/kconfiggroup_port/${MODULE}
     repository ${REPO}
     branch refs/workbranch/kconfiggroup_port
     max revision 635534 # branch got deleted in r635535
@@ -55,7 +59,7 @@ end match
 match /branches/work/kconfig_new_take3/KDE/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kconfig_new_take3/KDE/${MODULE}/
+match /branches/work/kconfig_new_take3/KDE/${MODULE}
     repository ${REPO}
     branch refs/workbranch/kconfig_new
     max revision 730730 # branch deleted in r730731
@@ -65,7 +69,7 @@ end match
 match /branches/work/kde4-qdbus-api-changes/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kde4-qdbus-api-changes/${MODULE}/
+match /branches/work/kde4-qdbus-api-changes/${MODULE}
     repository ${REPO}
     branch refs/workbranch/qdbus-api-changes
     max revision 575850 # branch deleted in r575851
@@ -75,7 +79,7 @@ end match
 match /branches/work/kde4_jobflags/KDE/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kde4_jobflags/KDE/${MODULE}/
+match /branches/work/kde4_jobflags/KDE/${MODULE}
     repository ${REPO}
     branch refs/workbranch/kde4_jobflags
     max revision 721454 # branch deleted in r721455
@@ -85,7 +89,7 @@ end match
 match /branches/work/kde4_kconfig/kconfig/port_trunk/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kde4_kconfig/kconfig/port_trunk/${MODULE}/
+match /branches/work/kde4_kconfig/kconfig/port_trunk/${MODULE}
     repository ${REPO}
     branch refs/workbranch/kde4_kconfig
     # branch still didn't get deleted; but for future-proofing,
@@ -97,7 +101,7 @@ end match
 match /branches/work/kparts_urlargs_split/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kparts_urlargs_split/${MODULE}/
+match /branches/work/kparts_urlargs_split/${MODULE}
     repository ${REPO}
     branch refs/workbranch/kparts_urlargs_split
     max revision 699528 # branch deleted in r699529
@@ -107,7 +111,7 @@ end match
 match /branches/work/kde4-systray-rewrite/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kde4-systray-rewrite/${MODULE}/
+match /branches/work/kde4-systray-rewrite/${MODULE}
     repository ${REPO}
     branch refs/workbranch/systray-rewrite
     max revision 564547 # branch deleted in r564548
@@ -117,7 +121,7 @@ end match
 match /branches/work/kde4-systray-rewrite-tng/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kde4-systray-rewrite-tng/${MODULE}/
+match /branches/work/kde4-systray-rewrite-tng/${MODULE}
     repository ${REPO}
     branch refs/workbranch/systray-rewrite-tng
     max revision 565761 # branch deleted in r565762
@@ -127,7 +131,7 @@ end match
 match /branches/work/kmainwindow-decoupling-branch/${MODULE_RECURSE}$
     action recurse
 end match
-match /branches/work/kmainwindow-decoupling-branch/${MODULE}/
+match /branches/work/kmainwindow-decoupling-branch/${MODULE}
     repository ${REPO}
     branch refs/workbranch/kmainwindow-decoupling
     max revision 655376 # branch deleted in r655377

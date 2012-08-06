@@ -1,21 +1,16 @@
 #
 # Created by Sebastian Doerner <sebastian@sebastian-doerner.de>
+# This rule set need to be run with a modified version of svn2git
+# which can be found at https://gitorious.org/~sdoerner/svn2git/sdoerners-svn2git
 #
 
 create repository kdesdk/kde-dev-utils
 end repository
 
 declare REPO=kdesdk/kde-dev-utils
-declare MODULE_RECURSE=(kdesdk/)?
+declare MODULE_RECURSE=(kdesdk/(doc/(scripts/)?)?)?
 
-match /(branches|tags)/[^/]+/kdesdk/doc/(scripts/)?$
-  action recurse
-end match
-match /(branches|tags)/KDE/[^/]+/kdesdk/doc/(scripts/)?$
-  action recurse
-end match
-
-declare MODULE=kdesdk/kmtrace
+declare MODULE=kdesdk/kmtrace/
 declare NAMES=kmtrace
 declare PREFIX=kmtrace/
 include kdesdk-bundle-rules
@@ -35,13 +30,13 @@ match /trunk/KDE/kdesdk/doc/scripts/(man-demangle.1.docbook)
     min revision 409203
 end match
 
-declare MODULE=kdesdk/doc/scripts/man-demangle.1.docbook
-declare PREFIX=doc/kmtrace/man-demangle.1.docbook
-include ../common-kde-branches-rules
+declare MODULE=kdesdk/doc/scripts/(man-demangle.1.docbook)
+declare PREFIX=/doc/kmtrace/man-demangle.1.docbook
+include ../common-kde-branches-rules-match-files
 include ../common-kde-tags-rules-with-prefix
 include ../feature-branches-with-prefix
 
-declare MODULE=kdesdk/kpartloader
+declare MODULE=kdesdk/kpartloader/
 declare NAMES=kpartloader
 declare PREFIX=kpartloader/
 include kdesdk-bundle-rules
@@ -54,19 +49,19 @@ match /trunk/KDE/kdelibs/kparts/tests/kpartloader(.cpp|.h|ui.rc)
     max revision 865949
 end match
 
-declare MODULE=kdesdk/kprofilemethod
+declare MODULE=kdesdk/kprofilemethod/
 declare NAMES=kprofilemethod
 declare PREFIX=kprofilemethod/
 include kdesdk-bundle-rules
 include ../feature-branches-with-prefix
 
-declare MODULE=kdesdk/kstartperf
+declare MODULE=kdesdk/kstartperf/
 declare NAMES=kstartperf
 declare PREFIX=kstartperf/
 include kdesdk-bundle-rules
 include ../feature-branches-with-prefix
 
-declare MODULE=kdesdk/kuiviewer
+declare MODULE=kdesdk/kuiviewer/
 declare NAMES=kuiviewer
 declare PREFIX=kuiviewer/
 include kdesdk-bundle-rules

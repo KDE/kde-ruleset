@@ -1,0 +1,9 @@
+match /branches/work/kde4/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kde4/${MODULE}
+    repository ${REPO}
+    branch refs/workbranch/kde4
+    max revision 439738 # branch deleted in r439739
+    prefix ${PREFIX}
+end match
