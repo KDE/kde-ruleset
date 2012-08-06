@@ -1,0 +1,5 @@
+#!/bin/bash
+
+test -r gamedata/games.dat && dos2unix --keepdate gamedata/games.dat
+
+exit 0
