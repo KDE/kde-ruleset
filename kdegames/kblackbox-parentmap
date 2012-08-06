@@ -4,29 +4,5 @@
 # merge work/kinstance-redesign to trunk
 627974 628310
 
-# branch KDE_3_4 from trunk
-389826 405218
-
-# branch KDE_3_3 from trunk
-334652 340326
-
-# branch KDE_3_2 from trunk
-279832 287166
-
-# branch KDE_3_1 from trunk
-189718 218189
-
-# branch KDE_3_0 from trunk
-144295 161691
-
-# branch KDE_2_2 from trunk
-109165 113211
-
-# branch KDE_2_1 from trunk
-83708 87925
-
-# branch KDE_2_0 from trunk
-67702 69862
-
-# branch KDE_1_1 from trunk
-16472 16863
+# merge work/kaction-cleanup3 to trunk
+618655 621518

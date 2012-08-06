@@ -1,70 +1,10 @@
-create repository kajongg
-end repository
-
-include ../common-kde-ignores
-
+# first revision 895140
 declare REPO=kajongg
+include common-kdegames-init
 
 match /trunk/playground/games/kmj/
     repository kajongg
     branch master
 end match
-match /trunk/playground/games/kajongg/
-    repository kajongg
-    branch master
-end match
-match /trunk/kdereview/kajongg/
-    repository kajongg
-    branch master
-end match
-match /trunk/KDE/kdegames/kajongg/
-    repository kajongg
-    branch master
-end match
 
-# BEGIN version branches
-match /branches/KDE/\d+[^/]+/(kdegames/)?$
-  action recurse
-end match
-
-match /branches/KDE/(\d+)\.(\d+)/kdegames/kajongg/
-    repository kajongg
-    branch KDE/\1.\2
-end match
-# END
-
-# BEGIN tags
-match /tags/KDE/\d+[^/]+/(kdegames/)?$
-  action recurse
-end match
-
-match /tags/KDE/(\d+)\.(\d+)/kdegames/kajongg/
-    repository kajongg
-    branch refs/tags/v\1.\2.0
-    annotated true
-end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kajongg/
-    repository kajongg
-    branch refs/tags/v\1.\2.\3
-    annotated true
-end match
-
-# BEGIN Documentation
-match /trunk/(KDE/)?kdegames/doc/kajongg/
-    repository kajongg
-    branch master
-    prefix doc/
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kajongg/
-    repository kajongg
-    branch KDE/\1.\2
-    prefix doc/
-end match
-# END
-
-
-declare MODULE=kdegames/kajongg
-include ../common-kde-tags-rules
-
-match /
-end match
+include common-kdegames-end
