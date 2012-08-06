@@ -1,0 +1,5 @@
+# first revision 10132
+# last revision 713545
+declare REPO=ksokoban
+include common-kdegames-init
+include common-kdegames-end
