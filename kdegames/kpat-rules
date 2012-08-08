@@ -1,80 +1,7 @@
-create repository kpat
-end repository
+# first revision 1175
 
 declare REPO=kpat
-
-match /trunk/(KDE/)?kdegames/kpat/
-    repository kpat
-    branch master
-end match
-
-# BEGIN version branches
-match /(branches|tags)/KDE_\d+[^/]+/(kdegames/)?$
-  action recurse
-end match
-match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
-  action recurse
-end match
-
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/kpat/
-    repository kpat
-    branch KDE/\1.\2
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/kpat/
-    repository kpat
-    branch KDE/\1.\2
-end match
-# END
-
-# BEGIN release tags
-match /tags/KDE_(\d+)_(\d+)_RELEASE/kdegames/kpat/
-    repository kpat
-    branch refs/tags/v\1.\2.0
-    annotated true
-end match
-match /tags/KDE_(\d+)_(\d+)_(\d+)_RELEASE/kdegames/kpat/
-    repository kpat
-    branch refs/tags/v\1.\2.\3
-    annotated true
-end match
-match /tags/KDE/(\d+)\.(\d+)/kdegames/kpat/
-    repository kpat
-    branch refs/tags/v\1.\2.0
-    annotated true
-end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kpat/
-    repository kpat
-    branch refs/tags/v\1.\2.\3
-    annotated true
-end match
-# END
-
-# BEGIN Documentation
-match /trunk/(KDE/)?kdegames/doc/kpat/
-    repository kpat
-    branch master
-    prefix doc/
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/kpat/
-    repository kpat
-    branch KDE/\1.\2
-    prefix doc/
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kpat/
-    repository kpat
-    branch KDE/\1.\2
-    prefix doc/
-end match
-# END
-
-# BEGIN work branches
-match /branches/work/kde4/kdegames/$
-    action recurse
-end match
-match /branches/work/kde4/kdegames/kpat/
-    repository kpat
-    branch refs/workbranch/kde4
-end match
+include common-kdegames-init
 
 match /branches/work/kpat_solvers/
     repository kpat
@@ -86,10 +13,4 @@ match /branches/work/kpat_65506/
     branch refs/workbranch/kpat_65506
 end match
 
-declare MODULE=kdegames/kpat
-declare MODULE_RECURSE=(kdegames/)?
-include ../feature-branches
-# END
-
-match /
-end match
+include common-kdegames-end
