@@ -1,21 +1,7 @@
 # Created by Parker Coates <parker.coates@kdemail.net>
-#
-# KSudoku is a relatively new application, so run svn2git with the following option:
-#    --resume-from=638920
-#
-# These rules are 100% copied from killbots-rules, so if you find a mistake here,
-# please also fix it there.
-
-# Create the ksudoku repository
-create repository ksudoku
-end repository
-
-# Set the REPO and MODULE variables, used by some included rules
+# first revision 638920
 declare REPO=ksudoku
-declare MODULE=kdegames/ksudoku
-
-# Ignore some things that are known to cause trouble
-include ../common-kde-ignores
+include common-kdegames-init
 
 # In r641165, docs are moved from ksudoku/doc to doc/ksudoku,
 # in r641166 the now-empty ksudoku/doc dir is deleted.
@@ -27,70 +13,4 @@ match /trunk/playground/games/ksudoku/doc/
     action ignore
 end match
 
-# Get sources and docs from playground
-match /trunk/playground/games/ksudoku/
-    repository ksudoku
-    branch master
-end match
-match /trunk/playground/games/doc/ksudoku/
-    repository ksudoku
-    branch master
-    prefix doc/
-end match
-
-# Get sources and docs from kdereview
-match /trunk/kdereview/ksudoku/
-    repository ksudoku
-    branch master
-end match
-match /trunk/kdereview/doc/ksudoku/
-    repository ksudoku
-    branch master
-    prefix doc/
-end match
-
-# Get sources and docs from the kdegames module
-match /trunk/KDE/kdegames/ksudoku/
-    repository ksudoku
-    branch master
-end match
-match /trunk/KDE/kdegames/doc/ksudoku/
-    repository ksudoku
-    branch master
-    prefix doc/
-end match
-
-# Recurse into branch and tag changes that may have affected us
-match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
-  action recurse
-end match
-
-# Get sources and docs from branches
-match /branches/KDE/(\d+)\.(\d+)/kdegames/ksudoku/
-    repository ksudoku
-    branch KDE/\1.\2
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/ksudoku/
-    repository ksudoku
-    branch KDE/\1.\2
-    prefix doc/
-end match
-
-# Get tags
-match /tags/KDE/(\d+)\.(\d+)/kdegames/ksudoku/
-    repository ksudoku
-    branch refs/tags/v\1.\2.0
-    annotated true
-end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/ksudoku/
-    repository ksudoku
-    branch refs/tags/v\1.\2.\3
-    annotated true
-end match
-
-# Some tag stuff
-include ../common-kde-tags-rules
-
-# Ignore everything else
-match /
-end match
+include common-kdegames-end
