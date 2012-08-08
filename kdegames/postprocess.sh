@@ -65,6 +65,8 @@ do_module() {
 
 	git reflog expire --expire=now --all
 #	git gc
+	echo $module: finished
+	echo
 	cd ..
 }
 
