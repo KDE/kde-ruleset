@@ -1,22 +1,9 @@
 # Created by Parker Coates <parker.coates@kdemail.net>
 #
-# Kiriki is a new-ish application, so run svn2git with the following option:
-#    --resume-from=457664
-#
-# These rules are 80% copied from killbots-rules, so if you find a mistake here,
-# please also fix it there.
+# first revision 457664
 
-# Create the kiriki repository
-create repository kiriki
-end repository
-
-# Set the REPO and MODULE variables, used by some included rules
 declare REPO=kiriki
-declare MODULE=kdegames/kiriki
-declare MODULE_RECURSE=(kdegames/)?
-
-# Ignore some things that are known to cause trouble
-include ../common-kde-ignores
+include common-kdegames-init
 
 # Kiriki started its life in the KDE4 specific playground
 match /branches/work/kde4/playground/games/kiriki/
@@ -29,73 +16,4 @@ match /branches/work/kde4/playground/games/doc/kiriki/
     prefix doc/
 end match
 
-# Get sources and docs from playground
-match /trunk/playground/games/kiriki/
-    repository kiriki
-    branch master
-end match
-match /trunk/playground/games/doc/kiriki/
-    repository kiriki
-    branch master
-    prefix doc/
-end match
-
-# Get sources and docs from kdereview
-match /trunk/kdereview/kiriki/
-    repository kiriki
-    branch master
-end match
-match /trunk/kdereview/doc/kiriki/
-    repository kiriki
-    branch master
-    prefix doc/
-end match
-
-# Get sources and docs from the kdegames module
-match /trunk/KDE/kdegames/kiriki/
-    repository kiriki
-    branch master
-end match
-match /trunk/KDE/kdegames/doc/kiriki/
-    repository kiriki
-    branch master
-    prefix doc/
-end match
-
-# Recurse into branch and tag changes that may have affected us
-match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
-  action recurse
-end match
-
-# Get sources and docs from branches
-match /branches/KDE/(\d+)\.(\d+)/kdegames/kiriki/
-    repository kiriki
-    branch KDE/\1.\2
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kiriki/
-    repository kiriki
-    branch KDE/\1.\2
-    prefix doc/
-end match
-
-# Get KDE wide work branches
-include ../feature-branches
-
-# Get tags
-match /tags/KDE/(\d+)\.(\d+)/kdegames/kiriki/
-    repository kiriki
-    branch refs/tags/v\1.\2.0
-    annotated true
-end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/kiriki/
-    repository kiriki
-    branch refs/tags/v\1.\2.\3
-    annotated true
-end match
-
-# Some tag stuff
-include ../common-kde-tags-rules
-
-# Ignore everything else
-match /
-end match
+include common-kdegames-end
