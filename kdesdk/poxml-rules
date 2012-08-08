@@ -6,13 +6,59 @@ create repository kdesdk/poxml
 end repository
 
 declare MODULE=kdesdk/poxml
-declare MODULE_RECURSE=(kdesdk/)?
+declare MODULE_RECURSE=(kdesdk/(doc/(scripts/)?)?)?
 
 declare NAMES=poxml
 declare REPO=kdesdk/poxml
 include common-kdesdk-rules
 
 include ../feature-branches
+include kde4-branch
+
+match /trunk/kdesdk/doc/scripts/(man-po2xml.1.docbook|man-split2po.1.docbook|man-swappo.1.docbook|man-xml2pot.1.docbook)
+    repository ${REPO}
+    branch master
+    prefix doc/\1
+    max revision 409202
+end match
+
+match /trunk/KDE/kdesdk/doc/scripts/(man-po2xml.1.docbook|man-split2po.1.docbook|man-swappo.1.docbook|man-xml2pot.1.docbook)
+    repository ${REPO}
+    branch master
+    prefix doc/\1
+    min revision 409203
+end match
+
+# unfortunately \1 and \2 are taken internally in common-kde-branches-rules-match-files
+# hence we have to write separate rules for all of those here
+
+declare MODULE=kdesdk/doc/scripts/man-po2xml.1.docbook
+declare PREFIX=/doc/man-po2xml.1.docbook
+include ../common-kde-branches-rules-match-files
+include ../common-kde-tags-rules-with-prefix
+include ../feature-branches-with-prefix
+include kde4-branch-match-files
+
+declare MODULE=kdesdk/doc/scripts/man-split2po.1.docbook
+declare PREFIX=/doc/man-split2po.1.docbook
+include ../common-kde-branches-rules-match-files
+include ../common-kde-tags-rules-with-prefix
+include ../feature-branches-with-prefix
+include kde4-branch-match-files
+
+declare MODULE=kdesdk/doc/scripts/man-swappo.1.docbook
+declare PREFIX=/doc/man-swappo.1.docbook
+include ../common-kde-branches-rules-match-files
+include ../common-kde-tags-rules-with-prefix
+include ../feature-branches-with-prefix
+include kde4-branch-match-files
+
+declare MODULE=kdesdk/doc/scripts/man-xml2pot.1.docbook
+declare PREFIX=/doc/man-xml2pot.1.docbook
+include ../common-kde-branches-rules-match-files
+include ../common-kde-tags-rules-with-prefix
+include ../feature-branches-with-prefix
+include kde4-branch-match-files
 
 # Ignore everything else
 match /
