@@ -81,17 +81,6 @@ end match
 # Get KDE wide work branches
 include ../feature-branches
 
-# For some reason the Kiriki documentation was touched in the kde4_jobflags branch
-match /branches/work/kde4_jobflags/KDE/(kdegames/(doc/)?)?$
-    action recurse
-end match
-match /branches/work/kde4_jobflags/KDE/kdegames/doc/kiriki/
-    repository ${REPO}
-    branch refs/workbranch/kde4_jobflags
-    prefix doc/
-    max revision 721454 # branch deleted in r721455
-end match
-
 # Get tags
 match /tags/KDE/(\d+)\.(\d+)/kdegames/kiriki/
     repository kiriki
