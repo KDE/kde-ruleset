@@ -1,0 +1,6 @@
+# Created by Frederik Schwarzer <schwarzer@kde.org>
+# first revision 23231
+
+declare REPO=ktron
+include common-kdegames-init
+include common-kdegames-end
