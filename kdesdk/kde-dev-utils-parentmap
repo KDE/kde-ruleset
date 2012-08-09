@@ -1,3 +1,6 @@
+# merge kde4_kconfig into trunk
+721495 721764
+
 # merge kconfiggroup_port into trunk
 634440 635499
 
@@ -12,3 +15,10 @@
 
 # merge trunk into kaction-cleanup2 again
 614808 617061
+
+# merge kde4 into trunk
+436111 439736
+
+# merge trunk into kde4 twice
+434155 435291
+435900 436111

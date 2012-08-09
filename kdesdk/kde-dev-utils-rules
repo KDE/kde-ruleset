@@ -15,6 +15,7 @@ declare NAMES=kmtrace
 declare PREFIX=kmtrace/
 include kdesdk-bundle-rules
 include ../feature-branches-with-prefix
+include kde4-branch-match-files
 
 match /trunk/kdesdk/doc/scripts/(man-demangle.1.docbook)
     repository ${REPO}
@@ -35,12 +36,14 @@ declare PREFIX=/doc/kmtrace/man-demangle.1.docbook
 include ../common-kde-branches-rules-match-files
 include ../common-kde-tags-rules-with-prefix
 include ../feature-branches-with-prefix
+include kde4-branch-match-files
 
 declare MODULE=kdesdk/kpartloader/
 declare NAMES=kpartloader
 declare PREFIX=kpartloader/
 include kdesdk-bundle-rules
 include ../feature-branches-with-prefix
+include kde4-branch-match-files
 
 match /trunk/KDE/kdelibs/kparts/tests/kpartloader(.cpp|.h|ui.rc)
     repository ${REPO}
@@ -54,18 +57,21 @@ declare NAMES=kprofilemethod
 declare PREFIX=kprofilemethod/
 include kdesdk-bundle-rules
 include ../feature-branches-with-prefix
+include kde4-branch-match-files
 
 declare MODULE=kdesdk/kstartperf/
 declare NAMES=kstartperf
 declare PREFIX=kstartperf/
 include kdesdk-bundle-rules
 include ../feature-branches-with-prefix
+include kde4-branch-match-files
 
 declare MODULE=kdesdk/kuiviewer/
 declare NAMES=kuiviewer
 declare PREFIX=kuiviewer/
 include kdesdk-bundle-rules
 include ../feature-branches-with-prefix
+include kde4-branch-match-files
 
 # Ignore everything else
 match /
