@@ -1,19 +1,8 @@
 # Created by Stefan Majewsky <majewsky@gmx.net>
-# Mostly copied from bomber-rules by Parker Coates
-#
-# Palapeli is a relatively new application, so run svn2git with the following option:
-#    --resume-from=788429
+# first revision 788429
 
-# Create the palapeli repository
-create repository palapeli
-end repository
-
-# Set the REPO and MODULE variables, used by some included rules
 declare REPO=palapeli
-declare MODULE=kdegames/palapeli
-
-# Ignore some things that are known to cause trouble
-include ../common-kde-ignores
+include common-kdegames-init
 
 # While Palapeli lived in playground, I did at some time drop the current
 # codebase and started a rewrite. I moved the old code from "palapeli" to
@@ -31,17 +20,6 @@ match /trunk/playground/games/palapeli.old/
     action ignore
 end match
 
-# Get sources and docs from playground
-match /trunk/playground/games/palapeli/
-    repository palapeli
-    branch master
-end match
-match /trunk/playground/games/doc/palapeli/
-    repository palapeli
-    branch master
-    prefix doc/
-end match
-
 # use a subdirectory for the history of the goldberg slicer before it was merged
 # to avoid name clashes e.g. at doc/index.docbook
 match /trunk/playground/games/palapeli-goldberg-slicer/
@@ -55,17 +33,6 @@ match /trunk/playground/games/doc/palapeli-goldberg-slicer/
     prefix goldberg-slicer/doc/
 end match
 
-# Get sources and docs from kdereview
-match /trunk/kdereview/palapeli/
-    repository palapeli
-    branch master
-end match
-match /trunk/kdereview/doc/palapeli/
-    repository palapeli
-    branch master
-    prefix doc/
-end match
-
 match /trunk/kdereview/palapeli-goldberg-slicer/
     repository palapeli
     branch refs/workbranch/goldberg-slicer
@@ -77,48 +44,4 @@ match /trunk/kdereview/doc/palapeli-goldberg-slicer/
     prefix goldberg-slicer/doc/
 end match
 
-# Get sources and docs from the kdegames module
-match /trunk/KDE/kdegames/palapeli/
-    repository palapeli
-    branch master
-end match
-match /trunk/KDE/kdegames/doc/palapeli/
-    repository palapeli
-    branch master
-    prefix doc/
-end match
-
-# Recurse into branch and tag changes that may have affected us
-match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
-  action recurse
-end match
-
-# Get sources and docs from branches
-match /branches/KDE/(\d+)\.(\d+)/kdegames/palapeli/
-    repository palapeli
-    branch KDE/\1.\2
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/palapeli/
-    repository palapeli
-    branch KDE/\1.\2
-    prefix doc/
-end match
-
-# Get tags
-match /tags/KDE/(\d+)\.(\d+)/kdegames/palapeli/
-    repository palapeli
-    branch refs/tags/v\1.\2.0
-    annotated true
-end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/palapeli/
-    repository palapeli
-    branch refs/tags/v\1.\2.\3
-    annotated true
-end match
-
-# Some tag stuff
-include ../common-kde-tags-rules
-
-# Ignore everything else
-match /
-end match
+include common-kdegames-end
