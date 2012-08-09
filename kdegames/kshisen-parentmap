@@ -1,0 +1,14 @@
+# merge kconfig_new to trunk
+728440 728852
+
+# merge kde4_kconfig to trunk
+720908 721729
+
+# merge kaction-cleanup1 to trunk
+610217 610651
+
+# merge kinstance-redesign to trunk
+627974 628310
+
+# merge kmainwindow-decoupling to trunk
+654675 654728
