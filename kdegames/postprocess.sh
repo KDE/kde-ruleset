@@ -10,7 +10,7 @@ then
 fi
 
 export RULESETDIR=`pwd`/kde-ruleset
-bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+export bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 source "$bindir/filter-goodies"
 
 do_module() {
@@ -46,7 +46,7 @@ do_module() {
 	if test -s $postprocess
 	then
 		echo $module: postprocess...
-		sh $postprocess
+		source $postprocess
 		delete_fb_backups
 	fi
 
