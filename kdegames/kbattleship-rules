@@ -1,0 +1,16 @@
+# Created by Frederik Schwarzer <schwarzer@kde.org>
+# first revision 69973
+declare REPO=kbattleship
+include common-kdegames-init
+
+match /branches/work/kbattleship-rewrite/kdegames/kbattleship/
+    repository ${REPO}
+    branch refs/workbranch/kbattleship-rewrite
+end match
+
+match /branches/work/kbattleship4/kdegames/kbattleship/
+    repository ${REPO}
+    branch refs/workbranch/kbattleship4
+end match
+
+include common-kdegames-end
