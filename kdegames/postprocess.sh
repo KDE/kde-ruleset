@@ -27,7 +27,6 @@ do_module() {
 		$bindir/parent-adder $parentmap
 	fi
 
-	delete_backup_tags
 	delete_fb_backups
 
 	echo $module: fix-tags...
