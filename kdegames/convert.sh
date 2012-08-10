@@ -9,6 +9,12 @@ then
 	exit 2
 fi
 
+export PATH=$PATH:svn2git
+export RULESETDIR=`pwd`/kde-ruleset
+export bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+
+source "$bindir/filter-goodies"
+
 do_module() {
 	module=$1
 	rulefile=kde-ruleset/kdegames/$module-rules
@@ -41,14 +47,78 @@ do_module() {
 	rm -rf $module.raw ; mv $module $module.raw
 }
 
+postprocess() {
+	module=$1
+	rm -rf $module
+	cp -a $module.raw $module
+	cd $module
+	parentmap=$RULESETDIR/kdegames/$module-parentmap
+	postprocess=$RULESETDIR/kdegames/$module-postprocess.sh
+	treefilter=$RULESETDIR/kdegames/$module-tree-filter
+	if test -r $parentmap
+	then
+		echo $module: parent-adder...
+		$bindir/parent-adder $parentmap
+	fi
+
+#	delete_backup_tags only
+#	TODO: reactivate this when all games have
+#	complete parentmaps, so all branches we want to keep are
+#	merged. /branches/work/kde4 is imported only as a tag. If
+#	we define no merging in parentmap, delete_backup_tags will
+#	make this branch unreachable
+	delete_fb_backups
+
+	echo $module: fix-tags...
+	$bindir/fix-tags
+	delete_fb_backups
+
+	# no game was changed by those branches
+	git update-ref -d refs/workbranch/systray-rewrite
+	git update-ref -d refs/workbranch/systray-rewrite-tng
+	git update-ref -d refs/workbranch/kparts_urlargs_split
+	git update-ref -d refs/workbranch/qdbus-api-changes
+
+	# scons was a try to use the scons build system
+	git update-ref -d refs/workbranch/kdegames-scons-v1
+
+	if test -s $postprocess
+	then
+		echo $module: postprocess...
+		source $postprocess
+		delete_fb_backups
+	fi
+
+	change_cvs2svn_author
+	delete_fb_backups
+
+	if test -s $treefilter
+	then
+		echo $module: tree-filter...
+		git filter-branch --tree-filter $treefilter --prune-empty --tag-name-filter cat -- --all
+	fi
+	delete_fb_backups
+
+#	echo 'add revision tags for debugging...'
+#	add_revision_tags
+
+	git reflog expire --expire=now --all
+#	git gc
+	echo $module: finished
+	echo
+	cd ..
+}
+
+progname=$(basename $0)
+
 if test $# -eq 0
 then
 	echo "
 usage:
 
-convert.sh lskat kajongg
+$progname lskat kajongg
 or
-convert.sh all"
+$progname all"
 	exit 2
 fi
 
@@ -59,6 +129,6 @@ fi
 
 for module in $*
 do
-	do_module $module
-	r/postprocess.sh $module
+	test $progname = convert.sh && do_module $module
+	postprocess $module
 done
