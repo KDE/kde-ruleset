@@ -109,6 +109,19 @@ postprocess() {
 	cd ..
 }
 
+rename() {
+	from=$1
+	to=$3
+	for fromdir in $(ls -d ${from}* 2>/dev/null)
+	do
+		test -r $fromdir || continue
+		test -d $fromdir/.git || continue
+		todir=$(echo $fromdir | sed "s/$from/$to/")
+		test -r $todir && echo rm -rf $todir
+		echo mv $fromdir $todir
+	done
+}
+
 progname=$(basename $0)
 
 if test $# -eq 0
@@ -132,3 +145,6 @@ do
 	test $progname = convert.sh && do_module $module
 	postprocess $module
 done
+
+rename kbattleship to knavalbattle
+rename ktron to ksnakeduel
