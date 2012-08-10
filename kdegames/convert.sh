@@ -39,7 +39,7 @@ do_module() {
 		test x$until = x || until="--max-rev=$until"
 	fi
 	echo $module: svn2git...
-	svn2git/svn-all-fast-export $from $until $revisions \
+	svn-all-fast-export $from $until $revisions \
 		--identity-map=kde-ruleset/account-map --add-metadata \
 		--debug-rules --rules=$rulefile svn >svn2gitlog-$module 2>&1
 	mv log-$module gitlog-$module svn2gitlog-$module $module 2>/dev/null
