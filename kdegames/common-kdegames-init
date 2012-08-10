@@ -8,3 +8,27 @@ end repository
 
 include ../common-kde-ignores
 
+# r17900 removed all translations from *.kdelnk,
+# r17952 added exactly the same again
+# r18297 removed
+# r18323 added exactly the same again
+match /branches/KDE_1_1_BRANCH/kdegames
+    min revision 17900
+    max revision 17900
+    action ignore
+end match
+match /branches/KDE_1_1_BRANCH/kdegames
+    min revision 17952
+    max revision 17952
+    action ignore
+end match
+match /branches/KDE_1_1_BRANCH/kdegames
+    min revision 18297
+    max revision 18297
+    action ignore
+end match
+match /branches/KDE_1_1_BRANCH/kdegames
+    min revision 18323
+    max revision 18323
+    action ignore
+end match
