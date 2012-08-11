@@ -39,3 +39,6 @@
 
 clear 662662
 661834 662662
+
+# connect loose ends when moving from KDE_1_1_BRANCH to trunk
+20656 20670
