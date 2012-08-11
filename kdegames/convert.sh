@@ -103,7 +103,7 @@ postprocess() {
 #	add_revision_tags
 
 	git reflog expire --expire=now --all
-#	git gc
+#	git gc --aggressive
 	echo $module: finished
 	echo
 	cd ..
