@@ -13,26 +13,14 @@
 # merge work/kaction-cleanup3 to trunk
 620435 621518
 
-# branch KDE_3_4 from trunk
-387945 395488
+# merge kconfiggroup_port to trunk
+635325 635473
 
-# branch KDE_3_3 from trunk
-334652 337339
+# merge from trunk to kde4
+431614 432079
 
-# branch KDE_3_2 from trunk
-279832 287166
-
-# branch KDE_3_1 from trunk
-189718 199237@/branches/KDE_3_1_BRANCH/kdegames/lskat/
-
-# branch KDE_3_0 from trunk
-144225 152249
-
-# branch KDE_2_2 from trunk
-109165 113211
-
-# branch KDE_2_1 from trunk
-83062 87925
+# merge kde4 to trunk
+438182 439536
 
 # missing link before porting to Qt4
-387945 473660
+473659 473660
