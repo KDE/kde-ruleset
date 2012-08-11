@@ -1,9 +1,23 @@
 # first revision 836659
 declare REPO=kigo
 include common-kdegames-init
+
 # Kigo was originally named KGo
 match /trunk/playground/games/kgo/
     repository kigo
     branch master
 end match
+
+# the experimental folder should really be a branch.
+# it has been created with r883438
+# it has been removed with r890014 as "unused code".
+# but maybe some commit in between merged changes 
+# from experimental into master.
+# And making it a branch makes changing kgo to kigo
+# complicated.
+#match /trunk/playground/games/kigo/experimental/
+#    repository kigo
+#    branch experimental
+#end match
+
 include common-kdegames-end
