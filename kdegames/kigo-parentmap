@@ -1,0 +1,5 @@
+# fix history at the change from kigo to kgo
+# this linearizes it and reduces total size 
+# of diffs
+clear 885135
+884979 885135
