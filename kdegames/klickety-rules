@@ -1,108 +1,17 @@
 # Created by Ni Hui <shuizhuyuanluo@126.com>
 #
-# Klickety was imported at r158108
-#    --resume-from=158108
-
-create repository klickety
-end repository
+# first revision 158108
 
 declare REPO=klickety
-declare MODULE=kdegames/klickety
-declare MODULE_RECURSE=(kdegames/)?
 
-include ../common-kde-ignores
+include common-kdegames-init
 
-### master ###
-
-# Klickety has lived in
-# /trunk/kdegames/klickety/ (r158108 - r409202)
-# /trunk/KDE/kdegames/klickety/ (r409203 - r660427)
-# /trunk/playground/games/klickety/ (r660429 - r713547)
-# /trunk/playground/games/klickety/ (r1170943 - r1180468)
-# /trunk/kdereview/klickety/ (r1180469 - r1192094)
-# /trunk/KDE/kdegames/klickety/ (r1192095 - today)
-match /trunk/(KDE/)?kdegames/klickety/
-    repository klickety
-    branch master
-end match
-match /trunk/playground/games/klickety/
-    repository klickety
-    branch master
-end match
-match /trunk/kdereview/klickety/
-    repository klickety
-    branch master
+# 880573 removes everything, next commit
+# readds it all
+match /trunk/playground/games/
+	min revision 880573
+	max revision 880573
+	action ignore
 end match
 
-# Documentation has lived in
-# /trunk/kdegames/doc/klickety/ (r181729 - r409202)
-# /trunk/KDE/kdegames/doc/klickety/ (r409203 - r660427)
-# /trunk/playground/games/doc/klickety/ (r660429 - r880572)
-# /trunk/playground/games/doc/klickety/ (r1179399 - r1180469)
-# /trunk/kdereview/doc/klickety/ (r1180470 - r1192095)
-# /trunk/KDE/kdegames/doc/klickety/ (r1192096 - today)
-match /trunk/(KDE/)?kdegames/doc/klickety/
-    repository klickety
-    branch master
-    prefix doc/
-end match
-match /trunk/playground/games/doc/klickety/
-    repository klickety
-    branch master
-    prefix doc/
-end match
-match /trunk/kdereview/doc/klickety/
-    repository klickety
-    branch master
-    prefix doc/
-end match
-
-# Recurse into branch and tag changes that may have affected us
-match /(branches|tags)/[^/]+/(kdegames/)?$
-    action recurse
-end match
-match /(branches|tags)/KDE/[^/]+/(kdegames/)?$
-    action recurse
-end match
-
-# Get sources and docs from branches
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/klickety/
-    repository klickety
-    branch KDE/\1.\2
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/klickety/
-    repository klickety
-    branch KDE/\1.\2
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/doc/klickety/
-    repository klickety
-    branch KDE/\1.\2
-    prefix doc/
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/klickety/
-    repository klickety
-    branch KDE/\1.\2
-    prefix doc/
-end match
-
-# Get KDE wide work branches
-include ../feature-branches
-
-# Get tags
-match /tags/KDE/(\d+)\.(\d+)/kdegames/klickety/
-    repository klickety
-    branch refs/tags/v\1.\2.0
-    annotated true
-end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdegames/klickety/
-    repository klickety
-    branch refs/tags/v\1.\2.\3
-    annotated true
-end match
-
-# Some tag stuff
-include ../common-kde-tags-rules
-
-# Ignore everything else
-match /
-end match
+include common-kdegames-end
