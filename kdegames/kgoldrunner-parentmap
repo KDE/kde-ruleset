@@ -1,0 +1,24 @@
+# merge work/kmainwindow-decoupling to trunk
+654675 654728
+
+# merge work/kinstance-redesign to trunk
+627974 628310
+
+# merge work/kconfiggroup_port to trunk
+635325 635473
+
+# merge work/kde4_kconfig to trunk
+720908 721729
+
+# merge work/kconfig_new to trunk
+# TODO: check all repos for this merge
+728440 728852
+
+# merge work/kaction-cleanup3 to trunk
+620435 621518
+
+# merge trunk to kde4
+431614 432079
+
+# merge kde4 to trunk
+432079 439536
