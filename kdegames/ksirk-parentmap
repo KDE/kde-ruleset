@@ -2,8 +2,33 @@
 # One path holds 863053, 863349, 864905, 865176, 873630
 # the other path goes directly from 861371 to 882259
 # we remove the direkt path
-# NOTE: 863053 "merged from trunk" only cherry picks some revisions
 # jabber starts with 859076
 clear 882259
 873630 882259
 877960 882259
+
+# merge trunk to jabber
+862900 863053
+
+# merge netgamedebug to trunk
+802547 802578
+
+# merge trunk to KDE 4.3
+1002720 1002721
+1002877 1002878
+1002974 1002975
+1002977 1002978
+
+# merge KDE 4.2 to trunk
+914647 916374
+
+# merge trunk to KDE 4.2
+# this is really cherry picking
+# for this to be a merge, we would have to change
+# the order from 907297 907352 907353 to
+# 907352 907353 907297
+# this would then be the merge:
+# 907353 907357
+
+# merge from trunk to KDE 4.1
+831787 832005
