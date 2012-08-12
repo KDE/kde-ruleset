@@ -3,10 +3,7 @@ declare REPO=lskat
 include common-kdegames-init
 
 # 473660 simply removed all of lskat
-match /trunk/
-    min revision 473660
-    max revision 473660
-    action ignore
-end match
+# but some files have not been readded
+# later, so we cannot ignore this revision
 
 include common-kdegames-end
