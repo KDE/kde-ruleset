@@ -50,9 +50,6 @@ end match
 match /branches/work/kde4/kdegames/$
     action recurse
 end match
-match /tags/(KDE/)?[^/]+/(kdegames/)?$
-    action recurse
-end match
 # END
 
 # BEGIN Documentation
@@ -136,16 +133,6 @@ include ../feature-branches
 #END
 
 # Get tags
-match /tags/KDE/(\d+)\.(\d+)/${MODULE}/
-    repository ${REPO}
-    branch refs/tags/v\1.\2.0
-    annotated true
-end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/${MODULE}/
-    repository ${REPO}
-    branch refs/tags/v\1.\2.\3
-    annotated true
-end match
 
 include ../common-kde-tags-rules
 
