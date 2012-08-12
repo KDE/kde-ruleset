@@ -1,20 +1,6 @@
-create repository kbounce
-end repository
-
-include ../common-kde-ignores
-
+# first revision 57645
 declare REPO=kbounce
-
-# 138380 renamed game from kjezz to kjezzball
-# 141794 renamed game from kjezzball to kbounce
-# 141795 renamed docs from kjezz to kbounce
-
-# kbounce used to be called kjezz, and then kjezzball
-# match /trunk/kdegames/kjezz/$
-#     min revision 138380
-#     max revision 138380
-#     action recurse
-# end match
+include common-kdegames-init
 
 match /trunk/kdegames/kjezz/
     repository kbounce
@@ -36,61 +22,4 @@ end match
 # in nonbeta (ie. between 58010 and 70209) is missing from SVN.
 # We'd have to go to the CVS(!) repository if we want to get it.
 
-# main trunk history
-match /trunk/(KDE/)?kdegames/kbounce/
-    repository kbounce
-    branch master
-end match
-
-# BEGIN branch recurse
-match /(branches|tags)/KDE_\d+[^/]+/(kdegames/)?$
-  action recurse
-end match
-match /(branches|tags)/KDE/\d+[^/]+/(kdegames/)?$
-  action recurse
-end match
-# END
-
-# BEGIN Documentation
-match /trunk/(KDE/)?kdegames/doc/kbounce/
-    repository kbounce
-    branch master
-    prefix doc/
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/kbounce/
-    repository kbounce
-    branch KDE/\1.\2
-    prefix doc/
-end match
-# END
-
-# BEGIN Branches
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegames/kbounce/
-    repository kbounce
-    branch KDE/\1.\2
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdegames/kbounce/
-    repository kbounce
-    branch KDE/\1.\2
-end match
-match /branches/work/kde4/kdegames/$
-    action recurse
-end match
-match /branches/work/kde4/kdegames/kbounce/
-    repository kbounce
-    branch kde4
-end match
-# END
-
-# BEGIN work branches
-declare MODULE_RECURSE=(kdegames/)?
-declare MODULE=kdegames/kbounce
-
-include ../feature-branches
-#END
-
-# Get tags
-include ../common-kde-tags-rules
-
-match /
-end match
+include common-kdegames-end
