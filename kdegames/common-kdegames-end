@@ -58,6 +58,11 @@ match /trunk/(KDE/)?${DOCMODULE}/
     branch master
     prefix doc/
 end match
+match /branches/KDE_2_0_BRANCH/${DOCMODULE}/
+    repository ${REPO}
+    branch KDE/2.0
+    prefix doc/
+end match
 match /branches/KDE/(\d+)\.(\d+)/${DOCMODULE}/
     repository ${REPO}
     branch KDE/\1.\2
