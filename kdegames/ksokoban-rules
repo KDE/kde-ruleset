@@ -1,5 +1,20 @@
 # first revision 10132
-# last revision 713545
+# last revision 824004
 declare REPO=ksokoban
 include common-kdegames-init
+
+# this revision is master,
+# removing it removes the master branch
+# (master is renamed to backups/master@713548)
+# r713548 only removes the whole module from
+# playground, since then ksokoban was unmaintained
+# other git games do not have this problem because
+# this is the only unmaintained game that has been
+# migrated to git.
+match /trunk/playground/games/
+	min revision 713548
+	max revision 713548
+	action ignore
+end match
+
 include common-kdegames-end
