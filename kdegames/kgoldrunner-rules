@@ -1,4 +1,24 @@
 # first revision 145984
 declare REPO=kgoldrunner
 include common-kdegames-init
+
+match /branches/work/kgoldrunner/
+    repository ${REPO}
+    branch refs/workbranch/kgoldrunner
+end match
+
+match /branches/work/kgoldrunner-qgv/
+    repository ${REPO}
+    branch refs/workbranch/kgoldrunner-qgv
+end match
+
+# kgoldrunner started directly in trunk
+# but with r903729 a new version starts
+# in playground which will later replace
+# trunk
+match /trunk/playground/games/kgoldrunner/
+    repository ${REPO}
+    branch refs/workbranch/playground
+end match
+
 include common-kdegames-end

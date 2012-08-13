@@ -11,7 +11,6 @@
 720908 721729
 
 # merge work/kconfig_new to trunk
-# TODO: check all repos for this merge
 728440 728852
 
 # merge work/kaction-cleanup3 to trunk
