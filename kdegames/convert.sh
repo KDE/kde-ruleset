@@ -55,13 +55,14 @@ postprocess() {
 	parentmap=$RULESETDIR/kdegames/$module-parentmap
 	postprocess=$RULESETDIR/kdegames/$module-postprocess.sh
 	treefilter=$RULESETDIR/kdegames/$module-tree-filter
+	msgfilter=$RULESETDIR/kdegames/$module-msg-filter
 	if test -r $parentmap
 	then
 		echo $module: parent-adder...
 		$bindir/parent-adder $parentmap
 	fi
 
-#	delete_backup_tags only
+#	delete_backup_tags
 #	TODO: reactivate this when all games have
 #	complete parentmaps, so all branches we want to keep are
 #	merged. /branches/work/kde4 is imported only as a tag. If
@@ -99,11 +100,18 @@ postprocess() {
 	fi
 	delete_fb_backups
 
+	if test -s $msgfilter
+	then
+		echo $module: msg-filter...
+		git filter-branch --msg-filter $msgfilter --tag-name-filter cat -- --all
+	fi
+	delete_fb_backups
+
 #	echo 'add revision tags for debugging...'
 #	add_revision_tags
 
 	git reflog expire --expire=now --all
-#	git gc --aggressive
+	git gc --aggressive
 	echo $module: finished
 	echo
 	cd ..

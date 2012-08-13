@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# r549610 does one change in lskat and one in ksokoban.
+# Since the lskat msg is first, it appears as title message
+# in git. So we remove it. And remove the ksokoban: prefix
+# for the message part about ksokoban.
+
+fgrep -v 'lskat: deprecated--' | sed 's/^ksokoban://'
