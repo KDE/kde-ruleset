@@ -22,29 +22,9 @@
 # merge work/krippendorf-kdegames to trunk
 1271030 1271031
 
-# branch KDE_3_4 from trunk
-401169 401420
+# merge trunk to kde4
+419788 420102
+431614 432079
 
-# branch KDE_3_3 from trunk
-334652 340326
-
-# branch KDE_3_2 from trunk
-279832 284542
-
-# branch KDE_3_1 from trunk
-189718 192420
-
-# branch KDE_3_0 from trunk
-144485 158424
-
-# branch KDE_2_2 from trunk
-109165 113211
-
-# branch KDE_2_1 from trunk
-83372 87925
-
-# branch KDE_2_0 from trunk
-67702 69862
-
-# branch KDE_1_1 from trunk
-16462 16999
+# merge kde4 to trunk
+438182 439536
