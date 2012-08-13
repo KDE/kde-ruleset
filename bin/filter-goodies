@@ -27,34 +27,6 @@ delete_backup_tags() {
     	xargs --no-run-if-empty -n 1 git update-ref -d
 }
 
-# some commits for a branch contain only the changed files in that commit
-# This makes the git revision appear as deleting all the rest of the tree.
-# Here we filter all revisions in the branch
-# to contain the rest of the files, taken from the master revision right before branching.
-# this code initially copied from kdegraphics/okular, but did not work for me.
-# I had to replace master.. by ${prevmaster}..
-# If a branch does not exist or does not need to be rewritten, continue.
-# TODO: speed up by doing all fill_from within one git filter-branch
-
-fill_from() {
-	mastercommit=$1
-	shift
-	echo fill_from $mastercommit into $*
-	prevmaster=$(echo $mastercommit | $bindir/translateRevlist.py)
-	for branch in $*
-	do
-		( git branch -a ; git tag ; git log -1 --pretty='%h' ;ls refs/$branch 2>/dev/null;exit 0) | grep -q $branch
-		test $? -eq 0 || continue # branch does not exist
-		tempdir="$(calc_tempdir $REPO-filter)"
-		range="${prevmaster}..${branch}"
-		echo fill_from $mastercommit into $branch
-		git filter-branch -f -d "$tempdir" \
-			--tree-filter "git read-tree $prevmaster" \
-			--tag-name-filter cat \
-			$range || continue
-	done
-}
-
 # add a tag to every commit, name=svn revision
 # ignores empty tagging commits (those removed by fix-tags)
 # this helps much with visual debugging with gitk --all. Note
