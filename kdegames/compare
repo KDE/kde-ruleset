@@ -1,0 +1,83 @@
+#!/bin/bash
+
+# this checks if the final commits of standard branches
+# are identical in svn and in git
+
+# ignoring doc
+
+compare_branch() {
+		diff -r tmp/svnco tmp/gitco >/dev/null 2>&1 
+		result=$?
+		if test $result -ne 0
+		then
+			echo $repo $branch has differences
+			diff -r tmp/svnco tmp/gitco
+			echo 
+			return 1
+		fi
+		return 0
+}
+
+prepare_checkouts() {
+		rm -rf tmp/gitco/.git tmp/svnco/doc tmp/gitco/doc
+		find tmp/svnco -type d -name .svn -exec rm -rf {} 2>/dev/null \;
+		cd tmp/svnco
+		find . -type f -print | while read filename
+		do
+			cat $filename | fgrep -v '$Id:' > $filename.x ; mv $filename.x $filename
+		done
+		find . -type d -exec rmdir {} 2>/dev/null \;
+		find . -type d -exec rmdir {} 2>/dev/null \;
+		cd ../..
+		cd tmp/gitco
+		find . -type f -print | while read filename
+		do
+			cat $filename | fgrep -v '$Id$' > $filename.x ; mv $filename.x $filename
+		done
+		cd ../..
+}
+
+check_module() {
+	repo=$1
+	module=$(basename $1)
+
+	# first compare master
+	echo $repo master ...
+	rm -rf tmp/gitco tmp/svnco
+	svn co -q file://$(pwd)/svn/trunk/KDE/kdegames/$module tmp/svnco 2>/dev/null || continue
+	git clone -q $repo tmp/gitco
+	test -d tmp/gitco || continue
+	prepare_checkouts
+	compare_branch
+
+	for branch in 1.1 2.0 2.1 2.2 3.0 3.1 3.2 3.3 3.4 3.5 4.0 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9
+	do
+		rm -rf tmp/gitco tmp/svnco
+		svn co -q file://$(pwd)/svn/branches/KDE/$branch/kdegames/$module tmp/svnco 2>/dev/null || continue
+		git clone -q $repo tmp/gitco
+		test -d tmp/gitco || continue
+		echo $repo $branch ...
+		(
+			cd tmp/gitco
+			git checkout -q remotes/origin/KDE/$branch 2>/dev/null || continue
+		)
+		prepare_checkouts
+		compare_branch || break
+	done
+}
+
+if test ! -r svn
+then
+	echo "start this where the svn subdirectory is located"
+	exit 2
+fi
+
+for repo in $*
+do
+	if test ! -r $repo
+	then
+		echo $repo not found
+		exit 1
+	fi
+	check_module $repo
+done
