@@ -40,11 +40,12 @@ prepare_checkouts() {
 check_module() {
 	repo=$1
 	module=$(basename $1)
+	svnmodule=$2
 
 	# first compare master
 	echo $repo master ...
 	rm -rf tmp/gitco tmp/svnco
-	svn co -q file://$(pwd)/svn/trunk/KDE/kdegames/$module tmp/svnco 2>/dev/null || continue
+	svn co -q file://$(pwd)/svn/trunk/KDE/kdegames/$svnmodule tmp/svnco 2>/dev/null || continue
 	git clone -q $repo tmp/gitco
 	test -d tmp/gitco || continue
 	prepare_checkouts
@@ -79,5 +80,8 @@ do
 		echo $repo not found
 		exit 1
 	fi
-	check_module $repo
+	svnmodule=$(basename $repo)
+	test $svnmodule = knavalbattle && svnmodule=kbattleship
+	test $svnmodule = ksnakeduel && svnmodule=ktron
+	check_module $repo $svnmodule
 done
