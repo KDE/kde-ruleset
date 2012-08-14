@@ -31,6 +31,13 @@ git ls-tree -r "$GIT_COMMIT" | egrep '\.(svgz|png)$' | while read objtype objmod
                 cp "$objname" "$cachedir/$objhash"
                 ;;
         esac
+# make sure every file goes to cache, so if we cannot process something
+# we get the error message only once. Triggered hundreds of times by
+# carddecks/svg-xskat-german/images/shield.png in libkdegames. That file
+# is like a pearl in an oyster - it is uncompressed svg.
+	if [ ! -f "$cachedir/$objhash" ]; then
+		cp "$objname" "$cachedir/$objhash"
+	fi
     fi
     cp -f "$cachedir/$objhash" "$objname"
 done
