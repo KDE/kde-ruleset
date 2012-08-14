@@ -4,3 +4,6 @@
 declare REPO=ktron
 include common-kdegames-init
 include common-kdegames-end
+
+# TODO r822136 does not move doc back from unmaintained
+# all of doc will only reappear at r924952
