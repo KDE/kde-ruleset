@@ -49,6 +49,11 @@ do_module() {
 
 postprocess() {
 	module=$1
+	if test ! -d $module.raw
+	then
+		echo $module.raw not found
+		exit 1
+	fi
 	rm -rf $module
 	cp -a $module.raw $module
 	cd $module
