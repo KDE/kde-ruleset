@@ -1,3 +1,4 @@
+# first revision 135037
 declare REPO=kolf
 include common-kdegames-init
 include common-kdegames-end

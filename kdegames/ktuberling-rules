@@ -1,3 +1,4 @@
+# first revision 20616
 declare REPO=ktuberling
 include common-kdegames-init
 match /branches/work/ktuberlingsvg/ktuberling/

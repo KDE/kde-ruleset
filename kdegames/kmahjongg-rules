@@ -1,3 +1,4 @@
+# first revision 1180
 declare REPO=kmahjongg
 include common-kdegames-init
 match /branches/work/krippendorf-kdegames/$
