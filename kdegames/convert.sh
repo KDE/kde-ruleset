@@ -87,7 +87,6 @@ postprocess() {
 	then
 		echo $module: postprocess...
 		source $postprocess
-		delete_fb_backups
 	fi
 
 	change_cvs2svn_author
