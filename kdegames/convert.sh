@@ -120,14 +120,10 @@ postprocess() {
 rename() {
 	from=$1
 	to=$3
-	for fromdir in $(ls -d ${from}* 2>/dev/null)
-	do
-		test -r $fromdir || continue
-		test -d $fromdir/.git || continue
-		todir=$(echo $fromdir | sed "s/$from/$to/")
-		test -r $todir && echo rm -rf $todir
-		echo mv $fromdir $todir
-	done
+	test -r $from || return 0
+	test -d $from/.git -o $from/hooks || return 0
+	test -r $to && echo rm -rf $to
+	mv $from $to
 }
 
 progname=$(basename $0)
