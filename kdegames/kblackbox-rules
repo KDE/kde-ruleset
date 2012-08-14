@@ -1,10 +1,5 @@
+# first revision 10096
 declare REPO=kblackbox
-# TODO: /branches/KDE_1_1_BRANCH/kdegames/kblackbox/doc/ in early revisions (see r29151)
 include common-kdegames-init
 include common-kdegames-end
 
-# branches to ignore:
-match /branches/work/kactions-cleanup2/
-end match
-match /branches/work/kactions-cleanup1/
-end match
