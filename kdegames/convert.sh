@@ -62,12 +62,7 @@ postprocess() {
 		$bindir/parent-adder $parentmap
 	fi
 
-#	delete_backup_tags
-#	TODO: reactivate this when all games have
-#	complete parentmaps, so all branches we want to keep are
-#	merged. /branches/work/kde4 is imported only as a tag. If
-#	we define no merging in parentmap, delete_backup_tags will
-#	make this branch unreachable
+	delete_backup_tags
 	delete_fb_backups
 
 	echo $module: fix-tags...
