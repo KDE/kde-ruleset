@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for name in bitmaps/smile bitmaps/smile_happy bitmaps/smile_ohno bitmaps/smile_stress
+do
+	test -r $name && fromdos $name
+done
+
+exit 0
