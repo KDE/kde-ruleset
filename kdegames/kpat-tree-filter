@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for name in freecell-solver/Makefile.win32 freecell-solver/board_gen/Makefile.win32
+do
+	test -r $name && fromdos $name
+done
+
+exit 0
