@@ -2,6 +2,6 @@
 
 rm -f sounds/.Makefile.am.swp
 
-test -r kolflib_export.h && fromdos kolflib_export.h
+test -r kolflib_export.h && dos2unix kolflib_export.h
 
 exit 0

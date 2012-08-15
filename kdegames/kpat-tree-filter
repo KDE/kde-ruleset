@@ -2,7 +2,7 @@
 
 for name in freecell-solver/Makefile.win32 freecell-solver/board_gen/Makefile.win32
 do
-	test -r $name && fromdos $name
+	test -r $name && dos2unix $name
 done
 
 exit 0

@@ -2,7 +2,7 @@
 
 for name in src/gui/views/ArcBall.h src/gui/views/ArcBall.cpp
 do
-	test -r $name && fromdos $name
+	test -r $name && dos2unix $name
 done
 
 exit 0
