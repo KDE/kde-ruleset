@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for name in src/gui/views/ArcBall.h src/gui/views/ArcBall.cpp
+do
+	test -r $name && fromdos $name
+done
+
+exit 0
