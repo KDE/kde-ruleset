@@ -111,15 +111,6 @@ postprocess() {
 	cd ..
 }
 
-rename() {
-	from=$1
-	to=$3
-	test -r $from || return 0
-	test -d $from/.git -o $from/hooks || return 0
-	test -r $to && rm -rf $to
-	mv $from $to
-}
-
 progname=$(basename $0)
 
 if test $# -eq 0
@@ -148,6 +139,3 @@ do
 	test $progname = convert.sh && do_module $module
 	postprocess $module
 done
-
-rename kbattleship to knavalbattle
-rename ktron to ksnakeduel
