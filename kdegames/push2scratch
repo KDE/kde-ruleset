@@ -1,0 +1,27 @@
+#!/bin/bash
+
+push_repo() {
+	cd $1 || exit 1
+	target=$(basename $1)
+	test $target = ktron && target=ksnakeduel
+	test $target = kbattleship && target=knavalbattle
+	ssh git@git.kde.org trash scratch/wrohdewald/$target
+	git push --all git@git.kde.org:scratch/wrohdewald/$target
+	git push --tags git@git.kde.org:scratch/wrohdewald/$target
+}
+
+if test $# -eq 0
+then
+	echo "Usage:
+
+push2scratch palapeli kajongg ...
+	"
+	exit 2
+fi
+
+for repo in $*
+do
+	push_repo $repo
+done
+
+
