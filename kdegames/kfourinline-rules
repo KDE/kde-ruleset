@@ -17,7 +17,9 @@ end match
 # /trunk/KDE/kdegames/doc/kwin4/ (r409203 - r748209)
 # and as KFourinline in
 # /trunk/KDE/kdegames/doc/kfourinline/ (r748218 - today)
-# TODO: There was a single html file before that inside the source dir. Can we handle that?
+# There als is index.html in the source directory.
+# This one is the predessor of index.docbook,
+# it should have been removed ages ago (just done in svn)
 match /trunk/(KDE/)?kdegames/doc/(kwin4)/
     repository kfourinline
     branch master
