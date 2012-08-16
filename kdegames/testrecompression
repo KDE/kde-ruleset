@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if test $# -ne 1
+then
+	echo Usage: test libkdegames
+	exit 2
+fi
+
+module=$1
+
+for output in $1 $1.recompressed
+do
+	if test -d $output
+	then
+		echo $output already exists, please remove it first
+		exit 1
+	fi
+done
+
+#export RULESETDIR=/home/wr/src/games2git/kde-ruleset
+
+/usr/bin/git clone kde:scratch/wrohdewald/$module
+cd $module
+/usr/bin/git gc --aggressive
+cd ..
+
+cp -a $module $module.recompressed
+cd $module.recompressed
+$RULESETDIR/bin/recompress-svgz-and-png.sh
+/usr/bin/git gc --aggressive
+cd ..
+
+du -s -h $module/.git $module.recompressed/.git
