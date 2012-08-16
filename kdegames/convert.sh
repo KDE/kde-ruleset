@@ -19,12 +19,7 @@ do_module() {
 	module=$1
 	rulefile=kde-ruleset/kdegames/$module-rules
 	revfile=kde-ruleset/kdegames/$module-revisions
-	rm -rf $module.prev $module.org
-	if test -d $module
-	then
-		mv $module.raw $module.raw.prev
-		mv $module $module.prev
-	fi
+	rm -rf $module $module.raw
 	if test -s $revfile
 	then
 		# use only revisions specified in that file
@@ -121,7 +116,7 @@ rename() {
 	to=$3
 	test -r $from || return 0
 	test -d $from/.git -o $from/hooks || return 0
-	test -r $to && echo rm -rf $to
+	test -r $to && rm -rf $to
 	mv $from $to
 }
 
