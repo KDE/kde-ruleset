@@ -140,6 +140,11 @@ fi
 
 for module in $*
 do
+	if test ! -r kde-ruleset/kdegames/$module-rules
+	then
+		echo no rules defined for $module
+		continue
+	fi
 	test $progname = convert.sh && do_module $module
 	postprocess $module
 done
