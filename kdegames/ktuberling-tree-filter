@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for name in museum/happy.tuberling
+do
+	test -r $name && dos2unix $name
+done
+
+exit 0
