@@ -20,6 +20,13 @@
 clear 646911
 646495 646911
 
+# 646459 only merges one subdirectory
+clear 646459
+646448 646459
+
+# avoid having two root commits
+643606 646119
+
 # kbattleship-rewrite will be moved to trunk with r657020
 # old trunk ends with r656770
 
