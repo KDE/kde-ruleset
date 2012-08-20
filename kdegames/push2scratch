@@ -8,6 +8,7 @@ push_repo() {
 	ssh git@git.kde.org trash scratch/wrohdewald/$target
 	git push --all git@git.kde.org:scratch/wrohdewald/$target
 	git push --tags git@git.kde.org:scratch/wrohdewald/$target
+	cd ..
 }
 
 if test $# -eq 0
