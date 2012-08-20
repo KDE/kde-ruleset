@@ -2,5 +2,8 @@
 # rules file)
 1024816 1028102
 
+# remove 2nd root: import goldberg-slicer into playground
+1130370 1130638
+
 # merge palapeli-goldberg-slicer into trunk
 1149339 1149809

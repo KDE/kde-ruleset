@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# do not do this. It only confuses the
+# resulting git tree, I do not know why.
+
+tempdir="$(calc_tempdir palapeli-postprocess)"
+
+# r1130638 creates playground/games/palapeli-goldberg-slicer. Because we do not
+# want two root commits, give this a parent.
+# This makes the git revision appear as deleting all the rest of the tree.
+# Here we filter all revisions in the branch
+# to contain the rest of the files, taken from the master revision right before branching.
+
+prevmaster=$(echo 1130370 | $bindir/translateRevlist.py)
+git filter-branch -f -d "$tempdir" \
+    --tree-filter "git read-tree $prevmaster" \
+    ${prevmaster}..workbranch/goldberg-slicer
+delete_fb_backups
