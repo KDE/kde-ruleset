@@ -104,6 +104,8 @@ postprocess() {
 #	echo 'add revision tags for debugging...'
 #	add_revision_tags
 
+	$bindir/recompress-svgz-and-png.sh
+
 	git reflog expire --expire=now --all
 	git gc --aggressive
 	echo $module: finished
