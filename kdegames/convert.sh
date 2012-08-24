@@ -91,15 +91,15 @@ postprocess() {
 	then
 		echo $module: tree-filter...
 		git filter-branch --tree-filter $treefilter --prune-empty --tag-name-filter cat -- --all
+		delete_fb_backups
 	fi
-	delete_fb_backups
 
 	if test -s $msgfilter
 	then
 		echo $module: msg-filter...
 		git filter-branch --msg-filter $msgfilter --tag-name-filter cat -- --all
+		delete_fb_backups
 	fi
-	delete_fb_backups
 
 #	echo 'add revision tags for debugging...'
 #	add_revision_tags
