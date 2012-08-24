@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# for r822136..924715, doc files are missing because
+# 822136 only moved src but not doc from unmaintainaed.
+#
+# Note that this makes 822136 a commit without changes,
+# and so it disappears.
+
+msg=$(git log -1 $GIT_COMMIT)
+rev=$(echo $msg | grep "revision=" | sed 's/.*revision=//')
+if test $rev -ge 822136 -o $rev -le 924715
+then 
+	if test ! -r doc/index.docbook -o ! -r doc/CMakeLists.txt
+	then
+		fromcommit=$(echo 702134 | $bindir/translateRevlist.py 2>/dev/null)
+		echo $rev: getting doc from $fromcommit
+        	test ! -r doc/index.docbook && git co $fromcommit -- doc/index.docbook
+        	test ! -r doc/CMakeLists.txt && git co $fromcommit -- doc/CMakeLists.txt
+	fi
+fi
+exit 0
