@@ -1,0 +1,24 @@
+#merge kde4 intro trunk
+430524 439736
+
+#merge trunk into kaction-cleanup2
+616835 617061
+
+#merge trunk into kaction-cleanup3 twice
+618443 618565
+618893 620435
+
+#merge kinstance-redesign into trunk
+628052 628298
+
+#merge kconfiggroup_port into trunk
+634307 635499
+
+#merge kmainwindow-decoupling into trunk
+654720 654728
+
+#merge kconfig_new into trunk
+728208 728852
+
+#rewrite merge: include the "delete" commit in the original branch
+808729 809208

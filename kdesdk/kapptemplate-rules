@@ -13,6 +13,35 @@ declare REPO=kdesdk/kapptemplate
 include common-kdesdk-rules
 
 include ../feature-branches
+include kde4-branch
+
+match /trunk/kdereview/kapptemplate/
+  repository ${REPO}
+  branch rewrite
+  max revision 809209
+  min revision 802066
+end match
+
+match /trunk/kdereview/doc/kapptemplate/
+  repository ${REPO}
+  branch rewrite
+  prefix doc/
+  max revision 809210
+  min revision 802067
+end match
+
+match /trunk/playground/devtools/kapptemplate/
+  repository ${REPO}
+  branch rewrite
+  max revision 802066
+end match
+
+match /trunk/playground/devtools/doc/kapptemplate/
+  repository ${REPO}
+  branch rewrite
+  prefix doc/
+  max revision 802067
+end match
 
 # Ignore everything else
 match /
