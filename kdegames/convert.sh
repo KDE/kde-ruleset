@@ -50,8 +50,8 @@ postprocess() {
 		exit 1
 	fi
 	rm -rf $module
-	cp -a $module.raw $module
-	cd $module
+	cp -a $module.raw $module.work
+	cd $module.work
 	parentmap=$RULESETDIR/kdegames/$module-parentmap
 	postprocess=$RULESETDIR/kdegames/$module-postprocess.sh
 	treefilter=$RULESETDIR/kdegames/$module-tree-filter
@@ -107,10 +107,13 @@ postprocess() {
 	$bindir/recompress-svgz-and-png.sh
 
 	git reflog expire --expire=now --all
-	git gc --aggressive
-	echo $module: finished
-	echo
 	cd ..
+	git clone file://$(pwd)/$module.work $module
+	cd $module
+	echo $module: repacking
+	$bindir/git-repack-super-aggressive
+	echo
+	echo $module: finished
 }
 
 progname=$(basename $0)
