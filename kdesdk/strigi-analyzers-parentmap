@@ -1,2 +1,9 @@
 clear 657887
 657886 657887
+
+#merge trunk into kde4
+434155 435291
+435474 436111
+
+#merge kde4 into trunk
+436111 439736

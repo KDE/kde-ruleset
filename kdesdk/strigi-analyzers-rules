@@ -19,6 +19,7 @@ declare MODULE=kdesdk/kfile-plugins
 declare NAMES=kfile-plugins
 include common-kdesdk-rules
 include ../feature-branches
+include kde4-branch
 
 # Ignore everything else
 match /
