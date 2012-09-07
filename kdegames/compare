@@ -6,12 +6,12 @@
 # ignoring doc
 
 compare_branch() {
-		diff -r tmp/svnco tmp/gitco >/dev/null 2>&1 
+		diff --strip-trailing-cr -r tmp/svnco tmp/gitco >/dev/null 2>&1 
 		result=$?
 		if test $result -ne 0
 		then
 			echo $repo $branch has differences
-			diff -r tmp/svnco tmp/gitco
+			diff --strip-trailing-cr -r tmp/svnco tmp/gitco
 			echo 
 			return 1
 		fi
