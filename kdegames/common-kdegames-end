@@ -86,36 +86,12 @@ end match
 # END
 
 # KDEGames work branches
-match /branches/make_atlantik_cool/$MODULE_RECURSE$
-    action recurse
-end match
-match /branches/make_atlantik_cool/${MODULE}/
-    repository ${REPO}
-    branch refs/workbranch/make_atlantik_cool
-end match
-
-match /branches/make_it_kgame/$MODULE_RECURSE$
-    action recurse
-end match
-match /branches/make_it_kgame/${MODULE}/
-    repository ${REPO}
-    branch refs/workbranch/make_it_kgame
-end match
-
 match /branches/work/bleedingedge/$MODULE_RECURSE$
     action recurse
 end match
 match /branches/work/bleedingedge/${MODULE}/
     repository ${REPO}
     branch refs/workbranch/bleedingedge
-end match
-
-match /branches/work/kde4/$MODULE_RECURSE$
-    action recurse
-end match
-match /branches/work/kde4/${MODULE}/
-    repository ${REPO}
-    branch refs/workbranch/kde4
 end match
 
 # scons was a try to use the scons build system buit
