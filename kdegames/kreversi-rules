@@ -3,9 +3,9 @@
 declare REPO=kreversi
 include common-kdegames-init
 
-match /branches/work/kreversi-rewrite/
+match /branches/work/kreversi_rewrite/
     repository ${REPO}
-    branch refs/workbranch/kreversi-rewrite
+    branch refs/workbranch/kreversi_rewrite
 end match
 
 # in early revisions (see r29151)
