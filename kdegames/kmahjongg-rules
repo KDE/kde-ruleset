@@ -10,4 +10,11 @@ match /branches/work/krippendorf-kdegames/kmahjongg/
     max revision 1271030
 end match
 
+# we do not import this branch because it is
+# never merged back and deleted as obsolete with r1268775
+#match /branches/work/krippendorf-kmahjongg/
+#    repository ${REPO}
+#    branch refs/workbranch/krippendorf2
+#end match
+
 include common-kdegames-end

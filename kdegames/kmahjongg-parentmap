@@ -28,3 +28,8 @@
 
 # merge kde4 to trunk
 438182 439536
+
+# merge work/krippendorf-kmahjongg from trunk
+# we do not import this branch because it is
+# never merged back and deleted as obsolete with r1268775
+# 1263648 1266110
