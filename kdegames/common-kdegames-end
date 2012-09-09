@@ -86,7 +86,7 @@ end match
 # END
 
 # KDEGames work branches
-match /branches/work/bleedingedge/$MODULE_RECURSE$
+match /branches/work/bleedingedge/${MODULE_RECURSE}$
     action recurse
 end match
 match /branches/work/bleedingedge/${MODULE}/

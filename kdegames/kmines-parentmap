@@ -19,8 +19,5 @@
 # merge kde4 to trunk
 437149 439536
 
-# branch bleedingedge from trunk
-558974 560464
-
-# and back to trunk
+# merge bleedingedge to trunk
 560464 560614
