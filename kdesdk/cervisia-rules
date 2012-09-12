@@ -1,5 +1,6 @@
 #
 # Created by Jeremy Whiting <jpwhiting@kde.org>
+# Modified by Sebastian Doerner <sebastian@sebastian-doerner.de>
 #
 
 create repository kdesdk/cervisia
@@ -13,6 +14,49 @@ declare REPO=kdesdk/cervisia
 include common-kdesdk-rules
 
 include ../feature-branches
+include kde4-branch
+
+match /branches/(subversion_support/(kdesdk/)?)?$
+    action recurse
+end match
+
+match /branches/subversion_support/kdesdk/cervisia/
+  repository ${REPO}
+  branch refs/workbranch/subversion_support
+  max revision 407269
+end match
+
+match /branches/(cervisia/(subversion_support/(kdesdk/)?)?)?$
+    action recurse
+end match
+
+match /branches/cervisia/subversion_support/kdesdk/cervisia/
+  repository ${REPO}
+  branch refs/workbranch/subversion_support
+# the 409205 is the actual move. But it doesn't do anything
+  min revision 409206
+end match
+
+match /branches/work/(isi-umbrello/(cervisia/)?)?$
+  action recurse
+end match
+
+match /branches/work/isi-umbrello/cervisia/
+  repository ${REPO}
+  branch refs/workbranch/isi-umbrello
+  min revision 610597
+end match
+
+match /branches/work/(isi-umbrello/(doc/(cervisia/)?)?)?$
+  action recurse
+end match
+
+match /branches/work/isi-umbrello/doc/cervisia/
+  repository ${REPO}
+  branch refs/workbranch/isi-umbrello
+  min revision 610597
+  prefix doc/
+end match
 
 # Ignore everything else
 match /

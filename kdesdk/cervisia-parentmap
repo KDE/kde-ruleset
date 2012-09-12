@@ -1,0 +1,56 @@
+# fix some cvstosvn issues
+clear 301094
+300491 301094
+
+clear 401981
+384875 401981
+
+clear 401989
+401227 401989
+
+clear 401982
+401229 401982
+
+# merge trunk into kde4
+432073 433215
+433744 434145
+434155 435291
+435474 436111
+
+#merge feature from trunk into 3.5
+438989 439186
+
+# merge kde4 into trunk
+436111 439736
+
+#merge trunk into subversion_support
+395531 395612
+395748 395913
+401169 401229
+
+#merge trunk into isi-umbrello
+614808 615788
+624999 625292
+628298 629441
+630119 631264
+632385 632836
+633543 633663
+635499 635976
+637398 638535
+643364 643476
+
+# merge trunk into kaction-cleanup2
+612538 614117
+616835 617061
+
+# merge kinstance-redesign into trunk
+628293 628298
+
+# merge kconfiggroup_port into trunk
+634893 635499
+
+# merge kde4_kconfig intro trunk
+721495 721764
+
+# merge kconfig_new into trunk
+728208 728852
