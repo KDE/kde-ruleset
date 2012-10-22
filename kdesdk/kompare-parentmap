@@ -1,0 +1,48 @@
+#fix cvs2svn "merges" that only add one file or so
+# 3.1.0
+clear 202081
+197117 202081
+# 3.1.1
+clear 218032
+197117 218032
+# 3.1.2
+clear 225764
+223817 225764
+# 3.1.3
+clear 238664
+234583 238664
+# 3.1.4
+clear 250011
+237612 250011
+# 3.2.1
+clear 282773
+282532 282773
+
+# merge trunk into kde4
+432540 433215
+# again
+434155 435291
+433215 435291
+
+#merge kde4 intro trunk
+435291 439736
+
+#merge trunk into kaction_cleanup2
+616835 617061
+
+#merge kinstance-redesign into trunk
+628052 628298
+
+#merge kconfiggroup_port into trunk
+634307 635499
+
+# merge trunk into isi-umbrello
+614808 615788
+624050 625292
+628298 629441
+632863 633663
+635499 635976
+642880 643476
+
+# merge kdevelop-teamwork into trunk
+578348 1261064
