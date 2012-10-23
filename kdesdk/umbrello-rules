@@ -2,6 +2,9 @@
 # Created by Jeremy Whiting <jpwhiting@kde.org>
 #
 #
+# Modified by Marcelo Brito <marcelo.cicomp@gmail.com>
+#
+#
 
 create repository kdesdk/umbrello
 end repository
@@ -18,10 +21,11 @@ include common-kdesdk-rules
 
 include ../feature-branches
 
+#changed, including the kde4-branch
+include kde4-branch 
 
 
 #match to include the branch soc-umbrello
-
 match /branches/work/soc-umbrello/
 	repository ${REPO}
 	branch soc-umbrello
@@ -29,7 +33,6 @@ end match
 
 
 #match to include the branch umbrello-qgv-port
-
 match /branches/work/umbrello-qgv-port/
 	repository ${REPO}
 	branch umbrello-qgv-port
@@ -37,12 +40,10 @@ end match
 
 
 #match to include the branch isi-umbrello/umbrello
-
 match /branches/work/isi-umbrello/umbrello/
 	repository ${REPO}
 	branch isi-umbrello
 end match
-
 
 
 # Ignore everything else
