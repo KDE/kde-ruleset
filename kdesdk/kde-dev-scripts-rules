@@ -1,0 +1,27 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdesdk/kde-dev-scripts
+end repository
+
+declare REPO=kdesdk/kde-dev-scripts
+declare MODULE_RECURSE=(kdesdk/doc/scripts/)?
+
+declare MODULE=kdesdk/scripts/
+declare NAMES=scripts
+declare PREFIX=/
+include kdesdk-bundle-rules
+include ../feature-branches-with-prefix
+include kde4-branch-match-files
+
+declare MODULE=kdesdk/cmake/
+declare NAMES=cmake
+declare PREFIX=cmake-utils/
+include kdesdk-bundle-rules
+include ../feature-branches-with-prefix
+include kde4-branch-match-files
+
+# Ignore everything else
+match /
+end match
