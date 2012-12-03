@@ -1,6 +1,11 @@
 #
 # Created by Jeremy Whiting <jpwhiting@kde.org>
 #
+#
+# Modified by Marcelo Brito <marcelo.cicomp@gmail.com>
+#
+#
+
 
 create repository kdesdk/kioslave
 end repository
@@ -14,6 +19,59 @@ include common-kdesdk-rules
 
 include ../feature-branches
 
+
+
+#kde4-branch included
+include kde4-branch
+
+
+match /branches/kio_svn/kde35/kdesdk/kioslave/svn/
+	repository ${REPO}
+	branch kio_svn/svn
+end match
+
+
+match /tags/playground/kio_perldoc/
+	repository ${REPO}
+	branch refs/tags/
+	annotated true
+end match
+
+
+match /tags/playground/kio_perldoc/0.9.1/
+	repository ${REPO}
+	branch refs/tags/0.9.1
+	annotated true
+end match
+
+
+match /trunk/KDE/kdesdk/kioslave/kio_perldoc/
+	repository ${REPO}
+	branch master
+end match
+
+
+match /trunk/KDE/kdesdk/kioslave/perldoc/
+	repository ${REPO}
+	branch master
+end match
+
+
+match /trunk/playground/ioslaves/kio_perldoc/
+	repository ${REPO}
+	branch master
+end match
+
+
 # Ignore everything else
 match /
 end match
+
+
+#Potential Branchs/Tags/Trunk
+#
+#/branches/KDE/4.5/kdesdk/kioslave/perldoc/
+#
+#
+
+
