@@ -6,12 +6,12 @@
 # notice and this notice are preserved. This file is offered as-is,
 # without any warranty.
 
-create repository kdesdk-scripts
+create repository kdesdk/kde-dev-scripts
 end repository
 
 declare MODULE=kdesdk/scripts
 declare MODULE_RECURSE=(kdesdk/)?
-declare REPO=kdesdk-scripts
+declare REPO=kdesdk/kde-dev-scripts
 include ../common-kde-branches-rules
 include ../common-kde-tags-rules
 
@@ -23,12 +23,12 @@ declare PREFIX=/
 declare MODULE=kdesdk/scripts
 
 match /trunk/(KDE/)?kdesdk/scripts/
-    repository kdesdk-scripts
+    repository ${REPO}
     branch master
 end match
 
 match /trunk/(KDE/)?kdesdk/doc/scripts/
-    repository kdesdk-scripts
+    repository ${REPO}
     branch master
     prefix doc/
 end match
@@ -37,11 +37,11 @@ match /branches/work/kde4/kdesdk/$
     action recurse
 end match
 match /branches/work/kde4/kdesdk/scripts/
-    repository kdesdk-scripts
+    repository ${REPO}
     branch kde4
 end match
 match /branches/work/kde4/kdesdk/doc/scripts/
-    repository kdesdk-scripts
+    repository ${REPO}
     branch kde4
     prefix doc/
 end match
