@@ -31,13 +31,6 @@ match /branches/kio_svn/kde35/kdesdk/kioslave/svn/
 end match
 
 
-match /tags/playground/kio_perldoc/
-	repository ${REPO}
-	branch refs/tags/
-	annotated true
-end match
-
-
 match /tags/playground/kio_perldoc/0.9.1/
 	repository ${REPO}
 	branch refs/tags/0.9.1
