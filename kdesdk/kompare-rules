@@ -1,5 +1,6 @@
 #
 # Created by Jeremy Whiting <jpwhiting@kde.org>
+# Modified by Sebastian Doerner <sebastian@sebastian-doerner.de>
 #
 
 create repository kdesdk/kompare
@@ -10,9 +11,124 @@ declare MODULE_RECURSE=(kdesdk/)?
 
 declare NAMES=kompare
 declare REPO=kdesdk/kompare
+
+# -- do this before the include to override standard branch handling --
+match /branches/(kompare3_branch/(kdesdk/)?)?$
+  action recurse
+end match
+
+match /branches/kompare3_branch/kdesdk/kompare/
+  repository ${REPO}
+  branch refs/workbranch/kompare3
+  max revision 404035
+end match
+# -- standard branch handling override ends --
+
 include common-kdesdk-rules
 
 include ../feature-branches
+# --- include kde4-branch, but with earlier max revision ---
+match /branches/work/kde4/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kde4/${MODULE}/
+    repository ${REPO}
+    branch refs/workbranch/kde4
+    max revision 433668 # branch deleted in r433669
+end match
+# --- include kde4-branch ends ---
+
+# 3_way_kompare
+match /branches/work/(kompare/)?$
+  action recurse
+end match
+
+match /branches/work/kompare/3_way_kompare/
+  repository ${REPO}
+  branch refs/workbranch/3_way_kompare
+end match
+
+# isi-umbrello
+match /branches/work/(isi-umbrello/)?$
+  action recurse
+end match
+
+match /branches/work/isi-umbrello/kompare/
+  repository ${REPO}
+  branch refs/workbranch/isi-umbrello
+end match
+
+match /branches/work/(isi-umbrello/(doc/)?)?$
+  action recurse
+end match
+
+match /branches/work/isi-umbrello/doc/kompare/
+  repository ${REPO}
+  branch refs/workbranch/isi-umbrello
+  prefix doc/
+end match
+
+# make_it_cool
+match /branches/make_it_cool/(kdesdk/)?$
+  action recurse
+end match
+
+match /branches/make_it_cool/kdesdk/kompare/
+  repository ${REPO}
+  branch refs/workbranch/make_it_cool
+end match
+
+# kompare3
+match /branches/(kompare3/(kompare3_branch/(kdesdk/)?)?)?$
+  action recurse
+end match
+
+match /branches/kompare3/kompare3_branch/kdesdk/kompare/
+  repository ${REPO}
+  branch refs/workbranch/kompare3
+end match
+
+#kdevelop forked libdiff2
+match /branches/work/(kdevelop-teamwork/(kdevelop/(lib/)?)?)?$
+  action recurse
+end match
+
+match /branches/work/kdevelop-teamwork/kdevelop/lib/libdiff2/
+  repository ${REPO}
+  branch refs/workbranch/kdevelop-teamwork
+  prefix libdiff2/
+end match
+
+# --- strigi analyzer ---
+declare PREFIX=strigi-analyzer/
+
+#r657887 renamed kfile-plugins to strigi-analyzer
+match /trunk/KDE/kdesdk/strigi-analyzer/diff/
+  repository ${REPO}
+  branch master
+  min revision 409203
+  prefix ${PREFIX}
+end match
+declare MODULE_RECURSE=(kdesdk/(strigi-analyzer/)?)?
+declare MODULE=kdesdk/strigi-analyzer/diff/
+include ../feature-branches-with-prefix
+
+declare MODULE_RECURSE=(kdesdk/(kfile-plugins/)?)?
+declare MODULE=kdesdk/kfile-plugins/diff/
+match /trunk/kdesdk/kfile-plugins/diff/
+  repository ${REPO}
+  branch master
+  max revision 409202
+  prefix ${PREFIX}
+end match
+match /trunk/KDE/kdesdk/kfile-plugins/diff/
+  repository ${REPO}
+  branch master
+  min revision 409203
+  prefix ${PREFIX}
+end match
+include ../feature-branches-with-prefix
+include kde4-branch-match-files
 
 # Ignore everything else
 match /
