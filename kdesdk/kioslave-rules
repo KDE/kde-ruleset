@@ -53,6 +53,7 @@ end match
 match /trunk/playground/ioslaves/kio_perldoc/
 	repository ${REPO}
 	branch master
+    max revision 842480
 end match
 
 
