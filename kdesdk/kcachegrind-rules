@@ -13,6 +13,7 @@ declare REPO=kdesdk/kcachegrind
 include common-kdesdk-rules
 
 include ../feature-branches
+include kde4-branch
 
 # Ignore everything else
 match /

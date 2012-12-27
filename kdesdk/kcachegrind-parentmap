@@ -1,0 +1,30 @@
+#merge trunk into kde4
+434155 435291
+435900 436111
+
+#merge kde4 into trunk
+436111 439736
+
+#merge qdbus-api-changes into trunk
+575413 575662
+
+#merge kaction-cleanup1 into trunk
+610570 610651
+
+#merge trunk into kaction-cleanup2
+616835 617061
+
+#merge kaction-cleanup3 into trunk
+620855 621518
+
+#merge kinstance-redesign into trunk
+628013 628298
+
+#merge kconfiggroup_port into trunk
+634440 635499
+
+#merge kmainwindow-decoupling into trunk
+654720 654728
+
+#merge kde4_kconfig into trunk
+721495 721764
