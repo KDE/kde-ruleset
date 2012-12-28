@@ -99,37 +99,6 @@ match /branches/work/kdevelop-teamwork/kdevelop/lib/libdiff2/
   prefix libdiff2/
 end match
 
-# --- strigi analyzer ---
-declare PREFIX=strigi-analyzer/
-
-#r657887 renamed kfile-plugins to strigi-analyzer
-match /trunk/KDE/kdesdk/strigi-analyzer/diff/
-  repository ${REPO}
-  branch master
-  min revision 409203
-  prefix ${PREFIX}
-end match
-declare MODULE_RECURSE=(kdesdk/(strigi-analyzer/)?)?
-declare MODULE=kdesdk/strigi-analyzer/diff/
-include ../feature-branches-with-prefix
-
-declare MODULE_RECURSE=(kdesdk/(kfile-plugins/)?)?
-declare MODULE=kdesdk/kfile-plugins/diff/
-match /trunk/kdesdk/kfile-plugins/diff/
-  repository ${REPO}
-  branch master
-  max revision 409202
-  prefix ${PREFIX}
-end match
-match /trunk/KDE/kdesdk/kfile-plugins/diff/
-  repository ${REPO}
-  branch master
-  min revision 409203
-  prefix ${PREFIX}
-end match
-include ../feature-branches-with-prefix
-include kde4-branch-match-files
-
 # Ignore everything else
 match /
 end match
