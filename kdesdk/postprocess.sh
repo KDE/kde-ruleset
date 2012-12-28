@@ -92,7 +92,6 @@ do_standard() {
   REPO_or=$1
   derive_names
   copy_and_enter
-  remove_backups
   fix_tags
   remove_backups
   add_parents
@@ -104,7 +103,6 @@ do_kapptemplate() {
   REPO_or=kapptemplate
   derive_names
   copy_and_enter
-  remove_backups
   fix_tags
   remove_backups
   ORIG_PARENT_MAP=$PARENT_MAP
