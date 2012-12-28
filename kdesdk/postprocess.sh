@@ -122,4 +122,5 @@ do_standard kcachegrind
 do_standard kde-dev-scripts
 do_standard kde-dev-utils
 do_kompare
+do_standard strigi-analyzers
 do_standard poxml
