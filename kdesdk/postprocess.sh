@@ -5,8 +5,8 @@ if test -z $RULESETDIR; then
  exit 1
 fi
 
-GIT=/usr/bin/git
-CP=/usr/bin/cp
+GIT=`which git`
+CP=`which cp`
 FIX_TAGS=$RULESETDIR/bin/fix-tags
 PARENT_ADDER=$RULESETDIR/bin/parent-adder
 TRANSLATE=$RULESETDIR/bin/translateRevlist.py
@@ -41,6 +41,7 @@ leave() {
   echo "leaving $REPO"
   cd ..
 }
+
 remove_backups() {
   echo "removing backup refs"
   $REMOVE_BACKUPS
@@ -87,4 +88,40 @@ do_kompare() {
   leave
 }
 
+do_standard() {
+  REPO_or=$1
+  derive_names
+  copy_and_enter
+  remove_backups
+  fix_tags
+  remove_backups
+  add_parents
+  remove_backups
+  leave
+}
+
+do_kapptemplate() {
+  REPO_or=kapptemplate
+  derive_names
+  copy_and_enter
+  remove_backups
+  fix_tags
+  remove_backups
+  ORIG_PARENT_MAP=$PARENT_MAP
+  PARENT_MAP=$ORIG_PARENT_MAP-1
+  add_parents
+  remove_backups
+  PARENT_MAP=$ORIG_PARENT_MAP-2
+  add_parents
+  remove_backups
+  leave
+}
+
+do_standard cervisia
+do_standard dolphin-plugins
+do_kapptemplate
+do_standard kcachegrind
+do_standard kde-dev-scripts
+do_standard kde-dev-utils
 do_kompare
+do_standard poxml
