@@ -2,14 +2,14 @@
 # Created by Sebastian Doerner <sebastian@sebastian-doerner.de>
 #
 
-create repository kdesdk/thumbnailers
+create repository kdesdk/kdesdk-thumbnailers
 end repository
 
 declare MODULE=kdesdk/thumbnailers
 declare MODULE_RECURSE=(kdesdk/)?
 
 declare NAMES=thumbnailers
-declare REPO=kdesdk/thumbnailers
+declare REPO=kdesdk/kdesdk-thumbnailers
 include common-kdesdk-rules
 
 include ../feature-branches

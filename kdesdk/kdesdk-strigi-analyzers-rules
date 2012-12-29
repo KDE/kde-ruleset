@@ -3,10 +3,10 @@
 # Adapted by Sebastian Doerner <sebastian@sebastian-doerner.de>
 #
 
-create repository kdesdk/strigi-analyzers
+create repository kdesdk/kdesdk-strigi-analyzers
 end repository
 
-declare REPO=kdesdk/strigi-analyzers
+declare REPO=kdesdk/kdesdk-strigi-analyzers
 declare MODULE_RECURSE=(kdesdk/)?
 
 #r657887 renamed kfile-plugins to strigi-analyzer
