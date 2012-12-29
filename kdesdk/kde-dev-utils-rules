@@ -7,6 +7,12 @@
 create repository kdesdk/kde-dev-utils
 end repository
 
+# Add a rule to ignore 919925 which moved the docbook
+match /trunk/KDE/kdesdk/doc/(scripts|kmtrace)/
+    min revision 919924
+    max revision 919926
+end match
+
 declare REPO=kdesdk/kde-dev-utils
 declare MODULE_RECURSE=(kdesdk/(doc/(scripts/)?)?)?
 
@@ -20,19 +26,19 @@ include kde4-branch-match-files
 match /trunk/kdesdk/doc/scripts/(man-demangle.1.docbook)
     repository ${REPO}
     branch master
-    prefix doc/kmtrace/\1
+    prefix kmtrace/doc/\1
     max revision 409202
 end match
 
-match /trunk/KDE/kdesdk/doc/scripts/(man-demangle.1.docbook)
+match /trunk/KDE/kdesdk/doc/(scripts|kmtrace)/(man-demangle.1.docbook)
     repository ${REPO}
     branch master
-    prefix doc/kmtrace/\1
+    prefix kmtrace/doc/\2
     min revision 409203
 end match
 
 declare MODULE=kdesdk/doc/scripts/(man-demangle.1.docbook)
-declare PREFIX=/doc/kmtrace/man-demangle.1.docbook
+declare PREFIX=/kmtrace/doc/man-demangle.1.docbook
 include ../common-kde-branches-rules-match-files
 include ../common-kde-tags-rules-with-prefix
 include ../feature-branches-with-prefix
