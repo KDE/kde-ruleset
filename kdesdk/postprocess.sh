@@ -127,6 +127,19 @@ do_okteta() {
   leave
 }
 
+do_poxml() {
+  REPO_or=poxml
+  derive_names
+  copy_and_enter
+  fix_tags
+  remove_backups
+  add_parents
+  remove_backups
+  # this branch is empty (we have trinity as a backup tag)
+  git branch -D trinity
+  leave
+}
+
 do_standard cervisia
 do_standard dolphin-plugins
 do_kapptemplate
@@ -136,4 +149,4 @@ do_standard kde-dev-utils
 do_kompare
 do_standard kdesdk-strigi-analyzers
 do_okteta
-do_standard poxml
+do_poxml
