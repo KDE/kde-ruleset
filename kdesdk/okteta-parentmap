@@ -1,0 +1,18 @@
+#merge trunk into kde4
+433887 434144
+
+#merge kde4 into trunk
+434144 439732
+
+#merge trunk into kaction-cleanup
+619360 620435
+
+#merge kaction-cleanup into trunk
+621504 621518
+
+#merge kinstance-redesign into trunk
+627816 628305
+
+#fix wrong parent when moving from kdereview to kdeutils
+clear 797377
+797355 797377

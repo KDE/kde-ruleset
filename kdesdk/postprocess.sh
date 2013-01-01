@@ -115,6 +115,18 @@ do_kapptemplate() {
   leave
 }
 
+do_okteta() {
+  REPO_or=okteta
+  derive_names
+  copy_and_enter
+  add_parents
+  remove_backups
+  $GIT tag -d backups/master@792016
+  $GIT tag -d backups/master@797377
+  $GIT tag -d backups/master@1178758
+  leave
+}
+
 do_standard cervisia
 do_standard dolphin-plugins
 do_kapptemplate
@@ -123,4 +135,5 @@ do_standard kde-dev-scripts
 do_standard kde-dev-utils
 do_kompare
 do_standard kdesdk-strigi-analyzers
+do_okteta
 do_standard poxml

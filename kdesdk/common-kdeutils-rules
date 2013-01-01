@@ -1,0 +1,42 @@
+#
+# Created by Sebastian Doerner <sebastian@sebastian-doerner.de>
+# Some stuff in kdesdk (e.g. okteta) used to be in kdeutils. Use this to match
+# the history / branches of that time.
+#
+
+#get the application branches
+declare PREFIX=/
+include ../common-kde-branches-rules
+include ../common-kde-tags-rules
+#and then the doc prefix for branches
+declare MODULE_SAVE=${MODULE}
+declare MODULE=kdeutils/doc/${NAMES}
+declare PREFIX=doc/
+include ../common-kde-branches-rules
+declare MODULE=${MODULE_SAVE}
+
+# during this time(rev 1435 - 409202), kdeutils was directly under trunk
+match /trunk/kdeutils/${NAMES}/
+  repository ${REPO}
+  branch master
+  max revision 409202
+end match
+match /trunk/kdeutils/doc/${NAMES}/
+  repository ${REPO}
+  branch master
+  prefix doc/
+  max revision 409202
+end match
+
+# the rest of the time kdeutils was under trunk/KDE
+match /trunk/KDE/kdeutils/${NAMES}/
+  repository ${REPO}
+  branch master
+  min revision 409203
+end match
+match /trunk/KDE/kdeutils/doc/${NAMES}/
+  repository ${REPO}
+  branch master
+  prefix doc/
+  min revision 409203
+end match

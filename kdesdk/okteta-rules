@@ -14,10 +14,11 @@ include common-kdesdk-rules
 
 include ../feature-branches
 
-match /trunk/KDE/kdeutils/okteta/
-  repository ${REPO}
-  branch master
-end match
+# branches for when okteta was in kdeutils
+declare MODULE=kdeutils/okteta
+declare MODULE_RECURSE=(kdeutils/)?
+include common-kdeutils-rules
+include ../feature-branches
 
 match /trunk/kdereview/okteta/
   repository ${REPO}
@@ -28,6 +29,86 @@ match /trunk/playground/utils/okteta/
   repository ${REPO}
   branch master
 end match
+
+match /trunk/kdeutils/(khexedit/)?$
+  action recurse
+end match
+
+match /trunk/KDE/kdeutils/(khexedit/)?$
+  action recurse
+end match
+
+match /trunk/KDE/kdeutils/khexedit/(core|parts|gui)/
+  repository ${REPO}
+  branch master
+  prefix \1/
+  max revision 723720
+  min revision 633597
+end match
+
+match /trunk/KDE/kdeutils/khexedit/(lib|parts|gui)/
+  repository ${REPO}
+  branch master
+  prefix \1/
+  min revision 409203
+  max revision 633597
+end match
+
+match /trunk/kdeutils/khexedit/(lib|parts|gui)/
+  repository ${REPO}
+  branch master
+  prefix \1/
+  max revision 409202
+end match
+
+# --- branches ---
+
+match /branches/(work/(okteta/)?)?$
+  action recurse
+end match
+
+match /branches/work/okteta/connected-models/
+  repository ${REPO}
+  branch refs/workbranch/connected-models
+  max revision 885821
+end match
+
+match /branches/work/kde4/(kdeutils/(khexedit/)?)?$
+  action recurse
+end match
+match /branches/work/kde4/kdeutils/khexedit/(lib|parts)/
+  repository ${REPO}
+  branch refs/workbranch/kde4
+  prefix \1/
+  max revision 439738 # branch deleted in r439739
+end match
+
+# relevant feature branches of khexedit
+match /branches/work/kinstance-redesign/kdeutils/(khexedit/)?$
+    action recurse
+end match
+match /branches/work/kinstance-redesign/kdeutils/khexedit/(lib|parts)/
+  repository ${REPO}
+  branch refs/workbranch/kinstance-redesign
+  # 625211 created branch, 626924 wiped it again;
+  # so start from the first revision after wipe
+  min revision 626925
+  max revision 628815 # one before branch deletion
+  prefix \1/
+end match
+
+match /branches/work/kaction-cleanup-branch/(KDE/(kdeutils/(khexedit/)?)?)?$
+    action recurse
+end match
+match /branches/work/kaction-cleanup-branch/KDE/kdeutils/khexedit/(lib|parts)/
+  repository ${REPO}
+  branch refs/workbranch/kaction-cleanup
+  min revision 617207 # re-creation of branch
+  max revision 623046 # one before branch deletion
+  prefix \1/
+end match
+
+#ignore release branchess of khexedit, as it is a separate application
 
 # Ignore everything else
 match /
