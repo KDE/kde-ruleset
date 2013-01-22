@@ -2,16 +2,51 @@
 # Created by Jeremy Whiting <jpwhiting@kde.org>
 #
 
-#get the application branches
-declare PREFIX=/
-include ../common-kde-branches-rules
+include ../common-kde-ignores
+
+match /(branches|tags)/[^/]+/${MODULE_RECURSE|}$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE|}$
+  action recurse
+end match
+
 include ../common-kde-tags-rules
+
+#get the application branches
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/${MODULE}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/${MODULE}/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+match /branches/([^/]+)/${MODULE}/
+    repository ${REPO}
+    branch \1
+end match
+
 #and then the doc prefix for branches
-declare MODULE_SAVE=${MODULE}
-declare MODULE=kdesdk/doc/${NAMES}
-declare PREFIX=doc/
-include ../common-kde-branches-rules
-declare MODULE=${MODULE_SAVE}
+declare MODULE_DOC=kdesdk/doc/${NAMES}
+
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/${MODULE_DOC}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/${MODULE_DOC}/
+    repository ${REPO}
+    prefix doc/
+    branch KDE/\1.\2
+end match
+match /branches/([^/]+)/${MODULE_DOC}/
+    repository ${REPO}
+    prefix doc/
+    branch \1
+end match
 
 # during this time(rev 1435 - 409202), kdesdk was directly under trunk
 match /trunk/kdesdk/${NAMES}/
