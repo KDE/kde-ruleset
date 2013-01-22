@@ -16,18 +16,10 @@ include common-kdesdk-rules
 include ../feature-branches
 include kde4-branch
 
-match /branches/(subversion_support/(kdesdk/)?)?$
-    action recurse
-end match
-
 match /branches/subversion_support/kdesdk/cervisia/
   repository ${REPO}
   branch refs/workbranch/subversion_support
   max revision 407269
-end match
-
-match /branches/(cervisia/(subversion_support/(kdesdk/)?)?)?$
-    action recurse
 end match
 
 match /branches/cervisia/subversion_support/kdesdk/cervisia/
@@ -37,7 +29,10 @@ match /branches/cervisia/subversion_support/kdesdk/cervisia/
   min revision 409206
 end match
 
-match /branches/work/(isi-umbrello/(cervisia/)?)?$
+match /branches/work/isi-umbrello/$
+  action recurse
+end match
+match /branches/work/isi-umbrello/doc/$
   action recurse
 end match
 
@@ -45,10 +40,6 @@ match /branches/work/isi-umbrello/cervisia/
   repository ${REPO}
   branch refs/workbranch/isi-umbrello
   min revision 610597
-end match
-
-match /branches/work/(isi-umbrello/(doc/(cervisia/)?)?)?$
-  action recurse
 end match
 
 match /branches/work/isi-umbrello/doc/cervisia/
