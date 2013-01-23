@@ -99,22 +99,6 @@ do_standard() {
   leave
 }
 
-do_kapptemplate() {
-  REPO_or=kapptemplate
-  derive_names
-  copy_and_enter
-  fix_tags
-  remove_backups
-  ORIG_PARENT_MAP=$PARENT_MAP
-  PARENT_MAP=$ORIG_PARENT_MAP-1
-  add_parents
-  remove_backups
-  PARENT_MAP=$ORIG_PARENT_MAP-2
-  add_parents
-  remove_backups
-  leave
-}
-
 do_okteta() {
   REPO_or=okteta
   derive_names
@@ -140,13 +124,27 @@ do_poxml() {
   leave
 }
 
-do_standard cervisia
-do_standard dolphin-plugins
-do_kapptemplate
-do_standard kcachegrind
-do_standard kde-dev-scripts
-do_standard kde-dev-utils
-do_kompare
-do_standard kdesdk-strigi-analyzers
-do_okteta
-do_poxml
+# No arguments, process everything
+if [ "$1z" == "z" ]; then
+  do_standard cervisia
+  do_standard dolphin-plugins
+  do_kapptemplate
+  do_standard kcachegrind
+  do_standard kde-dev-scripts
+  do_standard kde-dev-utils
+  do_kompare
+  do_standard kdesdk-strigi-analyzers
+  do_okteta
+  do_poxml
+else
+  # otherwise process only what was passed as the first argument
+  if [ "$1" == "kompare" ]; then
+    do_kompare
+  elif [ "$1" == "okteta" ]; then
+    do_okteta
+  elif [ "$1" == "poxml" ]; then
+    do_poxml
+  else
+    do_standard $1
+  fi
+fi
