@@ -32,7 +32,7 @@ end match
 include ../common-kde-tags-rules
 
 #get the application branches
-match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/${MODULE}/
+match /branches/KDE_(\d+)_(\d+)_BRANCH/${MODULE}/
     repository ${REPO}
     branch KDE/\1.\2
     max revision 409201
@@ -49,7 +49,7 @@ end match
 #and then the doc prefix for branches
 declare MODULE_DOC=kdesdk/doc/${NAMES}
 
-match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/${MODULE_DOC}/
+match /branches/KDE_(\d+)_(\d+)_BRANCH/${MODULE_DOC}/
     repository ${REPO}
     branch KDE/\1.\2
     prefix doc/
