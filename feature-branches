@@ -1,3 +1,19 @@
+# This file contains rules to convert several KDE-wide feature branches.
+
+# The following variables must be set before including this file:
+#
+# * REPO: name of the destination repository.
+#
+# * MODULE: The path where the code is, relative to /trunk/KDE/
+#   or /branches/<version>/. Don't add a trailing slash.
+#   Example: "kdegames/foo".
+#
+# * MODULE_RECURSE: regular expression matching all the directory components
+#   on the parent of ${MODULE}. It must also match the empty string.
+#   For example, if MODULE is "kdebase/apps/dolphin",
+#   MODULE_RECURSE should be set to "(kdebase/(apps/)?)?"
+#   or the equivalent "(kdebase/|kdebase/apps/)?".
+
 match /branches/work/kaction-cleanup-branch/(KDE/)?${MODULE_RECURSE}$
     action recurse
 end match

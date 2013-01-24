@@ -2,6 +2,24 @@
 # Created by Jeremy Whiting <jpwhiting@kde.org>
 #
 
+# The following variables must be set before including this file:
+#
+# * REPO: name of the destination repository.
+#
+# * MODULE: The path where the code is, relative to /trunk/KDE/
+#   or /branches/<version>/. Don't add a trailing slash.
+#   Example: "kdesdk/foo".
+#
+# * MODULE_RECURSE: regular expression matching all the directory components
+#   on the parent of ${MODULE}. It must also match the empty string.
+#   For example, if MODULE is "one/two/three",
+#   MODULE_RECURSE should be set to "(one/(two/)?)?".
+#   In this file, it will usually be "(kdesdk/)?".
+#
+# * NAMES: regex matching all the names the project had, under kdesdk.
+#   Can be set to something like "foo" or "(foo|bar)".
+#   It will be appended to "kdesdk/" and "kdesdk/doc/" in the rules regexes.
+
 include ../common-kde-ignores
 
 match /(branches|tags)/[^/]+/${MODULE_RECURSE|}$

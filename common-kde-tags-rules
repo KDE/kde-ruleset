@@ -4,6 +4,15 @@
 # that's left for the caller to handle. And you probably need common-kde-ignores
 # as well, in order to skip the creation of wrong tags that were later
 # re-created correctly,
+#
+# The following variables must be set before including this file:
+#
+# * REPO: name of the destination repository.
+#
+# * MODULE: The path where the code is, relative to /trunk/KDE/
+#   or /branches/<version>/. Don't add a trailing slash.
+#   Example: "kdegames/foo".
+#
 
 match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/${MODULE}/
     repository ${REPO}
