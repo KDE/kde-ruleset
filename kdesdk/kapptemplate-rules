@@ -67,7 +67,7 @@ match /trunk/kdereview/kapptemplate/
   repository ${REPO}
   branch master
   max revision 809209
-  min revision 802066
+  min revision 802067
 end match
 
 match /trunk/kdereview/doc/kapptemplate/
@@ -75,20 +75,20 @@ match /trunk/kdereview/doc/kapptemplate/
   branch master
   prefix doc/
   max revision 809210
-  min revision 802067
+  min revision 802068
 end match
 
 match /trunk/playground/devtools/kapptemplate/
   repository ${REPO}
   branch master
-  max revision 802066
+  max revision 802065
 end match
 
 match /trunk/playground/devtools/doc/kapptemplate/
   repository ${REPO}
   branch master
   prefix doc/
-  max revision 802067
+  max revision 802066
 end match
 
 # Ignore everything else

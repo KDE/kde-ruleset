@@ -20,15 +20,5 @@
 #merge kconfig_new into trunk
 728208 728852
 
-#fix history in the rewrite branch
-clear 802066
-802057 802066
-
-clear 802067
-802066 802067
-
-#rewrite merge: include the "delete" commit in the original branch
+#rewrite merge: include the "delete" commit in the kapptemplate1 branch
 808729 809208
-
-#fix the merge of the rewrite branch
-# 809208 809750
