@@ -39,14 +39,14 @@ match /trunk/KDE/kdesdk/${NAMES}/
   repository ${REPO}
   branch kapptemplate1
   min revision 409203
-  max revision 809208 # branch removed in 809209
+  max revision 809207 # branch removed in 809208
 end match
 match /trunk/KDE/kdesdk/doc/${NAMES}/
   repository ${REPO}
   branch kapptemplate1
   prefix doc/
   min revision 409203
-  max revision 809208 # branch removed in 809209
+  max revision 809207 # branch removed in 809208
 end match
 match /trunk/KDE/kdesdk/${NAMES}/
   repository ${REPO}
