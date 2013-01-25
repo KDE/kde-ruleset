@@ -1,5 +1,5 @@
 declare MODULE=amor
-declare REPO=amor
+declare REPO=kdetoys/amor
 
 create repository ${REPO}
 end repository

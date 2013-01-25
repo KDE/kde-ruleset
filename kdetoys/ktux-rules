@@ -1,5 +1,5 @@
 declare MODULE=ktux
-declare REPO=ktux
+declare REPO=kdetoys/ktux
 
 create repository ${REPO}
 end repository

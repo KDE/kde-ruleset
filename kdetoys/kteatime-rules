@@ -1,5 +1,5 @@
 declare MODULE=kteatime
-declare REPO=kteatime
+declare REPO=kdetoys/kteatime
 
 create repository ${REPO}
 end repository
