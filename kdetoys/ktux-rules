@@ -1,5 +1,6 @@
-declare MODULE=ktux
+declare MODULE=kdetoys/ktux
 declare REPO=kdetoys/ktux
+declare NAMES=ktux
 
 create repository ${REPO}
 end repository

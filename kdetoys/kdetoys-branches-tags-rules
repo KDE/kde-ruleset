@@ -13,67 +13,12 @@ match /(branches|tags)/KDE/[^/]+/kdetoys/$
   action recurse
 end match
 
-match /tags/KDE/([^/]+)A/kdetoys/${MODULE}/
-  repository ${REPO}
-  branch refs/tags/v\1a
-  min revision 409209
-  annotated true
-end match
-match /tags/KDE/([^/]+)/kdetoys/${MODULE}/
-  repository ${REPO}
-  branch refs/tags/v\1
-  min revision 409209
-  annotated true
-end match
-
-#also get the doc into
-match /tags/KDE/([^/]+)A/kdetoys/doc/${MODULE}/
-  repository ${REPO}
-  branch refs/tags/v\1a
-  min revision 409209
-  prefix doc/
-  annotated true
-end match
-match /tags/KDE/([^/]+)/kdetoys/doc/${MODULE}/
-  repository ${REPO}
-  branch refs/tags/v\1
-  min revision 409209
-  prefix doc/
-  annotated true
-end match
-
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdetoys/${MODULE}/
-  repository ${REPO}
-  branch KDE/\1.\2
-  max revision 409202
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdetoys/doc/${MODULE}/
-  repository ${REPO}
-  branch KDE/\1.\2
-  prefix doc/
-  max revision 409202
-end match
-
-match /branches/KDE/([^/]+)A/kdetoys/${MODULE}/
-  repository ${REPO}
-  branch KDE/\1a
-  min revision 409209
-end match
-match /branches/KDE/([^/]+)/kdetoys/${MODULE}/
-  repository ${REPO}
-  branch KDE/\1
-  min revision 409209
-end match
-
-match /branches/KDE/([^/]+)A/kdetoys/doc/${MODULE}/
-  repository ${REPO}
-  branch KDE/\1a
-  prefix doc/
-  min revision 409209
-end match
-match /branches/KDE/([^/]+)/kdetoys/doc/${MODULE}/
-  repository ${REPO}
-  branch KDE/\1
-  prefix doc/
-  min revision 409209
-end match
+#get the tags and branches
+include ../common-kde-branches-rules
+include ../common-kde-tags-rules
+#and then the doc prefix for branches
+declare MODULE_SAVE=${MODULE}
+declare MODULE=kdetoys/doc/${NAMES}
+declare PREFIX=doc/
+include ../common-kde-branches-rules
+declare MODULE=${MODULE_SAVE}
