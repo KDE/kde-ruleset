@@ -61,6 +61,13 @@ match /trunk/kdeutils/khexedit/(lib|parts|gui)/
   max revision 409202
 end match
 
+match /trunk/kdenonbeta/khexedit2/
+  repository ${REPO}
+  branch master
+  prefix playground/
+  max revision 599533
+end match
+
 # --- branches ---
 
 match /branches/(work/(okteta/)?)?$
@@ -69,7 +76,7 @@ end match
 
 match /branches/work/okteta/connected-models/
   repository ${REPO}
-  branch refs/workbranch/connected-models
+  branch connected-models
   max revision 885821
 end match
 
