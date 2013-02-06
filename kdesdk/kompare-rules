@@ -40,26 +40,6 @@ match /branches/work/kompare/3_way_kompare/
   branch refs/workbranch/3_way_kompare
 end match
 
-# isi-umbrello
-match /branches/work/(isi-umbrello/)?$
-  action recurse
-end match
-
-match /branches/work/isi-umbrello/kompare/
-  repository ${REPO}
-  branch refs/workbranch/isi-umbrello
-end match
-
-match /branches/work/(isi-umbrello/(doc/)?)?$
-  action recurse
-end match
-
-match /branches/work/isi-umbrello/doc/kompare/
-  repository ${REPO}
-  branch refs/workbranch/isi-umbrello
-  prefix doc/
-end match
-
 # make_it_cool
 match /branches/make_it_cool/(kdesdk/)?$
   action recurse
