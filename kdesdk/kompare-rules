@@ -27,16 +27,13 @@ end match
 include common-kdesdk-rules
 
 include ../feature-branches
-# --- include kde4-branch, but with earlier max revision ---
-match /branches/work/kde4/${MODULE_RECURSE}$
-    action recurse
-end match
+
+# There is a kde4 work branch, and some porting was done in it,
+# but it was never merged. Kompare was ported to kde4 independently,
+# directly in trunk.
+
 match /branches/work/kde4/${MODULE}/
-    repository ${REPO}
-    branch refs/workbranch/kde4
-    max revision 433668 # branch deleted in r433669
 end match
-# --- include kde4-branch ends ---
 
 # 3_way_kompare
 match /branches/work/(kompare/)?$

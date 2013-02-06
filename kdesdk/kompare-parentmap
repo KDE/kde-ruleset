@@ -18,14 +18,6 @@ clear 250011
 clear 282773
 282532 282773
 
-# merge trunk into kde4
-432540 433215
-# again
-434155 435291
-
-#merge kde4 intro trunk
-435291 439736
-
 #merge trunk into kaction_cleanup2
 616835 617061
 
