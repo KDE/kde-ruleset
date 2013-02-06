@@ -16,7 +16,7 @@ clear 250011
 237612 250011
 # 3.2.1
 clear 282773
-282532 282773
+282532@/branches/KDE_3_2_BRANCH/kdesdk/kompare/ 282773
 
 #merge trunk into kaction_cleanup2
 616835 617061
