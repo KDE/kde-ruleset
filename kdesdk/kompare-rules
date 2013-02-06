@@ -35,11 +35,6 @@ include ../feature-branches
 match /branches/work/kde4/${MODULE}/
 end match
 
-# 3_way_kompare
-match /branches/work/(kompare/)?$
-  action recurse
-end match
-
 match /branches/work/kompare/3_way_kompare/
   repository ${REPO}
   branch refs/workbranch/3_way_kompare
