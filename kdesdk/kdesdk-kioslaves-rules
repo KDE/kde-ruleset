@@ -7,14 +7,14 @@
 #
 
 
-create repository kdesdk/kioslave
+create repository kdesdk/kdesdk-kioslaves
 end repository
 
 declare MODULE=kdesdk/kioslave
 declare MODULE_RECURSE=(kdesdk/)?
 
 declare NAMES=kioslave
-declare REPO=kdesdk/kioslave
+declare REPO=kdesdk/kdesdk-kioslaves
 include common-kdesdk-rules
 
 include ../feature-branches
