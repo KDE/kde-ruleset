@@ -34,18 +34,21 @@ end match
 match /tags/playground/kio_perldoc/0.9.1/
 	repository ${REPO}
 	branch refs/tags/0.9.1
+    prefix perldoc/
 	annotated true
 end match
 
 
 match /trunk/KDE/kdesdk/kioslave/kio_perldoc/
 	repository ${REPO}
+    prefix perldoc/
 	branch master
 end match
 
 
 match /trunk/KDE/kdesdk/kioslave/perldoc/
 	repository ${REPO}
+    prefix perldoc/
 	branch master
 end match
 
@@ -53,6 +56,7 @@ end match
 match /trunk/playground/ioslaves/kio_perldoc/
 	repository ${REPO}
 	branch master
+    prefix perldoc/
     max revision 842480
 end match
 
