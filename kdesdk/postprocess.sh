@@ -128,7 +128,7 @@ do_poxml() {
 if [ "$1z" == "z" ]; then
   do_standard cervisia
   do_standard dolphin-plugins
-  do_kapptemplate
+  do_standard kapptemplate
   do_standard kcachegrind
   do_standard kde-dev-scripts
   do_standard kde-dev-utils
