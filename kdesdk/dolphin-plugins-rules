@@ -19,8 +19,12 @@ include ../feature-branches
 match /trunk/KDE/kdesdk/dolphin/
   repository ${REPO}
   branch master
-  max revision 1114329
-  min revision 1113629
+  # r1114484 moves from dolphin@1114470 to dolphin-plugins,
+  # and svn2git would handle the SVN copy differently if 1114470
+  # was matched by this rule, even if there's nothing to convert in it.
+  # Ideally it *should* be matched by this rule, but that would change
+  # the repository (in an irrelevant way) compared to the final migration.
+  max revision 1114469
 end match
 
 #hist-plug-*
@@ -29,8 +33,7 @@ match /trunk/KDE/kdebase/apps/dolphin/src/versioncontrol/fileviewsvnplugin.(h|cp
   repository ${REPO}
   branch master
   prefix svn/fileviewsvnplugin.\1
-  max revision 1107255
-  min revision 1045674
+  max revision 1110249 # r1110250 deleted the SVN plugin from dolphin
 end match
 
 #hist-plug-*-2
@@ -38,8 +41,6 @@ match /trunk/KDE/kdebase/apps/dolphin/src/fileviewsvnplugin.(h|cpp|desktop)
   repository ${REPO}
   branch master
   prefix svn/fileviewsvnplugin.\1
-  max revision 1045674
-  min revision 1022921
 end match
 
 #hist-plug-*-3
@@ -47,8 +48,6 @@ match /trunk/KDE/kdebase/apps/dolphin/src/kversioncontrolplugin.(h|cpp)
   repository ${REPO}
   branch master
   prefix svn/kversioncontrolplugin.\1
-  max revision 1022921
-  min revision 1011058
 end match
 
 #hist-plug-*-4
@@ -56,8 +55,6 @@ match /trunk/KDE/kdebase/apps/dolphin/src/revisioncontrolplugin.(h|cpp)
   repository ${REPO}
   branch master
   prefix svn/revisioncontrolplugin.\1
-  max revision 1011058
-  min revision 995351
 end match
 
 # -- in the 4.4 branch, the svn plugin was in kdebase --
@@ -120,7 +117,6 @@ end match
 match /branches/work/soc-kdesdk-dolphin-plugins-hg/dolphin-plugins/
   repository ${REPO}
   branch refs/workbranch/gsoc-dolphin-plugins-hg
-  min revision 1232773
 end match
 
 # Ignore everything else
