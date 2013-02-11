@@ -1,0 +1,25 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+create repository kdeadmin/kdeadmin-strigi-analyzers
+end repository
+
+declare REPO=kdeadmin/kdeadmin-strigi-analyzers
+declare MODULE_RECURSE=(kdeadmin/)?
+
+#r657887 renamed kfile-plugins to strigi-analyzer
+declare MODULE=kdeadmin/strigi-analyzer
+declare NAMES=strigi-analyzer
+include common-kdeadmin-rules
+include ../feature-branches
+
+declare MODULE=kdeadmin/kfile-plugins
+declare NAMES=kfile-plugins
+include common-kdeadmin-rules
+include ../feature-branches
+include kde4-branch
+
+# Ignore everything else
+match /
+end match
