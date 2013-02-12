@@ -43,6 +43,17 @@ match /trunk/playground/devtools/kaider/
     branch master
 end match
 
+# when kaider was first imported, icons were copied from kbabel;
+# let's get their history too!
+match /trunk/(KDE/)?kdesdk/kbabel/kbabel/icons/(Makefile\.am|CMakeLists\.txt)$
+end match
+
+match /trunk/(KDE/)?kdesdk/kbabel/kbabel/icons/
+    repository ${REPO}
+    branch refs/temp/kbabel
+    prefix kbabel/icons/
+end match
+
 # Ignore everything else
 match /
 end match
