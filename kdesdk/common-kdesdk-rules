@@ -22,6 +22,16 @@
 
 include ../common-kde-ignores
 
+# ignore the post-migration deletions!
+match /trunk/KDE/kdesdk/
+    min revision 1338897
+    action ignore
+end match
+match /branches/KDE/4.10/kdesdk/
+    min revision 1338966
+    action ignore
+end match
+
 match /(branches|tags)/[^/]+/${MODULE_RECURSE|}$
   action recurse
 end match
