@@ -1,0 +1,21 @@
+# merge kde4_config into trunk
+clear 721704
+720858 721704
+
+# merge kconfiggroup_port
+clear 635505
+634043 635505
+
+# merge kinstance-redesign
+clear 628311
+627991 628311
+
+# merge kaction_cleanup
+clear 621518
+621328 621518
+
+clear 621328
+617061 621328
+
+clear 610651
+610601 610651
