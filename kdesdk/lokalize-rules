@@ -14,6 +14,35 @@ include common-kdesdk-rules
 
 include ../feature-branches
 
+match /trunk/extragear/sdk/kaider/
+    repository ${REPO}
+    branch master
+end match
+match /trunk/extragear/sdk/doc/kaider/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
+
+declare X_MODULE=sdk/kaider
+declare X_MODULE_RECURSE=(sdk/)?
+include ../extragear-feature-branches
+
+match /trunk/kdereview/kaider/
+    repository ${REPO}
+    branch master
+end match
+match /trunk/kdereview/doc/kaider/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
+
+match /trunk/playground/devtools/kaider/
+    repository ${REPO}
+    branch master
+end match
+
 # Ignore everything else
 match /
 end match

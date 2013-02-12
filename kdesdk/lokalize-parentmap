@@ -1,0 +1,9 @@
+# fix the parent of the kdereview->extragear move
+clear 718800
+718730 718800
+
+# merge from trunk to kde4_jobflags
+721271 721429
+
+# merge kde4_jobflags into trunk
+721429 721449
