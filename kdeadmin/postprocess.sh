@@ -52,8 +52,10 @@ do_standard() {
   derive_names
   copy_and_enter
   fix_tags
-  remove_backups
-  add_parents
+  if [ -e $PARENT_MAP ]; then
+    remove_backups
+    add_parents
+  fi
   remove_backups
   leave
 }
@@ -61,7 +63,6 @@ do_standard() {
 # No arguments, process everything
 if [ "$1z" == "z" ]; then
   do_standard kcron
-  do_standard ksystemlog
   do_standard kdeadmin-strigi-analyzers
   do_standard kuser
 else
