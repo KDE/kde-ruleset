@@ -26,36 +26,36 @@ include kde4-branch
 
 
 match /branches/kio_svn/kde35/kdesdk/kioslave/svn/
-	repository ${REPO}
-	branch kio_svn/svn
+    repository ${REPO}
+    branch kio_svn/svn
 end match
 
 
 match /tags/playground/kio_perldoc/0.9.1/
-	repository ${REPO}
-	branch refs/tags/0.9.1
+    repository ${REPO}
+    branch refs/tags/0.9.1
     prefix perldoc/
-	annotated true
+    annotated true
 end match
 
 
 match /trunk/KDE/kdesdk/kioslave/kio_perldoc/
-	repository ${REPO}
+    repository ${REPO}
     prefix perldoc/
-	branch master
+    branch master
 end match
 
 
 match /trunk/KDE/kdesdk/kioslave/perldoc/
-	repository ${REPO}
+    repository ${REPO}
     prefix perldoc/
-	branch master
+    branch master
 end match
 
 
 match /trunk/playground/ioslaves/kio_perldoc/
-	repository ${REPO}
-	branch master
+    repository ${REPO}
+    branch master
     prefix perldoc/
     max revision 842480
 end match
