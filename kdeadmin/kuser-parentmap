@@ -1,15 +1,12 @@
 # merge kde4_config into trunk
-clear 721447
 720858 721447
 
-clear 720858
 720846 720858
 
 # merge kinstance-redesign
-clear 628311
 627991 628311
 
 # merge kaction_cleanup
-clear 621518
 621328 621518
 
+617061 620435
