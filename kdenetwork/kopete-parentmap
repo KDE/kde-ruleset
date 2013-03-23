@@ -1,0 +1,273 @@
+### Created by: Pali Rohár <pali.rohar@gmail.com> ###
+
+# recreate tag v3.2.0
+clear 282533@/tags/KDE_3_2_0_RELEASE/kdenetwork/kopete/
+282501 282533@/tags/KDE_3_2_0_RELEASE/kdenetwork/kopete/
+
+# recreate tag v3.2.1
+clear 293317@/tags/KDE_3_2_1_RELEASE/kdenetwork/kopete/
+292449 293317@/tags/KDE_3_2_1_RELEASE/kdenetwork/kopete/
+
+# merge branch iris-port to master
+294732 294735
+
+# merge branch jabber-pooling-rewrite to master
+296249 296252
+
+# recreate tag v3.2.2
+clear 301186@/tags/KDE_3_2_2_RELEASE/kdenetwork/kopete/
+301181 301186@/tags/KDE_3_2_2_RELEASE/kdenetwork/kopete/
+
+# merge branch goodbye_aimbuddy to master
+307027 307039
+
+# fix backporting to branch KDE/3.2
+clear 314294
+314181 314294
+
+# fix backporting to branch KDE/3.2
+clear 316052
+315825 316052
+
+# recreate tag v3.2.3
+clear 316997@/tags/KDE_3_2_3_RELEASE/kdenetwork/kopete/
+316088 316997@/tags/KDE_3_2_3_RELEASE/kdenetwork/kopete/
+
+# fix backporting to branch KDE/3.2
+clear 323457
+322470 323457
+
+# recreate tag v3.3.0
+clear 338180@/tags/KDE_3_3_0_RELEASE/kdenetwork/kopete/
+338172 338180@/tags/KDE_3_3_0_RELEASE/kdenetwork/kopete/
+
+# recreate tag v3.3.1
+clear 354021@/tags/KDE_3_3_1_RELEASE/kdenetwork/kopete/
+351398 354021@/tags/KDE_3_3_1_RELEASE/kdenetwork/kopete/
+
+# recreate tag v3.3.2
+clear 367579@/tags/KDE_3_3_2_RELEASE/kdenetwork/kopete/
+366880 367579@/tags/KDE_3_3_2_RELEASE/kdenetwork/kopete/
+
+# recreate branch KDE/3.4
+clear 393399@/branches/KDE_3_4_BRANCH/kdenetwork/kopete/
+393322 393399@/branches/KDE_3_4_BRANCH/kdenetwork/kopete/
+
+# merge master-doc to KDE/3.4-doc
+clear 393399@/branches/KDE_3_4_BRANCH/kdenetwork/doc/kopete/
+392877 393399@/branches/KDE_3_4_BRANCH/kdenetwork/doc/kopete/
+
+# recreate tag v3.4.0
+clear 394907@/tags/KDE_3_4_0_RELEASE/kdenetwork/kopete/
+394574 394907@/tags/KDE_3_4_0_RELEASE/kdenetwork/kopete/
+
+# fix backporting to branch KDE/3.4
+clear 402789
+402748 402789
+
+# fix backporting to branch KDE/3.4
+clear 403922
+403837 403922
+
+# fix backporting to branch KDE/3.4
+clear 407142
+406826 407142
+
+# recreate branch work/kopete-irc_rewrite
+clear 416709
+416658 416709
+
+# merge branch work/better-oscar-error-handling to master
+431497 431575
+
+# move kopete_skype from playground to kdereview
+435857 436979
+
+# merge branch KDE/3.5 to trunk
+453901 453955
+
+# merge branch work/dev-0.12 to KDE/3.5
+454123 454126
+
+# merge branch KDE/3.5 to trunk
+454126 454128
+
+# merge branch KDE/3.5 to work/dev-0.12
+454126 454129
+
+# merge branch KDE/3.5 to work/dev-0.12
+453901 453969
+
+# merge branch KDE/3.5 to work/dev-0.12
+466124 466569
+
+# merge branch KDE/3.5 to work/dev-0.12
+467722 467724
+
+# merge branch KDE/3.5 to work/dev-0.12
+471262 471263
+
+# merge branch KDE/3.5 to work/dev-0.12
+480399 480626
+
+# merge branch KDE/3.5 to work/dev-0.12
+484724 484824
+
+# fix merge work/dev-0.12 to master
+clear 487564
+486081 487564
+487560 487564
+
+# merge branch KDE/3.5 to work/dev-0.12
+496656 497559
+
+# merge branch yahoo_rewrite to work/dev-0.12
+clear 498089
+498003 498089
+498009 498089
+
+# recreate tag 0.12-beta1
+clear 516669
+516667 516669
+
+# merge branch work/kopete-irc_rewrite to master
+479765 554383
+
+# merge branch 0.12 to master
+533784 533894
+
+# merge branch 0.12 to master
+567276 567960
+
+# merge branch work/kaction-cleanup-branch to master
+610250 610651
+
+# merge branch master to work/kaction-cleanup-branch
+613726 614117
+
+# merge branch master to work/kaction-cleanup-branch
+614500 614568
+
+# merge branch master to work/kaction-cleanup-branch
+619562 620435
+
+# merge branch work/kdelibs_kpassworddialog to master
+620826 621085
+
+# merge branch work/kinstance-redesign to master
+628302 628304
+
+# merge branch work/kconfiggroup_port to master
+635297 635496
+
+# merge branch work/kmainwindow-decoupling-branch to master
+654700 654728
+
+# merge branch work/kparts_urlargs_split to master
+698703 699514
+
+# move javascript plugin from master to playground
+clear 702662@/trunk/playground/network/kopete/plugins/javascript/
+702659 702662@/trunk/playground/network/kopete/plugins/javascript/
+
+# merge master to work/break-the-contactlist
+704400 704590
+
+# merge master to work/break-the-contactlist
+705309 705480
+
+# merge playground plugin urlpicpreview to master
+clear 705968
+705710 705968
+705965 705968
+
+# merge playground plugin motionautoaway to master
+clear 706226
+706217 706226
+706225 706226
+
+# merge playground plugin statistics to master
+clear 706499
+706489 706499
+706476 706499
+
+# move cryptography plugin to kopete-cryptography branch
+clear 711822
+711279 711822
+
+# merge master to work/break-the-contactlist
+712114 712865
+
+# merge master to work/break-the-contactlist
+715635 715935
+
+# merge master to work/break-the-contactlist
+717538 717539
+
+# merge master to work/kde4_jobflags
+721284 721435
+
+# merge work/kde4_jobflags to master
+721435 721447
+
+# move motionautoaway plugin from master to playground
+clear 732092@/trunk/playground/network/kopete/plugins/motionautoaway/
+732090 732092@/trunk/playground/network/kopete/plugins/motionautoaway/
+
+# merge master to work/break-the-contactlist
+823979 824538
+
+# svnmerge - master to work/dev-4.2@999944
+829148 829165
+
+# svnmerge - master to work/dev-4.2
+843555 843829
+
+# svnmerge - master to work/dev-4.2
+845443 845459
+
+# merge master to work/soc-kopete-jingle
+854029 862452
+
+# svnmerge - master to work/iup-isi-group
+861946 862960
+
+# svnmerge - master to work/iup-isi-group
+862747 862961
+
+# svnmerge - master to work/iup-isi-group
+866673 866852
+
+# svnmerge - master to work/personal/mattr
+866640 866853
+
+# copy skype protocol from kde3 extragear to playground
+641687 872548
+
+# merge work/soc-kopete-jingle to master
+873655 873707@/trunk/KDE/kdenetwork/kopete/
+
+# merge work/soc-kopete-jingle to master-cmake-modules
+873655 873707@/trunk/KDE/kdenetwork/cmake/modules/FindSpeex.cmake
+
+# svnmerge - master to work/dev-4.2
+887400 887839
+
+# svnmerge - master to work/dev-4.2
+895734 896141
+
+# svnmerge - master to work/dev-4.2
+908247 908387
+
+# merge master to work/jingle-video
+916552 916634
+
+# merge master to work/dev-4.2
+946354 946517
+
+# recreate branch trinity/3.5.13_frozen
+clear 1262602@/branches/trinity/3.5.13_frozen/kdenetwork/kopete/
+1261216 1262602@/branches/trinity/3.5.13_frozen/kdenetwork/kopete/
+
+# merge master-doc to master
+1335371 1340343

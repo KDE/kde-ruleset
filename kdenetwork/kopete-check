@@ -1,0 +1,31 @@
+#!/bin/bash
+### Created by: Pali Rohár <pali.rohar@gmail.com> ###
+echo "Initial commits:"
+git rev-list --max-parents=0 --all | git name-rev --stdin
+echo ""
+echo "Unmerged branches:"
+git branch --no-merged master | sed 's/\s*//g'
+echo ""
+echo "Already merged branches:"
+git branch --merged master | sed 's/\s*//g'
+echo ""
+echo "Unmerged svnmerge commits:"
+git log --grep='svnmerge' --no-merges --format=%H --all | git name-rev --stdin
+echo ""
+echo "Unmerged 'merge from' commits:"
+git log --grep='merge from' --no-merges --format=%H --all | git name-rev --stdin
+echo ""
+echo "Unmerged 'rebase from' commits:"
+git log --grep='rebase from' --no-merges --format=%H --all | git name-rev --stdin
+echo ""
+echo "Unmerged 'rebase to' commits:"
+git log --grep='rebase to' --no-merges --format=%H --all | git name-rev --stdin
+echo ""
+echo "Unmerged 'Sync with' commits:"
+git log --grep='[Ss]ync with' --no-merges --format=%H --all | git name-rev --stdin
+echo ""
+echo "Unmerged 'merge branch' commits:"
+git log --grep='[Mm]erge.*branch' --no-merges --format=%H --all | git name-rev --stdin
+echo ""
+echo "Branches state:"
+git for-each-ref --format="%(refname)" refs/tags/backups refs/heads/work | while read ref; do echo "$ref"; git branch --contains $ref; echo; done

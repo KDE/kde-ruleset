@@ -1,0 +1,1397 @@
+### Created by: Pali Rohár <pali.rohar@gmail.com> ###
+
+### create repository ###
+
+create repository kopete
+end repository
+
+### KDE ignore ###
+
+include ../common-kde-ignores
+
+# ignore removing otr plugin
+match /trunk/kdereview/kopete/plugins/otr/
+    min revision 784627
+    max revision 784627
+end match
+
+# ignore removing pipes plugin
+match /trunk/playground/network/kopete/plugins/pipes/
+    min revision 947592
+    max revision 947592
+end match
+
+# ignore removing sharemydesktop plugin
+match /trunk/playground/network/kopete/plugins/sharemydesktop/
+    min revision 1041908
+    max revision 1042303
+end match
+
+# ignore removing statistics plugin
+match /trunk/playground/network/kopete/plugins/statistics/
+    min revision 732074
+    max revision 732074
+end match
+
+# ignore removing urlpicpreview plugin
+match /trunk/playground/network/kopete/plugins/urlpicpreview/
+    min revision 732074
+    max revision 732074
+end match
+
+# ignore removing motionautoaway plugin
+match /trunk/playground/network/kopete/plugins/motionautoaway/
+    min revision 732074
+    max revision 732074
+end match
+
+# ignore removing wlm protocol
+match /trunk/playground/network/kopete/protocols/wlm/
+    min revision 884474
+    max revision 884474
+end match
+
+# ignore cleaning tree before merging branch kopete-irc_rewrite
+match /trunk/KDE/kdenetwork/kopete/
+    min revision 554380
+    max revision 554380
+end match
+
+# ignore cleaning tree before merging branch 0.12
+match /branches/KDE/3.5/kdenetwork/kopete/
+    min revision 573902
+    max revision 573902
+end match
+
+# ignore cleaning tree (old yahoo implementation) in branch work/dev-0.12
+match /branches/work/kopete/dev-0.12/kopete/
+    min revision 498088
+    max revision 498088
+end match
+
+# ignore bad tag v3.93.0
+match /tags/KDE/3.93/kdenetwork/kopete/
+    min revision 706293
+    max revision 706317
+end match
+
+# ignore bad tag v3.93.0-doc
+match /tags/KDE/3.93/kdenetwork/doc/kopete/
+    min revision 706293
+    max revision 706317
+end match
+
+# ignore bad tag 0.12beta2
+match /tags/kopete/0.12beta2/kopete/
+    min revision 519044
+    max revision 520852
+end match
+
+# ignore removing branch work/kde4
+match /branches/work/kde4/kdenetwork/kopete/
+    min revision 421002
+    max revision 421002
+end match
+
+# ignore removing branch 0.12
+match /branches/kopete/0.12/kopete/
+    min revision 573903
+    max revision 573903
+end match
+
+# ignore removing branch work/model-for-contactlist
+match /branches/work/kopete/model-for-contactlist/
+    min revision 622236
+    max revision 622236
+end match
+
+# ignore removing branch work/kopete-contactlist-model
+match /branches/work/kopete-contactlist-model/
+    min revision 612902
+    max revision 612902
+end match
+
+# ignore removing branch trinity-doc
+match /branches/trinity/kdenetwork/doc/kopete/
+    min revision 1262602
+    max revision 1262602
+end match
+
+### recurse ###
+
+match /trunk/$
+    action recurse
+end match
+
+match /trunk/kdenetwork/$
+    action recurse
+end match
+
+match /trunk/kdenetwork/doc/$
+    action recurse
+end match
+
+match /trunk/KDE/kdenetwork/$
+    action recurse
+end match
+
+match /trunk/KDE/kdenetwork/doc/$
+    action recurse
+end match
+
+match /trunk/playground/$
+    action recurse
+end match
+
+match /trunk/playground/network/$
+    action recurse
+end match
+
+match /trunk/playground/network/kopete/$
+    action recurse
+end match
+
+match /trunk/kdereview/$
+    action recurse
+end match
+
+match /trunk/kdereview/kopete/$
+    action recurse
+end match
+
+match /trunk/extragear/$
+    action recurse
+end match
+
+match /trunk/extragear/network/$
+    action recurse
+end match
+
+match /(branches|tags)/KDE/[^/]+/$
+    action recurse
+    min revision 757126
+end match
+
+match /(branches|tags)/$
+    action recurse
+end match
+
+match /trunk/kdereview/$
+    action recurse
+end match
+
+match /trunk/playground/$
+    action recurse
+end match
+
+match /trunk/playground/[^/]/$
+    action recurse
+end match
+
+match /trunk/kdeplayground-[^/]/$
+    action recurse
+end match
+
+match /branches/work/kde4/$
+    action recurse
+end match
+
+match /branches/work/kde4/kdenetwork/$
+    action recurse
+end match
+
+match /(branches(/work)?|tags)/(KDE/)?[^/]+/kdenetwork/$
+    action recurse
+end match
+
+match /(branches|tags)/[^/]+/$
+    action recurse
+end match
+
+match /(branches|tags)/[^/]+/kdenetwork/$
+    action recurse
+end match
+
+match /(branches|tags)/[^/]+/kdenetwork/doc/$
+    action recurse
+end match
+
+match /(branches|tags)/KDE/[^/]+/$
+    action recurse
+end match
+
+match /(branches|tags)/KDE/[^/]+/kdenetwork/$
+    action recurse
+end match
+
+match /(branches|tags)/KDE/[^/]+/kdenetwork/doc/$
+    action recurse
+end match
+
+match /tags/kopete/[^/]+/$
+    action recurse
+end match
+
+match /tags/kopete/[^/]+/doc/$
+    action recurse
+end match
+
+match /trunk/KDE/kdenetwork/cmake/modules/$
+    action recurse
+end match
+
+match /branches/KDE_1_1_BRANCH/kdenetwork/$
+    min revision 16564
+    max revision 16564
+    action recurse
+end match
+
+match /branches/KDE_1_1_BRANCH/$
+    min revision 16564
+    max revision 16564
+    action recurse
+end match
+
+match /branches/KDE_2_0_BRANCH/kdenetwork/$
+    min revision 68289
+    max revision 68289
+    action recurse
+end match
+
+match /branches/KDE_2_0_BRANCH/$
+    min revision 68289
+    max revision 68289
+    action recurse
+end match
+
+match /branches/KDE_3_0_BRANCH/kdenetwork/$
+    min revision 145201
+    max revision 145201
+    action recurse
+end match
+
+match /branches/KDE_3_0_BRANCH/$
+    min revision 145201
+    max revision 145201
+    action recurse
+end match
+
+match /branches/KDE_3_1_BRANCH/kdenetwork/$
+    min revision 190607
+    max revision 190607
+    action recurse
+end match
+
+match /branches/KDE_3_1_BRANCH/$
+    min revision 190607
+    max revision 190607
+    action recurse
+end match
+
+match /branches/KDE_3_2_BRANCH/kdenetwork/$
+    min revision 280544
+    max revision 280544
+    action recurse
+end match
+
+match /branches/KDE_3_2_BRANCH/$
+    min revision 280544
+    max revision 280544
+    action recurse
+end match
+
+match /branches/KDE_3_3_BRANCH/kdenetwork/$
+    min revision 336334
+    max revision 336334
+    action recurse
+end match
+
+match /branches/KDE_3_3_BRANCH/$
+    min revision 336334
+    max revision 336334
+    action recurse
+end match
+
+match /branches/KDE_3_4_BRANCH/kdenetwork/$
+    min revision 392847
+    max revision 392847
+    action recurse
+end match
+
+match /branches/KDE_3_4_BRANCH/$
+    min revision 392847
+    max revision 392847
+    action recurse
+end match
+
+# create merge revision 573903 (merge branch 0.12 to KDE/3.5)
+match /branches/KDE/3.5/kdenetwork/kopete/$
+    min revision 571854
+    max revision 573903
+    action recurse
+end match
+
+match /branches/trinity/$
+    action recurse
+end match
+
+match /branches/trinity/kdenetwork/$
+    action recurse
+end match
+
+match /branches/trinity/kdenetwork/doc/$
+    action recurse
+end match
+
+match /branches/trinity/[^/]+/kdenetwork/$
+    action recurse
+end match
+
+match /branches/trinity/[^/]+/kdenetwork/doc/$
+    action recurse
+end match
+
+match /branches/work/bleedingedge/$
+    action recurse
+end match
+
+match /branches/work/bleedingedge/kdenetwork/$
+    action recurse
+end match
+
+match /branches/work/coolos_urls/$
+    action recurse
+end match
+
+match /branches/work/coolos_urls/kdenetwork/$
+    action recurse
+end match
+
+# needed for kaction-cleanup-branch
+match /branches/work/$
+    action recurse
+    min revision 610651
+    max revision 614117
+end match
+
+match /branches/work/kaction-cleanup-branch/$
+    action recurse
+end match
+
+match /branches/work/kaction-cleanup-branch/kdenetwork/$
+    action recurse
+end match
+
+# needed for kconfig_new_take3
+match /branches/work/$
+    action recurse
+    min revision 728440
+    max revision 727727
+end match
+
+match /branches/work/kconfig_new_take3/KDE/$
+    action recurse
+end match
+
+match /branches/work/kconfig_new_take3/KDE/kdenetwork/$
+    action recurse
+end match
+
+match /branches/work/kconfiggroup_port/$
+    action recurse
+end match
+
+match /branches/work/kconfiggroup_port/kdenetwork/$
+    action recurse
+end match
+
+match /branches/work/kde4_jobflags/$
+    action recurse
+end match
+
+match /branches/work/kde4_jobflags/KDE/$
+    action recurse
+end match
+
+match /branches/work/kde4_jobflags/KDE/kdenetwork/$
+    action recurse
+end match
+
+match /branches/work/kdelibs_kpassworddialog/$
+    action recurse
+end match
+
+match /branches/work/kdelibs_kpassworddialog/KDE/$
+    action recurse
+end match
+
+match /branches/work/kdelibs_kpassworddialog/KDE/kdenetwork/$
+    action recurse
+end match
+
+match /branches/work/kmainwindow-decoupling-branch/$
+    action recurse
+end match
+
+match /branches/work/kmainwindow-decoupling-branch/kdenetwork/$
+    action recurse
+end match
+
+match /branches/work/kparts_urlargs_split/$
+    action recurse
+end match
+
+match /branches/work/kparts_urlargs_split/kdenetwork/$
+    action recurse
+end match
+
+# recurse action for branch kopete-contactlist-model
+match /branches/work/$
+    min revision 582479
+    max revision 582583
+    action recurse
+end match
+
+match /branches/work/kopete-contactlist-model/$
+    action recurse
+end match
+
+### KDE trunk ###
+
+match /trunk/kdenetwork/kopete/
+    repository kopete
+    branch master
+    min revision 129465
+    max revision 409155
+end match
+
+match /trunk/KDE/kdenetwork/kopete/
+    repository kopete
+    branch master
+    min revision 409776
+end match
+
+match /trunk/kdenetwork/doc/kopete/
+    repository kopete
+    branch master-doc
+    prefix doc/
+    min revision 247416
+    max revision 392877
+end match
+
+match /trunk/KDE/kdenetwork/doc/kopete/
+    repository kopete
+    branch master-doc
+    prefix doc/
+    min revision 409203
+    max revision 1335371
+end match
+
+# ignore cleaning cmake modules tree
+match /trunk/KDE/kdenetwork/cmake/modules/Find(Libmsn|Speex|Decibel|LibOTR|LibMeanwhile|Libgadu|IDN|LiboRTP).cmake
+    min revision 932873
+    max revision 932873
+end match
+
+match /trunk/KDE/kdenetwork/cmake/modules/Find(Libmsn|Speex|Decibel|LibOTR|LibMeanwhile|Libgadu|IDN|LiboRTP).cmake
+    repository kopete
+    branch master-cmake-modules
+    prefix cmake/modules/Find\1.cmake
+end match
+
+# ignore cleaning cmake modules tree
+match /trunk/KDE/kdenetwork/cmake/modules/ortpversion.c
+    min revision 932873
+    max revision 932873
+end match
+
+match /trunk/KDE/kdenetwork/cmake/modules/ortpversion.c
+    repository kopete
+    branch master-cmake-modules
+    prefix cmake/modules/ortpversion.c
+end match
+
+### tags in /tags/kopete/ ###
+
+match /tags/kopete/soc-oscarfiletransfer-submission/
+    repository kopete
+    branch refs/tags/soc-oscarfiletransfer-submission
+    annotated true
+end match
+
+match /tags/kopete/([^/]+)/kopete/
+    repository kopete
+    branch refs/tags/\1
+    annotated true
+end match
+
+match /tags/kopete/([^/]+)/kopete/doc/kopete/
+    repository kopete
+    branch refs/tags/\1-doc
+    prefix doc/
+    annotated true
+end match
+
+### cryptography plugin ###
+
+match /trunk/extragear/network/kopete-plugins/doc/$
+    action recurse
+end match
+
+# recurse for kopete-cryptography-doc
+match /trunk/extragear/network/kopete-cryptography/$
+    min revision 730153
+    max revision 730320
+    action recurse
+end match
+
+# recurse for kopete-cryptography-doc
+match /trunk/extragear/network/kopete-cryptography/doc/$
+    min revision 730153
+    max revision 730319
+    action recurse
+end match
+
+match /trunk/KDE/kdeaddons/kopete-plugins/cryptography/
+    repository kopete
+    branch kopete-cryptography
+    prefix plugins/cryptography/
+    max revision 712548
+end match
+
+match /trunk/extragear/network/kopete-plugins/cryptography/
+    repository kopete
+    branch kopete-cryptography
+    prefix plugins/cryptography/
+    min revision 712643
+    max revision 730080
+end match
+
+# fix revision 730086
+match /trunk/extragear/network/kopete-cryptography/$
+    action recurse
+end match
+
+match /trunk/extragear/network/kopete-cryptography/
+    repository kopete
+    branch kopete-cryptography
+    prefix plugins/cryptography/
+    min revision 712564
+end match
+
+match /trunk/extragear/network/doc/kopete-cryptography/
+    repository kopete
+    branch kopete-cryptography-doc
+    prefix plugins/cryptography/doc/
+    min revision 730320
+end match
+
+match /trunk/extragear/network/kopete-plugins/doc/
+    repository kopete
+    branch refs/tags/backups/kopete-cryptography-doc-old
+    prefix plugins/cryptography/doc/
+    min revision 725072
+    max revision 725072
+end match
+
+match /trunk/extragear/network/kopete-plugins/doc/cryptography/
+    repository kopete
+    branch refs/tags/backups/kopete-cryptography-doc-old
+    prefix plugins/cryptography/doc/
+    min revision 725078
+    max revision 730080
+end match
+
+match /tags/stable/extragear/network/kopete-cryptography/
+    repository kopete
+    branch refs/tags/kopete-cryptography-stable
+    prefix plugins/cryptography/
+    annotated true
+end match
+
+match /tags/stable/extragear/network/doc/$
+    action recurse
+end match
+
+# ignore duplicating doc directory
+match /tags/stable/extragear/network/doc/kopete-cryptography/
+    min revision 734824
+    max revision 734824
+end match
+
+match /tags/stable/extragear/network/doc/kopete-cryptography/
+    repository kopete
+    branch refs/tags/kopete-cryptography-stable-doc
+    prefix plugins/cryptography/doc/
+    annotated true
+end match
+
+### scripting plugin ###
+
+match /trunk/extragear/network/kopete-scripting/
+    repository kopete
+    branch kopete-scripting
+    prefix plugins/scripting/
+    min revision 733205
+end match
+
+### skype protocol ###
+
+match /trunk/playground/network/kopete/protocols/skype/
+    repository kopete
+    branch kopete_skype-old
+    prefix protocols/skype/
+    min revision 411539
+    max revision 435857
+end match
+
+# ignore cleaning skype tree
+match /trunk/playground/network/kopete/protocols/skype/
+    min revision 437360
+    max revision 437360
+end match
+
+# ignore cleaning skype tree
+match /trunk/playground/network/kopete/protocols/skype/
+    min revision 923598
+    max revision 923598
+end match
+
+match /trunk/kdereview/kopete_skype/
+    repository kopete
+    branch kopete_skype
+    prefix protocols/skype/
+    min revision 436979
+    max revision 460646
+end match
+
+match /trunk/extragear/addons/kopete_skype/
+    repository kopete
+    branch kopete_skype
+    prefix protocols/skype/
+    min revision 460646
+    max revision 641687
+end match
+
+match /branches/extragear/kde3/addons/kopete_skype/
+    repository kopete
+    branch kopete_skype
+    prefix protocols/skype/
+    min revision 679518
+end match
+
+match /trunk/extragear/addons/$
+    action recurse
+end match
+
+match /branches/stable/extragear/addons/kopete_skype/
+    repository kopete
+    branch kopete_skype-stable
+    prefix protocols/skype/
+    min revision 466335
+end match
+
+# ignore cleaning tree in tag kopete_skype-stable
+match /tags/stable/extragear/addons/kopete_skype/
+    min revision 461138
+    max revision 461138
+end match
+match /tags/stable/extragear/addons/kopete_skype/
+    min revision 461139
+    max revision 461139
+end match
+match /tags/stable/extragear/addons/kopete_skype/
+    min revision 464293
+    max revision 464293
+end match
+match /tags/stable/extragear/addons/kopete_skype/
+    min revision 465760
+    max revision 465760
+end match
+match /tags/stable/extragear/addons/kopete_skype/
+    min revision 466330
+    max revision 466330
+end match
+match /tags/stable/extragear/addons/kopete_skype/
+    min revision 474567
+    max revision 474567
+end match
+
+match /tags/stable/extragear/addons/kopete_skype/
+    repository kopete
+    branch refs/tags/kopete_skype-stable
+    prefix protocols/skype/
+    annotated true
+end match
+
+### playground whiteboard plugin ###
+
+match /trunk/playground/network/kopete/plugins/whiteboard/
+    repository kopete
+    branch plugin-whiteboard
+    prefix plugins/whiteboard/
+    min revision 1232977
+end match
+
+### playground thinklight plugin ###
+
+match /trunk/playground/network/kopete/plugins/thinklight-kde4/
+    repository kopete
+    branch plugin-thinklight
+    prefix plugins/thinklight/
+    min revision 885654
+    max revision 1058713
+end match
+
+# ignore empty commit
+match /trunk/playground/network/kopete/plugins/thinklight-kde4/
+    min revision 1058714
+    max revision 1058714
+end match
+
+# ignore empty commit
+match /trunk/playground/network/kopete/plugins/thinklight/
+    min revision 1058714
+    max revision 1058714
+end match
+
+match /trunk/playground/network/kopete/plugins/thinklight/
+    repository kopete
+    branch plugin-thinklight
+    prefix plugins/thinklight/
+    min revision 1081873
+end match
+
+### playground smpppdcs plugin ###
+
+match /trunk/playground/network/kopete/plugins/smpppdcs/
+    repository kopete
+    branch plugin-smpppdcs
+    prefix plugins/smpppdcs/
+end match
+
+### playground pimpresence plugin ###
+
+match /trunk/kdeplayground-network/kopete/plugins/pimpresence/
+    repository kopete
+    branch plugin-pimpresence
+    prefix plugins/pimpresence/
+    min revision 407746
+    max revision 407746
+end match
+
+match /trunk/playground/network/kopete/plugins/pimpresence/
+    repository kopete
+    branch plugin-pimpresence
+    prefix plugins/pimpresence/
+    min revision 413587
+end match
+
+### playground motionautoaway plugin ###
+
+match /trunk/playground/network/kopete/plugins/motionautoaway/
+    repository kopete
+    branch plugin-motionautoaway
+    prefix plugins/motionautoaway/
+end match
+
+### playground javascript plugin ###
+
+match /trunk/kdenonbeta/kopete-plugins/javascript/
+    repository kopete
+    branch plugin-javascript
+    prefix plugins/javascript/
+    max revision 567932
+end match
+
+match /trunk/playground/network/kopete/plugins/javascript/
+    repository kopete
+    branch plugin-javascript
+    prefix plugins/javascript/
+end match
+
+### playground sharemydesktop plugin ###
+
+match /trunk/playground/network/kopete/plugins/sharemydesktop/
+    repository kopete
+    branch plugin-sharemydesktop
+    prefix plugins/sharemydesktop/
+end match
+
+### playground telepathy plugin ###
+
+match /trunk/playground/network/kopete/protocols/telepathy/
+    repository kopete
+    branch protocol-telepathy
+    prefix protocols/telepathy/
+end match
+
+### bonjour protocol ###
+
+match /trunk/playground/network/kopete/protocols/bonjour/
+    repository kopete
+    branch refs/tags/backups/protocol-bonjour
+    prefix protocols/bonjour/
+    min revision 751350
+    max revision 761548
+end match
+
+match /trunk/kdereview/kopete/protocols/bonjour/
+    repository kopete
+    branch refs/tags/backups/protocol-bonjour
+    prefix protocols/bonjour/
+    min revision 761548
+    max revision 775346
+end match
+
+match /trunk/extragear/network/kopete-bonjour/
+    repository kopete
+    branch refs/tags/backups/protocol-bonjour
+    prefix protocols/bonjour/
+    min revision 775346
+    max revision 830846
+end match
+
+# ignore removing bonjour protocol
+match /trunk/extragear/network/kopete-bonjour/
+    min revision 839037
+    max revision 842880
+end match
+
+### branch work/model-for-contactlist ###
+
+match /branches/work/kopete/model-for-contactlist/$
+    action recurse
+end match
+
+match /branches/work/kopete/model-for-contactlist/kopete/
+    repository kopete
+    branch work/model-for-contactlist
+    max revision 612920
+end match
+
+match /branches/work/kopete/model-for-contactlist/doc/kopete/
+    repository kopete
+    branch work/model-for-contactlist-doc
+    prefix doc/
+    max revision 612920
+end match
+
+# ignore empty revisions in parent directory
+match /branches/work/kopete/model-for-contactlist/
+    min revision 612903
+    max revision 612919
+end match
+
+### branch work/msnp11_porting ###
+
+match /branches/work/kopete/msnp11_porting/
+    repository kopete
+    branch work/msnp11_porting
+    prefix protocols/msn/
+    max revision 433897
+end match
+
+### branch work/nowlistening_extra ###
+
+match /branches/work/kopete/nowlistening_extra/
+    repository kopete
+    branch work/nowlistening_extra
+    prefix plugins/nowlistening/
+end match
+
+### branch work/kopete-msn-msnslp ###
+
+match /branches/work/kopete/kopete-msn-msnslp/
+    repository kopete
+    branch work/kopete-msn-msnslp
+    prefix protocols/msn/
+end match
+
+### branch work/yahoo_rewrite ###
+
+match /branches/yahoo_rewrite/$
+    action recurse
+end match
+
+match /branches/yahoo_rewrite/kdenetwork/$
+    action recurse
+end match
+
+match /branches/yahoo_rewrite/kdenetwork/doc/$
+    action recurse
+end match
+
+match /branches/yahoo_rewrite/kdenetwork/kopete/
+    repository kopete
+    branch work/yahoo_rewrite
+    max revision 373471
+end match
+
+match /branches/yahoo_rewrite/kdenetwork/doc/kopete/
+    repository kopete
+    branch work/yahoo_rewrite-doc
+    prefix doc/
+    max revision 373471
+end match
+
+# ignore revisions which moving yahoo code
+match /branches/work/kopete/yahoo_rewrite/
+    min revision 416631
+    max revision 423634
+end match
+
+match /branches/work/kopete/yahoo_rewrite/
+    repository kopete
+    branch work/yahoo_rewrite
+    prefix protocols/yahoo/
+    min revision 455431
+    max revision 498003
+end match
+
+### branch work/kopete-contactlist-model ###
+
+match /branches/work/$
+    action recurse
+    min revision 582502
+    max revision 582582
+end match
+
+match /branches/work/kopete-contactlist-model/$
+    action recurse
+end match
+
+match /branches/work/kopete-contactlist-model/kopete/
+    repository kopete
+    branch work/kopete-contactlist-model
+    max revision 610702
+end match
+
+match /branches/work/kopete-contactlist-model/doc/kopete/
+    repository kopete
+    branch work/kopete-contactlist-model-doc
+    prefix doc/
+    max revision 610702
+end match
+
+# ignore empty revisions in parent directory
+match /branches/work/kopete-contactlist-model/
+    min revision 582504
+    max revision 582577
+end match
+
+### branch work/kopete-irc_rewrite ###
+
+match /branches/work/kopete-irc_rewrite/
+    repository kopete
+    branch work/kopete-irc_rewrite
+    prefix protocols/irc/
+    max revision 479765
+end match
+
+### branch work/soc-kopete-jingle ###
+
+match /branches/work/soc-kopete-jingle/$
+    action recurse
+end match
+
+match /branches/work/soc-kopete-jingle/doc/$
+    action recurse
+end match
+
+match /branches/work/soc-kopete-jingle/kopete/
+    repository kopete
+    branch work/soc-kopete-jingle
+    max revision 873655
+end match
+
+match /branches/work/soc-kopete-jingle/doc/kopete/
+    repository kopete
+    branch work/soc-kopete-jingle-doc
+    prefix doc/
+    max revision 873655
+end match
+
+# ignore empty revisions in parent directory
+match /branches/work/soc-kopete-jingle/
+    min revision 670155
+    max revision 670155
+end match
+
+match /branches/work/soc-kopete-jingle/
+    min revision 976058
+    max revision 976058
+end match
+
+### branch work/better-oscar-error-handling ###
+
+match /branches/work/kopete/better-oscar-error-handling/
+    min revision 431582
+    max revision 431582
+end match
+
+match /branches/work/kopete/better-oscar-error-handling/
+    repository kopete
+    branch work/better-oscar-error-handling
+    prefix protocols/oscar/
+end match
+
+### branch work/cryptography_look ###
+
+match /branches/work/kopete/cryptography_look/$
+    action recurse
+end match
+
+match /branches/work/kopete/cryptography_look/kopete/
+    repository kopete
+    branch work/cryptography_look
+end match
+
+match /branches/work/kopete/cryptography_look/doc/kopete/
+    repository kopete
+    branch work/cryptography_look-doc
+    prefix doc/
+end match
+
+# ignore empty revision in parent directory
+match /branches/work/kopete/cryptography_look/
+    min revision 542040
+    max revision 542040
+end match
+
+### branch work/kopete-011-backports ###
+
+match /branches/work/kopete/kopete-011-backports/kopete/
+    repository kopete
+    branch work/kopete-011-backports
+end match
+
+match /branches/work/kopete/kopete-011-backports/doc/kopete/
+    repository kopete
+    branch work/kopete-011-backports-doc
+    prefix doc/
+end match
+
+# ignore empty revision in parent directory
+match /branches/work/kopete/kopete-011-backports/
+    min revision 622285
+    max revision 622285
+end match
+
+### branch work/comunip ###
+
+match /branches/work/kopete/comunip/kopete/
+    repository kopete
+    branch work/comunip
+end match
+
+match /branches/work/kopete/comunip/doc/kopete/
+    repository kopete
+    branch work/comunip-doc
+    prefix doc/
+end match
+
+# ignore empty revision in parent directory
+match /branches/work/kopete/comunip/
+   min revision 686479
+   max revision 686479
+end match
+
+### branch work/jingle-video ###
+
+match /branches/work/kopete/jingle-video/kopete/
+    repository kopete
+    branch work/jingle-video
+end match
+
+match /branches/work/kopete/jingle-video/doc/kopete/
+    repository kopete
+    branch work/jingle-video-doc
+    prefix doc/
+end match
+
+### branch work/soc-chatwindow ###
+
+match /trunk/KDE/kdenetwork/kopete/kopete/$
+    action recurse
+    min revision 1004475
+    max revision 1004475
+end match
+
+match /trunk/KDE/kdenetwork/kopete/$
+    action recurse
+    min revision 1004475
+    max revision 1004475
+end match
+
+match /branches/work/soc-chatwindow/
+    repository kopete
+    branch work/soc-chatwindow
+end match
+
+### branch work/soc-logging-framework ###
+
+match /branches/work/soc-logging-framework/kopete/
+    repository kopete
+    branch work/soc-logging-framework
+end match
+
+### branch work/kde4 ###
+
+match /branches/work/kde4/kdenetwork/$
+    action recurse
+    min revision 420029
+    max revision 420029
+end match
+
+match /branches/work/kde4/kdenetwork/doc/$
+    action recurse
+end match
+
+match /branches/work/kde4/kdenetwork/kopete/
+    repository kopete
+    branch work/kde4
+    max revision 420998
+end match
+
+match /branches/work/kde4/kdenetwork/doc/kopete/
+    repository kopete
+    branch work/kde4-doc
+    prefix doc/
+    max revision 420998
+end match
+
+### branch work/kopete-otr ###
+
+match /branches/work/kde4/kopete-otr/
+    repository kopete
+    branch refs/tags/backups/work/kopete-otr
+    prefix plugins/otr/
+end match
+
+### branch work/dev-0.12 ###
+
+match /branches/work/kopete/dev-0.12/kopete/
+    repository kopete
+    branch work/dev-0.12
+end match
+
+match /branches/work/kopete/dev-0.12/doc/kopete/
+    repository kopete
+    branch work/dev-0.12-doc
+    prefix doc/
+end match
+
+### trinity ###
+
+match /branches/trinity/([^/]+)/kdenetwork/kopete/
+    repository kopete
+    branch trinity/\1
+end match
+
+match /branches/trinity/([^/]+)/kdenetwork/doc/kopete/
+    repository kopete
+    branch trinity/\1-doc
+    prefix doc/
+end match
+
+match /branches/trinity/kdenetwork/kopete/
+    repository kopete
+    branch trinity
+end match
+
+match /branches/trinity/kdenetwork/doc/kopete/
+    repository kopete
+    branch trinity-doc
+    prefix doc/
+end match
+
+match /branches/trinity/applications/kopete-otr/
+    repository kopete
+    branch trinity/kopete-otr
+    prefix plugins/otr/
+end match
+
+### backups branches ###
+
+# ignore playground cmake modules
+match /trunk/playground/network/kopete/cmake/modules/
+end match
+
+match /trunk/playground/network/kopete/([^/]+)/([^/]+)/
+    repository kopete
+    branch refs/tags/backups/playground/\1/\2
+    prefix \1/\2/
+end match
+
+match /trunk/kdereview/kopete/([^/]+)/([^/]+)/
+    repository kopete
+    branch refs/tags/backups/kdereview/\1/\2
+    prefix \1/\2/
+end match
+
+### branches in /branches/work/kopete/ ###
+
+match /branches/work/kopete/([^/]+)/
+    repository kopete
+    branch work/\1
+end match
+
+### branches in /branches/work/.../KDE/kdenetwork/kopete/ ###
+
+match /branches/work/[^/]+/KDE/kdenetwork/$
+    action recurse
+end match
+
+match /branches/work/[^/]+/KDE/kdenetwork/doc/$
+    action recurse
+end match
+
+match /branches/work/([^/]+)/KDE/kdenetwork/kopete/
+    repository kopete
+    branch work/\1
+end match
+
+### branches in /branches/work/.../kdenetwork/kopete/ ###
+
+match /branches/work/[^/]+/kdenetwork/$
+    action recurse
+end match
+
+match /branches/work/[^/]+/kdenetwork/doc/$
+    action recurse
+end match
+
+match /branches/work/([^/]+)/kdenetwork/kopete/
+    repository kopete
+    branch work/\1
+end match
+
+### branches in /branches/work/ ###
+
+match /branches/work/([^/]*kopete[^/]+)/
+    repository kopete
+    branch work/\1
+end match
+
+### personal branches in /branches/work/ ###
+
+match /branches/work/~([^/]+)/([^/]*kopete[^/]*)/
+    repository kopete
+    branch work/personal/\1
+end match
+
+match /branches/work/~([^/]+)/([^/]+)/([^/]*kopete[^/]*)/
+    repository kopete
+    branch work/personal/\1/\2
+end match
+
+### KDE tags and KDE branches ###
+
+declare REPO=kopete
+declare MODULE=kdenetwork/kopete
+declare MODULE_RECURSE=kdenetwork/
+include ../common-kde-branches-rules
+include ../common-kde-tags-rules
+
+match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdenetwork/doc/kopete/
+    repository kopete
+    branch KDE/\1.\2-doc
+    prefix doc/
+    max revision 409201
+end match
+
+match /branches/KDE/(\d+)\.(\d+)/kdenetwork/doc/kopete/
+    repository kopete
+    branch KDE/\1.\2-doc
+    prefix doc/
+end match
+
+match /branches/([^/]+)/(kdenetwork/doc/kopete)/
+    repository kopete
+    branch \1-doc
+    prefix doc/
+end match
+
+match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/kdenetwork/doc/kopete/
+    repository kopete
+    branch refs/tags/v\1.\2.\3-doc
+    prefix doc/
+    annotated true
+    max revision 409202
+end match
+
+match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdenetwork/doc/kopete/
+    repository kopete
+    branch refs/tags/v\1.\2.\3-beta\4-doc
+    prefix doc/
+    annotated true
+    min revision 376088
+    max revision 409202
+end match
+
+match /tags/(?:__)?KDE_(\d+)_(\d+)_RELEASE/kdenetwork/doc/kopete/
+    repository kopete
+    branch refs/tags/v\1.\2.0-doc
+    prefix doc/
+    annotated true
+    max revision 409202
+end match
+
+match /tags/KDE/3.5.0-alpha1/kdenetwork/doc/kopete/
+    repository kopete
+    branch refs/tags/v3.4.90-doc
+    prefix doc/
+    annotated true
+    min revision 443441
+    max revision 445561
+end match
+
+match /tags/KDE/3.5.0-beta1/kdenetwork/doc/kopete/
+    repository kopete
+    branch refs/tags/v3.4.91-doc
+    prefix doc/
+    annotated true
+    min revision 459298
+    max revision 460260
+end match
+
+match /tags/KDE/(\d+)\.(\d+)/kdenetwork/doc/kopete/
+    repository kopete
+    branch refs/tags/v\1.\2.0-doc
+    prefix doc/
+    annotated true
+end match
+
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdenetwork/doc/kopete/
+    repository kopete
+    branch refs/tags/v\1.\2.\3-doc
+    prefix doc/
+    annotated true
+end match
+
+### branches in /branches/kopete/ ###
+
+match /branches/kopete/[^/]+/$
+    action recurse
+end match
+
+match /branches/kopete/[^/]+/doc/$
+    action recurse
+end match
+
+match /branches/kopete/([^/]+)/kopete/
+    repository kopete
+    branch \1
+end match
+
+match /branches/kopete/([^/]+)/doc/kopete/
+    repository kopete
+    branch \1-doc
+    prefix doc/
+end match
+
+### ignore ###
+
+match /
+end match
