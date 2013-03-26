@@ -1,8 +1,8 @@
 create repository kbabel
 end repository
 
-declare MODULE=kdesdk/kbabel
 declare REPO=kbabel
+declare MODULE=kdesdk/kbabel
 
 match /trunk/(KDE/)?kdesdk/kbabel/
     repository kbabel
@@ -23,7 +23,7 @@ match /(branches|tags)/KDE/[^/]+/(kdesdk/)?$
   action recurse
 end match
 
-include ../common-ignores
+include ../common-kde-ignores
 
 include ../common-kde-tags-rules
 
