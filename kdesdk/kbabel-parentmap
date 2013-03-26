@@ -1,0 +1,23 @@
+# merge qdbus-api-changes to trunk
+575413 575662
+
+# merge kaction-cleanup-branch to trunk
+# first
+610570 610651
+# second
+614594 614599
+# trunk->branch for third
+619348 620435
+620870 620908
+# branch->trunk for third
+620908 621518
+
+# merge kinstance-redesign to trunk
+628044 628298
+
+# merge kconfiggroup_port to trunk
+635292 635499
+
+# merge kmainwindow-decoupling to trunk
+654720 654728
+

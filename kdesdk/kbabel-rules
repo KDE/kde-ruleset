@@ -2,6 +2,7 @@ create repository kbabel
 end repository
 
 declare REPO=kbabel
+declare MODULE_RECURSE=(kdesdk/)?
 declare MODULE=kdesdk/kbabel
 
 match /trunk/(KDE/)?kdesdk/kbabel/
@@ -46,6 +47,7 @@ match /branches/KDE/(\d+)\.(\d+)/kdesdk/doc/kbabel/
     prefix doc/
 end match
 
+include ../feature-branches
 
 match /
 end match
