@@ -604,7 +604,7 @@ end match
 
 match /tags/stable/extragear/network/kopete-cryptography/
     repository kopete
-    branch refs/tags/kopete-cryptography-stable
+    branch refs/tags/kopete-cryptography-stable-tag
     prefix plugins/cryptography/
     annotated true
 end match
@@ -719,7 +719,7 @@ end match
 
 match /tags/stable/extragear/addons/kopete_skype/
     repository kopete
-    branch refs/tags/kopete_skype-stable
+    branch refs/tags/kopete_skype-stable-tag
     prefix protocols/skype/
     annotated true
 end match
