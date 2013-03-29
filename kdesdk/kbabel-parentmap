@@ -33,3 +33,11 @@ clear 429769
 461873 461879
 # and to trunk
 461873 461880
+
+# merges from trunk to kde4
+431814 432146
+433527 434145
+434155 435291
+
+# merge kde4 into trunk
+436703 439736

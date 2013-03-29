@@ -25,6 +25,13 @@ match /branches/work/kbabel_svn/
     repository kbabel
     branch kbabel-svn
 end match
+match /branches/work/kde4/kdesdk/$
+    action recurse
+end match
+match /branches/work/kde4/kdesdk/kbabel/
+    repository kbabel
+    branch kde4
+end match
 
 match /(branches|tags)/[^/]+/(kdesdk/)?$
   action recurse
