@@ -5,6 +5,9 @@ declare REPO=kbabel
 declare MODULE_RECURSE=(kdesdk/)?
 declare MODULE=kdesdk/kbabel
 
+include ../common-kde-ignores
+
+# BEGIN trunk
 match /trunk/(KDE/)?kdesdk/kbabel/
     repository kbabel
     branch master
@@ -16,7 +19,16 @@ match /trunk/(KDE/)?kdesdk/doc/kbabel/
     prefix doc/
     max revision 706575 # 706576 moves to unmaintained
 end match
+# END
 
+match /(branches|tags)/[^/]+/(kdesdk/)?$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/(kdesdk/)?$
+  action recurse
+end match
+
+# BEGIN work branches
 match /branches/work/kbabel-soc/kbabel/
     repository kbabel
     branch kbabel-soc
@@ -33,17 +45,11 @@ match /branches/work/kde4/kdesdk/kbabel/
     branch kde4
 end match
 
-match /(branches|tags)/[^/]+/(kdesdk/)?$
-  action recurse
-end match
-match /(branches|tags)/KDE/[^/]+/(kdesdk/)?$
-  action recurse
-end match
+include ../feature-branches
+# END
 
-include ../common-kde-ignores
-
+# BEGIN tags
 include ../common-kde-tags-rules
-
 
 # 435166 moves the kbabel tags elsewhere
 match /tags/KBABEL[-_](\d+)_(\d+)/kdesdk/kbabel/
@@ -58,7 +64,9 @@ match /tags/kbabel_(\d+)_(\d+[^/]*)/kdesdk/kbabel/
     annotated true
     max revision 435166
 end match
+# END
 
+# BEGIN version branches
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdesdk/kbabel/
     repository kbabel
     branch KDE/\1.\2
@@ -77,8 +85,7 @@ match /branches/KDE/(\d+)\.(\d+)/kdesdk/doc/kbabel/
     branch KDE/\1.\2
     prefix doc/
 end match
-
-include ../feature-branches
+# END
 
 match /
 end match
