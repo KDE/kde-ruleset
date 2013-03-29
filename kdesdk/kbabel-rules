@@ -44,6 +44,21 @@ include ../common-kde-ignores
 
 include ../common-kde-tags-rules
 
+
+# 435166 moves the kbabel tags elsewhere
+match /tags/KBABEL[-_](\d+)_(\d+)/kdesdk/kbabel/
+    repository kbabel
+    branch refs/tags/kbabel-\1.\2
+    annotated true
+    max revision 435166
+end match
+match /tags/kbabel_(\d+)_(\d+[^/]*)/kdesdk/kbabel/
+    repository kbabel
+    branch refs/tags/kbabel-\1.\2
+    annotated true
+    max revision 435166
+end match
+
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdesdk/kbabel/
     repository kbabel
     branch KDE/\1.\2
