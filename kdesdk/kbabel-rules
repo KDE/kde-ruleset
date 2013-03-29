@@ -17,6 +17,15 @@ match /trunk/(KDE/)?kdesdk/doc/kbabel/
     max revision 706575 # 706576 moves to unmaintained
 end match
 
+match /branches/work/kbabel-soc/kbabel/
+    repository kbabel
+    branch kbabel-soc
+end match
+match /branches/work/kbabel_svn/
+    repository kbabel
+    branch kbabel-svn
+end match
+
 match /(branches|tags)/[^/]+/(kdesdk/)?$
   action recurse
 end match

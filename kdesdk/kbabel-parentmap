@@ -21,3 +21,15 @@
 # merge kmainwindow-decoupling to trunk
 654720 654728
 
+# merge kbabel-soc to trunk
+# sort of
+481030 481031
+
+# fix kbabel_svn branch creation
+clear 429769
+429625 429769
+
+# merge kbabel_svn to 3.5
+461873 461879
+# and to trunk
+461873 461880
