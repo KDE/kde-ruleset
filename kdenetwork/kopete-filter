@@ -110,6 +110,20 @@ git tag -d backups/work/kopete4-GJ@498461
 git tag -d backups/kde_yahoo_backend@275668
 git tag -d backups/work/bleedingedge@560648
 
+# Rename backup branches
+
+rename_ref() {
+	REF=`git show-ref -s "$1"`
+	git update-ref "$2" "$REF"
+	git update-ref -d "$1"
+}
+
+rename_ref refs/tags/backups/work/break-the-contactlist@824968 refs/heads/work/break-the-contactlist
+rename_ref refs/tags/backups/work/dev-4.2@999944 refs/heads/work/dev-4.2
+rename_ref refs/tags/backups/work/jingle-video@976057 refs/heads/work/jingle-video
+rename_ref refs/tags/backups/work/kopete-is-telepathic@1073388 refs/heads/work/kopete-is-telepathic
+rename_ref refs/tags/backups/work/soc-kopete-chatwindow@1004763 refs/heads/work/soc-kopete-chatwindow
+
 # Fix tags
 "$bindir/fix-tags" .
 
