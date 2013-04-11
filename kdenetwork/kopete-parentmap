@@ -4,12 +4,18 @@
 clear 282533@/tags/KDE_3_2_0_RELEASE/kdenetwork/kopete/
 282501 282533@/tags/KDE_3_2_0_RELEASE/kdenetwork/kopete/
 
+# merge branch lilac-accounts to master
+288251 288264
+
 # recreate tag v3.2.1
 clear 293317@/tags/KDE_3_2_1_RELEASE/kdenetwork/kopete/
 292449 293317@/tags/KDE_3_2_1_RELEASE/kdenetwork/kopete/
 
 # merge branch iris-port to master
 294732 294735
+
+# merge branch lilac-contact-list to master
+295197 295565
 
 # merge branch jabber-pooling-rewrite to master
 296249 296252
@@ -40,6 +46,9 @@ clear 323457
 # recreate tag v3.3.0
 clear 338180@/tags/KDE_3_3_0_RELEASE/kdenetwork/kopete/
 338172 338180@/tags/KDE_3_3_0_RELEASE/kdenetwork/kopete/
+
+# merge branch groupwise_in_anger to master
+345466 345489
 
 # recreate tag v3.3.1
 clear 354021@/tags/KDE_3_3_1_RELEASE/kdenetwork/kopete/
