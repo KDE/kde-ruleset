@@ -51,12 +51,6 @@ match /trunk/playground/network/kopete/protocols/wlm/
     max revision 884474
 end match
 
-# ignore cleaning tree before merging branch kopete-irc_rewrite
-match /trunk/KDE/kdenetwork/kopete/
-    min revision 554380
-    max revision 554380
-end match
-
 # ignore cleaning tree before merging branch 0.12
 match /branches/KDE/3.5/kdenetwork/kopete/
     min revision 573902
@@ -367,13 +361,6 @@ match /branches/work/coolos_urls/kdenetwork/$
     action recurse
 end match
 
-# needed for kaction-cleanup-branch
-match /branches/work/$
-    action recurse
-    min revision 610651
-    max revision 614117
-end match
-
 match /branches/work/kaction-cleanup-branch/$
     action recurse
 end match
@@ -382,18 +369,11 @@ match /branches/work/kaction-cleanup-branch/kdenetwork/$
     action recurse
 end match
 
-# needed for kconfig_new_take3
-match /branches/work/$
-    action recurse
-    min revision 728440
-    max revision 727727
-end match
-
-match /branches/work/kconfig_new_take3/KDE/$
+match /branches/work/kaction-cleanup-branch/KDE/$
     action recurse
 end match
 
-match /branches/work/kconfig_new_take3/KDE/kdenetwork/$
+match /branches/work/kaction-cleanup-branch/KDE/kdenetwork/$
     action recurse
 end match
 
@@ -1134,6 +1114,32 @@ end match
 match /branches/work/soc-logging-framework/kopete/
     repository kopete
     branch work/soc-logging-framework
+end match
+
+### branch work/kaction-cleanup-branch-1 ###
+
+match /branches/work/$
+    action recurse
+    min revision 610651
+    max revision 614117
+end match
+
+match /branches/work/kaction-cleanup-branch/kdenetwork/kopete/
+    repository kopete
+    branch work/kaction-cleanup-branch-1
+end match
+
+### branch work/kaction-cleanup-branch-2 ###
+
+match /trunk/$
+    action recurse
+    min revision 616923
+    max revision 617207
+end match
+
+match /branches/work/kaction-cleanup-branch/KDE/kdenetwork/kopete/
+    repository kopete
+    branch work/kaction-cleanup-branch-2
 end match
 
 ### branch work/kde4 ###
