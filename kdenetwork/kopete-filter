@@ -61,6 +61,7 @@ git branch -d work/kopete-irc_rewrite
 git branch -d work/resourceful35
 git branch -d work/soc-kopete-jingle
 git branch -d work/yahoo_rewrite
+git branch -D work/kconfig_new_take3
 
 # Remove already merged backups branches to master
 git tag -d backups/kdereview/plugins/otr
@@ -74,7 +75,7 @@ git tag -d backups/protocol-bonjour
 git tag -d backups/work/coolos_urls@581077
 git tag -d backups/work/dev-0.12@506299
 git tag -d backups/work/dev-4.2@824967
-git tag -d backups/work/kaction-cleanup-branch@610652
+git tag -d backups/work/kaction-cleanup-branch-1@610652
 git tag -d backups/work/kconfiggroup_port@635535
 git tag -d backups/work/kde4_jobflags@721455
 git tag -d backups/work/kdelibs_kpassworddialog@621584
@@ -109,6 +110,8 @@ git tag -d backups/work/kopete4-GJ@498461
 # Remove unmerged backups branches which have useless commits
 git tag -d backups/kde_yahoo_backend@275668
 git tag -d backups/work/bleedingedge@560648
+git tag -d backups/work/kaction-cleanup-branch-2@617206
+git tag -d backups/work/kaction-cleanup-branch-2@623047
 
 # Rename backup branches
 
