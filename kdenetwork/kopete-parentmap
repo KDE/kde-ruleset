@@ -268,6 +268,12 @@ clear 732092@/trunk/playground/network/kopete/plugins/motionautoaway/
 # svnmerge - master to work/dev-4.2
 908247 908387
 
+# merge master to work/kopete-tpqt4
+913608 913644
+
+# merge master to work/kopete-tpqt4
+913704 914191
+
 # merge master to work/jingle-video
 916552 916634
 
