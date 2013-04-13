@@ -59,7 +59,7 @@ end repository
 create repository krfb
 end repository
 
-create repository torrent
+create repository kdenetwork-strigi-analyzer
 end repository
 
 ################
@@ -183,24 +183,24 @@ match /trunk/KDE/kdenetwork/krfb/
 end match
 
 ####
-# torrent match rules
+# kdenetwork-strigi-analyzer match rules
 
-match /trunk/kdenetwork/kfile-plugins/torrent/
-    repository torrent
+match /trunk/kdenetwork/kfile-plugins/
+    repository kdenetwork-strigi-analyzer
     branch master
     min revision 342870
     max revision 407266
 end match
 
-match /trunk/KDE/kdenetwork/kfile-plugins/torrent/
-    repository torrent
+match /trunk/KDE/kdenetwork/kfile-plugins/
+    repository kdenetwork-strigi-analyzer
     branch master
     min revision 410634
     max revision 946656
 end match
 
-match /trunk/KDE/kdenetwork/strigi-analyzer/torrent/
-    repository torrent
+match /trunk/KDE/kdenetwork/strigi-analyzer/
+    repository kdenetwork-strigi-analyzer
     branch master
     min revision 946662
 end match
