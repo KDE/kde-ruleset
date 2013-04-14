@@ -16,6 +16,7 @@ delete_fb_backups
 # Remove all files with .orig and .rej suffix
 # Remove directory doc-user (from branch master) after moving it to directory doc in svn revision 1340343
 # Convert files with CRLF to LF via dos2unix
+# Convert ISO-8859-2 commit message to UTF-8 in svn revision 723898
 # Fix author and commiter of "nobody@localhost" cvs2svn commits
 git filter-branch -d "$(calc_tempdir kopete-filter)" --tag-name-filter cat \
 --tree-filter '
@@ -37,6 +38,13 @@ if [ "$GIT_COMMITTER_EMAIL" = "nobody@localhost" ]; then
     export GIT_AUTHOR_EMAIL=cvs2svn@kde.org
     export GIT_COMMITTER_NAME="KDE Sysadmin"
     export GIT_AUTHOR_NAME="KDE Sysadmin"
+fi
+' --msg-filter '
+rev=$(git log --format="format:%B" $GIT_COMMIT -1 | sed -n "s/^svn path=.*; revision=//p")
+if [ "$rev" = "723898" ]; then
+    iconv -f ISO-8859-2 -t UTF-8
+else
+    cat
 fi
 ' -- --all
 
