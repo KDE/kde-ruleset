@@ -14,12 +14,17 @@ delete_fb_backups
 # Filter commits with empty diff
 # Filter commits which removing all files (tree hash is: git hash-object -t tree /dev/null --> 4b825dc642cb6eb9a060e54bf8d69288fbee4904)
 # Remove all files with .orig and .rej suffix
+# Remove directory doc-user (from branch master) after moving it to directory doc in svn revision 1340343
 # Convert files with CRLF to LF via dos2unix
 # Fix author and commiter of "nobody@localhost" cvs2svn commits
 git filter-branch -d "$(calc_tempdir kopete-filter)" --tag-name-filter cat \
 --tree-filter '
 find -type f -exec dos2unix -q "{}" "+"
 find "(" -name "*.orig" -o -name "*.rej" ")" -delete
+rev=$(git log --format="format:%B" $GIT_COMMIT -1 | sed -n "s/^svn path=\/trunk\/KDE\/kdenetwork\/kopete\/; revision=//p")
+if [ -n "$rev" ] && [ "$rev" -ge "1340343" ]; then
+    rm -rf doc-user
+fi
 ' --commit-filter '
 if [ "$#" = "3" ] && [ "$1" = "4b825dc642cb6eb9a060e54bf8d69288fbee4904" ]; then
     map "$3"
@@ -50,12 +55,10 @@ git branch -d jabber-pooling-rewrite
 git branch -d kopete_skype-old
 git branch -d lilac-accounts
 git branch -d lilac-contact-list
-git branch -d master-doc
 git branch -d master-cmake-modules
 git branch -d work/better-oscar-error-handling
 git branch -d work/bleedingedge
 git branch -d work/dev-0.12
-git branch -d work/kde4-doc
 git branch -d work/kinstance-redesign
 git branch -d work/kopete-irc_rewrite
 git branch -d work/resourceful35
@@ -94,10 +97,6 @@ git tag -d backups/playground/plugins/statistics
 git tag -d backups/playground/plugins/urlpicpreview
 git tag -d backups/work/identity_refactory@999951
 git tag -d backups/work/msnp11_porting@434694
-
-# Remove already merged branches to other branches
-git branch -D trinity-doc
-git branch -D work/dev-0.12-doc
 
 # Remove already merged backups branches to other branches
 git tag -d backups/trinity@1262602
