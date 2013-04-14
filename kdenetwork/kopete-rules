@@ -453,16 +453,16 @@ end match
 
 match /trunk/kdenetwork/doc/kopete/
     repository kopete
-    branch master-doc
-    prefix doc/
+    branch master
+    prefix doc-user/
     min revision 247416
     max revision 392877
 end match
 
 match /trunk/KDE/kdenetwork/doc/kopete/
     repository kopete
-    branch master-doc
-    prefix doc/
+    branch master
+    prefix doc-user/
     min revision 409203
     max revision 1335371
 end match
@@ -502,13 +502,6 @@ end match
 match /tags/kopete/([^/]+)/kopete/
     repository kopete
     branch refs/tags/\1
-    annotated true
-end match
-
-match /tags/kopete/([^/]+)/kopete/doc/kopete/
-    repository kopete
-    branch refs/tags/\1-doc
-    prefix doc/
     annotated true
 end match
 
@@ -852,8 +845,8 @@ end match
 
 match /branches/work/kopete/model-for-contactlist/doc/kopete/
     repository kopete
-    branch work/model-for-contactlist-doc
-    prefix doc/
+    branch work/model-for-contactlist
+    prefix doc-user/
     max revision 612920
 end match
 
@@ -910,8 +903,8 @@ end match
 
 match /branches/yahoo_rewrite/kdenetwork/doc/kopete/
     repository kopete
-    branch work/yahoo_rewrite-doc
-    prefix doc/
+    branch work/yahoo_rewrite
+    prefix doc-user/
     max revision 373471
 end match
 
@@ -949,8 +942,8 @@ end match
 
 match /branches/work/kopete-contactlist-model/doc/kopete/
     repository kopete
-    branch work/kopete-contactlist-model-doc
-    prefix doc/
+    branch work/kopete-contactlist-model
+    prefix doc-user/
     max revision 610702
 end match
 
@@ -987,8 +980,8 @@ end match
 
 match /branches/work/soc-kopete-jingle/doc/kopete/
     repository kopete
-    branch work/soc-kopete-jingle-doc
-    prefix doc/
+    branch work/soc-kopete-jingle
+    prefix doc-user/
     max revision 873655
 end match
 
@@ -1029,8 +1022,8 @@ end match
 
 match /branches/work/kopete/cryptography_look/doc/kopete/
     repository kopete
-    branch work/cryptography_look-doc
-    prefix doc/
+    branch work/cryptography_look
+    prefix doc-user/
 end match
 
 # ignore empty revision in parent directory
@@ -1048,8 +1041,8 @@ end match
 
 match /branches/work/kopete/kopete-011-backports/doc/kopete/
     repository kopete
-    branch work/kopete-011-backports-doc
-    prefix doc/
+    branch work/kopete-011-backports
+    prefix doc-user/
 end match
 
 # ignore empty revision in parent directory
@@ -1067,8 +1060,8 @@ end match
 
 match /branches/work/kopete/comunip/doc/kopete/
     repository kopete
-    branch work/comunip-doc
-    prefix doc/
+    branch work/comunip
+    prefix doc-user/
 end match
 
 # ignore empty revision in parent directory
@@ -1086,8 +1079,8 @@ end match
 
 match /branches/work/kopete/jingle-video/doc/kopete/
     repository kopete
-    branch work/jingle-video-doc
-    prefix doc/
+    branch work/jingle-video
+    prefix doc-user/
 end match
 
 ### branch work/soc-chatwindow ###
@@ -1162,8 +1155,8 @@ end match
 
 match /branches/work/kde4/kdenetwork/doc/kopete/
     repository kopete
-    branch work/kde4-doc
-    prefix doc/
+    branch work/kde4
+    prefix doc-user/
     max revision 420998
 end match
 
@@ -1184,8 +1177,8 @@ end match
 
 match /branches/work/kopete/dev-0.12/doc/kopete/
     repository kopete
-    branch work/dev-0.12-doc
-    prefix doc/
+    branch work/dev-0.12
+    prefix doc-user/
 end match
 
 ### trinity ###
@@ -1197,8 +1190,8 @@ end match
 
 match /branches/trinity/([^/]+)/kdenetwork/doc/kopete/
     repository kopete
-    branch trinity/\1-doc
-    prefix doc/
+    branch trinity/\1
+    prefix doc-user/
 end match
 
 match /branches/trinity/kdenetwork/kopete/
@@ -1208,8 +1201,8 @@ end match
 
 match /branches/trinity/kdenetwork/doc/kopete/
     repository kopete
-    branch trinity-doc
-    prefix doc/
+    branch trinity
+    prefix doc-user/
 end match
 
 match /branches/trinity/applications/kopete-otr/
@@ -1300,81 +1293,8 @@ declare MODULE_RECURSE=kdenetwork/
 include ../common-kde-branches-rules
 include ../common-kde-tags-rules
 
-match /branches/(?:__)?KDE_(\d+)_(\d+)_BRANCH/kdenetwork/doc/kopete/
-    repository kopete
-    branch KDE/\1.\2-doc
-    prefix doc/
-    max revision 409201
-end match
-
-match /branches/KDE/(\d+)\.(\d+)/kdenetwork/doc/kopete/
-    repository kopete
-    branch KDE/\1.\2-doc
-    prefix doc/
-end match
-
-match /branches/([^/]+)/(kdenetwork/doc/kopete)/
-    repository kopete
-    branch \1-doc
-    prefix doc/
-end match
-
-match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+[a-zA-Z]?)_RELEASE/kdenetwork/doc/kopete/
-    repository kopete
-    branch refs/tags/v\1.\2.\3-doc
-    prefix doc/
-    annotated true
-    max revision 409202
-end match
-
-match /tags/(?:__)?KDE_(\d+)_(\d+)_(\d+)_BETA_(\d+)/kdenetwork/doc/kopete/
-    repository kopete
-    branch refs/tags/v\1.\2.\3-beta\4-doc
-    prefix doc/
-    annotated true
-    min revision 376088
-    max revision 409202
-end match
-
-match /tags/(?:__)?KDE_(\d+)_(\d+)_RELEASE/kdenetwork/doc/kopete/
-    repository kopete
-    branch refs/tags/v\1.\2.0-doc
-    prefix doc/
-    annotated true
-    max revision 409202
-end match
-
-match /tags/KDE/3.5.0-alpha1/kdenetwork/doc/kopete/
-    repository kopete
-    branch refs/tags/v3.4.90-doc
-    prefix doc/
-    annotated true
-    min revision 443441
-    max revision 445561
-end match
-
-match /tags/KDE/3.5.0-beta1/kdenetwork/doc/kopete/
-    repository kopete
-    branch refs/tags/v3.4.91-doc
-    prefix doc/
-    annotated true
-    min revision 459298
-    max revision 460260
-end match
-
-match /tags/KDE/(\d+)\.(\d+)/kdenetwork/doc/kopete/
-    repository kopete
-    branch refs/tags/v\1.\2.0-doc
-    prefix doc/
-    annotated true
-end match
-
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdenetwork/doc/kopete/
-    repository kopete
-    branch refs/tags/v\1.\2.\3-doc
-    prefix doc/
-    annotated true
-end match
+declare PREFIX=doc-user/
+include ../common-kde-branches-rules
 
 ### branches in /branches/kopete/ ###
 
@@ -1393,8 +1313,8 @@ end match
 
 match /branches/kopete/([^/]+)/doc/kopete/
     repository kopete
-    branch \1-doc
-    prefix doc/
+    branch \1
+    prefix doc-user/
 end match
 
 ### ignore ###
