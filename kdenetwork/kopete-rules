@@ -499,10 +499,25 @@ match /tags/kopete/soc-oscarfiletransfer-submission/
     annotated true
 end match
 
+# NOTE: tag 0.12.3 is not in kopete folder
+match /tags/kopete/0.12.3/
+    repository kopete
+    branch refs/tags/0.12.3
+    annotated true
+end match
+
 match /tags/kopete/([^/]+)/kopete/
     repository kopete
     branch refs/tags/\1
     annotated true
+    max revision 594557
+end match
+
+match /tags/kopete/([^/]+)/kopete/
+    repository kopete
+    branch refs/tags/\1
+    annotated true
+    min revision 594559
 end match
 
 ### cryptography plugin ###
