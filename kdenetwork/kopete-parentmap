@@ -62,10 +62,6 @@ clear 367579@/tags/KDE_3_3_2_RELEASE/kdenetwork/kopete/
 clear 393399@/branches/KDE_3_4_BRANCH/kdenetwork/kopete/
 393322 393399@/branches/KDE_3_4_BRANCH/kdenetwork/kopete/
 
-# merge master-doc to KDE/3.4-doc
-clear 393399@/branches/KDE_3_4_BRANCH/kdenetwork/doc/kopete/
-392877 393399@/branches/KDE_3_4_BRANCH/kdenetwork/doc/kopete/
-
 # recreate tag v3.4.0
 clear 394907@/tags/KDE_3_4_0_RELEASE/kdenetwork/kopete/
 394574 394907@/tags/KDE_3_4_0_RELEASE/kdenetwork/kopete/
@@ -283,6 +279,3 @@ clear 732092@/trunk/playground/network/kopete/plugins/motionautoaway/
 # recreate branch trinity/3.5.13_frozen
 clear 1262602@/branches/trinity/3.5.13_frozen/kdenetwork/kopete/
 1261216 1262602@/branches/trinity/3.5.13_frozen/kdenetwork/kopete/
-
-# merge master-doc to master
-1335371 1340343
