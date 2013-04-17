@@ -1,0 +1,27 @@
+# Conversion rules for kdesdk-scripts.
+# Copyright (c) 2011 Nicolas Alvarez <nicolas.alvarez@gmail.com>
+#
+# Copying and distribution of this file, with or without modification,
+# are permitted in any medium without royalty provided the copyright
+# notice and this notice are preserved. This file is offered as-is,
+# without any warranty.
+
+create repository kdesdk/kde-cmake-scripts
+end repository
+
+declare MODULE=kdesdk/cmake/(scripts|samples)
+declare MODULE_RECURSE=(kdesdk/)?
+declare REPO=kdesdk/kde-cmake-scripts
+include ../common-kde-branches-rules
+include ../common-kde-tags-rules
+
+match /trunk/(KDE/)?kdesdk/cmake/(scripts/|samples/|README)
+    repository ${REPO}
+    branch master
+    prefix cmake-utils/\2
+end match
+
+include ../feature-branches
+
+match /
+end match
