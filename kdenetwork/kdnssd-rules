@@ -1,0 +1,27 @@
+#
+# Created by George Goldberg <grundleborg@googlemail.com>
+# Split and updated by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+####################################################################################################
+
+################
+# Create the repositories
+################
+
+create repository kdenetwork/kdnssd
+end repository
+
+####
+# kdnssd match rules
+declare REPO=kdenetwork/kdnssd
+declare MODULE_RECURSE=(kdenetwork/)?
+declare MODULE=kdenetwork/kdnssd
+declare NAMES=kdnssd
+include common-kdenetwork-rules
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match
+

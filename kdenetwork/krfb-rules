@@ -1,0 +1,25 @@
+#
+# Created by George Goldberg <grundleborg@googlemail.com>
+# Split and updated by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+####################################################################################################
+
+################
+# Create the repositories
+################
+
+create repository kdenetwork/krfb
+end repository
+
+declare REPO=kdenetwork/krfb
+declare MODULE_RECURSE=(kdenetwork/)?
+declare MODULE=kdenetwork/krfb
+declare NAMES=krfb
+include common-kdenetwork-rules
+include ../feature-branches
+
+# Ignore everything else
+match /
+end match
+

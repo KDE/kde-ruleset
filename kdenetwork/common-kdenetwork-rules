@@ -1,0 +1,103 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+# The following variables must be set before including this file:
+#
+# * REPO: name of the destination repository.
+#
+# * MODULE: The path where the code is, relative to /trunk/KDE/
+#   or /branches/<version>/. Don't add a trailing slash.
+#   Example: "kdenetwork/foo".
+#
+# * MODULE_RECURSE: regular expression matching all the directory components
+#   on the parent of ${MODULE}. It must also match the empty string.
+#   For example, if MODULE is "one/two/three",
+#   MODULE_RECURSE should be set to "(one/(two/)?)?".
+#   In this file, it will usually be "(kdenetwork/)?".
+#
+# * NAMES: regex matching all the names the project had, under kdenetwork.
+#   Can be set to something like "foo" or "(foo|bar)".
+#   It will be appended to "kdenetwork/" and "kdenetwork/doc/" in the rules regexes.
+
+include ../common-kde-ignores
+
+# ignore the post-migration deletions!
+#match /trunk/KDE/kdenetwork/
+#    min revision 1338897
+#    action ignore
+#end match
+#match /branches/KDE/4.10/kdenetwork/
+#    min revision 1338966
+#    action ignore
+#end match
+
+match /(branches|tags)/[^/]+/${MODULE_RECURSE|}$
+  action recurse
+end match
+match /(branches|tags)/KDE/[^/]+/${MODULE_RECURSE|}$
+  action recurse
+end match
+
+include ../common-kde-tags-rules
+
+#get the application branches
+match /branches/KDE_(\d+)_(\d+)_BRANCH/${MODULE}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/${MODULE}/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+match /branches/([^/]+)/${MODULE}/
+    repository ${REPO}
+    branch \1
+end match
+
+#and then the doc prefix for branches
+declare MODULE_DOC=kdenetwork/doc/${NAMES}
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/${MODULE_DOC}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/${MODULE_DOC}/
+    repository ${REPO}
+    prefix doc/
+    branch KDE/\1.\2
+end match
+match /branches/([^/]+)/${MODULE_DOC}/
+    repository ${REPO}
+    prefix doc/
+    branch \1
+end match
+
+# during this time(rev 1435 - 409202), kdenetwork was directly under trunk
+match /trunk/kdenetwork/${NAMES}/
+  repository ${REPO}
+  branch master
+  max revision 409202
+end match
+match /trunk/kdenetwork/doc/${NAMES}/
+  repository ${REPO}
+  branch master
+  prefix doc/
+  max revision 409202
+end match
+
+# the rest of the time kdenetwork was under trunk/KDE
+match /trunk/KDE/kdenetwork/${NAMES}/
+  repository ${REPO}
+  branch master
+  min revision 409203
+end match
+match /trunk/KDE/kdenetwork/doc/${NAMES}/
+  repository ${REPO}
+  branch master
+  prefix doc/
+  min revision 409203
+end match

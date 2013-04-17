@@ -1,0 +1,32 @@
+#
+# Created by George Goldberg <grundleborg@googlemail.com>
+# Split and updated by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+####################################################################################################
+
+################
+# Create the repositories
+################
+
+create repository kdenetwork/kget
+end repository
+
+####
+# kget match rules
+
+declare REPO=kdenetwork/kget
+declare MODULE_RECURSE=(kdenetwork/)?
+declare MODULE=kdenetwork/kget
+declare NAMES=kget
+include common-kdenetwork-rules
+include ../feature-branches
+
+################
+# Ignore what's left over
+################
+
+# Ignore everything else
+match /
+end match
+

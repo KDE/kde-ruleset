@@ -1,38 +1,9 @@
 #
 # Created by George Goldberg <grundleborg@googlemail.com>
+# Split and updated by Jeremy Whiting <jpwhiting@kde.org>
 #
 
-### This stuff commented out but can be useful if converting this rules file back to
-### generating a monolithic kdenetwork repo.
-
-#create repository KDE/kdenetwork
-#end repository
-
-#match /trunk/kdenetwork/
-#  repository KDE/kdenetwork
-#  branch master
-#  min revision 221
-#  max revision 409155
-#end match
-
-#match /trunk/KDE/kdenetwork/
-#  repository KDE/kdenetwork
-#  branch master
-#  min revision 409776
-#end match
-
-# Ignore everything else
-#match /
-#end match
-
-
 ####################################################################################################
-
-
-# These are rules for split-repository generation.
-# Should the "consensus" opt for full-module repos, they
-# should be fairly straightforward to convert for generating
-# one monolithic repository instead.
 
 ################
 # Create the repositories
@@ -59,7 +30,7 @@ end repository
 create repository krfb
 end repository
 
-create repository kdenetwork-strigi-analyzer
+create repository torrent
 end repository
 
 ################
@@ -183,24 +154,24 @@ match /trunk/KDE/kdenetwork/krfb/
 end match
 
 ####
-# kdenetwork-strigi-analyzer match rules
+# torrent match rules
 
-match /trunk/kdenetwork/kfile-plugins/
-    repository kdenetwork-strigi-analyzer
+match /trunk/kdenetwork/kfile-plugins/torrent/
+    repository torrent
     branch master
     min revision 342870
     max revision 407266
 end match
 
-match /trunk/KDE/kdenetwork/kfile-plugins/
-    repository kdenetwork-strigi-analyzer
+match /trunk/KDE/kdenetwork/kfile-plugins/torrent/
+    repository torrent
     branch master
     min revision 410634
     max revision 946656
 end match
 
-match /trunk/KDE/kdenetwork/strigi-analyzer/
-    repository kdenetwork-strigi-analyzer
+match /trunk/KDE/kdenetwork/strigi-analyzer/torrent/
+    repository torrent
     branch master
     min revision 946662
 end match
