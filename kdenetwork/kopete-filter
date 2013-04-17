@@ -55,6 +55,9 @@ delete_fb_backups
 git update-ref -d refs/backups/r520852/tags/0.12-beta2
 git tag -d 0.12beta2
 
+# Remove empty refs
+git update-ref -d refs/backups/r706316/heads/master
+
 # Remove already merged branches to master
 git branch -d goodbye_aimbuddy
 git branch -d groupwise_in_anger
