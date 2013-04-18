@@ -2,8 +2,12 @@
 
 ### create repository ###
 
-create repository kopete
+create repository kdenetwork/kopete
 end repository
+
+declare REPO=kdenetwork/kopete
+declare MODULE=kdenetwork/kopete
+declare MODULE_RECURSE=kdenetwork/
 
 ### KDE ignore ###
 
@@ -439,20 +443,20 @@ end match
 ### KDE trunk ###
 
 match /trunk/kdenetwork/kopete/
-    repository kopete
+    repository ${REPO}
     branch master
     min revision 129465
     max revision 409155
 end match
 
 match /trunk/KDE/kdenetwork/kopete/
-    repository kopete
+    repository ${REPO}
     branch master
     min revision 409776
 end match
 
 match /trunk/kdenetwork/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch master
     prefix doc-user/
     min revision 247416
@@ -460,7 +464,7 @@ match /trunk/kdenetwork/doc/kopete/
 end match
 
 match /trunk/KDE/kdenetwork/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch master
     prefix doc-user/
     min revision 409203
@@ -474,7 +478,7 @@ match /trunk/KDE/kdenetwork/cmake/modules/Find(Libmsn|Speex|Decibel|LibOTR|LibMe
 end match
 
 match /trunk/KDE/kdenetwork/cmake/modules/Find(Libmsn|Speex|Decibel|LibOTR|LibMeanwhile|Libgadu|IDN|LiboRTP).cmake
-    repository kopete
+    repository ${REPO}
     branch master-cmake-modules
     prefix cmake/modules/Find\1.cmake
 end match
@@ -486,7 +490,7 @@ match /trunk/KDE/kdenetwork/cmake/modules/ortpversion.c
 end match
 
 match /trunk/KDE/kdenetwork/cmake/modules/ortpversion.c
-    repository kopete
+    repository ${REPO}
     branch master-cmake-modules
     prefix cmake/modules/ortpversion.c
 end match
@@ -494,27 +498,27 @@ end match
 ### tags in /tags/kopete/ ###
 
 match /tags/kopete/soc-oscarfiletransfer-submission/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/soc-oscarfiletransfer-submission
     annotated true
 end match
 
 # NOTE: tag 0.12.3 is not in kopete folder
 match /tags/kopete/0.12.3/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/0.12.3
     annotated true
 end match
 
 match /tags/kopete/([^/]+)/kopete/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/\1
     annotated true
     max revision 594557
 end match
 
 match /tags/kopete/([^/]+)/kopete/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/\1
     annotated true
     min revision 594559
@@ -541,14 +545,14 @@ match /trunk/extragear/network/kopete-cryptography/doc/$
 end match
 
 match /trunk/KDE/kdeaddons/kopete-plugins/cryptography/
-    repository kopete
+    repository ${REPO}
     branch kopete-cryptography
     prefix plugins/cryptography/
     max revision 712548
 end match
 
 match /trunk/extragear/network/kopete-plugins/cryptography/
-    repository kopete
+    repository ${REPO}
     branch kopete-cryptography
     prefix plugins/cryptography/
     min revision 712643
@@ -561,21 +565,21 @@ match /trunk/extragear/network/kopete-cryptography/$
 end match
 
 match /trunk/extragear/network/kopete-cryptography/
-    repository kopete
+    repository ${REPO}
     branch kopete-cryptography
     prefix plugins/cryptography/
     min revision 712564
 end match
 
 match /trunk/extragear/network/doc/kopete-cryptography/
-    repository kopete
+    repository ${REPO}
     branch kopete-cryptography-doc
     prefix plugins/cryptography/doc/
     min revision 730320
 end match
 
 match /trunk/extragear/network/kopete-plugins/doc/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/backups/kopete-cryptography-doc-old
     prefix plugins/cryptography/doc/
     min revision 725072
@@ -583,7 +587,7 @@ match /trunk/extragear/network/kopete-plugins/doc/
 end match
 
 match /trunk/extragear/network/kopete-plugins/doc/cryptography/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/backups/kopete-cryptography-doc-old
     prefix plugins/cryptography/doc/
     min revision 725078
@@ -591,7 +595,7 @@ match /trunk/extragear/network/kopete-plugins/doc/cryptography/
 end match
 
 match /tags/stable/extragear/network/kopete-cryptography/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/kopete-cryptography-stable-tag
     prefix plugins/cryptography/
     annotated true
@@ -608,7 +612,7 @@ match /tags/stable/extragear/network/doc/kopete-cryptography/
 end match
 
 match /tags/stable/extragear/network/doc/kopete-cryptography/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/kopete-cryptography-stable-doc
     prefix plugins/cryptography/doc/
     annotated true
@@ -617,7 +621,7 @@ end match
 ### scripting plugin ###
 
 match /trunk/extragear/network/kopete-scripting/
-    repository kopete
+    repository ${REPO}
     branch kopete-scripting
     prefix plugins/scripting/
     min revision 733205
@@ -626,7 +630,7 @@ end match
 ### skype protocol ###
 
 match /trunk/playground/network/kopete/protocols/skype/
-    repository kopete
+    repository ${REPO}
     branch kopete_skype-old
     prefix protocols/skype/
     min revision 411539
@@ -646,7 +650,7 @@ match /trunk/playground/network/kopete/protocols/skype/
 end match
 
 match /trunk/kdereview/kopete_skype/
-    repository kopete
+    repository ${REPO}
     branch kopete_skype
     prefix protocols/skype/
     min revision 436979
@@ -654,7 +658,7 @@ match /trunk/kdereview/kopete_skype/
 end match
 
 match /trunk/extragear/addons/kopete_skype/
-    repository kopete
+    repository ${REPO}
     branch kopete_skype
     prefix protocols/skype/
     min revision 460646
@@ -662,7 +666,7 @@ match /trunk/extragear/addons/kopete_skype/
 end match
 
 match /branches/extragear/kde3/addons/kopete_skype/
-    repository kopete
+    repository ${REPO}
     branch kopete_skype
     prefix protocols/skype/
     min revision 679518
@@ -673,7 +677,7 @@ match /trunk/extragear/addons/$
 end match
 
 match /branches/stable/extragear/addons/kopete_skype/
-    repository kopete
+    repository ${REPO}
     branch kopete_skype-stable
     prefix protocols/skype/
     min revision 466335
@@ -706,7 +710,7 @@ match /tags/stable/extragear/addons/kopete_skype/
 end match
 
 match /tags/stable/extragear/addons/kopete_skype/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/kopete_skype-stable-tag
     prefix protocols/skype/
     annotated true
@@ -715,7 +719,7 @@ end match
 ### playground whiteboard plugin ###
 
 match /trunk/playground/network/kopete/plugins/whiteboard/
-    repository kopete
+    repository ${REPO}
     branch plugin-whiteboard
     prefix plugins/whiteboard/
     min revision 1232977
@@ -724,7 +728,7 @@ end match
 ### playground thinklight plugin ###
 
 match /trunk/playground/network/kopete/plugins/thinklight-kde4/
-    repository kopete
+    repository ${REPO}
     branch plugin-thinklight
     prefix plugins/thinklight/
     min revision 885654
@@ -744,7 +748,7 @@ match /trunk/playground/network/kopete/plugins/thinklight/
 end match
 
 match /trunk/playground/network/kopete/plugins/thinklight/
-    repository kopete
+    repository ${REPO}
     branch plugin-thinklight
     prefix plugins/thinklight/
     min revision 1081873
@@ -753,7 +757,7 @@ end match
 ### playground smpppdcs plugin ###
 
 match /trunk/playground/network/kopete/plugins/smpppdcs/
-    repository kopete
+    repository ${REPO}
     branch plugin-smpppdcs
     prefix plugins/smpppdcs/
 end match
@@ -761,7 +765,7 @@ end match
 ### playground pimpresence plugin ###
 
 match /trunk/kdeplayground-network/kopete/plugins/pimpresence/
-    repository kopete
+    repository ${REPO}
     branch plugin-pimpresence
     prefix plugins/pimpresence/
     min revision 407746
@@ -769,7 +773,7 @@ match /trunk/kdeplayground-network/kopete/plugins/pimpresence/
 end match
 
 match /trunk/playground/network/kopete/plugins/pimpresence/
-    repository kopete
+    repository ${REPO}
     branch plugin-pimpresence
     prefix plugins/pimpresence/
     min revision 413587
@@ -778,7 +782,7 @@ end match
 ### playground motionautoaway plugin ###
 
 match /trunk/playground/network/kopete/plugins/motionautoaway/
-    repository kopete
+    repository ${REPO}
     branch plugin-motionautoaway
     prefix plugins/motionautoaway/
 end match
@@ -786,14 +790,14 @@ end match
 ### playground javascript plugin ###
 
 match /trunk/kdenonbeta/kopete-plugins/javascript/
-    repository kopete
+    repository ${REPO}
     branch plugin-javascript
     prefix plugins/javascript/
     max revision 567932
 end match
 
 match /trunk/playground/network/kopete/plugins/javascript/
-    repository kopete
+    repository ${REPO}
     branch plugin-javascript
     prefix plugins/javascript/
 end match
@@ -801,7 +805,7 @@ end match
 ### playground sharemydesktop plugin ###
 
 match /trunk/playground/network/kopete/plugins/sharemydesktop/
-    repository kopete
+    repository ${REPO}
     branch plugin-sharemydesktop
     prefix plugins/sharemydesktop/
 end match
@@ -809,7 +813,7 @@ end match
 ### playground telepathy plugin ###
 
 match /trunk/playground/network/kopete/protocols/telepathy/
-    repository kopete
+    repository ${REPO}
     branch protocol-telepathy
     prefix protocols/telepathy/
 end match
@@ -817,7 +821,7 @@ end match
 ### bonjour protocol ###
 
 match /trunk/playground/network/kopete/protocols/bonjour/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/backups/protocol-bonjour
     prefix protocols/bonjour/
     min revision 751350
@@ -825,7 +829,7 @@ match /trunk/playground/network/kopete/protocols/bonjour/
 end match
 
 match /trunk/kdereview/kopete/protocols/bonjour/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/backups/protocol-bonjour
     prefix protocols/bonjour/
     min revision 761548
@@ -833,7 +837,7 @@ match /trunk/kdereview/kopete/protocols/bonjour/
 end match
 
 match /trunk/extragear/network/kopete-bonjour/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/backups/protocol-bonjour
     prefix protocols/bonjour/
     min revision 775346
@@ -853,13 +857,13 @@ match /branches/work/kopete/model-for-contactlist/$
 end match
 
 match /branches/work/kopete/model-for-contactlist/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/model-for-contactlist
     max revision 612920
 end match
 
 match /branches/work/kopete/model-for-contactlist/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/model-for-contactlist
     prefix doc-user/
     max revision 612920
@@ -874,7 +878,7 @@ end match
 ### branch work/msnp11_porting ###
 
 match /branches/work/kopete/msnp11_porting/
-    repository kopete
+    repository ${REPO}
     branch work/msnp11_porting
     prefix protocols/msn/
     max revision 433897
@@ -883,7 +887,7 @@ end match
 ### branch work/nowlistening_extra ###
 
 match /branches/work/kopete/nowlistening_extra/
-    repository kopete
+    repository ${REPO}
     branch work/nowlistening_extra
     prefix plugins/nowlistening/
 end match
@@ -891,7 +895,7 @@ end match
 ### branch work/kopete-msn-msnslp ###
 
 match /branches/work/kopete/kopete-msn-msnslp/
-    repository kopete
+    repository ${REPO}
     branch work/kopete-msn-msnslp
     prefix protocols/msn/
 end match
@@ -911,13 +915,13 @@ match /branches/yahoo_rewrite/kdenetwork/doc/$
 end match
 
 match /branches/yahoo_rewrite/kdenetwork/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/yahoo_rewrite
     max revision 373471
 end match
 
 match /branches/yahoo_rewrite/kdenetwork/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/yahoo_rewrite
     prefix doc-user/
     max revision 373471
@@ -930,7 +934,7 @@ match /branches/work/kopete/yahoo_rewrite/
 end match
 
 match /branches/work/kopete/yahoo_rewrite/
-    repository kopete
+    repository ${REPO}
     branch work/yahoo_rewrite
     prefix protocols/yahoo/
     min revision 455431
@@ -950,13 +954,13 @@ match /branches/work/kopete-contactlist-model/$
 end match
 
 match /branches/work/kopete-contactlist-model/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/kopete-contactlist-model
     max revision 610702
 end match
 
 match /branches/work/kopete-contactlist-model/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/kopete-contactlist-model
     prefix doc-user/
     max revision 610702
@@ -971,7 +975,7 @@ end match
 ### branch work/kopete-irc_rewrite ###
 
 match /branches/work/kopete-irc_rewrite/
-    repository kopete
+    repository ${REPO}
     branch work/kopete-irc_rewrite
     prefix protocols/irc/
     max revision 479765
@@ -988,13 +992,13 @@ match /branches/work/soc-kopete-jingle/doc/$
 end match
 
 match /branches/work/soc-kopete-jingle/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/soc-kopete-jingle
     max revision 873655
 end match
 
 match /branches/work/soc-kopete-jingle/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/soc-kopete-jingle
     prefix doc-user/
     max revision 873655
@@ -1019,7 +1023,7 @@ match /branches/work/kopete/better-oscar-error-handling/
 end match
 
 match /branches/work/kopete/better-oscar-error-handling/
-    repository kopete
+    repository ${REPO}
     branch work/better-oscar-error-handling
     prefix protocols/oscar/
 end match
@@ -1031,12 +1035,12 @@ match /branches/work/kopete/cryptography_look/$
 end match
 
 match /branches/work/kopete/cryptography_look/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/cryptography_look
 end match
 
 match /branches/work/kopete/cryptography_look/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/cryptography_look
     prefix doc-user/
 end match
@@ -1050,12 +1054,12 @@ end match
 ### branch work/kopete-011-backports ###
 
 match /branches/work/kopete/kopete-011-backports/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/kopete-011-backports
 end match
 
 match /branches/work/kopete/kopete-011-backports/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/kopete-011-backports
     prefix doc-user/
 end match
@@ -1069,12 +1073,12 @@ end match
 ### branch work/comunip ###
 
 match /branches/work/kopete/comunip/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/comunip
 end match
 
 match /branches/work/kopete/comunip/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/comunip
     prefix doc-user/
 end match
@@ -1088,12 +1092,12 @@ end match
 ### branch work/jingle-video ###
 
 match /branches/work/kopete/jingle-video/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/jingle-video
 end match
 
 match /branches/work/kopete/jingle-video/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/jingle-video
     prefix doc-user/
 end match
@@ -1113,14 +1117,14 @@ match /trunk/KDE/kdenetwork/kopete/$
 end match
 
 match /branches/work/soc-chatwindow/
-    repository kopete
+    repository ${REPO}
     branch work/soc-chatwindow
 end match
 
 ### branch work/soc-logging-framework ###
 
 match /branches/work/soc-logging-framework/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/soc-logging-framework
 end match
 
@@ -1133,7 +1137,7 @@ match /branches/work/$
 end match
 
 match /branches/work/kaction-cleanup-branch/kdenetwork/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/kaction-cleanup-branch-1
 end match
 
@@ -1146,7 +1150,7 @@ match /trunk/$
 end match
 
 match /branches/work/kaction-cleanup-branch/KDE/kdenetwork/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/kaction-cleanup-branch-2
 end match
 
@@ -1163,13 +1167,13 @@ match /branches/work/kde4/kdenetwork/doc/$
 end match
 
 match /branches/work/kde4/kdenetwork/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/kde4
     max revision 420998
 end match
 
 match /branches/work/kde4/kdenetwork/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/kde4
     prefix doc-user/
     max revision 420998
@@ -1178,7 +1182,7 @@ end match
 ### branch work/kopete-otr ###
 
 match /branches/work/kde4/kopete-otr/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/backups/work/kopete-otr
     prefix plugins/otr/
 end match
@@ -1186,12 +1190,12 @@ end match
 ### branch work/dev-0.12 ###
 
 match /branches/work/kopete/dev-0.12/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/dev-0.12
 end match
 
 match /branches/work/kopete/dev-0.12/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/dev-0.12
     prefix doc-user/
 end match
@@ -1199,29 +1203,29 @@ end match
 ### trinity ###
 
 match /branches/trinity/([^/]+)/kdenetwork/kopete/
-    repository kopete
+    repository ${REPO}
     branch trinity/\1
 end match
 
 match /branches/trinity/([^/]+)/kdenetwork/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch trinity/\1
     prefix doc-user/
 end match
 
 match /branches/trinity/kdenetwork/kopete/
-    repository kopete
+    repository ${REPO}
     branch trinity
 end match
 
 match /branches/trinity/kdenetwork/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch trinity
     prefix doc-user/
 end match
 
 match /branches/trinity/applications/kopete-otr/
-    repository kopete
+    repository ${REPO}
     branch trinity/kopete-otr
     prefix plugins/otr/
 end match
@@ -1233,13 +1237,13 @@ match /trunk/playground/network/kopete/cmake/modules/
 end match
 
 match /trunk/playground/network/kopete/([^/]+)/([^/]+)/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/backups/playground/\1/\2
     prefix \1/\2/
 end match
 
 match /trunk/kdereview/kopete/([^/]+)/([^/]+)/
-    repository kopete
+    repository ${REPO}
     branch refs/tags/backups/kdereview/\1/\2
     prefix \1/\2/
 end match
@@ -1247,7 +1251,7 @@ end match
 ### branches in /branches/work/kopete/ ###
 
 match /branches/work/kopete/([^/]+)/
-    repository kopete
+    repository ${REPO}
     branch work/\1
 end match
 
@@ -1262,7 +1266,7 @@ match /branches/work/[^/]+/KDE/kdenetwork/doc/$
 end match
 
 match /branches/work/([^/]+)/KDE/kdenetwork/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/\1
 end match
 
@@ -1277,34 +1281,31 @@ match /branches/work/[^/]+/kdenetwork/doc/$
 end match
 
 match /branches/work/([^/]+)/kdenetwork/kopete/
-    repository kopete
+    repository ${REPO}
     branch work/\1
 end match
 
 ### branches in /branches/work/ ###
 
 match /branches/work/([^/]*kopete[^/]+)/
-    repository kopete
+    repository ${REPO}
     branch work/\1
 end match
 
 ### personal branches in /branches/work/ ###
 
 match /branches/work/~([^/]+)/([^/]*kopete[^/]*)/
-    repository kopete
+    repository ${REPO}
     branch work/personal/\1
 end match
 
 match /branches/work/~([^/]+)/([^/]+)/([^/]*kopete[^/]*)/
-    repository kopete
+    repository ${REPO}
     branch work/personal/\1/\2
 end match
 
 ### KDE tags and KDE branches ###
 
-declare REPO=kopete
-declare MODULE=kdenetwork/kopete
-declare MODULE_RECURSE=kdenetwork/
 include ../common-kde-branches-rules
 include ../common-kde-tags-rules
 
@@ -1322,12 +1323,12 @@ match /branches/kopete/[^/]+/doc/$
 end match
 
 match /branches/kopete/([^/]+)/kopete/
-    repository kopete
+    repository ${REPO}
     branch \1
 end match
 
 match /branches/kopete/([^/]+)/doc/kopete/
-    repository kopete
+    repository ${REPO}
     branch \1
     prefix doc-user/
 end match
