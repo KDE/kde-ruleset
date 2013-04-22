@@ -1,0 +1,10 @@
+create repository kopete-whiteboard
+end repository
+
+match /trunk/playground/network/kopete/plugins/whiteboard/
+    repository kopete-whiteboard
+    branch master
+end match
+
+match /
+end match

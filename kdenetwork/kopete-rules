@@ -690,15 +690,6 @@ match /tags/stable/extragear/addons/kopete_skype/
     annotated true
 end match
 
-### playground whiteboard plugin ###
-
-match /trunk/playground/network/kopete/plugins/whiteboard/
-    repository ${REPO}
-    branch plugin-whiteboard
-    prefix plugins/whiteboard/
-    min revision 1232977
-end match
-
 ### playground thinklight plugin ###
 
 match /trunk/playground/network/kopete/plugins/thinklight-kde4/
