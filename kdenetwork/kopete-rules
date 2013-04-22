@@ -109,12 +109,6 @@ match /branches/work/kopete-contactlist-model/
     max revision 612902
 end match
 
-# ignore removing branch trinity-doc
-match /branches/trinity/kdenetwork/doc/kopete/
-    min revision 1262602
-    max revision 1262602
-end match
-
 ### recurse ###
 
 match /trunk/$
@@ -326,26 +320,6 @@ end match
 match /branches/KDE/3.5/kdenetwork/kopete/$
     min revision 571854
     max revision 573903
-    action recurse
-end match
-
-match /branches/trinity/$
-    action recurse
-end match
-
-match /branches/trinity/kdenetwork/$
-    action recurse
-end match
-
-match /branches/trinity/kdenetwork/doc/$
-    action recurse
-end match
-
-match /branches/trinity/[^/]+/kdenetwork/$
-    action recurse
-end match
-
-match /branches/trinity/[^/]+/kdenetwork/doc/$
     action recurse
 end match
 
@@ -1198,36 +1172,6 @@ match /branches/work/kopete/dev-0.12/doc/kopete/
     repository ${REPO}
     branch work/dev-0.12
     prefix doc-user/
-end match
-
-### trinity ###
-
-match /branches/trinity/([^/]+)/kdenetwork/kopete/
-    repository ${REPO}
-    branch trinity/\1
-end match
-
-match /branches/trinity/([^/]+)/kdenetwork/doc/kopete/
-    repository ${REPO}
-    branch trinity/\1
-    prefix doc-user/
-end match
-
-match /branches/trinity/kdenetwork/kopete/
-    repository ${REPO}
-    branch trinity
-end match
-
-match /branches/trinity/kdenetwork/doc/kopete/
-    repository ${REPO}
-    branch trinity
-    prefix doc-user/
-end match
-
-match /branches/trinity/applications/kopete-otr/
-    repository ${REPO}
-    branch trinity/kopete-otr
-    prefix plugins/otr/
 end match
 
 ### backups branches ###
