@@ -761,21 +761,6 @@ match /trunk/playground/network/kopete/plugins/motionautoaway/
     prefix plugins/motionautoaway/
 end match
 
-### playground javascript plugin ###
-
-match /trunk/kdenonbeta/kopete-plugins/javascript/
-    repository ${REPO}
-    branch plugin-javascript
-    prefix plugins/javascript/
-    max revision 567932
-end match
-
-match /trunk/playground/network/kopete/plugins/javascript/
-    repository ${REPO}
-    branch plugin-javascript
-    prefix plugins/javascript/
-end match
-
 ### playground sharemydesktop plugin ###
 
 match /trunk/playground/network/kopete/plugins/sharemydesktop/
