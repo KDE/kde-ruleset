@@ -9,12 +9,12 @@
 # Create the repositories
 ################
 
-create repository kdenetwork/kdnssd
+create repository kdnssd
 end repository
 
 ####
 # kdnssd match rules
-declare REPO=kdenetwork/kdnssd
+declare REPO=kdnssd
 declare MODULE_RECURSE=(kdenetwork/)?
 declare MODULE=kdenetwork/kdnssd
 declare NAMES=kdnssd

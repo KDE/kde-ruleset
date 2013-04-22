@@ -9,13 +9,13 @@
 # Create the repositories
 ################
 
-create repository kdenetwork/kget
+create repository kget
 end repository
 
 ####
 # kget match rules
 
-declare REPO=kdenetwork/kget
+declare REPO=kget
 declare MODULE_RECURSE=(kdenetwork/)?
 declare MODULE=kdenetwork/kget
 declare NAMES=kget

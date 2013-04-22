@@ -9,10 +9,10 @@
 # Create the repositories
 ################
 
-create repository kdenetwork/krdc
+create repository krdc
 end repository
 
-declare REPO=kdenetwork/krdc
+declare REPO=krdc
 ####
 # krdc match rules
 

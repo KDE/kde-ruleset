@@ -9,10 +9,10 @@
 # Create the repositories
 ################
 
-create repository kdenetwork/krfb
+create repository krfb
 end repository
 
-declare REPO=kdenetwork/krfb
+declare REPO=krfb
 declare MODULE_RECURSE=(kdenetwork/)?
 declare MODULE=kdenetwork/krfb
 declare NAMES=krfb

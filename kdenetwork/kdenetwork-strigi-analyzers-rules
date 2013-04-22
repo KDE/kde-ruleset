@@ -10,10 +10,10 @@
 # Create the repositories
 ################
 
-create repository kdenetwork/kdenetwork-strigi-analyzers
+create repository kdenetwork-strigi-analyzers
 end repository
 
-declare REPO=kdenetwork/kdenetwork-strigi-analyzers
+declare REPO=kdenetwork-strigi-analyzers
 declare MODULE_RECURSE=(kdenetwork/)?
 
 declare MODULE=kdenetwork/strigi-analyzer

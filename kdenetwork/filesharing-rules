@@ -9,10 +9,10 @@
 # Create the repositories
 ################
 
-create repository kdenetwork/filesharing
+create repository filesharing
 end repository
 
-declare REPO=kdenetwork/filesharing
+declare REPO=filesharing
 declare MODULE_RECURSE=(kdenetwork/)?
 declare MODULE=kdenetwork/filesharing
 declare NAMES=filesharing

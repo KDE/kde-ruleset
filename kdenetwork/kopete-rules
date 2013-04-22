@@ -2,10 +2,10 @@
 
 ### create repository ###
 
-create repository kdenetwork/kopete
+create repository kopete
 end repository
 
-declare REPO=kdenetwork/kopete
+declare REPO=kopete
 declare MODULE=kdenetwork/kopete
 declare MODULE_RECURSE=kdenetwork/
 
