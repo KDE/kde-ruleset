@@ -1,0 +1,20 @@
+create repository okular-kde-org
+end repository
+match /
+  min revision 452209
+  max revision 452209
+end match
+match /
+  min revision 670740
+  max revision 670740
+end match
+match /trunk/www/apps/kpdf/okular
+  repository okular-kde-org
+  branch master
+end match
+match /trunk/www/sites/okular
+  repository okular-kde-org
+  branch master
+end match
+match /
+end match
