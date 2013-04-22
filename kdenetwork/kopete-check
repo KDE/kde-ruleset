@@ -3,12 +3,6 @@
 echo "Initial commits:"
 git rev-list --max-parents=0 --all | git name-rev --stdin
 echo ""
-echo "Unmerged branches:"
-git branch --no-merged master | sed 's/\s*//g'
-echo ""
-echo "Already merged branches:"
-git branch --merged master | sed 's/\s*//g'
-echo ""
 echo "Unmerged svnmerge commits:"
 git log --grep='svnmerge' --no-merges --format=%H --all | git name-rev --stdin
 echo ""
@@ -26,6 +20,27 @@ git log --grep='[Ss]ync with' --no-merges --format=%H --all | git name-rev --std
 echo ""
 echo "Unmerged 'merge branch' commits:"
 git log --grep='[Mm]erge.*branch' --no-merges --format=%H --all | git name-rev --stdin
+echo ""
+echo "Merge commits with parents on one path:"
+git rev-list --merges --all | while read commit; do
+	commits=$(git log --pretty="%P" -n 1 "$commit")
+	for c1 in $commits; do
+		for c2 in $commits; do
+			if [ "$c1" = "$c2" ]; then continue; fi
+			merge=$(git merge-base "$c1" "$c2")
+			if [ "$c1" = "$merge" ] || [ "$c2" = "$merge" ]; then
+				echo "$commit" | git name-rev --stdin
+				break 2
+			fi
+		done
+	done
+done
+echo ""
+echo "Unmerged branches:"
+git branch --no-merged master | sed 's/\s*//g'
+echo ""
+echo "Already merged branches:"
+git branch --merged master | sed 's/\s*//g'
 echo ""
 echo "Branches state:"
 git for-each-ref --format="%(refname)" refs/tags/backups refs/heads/work | while read ref; do echo "$ref"; git branch --contains $ref; echo; done
