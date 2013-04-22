@@ -54,6 +54,10 @@ clear 338180@/tags/KDE_3_3_0_RELEASE/kdenetwork/kopete/
 clear 354021@/tags/KDE_3_3_1_RELEASE/kdenetwork/kopete/
 351398 354021@/tags/KDE_3_3_1_RELEASE/kdenetwork/kopete/
 
+# recreate branch groupwise_3_3_branch
+clear 366401
+349718 366401
+
 # recreate tag v3.3.2
 clear 367579@/tags/KDE_3_3_2_RELEASE/kdenetwork/kopete/
 366880 367579@/tags/KDE_3_3_2_RELEASE/kdenetwork/kopete/
@@ -69,6 +73,10 @@ clear 394907@/tags/KDE_3_4_0_RELEASE/kdenetwork/kopete/
 # fix backporting to branch KDE/3.4
 clear 402789
 402748 402789
+
+# fix backporting to branch groupwise_3_3_branch
+clear 403920
+369609 403920
 
 # fix backporting to branch KDE/3.4
 clear 403922
@@ -223,6 +231,7 @@ clear 732092@/trunk/playground/network/kopete/plugins/motionautoaway/
 823979 824538
 
 # svnmerge - master to work/dev-4.2@999944
+clear 829165
 829148 829165
 
 # svnmerge - master to work/dev-4.2
@@ -244,7 +253,13 @@ clear 732092@/trunk/playground/network/kopete/plugins/motionautoaway/
 866673 866852
 
 # svnmerge - master to work/personal/mattr
-866640 866853
+clear 866853
+866673 866853
+
+# svnmerge - work/iup-isi-group to work/personal/mattr
+clear 867639
+774597 867639
+867065 867639
 
 # copy skype protocol from kde3 extragear to playground
 641687 872548
@@ -271,6 +286,7 @@ clear 732092@/trunk/playground/network/kopete/plugins/motionautoaway/
 913704 914191
 
 # merge master to work/jingle-video
+clear 916634
 916552 916634
 
 # merge master to work/dev-4.2
