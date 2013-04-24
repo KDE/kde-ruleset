@@ -9,7 +9,7 @@ declare REPO=kopete
 declare MODULE=kdenetwork/kopete
 declare MODULE_RECURSE=kdenetwork/
 
-### KDE ignore ###
+# BEGIN KDE ignore
 
 include ../common-kde-ignores
 
@@ -109,7 +109,9 @@ match /branches/work/kopete-contactlist-model/
     max revision 612902
 end match
 
-### recurse ###
+# END
+
+# BEGIN recurse
 
 match /trunk/$
     action recurse
@@ -414,7 +416,9 @@ match /branches/work/kopete-contactlist-model/$
     action recurse
 end match
 
-### KDE trunk ###
+# END
+
+# BEGIN KDE trunk
 
 match /trunk/kdenetwork/kopete/
     repository ${REPO}
@@ -469,7 +473,9 @@ match /trunk/KDE/kdenetwork/cmake/modules/ortpversion.c
     prefix cmake/modules/ortpversion.c
 end match
 
-### tags in /tags/kopete/ ###
+# END
+
+# BEGIN tags in /tags/kopete/
 
 match /tags/kopete/soc-oscarfiletransfer-submission/
     repository ${REPO}
@@ -498,7 +504,9 @@ match /tags/kopete/([^/]+)/kopete/
     min revision 594559
 end match
 
-### cryptography plugin ###
+# END
+
+# BEGIN cryptography plugin
 
 match /trunk/extragear/network/kopete-plugins/doc/$
     action recurse
@@ -592,7 +600,9 @@ match /tags/stable/extragear/network/doc/kopete-cryptography/
     annotated true
 end match
 
-### scripting plugin ###
+# END
+
+# BEGIN scripting plugin
 
 match /trunk/extragear/network/kopete-scripting/
     repository ${REPO}
@@ -601,7 +611,9 @@ match /trunk/extragear/network/kopete-scripting/
     min revision 733205
 end match
 
-### skype protocol ###
+# END
+
+# BEGIN skype protocol
 
 match /trunk/playground/network/kopete/protocols/skype/
     repository ${REPO}
@@ -690,7 +702,9 @@ match /tags/stable/extragear/addons/kopete_skype/
     annotated true
 end match
 
-### playground thinklight plugin ###
+# END
+
+# BEGIN playground thinklight plugin
 
 match /trunk/playground/network/kopete/plugins/thinklight-kde4/
     repository ${REPO}
@@ -719,7 +733,9 @@ match /trunk/playground/network/kopete/plugins/thinklight/
     min revision 1081873
 end match
 
-### playground smpppdcs plugin ###
+# END
+
+# BEGIN playground smpppdcs plugin
 
 match /trunk/playground/network/kopete/plugins/smpppdcs/
     repository ${REPO}
@@ -727,7 +743,9 @@ match /trunk/playground/network/kopete/plugins/smpppdcs/
     prefix plugins/smpppdcs/
 end match
 
-### playground pimpresence plugin ###
+# END
+
+# BEGIN playground pimpresence plugin
 
 match /trunk/kdeplayground-network/kopete/plugins/pimpresence/
     repository ${REPO}
@@ -744,7 +762,9 @@ match /trunk/playground/network/kopete/plugins/pimpresence/
     min revision 413587
 end match
 
-### playground motionautoaway plugin ###
+# END
+
+# BEGIN playground motionautoaway plugin
 
 match /trunk/playground/network/kopete/plugins/motionautoaway/
     repository ${REPO}
@@ -752,7 +772,9 @@ match /trunk/playground/network/kopete/plugins/motionautoaway/
     prefix plugins/motionautoaway/
 end match
 
-### playground sharemydesktop plugin ###
+# END
+
+# BEGIN playground sharemydesktop plugin
 
 match /trunk/playground/network/kopete/plugins/sharemydesktop/
     repository ${REPO}
@@ -760,7 +782,9 @@ match /trunk/playground/network/kopete/plugins/sharemydesktop/
     prefix plugins/sharemydesktop/
 end match
 
-### playground telepathy plugin ###
+# END
+
+# BEGIN playground telepathy plugin
 
 match /trunk/playground/network/kopete/protocols/telepathy/
     repository ${REPO}
@@ -768,7 +792,9 @@ match /trunk/playground/network/kopete/protocols/telepathy/
     prefix protocols/telepathy/
 end match
 
-### bonjour protocol ###
+# END
+
+# BEGIN bonjour protocol
 
 match /trunk/playground/network/kopete/protocols/bonjour/
     repository ${REPO}
@@ -800,7 +826,9 @@ match /trunk/extragear/network/kopete-bonjour/
     max revision 842880
 end match
 
-### branch work/model-for-contactlist ###
+# END
+
+# BEGIN branch work/model-for-contactlist
 
 match /branches/work/kopete/model-for-contactlist/$
     action recurse
@@ -825,7 +853,9 @@ match /branches/work/kopete/model-for-contactlist/
     max revision 612919
 end match
 
-### branch work/msnp11_porting ###
+# END
+
+# BEGIN branch work/msnp11_porting
 
 match /branches/work/kopete/msnp11_porting/
     repository ${REPO}
@@ -834,7 +864,9 @@ match /branches/work/kopete/msnp11_porting/
     max revision 433897
 end match
 
-### branch work/nowlistening_extra ###
+# END
+
+# BEGIN branch work/nowlistening_extra
 
 match /branches/work/kopete/nowlistening_extra/
     repository ${REPO}
@@ -842,7 +874,9 @@ match /branches/work/kopete/nowlistening_extra/
     prefix plugins/nowlistening/
 end match
 
-### branch work/kopete-msn-msnslp ###
+# END
+
+# BEGIN branch work/kopete-msn-msnslp
 
 match /branches/work/kopete/kopete-msn-msnslp/
     repository ${REPO}
@@ -850,7 +884,9 @@ match /branches/work/kopete/kopete-msn-msnslp/
     prefix protocols/msn/
 end match
 
-### branch work/yahoo_rewrite ###
+# END
+
+# BEGIN branch work/yahoo_rewrite
 
 match /branches/yahoo_rewrite/$
     action recurse
@@ -891,7 +927,9 @@ match /branches/work/kopete/yahoo_rewrite/
     max revision 498003
 end match
 
-### branch work/kopete-contactlist-model ###
+# END
+
+# BEGIN branch work/kopete-contactlist-model
 
 match /branches/work/$
     action recurse
@@ -922,7 +960,9 @@ match /branches/work/kopete-contactlist-model/
     max revision 582577
 end match
 
-### branch work/kopete-irc_rewrite ###
+# END
+
+# BEGIN branch work/kopete-irc_rewrite
 
 match /branches/work/kopete-irc_rewrite/
     repository ${REPO}
@@ -931,7 +971,9 @@ match /branches/work/kopete-irc_rewrite/
     max revision 479765
 end match
 
-### branch work/soc-kopete-jingle ###
+# END
+
+# BEGIN branch work/soc-kopete-jingle
 
 match /branches/work/soc-kopete-jingle/$
     action recurse
@@ -965,7 +1007,9 @@ match /branches/work/soc-kopete-jingle/
     max revision 976058
 end match
 
-### branch work/better-oscar-error-handling ###
+# END
+
+# BEGIN branch work/better-oscar-error-handling
 
 match /branches/work/kopete/better-oscar-error-handling/
     min revision 431582
@@ -978,7 +1022,9 @@ match /branches/work/kopete/better-oscar-error-handling/
     prefix protocols/oscar/
 end match
 
-### branch work/cryptography_look ###
+# END
+
+# BEGIN branch work/cryptography_look
 
 match /branches/work/kopete/cryptography_look/$
     action recurse
@@ -1001,7 +1047,9 @@ match /branches/work/kopete/cryptography_look/
     max revision 542040
 end match
 
-### branch work/kopete-011-backports ###
+# END
+
+# BEGIN branch work/kopete-011-backports
 
 match /branches/work/kopete/kopete-011-backports/kopete/
     repository ${REPO}
@@ -1020,7 +1068,9 @@ match /branches/work/kopete/kopete-011-backports/
     max revision 622285
 end match
 
-### branch work/comunip ###
+# END
+
+# BEGIN branch work/comunip
 
 match /branches/work/kopete/comunip/kopete/
     repository ${REPO}
@@ -1039,7 +1089,9 @@ match /branches/work/kopete/comunip/
    max revision 686479
 end match
 
-### branch work/jingle-video ###
+# END
+
+# BEGIN branch work/jingle-video
 
 match /branches/work/kopete/jingle-video/kopete/
     repository ${REPO}
@@ -1052,7 +1104,9 @@ match /branches/work/kopete/jingle-video/doc/kopete/
     prefix doc-user/
 end match
 
-### branch work/soc-chatwindow ###
+# END
+
+# BEGIN branch work/soc-chatwindow
 
 match /trunk/KDE/kdenetwork/kopete/kopete/$
     action recurse
@@ -1071,14 +1125,18 @@ match /branches/work/soc-chatwindow/
     branch work/soc-chatwindow
 end match
 
-### branch work/soc-logging-framework ###
+# END
+
+# BEGIN branch work/soc-logging-framework
 
 match /branches/work/soc-logging-framework/kopete/
     repository ${REPO}
     branch work/soc-logging-framework
 end match
 
-### branch work/kaction-cleanup-branch-1 ###
+# END
+
+# BEGIN branch work/kaction-cleanup-branch-1
 
 match /branches/work/$
     action recurse
@@ -1091,7 +1149,9 @@ match /branches/work/kaction-cleanup-branch/kdenetwork/kopete/
     branch work/kaction-cleanup-branch-1
 end match
 
-### branch work/kaction-cleanup-branch-2 ###
+# END
+
+# BEGIN branch work/kaction-cleanup-branch-2
 
 match /trunk/$
     action recurse
@@ -1104,7 +1164,9 @@ match /branches/work/kaction-cleanup-branch/KDE/kdenetwork/kopete/
     branch work/kaction-cleanup-branch-2
 end match
 
-### branch work/kde4 ###
+# END
+
+# BEGIN branch work/kde4
 
 match /branches/work/kde4/kdenetwork/$
     action recurse
@@ -1129,7 +1191,9 @@ match /branches/work/kde4/kdenetwork/doc/kopete/
     max revision 420998
 end match
 
-### branch work/kopete-otr ###
+# END
+
+# BEGIN branch work/kopete-otr
 
 match /branches/work/kde4/kopete-otr/
     repository ${REPO}
@@ -1137,7 +1201,9 @@ match /branches/work/kde4/kopete-otr/
     prefix plugins/otr/
 end match
 
-### branch work/dev-0.12 ###
+# END
+
+# BEGIN branch work/dev-0.12
 
 match /branches/work/kopete/dev-0.12/kopete/
     repository ${REPO}
@@ -1150,7 +1216,9 @@ match /branches/work/kopete/dev-0.12/doc/kopete/
     prefix doc-user/
 end match
 
-### backups branches ###
+# END
+
+# BEGIN backups branches
 
 # ignore playground cmake modules
 match /trunk/playground/network/kopete/cmake/modules/
@@ -1168,14 +1236,18 @@ match /trunk/kdereview/kopete/([^/]+)/([^/]+)/
     prefix \1/\2/
 end match
 
-### branches in /branches/work/kopete/ ###
+# END
+
+# BEGIN branches in /branches/work/kopete/
 
 match /branches/work/kopete/([^/]+)/
     repository ${REPO}
     branch work/\1
 end match
 
-### branches in /branches/work/.../KDE/kdenetwork/kopete/ ###
+# END
+
+# BEGIN branches in /branches/work/.../KDE/kdenetwork/kopete/
 
 match /branches/work/[^/]+/KDE/kdenetwork/$
     action recurse
@@ -1190,7 +1262,9 @@ match /branches/work/([^/]+)/KDE/kdenetwork/kopete/
     branch work/\1
 end match
 
-### branches in /branches/work/.../kdenetwork/kopete/ ###
+# END
+
+# BEGIN branches in /branches/work/.../kdenetwork/kopete/
 
 match /branches/work/[^/]+/kdenetwork/$
     action recurse
@@ -1205,14 +1279,18 @@ match /branches/work/([^/]+)/kdenetwork/kopete/
     branch work/\1
 end match
 
-### branches in /branches/work/ ###
+# END
+
+# BEGIN branches in /branches/work/
 
 match /branches/work/([^/]*kopete[^/]+)/
     repository ${REPO}
     branch work/\1
 end match
 
-### personal branches in /branches/work/ ###
+# END
+
+# BEGIN personal branches in /branches/work/
 
 match /branches/work/~([^/]+)/([^/]*kopete[^/]*)/
     repository ${REPO}
@@ -1224,7 +1302,9 @@ match /branches/work/~([^/]+)/([^/]+)/([^/]*kopete[^/]*)/
     branch work/personal/\1/\2
 end match
 
-### KDE tags and KDE branches ###
+# END
+
+# BEGIN KDE tags and KDE branches
 
 include ../common-kde-branches-rules
 include ../common-kde-tags-rules
@@ -1232,7 +1312,9 @@ include ../common-kde-tags-rules
 declare PREFIX=doc-user/
 include ../common-kde-branches-rules
 
-### branches in /branches/kopete/ ###
+# END
+
+# BEGIN branches in /branches/kopete/
 
 match /branches/kopete/[^/]+/$
     action recurse
@@ -1253,7 +1335,7 @@ match /branches/kopete/([^/]+)/doc/kopete/
     prefix doc-user/
 end match
 
-### ignore ###
+# END
 
 match /
 end match
