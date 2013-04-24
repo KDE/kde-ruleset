@@ -37,12 +37,6 @@ match /trunk/playground/network/kopete/plugins/statistics/
     max revision 732074
 end match
 
-# ignore removing urlpicpreview plugin
-match /trunk/playground/network/kopete/plugins/urlpicpreview/
-    min revision 732074
-    max revision 732074
-end match
-
 # ignore removing motionautoaway plugin
 match /trunk/playground/network/kopete/plugins/motionautoaway/
     min revision 732074
@@ -790,6 +784,16 @@ match /trunk/playground/network/kopete/protocols/telepathy/
     repository ${REPO}
     branch protocol-telepathy
     prefix protocols/telepathy/
+end match
+
+# END
+
+# BEGIN playground urlpicpreview plugin
+
+match /trunk/playground/network/kopete/plugins/urlpicpreview/
+    repository ${REPO}
+    branch refs/backups/plugin-urlpicpreview
+    prefix plugins/urlpicpreview/
 end match
 
 # END
