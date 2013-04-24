@@ -1224,6 +1224,11 @@ end match
 
 # BEGIN backups branches
 
+# ignore some plugins so they aren't matched
+# by the overly-general rules below
+match /trunk/playground/network/kopete/plugins/(whiteboard|javascript)/
+end match
+
 # ignore playground cmake modules
 match /trunk/playground/network/kopete/cmake/modules/
 end match
