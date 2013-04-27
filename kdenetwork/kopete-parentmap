@@ -179,10 +179,6 @@ clear 516669
 # merge branch work/kparts_urlargs_split to master
 698703 699514
 
-# move javascript plugin from master to playground
-clear 702662@/trunk/playground/network/kopete/plugins/javascript/
-702659 702662@/trunk/playground/network/kopete/plugins/javascript/
-
 # merge master to work/break-the-contactlist
 704400 704590
 
@@ -291,7 +287,3 @@ clear 916634
 
 # merge master to work/dev-4.2
 946354 946517
-
-# recreate branch trinity/3.5.13_frozen
-clear 1262602@/branches/trinity/3.5.13_frozen/kdenetwork/kopete/
-1261216 1262602@/branches/trinity/3.5.13_frozen/kdenetwork/kopete/
