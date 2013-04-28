@@ -792,7 +792,7 @@ end match
 
 match /trunk/playground/network/kopete/plugins/urlpicpreview/
     repository ${REPO}
-    branch refs/backups/plugin-urlpicpreview
+    branch refs/tags/backups/playground/plugins/urlpicpreview
     prefix plugins/urlpicpreview/
 end match
 
