@@ -77,6 +77,10 @@ git branch -d work/soc-kopete-jingle
 git branch -d work/yahoo_rewrite
 git branch -D work/kconfig_new_take3
 
+# Remove unmerged branches which have useless commits
+git branch -D plugin-motionautoaway
+git branch -D plugin-javascript
+
 # Remove already merged backups branches to master
 git tag -d backups/kdereview/plugins/otr
 git tag -d backups/kdereview/protocols/skype
