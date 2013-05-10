@@ -1,0 +1,11 @@
+create repository kopete-scripting
+end repository
+
+match /trunk/extragear/network/kopete-scripting/
+    repository kopete-scripting
+    branch master
+    min revision 733205
+end match
+
+match /
+end match

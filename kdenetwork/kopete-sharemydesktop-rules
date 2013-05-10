@@ -1,0 +1,12 @@
+create repository kopete-sharemydesktop
+end repository
+
+match /trunk/playground/network/kopete/plugins/sharemydesktop/
+    repository kopete-sharemydesktop
+    branch master
+    min revision 1041908
+    max revision 1042303
+end match
+
+match /
+end match

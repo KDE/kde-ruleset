@@ -25,12 +25,6 @@ match /trunk/playground/network/kopete/plugins/pipes/
     max revision 947592
 end match
 
-# ignore removing sharemydesktop plugin
-match /trunk/playground/network/kopete/plugins/sharemydesktop/
-    min revision 1041908
-    max revision 1042303
-end match
-
 # ignore removing statistics plugin
 match /trunk/playground/network/kopete/plugins/statistics/
     min revision 732074
@@ -596,17 +590,6 @@ end match
 
 # END
 
-# BEGIN scripting plugin
-
-match /trunk/extragear/network/kopete-scripting/
-    repository ${REPO}
-    branch kopete-scripting
-    prefix plugins/scripting/
-    min revision 733205
-end match
-
-# END
-
 # BEGIN skype protocol
 
 match /trunk/playground/network/kopete/protocols/skype/
@@ -698,62 +681,12 @@ end match
 
 # END
 
-# BEGIN playground thinklight plugin
-
-match /trunk/playground/network/kopete/plugins/thinklight-kde4/
-    repository ${REPO}
-    branch plugin-thinklight
-    prefix plugins/thinklight/
-    min revision 885654
-    max revision 1058713
-end match
-
-# ignore empty commit
-match /trunk/playground/network/kopete/plugins/thinklight-kde4/
-    min revision 1058714
-    max revision 1058714
-end match
-
-# ignore empty commit
-match /trunk/playground/network/kopete/plugins/thinklight/
-    min revision 1058714
-    max revision 1058714
-end match
-
-match /trunk/playground/network/kopete/plugins/thinklight/
-    repository ${REPO}
-    branch plugin-thinklight
-    prefix plugins/thinklight/
-    min revision 1081873
-end match
-
-# END
-
 # BEGIN playground smpppdcs plugin
 
 match /trunk/playground/network/kopete/plugins/smpppdcs/
     repository ${REPO}
     branch plugin-smpppdcs
     prefix plugins/smpppdcs/
-end match
-
-# END
-
-# BEGIN playground pimpresence plugin
-
-match /trunk/kdeplayground-network/kopete/plugins/pimpresence/
-    repository ${REPO}
-    branch plugin-pimpresence
-    prefix plugins/pimpresence/
-    min revision 407746
-    max revision 407746
-end match
-
-match /trunk/playground/network/kopete/plugins/pimpresence/
-    repository ${REPO}
-    branch plugin-pimpresence
-    prefix plugins/pimpresence/
-    min revision 413587
 end match
 
 # END
@@ -775,16 +708,6 @@ match /trunk/kdenonbeta/kopete-plugins/javascript/
     branch plugin-javascript
     prefix plugins/javascript/
     max revision 567932
-end match
-
-# END
-
-# BEGIN playground sharemydesktop plugin
-
-match /trunk/playground/network/kopete/plugins/sharemydesktop/
-    repository ${REPO}
-    branch plugin-sharemydesktop
-    prefix plugins/sharemydesktop/
 end match
 
 # END
@@ -1237,7 +1160,7 @@ end match
 
 # ignore some plugins so they aren't matched
 # by the overly-general rules below
-match /trunk/playground/network/kopete/plugins/(whiteboard|javascript)/
+match /trunk/playground/network/kopete/plugins/(whiteboard|sharemydesktop|javascript|thinklight|thinklight-kde4|pimpresence)/
 end match
 
 # ignore playground cmake modules

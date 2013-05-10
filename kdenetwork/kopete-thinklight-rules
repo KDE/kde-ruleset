@@ -1,0 +1,18 @@
+create repository kopete-thinklight
+end repository
+
+match /trunk/playground/network/kopete/plugins/thinklight-kde4/
+    repository kopete-thinklight
+    branch master
+    min revision 885654
+    max revision 1058713
+end match
+
+match /trunk/playground/network/kopete/plugins/thinklight/
+    repository kopete-thinklight
+    branch master
+    min revision 1081873
+end match
+
+match /
+end match
