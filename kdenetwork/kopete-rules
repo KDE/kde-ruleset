@@ -594,7 +594,7 @@ end match
 
 match /trunk/playground/network/kopete/protocols/skype/
     repository ${REPO}
-    branch kopete_skype-old
+    branch protocol-skype-kde3-old
     prefix protocols/skype/
     min revision 411539
     max revision 435857
@@ -614,7 +614,7 @@ end match
 
 match /trunk/kdereview/kopete_skype/
     repository ${REPO}
-    branch kopete_skype
+    branch protocol-skype-kde3
     prefix protocols/skype/
     min revision 436979
     max revision 460646
@@ -622,7 +622,7 @@ end match
 
 match /trunk/extragear/addons/kopete_skype/
     repository ${REPO}
-    branch kopete_skype
+    branch protocol-skype-kde3
     prefix protocols/skype/
     min revision 460646
     max revision 641687
@@ -630,7 +630,7 @@ end match
 
 match /branches/extragear/kde3/addons/kopete_skype/
     repository ${REPO}
-    branch kopete_skype
+    branch protocol-skype-kde3
     prefix protocols/skype/
     min revision 679518
 end match
@@ -641,42 +641,9 @@ end match
 
 match /branches/stable/extragear/addons/kopete_skype/
     repository ${REPO}
-    branch kopete_skype-stable
+    branch protocol-skype-kde3-stable
     prefix protocols/skype/
     min revision 466335
-end match
-
-# ignore cleaning tree in tag kopete_skype-stable
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 461138
-    max revision 461138
-end match
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 461139
-    max revision 461139
-end match
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 464293
-    max revision 464293
-end match
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 465760
-    max revision 465760
-end match
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 466330
-    max revision 466330
-end match
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 474567
-    max revision 474567
-end match
-
-match /tags/stable/extragear/addons/kopete_skype/
-    repository ${REPO}
-    branch refs/tags/kopete_skype-stable-tag
-    prefix protocols/skype/
-    annotated true
 end match
 
 # END

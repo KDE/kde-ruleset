@@ -63,7 +63,7 @@ git branch -d goodbye_aimbuddy
 git branch -d groupwise_in_anger
 git branch -d iris-port
 git branch -d jabber-pooling-rewrite
-git branch -d kopete_skype-old
+git branch -d protocol-skype-kde3-old
 git branch -d lilac-accounts
 git branch -d lilac-contact-list
 git branch -d master-cmake-modules
