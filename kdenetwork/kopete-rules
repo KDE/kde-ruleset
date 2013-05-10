@@ -768,6 +768,17 @@ end match
 
 # END
 
+# BEGIN playground javascript plugin
+
+match /trunk/kdenonbeta/kopete-plugins/javascript/
+    repository ${REPO}
+    branch plugin-javascript
+    prefix plugins/javascript/
+    max revision 567932
+end match
+
+# END
+
 # BEGIN playground sharemydesktop plugin
 
 match /trunk/playground/network/kopete/plugins/sharemydesktop/
