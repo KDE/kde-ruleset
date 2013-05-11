@@ -67,6 +67,18 @@ match /tags/KDE/3.93/kdenetwork/doc/kopete/
     max revision 706317
 end match
 
+# ignore bad revision in tag v4.8.1
+match /tags/KDE/4.8.1/kdenetwork/kopete/
+    min revision 1287585
+    max revision 1287585
+end match
+
+# ignore bad revision in tag v4.8.3
+match /tags/KDE/4.8.3/kdenetwork/kopete/
+    min revision 1297690
+    max revision 1297690
+end match
+
 # ignore bad tag 0.12beta2
 match /tags/kopete/0.12beta2/kopete/
     min revision 519044
@@ -97,13 +109,21 @@ match /branches/work/kopete-contactlist-model/
     max revision 612902
 end match
 
+# ignore removing user documentation from branch 0.12
+match /branches/kopete/0.12/doc/kopete/
+    min revision 573904
+    max revision 573904
+end match
+
+# ignore removing telepathy protocol
+match /trunk/playground/network/kopete/protocols/telepathy/
+    min revision 1184191
+    max revision 1184191
+end match
+
 # END
 
 # BEGIN recurse
-
-match /trunk/$
-    action recurse
-end match
 
 match /trunk/kdenetwork/$
     action recurse
@@ -158,14 +178,6 @@ match /(branches|tags)/$
     action recurse
 end match
 
-match /trunk/kdereview/$
-    action recurse
-end match
-
-match /trunk/playground/$
-    action recurse
-end match
-
 match /trunk/playground/[^/]/$
     action recurse
 end match
@@ -175,10 +187,6 @@ match /trunk/kdeplayground-[^/]/$
 end match
 
 match /branches/work/kde4/$
-    action recurse
-end match
-
-match /branches/work/kde4/kdenetwork/$
     action recurse
 end match
 
@@ -210,8 +218,14 @@ match /(branches|tags)/KDE/[^/]+/kdenetwork/doc/$
     action recurse
 end match
 
+# do not recurse on revision 594559
 match /tags/kopete/[^/]+/$
     action recurse
+    max revision 594558
+end match
+match /tags/kopete/[^/]+/$
+    action recurse
+    min revision 594560
 end match
 
 match /tags/kopete/[^/]+/doc/$
@@ -426,7 +440,7 @@ match /trunk/kdenetwork/doc/kopete/
     branch master
     prefix doc-user/
     min revision 247416
-    max revision 392877
+    max revision 409202
 end match
 
 match /trunk/KDE/kdenetwork/doc/kopete/
@@ -465,10 +479,8 @@ end match
 
 # BEGIN tags in /tags/kopete/
 
+# ignore tag soc-oscarfiletransfer-submission
 match /tags/kopete/soc-oscarfiletransfer-submission/
-    repository ${REPO}
-    branch refs/tags/soc-oscarfiletransfer-submission
-    annotated true
 end match
 
 # NOTE: tag 0.12.3 is not in kopete folder
@@ -816,10 +828,6 @@ match /branches/work/$
     action recurse
     min revision 582502
     max revision 582582
-end match
-
-match /branches/work/kopete-contactlist-model/$
-    action recurse
 end match
 
 match /branches/work/kopete-contactlist-model/kopete/
@@ -1191,6 +1199,22 @@ end match
 # END
 
 # BEGIN KDE tags and KDE branches
+
+match /tags/KDE_3_4_0_BETA_1/kdenetwork/kopete/
+    repository ${REPO}
+    branch refs/tags/v3.3.91
+    annotated true
+    min revision 376088
+    max revision 376088
+end match
+
+match /tags/KDE_3_4_0_BETA_2/kdenetwork/kopete/
+    repository ${REPO}
+    branch refs/tags/v3.3.92
+    annotated true
+    min revision 386487
+    max revision 386487
+end match
 
 include ../common-kde-branches-rules
 include ../common-kde-tags-rules
