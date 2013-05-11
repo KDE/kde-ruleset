@@ -516,14 +516,14 @@ end match
 
 match /trunk/KDE/kdeaddons/kopete-plugins/cryptography/
     repository ${REPO}
-    branch kopete-cryptography
+    branch plugin-cryptography
     prefix plugins/cryptography/
     max revision 712548
 end match
 
 match /trunk/extragear/network/kopete-plugins/cryptography/
     repository ${REPO}
-    branch kopete-cryptography
+    branch plugin-cryptography
     prefix plugins/cryptography/
     min revision 712643
     max revision 730080
@@ -536,14 +536,14 @@ end match
 
 match /trunk/extragear/network/kopete-cryptography/
     repository ${REPO}
-    branch kopete-cryptography
+    branch plugin-cryptography
     prefix plugins/cryptography/
     min revision 712564
 end match
 
 match /trunk/extragear/network/doc/kopete-cryptography/
     repository ${REPO}
-    branch kopete-cryptography-doc
+    branch plugin-cryptography-doc
     prefix plugins/cryptography/doc/
     min revision 730320
 end match
@@ -562,30 +562,6 @@ match /trunk/extragear/network/kopete-plugins/doc/cryptography/
     prefix plugins/cryptography/doc/
     min revision 725078
     max revision 730080
-end match
-
-match /tags/stable/extragear/network/kopete-cryptography/
-    repository ${REPO}
-    branch refs/tags/kopete-cryptography-stable-tag
-    prefix plugins/cryptography/
-    annotated true
-end match
-
-match /tags/stable/extragear/network/doc/$
-    action recurse
-end match
-
-# ignore duplicating doc directory
-match /tags/stable/extragear/network/doc/kopete-cryptography/
-    min revision 734824
-    max revision 734824
-end match
-
-match /tags/stable/extragear/network/doc/kopete-cryptography/
-    repository ${REPO}
-    branch refs/tags/kopete-cryptography-stable-doc
-    prefix plugins/cryptography/doc/
-    annotated true
 end match
 
 # END
