@@ -36,11 +36,14 @@ git rev-list --merges --all | while read commit; do
 	done
 done
 echo ""
+echo "Disconnected tags:"
+git for-each-ref --format="%(refname)" refs/tags | while read ref; do if [ "$(git branch -a --contains $ref | wc -l)" = "0" ]; then echo $ref; fi; done
+echo
 echo "Unmerged branches:"
-git branch --no-merged master | sed 's/\s*//g'
+git branch -a --no-merged master | sed 's/\s*//g'
 echo ""
 echo "Already merged branches:"
-git branch --merged master | sed 's/\s*//g'
+git branch -a --merged master | sed 's/\s*//g'
 echo ""
 echo "Branches state:"
-git for-each-ref --format="%(refname)" refs/tags/backups refs/heads/work | while read ref; do echo "$ref"; git branch --contains $ref; echo; done
+git for-each-ref --format="%(refname)" refs/tags/backups refs/heads/work | while read ref; do echo "$ref"; git branch -a --contains $ref; echo; done
