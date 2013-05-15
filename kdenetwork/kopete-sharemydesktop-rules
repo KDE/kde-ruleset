@@ -4,8 +4,7 @@ end repository
 match /trunk/playground/network/kopete/plugins/sharemydesktop/
     repository kopete-sharemydesktop
     branch master
-    min revision 1041908
-    max revision 1042303
+    max revision 1041907
 end match
 
 match /
