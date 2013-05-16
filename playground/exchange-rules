@@ -1,0 +1,23 @@
+#
+# Created by Alf B. Rustad <alf@mykolab.com>
+#
+
+# exchange history in KDE SVN starts with r1265033
+# so svn2git can be run with --resume-from option
+
+# exchange was never branched or tagged, so this is
+# straight-forward.
+
+# Create the exchange repository
+create repository exchange
+end repository
+
+# exchange from playground
+match /trunk/playground/pim/akonadi/exchange/
+  repository exchange
+  branch master
+end match
+
+# Ignore the rest
+match /
+end match
