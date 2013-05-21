@@ -47,6 +47,19 @@ match /trunk/KDE/kdenetwork/krdc/
   branch master
 end match
 
+#ignore deletion in revision 691519
+match /trunk/KDE/kdenetwork/krdc/
+  min revision 691518
+  max revision 691519
+  action ignore
+end match
+
+declare MODULE_RECURSE=(kdenetwork/)?
+declare MODULE=kdenetwork/krdc
+declare NAMES=krdc
+include common-kdenetwork-rules
+include ../feature-branches
+
 # Ignore everything else
 match /
 end match

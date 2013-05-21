@@ -69,6 +69,7 @@ alexjironkin Alex Jironkin <alexjironkin@gmail.com>
 alexkempshall Alexander Kempshall <mcmurchy1917-kooka@yahoo.co.uk>
 alexmerry Alex Merry <kde@randomguy3.me.uk>
 alexraymond Alex Raymond <raymond.alex@gmail.com>
+alfbr Alf B. Rustad <alf@mykolab.com>
 alionakuz Aliona Kuznetsova <aliona.kuz@gmail.com>
 alisauskas Liudas Ališauskas <liudas@akmc.lt>
 allananderson Allan Anderson <agander93@gmail.com>
@@ -359,7 +360,7 @@ conet Cristian Oneț <onet.cristian@gmail.com>
 conrausch Conrad Hoffmann <ch@bitfehler.net>
 coolo Stephan Kulow <coolo@kde.org>
 coppens Bart Coppens <kde@bartcoppens.be>
-cordlandwehr Andreas Cord-Landwehr <cola@uni-paderborn.de>
+cordlandwehr Andreas Cord-Landwehr <cordlandwehr@kde.org>
 corteel Maxime Corteel <mcorteel@gmail.com>
 cosentino Alessandro Cosentino <cosenal@gmail.com>
 courbot Alexandre Courbot <gnurou@gmail.com>
@@ -794,6 +795,7 @@ igorto Igor Trindade Oliveira <igor_trindade@yahoo.com.br>
 igungor İbrahim Güngör <ibrahim@pardus.org.tr>
 ihalip Ilie Halip <lupuroshu@gmail.com>
 iip Ivan Petrouchtchak <ivanpetrouchtchak@yahoo.com>
+ikomissarov Ivan Komissarov <ABBAPOH@gmail.com>
 iliakats Ilia Kats <ilia-kats@gmx.net>
 ilic Chusslove Illich <caslav.ilic@gmx.net>
 illissius Gábor Lehel <illissius@gmail.com>
@@ -827,7 +829,6 @@ jakselsen Jarle Richard Akselsen <jarle.r.akselsen@gmail.com>
 jakuhr Jannick Alexander Kuhr <opensource@kuhr.org>
 jamesots James Ots <kde@jamesots.com>
 jammyzhou Jammy Zhou <jammy.zhou@gmail.com>
-janardhan Janardhan Reddy <annapareddyjanardhanreddy@gmail.com>
 jangmarker Jan Gerrit Marker <jangerrit@weiler-marker.com>
 janih Jani Hautakangas <jani.hautakangas@tieto.com>
 janlepper Jan Lepper <jan_lepper@gmx.de>
@@ -894,6 +895,7 @@ joachim Joachim Eibl <joachim.eibl@gmx.de>
 joachimwilke Joachim Wilke <kde.org@joachim-wilke.de>
 joaoemanuel Joao Emanuel <joaoemanuel1981@gmail.com>
 jobermayr Johannes Obermayr <johannesobermayr@gmx.de>
+jogawa Jumpei Ogawa <phanective@gmail.com>
 johanneszarl Johannes Zarl <isilmendil@gmx.net>
 johnflux John Tapsell <john.tapsell@kdemail.net>
 joliveri Jay Oliveri <ilnero@gmx.net>
@@ -979,7 +981,7 @@ kenia Cynthia Kenia <keniack@gmail.com>
 kenji Gheyret Kenji <gheyret@yahoo.com>
 kenkovaa Kim Enkovaara <kim.enkovaara@iki.fi>
 kerian Joseph Kerian <jkerian@gmail.com>
-kevinkinfoo Kévin Kin-Foo <kevinkinfoo@gmail.com>
+kevinkinfoo Kévin Kin-Foo <kinfoo.dev@gmail.com>
 kevinw Kevin Whitaker <eyecreate@gmail.com>
 kfita nada kfita <haddaji.nada@hotmail.fr>
 kfunk Kevin Funk <krf@gmx.de>
@@ -1249,7 +1251,7 @@ mihalik Peter Mihálik <udavac@inmail.sk>
 mikulski Dariusz Mikulski <dariusz.mikulski@gmail.com>
 milhouse Milan Mitrovic <milhouse@bankerinter.net>
 millaaron Aaron Miller <millaaron@usa.net>
-millansoto José Millán Soto <jmillan@opentia.com>
+millansoto José Millán Soto <fid@gpul.org>
 milliams Matt Williams <matt@milliams.com>
 minhngo Minh Ngo <nlminhtl@gmail.com>
 mirdamadi MohamadReza Mirdamadi <mohi@linuxshop.ir>
@@ -1363,6 +1365,7 @@ nilsson Andreas Nilsson <nisses.mail@home.se>
 ningyu Ningyu Shi <shiningyu@gmail.com>
 nixternal Richard Johnson <rjohnson@kde.org>
 nkosjar Nikolai Kosjar <klebezettel@gmx.net>
+nkruber Nico Kruber <nico.kruber@gmail.com>
 nlecureuil Nicolas Lécureuil <neoclust.kde@free.fr>
 nohaj Miroslav Nohaj <miroslav.nohaj@ixonos.com>
 nreau Nicolas Réau <thelwyn@gmail.com>
@@ -1430,6 +1433,7 @@ pecoult Romain Pecoult <pecoultrom@aol.com>
 pedretti Fabio Pedretti <fabio.ped@libero.it>
 pedrosc Pedro Suárez Casal <gauleng@gmail.com>
 pegon Marc Pegon <pe.marc@free.fr>
+pejakovic Mladen Pejaković <pejakm@gmail.com>
 pelcak Vit Pelcak <vit@pelcak.org>
 penna Marcelo Penna Guerra <eu@marcelopenna.org>
 pere Petter Reinholdtsen <pere@hungry.com>
@@ -1633,6 +1637,7 @@ sabiq Reşat Sabiq <tilde.birlik@gmail.com>
 sacha Sacha Schutz <istdasklar@gmail.com>
 sagivba Sagiv Barhoom <sagivba@012.net.il>
 sahacharta Sahachart Anukulkitch <drrider@gmail.com>
+sahilnagpal Sahil Nagpal <nagpal.sahil01@gmail.com>
 sairan Sairan Kikkarin <sairan@computer.org>
 samelian Serghei Amelian <serghei.amelian@gmail.com>
 samuels Samuel Scharrer <smls75@gmail.com>
@@ -1688,6 +1693,7 @@ sedwards Simon Edwards <simon@simonzone.com>
 seele Celeste Lyn Paul <celeste@kde.org>
 segato Carlo Segato <brandon.ml@gmail.com>
 segfault Christian Nitschkowski <segfault_ii@web.de>
+seggers Stefan Eggers <coloncolonone@gmail.com>
 seidel Eric Seidel <eric@eseidel.com>
 sellaro Alisson Sellaro <sellaro@sellaro.eti.br>
 sengels Patrick Spendrin <ps_ml@gmx.de>
@@ -2209,6 +2215,7 @@ ceallaig Sean O Ceallaigh <s_oceallaigh@yahoo.com>
 celer David S. Tyree <celer@shell.scrypt.net>
 cfmoro Carlos Moro <cfmoro@correo.uniovi.es>
 chant Andrew Chant <achant@sympatico.ca>
+charbonnier Patrick Charbonnier <pch@freeshell.org>
 chavarria Agustin Francisco Chavarria <decks@opensuse.org.ni>
 chcouder Christian Couder <chcouder@club-internet.fr>
 chill Charles E. Hill <chill@arteknewmedia.com>
@@ -2489,6 +2496,7 @@ ivor Ivor Hewitt <ivor@ivor.org>
 jacobi Jonas Jacobi <jonas.jacobi@web.de>
 jacolin Robert Jacolin <rjacolin@ifrance.com>
 jahrens Jörn Ahrens <joern.ahrens@kdemail.net>
+janardhan Janardhan Reddy <annapareddyjanardhanreddy@gmail.com>
 janmai Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>
 janpascal Jan-Pascal van Best <janpascal@vanbest.org>
 jansen Geert Jansen <jansen@kde.org>
@@ -3073,6 +3081,7 @@ thufir Sam Maloney <thufir@illogic.ml.org>
 thummel Timo A. Hummel <timo@timohummel.com>
 tihomir Tihomir Coha <tihomir.coha@zg.t-com.hr>
 till Till Krech <till@snafu.de>
+tim Tim Jansen <tim@tjansen.de>
 timoshiu Timothy Shiu <timoshiu@yahoo.com>
 tjansen Tim Jansen <tim@tjansen.de>
 tjmather T.J. Mather <tjmather@tjmather.com>

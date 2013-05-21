@@ -25,12 +25,6 @@ match /trunk/playground/network/kopete/plugins/pipes/
     max revision 947592
 end match
 
-# ignore removing sharemydesktop plugin
-match /trunk/playground/network/kopete/plugins/sharemydesktop/
-    min revision 1041908
-    max revision 1042303
-end match
-
 # ignore removing statistics plugin
 match /trunk/playground/network/kopete/plugins/statistics/
     min revision 732074
@@ -73,6 +67,18 @@ match /tags/KDE/3.93/kdenetwork/doc/kopete/
     max revision 706317
 end match
 
+# ignore bad revision in tag v4.8.1
+match /tags/KDE/4.8.1/kdenetwork/kopete/
+    min revision 1287585
+    max revision 1287585
+end match
+
+# ignore bad revision in tag v4.8.3
+match /tags/KDE/4.8.3/kdenetwork/kopete/
+    min revision 1297690
+    max revision 1297690
+end match
+
 # ignore bad tag 0.12beta2
 match /tags/kopete/0.12beta2/kopete/
     min revision 519044
@@ -103,13 +109,21 @@ match /branches/work/kopete-contactlist-model/
     max revision 612902
 end match
 
+# ignore removing user documentation from branch 0.12
+match /branches/kopete/0.12/doc/kopete/
+    min revision 573904
+    max revision 573904
+end match
+
+# ignore removing telepathy protocol
+match /trunk/playground/network/kopete/protocols/telepathy/
+    min revision 1184191
+    max revision 1184191
+end match
+
 # END
 
 # BEGIN recurse
-
-match /trunk/$
-    action recurse
-end match
 
 match /trunk/kdenetwork/$
     action recurse
@@ -164,14 +178,6 @@ match /(branches|tags)/$
     action recurse
 end match
 
-match /trunk/kdereview/$
-    action recurse
-end match
-
-match /trunk/playground/$
-    action recurse
-end match
-
 match /trunk/playground/[^/]/$
     action recurse
 end match
@@ -181,10 +187,6 @@ match /trunk/kdeplayground-[^/]/$
 end match
 
 match /branches/work/kde4/$
-    action recurse
-end match
-
-match /branches/work/kde4/kdenetwork/$
     action recurse
 end match
 
@@ -216,8 +218,14 @@ match /(branches|tags)/KDE/[^/]+/kdenetwork/doc/$
     action recurse
 end match
 
+# do not recurse on revision 594559
 match /tags/kopete/[^/]+/$
     action recurse
+    max revision 594558
+end match
+match /tags/kopete/[^/]+/$
+    action recurse
+    min revision 594560
 end match
 
 match /tags/kopete/[^/]+/doc/$
@@ -432,7 +440,7 @@ match /trunk/kdenetwork/doc/kopete/
     branch master
     prefix doc-user/
     min revision 247416
-    max revision 392877
+    max revision 409202
 end match
 
 match /trunk/KDE/kdenetwork/doc/kopete/
@@ -471,10 +479,8 @@ end match
 
 # BEGIN tags in /tags/kopete/
 
+# ignore tag soc-oscarfiletransfer-submission
 match /tags/kopete/soc-oscarfiletransfer-submission/
-    repository ${REPO}
-    branch refs/tags/soc-oscarfiletransfer-submission
-    annotated true
 end match
 
 # NOTE: tag 0.12.3 is not in kopete folder
@@ -522,14 +528,14 @@ end match
 
 match /trunk/KDE/kdeaddons/kopete-plugins/cryptography/
     repository ${REPO}
-    branch kopete-cryptography
+    branch plugin-cryptography
     prefix plugins/cryptography/
     max revision 712548
 end match
 
 match /trunk/extragear/network/kopete-plugins/cryptography/
     repository ${REPO}
-    branch kopete-cryptography
+    branch plugin-cryptography
     prefix plugins/cryptography/
     min revision 712643
     max revision 730080
@@ -542,14 +548,14 @@ end match
 
 match /trunk/extragear/network/kopete-cryptography/
     repository ${REPO}
-    branch kopete-cryptography
+    branch plugin-cryptography
     prefix plugins/cryptography/
     min revision 712564
 end match
 
 match /trunk/extragear/network/doc/kopete-cryptography/
     repository ${REPO}
-    branch kopete-cryptography-doc
+    branch plugin-cryptography-doc
     prefix plugins/cryptography/doc/
     min revision 730320
 end match
@@ -570,48 +576,13 @@ match /trunk/extragear/network/kopete-plugins/doc/cryptography/
     max revision 730080
 end match
 
-match /tags/stable/extragear/network/kopete-cryptography/
-    repository ${REPO}
-    branch refs/tags/kopete-cryptography-stable-tag
-    prefix plugins/cryptography/
-    annotated true
-end match
-
-match /tags/stable/extragear/network/doc/$
-    action recurse
-end match
-
-# ignore duplicating doc directory
-match /tags/stable/extragear/network/doc/kopete-cryptography/
-    min revision 734824
-    max revision 734824
-end match
-
-match /tags/stable/extragear/network/doc/kopete-cryptography/
-    repository ${REPO}
-    branch refs/tags/kopete-cryptography-stable-doc
-    prefix plugins/cryptography/doc/
-    annotated true
-end match
-
-# END
-
-# BEGIN scripting plugin
-
-match /trunk/extragear/network/kopete-scripting/
-    repository ${REPO}
-    branch kopete-scripting
-    prefix plugins/scripting/
-    min revision 733205
-end match
-
 # END
 
 # BEGIN skype protocol
 
 match /trunk/playground/network/kopete/protocols/skype/
     repository ${REPO}
-    branch kopete_skype-old
+    branch protocol-skype-kde3-old
     prefix protocols/skype/
     min revision 411539
     max revision 435857
@@ -631,7 +602,7 @@ end match
 
 match /trunk/kdereview/kopete_skype/
     repository ${REPO}
-    branch kopete_skype
+    branch protocol-skype-kde3
     prefix protocols/skype/
     min revision 436979
     max revision 460646
@@ -639,7 +610,7 @@ end match
 
 match /trunk/extragear/addons/kopete_skype/
     repository ${REPO}
-    branch kopete_skype
+    branch protocol-skype-kde3
     prefix protocols/skype/
     min revision 460646
     max revision 641687
@@ -647,7 +618,7 @@ end match
 
 match /branches/extragear/kde3/addons/kopete_skype/
     repository ${REPO}
-    branch kopete_skype
+    branch protocol-skype-kde3
     prefix protocols/skype/
     min revision 679518
 end match
@@ -658,73 +629,9 @@ end match
 
 match /branches/stable/extragear/addons/kopete_skype/
     repository ${REPO}
-    branch kopete_skype-stable
+    branch protocol-skype-kde3-stable
     prefix protocols/skype/
     min revision 466335
-end match
-
-# ignore cleaning tree in tag kopete_skype-stable
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 461138
-    max revision 461138
-end match
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 461139
-    max revision 461139
-end match
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 464293
-    max revision 464293
-end match
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 465760
-    max revision 465760
-end match
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 466330
-    max revision 466330
-end match
-match /tags/stable/extragear/addons/kopete_skype/
-    min revision 474567
-    max revision 474567
-end match
-
-match /tags/stable/extragear/addons/kopete_skype/
-    repository ${REPO}
-    branch refs/tags/kopete_skype-stable-tag
-    prefix protocols/skype/
-    annotated true
-end match
-
-# END
-
-# BEGIN playground thinklight plugin
-
-match /trunk/playground/network/kopete/plugins/thinklight-kde4/
-    repository ${REPO}
-    branch plugin-thinklight
-    prefix plugins/thinklight/
-    min revision 885654
-    max revision 1058713
-end match
-
-# ignore empty commit
-match /trunk/playground/network/kopete/plugins/thinklight-kde4/
-    min revision 1058714
-    max revision 1058714
-end match
-
-# ignore empty commit
-match /trunk/playground/network/kopete/plugins/thinklight/
-    min revision 1058714
-    max revision 1058714
-end match
-
-match /trunk/playground/network/kopete/plugins/thinklight/
-    repository ${REPO}
-    branch plugin-thinklight
-    prefix plugins/thinklight/
-    min revision 1081873
 end match
 
 # END
@@ -739,25 +646,6 @@ end match
 
 # END
 
-# BEGIN playground pimpresence plugin
-
-match /trunk/kdeplayground-network/kopete/plugins/pimpresence/
-    repository ${REPO}
-    branch plugin-pimpresence
-    prefix plugins/pimpresence/
-    min revision 407746
-    max revision 407746
-end match
-
-match /trunk/playground/network/kopete/plugins/pimpresence/
-    repository ${REPO}
-    branch plugin-pimpresence
-    prefix plugins/pimpresence/
-    min revision 413587
-end match
-
-# END
-
 # BEGIN playground motionautoaway plugin
 
 match /trunk/playground/network/kopete/plugins/motionautoaway/
@@ -768,12 +656,13 @@ end match
 
 # END
 
-# BEGIN playground sharemydesktop plugin
+# BEGIN playground javascript plugin
 
-match /trunk/playground/network/kopete/plugins/sharemydesktop/
+match /trunk/kdenonbeta/kopete-plugins/javascript/
     repository ${REPO}
-    branch plugin-sharemydesktop
-    prefix plugins/sharemydesktop/
+    branch plugin-javascript
+    prefix plugins/javascript/
+    max revision 567932
 end match
 
 # END
@@ -939,10 +828,6 @@ match /branches/work/$
     action recurse
     min revision 582502
     max revision 582582
-end match
-
-match /branches/work/kopete-contactlist-model/$
-    action recurse
 end match
 
 match /branches/work/kopete-contactlist-model/kopete/
@@ -1226,7 +1111,7 @@ end match
 
 # ignore some plugins so they aren't matched
 # by the overly-general rules below
-match /trunk/playground/network/kopete/plugins/(whiteboard|javascript)/
+match /trunk/playground/network/kopete/plugins/(whiteboard|sharemydesktop|javascript|thinklight|thinklight-kde4|pimpresence)/
 end match
 
 # ignore playground cmake modules
@@ -1314,6 +1199,22 @@ end match
 # END
 
 # BEGIN KDE tags and KDE branches
+
+match /tags/KDE_3_4_0_BETA_1/kdenetwork/kopete/
+    repository ${REPO}
+    branch refs/tags/v3.3.91
+    annotated true
+    min revision 376088
+    max revision 376088
+end match
+
+match /tags/KDE_3_4_0_BETA_2/kdenetwork/kopete/
+    repository ${REPO}
+    branch refs/tags/v3.3.92
+    annotated true
+    min revision 386487
+    max revision 386487
+end match
 
 include ../common-kde-branches-rules
 include ../common-kde-tags-rules

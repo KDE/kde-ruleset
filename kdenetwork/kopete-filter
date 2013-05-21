@@ -11,6 +11,20 @@ source "$bindir/filter-goodies"
 # Remove git filter-branch backups
 delete_fb_backups
 
+# Fix branch KDE/3.4
+# svn-all-fast-export does not export svn revision 393399 created by cvs2svn correctly
+# each revision in KDE/3.4 branch after after 393322 should contains patch created for v3.4.0
+if ! git branch -a --contains v3.4.0 | grep -q KDE/3.4; then
+    HASH1=`git log --format="format:%H" -1 --all --grep="^svn path=.*; revision=393322\$"`
+    HASH2=`git rev-list -1 v3.4.0`
+    git diff v3.4.0^..v3.4.0 > patch
+    git filter-branch -d "$(calc_tempdir kopete-filter)" --tag-name-filter cat --tree-filter "
+        if [ \"$HASH2\" != \"\$GIT_COMMIT\" ]; then patch -s -p1 -i \"$PWD/patch\"; fi
+    " -- $HASH1..KDE/3.4 $HASH1..v3.4.0
+    rm -f patch
+    delete_fb_backups
+fi
+
 # Filter commits with empty diff
 # Filter commits which removing all files (tree hash is: git hash-object -t tree /dev/null --> 4b825dc642cb6eb9a060e54bf8d69288fbee4904)
 # Remove all files with .orig and .rej suffix
@@ -20,6 +34,9 @@ delete_fb_backups
 # Fix author and commiter of "nobody@localhost" cvs2svn commits
 git filter-branch -d "$(calc_tempdir kopete-filter)" --tag-name-filter cat \
 --tree-filter '
+if [ -f protocols/jabber/libiris/iris_patch_070301.diff ]; then
+    dos2unix -q -f protocols/jabber/libiris/iris_patch_070301.diff
+fi
 find -type f -exec dos2unix -q "{}" "+"
 find "(" -name "*.orig" -o -name "*.rej" ")" -delete
 rev=$(git log --format="format:%B" $GIT_COMMIT -1 | sed -n "s/^svn path=\/trunk\/KDE\/kdenetwork\/kopete\/; revision=//p")
@@ -38,6 +55,18 @@ if [ "$GIT_COMMITTER_EMAIL" = "nobody@localhost" ]; then
     export GIT_AUTHOR_EMAIL=cvs2svn@kde.org
     export GIT_COMMITTER_NAME="KDE Sysadmin"
     export GIT_AUTHOR_NAME="KDE Sysadmin"
+elif [ "$GIT_COMMITTER_EMAIL" = "ccheney@cheney.cx" ]; then
+    export GIT_COMMITTER_EMAIL=ccheney@debian.org
+    export GIT_AUTHOR_EMAIL=ccheney@debian.org
+elif [ "$GIT_COMMITTER_EMAIL" = "djurban@pld-dc.org" ]; then
+    export GIT_COMMITTER_EMAIL=djurban@linuxpl.org
+    export GIT_AUTHOR_EMAIL=djurban@linuxpl.org
+elif [ "$GIT_COMMITTER_EMAIL" = "eu@marcelopenna.org" ]; then
+    export GIT_COMMITTER_EMAIL=marcelopg@gmail.com
+    export GIT_AUTHOR_EMAIL=marcelopg@gmail.com
+elif [ "$GIT_COMMITTER_EMAIL" = "lvillani@binaryhelix.net" ]; then
+    export GIT_COMMITTER_EMAIL=lorenzo@villani.me
+    export GIT_AUTHOR_EMAIL=lorenzo@villani.me
 fi
 ' --msg-filter '
 rev=$(git log --format="format:%B" $GIT_COMMIT -1 | sed -n "s/^svn path=.*; revision=//p")
@@ -63,7 +92,7 @@ git branch -d goodbye_aimbuddy
 git branch -d groupwise_in_anger
 git branch -d iris-port
 git branch -d jabber-pooling-rewrite
-git branch -d kopete_skype-old
+git branch -d protocol-skype-kde3-old
 git branch -d lilac-accounts
 git branch -d lilac-contact-list
 git branch -d master-cmake-modules
@@ -76,6 +105,10 @@ git branch -d work/resourceful35
 git branch -d work/soc-kopete-jingle
 git branch -d work/yahoo_rewrite
 git branch -D work/kconfig_new_take3
+
+# Remove unmerged branches which have useless commits
+git branch -D plugin-motionautoaway
+git branch -D plugin-javascript
 
 # Remove already merged backups branches to master
 git tag -d backups/kdereview/plugins/otr
@@ -136,6 +169,53 @@ rename_ref refs/tags/backups/work/dev-4.2@999944 refs/heads/work/dev-4.2
 rename_ref refs/tags/backups/work/jingle-video@976057 refs/heads/work/jingle-video
 rename_ref refs/tags/backups/work/kopete-is-telepathic@1073388 refs/heads/work/kopete-is-telepathic
 rename_ref refs/tags/backups/work/soc-kopete-chatwindow@1004763 refs/heads/work/soc-kopete-chatwindow
+
+# Create missing tags
+
+create_svn_tag() {
+	HASH=`git log --format="format:%H" -1 --all --grep="^svn path=.*; revision=$1\$"`
+	NAME=`git log --format="format:%cn" -1 "$HASH"`
+	EMAIL=`git log --format="format:%ce" -1 "$HASH"`
+	DATE=`git log --format="format:%cD" -1 "$HASH"`
+	git log --format="format:%B" -1 "$HASH" | GIT_COMMITTER_NAME="$NAME" GIT_COMMITTER_EMAIL="$EMAIL" GIT_COMMITTER_DATE="$DATE" git tag -a -F - "$2" "$HASH"
+}
+
+create_svn_tag 129465 0.1
+create_svn_tag 140733 0.2
+create_svn_tag 147317 0.3
+create_svn_tag 158965 0.4
+create_svn_tag 161319 0.4.1
+create_svn_tag 181399 0.5
+# missing branch 0.6 with tags: 0.6  0.6.1a  0.6.2
+create_svn_tag 240897 0.7
+# missing branch 0.7 with tags: 0.7.1  0.7.2  0.7.3  0.7.4  0.7.5
+create_svn_tag 263132 0.8-beta1
+create_svn_tag 277577 0.8-beta2
+create_svn_tag 280563 0.8-rc1
+create_svn_tag 280759 0.8.0
+create_svn_tag 292171 0.8.1
+create_svn_tag 301181 0.8.2
+create_svn_tag 316088 0.8.3
+create_svn_tag 327630 0.8.4
+create_svn_tag 335914 0.9.0
+create_svn_tag 351398 0.9.1
+create_svn_tag 366880 0.9.2
+create_svn_tag 416064 0.9.3
+create_svn_tag 368893 0.10-alpha1
+create_svn_tag 375197 0.10-beta1
+create_svn_tag 385564 0.10-beta2
+create_svn_tag 392385 0.10.0
+create_svn_tag 411884 0.10.1
+create_svn_tag 416917 0.10.2
+create_svn_tag 429402 0.10.3
+create_svn_tag 467499 0.10.4
+create_svn_tag 442546 0.11-alpha1
+create_svn_tag 459165 0.11-beta1
+create_svn_tag 467707 0.11-beta2
+create_svn_tag 478926 0.11.0
+create_svn_tag 500246 0.11.1
+create_svn_tag 519808 0.11.2
+create_svn_tag 543997 0.11.3
 
 # Fix tags
 "$bindir/fix-tags" .

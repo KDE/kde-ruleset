@@ -1,5 +1,8 @@
 ### Created by: Pali Rohár <pali.rohar@gmail.com> ###
 
+# merge branch KDE/3.2 to master
+280592 280648
+
 # recreate tag v3.2.0
 clear 282533@/tags/KDE_3_2_0_RELEASE/kdenetwork/kopete/
 282501 282533@/tags/KDE_3_2_0_RELEASE/kdenetwork/kopete/
@@ -63,8 +66,8 @@ clear 367579@/tags/KDE_3_3_2_RELEASE/kdenetwork/kopete/
 366880 367579@/tags/KDE_3_3_2_RELEASE/kdenetwork/kopete/
 
 # recreate branch KDE/3.4
-clear 393399@/branches/KDE_3_4_BRANCH/kdenetwork/kopete/
-393322 393399@/branches/KDE_3_4_BRANCH/kdenetwork/kopete/
+clear 394574
+393322 394574
 
 # recreate tag v3.4.0
 clear 394907@/tags/KDE_3_4_0_RELEASE/kdenetwork/kopete/
@@ -117,11 +120,19 @@ clear 416709
 # merge branch KDE/3.5 to work/dev-0.12
 467722 467724
 
+# recreate tag v3.4.92
+clear 469924
+469922 469924
+
 # merge branch KDE/3.5 to work/dev-0.12
 471262 471263
 
 # merge branch KDE/3.5 to work/dev-0.12
 480399 480626
+
+# recreate tag v3.5.0
+clear 481512
+481230 481512
 
 # merge branch KDE/3.5 to work/dev-0.12
 484724 484824
@@ -139,9 +150,17 @@ clear 498089
 498003 498089
 498009 498089
 
+# recreate tag 0.12-alpha1
+clear 506885
+506884 506885
+
 # recreate tag 0.12-beta1
 clear 516669
 516667 516669
+
+# recreate tag 0.12.0
+clear 547412
+547081 547412
 
 # merge branch work/kopete-irc_rewrite to master
 479765 554383
@@ -219,9 +238,21 @@ clear 711822
 # merge work/kde4_jobflags to master
 721435 721447
 
+# recreate tag v3.5.8
+clear 722999
+722996 722999
+
 # move motionautoaway plugin from master to playground
 clear 732092@/trunk/playground/network/kopete/plugins/motionautoaway/
 732090 732092@/trunk/playground/network/kopete/plugins/motionautoaway/
+
+# recreate tag v3.96.0
+clear 736676
+736595 736676
+
+# recreate tag v3.5.9
+clear 774709
+774692 774709
 
 # merge master to work/break-the-contactlist
 823979 824538
@@ -260,6 +291,10 @@ clear 867639
 # copy skype protocol from kde3 extragear to playground
 641687 872548
 
+# recreate tag v4.1.0
+clear 837498
+837118 837498
+
 # merge work/soc-kopete-jingle to master
 873655 873707@/trunk/KDE/kdenetwork/kopete/
 
@@ -287,3 +322,15 @@ clear 916634
 
 # merge master to work/dev-4.2
 946354 946517
+
+# recreate tag v4.2.3
+clear 961952
+961951 961952
+
+# recreate tag v4.2.4
+clear 975996
+974235 975996
+
+# recreate tag v4.3.3
+clear 1044009
+1042883 1044009

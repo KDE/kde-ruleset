@@ -1,0 +1,18 @@
+create repository kopete-pimpresence
+end repository
+
+match /trunk/kdeplayground-network/kopete/plugins/pimpresence/
+    repository kopete-pimpresence
+    branch master
+    min revision 407746
+    max revision 407746
+end match
+
+match /trunk/playground/network/kopete/plugins/pimpresence/
+    repository kopete-pimpresence
+    branch master
+    min revision 413587
+end match
+
+match /
+end match

@@ -20,6 +20,13 @@ declare MODULE=kdenetwork/strigi-analyzer
 declare NAMES=strigi-analyzer
 include common-kdenetwork-rules
 include ../feature-branches
+include kde4-branch
+
+# ignore deletion of kfile-plugins after it was moved/copied to strigi-analyzer
+match /trunk/KDE/kdenetwork/kfile-plugins
+  min revision 946657
+  action ignore
+end match 
 
 declare MODULE=kdenetwork/kfile-plugins
 declare NAMES=kfile-plugins
