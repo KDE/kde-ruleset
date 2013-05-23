@@ -19,6 +19,12 @@ declare REPO=kget
 declare MODULE_RECURSE=(kdenetwork/)?
 declare MODULE=kdenetwork/kget
 declare NAMES=kget
+
+match /branches/work/make_kget_cool/kget/
+  repository ${REPO}
+  branch make_kget_cool
+end match
+
 include common-kdenetwork-rules
 include ../feature-branches
 
