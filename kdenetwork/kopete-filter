@@ -190,7 +190,7 @@ create_svn_tag 181399 0.5
 create_svn_tag 240897 0.7
 # missing branch 0.7 with tags: 0.7.1  0.7.2  0.7.3  0.7.4  0.7.5
 create_svn_tag 263132 0.8-beta1
-create_svn_tag 277577 0.8-beta2
+create_svn_tag 277758 0.8-beta2
 create_svn_tag 280563 0.8-rc1
 create_svn_tag 280759 0.8.0
 create_svn_tag 292171 0.8.1
