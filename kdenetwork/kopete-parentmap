@@ -326,6 +326,9 @@ clear 916634
 # merge master to work/dev-4.2
 946354 946517
 
+# merge work/dev-4.2 to master
+946517 946606
+
 # recreate tag v4.2.3
 clear 961952
 961951 961952

@@ -99,6 +99,7 @@ git branch -d master-cmake-modules
 git branch -d work/better-oscar-error-handling
 git branch -d work/bleedingedge
 git branch -d work/dev-0.12
+git branch -d work/dev-4.2
 git branch -d work/kinstance-redesign
 git branch -d work/kopete-irc_rewrite
 git branch -d work/resourceful35
