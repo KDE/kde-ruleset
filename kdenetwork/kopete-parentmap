@@ -154,6 +154,9 @@ clear 498089
 clear 506885
 506884 506885
 
+# merge branch 0.12 to master
+523660 523932
+
 # recreate tag 0.12-beta1
 clear 516669
 516667 516669
@@ -194,6 +197,9 @@ clear 547412
 
 # merge branch work/kmainwindow-decoupling-branch to master
 654700 654728
+
+# merge master to work/identity_refactory
+688640 688776
 
 # merge branch work/kparts_urlargs_split to master
 698703 699514
@@ -295,6 +301,9 @@ clear 867639
 clear 837498
 837118 837498
 
+# merge master to work/work/soc-kopete-jingle
+871882 872153
+
 # merge work/soc-kopete-jingle to master
 873655 873707@/trunk/KDE/kdenetwork/kopete/
 
@@ -319,6 +328,9 @@ clear 837498
 # merge master to work/jingle-video
 clear 916634
 916552 916634
+
+# merge master to work/kopete-tpqt4
+917794 917988
 
 # merge master to work/jingle-video
 926126 926266
