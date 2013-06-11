@@ -1,0 +1,35 @@
+create repository artwork
+end repository
+
+match /trunk/kdeartwork/
+    repository artwork
+    branch master
+end match
+match /trunk/KDE/kdeartwork/
+    repository artwork
+    branch master
+end match
+
+match /trunk/kdebase/kcontrol/thememgr/Themes/Eclipse/
+    repository artwork
+    branch refs/other/eclipse-theme-94583
+    prefix Themes/Eclipse/
+    max revision 94582
+end match
+
+match /trunk/kdelibs/kstyles/(b3plugin|ksgistyle|kstep-highcolor|pillbox|pillbox-highcolor)/
+    repository artwork
+    branch refs/other/kstyles-101103
+    prefix styles/\1/
+    max revision 101102
+end match
+
+match /trunk/kdebase/kwin/clients/glow/
+    repository artwork
+    branch refs/other/kwin-glow-114608
+    prefix kwin-styles/glow/
+    max revision 114607
+end match
+
+match /
+end match
