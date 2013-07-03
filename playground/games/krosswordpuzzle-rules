@@ -1,0 +1,18 @@
+#
+# Created by Jeremy Whiting <jpwhiting@kde.org>
+#
+
+# Create the krosswordpuzzle repository
+create repository krosswordpuzzle
+end repository
+
+# Kannasaver from playground
+match /trunk/playground/games/krosswordpuzzle/
+  repository krosswordpuzzle
+  branch master
+end match
+
+# Ignore the rest
+match /
+end match
+
