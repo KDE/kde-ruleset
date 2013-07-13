@@ -1,0 +1,87 @@
+create repository qca
+end repository
+
+match /trunk/kdesupport/qca/
+  repository qca
+  branch master
+end match
+
+match /branches/kdesupport/3.5/kdesupport/$
+  action recurse
+end match
+
+match /branches/kdesupport/3.5/kdesupport/qca/
+  repository qca
+  branch kde3.5
+end match
+
+match /tags/qca/2.0.0/
+  repository qca
+  annotated true
+  branch refs/tags/v2.0.0
+end match
+
+match /tags/qca/2.0.1/
+  repository qca
+  annotated true
+  branch refs/tags/v2.0.1
+end match
+
+match /tags/qca/2.0.2/
+  repository qca
+  annotated true
+  branch refs/tags/v2.0.2
+end match
+
+match /tags/qca/2.0.3/
+  repository qca
+  annotated true
+  branch refs/tags/v2.0.3
+end match
+
+match /tags/qca_1_0/kdesupport/qca/
+  repository qca
+  annotated true
+  branch refs/tags/v1.0
+end match
+
+# will be mapped to v2.0.1 with qca-parentmap
+match /tags/kdesupport-for-4.1/kdesupport/qca/
+  repository qca
+  annotated true
+  branch refs/tags/kde4.1
+end match
+
+# will be mapped to v2.0.1 with qca-parentmap
+match /tags/kdesupport-for-4.2/kdesupport/qca/
+  repository qca
+  annotated true
+  branch refs/tags/kde4.2
+end match
+
+match /tags/kdesupport-for-4.3/kdesupport/$
+  action recurse
+end match
+
+match /tags/kdesupport-for-4.3/kdesupport/qca/
+  repository qca
+  annotated true
+  branch refs/tags/kde4.3
+end match
+
+match /tags/kdesupport-for-4.4/qca/
+  repository qca
+  annotated true
+  branch refs/tags/kde4.4
+end match
+
+match /tags/kdesupport-for-4.5/qca/
+  repository qca
+  annotated true
+  branch refs/tags/kde4.5
+end match
+
+
+# Ignore everything else
+match /
+end match
