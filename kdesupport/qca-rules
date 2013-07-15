@@ -39,6 +39,10 @@ match /tags/qca/2.0.3/
   branch refs/tags/v2.0.3
 end match
 
+match /tags/qca_1_0/kdesupport/$
+  action recurse
+end match
+
 match /tags/qca_1_0/kdesupport/qca/
   repository qca
   annotated true
