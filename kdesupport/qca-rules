@@ -39,7 +39,15 @@ match /tags/qca/2.0.3/
   branch refs/tags/v2.0.3
 end match
 
+match /tags/qca_1_0/$
+  min revision 274086
+  max revision 274086
+  action recurse
+end match
+
 match /tags/qca_1_0/kdesupport/$
+  min revision 274086
+  max revision 274086
   action recurse
 end match
 
