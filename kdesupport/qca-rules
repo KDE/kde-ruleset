@@ -40,14 +40,14 @@ match /tags/qca/2.0.3/
 end match
 
 match /tags/qca_1_0/$
-  min revision 274086
-  max revision 274086
+  min revision 274087
+  max revision 274087
   action recurse
 end match
 
 match /tags/qca_1_0/kdesupport/$
-  min revision 274086
-  max revision 274086
+  min revision 274087
+  max revision 274087
   action recurse
 end match
 
