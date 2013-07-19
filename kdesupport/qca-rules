@@ -57,14 +57,18 @@ match /tags/qca_1_0/kdesupport/qca/
   branch refs/tags/v1.0
 end match
 
-# will be mapped to v2.0.1 with qca-parentmap
+match /tags/kdesupport-for-4.1/qca/
+  repository qca
+  annotated true
+  branch refs/tags/kde4.1
+end match
+
 match /tags/kdesupport-for-4.1/kdesupport/qca/
   repository qca
   annotated true
   branch refs/tags/kde4.1
 end match
 
-# will be mapped to v2.0.1 with qca-parentmap
 match /tags/kdesupport-for-4.2/kdesupport/qca/
   repository qca
   annotated true
