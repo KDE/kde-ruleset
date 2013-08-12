@@ -1,0 +1,20 @@
+create repository edu-www
+end repository
+
+match /trunk/www/areas/edu/
+    repository edu-www
+    branch master
+end match
+
+match /trunk/www/sites/edu/
+    repository edu-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/edu/
+    repository edu-www
+    branch devel
+end match
+
+match /
+end match
