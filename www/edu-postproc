@@ -1,0 +1,31 @@
+#!/bin/bash
+set -e
+export bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
+
+massmv() {
+    git filter-branch --index-filter 'git ls-files -s | sed "s!\t'$1'!\t'$2'!" | GIT_INDEX_FILE=$GIT_INDEX_FILE.new git update-index --index-info && mv "$GIT_INDEX_FILE.new" "$GIT_INDEX_FILE"' -- "${@:3}"
+}
+
+# Wildcards in 'git rm' follow subdirectory boundaries.
+# This means 'git rm foo/*.tar.gz' will delete 'foo/bar/baz/quuz.tar.gz'.
+# We want to delete tarballs in khangman/, and it's fine to go in subdirectories
+# except for one: we want to keep khangman/add_language/khangman-data.tar.gz.
+#
+# As a workaround, I'm renaming the file to a backup name,
+# running the mass-deletion, and moving it back.
+# I can't think of another way, except writing a custom tool
+# in python+dulwich instead of using filter-branch.
+# I may actually look into that approach later.
+
+massmv khangman/add_language/khangman-data.tar.gz khangman-data.tar.gz.BACKUP --all ^$(echo 757700 | $RULESETDIR/bin/translateRevlist.py)
+$RULESETDIR/bin/remove-fb-backup-refs.sh
+time $RULESETDIR/bin/deleter-fb \
+    {kstars,klettres}/downloads/*.tar.{gz,bz2} \
+    marble/downloads/**.{zip,exe,deb} \
+    marble/newstuff/**.tar.{gz,bz2} \
+    khangman/*.tar.{gz,bz2}
+
+$RULESETDIR/bin/remove-fb-backup-refs.sh
+massmv khangman-data.tar.gz.BACKUP khangman/add_language/khangman-data.tar.gz --all ^$(echo 757700 | $RULESETDIR/bin/translateRevlist.py)
+$RULESETDIR/bin/remove-fb-backup-refs.sh
+git gc --prune=now
