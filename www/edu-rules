@@ -1,14 +1,6 @@
 create repository edu-www
 end repository
 
-# This is mainly for performance reasons, since we'll filter-branch the files out anyway.
-match /trunk/www/(sites|areas)/edu/(new/)?(kstars|klettres)/downloads/[^/]+\.(bz2|gz)$
-end match
-match /trunk/www/sites/edu/marble/newstuff/maps/[^/]+\.(tar\.gz|zip)$
-end match
-match /trunk/www/sites/edu/marble/downloads/.+\.(exe|zip|deb)$
-end match
-
 match /trunk/www/sites/edu/old/
 end match
 
