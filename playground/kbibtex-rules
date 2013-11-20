@@ -85,6 +85,12 @@ match /tags/0.4-beta2/
   annotated true
 end match
 
+match /tags/0.4-rc1/
+end match
+
+match /tags/0.4-rc2/
+end match
+
 match /tags/0.4.1/
   repository kbibtex
   branch refs/tags/v0.4.1
