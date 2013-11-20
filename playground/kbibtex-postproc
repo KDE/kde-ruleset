@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Fix EOLs in kbibtex repository.
+
+LANG=C git filter-branch --tree-filter 'find -name "*.bib" -o -name "*.isi" -print0 | xargs -0 dos2unix' --tag-name-filter cat -- --all
