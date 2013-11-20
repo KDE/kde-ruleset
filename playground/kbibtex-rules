@@ -1,0 +1,123 @@
+# migration rules of KBibTeX SVN
+# location: svn://svn.gna.org/svn/kbibtex
+
+# application repository
+create repository kbibtex
+end repository
+
+# repository for the website
+create repository kbibtex-www
+end repository
+
+# rules for kbibtex branches
+match /trunk/
+  repository kbibtex
+  branch master
+end match
+
+match /branches/0.3/
+  repository kbibtex
+  branch kbibtex/0.3
+  max revision 664
+  min revision 536
+end match
+
+match /branches/0.4/
+  repository kbibtex
+  branch kbibtex/0.4
+  max revision 1605
+  min revision 839 
+end match
+
+match /branches/0.5/
+  repository kbibtex
+  branch kbibtex/0.5
+  max revision 1800
+  min revision 1370
+end match
+
+# rules for kbibtex website
+match /website/
+  repository kbibtex-www
+  branch master
+end match
+
+# generate tags
+match /tags/0.3/
+  repository kbibtex
+  branch refs/tags/v0.3
+  annotated true
+end match
+
+match /tags/0.3-beta1/
+  repository kbibtex
+  branch refs/tags/v0.3-beta1
+  annotated true
+end match
+
+match /tags/0.3-beta2/
+  repository kbibtex
+  branch refs/tags/v0.3-beta2
+  annotated true
+end match
+
+match /tags/0.3-rc1/
+  repository kbibtex
+  branch refs/tags/v0.3-rc1
+  annotated true
+end match
+
+match /tags/0.4/
+  repository kbibtex
+  branch refs/tags/v0.4
+  annotated true
+end match
+
+match /tags/0.4-beta1/
+  repository kbibtex
+  branch refs/tags/v0.4-beta1
+  annotated true
+end match
+
+match /tags/0.4-beta2/
+  repository kbibtex
+  branch refs/tags/v0.4-beta2
+  annotated true
+end match
+
+match /tags/0.4.1/
+  repository kbibtex
+  branch refs/tags/v0.4.1
+  annotated true
+end match
+
+match /tags/0.4.1-rc1/
+  repository kbibtex
+  branch refs/tags/v0.4.1-rc1
+  annotated true
+end match
+
+match /tags/0.4.1-rc2/
+  repository kbibtex
+  branch refs/tags/v0.4.1-rc2
+  annotated true
+end match
+
+match /tags/0.5-beta1/
+  repository kbibtex
+  branch refs/tags/v0.5-beta1
+  annotated true
+end match
+
+match /tags/0.5-beta2/
+  repository kbibtex
+  branch refs/tags/v0.5-beta2
+  annotated true
+end match
+
+match /tags/0.5-rc1/
+  repository kbibtex
+  branch refs/tags/v0.5-rc1
+  annotated true
+end match
+
