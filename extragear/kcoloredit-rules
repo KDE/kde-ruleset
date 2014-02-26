@@ -2,6 +2,8 @@
 create repository kcoloredit
 end repository
 
+declare REPO=kcoloredit
+declare MODULE=kdegraphics/kcoloredit
 # BEGIN history from kdegraphics
 
 match /trunk/(KDE/)?kdegraphics/kcoloredit/
@@ -44,6 +46,8 @@ match /branches/KDE/(\d+)\.(\d+)/kdegraphics/doc/kcoloredit/
 end match
 
 # END
+
+include ../common-kde-tags-rules
 
 # BEGIN extragear history
 
