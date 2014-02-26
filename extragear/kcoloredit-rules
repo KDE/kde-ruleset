@@ -2,19 +2,58 @@
 create repository kcoloredit
 end repository
 
-# Move all src to master repo
+# BEGIN history from kdegraphics
+
+match /trunk/(KDE/)?kdegraphics/kcoloredit/
+  repository kcoloredit
+  branch master
+end match
+
+match /trunk/(KDE/)?kdegraphics/doc/kcoloredit/
+  repository kcoloredit
+  branch master
+  prefix doc/
+end match
+
+# END
+
+# BEGIN version branches
+
+match /(branches|tags)/KDE/[^/]+/kdegraphics/$
+  action recurse
+end match
+
+match /branches/KDE_\d+_\d+_BRANCH/(kdegraphics/)?$
+  action recurse
+end match
+
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegraphics/kcoloredit/
+    repository kcoloredit
+    branch \1.\2
+    max revision 409201
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/kcoloredit/
+    repository kcoloredit
+    branch \1.\2
+end match
+
+# END
+
+# BEGIN extragear history
+
 match /trunk/extragear/graphics/kcoloredit/
   repository kcoloredit
   branch master
 end match
 
-# Move kcoloredit/doc inside folder doc from kcoloreit repo  
 match /trunk/extragear/graphics/doc/kcoloredit/
   repository kcoloredit
   branch master
   prefix doc/
 end match
 
+# END
 # Ignore everything else
 match /
 end match
