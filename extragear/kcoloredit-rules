@@ -37,6 +37,11 @@ match /branches/KDE/(\d+)\.(\d+)/kdegraphics/kcoloredit/
     repository kcoloredit
     branch \1.\2
 end match
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/doc/kcoloredit/
+    repository kcoloredit
+    branch \1.\2
+    prefix doc/
+end match
 
 # END
 
