@@ -4,6 +4,8 @@ end repository
 
 declare REPO=kcoloredit
 declare MODULE=kdegraphics/kcoloredit
+declare MODULE_RECURSE=(kdegraphics/)?
+
 # BEGIN history from kdegraphics
 
 match /trunk/(KDE/)?kdegraphics/kcoloredit/
@@ -49,6 +51,16 @@ end match
 
 include ../common-kde-tags-rules
 
+match /branches/work/kde4/kdegraphics/$
+    action recurse
+end match
+match /branches/work/kde4/kdegraphics/kcoloredit/
+    repository ${REPO}
+    branch kde4
+end match
+
+include ../feature-branches
+
 # BEGIN extragear history
 
 match /trunk/extragear/graphics/kcoloredit/
@@ -63,6 +75,7 @@ match /trunk/extragear/graphics/doc/kcoloredit/
 end match
 
 # END
+
 # Ignore everything else
 match /
 end match
