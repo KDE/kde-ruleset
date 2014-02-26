@@ -66,12 +66,14 @@ include ../feature-branches
 match /trunk/extragear/graphics/kcoloredit/
   repository kcoloredit
   branch master
+  max revision 1377584
 end match
 
 match /trunk/extragear/graphics/doc/kcoloredit/
   repository kcoloredit
   branch master
   prefix doc/
+  max revision 1377584
 end match
 
 # END
