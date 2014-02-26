@@ -1,0 +1,20 @@
+# Create KColorEdit repo
+create repository kcoloredit
+end repository
+
+# Move all src to master repo
+match /trunk/extragear/graphics/kcoloredit/
+  repository kcoloredit
+  branch master
+end match
+
+# Move kcoloredit/doc inside folder doc from kcoloreit repo  
+match /trunk/extragear/graphics/doc/kcoloredit/
+  repository kcoloredit
+  branch master
+  prefix doc/
+end match
+
+# Ignore everything else
+match /
+end match
