@@ -1,0 +1,22 @@
+declare REPO=www-multimedia
+
+create repository ${REPO}
+end repository
+
+match /trunk/www/multimedia/
+    repository ${REPO}
+    branch master
+end match
+
+match /trunk/www/areas/multimedia/
+    repository ${REPO}
+    branch master
+end match
+
+match /trunk/www/sites/multimedia/
+    repository ${REPO}
+    branch master
+end match
+
+match /
+end match
