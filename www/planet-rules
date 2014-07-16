@@ -1,0 +1,15 @@
+create repository planet-kde-org
+end repository
+
+match /trunk/www/sites/planetnew/
+  repository planet-kde-org
+  branch master
+end match
+
+match /trunk/www/sites/planet/
+  repository planet-kde-org
+  branch master
+end match
+
+match /
+end match
