@@ -23,7 +23,16 @@ time $RULESETDIR/bin/deleter-fb \
     {kstars,klettres}/downloads/*.tar.{gz,bz2} \
     marble/downloads/**.{zip,exe,deb} \
     marble/newstuff/**.tar.{gz,bz2} \
-    khangman/*.tar.{gz,bz2}
+    marble/newstuff/**.zip \
+    khangman/*.tar.{gz,bz2} \
+    kstars/downloads/*.tar.{gz,bz2} \
+    kard/*.tar.{gz,bz2} \
+    kmessedwords/*.tar.{gz,bz2} \
+    contrib/kvtml/*.{kvtml,tar.gz} \
+    contrib/kvtml2/*.kvtml.bz2 \
+    contrib/kvtml2/{exam,language,misc,stuff}/* \
+    support/kvtml/* \
+    support/kvtml2/*
 
 $RULESETDIR/bin/remove-fb-backup-refs.sh
 massmv khangman-data.tar.gz.BACKUP khangman/add_language/khangman-data.tar.gz --all ^$(echo 757700 | $RULESETDIR/bin/translateRevlist.py)
