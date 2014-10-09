@@ -1,0 +1,20 @@
+create repository accessibility-www
+end repository
+
+match /trunk/www/areas/accessibility/
+    repository accessibility-www
+    branch master
+end match
+
+match /trunk/www/sites/accessibility/
+    repository accessibility-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/accessibility/
+    repository accessibility-www
+    branch devel
+end match
+
+match /
+end match
