@@ -1,0 +1,20 @@
+create repository buzz-www
+end repository
+
+match /trunk/www/areas/buzz/
+    repository buzz-www
+    branch master
+end match
+
+match /trunk/www/sites/buzz/
+    repository buzz-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/buzz/
+    repository buzz-www
+    branch devel
+end match
+
+match /
+end match
