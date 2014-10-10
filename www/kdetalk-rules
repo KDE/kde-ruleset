@@ -1,0 +1,20 @@
+create repository kdetalk-www
+end repository
+
+match /trunk/www/areas/kdetalk/
+    repository kdetalk-www
+    branch master
+end match
+
+match /trunk/www/sites/kdetalk/
+    repository kdetalk-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/kdetalk/
+    repository kdetalk-www
+    branch devel
+end match
+
+match /
+end match

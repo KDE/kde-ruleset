@@ -1,0 +1,20 @@
+create repository kdemail-www
+end repository
+
+match /trunk/www/areas/kdemail/
+    repository kdemail-www
+    branch master
+end match
+
+match /trunk/www/sites/kdemail/
+    repository kdemail-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/kdemail/
+    repository kdemail-www
+    branch devel
+end match
+
+match /
+end match
