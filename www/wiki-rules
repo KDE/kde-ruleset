@@ -1,0 +1,20 @@
+create repository wiki-www
+end repository
+
+match /trunk/www/areas/wiki/
+    repository wiki-www
+    branch master
+end match
+
+match /trunk/www/sites/wiki/
+    repository wiki-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/wiki/
+    repository wiki-www
+    branch devel
+end match
+
+match /
+end match
