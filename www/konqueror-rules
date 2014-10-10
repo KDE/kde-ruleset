@@ -1,0 +1,20 @@
+create repository konqueror-www
+end repository
+
+match /trunk/www/areas/konqueror/
+    repository konqueror-www
+    branch master
+end match
+
+match /trunk/www/sites/konqueror/
+    repository konqueror-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/konqueror/
+    repository konqueror-www
+    branch devel
+end match
+
+match /
+end match
