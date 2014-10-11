@@ -1,6 +1,13 @@
 create repository kpeg
 end repository
 
+# ignore the SVN deletion
+match /
+    min revision 1400812
+    max revision 1400812
+    action ignore
+end match
+
 match /trunk/playground/games/(pege|kpeg)/
     repository kpeg
     branch master
