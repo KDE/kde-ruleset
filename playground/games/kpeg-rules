@@ -1,0 +1,16 @@
+create repository kpeg
+end repository
+
+match /trunk/playground/games/(pege|kpeg)/
+    repository kpeg
+    branch master
+end match
+
+match /trunk/playground/games/doc/(pege|kpeg)/
+    repository kpeg
+    branch master
+    prefix doc/
+end match
+
+match /
+end match
