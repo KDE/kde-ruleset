@@ -1,14 +1,26 @@
 create repository www-www
 end repository
 
+match /trunk/www/areas/www/kdeslides/
+    action ignore
+end match
+
 match /trunk/www/areas/www/
     repository www-www
     branch master
 end match
 
+match /trunk/www/sites/www/kdeslides/
+    action ignore
+end match
+
 match /trunk/www/sites/www/
     repository www-www
     branch master
+end match
+
+match /trunk/www/sites/www-devel/www/kdeslides/
+    action ignore
 end match
 
 match /trunk/www/sites/www-devel/www/
