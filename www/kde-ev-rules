@@ -1,6 +1,13 @@
 create repository kde-ev-www
 end repository
 
+# this won't actually appear as an 'old' branch in the finished
+# git repo, since this path was deleted in r210114
+match /trunk/www/kde-ev/
+    repository kde-ev-www
+    branch old
+end match
+
 match /trunk/www/areas/kde-ev/
     repository kde-ev-www
     branch master
