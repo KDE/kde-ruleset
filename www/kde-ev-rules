@@ -1,0 +1,20 @@
+create repository kde-ev-www
+end repository
+
+match /trunk/www/areas/kde-ev/
+    repository kde-ev-www
+    branch master
+end match
+
+match /trunk/www/sites/kde-ev/
+    repository kde-ev-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/kde-ev/
+    repository kde-ev-www
+    branch devel
+end match
+
+match /
+end match
