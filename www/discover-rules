@@ -1,0 +1,20 @@
+create repository discover-www
+end repository
+
+match /trunk/www/areas/discover/themes/
+    repository discover-www
+    branch master
+end match
+
+match /trunk/www/sites/discover/themes/
+    repository discover-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/discover/themes/
+    repository discover-www
+    branch devel
+end match
+
+match /
+end match
