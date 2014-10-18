@@ -1,0 +1,25 @@
+create repository docs-www
+end repository
+
+match /trunk/www/docs.kde.org/
+    repository docs-www
+    branch master
+end match
+
+match /trunk/www/areas/docs/
+    repository docs-www
+    branch master
+end match
+
+match /trunk/www/sites/docs/
+    repository docs-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/docs/
+    repository docs-www
+    branch devel
+end match
+
+match /
+end match

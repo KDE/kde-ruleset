@@ -1,0 +1,25 @@
+create repository l10n-www
+end repository
+
+match /trunk/www/areas/l10n/
+    repository l10n-www
+    branch master
+end match
+
+match /trunk/www/sites/l10n/
+    repository l10n-www
+    branch master
+end match
+
+match /trunk/www/sites/www-devel/l10n/
+    repository l10n-www
+    branch devel
+end match
+
+match /branches/work/soc-l10n-www-2013/
+    repository l10n-www
+    branch soc-l10n-www-2013
+end match
+
+match /
+end match
