@@ -1,0 +1,10 @@
+create repository kdesrc-build-www
+end repository
+
+match /trunk/www/apps/kdesrc-build/
+    repository kdesrc-build-www
+    branch master
+end match
+
+match /
+end match
