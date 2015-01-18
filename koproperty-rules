@@ -1,0 +1,81 @@
+create repository koproperty
+end repository
+
+# BEGIN koproperty1
+
+match /trunk/kdenonbeta/propertyeditor/
+    repository koproperty
+    branch refs/conversion/kdenonbeta
+end match
+
+match /trunk/koffice/lib/koproperty/
+    repository koproperty
+    branch koproperty1
+end match
+
+match /trunk/koffice/libs/koproperty/
+    repository koproperty
+    branch koproperty1
+    # r859664 moves koproperty to kexi
+    # we don't want to get later revisions because they are from later moves
+    max revision 859664
+end match
+
+match /trunk/koffice/kexi/koproperty/
+    repository koproperty
+    branch koproperty1
+    # r879751 renames koproperty to koproperty1
+    # we don't want to get later revisions because they
+    # correspond to koproperty2 from later moves
+    max revision 879751
+end match
+
+match /trunk/koffice/kexi/koproperty1/koproperty/
+    repository koproperty
+    branch koproperty1
+end match
+
+# deleted on r1020616
+
+# END koproperty1
+
+# BEGIN koproperty2
+match /trunk/koffice/libs/koproperty2/
+    repository koproperty
+    branch master
+end match
+
+match /trunk/koffice/kexi/koproperty2/
+    repository koproperty
+    branch master
+    max revision 879745 # moved to a subdir
+end match
+
+match /trunk/koffice/kexi/koproperty2/koproperty/
+    repository koproperty
+    branch master
+end match
+
+match /trunk/koffice/kexi/koproperty/
+    repository koproperty
+    branch master
+end match
+
+match /trunk/koffice/libs/koproperty/
+    repository koproperty
+    branch master
+end match
+
+# END koproperty2
+
+create repository residual
+end repository
+
+match /(.*koproperty2?/.*)
+    repository residual
+    branch master
+    prefix \1
+end match
+
+match /
+end match
