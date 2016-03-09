@@ -5,6 +5,11 @@ include ../../common-kde-ignores
 
 declare REPO=atlantikdesigner
 
+match /tags/unmaintained/4/atlantikdesigner/
+    repository atlantikdesigner
+    branch master
+end match
+
 match /trunk/playground/games/atlantikdesigner/
     repository atlantikdesigner
     branch master
