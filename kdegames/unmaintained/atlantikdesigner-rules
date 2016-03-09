@@ -1,0 +1,67 @@
+create repository atlantikdesigner
+end repository
+
+include ../common-kde-ignores
+
+declare REPO=atlantikdesigner
+
+match /trunk/playground/games/atlantikdesigner/
+    repository atlantikdesigner
+    branch master
+end match
+
+match /trunk/(KDE/)?kdeaddons/atlantikdesigner/
+    repository atlantikdesigner
+    branch master
+end match
+
+match /branches/work/kde4/kdeaddons/$
+    action recurse
+end match
+match /branches/work/kde4/kdeaddons/atlantikdesigner/
+    repository atlantikdesigner
+    branch refs/workbranch/kde4
+end match
+
+match /branches/KDE/\d+\.\d+/(kdeaddons/)?$
+  action recurse
+end match
+match /branches/KDE_\d+_\d+_BRANCH/(kdeaddons/)?$
+  action recurse
+end match
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdeaddons/atlantikdesigner/
+    repository atlantikdesigner
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdeaddons/atlantikdesigner/
+    repository atlantikdesigner
+    branch KDE/\1.\2
+end match
+# END
+
+# BEGIN work branches
+declare MODULE_RECURSE=(kdeaddons/)?
+declare MODULE=kdeaddons/atlantikdesigner
+
+include ../feature-branches
+#END
+
+match /tags/(KDE/)?[^/]+/(kdeaddons/)?$
+    action recurse
+end match
+# Get tags
+match /tags/KDE/(\d+)\.(\d+)/kdeaddons/atlantikdesigner/
+    repository atlantikdesigner
+    branch refs/tags/v\1.\2.0
+    annotated true
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdeaddons/atlantikdesigner/
+    repository atlantikdesigner
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+			    
+include ../common-kde-tags-rules
+
+match /
+end match
