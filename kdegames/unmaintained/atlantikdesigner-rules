@@ -1,7 +1,7 @@
 create repository atlantikdesigner
 end repository
 
-include ../common-kde-ignores
+include ../../common-kde-ignores
 
 declare REPO=atlantikdesigner
 
@@ -43,7 +43,7 @@ end match
 declare MODULE_RECURSE=(kdeaddons/)?
 declare MODULE=kdeaddons/atlantikdesigner
 
-include ../feature-branches
+include ../../feature-branches
 #END
 
 match /tags/(KDE/)?[^/]+/(kdeaddons/)?$
@@ -60,8 +60,8 @@ match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdeaddons/atlantikdesigner/
     branch refs/tags/v\1.\2.\3
     annotated true
 end match
-			    
-include ../common-kde-tags-rules
+
+include ../../common-kde-tags-rules
 
 match /
 end match
