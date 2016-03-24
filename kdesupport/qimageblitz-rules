@@ -1,0 +1,31 @@
+# Rules for kdesupport/qimageblitz
+# Author: Jeremy Whiting <jpwhiting@kde.org>
+
+##### Create the repository #####
+declare REPO=qimageblitz
+create repository ${REPO}
+end repository
+
+##### Main Rules #####
+
+# kdesupport/qimageblitz 
+match /trunk/kdesupport/blitz/
+    repository ${REPO}
+    branch master
+    max revision 705162
+end match
+
+match /trunk/kdesupport/qimageblitz/
+    repository ${REPO}
+    branch master
+end match
+
+##### Tags #####
+match /tags/qimageblitz/([^/]+)/
+    repository ${REPO}
+    branch refs/tags/v\1
+end match
+
+##### ignore everything else #####
+match /
+end match
