@@ -77,8 +77,20 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/quanta/quanta/parts/kfilereplace/
 end match
 # END
 
-# all "work" branches
+# BEGIN feature branches
+# common ones
 include ../feature-branches
+
+# quanta-specific
+match /branches/quanta_be/(quanta/(quanta/(parts/)?)?)?$
+    action recurse
+end match
+match /branches/quanta_be/quanta/quanta/parts/kfilereplace/
+    repository kfilereplace
+    branch refs/workbranch/quanta_be
+end match
+
+# END
 
 # BEGIN tags
 
