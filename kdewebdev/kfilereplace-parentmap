@@ -1,0 +1,24 @@
+# merge trunk into quanta_be
+264509 264521
+266278 266803
+# merge quanta_be into trunk
+267679 269679
+273413 277940
+
+# merge kaction-cleanup1 into trunk
+610596 610651
+
+# merge kaction-cleanup3 into trunk
+621452 621518
+
+# merge kinstance-redesign into trunk
+628202 628307
+
+# merge kconfiggroup_port into trunk
+633878 635503
+
+# merge kde4_jobflags into trunk
+721036 721447
+
+# merge kconfig_new into trunk
+728208 728852
