@@ -1,0 +1,117 @@
+create repository klinkstatus
+end repository
+
+include ../common-kde-ignores
+
+declare REPO=klinkstatus
+declare MODULE=kdewebdev/klinkstatus
+declare MODULE_RECURSE=(kdewebdev/)?
+
+# someone accidentally copied /branches/KDE/3.5/kdewebdev/klinkstatus/
+# into /branches/KDE/3.5/kdewebdev/klinkstatus/klinkstatus_proceed/,
+# let's ignore that since it makes a mess in the graph
+match /
+    min revision 509963
+    max revision 509963
+end match
+# deletion of the above mistake
+match /
+    min revision 509965
+    max revision 509965
+end match
+
+
+match /trunk/(KDE/)?kdewebdev/klinkstatus/
+    repository klinkstatus
+    branch master
+end match
+
+# BEGIN Documentation
+match /trunk/(KDE/)?kdewebdev/doc/klinkstatus/
+    repository klinkstatus
+    branch master
+    prefix doc/
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/doc/klinkstatus/
+    repository klinkstatus
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdewebdev/doc/klinkstatus/
+    repository klinkstatus
+    branch KDE/\1.\2
+    prefix doc/
+end match
+# END
+
+
+# BEGIN branches
+match /branches/KDE/\d+\.\d+/$
+  action recurse
+end match
+match /branches/KDE_\d+_\d+_BRANCH/$
+  action recurse
+end match
+
+match /branches/KDE_\d+_\d+_BRANCH/kdewebdev/$
+  action recurse
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/klinkstatus/
+    repository klinkstatus
+    branch KDE/\1.\2
+end match
+match /branches/KDE/\d+\.\d+/kdewebdev/$
+  action recurse
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdewebdev/klinkstatus/
+    repository klinkstatus
+    branch KDE/\1.\2
+end match
+
+# END
+
+# BEGIN feature branches
+
+# all "work" branches
+include ../feature-branches
+
+match /branches/work/klinkstatus_proceed/
+    repository klinkstatus
+    branch klinkstatus_proceed
+end match
+
+match /branches/work/klinkstatus4-tidy/
+    repository klinkstatus
+    branch klinkstatus4-tidy
+end match
+
+match /branches/work/doc/klinkstatus/
+    repository klinkstatus
+    branch doc-work
+    prefix doc/
+end match
+
+# END
+
+# BEGIN tags
+
+# r723127 created a 3.94 tag for all of KDE, but r723159 deleted it for kdewebdev.
+# It seems svn-all-fast-export doesn't like it when a tag is deleted,
+# so let's ignore the commit that created it
+
+match /tags/
+    min revision 723127
+    max revision 723127
+end match
+
+match /tags/(KDE/)?[^/]+/${MODULE_RECURSE}$
+    action recurse
+end match
+
+include ../common-kde-tags-rules
+
+# END tags
+
+
+match /
+end match
