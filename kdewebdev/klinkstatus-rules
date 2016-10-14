@@ -22,23 +22,23 @@ end match
 
 
 match /trunk/(KDE/)?kdewebdev/klinkstatus/
-    repository klinkstatus
+    repository ${REPO}
     branch master
 end match
 
 # BEGIN Documentation
 match /trunk/(KDE/)?kdewebdev/doc/klinkstatus/
-    repository klinkstatus
+    repository ${REPO}
     branch master
     prefix doc/
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/doc/klinkstatus/
-    repository klinkstatus
+    repository ${REPO}
     branch KDE/\1.\2
     prefix doc/
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdewebdev/doc/klinkstatus/
-    repository klinkstatus
+    repository ${REPO}
     branch KDE/\1.\2
     prefix doc/
 end match
@@ -57,14 +57,14 @@ match /branches/KDE_\d+_\d+_BRANCH/kdewebdev/$
   action recurse
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/klinkstatus/
-    repository klinkstatus
+    repository ${REPO}
     branch KDE/\1.\2
 end match
 match /branches/KDE/\d+\.\d+/kdewebdev/$
   action recurse
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdewebdev/klinkstatus/
-    repository klinkstatus
+    repository ${REPO}
     branch KDE/\1.\2
 end match
 
@@ -76,17 +76,17 @@ end match
 include ../feature-branches
 
 match /branches/work/klinkstatus_proceed/
-    repository klinkstatus
+    repository ${REPO}
     branch klinkstatus_proceed
 end match
 
 match /branches/work/klinkstatus4-tidy/
-    repository klinkstatus
+    repository ${REPO}
     branch klinkstatus4-tidy
 end match
 
 match /branches/work/doc/klinkstatus/
-    repository klinkstatus
+    repository ${REPO}
     branch doc-work
     prefix doc/
     max revision 1251420 # 1251421 deletes the branch

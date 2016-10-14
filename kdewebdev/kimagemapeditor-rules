@@ -8,29 +8,29 @@ declare MODULE=kdewebdev/kimagemapeditor
 declare MODULE_RECURSE=(kdewebdev/)?
 
 match /trunk/quanta/quanta/parts/kimagemapeditor/
-    repository kimagemapeditor
+    repository ${REPO}
     branch master
 end match
 
 match /trunk/(KDE/)?kdewebdev/kimagemapeditor/
-    repository kimagemapeditor
+    repository ${REPO}
     branch master
 end match
 
 # BEGIN Documentation
 # note: there was no documentation while it was in quanta
 match /trunk/(KDE/)?kdewebdev/doc/kimagemapeditor/
-    repository kimagemapeditor
+    repository ${REPO}
     branch master
     prefix doc/
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/doc/kimagemapeditor/
-    repository kimagemapeditor
+    repository ${REPO}
     branch KDE/\1.\2
     prefix doc/
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdewebdev/doc/kimagemapeditor/
-    repository kimagemapeditor
+    repository ${REPO}
     branch KDE/\1.\2
     prefix doc/
 end match
@@ -49,14 +49,14 @@ match /branches/KDE_\d+_\d+_BRANCH/kdewebdev/$
   action recurse
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/kimagemapeditor/
-    repository kimagemapeditor
+    repository ${REPO}
     branch KDE/\1.\2
 end match
 match /branches/KDE/\d+\.\d+/kdewebdev/$
   action recurse
 end match
 match /branches/KDE/(\d+)\.(\d+)/kdewebdev/kimagemapeditor/
-    repository kimagemapeditor
+    repository ${REPO}
     branch KDE/\1.\2
 end match
 
@@ -72,7 +72,7 @@ match /branches/KDE_\d+_\d+_BRANCH/quanta/quanta/parts/$
   action recurse
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/quanta/quanta/parts/kimagemapeditor/
-    repository kimagemapeditor
+    repository ${REPO}
     branch KDE/\1.\2
 end match
 # END
@@ -86,7 +86,7 @@ match /branches/quanta_be/(quanta/(quanta/(parts/)?)?)?$
     action recurse
 end match
 match /branches/quanta_be/quanta/quanta/parts/kimagemapeditor/
-    repository kimagemapeditor
+    repository ${REPO}
     branch refs/workbranch/quanta_be
 end match
 
