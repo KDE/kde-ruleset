@@ -7,11 +7,13 @@ declare REPO=kimagemapeditor
 declare MODULE=kdewebdev/kimagemapeditor
 declare MODULE_RECURSE=(kdewebdev/)?
 
-# Same happened with 3.97 (only kimagemapeditor)
+# r745132 created a 3.97 tag for all of KDE, but r745137 deleted it for
+# some parts of kdewebdev. It seems svn-all-fast-export doesn't like it
+# when a tag is deleted, so let's ignore the commit that created it
 
 match /tags/KDE/3.97/
-    min revision 745137
-    max revision 745137
+    min revision 745132
+    max revision 745132
 end match
 
 include kdewebdev-common-rules

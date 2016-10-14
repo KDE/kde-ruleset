@@ -92,7 +92,7 @@ end match
 
 # r723127 created a 3.94 tag for all of KDE, but r723159 deleted it for kdewebdev.
 # It seems svn-all-fast-export doesn't like it when a tag is deleted,
-# so let's ignore the commit that created it
+# so let's ignore the commit that created it.
 
 match /tags/KDE/3.94/
     min revision 723127
