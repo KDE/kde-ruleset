@@ -89,6 +89,7 @@ match /branches/work/doc/klinkstatus/
     repository klinkstatus
     branch doc-work
     prefix doc/
+    max revision 1251420 # 1251421 deletes the branch
 end match
 
 # END
