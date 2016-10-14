@@ -51,8 +51,9 @@ if [[ -x $src/${repo}-postproc ]]; then
     )
 fi
 if [[ -f $src/${repo}-parentmap ]]; then
+    # FIXME don't use hardcoded path to parentadd-ng
     (cd ${repo}-postproc &&
-        ${ruleset_root}/bin/parent-adder ${src}/${repo}-parentmap &&
+        $HOME/parentadd-ng/parentadd-ng.py . ${src}/${repo}-parentmap &&
         delete_fb_backups
     )
 fi
