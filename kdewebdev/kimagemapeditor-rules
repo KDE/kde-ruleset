@@ -98,9 +98,16 @@ end match
 # It seems svn-all-fast-export doesn't like it when a tag is deleted,
 # so let's ignore the commit that created it
 
-match /tags/
+match /tags/KDE/3.94/
     min revision 723127
     max revision 723127
+end match
+
+# Same happened with 3.97 (only kimagemapeditor)
+
+match /tags/KDE/3.97/
+    min revision 745137
+    max revision 745137
 end match
 
 match /tags/(KDE/)?[^/]+/${MODULE_RECURSE}$
