@@ -7,102 +7,6 @@ declare REPO=kimagemapeditor
 declare MODULE=kdewebdev/kimagemapeditor
 declare MODULE_RECURSE=(kdewebdev/)?
 
-match /trunk/quanta/quanta/parts/kimagemapeditor/
-    repository ${REPO}
-    branch master
-end match
-
-match /trunk/(KDE/)?kdewebdev/kimagemapeditor/
-    repository ${REPO}
-    branch master
-end match
-
-# BEGIN Documentation
-# note: there was no documentation while it was in quanta
-match /trunk/(KDE/)?kdewebdev/doc/kimagemapeditor/
-    repository ${REPO}
-    branch master
-    prefix doc/
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/doc/kimagemapeditor/
-    repository ${REPO}
-    branch KDE/\1.\2
-    prefix doc/
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdewebdev/doc/kimagemapeditor/
-    repository ${REPO}
-    branch KDE/\1.\2
-    prefix doc/
-end match
-# END
-
-
-# BEGIN branches
-match /branches/KDE/\d+\.\d+/$
-  action recurse
-end match
-match /branches/KDE_\d+_\d+_BRANCH/$
-  action recurse
-end match
-
-match /branches/KDE_\d+_\d+_BRANCH/kdewebdev/$
-  action recurse
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/kimagemapeditor/
-    repository ${REPO}
-    branch KDE/\1.\2
-end match
-match /branches/KDE/\d+\.\d+/kdewebdev/$
-  action recurse
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdewebdev/kimagemapeditor/
-    repository ${REPO}
-    branch KDE/\1.\2
-end match
-
-# quanta days
-
-match /branches/KDE_\d+_\d+_BRANCH/quanta/$
-  action recurse
-end match
-match /branches/KDE_\d+_\d+_BRANCH/quanta/quanta/$
-  action recurse
-end match
-match /branches/KDE_\d+_\d+_BRANCH/quanta/quanta/parts/$
-  action recurse
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/quanta/quanta/parts/kimagemapeditor/
-    repository ${REPO}
-    branch KDE/\1.\2
-end match
-# END
-
-# BEGIN feature branches
-# common ones
-include ../feature-branches
-
-# quanta-specific; this is actually where the code begins!
-match /branches/quanta_be/(quanta/(quanta/(parts/)?)?)?$
-    action recurse
-end match
-match /branches/quanta_be/quanta/quanta/parts/kimagemapeditor/
-    repository ${REPO}
-    branch refs/workbranch/quanta_be
-end match
-
-# END
-
-# BEGIN tags
-
-# r723127 created a 3.94 tag for all of KDE, but r723159 deleted it for kdewebdev.
-# It seems svn-all-fast-export doesn't like it when a tag is deleted,
-# so let's ignore the commit that created it
-
-match /tags/KDE/3.94/
-    min revision 723127
-    max revision 723127
-end match
-
 # Same happened with 3.97 (only kimagemapeditor)
 
 match /tags/KDE/3.97/
@@ -110,19 +14,7 @@ match /tags/KDE/3.97/
     max revision 745137
 end match
 
-match /tags/(KDE/)?[^/]+/${MODULE_RECURSE}$
-    action recurse
-end match
-
-include ../common-kde-tags-rules
-
-match /tags/(KDE/)?[^/]+/(quanta/(quanta/(parts/)?)?)?$
-    action recurse
-end match
-declare MODULE=quanta/quanta/parts/kimagemapeditor
-include ../common-kde-tags-rules
-
-# END tags
+include kdewebdev-common-rules
 
 # debugging rules
 create repository residual-kimagemapeditor
