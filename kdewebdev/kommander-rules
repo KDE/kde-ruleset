@@ -7,23 +7,37 @@ declare REPO=kommander
 declare MODULE=kdewebdev/kommander
 declare MODULE_RECURSE=(kdewebdev/)?
 
+# r745132 created a 3.97 tag for all of KDE, but r745137 deleted it for
+# some parts of kdewebdev. It seems svn-all-fast-export doesn't like it
+# when a tag is deleted, so let's ignore the commit that created it
+
+match /tags/KDE/3.97/
+    min revision 745132
+    max revision 745132
+end match
+
 # The two directories (/trunk/quanta/kommander and /trunk/kdewebdev/kommander)
 # overlap at the beginning. There are a few makefiles in kdewebdev despite the
 # rest of the code being in quanta. I suspect this is an artifact from the cvs2svn
 # conversion.
 
-match /trunk/quanta/kommander/
-    repository ${REPO}
-    branch master
+match /trunk/quanta/${REPO}/
+    action ignore
     # r283954 deleted this directory
     # (at which point r283351 had already copied it to kdewebdev)
-    max revision 283953
+    min revision 283954
 end match
 
-match /trunk/(KDE/)?kdewebdev/kommander/
+match /trunk/(KDE/)?kdewebdev/${REPO}/
     repository ${REPO}
     branch master
 end match
+
+match /trunk/quanta/${REPO}/
+    repository ${REPO}
+    branch master
+end match
+
 
 # BEGIN Documentation
 # note: there was no documentation for any of the kdewebdev components
@@ -46,8 +60,7 @@ match /branches/KDE/(\d+)\.(\d+)/kdewebdev/doc/${REPO}/
 end match
 # END
 
-# BEGIN version branches
-
+# BEGIN branches
 match /branches/KDE/\d+\.\d+/$
   action recurse
 end match
@@ -120,15 +133,6 @@ end match
 match /tags/KDE/3.94/
     min revision 723127
     max revision 723127
-end match
-
-# r745132 created a 3.97 tag for all of KDE, but r745137 deleted it for
-# some parts of kdewebdev. It seems svn-all-fast-export doesn't like it
-# when a tag is deleted, so let's ignore the commit that created it
-
-match /tags/KDE/3.97/
-    min revision 745132
-    max revision 745132
 end match
 
 match /tags/(KDE/)?[^/]+/${MODULE_RECURSE}$
