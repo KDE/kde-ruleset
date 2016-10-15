@@ -47,6 +47,21 @@ match /branches/QUANTA_(\d+)_(\d+)_BRANCH/quanta/${REPO}/
     branch Quanta/\1.\2
 end match
 
+# quanta tags
+match /tags/QUANTA_(\d+)_(\d+)/${QUANTA_LOCATION}/
+    repository ${REPO}
+    branch refs/tags/quanta-v\1.\2
+    annotated true
+    max revision 409202
+end match
+match /tags/QUANTA_(\d+)_(\d+)_(\d+[a-zA-Z]?)/${QUANTA_LOCATION}/
+    repository ${REPO}
+    branch refs/tags/quanta-v\1.\2.\3
+    annotated true
+    max revision 409202
+end match
+
+# work branch
 match /branches/work/kommander/
     repository ${REPO}
     branch refs/workbranch/work-kommander
