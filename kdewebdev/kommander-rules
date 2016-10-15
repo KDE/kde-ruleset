@@ -1,0 +1,126 @@
+create repository kommander
+end repository
+
+include ../common-kde-ignores
+
+declare REPO=kommander
+declare MODULE=kdewebdev/kommander
+declare MODULE_RECURSE=(kdewebdev/)?
+
+match /trunk/quanta/kommander/
+    repository ${REPO}
+    branch master
+    # r283954 deleted this directory
+    # (at which point r283351 had already copied it to kdewebdev)
+    max revision 283953
+end match
+
+match /trunk/(KDE/)?kdewebdev/kommander/
+    repository ${REPO}
+    branch master
+end match
+
+# BEGIN Documentation
+# note: there was no documentation for any of the kdewebdev components
+# while they were inside quanta, except kxsldbg, which seems to be gone anyway
+
+match /trunk/(KDE/)?kdewebdev/doc/${REPO}/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/doc/${REPO}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdewebdev/doc/${REPO}/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
+end match
+# END
+
+# BEGIN version branches
+
+match /branches/KDE/\d+\.\d+/$
+  action recurse
+end match
+match /branches/KDE_\d+_\d+_BRANCH/$
+  action recurse
+end match
+
+match /branches/KDE_\d+_\d+_BRANCH/kdewebdev/$
+  action recurse
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/${REPO}/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+
+match /branches/KDE/\d+\.\d+/kdewebdev/$
+  action recurse
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdewebdev/${REPO}/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+
+# KDE branches of quanta
+
+match /branches/KDE_\d+_\d+_BRANCH/quanta/$
+  action recurse
+end match
+match /branches/KDE_(\d+)_(\d+)_BRANCH/quanta/${REPO}/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+
+# actual QUANTA branches (ugh)
+match /branches/QUANTA_\d+_\d+_BRANCH/$
+  action recurse
+end match
+match /branches/QUANTA_\d+_\d+_BRANCH/quanta/$
+  action recurse
+end match
+match /branches/QUANTA_(\d+)_(\d+)_BRANCH/quanta/${REPO}/
+    repository ${REPO}
+    branch Quanta/\1.\2
+end match
+
+# END
+
+# quanta-specific
+match /branches/quanta_be/(quanta/)?$
+    action recurse
+end match
+match /branches/quanta_be/quanta/${REPO}/
+    repository ${REPO}
+    branch refs/workbranch/quanta_be
+end match
+
+# debugging rules
+create repository residual-kommander
+end repository
+
+match /.*/kde-i18n/
+end match
+match /.*/l10n/
+end match
+match /.*/l10n-kde4/
+end match
+match /.*\.pot?$
+end match
+match /trunk/kdeaccessibility/IconThemes/
+end match
+match /trunk/KDE/kdeartwork/
+end match
+
+match /(.*kommander.*)$
+    repository residual-kommander
+    branch master
+    prefix \1
+end match
+
+match /
+end match
