@@ -1,3 +1,12 @@
+# Required variables:
+#
+# - REPO: name of the git repository, also used as the app name in many paths
+#
+# - MODULE: path used in /trunk/KDE/${MODULE}, most likely "kdewebdev/${REPO}"
+#
+# - MODULE_RECURSE: regex matching the parent directories of MODULE,
+#   most likely "(kdewebdev/)?"
+
 match /trunk/(KDE/)?kdewebdev/${REPO}/
     repository ${REPO}
     branch master
