@@ -18,6 +18,13 @@ end match
 
 include kdewebdev-common-rules
 
+match /branches/work/doc/kimagemapeditor/
+    repository ${REPO}
+    branch doc-work
+    prefix doc/
+    max revision 1251420 # 1251421 deletes the branch
+end match
+
 # debugging rules
 create repository residual-kimagemapeditor
 end repository
