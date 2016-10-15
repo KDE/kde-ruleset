@@ -7,6 +7,9 @@ declare REPO=kfilereplace
 declare MODULE=kdewebdev/kfilereplace
 declare MODULE_RECURSE=(kdewebdev/)?
 
+declare QUANTA_LOCATION=quanta/quanta/parts/${REPO}
+declare QUANTA_RECURSE=(quanta/(quanta/(parts/)?)?)?
+
 include kdewebdev-common-rules
 
 match /

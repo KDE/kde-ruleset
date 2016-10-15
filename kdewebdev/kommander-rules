@@ -7,6 +7,9 @@ declare REPO=kommander
 declare MODULE=kdewebdev/kommander
 declare MODULE_RECURSE=(kdewebdev/)?
 
+declare QUANTA_LOCATION=quanta/${REPO}
+declare QUANTA_RECURSE=(quanta/)?
+
 # r745132 created a 3.97 tag for all of KDE, but r745137 deleted it for
 # some parts of kdewebdev. It seems svn-all-fast-export doesn't like it
 # when a tag is deleted, so let's ignore the commit that created it
@@ -28,73 +31,14 @@ match /trunk/quanta/${REPO}/
     min revision 283954
 end match
 
-match /trunk/(KDE/)?kdewebdev/${REPO}/
-    repository ${REPO}
-    branch master
-end match
+# The quanta_be branch has the same issue as the trunk code, wrt code being
+# in two places, but all files in /branches/quanta_be/kdewebdev/kommander
+# turned out to be identical to what is in quanta_be/quanta/kommander,
+# so there's no need to export quanta_be/kdewebdev.
 
-match /trunk/quanta/${REPO}/
-    repository ${REPO}
-    branch master
-end match
+include kdewebdev-common-rules
 
-
-# BEGIN Documentation
-# note: there was no documentation for any of the kdewebdev components
-# while they were inside quanta, except kxsldbg, which seems to be gone anyway
-
-match /trunk/(KDE/)?kdewebdev/doc/${REPO}/
-    repository ${REPO}
-    branch master
-    prefix doc/
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/doc/${REPO}/
-    repository ${REPO}
-    branch KDE/\1.\2
-    prefix doc/
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdewebdev/doc/${REPO}/
-    repository ${REPO}
-    branch KDE/\1.\2
-    prefix doc/
-end match
-# END
-
-# BEGIN branches
-match /branches/KDE/\d+\.\d+/$
-  action recurse
-end match
-match /branches/KDE_\d+_\d+_BRANCH/$
-  action recurse
-end match
-
-match /branches/KDE_\d+_\d+_BRANCH/kdewebdev/$
-  action recurse
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/kdewebdev/${REPO}/
-    repository ${REPO}
-    branch KDE/\1.\2
-end match
-
-match /branches/KDE/\d+\.\d+/kdewebdev/$
-  action recurse
-end match
-match /branches/KDE/(\d+)\.(\d+)/kdewebdev/${REPO}/
-    repository ${REPO}
-    branch KDE/\1.\2
-end match
-
-# KDE branches of quanta
-
-match /branches/KDE_\d+_\d+_BRANCH/quanta/$
-  action recurse
-end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/quanta/${REPO}/
-    repository ${REPO}
-    branch KDE/\1.\2
-end match
-
-# actual QUANTA branches (ugh)
+# actual QUANTA branches
 match /branches/QUANTA_\d+_\d+_BRANCH/(quanta/)?$
   action recurse
 end match
@@ -103,54 +47,10 @@ match /branches/QUANTA_(\d+)_(\d+)_BRANCH/quanta/${REPO}/
     branch Quanta/\1.\2
 end match
 
-# END
-
-include ../feature-branches
-
-# quanta-specific
-# This branch has the same issue as the trunk code, wrt code being in two places,
-# but all files in /branches/quanta_be/kdewebdev/kommander turned out to be
-# identical to what is in quanta_be/quanta/kommander, so there's no need to export it.
-match /branches/quanta_be/(quanta/)?$
-    action recurse
-end match
-match /branches/quanta_be/quanta/${REPO}/
-    repository ${REPO}
-    branch refs/workbranch/quanta_be
-end match
-
 match /branches/work/kommander/
     repository ${REPO}
     branch refs/workbranch/work-kommander
 end match
-
-# BEGIN tags
-
-# r723127 created a 3.94 tag for all of KDE, but r723159 deleted it for kdewebdev.
-# It seems svn-all-fast-export doesn't like it when a tag is deleted,
-# so let's ignore the commit that created it.
-
-match /tags/KDE/3.94/
-    min revision 723127
-    max revision 723127
-end match
-
-match /tags/(KDE/)?[^/]+/${MODULE_RECURSE}$
-    action recurse
-end match
-
-include ../common-kde-tags-rules
-
-match /tags/(KDE/)?[^/]+/(quanta/)?$
-    action recurse
-end match
-
-declare MODULE_saved=${MODULE}
-declare MODULE=quanta/${REPO}
-include ../common-kde-tags-rules
-declare MODULE=${MODULE_saved}
-
-# END tags
 
 # debugging rules
 create repository residual-kommander

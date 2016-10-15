@@ -7,6 +7,9 @@ declare REPO=kimagemapeditor
 declare MODULE=kdewebdev/kimagemapeditor
 declare MODULE_RECURSE=(kdewebdev/)?
 
+declare QUANTA_LOCATION=quanta/quanta/parts/${REPO}
+declare QUANTA_RECURSE=(quanta/(quanta/(parts/)?)?)?
+
 # r745132 created a 3.97 tag for all of KDE, but r745137 deleted it for
 # some parts of kdewebdev. It seems svn-all-fast-export doesn't like it
 # when a tag is deleted, so let's ignore the commit that created it

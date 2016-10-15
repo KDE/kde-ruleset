@@ -7,6 +7,9 @@ declare REPO=klinkstatus
 declare MODULE=kdewebdev/klinkstatus
 declare MODULE_RECURSE=(kdewebdev/)?
 
+declare QUANTA_LOCATION=quanta/quanta/parts/${REPO}
+declare QUANTA_RECURSE=(quanta/(quanta/(parts/)?)?)?
+
 # someone accidentally copied /branches/KDE/3.5/kdewebdev/klinkstatus/
 # into /branches/KDE/3.5/kdewebdev/klinkstatus/klinkstatus_proceed/,
 # let's ignore that since it makes a mess in the graph

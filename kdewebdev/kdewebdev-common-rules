@@ -6,6 +6,15 @@
 #
 # - MODULE_RECURSE: regex matching the parent directories of MODULE,
 #   most likely "(kdewebdev/)?"
+#
+# - QUANTA_LOCATION: Location below /trunk/ where the code used to be
+#   when it was part of quanta. It shouldn't have leading or trailing slashes.
+#   It will probably start with "quanta/" and end with ${REPO}.
+#   This will also be used for quanta branches, including quanta_be.
+#
+# - QUANTA_RECURSE: Regex matching the parent directories of QUANTA_LOCATION.
+#   For example, if QUANTA_LOCATION is "quanta/foo/klinkstatus", QUANTA_RECURSE
+#   should be set to "(quanta/(foo/)?)?", or its equivalent "(quanta/|quanta/foo/)?".
 
 match /trunk/(KDE/)?kdewebdev/${REPO}/
     repository ${REPO}
@@ -13,7 +22,7 @@ match /trunk/(KDE/)?kdewebdev/${REPO}/
 end match
 
 # some (not all) repos started life in quanta
-match /trunk/quanta/quanta/parts/${REPO}/
+match /trunk/${QUANTA_LOCATION}/
     repository ${REPO}
     branch master
 end match
@@ -65,10 +74,10 @@ end match
 
 # quanta branches (not for all repos)
 
-match /branches/KDE_\d+_\d+_BRANCH/quanta/(quanta/(parts/)?)?$
+match /branches/KDE_\d+_\d+_BRANCH/${QUANTA_RECURSE}$
   action recurse
 end match
-match /branches/KDE_(\d+)_(\d+)_BRANCH/quanta/quanta/parts/${REPO}/
+match /branches/KDE_(\d+)_(\d+)_BRANCH/${QUANTA_LOCATION}/
     repository ${REPO}
     branch KDE/\1.\2
 end match
@@ -80,10 +89,10 @@ end match
 include ../feature-branches
 
 # quanta-specific
-match /branches/quanta_be/(quanta/(quanta/(parts/)?)?)?$
+match /branches/quanta_be/${QUANTA_RECURSE}$
     action recurse
 end match
-match /branches/quanta_be/quanta/quanta/parts/${REPO}/
+match /branches/quanta_be/${QUANTA_LOCATION}/
     repository ${REPO}
     branch refs/workbranch/quanta_be
 end match
@@ -108,12 +117,12 @@ end match
 
 include ../common-kde-tags-rules
 
-match /tags/(KDE/)?[^/]+/(quanta/(quanta/(parts/)?)?)?$
+match /tags/(KDE/)?[^/]+/${QUANTA_RECURSE}$
     action recurse
 end match
 
 declare MODULE_saved=${MODULE}
-declare MODULE=quanta/quanta/parts/${REPO}
+declare MODULE=${QUANTA_LOCATION}
 include ../common-kde-tags-rules
 declare MODULE=${MODULE_saved}
 
