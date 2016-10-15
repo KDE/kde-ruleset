@@ -56,13 +56,7 @@ end match
 
 # quanta branches (not for all repos)
 
-match /branches/KDE_\d+_\d+_BRANCH/quanta/$
-  action recurse
-end match
-match /branches/KDE_\d+_\d+_BRANCH/quanta/quanta/$
-  action recurse
-end match
-match /branches/KDE_\d+_\d+_BRANCH/quanta/quanta/parts/$
+match /branches/KDE_\d+_\d+_BRANCH/quanta/(quanta/(parts/)?)?$
   action recurse
 end match
 match /branches/KDE_(\d+)_(\d+)_BRANCH/quanta/quanta/parts/${REPO}/

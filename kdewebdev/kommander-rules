@@ -82,10 +82,7 @@ match /branches/KDE_(\d+)_(\d+)_BRANCH/quanta/${REPO}/
 end match
 
 # actual QUANTA branches (ugh)
-match /branches/QUANTA_\d+_\d+_BRANCH/$
-  action recurse
-end match
-match /branches/QUANTA_\d+_\d+_BRANCH/quanta/$
+match /branches/QUANTA_\d+_\d+_BRANCH/(quanta/)?$
   action recurse
 end match
 match /branches/QUANTA_(\d+)_(\d+)_BRANCH/quanta/${REPO}/
