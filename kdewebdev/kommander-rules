@@ -7,6 +7,11 @@ declare REPO=kommander
 declare MODULE=kdewebdev/kommander
 declare MODULE_RECURSE=(kdewebdev/)?
 
+# The two directories (/trunk/quanta/kommander and /trunk/kdewebdev/kommander)
+# overlap at the beginning. There are a few makefiles in kdewebdev despite the
+# rest of the code being in quanta. I suspect this is an artifact from the cvs2svn
+# conversion.
+
 match /trunk/quanta/kommander/
     repository ${REPO}
     branch master
@@ -91,6 +96,9 @@ end match
 # END
 
 # quanta-specific
+# This branch has the same issue as the trunk code, wrt code being in two places,
+# but all files in /branches/quanta_be/kdewebdev/kommander turned out to be
+# identical to what is in quanta_be/quanta/kommander, so there's no need to export it.
 match /branches/quanta_be/(quanta/)?$
     action recurse
 end match
