@@ -95,6 +95,8 @@ end match
 
 # END
 
+include ../feature-branches
+
 # quanta-specific
 # This branch has the same issue as the trunk code, wrt code being in two places,
 # but all files in /branches/quanta_be/kdewebdev/kommander turned out to be
@@ -105,6 +107,11 @@ end match
 match /branches/quanta_be/quanta/${REPO}/
     repository ${REPO}
     branch refs/workbranch/quanta_be
+end match
+
+match /branches/work/kommander/
+    repository ${REPO}
+    branch refs/workbranch/work-kommander
 end match
 
 # debugging rules
