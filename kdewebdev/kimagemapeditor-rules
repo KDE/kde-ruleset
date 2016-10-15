@@ -25,29 +25,6 @@ match /branches/work/doc/kimagemapeditor/
     max revision 1251420 # 1251421 deletes the branch
 end match
 
-# debugging rules
-create repository residual-kimagemapeditor
-end repository
-
-match /.*/kde-i18n/
-end match
-match /.*/l10n/
-end match
-match /.*/l10n-kde4/
-end match
-match /.*\.pot?$
-end match
-match /trunk/kdeaccessibility/IconThemes/
-end match
-match /trunk/KDE/kdeartwork/
-end match
-
-match /(.*kimagemapeditor.*)$
-    repository residual-kimagemapeditor
-    branch master
-    prefix \1
-end match
-
 
 match /
 end match
