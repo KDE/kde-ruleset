@@ -67,28 +67,5 @@ match /branches/work/kommander/
     branch refs/workbranch/work-kommander
 end match
 
-# debugging rules
-create repository residual-kommander
-end repository
-
-match /.*/kde-i18n/
-end match
-match /.*/l10n/
-end match
-match /.*/l10n-kde4/
-end match
-match /.*\.pot?$
-end match
-match /trunk/kdeaccessibility/IconThemes/
-end match
-match /trunk/KDE/kdeartwork/
-end match
-
-match /(.*kommander.*)$
-    repository residual-kommander
-    branch master
-    prefix \1
-end match
-
 match /
 end match
