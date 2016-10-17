@@ -1,6 +1,9 @@
 # connect quanta_be branch to trunk
 279024 280879
 
+# merge bleedingedge into trunk
+560558 560644
+
 # merge kaction-cleanup1 to trunk
 610596 610651
 

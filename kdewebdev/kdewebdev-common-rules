@@ -97,6 +97,16 @@ match /branches/quanta_be/${QUANTA_LOCATION}/
     branch refs/workbranch/quanta_be
 end match
 
+match /branches/work/bleedingedge/${MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/bleedingedge/${MODULE}/
+    repository ${REPO}
+    branch refs/workbranch/bleedingedge
+    # 560648 deletes the instance of the branch we care about
+    max revision 560647
+end match
+
 # END
 
 
