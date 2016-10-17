@@ -19,6 +19,13 @@ match /tags/KDE/3.97/
     max revision 745132
 end match
 
+# kommander was deleted from KDE/4.0 branch in r757199, without any change
+# ever entering that branch. This causes an empty floating branch in git
+# with only the deletion commit, so let's ignore the whole path.
+match /branches/KDE/4.0/
+    action ignore
+end match
+
 # The two directories (/trunk/quanta/kommander and /trunk/kdewebdev/kommander)
 # overlap at the beginning. There are a few makefiles in kdewebdev despite the
 # rest of the code being in quanta. I suspect this is an artifact from the cvs2svn
