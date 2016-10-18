@@ -54,17 +54,6 @@ include ../../feature-branches
 match /tags/(KDE/)?[^/]+/(kdeaddons/)?$
     action recurse
 end match
-# Get tags
-match /tags/KDE/(\d+)\.(\d+)/kdeaddons/atlantikdesigner/
-    repository atlantikdesigner
-    branch refs/tags/v\1.\2.0
-    annotated true
-end match
-match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdeaddons/atlantikdesigner/
-    repository atlantikdesigner
-    branch refs/tags/v\1.\2.\3
-    annotated true
-end match
 
 include ../../common-kde-tags-rules
 
