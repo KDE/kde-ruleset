@@ -5,6 +5,24 @@ include ../../common-kde-ignores
 
 declare REPO=atlantikdesigner
 
+# atlantikdesigner started in atlantik itself. These are the specific files it consists of:
+# - atlanticdesigner/ (sic, deleted in r127594)
+# - src/designer.{cpp,h}, editor.{cpp.h}, and designerui.rc (added in r127520)
+# - src/boardinfo.{cpp,h} (added in r128473)
+# - TODO.designer
+# - src/ was renamed to client/ in r130796, which also needs a src/$ rule to match the deletion
+
+match /trunk/kdegames/atlantik/(atlanticdesigner/)
+    repository atlantikdesigner
+    branch master
+    prefix atlantik/\1
+end match
+match /trunk/kdegames/atlantik/(TODO.designer|(src|client)/((boardinfo|designer|editor)\.(h|cpp)|designerui\.rc)|src/)$
+    repository atlantikdesigner
+    branch master
+    prefix atlantik/\1
+end match
+
 match /tags/unmaintained/4/atlantikdesigner/
     repository atlantikdesigner
     branch master
