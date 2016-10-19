@@ -23,7 +23,7 @@ match /trunk/kdegames/atlantik/(TODO.designer|(src|client)/((boardinfo|designer|
     prefix atlantik/\1
 end match
 
-match /tags/unmaintained/4/atlantikdesigner/
+match /trunk/(KDE/)?kdeaddons/atlantikdesigner/
     repository atlantikdesigner
     branch master
 end match
@@ -33,7 +33,7 @@ match /trunk/playground/games/atlantikdesigner/
     branch master
 end match
 
-match /trunk/(KDE/)?kdeaddons/atlantikdesigner/
+match /tags/unmaintained/4/atlantikdesigner/
     repository atlantikdesigner
     branch master
 end match
