@@ -1,0 +1,16 @@
+# merges from trunk to kde4
+432929 433210
+433890 434143
+434160 435289
+
+# merge kde4 into trunk
+435289 439656
+
+# merge kaction-cleanup3 into trunk
+621365 621518
+
+# merge kinstance-redesign into trunk
+627934 628284
+
+# merge kconfiggroup_port into trunk
+634471 635473
