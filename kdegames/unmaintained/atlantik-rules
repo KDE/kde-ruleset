@@ -85,12 +85,13 @@ match /branches/work/kde4/kdegames/atlantik/
     branch refs/workbranch/kde4
 end match
 
+# looks like nothing actually happened in this branch...
 match /branches/make_atlantik_cool/(kdegames/)?$
     action recurse
 end match
 match /branches/make_atlantik_cool/kdegames/atlantik/
     repository atlantik
-    branch make_atlantik_cool
+    branch refs/workbranch/make_atlantik_cool
 end match
 #END
 
