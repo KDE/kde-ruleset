@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# The svn2git rules matching specific files (from when atlantikdesigner
+# was mixed with the atlantik code) make the commit message mention an
+# arbitrary file matched during the conversion. This post-processing script
+# changes the message to mention the directory instead.
+#
+# For example:
+# svn path=/trunk/kdegames/atlantik/src/designer.cpp; revision=127644
+# is changed to:
+# svn path=/trunk/kdegames/atlantik/; revision=127644
+
+git filter-branch --msg-filter "sed '\$s,^\(svn path=/trunk/kdegames/atlantik/\)[^;]*[^/];,\1;,'" --tag-name-filter cat -- --all
