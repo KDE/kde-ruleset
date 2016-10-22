@@ -1,0 +1,104 @@
+create repository atlantik
+end repository
+
+include ../../common-kde-ignores
+
+declare REPO=atlantik
+
+# BEGIN main code
+match /trunk/(KDE/)?kdegames/atlantik/
+    repository atlantik
+    branch master
+end match
+match /trunk/(KDE/)?kdegames/doc/atlantik/
+    repository atlantik
+    branch master
+    prefix doc/
+    # 660428 deletes this and causes a weird empty floating commit
+    max revision 660427
+end match
+
+match /trunk/playground/games/atlantik/
+    repository atlantik
+    branch master
+end match
+match /trunk/playground/games/doc/atlantik/
+    repository atlantik
+    branch master
+    prefix doc/
+    # 880573 deleted it, and 880574 re-added it in another dir
+    max revision 880572
+end match
+
+match /tags/unmaintained/4/atlantik/
+    repository atlantik
+    branch master
+end match
+match /tags/unmaintained/4/doc/atlantik/
+    repository atlantik
+    branch master
+    prefix doc/
+end match
+# END
+
+
+# BEGIN version branches
+match /branches/KDE/\d+\.\d+/(kdegames/)?$
+  action recurse
+end match
+match /branches/KDE_\d+_\d+_BRANCH/(kdegames/)?$
+  action recurse
+end match
+
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/atlantik/
+    repository atlantik
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/atlantik/
+    repository atlantik
+    branch KDE/\1.\2
+end match
+
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdegames/doc/atlantik/
+    repository atlantik
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdegames/doc/atlantik/
+    repository atlantik
+    branch KDE/\1.\2
+    prefix doc/
+end match
+# END
+
+# BEGIN work branches
+declare MODULE_RECURSE=(kdegames/)?
+declare MODULE=kdegames/atlantik
+
+include ../../feature-branches
+
+match /branches/work/kde4/kdegames/$
+    action recurse
+end match
+match /branches/work/kde4/kdegames/atlantik/
+    repository atlantik
+    branch refs/workbranch/kde4
+end match
+
+match /branches/make_atlantik_cool/(kdegames/)?$
+    action recurse
+end match
+match /branches/make_atlantik_cool/kdegames/atlantik/
+    repository atlantik
+    branch make_atlantik_cool
+end match
+#END
+
+match /tags/(KDE/)?[^/]+/(kdegames/)?$
+    action recurse
+end match
+
+include ../../common-kde-tags-rules
+
+match /
+end match
