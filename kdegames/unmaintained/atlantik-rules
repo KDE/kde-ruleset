@@ -6,6 +6,15 @@ include ../../common-kde-ignores
 declare REPO=atlantik
 
 # BEGIN main code
+# r146024 added docs to doc/atlantik, and r146025 deleted them
+# from atlantik/doc. This makes svn2git delete the doc dir from
+# the git branch, so let's ignore the deletion.
+match /trunk/kdegames/atlantik/doc/
+    action ignore
+    min revision 146025
+    max revision 146025
+end match
+
 match /trunk/(KDE/)?kdegames/atlantik/
     repository atlantik
     branch master
