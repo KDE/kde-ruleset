@@ -15,6 +15,16 @@ match /trunk/kdegames/atlantik/doc/
     max revision 146025
 end match
 
+# r286324 deleted all the code, and r286882 re-added it. We could
+# connect the two graphs using the parentmap, but there are problems
+# because the documentation wasn't deleted in '324, and thus wasn't
+# re-added in '882. Better to ignore the deletion.
+match /trunk/kdegames/atlantik/
+    action ignore
+    min revision 286324
+    max revision 286324
+end match
+
 match /trunk/(KDE/)?kdegames/atlantik/
     repository atlantik
     branch master
