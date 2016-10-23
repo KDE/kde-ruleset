@@ -66,6 +66,26 @@ match /branches/KDE/(\d+)\.(\d+)/kdeaddons/doc/ksig/
 end match
 # END
 
+# BEGIN work branches
+include ../feature-branches
+
+match /branches/work/kde4/kdeaddons/$
+    action recurse
+end match
+match /branches/work/kde4/kdeaddons/ksig/
+    repository ${REPO}
+    branch refs/workbranch/kde4
+end match
+
+match /branches/work/bleedingedge/(kdeaddons/)?$
+    action recurse
+end match
+match /branches/work/bleedingedge/kdeaddons/ksig/
+    repository ${REPO}
+    branch bleedingedge
+end match
+# END
+
 # BEGIN version tags
 match /tags/(KDE/)?[^/]+/(kdeaddons/)?$
     action recurse
