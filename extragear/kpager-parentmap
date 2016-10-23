@@ -13,6 +13,11 @@
 # no parentmap entry needed to merge kdebase4-dbus into trunk,
 # there is a file copy that svn2git handles automatically
 
+# merges from bleedingedge into trunk
+528045 528190
+557101 557225
+557908 558082
+
 # merge qdbus-api-changes into trunk
 575407 575652
 

@@ -95,6 +95,14 @@ match /branches/work/kdebase4-dbus/kpager/
     repository ${REPO}
     branch refs/workbranch/kdebase4-dbus
 end match
+
+match /branches/work/bleedingedge/(kdebase/)?$
+    action recurse
+end match
+match /branches/work/bleedingedge/kdebase/kpager/
+    repository ${REPO}
+    branch refs/workbranch/bleedingedge
+end match
 # END
 
 # BEGIN version tags
