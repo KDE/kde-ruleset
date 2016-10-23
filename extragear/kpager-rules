@@ -79,6 +79,9 @@ end match
 declare MODULE_RECURSE=(kdebase/)?
 declare MODULE=kdebase/kpager
 include ../feature-branches
+declare MODULE_RECURSE=(kdebase/(workspace/)?)?
+declare MODULE=kdebase/workspace/kpager
+include ../feature-branches
 
 match /branches/work/kde4/kdebase/$
     action recurse

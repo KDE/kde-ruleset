@@ -15,6 +15,7 @@
 
 # merges from bleedingedge into trunk
 528045 528190
+
 557101 557225
 557908 558082
 
@@ -29,3 +30,9 @@
 
 # merge kinstance-redesign into trunk
 627137 628276
+
+# merge kconfiggroup_port into trunk
+634893 635490
+
+# merge kmainwindow-decoupling into trunk
+654295 654728
