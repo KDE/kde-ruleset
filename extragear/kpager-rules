@@ -87,6 +87,14 @@ match /branches/work/kde4/kdebase/kpager/
     repository ${REPO}
     branch refs/workbranch/kde4
 end match
+
+match /branches/work/kdebase4-dbus/$
+    action recurse
+end match
+match /branches/work/kdebase4-dbus/kpager/
+    repository ${REPO}
+    branch refs/workbranch/kdebase4-dbus
+end match
 # END
 
 # BEGIN version tags

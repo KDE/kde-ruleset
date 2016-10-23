@@ -7,6 +7,12 @@
 # merge kde4 into trunk
 438180 439627
 
+# merge from trunk to kdebase4-dbus
+546604 548018
+
+# no parentmap entry needed to merge kdebase4-dbus into trunk,
+# there is a file copy that svn2git handles automatically
+
 # merge qdbus-api-changes into trunk
 575407 575652
 
