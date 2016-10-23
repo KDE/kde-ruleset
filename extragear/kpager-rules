@@ -75,6 +75,13 @@ declare MODULE_RECURSE=(kdebase/)?
 declare MODULE=kdebase/kpager
 include ../feature-branches
 
+match /branches/work/kde4/kdebase/$
+    action recurse
+end match
+match /branches/work/kde4/kdebase/kpager/
+    repository ${REPO}
+    branch refs/workbranch/kde4
+end match
 # END
 
 # BEGIN version tags
