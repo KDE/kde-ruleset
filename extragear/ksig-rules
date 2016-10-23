@@ -94,11 +94,5 @@ end match
 include ../common-kde-tags-rules
 # END
 
-# debugging rules
-match /.*/(greeksigma|ksignalplotter|networksignalmap|ksignalblocker).*
-end match
-
-include ../residual-rules
-
 match /
 end match
