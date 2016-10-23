@@ -10,13 +10,33 @@ declare MODULE=kdebase/kpager
 # BEGIN main history
 match /trunk/kdebase/kwmmodules/kpager/
     repository ${REPO}
-    branch master
+    branch kdebase
 end match
 match /trunk/(KDE/)?kdebase/kpager/
     repository ${REPO}
-    branch master
+    branch kdebase
 end match
 match /trunk/(KDE/)?kdebase/doc/kpager/
+    repository ${REPO}
+    branch kdebase
+    prefix doc/
+end match
+
+match /trunk/KDE/kdebase/workspace/kpager/
+    repository ${REPO}
+    branch kdebase
+end match
+match /trunk/KDE/kdebase/workspace/doc/kpager/
+    repository ${REPO}
+    branch kdebase
+    prefix doc/
+end match
+
+match /trunk/extragear/utils/kpager/
+    repository ${REPO}
+    branch master
+end match
+match /trunk/extragear/utils/doc/kpager/
     repository ${REPO}
     branch master
     prefix doc/
