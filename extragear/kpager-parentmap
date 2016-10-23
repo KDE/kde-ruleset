@@ -1,3 +1,12 @@
+# merges from trunk to kde4
+421944 422809
+427579 428213
+431577 432072
+438053 438180
+
+# merge kde4 into trunk
+438180 439627
+
 # merge qdbus-api-changes into trunk
 575407 575652
 
