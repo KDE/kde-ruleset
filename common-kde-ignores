@@ -2,7 +2,7 @@
 # This commit is messed up. It's a cvs2svn commit to a branch, claimed to be
 # creating that branch. I don't know what it's really doing, but it makes a mess
 # in the converted repo.
-# Seems to only affect ruby, but it might as well be here.
+# Seems to only affect kdebindings/qtruby, but it might as well be here.
 match /branches/KDE_3_4_BRANCH/kdebindings/
     min revision 400296
     max revision 400296
