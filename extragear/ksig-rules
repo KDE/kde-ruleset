@@ -1,0 +1,25 @@
+create repository ksig
+end repository
+
+include ../common-kde-ignores
+
+declare REPO=ksig
+
+match /trunk/(KDE/)?kdeaddons/ksig/
+    repository ${REPO}
+    branch master
+end match
+
+match /trunk/extragear/pim/ksig/
+    repository ${REPO}
+    branch masterpim
+    # r716965 did the move wrong
+    # r716966 deleted it
+    # r716967 re-did it correctly
+    min revision 716967
+end match
+
+include ../residual-rules
+
+match /
+end match
