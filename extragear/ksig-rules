@@ -82,7 +82,7 @@ match /branches/work/bleedingedge/(kdeaddons/)?$
 end match
 match /branches/work/bleedingedge/kdeaddons/ksig/
     repository ${REPO}
-    branch bleedingedge
+    branch refs/workbranch/bleedingedge
 end match
 # END
 
