@@ -1,0 +1,71 @@
+create repository kpager
+end repository
+
+include ../common-kde-ignores
+
+declare REPO=kpager
+declare MODULE_RECURSE=(kdebase/)?
+declare MODULE=kdebase/kpager
+
+# BEGIN main history
+match /trunk/kdebase/kwmmodules/kpager/
+    repository ${REPO}
+    branch master
+end match
+match /trunk/(KDE/)?kdebase/kpager/
+    repository ${REPO}
+    branch master
+end match
+match /trunk/(KDE/)?kdebase/doc/kpager/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
+# END
+
+# BEGIN version branches
+match /branches/KDE/\d+\.\d+/(kdebase/)?$
+  action recurse
+end match
+match /branches/KDE_\d+_\d+_BRANCH/(kdebase/)?$
+  action recurse
+end match
+
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdebase/kpager/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdebase/kpager/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdebase/doc/kpager/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdebase/doc/kpager/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
+end match
+# END
+
+# BEGIN work branches
+include ../feature-branches
+
+# END
+
+# BEGIN version tags
+# match /tags/(KDE/)?[^/]+/(kdebase/)?$
+#     action recurse
+# end match
+#
+# include ../common-kde-tags-rules
+# END
+
+include ../residual-rules
+
+match /
+end match
