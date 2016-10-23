@@ -4,19 +4,78 @@ end repository
 include ../common-kde-ignores
 
 declare REPO=ksig
+declare MODULE_RECURSE=(kdeaddons/)?
+declare MODULE=kdeaddons/ksig
 
+# BEGIN main history
 match /trunk/(KDE/)?kdeaddons/ksig/
     repository ${REPO}
     branch master
 end match
+match /trunk/(KDE/)?kdeaddons/doc/ksig/
+    repository ${REPO}
+    branch master
+    prefix doc/
+end match
 
 match /trunk/extragear/pim/ksig/
     repository ${REPO}
-    branch masterpim
+    branch master
     # r716965 did the move wrong
     # r716966 deleted it
     # r716967 re-did it correctly
     min revision 716967
+end match
+match /trunk/extragear/pim/doc/ksig/
+    repository ${REPO}
+    branch master
+    prefix doc/
+    # r716965 did the move wrong
+    # r716966 deleted it
+    # r716967 re-did it correctly
+    min revision 716967
+end match
+# END
+
+# BEGIN version branches
+match /branches/KDE/\d+\.\d+/(kdeaddons/)?$
+  action recurse
+end match
+match /branches/KDE_\d+_\d+_BRANCH/(kdeaddons/)?$
+  action recurse
+end match
+
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdeaddons/ksig/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdeaddons/ksig/
+    repository ${REPO}
+    branch KDE/\1.\2
+end match
+
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdeaddons/doc/ksig/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdeaddons/doc/ksig/
+    repository ${REPO}
+    branch KDE/\1.\2
+    prefix doc/
+end match
+# END
+
+# BEGIN version tags
+match /tags/(KDE/)?[^/]+/(kdeaddons/)?$
+    action recurse
+end match
+
+include ../common-kde-tags-rules
+# END
+
+# debugging rules
+match /.*/(greeksigma|ksignalplotter|networksignalmap|ksignalblocker).*
 end match
 
 include ../residual-rules
