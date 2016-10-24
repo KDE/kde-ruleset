@@ -121,11 +121,16 @@ end match
 # END
 
 # BEGIN version tags
-# match /tags/(KDE/)?[^/]+/(kdebase/)?$
-#     action recurse
-# end match
-#
-# include ../common-kde-tags-rules
+match /tags/(KDE/)?[^/]+/(kdebase/(workspace/|kwmmodules/)?)?$
+    action recurse
+end match
+
+declare MODULE=kdebase/kpager
+include ../common-kde-tags-rules
+declare MODULE=kdebase/workspace/kpager
+include ../common-kde-tags-rules
+declare MODULE=kdebase/kwmmodules/kpager
+include ../common-kde-tags-rules
 # END
 
 include ../residual-rules
