@@ -106,6 +106,15 @@ match /branches/work/bleedingedge/kdebase/kpager/
     repository ${REPO}
     branch refs/workbranch/bleedingedge
 end match
+
+# It seems this branch was never merged?
+match /branches/work/soc-kwin-xinerama/(kdebase/(workspace/)?)?$
+    action recurse
+end match
+match /branches/work/soc-kwin-xinerama/kdebase/workspace/kpager/
+    repository ${REPO}
+    branch soc-kwin-xinerama
+end match
 # END
 
 # BEGIN version tags
