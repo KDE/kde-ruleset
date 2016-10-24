@@ -133,7 +133,5 @@ declare MODULE=kdebase/kwmmodules/kpager
 include ../common-kde-tags-rules
 # END
 
-include ../residual-rules
-
 match /
 end match
