@@ -59,6 +59,9 @@ match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdebase/doc/kpager/
     prefix doc/
 end match
 
+match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdebase/kwmmodules/$
+    action recurse
+end match
 match /branches/KDE_(\d+)\_(\d+)_BRANCH/kdebase/kwmmodules/kpager/
     repository ${REPO}
     branch KDE/\1.\2
