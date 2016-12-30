@@ -1,0 +1,64 @@
+create repository kdav
+end repository
+
+match /trunk/playground/pim/dav/
+    repository kdav
+    branch master
+end match
+
+match /trunk/kdereview/dav/
+    repository kdav
+    branch master
+end match
+
+match /trunk/KDE/kdepim/runtime/resources/dav/
+    repository kdav
+    branch master
+end match
+
+# branches
+
+match /branches/KDE/4\.5/kdepim/(runtime/(resources/)?)?$
+    action recurse
+end match
+match /branches/KDE/(\d+)\.(\d+)/kdepim/runtime/resources/dav/
+    repository kdav
+    branch KDE/\1.\2
+end match
+
+match /tags/KDE/4\.5\.\d+/kdepim/(runtime/(resources/)?)?$
+    action recurse
+end match
+match /tags/KDE/(\d+)\.(\d+)\.(\d+)/kdepim/runtime/resources/dav/
+    repository kdav
+    branch refs/tags/v\1.\2.\3
+    annotated true
+end match
+
+match /branches/work/kdepim_kcalcore/(runtime/(resources/)?)?$
+    action recurse
+end match
+match /branches/work/kdepim_kcalcore/runtime/resources/dav/
+    repository kdav
+    branch refs/workbranch/kdepim_kcalcore
+end match
+
+match /branches/work/komo/kdepim/(runtime/(resources/)?)?$
+    action recurse
+end match
+match /branches/work/komo/kdepim/runtime/resources/dav/
+    repository kdav
+    branch refs/workbranch/komo
+end match
+
+# this branch only has merges
+# match /branches/work/soc-pim/kdepim/(runtime/(resources/(dav/)?)?)?$
+#     action recurse
+# end match
+# match /branches/work/soc-pim/kdepim/runtime/resources/dav/
+#     repository kdav
+#     branch refs/workbranch/soc-pim
+# end match
+
+match /
+end match
