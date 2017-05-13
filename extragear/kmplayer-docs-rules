@@ -1,0 +1,20 @@
+create repository kmplayer-docs
+end repository
+
+match /trunk/extragear/multimedia/doc/kmplayer/
+    repository kmplayer-docs
+    branch master
+end match
+
+match /branches/extragear/kde3/multimedia/doc/kmplayer/
+    repository kmplayer-docs
+    branch kde3
+end match
+
+match /trunk/kdeextragear-2/doc/kmplayer/
+    repository kmplayer-docs
+    branch kdeextragear-2
+end match
+
+match /
+end match
