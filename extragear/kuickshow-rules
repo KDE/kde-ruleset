@@ -1,0 +1,143 @@
+# Create KuickShow repo
+create repository kuickshow
+end repository
+
+declare REPO=kuickshow
+declare MODULE=kdegraphics/kuickshow
+declare MODULE_RECURSE=(kdegraphics/)?
+
+include ../common-kde-ignores
+
+
+
+
+# BEGIN ignored commits
+match /
+	# move to extragear removes all documentation
+	min revision 674178
+	max revision 674178
+end match
+
+match /
+	# move to unmaintained removes all documentation
+	min revision 1383834
+	max revision 1383834
+end match
+
+
+
+
+# BEGIN kuickshow sources
+
+match /trunk/kdegraphics/kuickshow/
+	repository ${REPO}
+	branch master
+end match
+
+match /trunk/KDE/kdegraphics/kuickshow/
+	repository ${REPO}
+	branch master
+end match
+
+match /trunk/extragear/graphics/kuickshow/
+	repository ${REPO}
+	branch master
+end match
+
+match /tags/unmaintained/4/kuickshow/
+	min revision 1383834
+	repository ${REPO}
+	branch master
+end match
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegraphics/kuickshow/
+	repository ${REPO}
+	branch kde-\1.\2
+end match
+
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/kuickshow/
+	repository ${REPO}
+	branch kde-\1.\2
+end match
+
+
+
+
+# BEGIN doc files
+
+match /trunk/kdegraphics/doc/kuickshow/
+	min revision 130805
+	max revision 409203
+	repository ${REPO}
+	branch master
+	prefix doc/
+end match
+
+match /trunk/KDE/kdegraphics/doc/kuickshow/
+	min revision 409203
+	max revision 674178
+	repository ${REPO}
+	branch master
+	prefix doc/
+end match
+
+match /trunk/extragear/graphics/doc/kuickshow/
+	min revision 674178
+	repository ${REPO}
+	branch master
+	prefix doc/
+end match
+
+
+match /branches/KDE_(\d+)_(\d+)_BRANCH/kdegraphics/doc/kuickshow/
+	repository ${REPO}
+	branch kde-\1.\2
+	prefix doc/
+end match
+
+match /branches/KDE/(\d+)\.(\d+)/kdegraphics/doc/kuickshow/
+	repository ${REPO}
+	branch kde-\1.\2
+	prefix doc/
+end match
+
+
+
+
+# recursion for branches and tags
+
+match /(branches|tags)/KDE/([^/]+)/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE/([^/]+)/kdegraphics/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE/([^/]+)/kdegraphics/doc/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE_[^/]+_(BRANCH|RELEASE)/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE_[^/]+_(BRANCH|RELEASE)/kdegraphics/$
+  action recurse
+end match
+
+match /(branches|tags)/KDE_[^/]+_(BRANCH|RELEASE)/kdegraphics/doc/$
+  action recurse
+end match
+
+
+
+
+
+include ../common-kde-tags-rules
+include ../feature-branches
+
+
+# Ignore everything else
+match /
+end match
