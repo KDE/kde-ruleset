@@ -1,3 +1,13 @@
+match /branches/work/kconfig_new_take3/extragear/${X_MODULE_RECURSE}$
+    action recurse
+end match
+match /branches/work/kconfig_new_take3/extragear/${X_MODULE}/
+    repository ${REPO}
+    branch refs/workbranch/kconfig_new_extragear
+    max revision 730730 # branch deleted in r730731
+end match
+
+
 match /branches/work/kde4_jobflags/extragear/${X_MODULE_RECURSE}$
     action recurse
 end match

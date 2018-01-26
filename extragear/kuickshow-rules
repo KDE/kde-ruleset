@@ -5,6 +5,9 @@ end repository
 declare REPO=kuickshow
 declare MODULE=kdegraphics/kuickshow
 declare MODULE_RECURSE=(kdegraphics/)?
+# for extragear work branches
+declare X_MODULE=graphics/kuickshow
+declare X_MODULE_RECURSE=(graphics/)?
 
 include ../common-kde-ignores
 
@@ -136,6 +139,7 @@ end match
 
 include ../common-kde-tags-rules
 include ../feature-branches
+include ../extragear-feature-branches
 
 
 # Ignore everything else
