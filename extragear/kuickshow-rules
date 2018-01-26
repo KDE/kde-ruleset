@@ -27,7 +27,7 @@ match /
 	max revision 1383834
 end match
 
-
+# END
 
 
 # BEGIN kuickshow sources
@@ -63,8 +63,7 @@ match /branches/KDE/(\d+)\.(\d+)/kdegraphics/kuickshow/
 	branch kde-\1.\2
 end match
 
-
-
+# END
 
 # BEGIN doc files
 
@@ -105,9 +104,7 @@ match /branches/KDE/(\d+)\.(\d+)/kdegraphics/doc/kuickshow/
 end match
 
 
-
-
-# recursion for branches and tags
+# BEGIN recursion for branches and tags
 
 match /(branches|tags)/KDE/([^/]+)/$
   action recurse
@@ -133,7 +130,7 @@ match /(branches|tags)/KDE_[^/]+_(BRANCH|RELEASE)/kdegraphics/doc/$
   action recurse
 end match
 
-
+# END
 
 
 
