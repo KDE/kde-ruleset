@@ -48,7 +48,6 @@ match /trunk/extragear/graphics/kuickshow/
 end match
 
 match /tags/unmaintained/4/kuickshow/
-	min revision 1383834
 	repository ${REPO}
 	branch master
 end match
@@ -68,23 +67,18 @@ end match
 # BEGIN doc files
 
 match /trunk/kdegraphics/doc/kuickshow/
-	min revision 130805
-	max revision 409203
 	repository ${REPO}
 	branch master
 	prefix doc/
 end match
 
 match /trunk/KDE/kdegraphics/doc/kuickshow/
-	min revision 409203
-	max revision 674178
 	repository ${REPO}
 	branch master
 	prefix doc/
 end match
 
 match /trunk/extragear/graphics/doc/kuickshow/
-	min revision 674178
 	repository ${REPO}
 	branch master
 	prefix doc/
