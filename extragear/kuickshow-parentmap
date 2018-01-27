@@ -1,0 +1,34 @@
+# For some reason this NEEDS parentadd-ng,
+# it creates duplicated commits with parent-adder.
+
+# merges from trunk to kde4 branch
+421947 422788
+428099 428206
+428428 429298
+431615 432128
+
+# merge kde4 into trunk
+432128 439692
+
+# merge kaction-cleanup1 into trunk
+610242 610651
+
+# merge from trunk to kaction-cleanup3
+618254 618565
+
+# merge kaction-cleanup3 into trunk
+621322 621518
+
+# merge kinstance-redesign into trunk
+627739 628280
+
+# merge kconfiggroup_port into trunk
+634498 635494
+
+# merge kmainwindow-decoupling into trunk
+654686 654728
+
+# merge kde4_jobflags into trunk
+721372 721449
+
+# kconfig_new_take3 wasn't cleanly merged; ignore
