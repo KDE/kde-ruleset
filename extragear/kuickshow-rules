@@ -132,7 +132,22 @@ end match
 
 # END
 
+match /branches/work/kde4/kdegraphics/$
+    action recurse
+end match
+match /branches/work/kde4/kdegraphics/kuickshow/
+    repository ${REPO}
+    branch refs/workbranch/kde4
+end match
 
+
+match /branches/kuickshow_ng/(kdegraphics/)?$
+    action recurse
+end match
+match /branches/kuickshow_ng/kdegraphics/kuickshow/
+    repository ${REPO}
+    branch kuickshow_ng
+end match
 
 include ../common-kde-tags-rules
 include ../feature-branches
