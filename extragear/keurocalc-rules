@@ -1,0 +1,49 @@
+create repository keurocalc
+end repository
+
+match /trunk/kdeutils/keurocalc/
+    repository keurocalc
+    branch master
+end match
+
+match /trunk/kdeutils/doc/keurocalc/
+    repository keurocalc
+    branch master
+    prefix doc/
+end match
+
+match /trunk/kdeextragear-3/keurocalc/
+    repository keurocalc
+    branch master
+end match
+
+match /trunk/kdeextragear-3/doc/keurocalc/
+    repository keurocalc
+    branch master
+    prefix doc/
+end match
+
+match /trunk/extragear/utils/keurocalc/
+    repository keurocalc
+    branch master
+end match
+
+match /trunk/extragear/utils/doc/keurocalc/
+    repository keurocalc
+    branch master
+    prefix doc/
+end match
+
+match /branches/extragear/kde3/utils/$
+    action recurse
+end match
+
+match /branches/extragear/kde3/utils/keurocalc/
+    repository keurocalc
+    branch master
+end match
+
+# /branches/extragear/kde3/utils/doc/keurocalc/ exists but didn't get any commit
+
+match /
+end match
