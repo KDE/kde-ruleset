@@ -1,0 +1,35 @@
+create repository leute
+end repository
+
+match /trunk/playground/pim/contactsapplet/contactservices/$
+    action recurse
+end match
+
+match /trunk/playground/pim/contactsapplet/(contactproperties|libcontactpropertiescore|libcontactpropertiesgui|contactpropertyservices|services|contactservices/edit)/
+    repository leute
+    branch playground
+    prefix contactsapplet/\1/
+end match
+
+match /trunk/playground/pim/contacts/
+    repository leute
+    branch playground
+end match
+
+match /branches/work/kdepim-3\.5\.5\+/libkhalkhi/
+    repository leute
+    branch master
+end match
+
+match /trunk/playground/pim/khalkhi/
+    repository leute
+    branch master
+end match
+
+match /trunk/playground/pim/leute/
+    repository leute
+    branch master
+end match
+
+match /
+end match

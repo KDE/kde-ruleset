@@ -1,0 +1,26 @@
+create repository khalkhicards
+end repository
+
+match /trunk/playground/pim/contactsapplet/(vcardwidget|contactcards|cardwindows)/
+    repository khalkhicards
+    branch master
+    prefix \1/
+end match
+
+match /trunk/playground/pim/contactcards/
+    repository khalkhicards
+    branch master
+end match
+
+match /trunk/playground/pim/khalkhicards/
+    repository khalkhicards
+    branch master
+end match
+
+match /tags/unmaintained/3/khalkhicards/
+    repository khalkhicards
+    branch master
+end match
+
+match /
+end match

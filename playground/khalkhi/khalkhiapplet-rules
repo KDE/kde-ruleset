@@ -1,0 +1,25 @@
+create repository khalkhiapplet
+end repository
+
+match /trunk/playground/pim/contactsmenu/
+    repository khalkhiapplet
+    branch master
+end match
+
+match /trunk/playground/pim/contactsapplet/
+    repository khalkhiapplet
+    branch master
+end match
+
+match /trunk/playground/pim/khalkhiapplet/
+    repository khalkhiapplet
+    branch master
+end match
+
+match /tags/unmaintained/3/khalkhiapplet/
+    repository khalkhiapplet
+    branch master
+end match
+
+match /
+end match
