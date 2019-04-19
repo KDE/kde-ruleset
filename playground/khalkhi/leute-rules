@@ -1,6 +1,9 @@
 create repository leute
 end repository
 
+# We're matching contactservices/edit below,
+# so when contactservices as a whole is deleted,
+# we need a recurse rule to see the edit subdir being deleted too.
 match /trunk/playground/pim/contactsapplet/contactservices/$
     action recurse
 end match
