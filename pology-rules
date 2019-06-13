@@ -1,0 +1,26 @@
+create repository pology
+end repository
+
+match /trunk/l10n-kde4/scripts/pology/
+    repository pology
+    branch master
+end match
+
+match /trunk/l10n-support/pology/
+    repository pology
+    branch master
+end match
+
+match /branches/pology/0\.(\d+)/
+    repository pology
+    branch 0.\1
+end match
+
+match /tags/pology/([0-9.]+)/
+    repository pology
+    branch refs/tags/v\1
+    annotated true
+end match
+
+match /
+end match
