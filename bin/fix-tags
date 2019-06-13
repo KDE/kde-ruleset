@@ -3,6 +3,8 @@
 bindir="${RULESETDIR:?\$RULESETDIR must point to the kde-ruleset directory}/bin"
 source "$bindir/filter-goodies"
 
+# if $FIX_TAGS_NONCVS is set to 1, this script will fix even non-cvs2svn tags
+
 if test -z "$(git rev-list --tags --not --branches -n1)"; then
     echo "nothing to do" >&2
     exit 0

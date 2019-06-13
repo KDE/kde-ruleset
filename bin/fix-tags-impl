@@ -7,9 +7,19 @@ calc_parents() {
         return 1;
     fi
 
-    if [ "$GIT_COMMITTER_EMAIL" = "nobody@localhost" ] &&
-    git log --no-walk --format="%s" "$GIT_COMMIT" | grep -q "^This commit was manufactured by cvs2svn to create tag";
-    then
+    should_fix=0;
+
+    if [ "$FIX_TAGS_NONCVS" = "1" ]; then
+        should_fix=1;
+    else
+        if [ "$GIT_COMMITTER_EMAIL" = "nobody@localhost" ] &&
+        git log --no-walk --format="%s" "$GIT_COMMIT" | grep -q "^This commit was manufactured by cvs2svn to create tag";
+        then
+            should_fix=1;
+        fi
+    fi
+
+    if [ $should_fix = 1 ]; then
         while [ -n "$1" ]; do
             shift # throw away the -p
             echo "$1";
