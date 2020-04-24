@@ -1,0 +1,167 @@
+create repository scripty
+end repository
+
+# Do not include Pology
+match /trunk/l10n-kde4/scripts/pology/
+    action ignore
+end match
+match /branches/stable/l10n-kde4/scripts/pology/
+    action ignore
+end match
+
+#----- kde-i18n (pre-2005) -----
+
+declare IGNORED_I18N_DIRS=(templates|af|ar|ara|az|be|bg|bn|br|bs|ca|cs|cy|da|de|el|en|en_GB|en_UK|eo|es|et|eu|fa|fi|fo|fr|fy|ga|gl|he|hi|hr|hsb|hu|id|ind|is|it|ja|ko|ku|kur|ky|lo|lt|lv|mi|mk|mn|ms|mt|nb|nds|nl|nn|no|no_NY|nso|oc|pa|pl|pt|pt_BR|ro|ru|se|sk|sl|sq|sr|sr@Latn|ss|sv|ta|tg|th|tr|uk|uz|ven|vi|wa|wen|xh|xx|zh_CN|zh_CN\.GB2312|zh_TW|zh_TW\.Big5|zu)
+
+# Ignore directories with translations, the remaining files are mostly scripts
+match /trunk/kde-i18n/${IGNORED_I18N_DIRS}/
+    action ignore
+end match
+match /trunk/KDE/kde-i18n/${IGNORED_I18N_DIRS}/
+    action ignore
+end match
+
+# /trunk/kde-i18n without scripts/ directory
+match /trunk/kde-i18n/
+    max revision 409202
+    repository scripty
+    branch master
+end match
+
+# /trunk/KDE/kde-i18n without scripts/ directory
+match /trunk/KDE/kde-i18n/
+    min revision 409203
+    max revision 414919
+    repository scripty
+    branch master
+end match
+
+# /trunk/KDE/kde-i18n with a scripts/ directory
+match /trunk/KDE/kde-i18n/scripts/
+    min revision 414920
+    max revision 414971
+    repository scripty
+    branch master
+end match
+
+match /branches/KDE/([0-9.]+)/kde-i18n/scripts/
+    repository scripty
+    branch KDE/\1
+end match
+
+# Detect move in revision 414972: /trunk/KDE/kde-i18n -> /trunk/l10n
+match /trunk/KDE/kde-i18n/$
+    action recurse
+end match
+
+#----- trunk/l10n (2005-2007) -----
+
+match /trunk/l10n/scripts/
+    min revision 414971
+    max revision 674880
+    repository scripty
+    branch trunk_l10n-kde3
+end match
+
+match /branches/stable/l10n/scripts/
+    repository scripty
+    branch stable_l10n
+end match
+
+# Detect move in revision 414972: /trunk/KDE/kde-i18n -> /trunk/l10n
+match /trunk/l10n/$
+    action recurse
+end match
+
+#----- l10n-kde3 (2007-2010, inactive after 2010) -----
+
+match /trunk/l10n-kde3/scripts/
+    min revision 674880
+    repository scripty
+    branch trunk_l10n-kde3
+end match
+
+# Detect move in revision 674880: /trunk/l10n -> /trunk/l10n-kde3
+match /trunk/l10n-kde3/$
+    action recurse
+end match
+
+#----- /branches/work/kde4-l10n: Preparation for l10n-kde4 -----
+
+# revisions 473998 through 639306
+match /branches/work/kde4-l10n/scripts/
+    repository scripty
+    branch kde4-l10n_work
+end match
+
+#----- trunk/l10n-kde4 (since 2007) -----
+
+match /trunk/l10n-kde4/scripts/
+    repository scripty
+    branch trunk_l10n-kde4
+end match
+
+# Detect move in revision 639306: /branches/work/kde4-l10n -> /trunk/l10n-kde4
+match /trunk/l10n-kde4/$
+    action recurse
+end match
+
+#----- l10n-kf5: Branched off l10n-kde4 in revision 1383660 -----
+
+match /trunk/l10n-kf5/scripts/
+    repository scripty
+    branch master
+end match
+
+#----- Various branches -----
+
+# Branched off /trunk/l10n-kde4 in revision 758692
+match /branches/stable/l10n-kde4/scripts/
+    repository scripty
+    branch stable_l10n-kde4
+end match
+
+match /branches/stable/l10n-kf5/scripts/
+    repository scripty
+    branch stable_l10n-kf5
+end match
+
+# Branched off /branches/stable/l10n-kf5 in revision 1478701
+match /branches/stable/l10n-kf5-plasma-lts/scripts/
+    repository scripty
+    branch stable_l10n-kf5-plasma-lts
+end match
+
+match /branches/KDE/([0-9a-z.\-]+)/kde-l10n/scripts/
+    repository scripty
+    branch KDE/\1
+end match
+
+match /branches/stable/(l10n-kde4|l10n-kf5|l10n-kf5-plasma-lts)/$
+    action recurse
+end match
+
+#----- Tags -----
+
+# Example: /tags/KDE/3.5.0-beta1/kde-l10n/scripts/
+declare REPO=scripty
+declare PREFIX=/
+
+declare MODULE=kde-i18n/scripts/
+include ../common-kde-tags-rules-with-prefix
+declare MODULE=kde-l10n/scripts/
+include ../common-kde-tags-rules-with-prefix
+# Typo in tag name: /tags/KDE/4.12.3/kde-l19n
+declare MODULE=kde-l19n/scripts/
+include ../common-kde-tags-rules-with-prefix
+
+# Recurse into tags and branches
+match /(branches|tags)/KDE/([^/]+)/$
+    action recurse
+end match
+match /(branches|tags)/KDE/([^/]+)/(kde-i18n|kde-l10n|kde-l19n|l10n-kde4|l10n|l10n-kde3|l10n-kf5|l10n-kf5-plasma-lts)/$
+    action recurse
+end match
+
+match /
+end match
