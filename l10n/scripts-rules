@@ -25,7 +25,7 @@ end match
 match /trunk/kde-i18n/
     max revision 409202
     repository scripty
-    branch master
+    branch refs/backups/old-master
 end match
 
 # /trunk/KDE/kde-i18n without scripts/ directory
@@ -33,7 +33,7 @@ match /trunk/KDE/kde-i18n/
     min revision 409203
     max revision 414919
     repository scripty
-    branch master
+    branch refs/backups/old-master
 end match
 
 # /trunk/KDE/kde-i18n with a scripts/ directory
