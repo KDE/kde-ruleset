@@ -1,6 +1,6 @@
 #!/bin/bash
 
+. $RULESETDIR/bin/filter-goodies
+
 # Delete all backup refs and tags
-for ref in $(git for-each-ref --format="%(refname)" refs/backups refs/tags/backups); do
-    git update-ref -d "$ref";
-done
+delete_backup_tags
