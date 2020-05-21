@@ -1,31 +1,59 @@
-create repository www-www
+create repository kde-org
 end repository
 
-match /trunk/www/areas/www/kdeslides/
+create repository kde-org-kdeslides
+end repository
+
+match /trunk/www/areas/www/i18n/
     action ignore
+end match
+
+match /trunk/www/areas/www/images/screenshots/
+    action ignore
+end match
+
+match /trunk/www/areas/www/fundraisers/randameetings2017/.git
+    action ignore
+end match
+
+match /trunk/www/areas/www/kdeslides/
+    repository kde-org-kdeslides
+    branch master
 end match
 
 match /trunk/www/areas/www/
-    repository www-www
+    repository kde-org
     branch master
+end match
+
+match /trunk/www/sites/www/i18n/
+    action ignore
+end match
+
+match /trunk/www/sites/www/images/screenshots/
+    action ignore
+end match
+
+match /trunk/www/sites/www/fundraisers/randameetings2017/.git
+    action ignore
+end match
+
+match /trunk/www/sites/www/fundraisers/yearend2017/.git
+    action ignore
+end match
+
+match /trunk/www/sites/www/announcements/release_data.php
+    action ignore
 end match
 
 match /trunk/www/sites/www/kdeslides/
-    action ignore
-end match
-
-match /trunk/www/sites/www/
-    repository www-www
+    repository kde-org-kdeslides
     branch master
 end match
 
-match /trunk/www/sites/www-devel/www/kdeslides/
-    action ignore
-end match
-
-match /trunk/www/sites/www-devel/www/
-    repository www-www
-    branch devel
+match /trunk/www/sites/www/
+    repository kde-org
+    branch master
 end match
 
 match /
